@@ -2,8 +2,6 @@ extends base
 block titulo
    |Inicio
 
-block filters
-    |{% load guardian_tags %}
 
 block itemsNavbarBreadcrumb
 
@@ -12,8 +10,6 @@ block itemsNavbarBreadcrumb
 block body_content
     div(class="container-fluid")
         |{% for object in object_list %}
-        |{% get_obj_perms request.user for object as "permisos" %}
-        |{% if "region_acceso" in permisos %}
         div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6")
             a(href="{{object.id}}/",class="text-center")
                 div(class="region")
@@ -21,7 +17,6 @@ block body_content
                         img(src="/media/{{object.imagen}}",class="center-block img-responsive hvr-pop",id="r{{object.id}}")
                     div(class="row text-center")
                         p {{object.nombre}}
-        |{% endif %}
         |{% endfor %}
 
 block extra_script

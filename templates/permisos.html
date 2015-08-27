@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <title>Inicio</title>
+    <title>Upss!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -24,7 +24,6 @@
           <ul class="nav navbar-nav navbar-left">
             <div class="bread">
               <ol class="breadcrumb">
-                <li class="active">Inicio</li>
               </ol>
             </div>
           </ul>
@@ -38,26 +37,19 @@
         </div>
       </div>
     </nav>{% endif %}
-    <div class="container-fluid">{% for object in object_list %}
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><a href="{{object.id}}/" class="text-center">
-          <div class="region">
-            <div class="row mapa"><img src="/media/{{object.imagen}}" id="r{{object.id}}" class="center-block img-responsive hvr-pop"></div>
-            <div class="row text-center">
-              <p>{{object.nombre}}</p>
-            </div>
-          </div></a></div>{% endfor %}
+    <div style="margin-top:70px;" class="container-fluid">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center"><img src="/static/imagenes/triste.png" class="center-block img-responsive hvr-pop"></div>
+      <div style="margin-top:70px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h1>No tienes autorización para entrar....</h1>
+        <p>Tu usuario no tiene habilitados los permisos necesarios para ingresar a esta sección, si se trata de un error comunicate con el administrador.</p>
+        <p>Puedes escribirle a sistemas@asoandes.org.</p>
+      </div>
     </div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
     <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-img-lightbox-tooltip.js' %}"></script>
-    <script>
-      $(document).ready(function() {
-      $('#r1').img_lightbox_tooltip({tooltip_show:"hover" ,placement: "right", title: "Amazonas, Arauca, Caquetá, Casanare, Guainía, Guaviare, Huila, Meta, Putumayo, Tolima, Vaupés, Vichada"});
-      $('#r2').img_lightbox_tooltip({tooltip_show:"hover" ,placement: "left", title: "Bogotá D.C., Boyacá, Cundinamarca, Norte de Santander, Santander"});
-      });
-    </script>
     <script>
       if(localStorage.getItem("user") != null){
       $("#profileImage").attr('src',localStorage.getItem("user"));}

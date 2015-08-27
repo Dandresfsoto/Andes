@@ -35,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mixins',
     'django_tables2',
     'rest_framework',
     'django_cleanup',
@@ -54,6 +55,7 @@ INSTALLED_APPS = (
     'beneficiario',
     'genero',
     'grado',
+    'gestor',
 )
 
 REST_FRAMEWORK = {
