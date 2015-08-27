@@ -1,1 +1,1 @@
-Sistema de Informacion ANDES
+Sistema de Información de la entidad ANDES
