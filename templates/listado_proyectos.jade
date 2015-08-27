@@ -1,0 +1,29 @@
+extends base
+block titulo
+    | Diplomados
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Diplomados
+    li
+        a(href="../") {{DIPLOMADO}}
+    li(class="active") Proyectos
+block body_content
+    input(type="hidden",name="id_diplomado",value="{{DIPLOMADO_ID}}",id="id_diplomado")
+    div(class="container-fluid")
+        table(id="table",class="span12 display table table-bordered table-condensed table-striped")
+            thead
+                tr
+                    th
+                    th Radicado
+                    th Cedula
+            tbody
+                tr
+                    th
+                    th Radicado
+                    th Cedula
+block extra_script
+    script(src="{% static 'js/listado_proyectos.js' %}")

@@ -1,0 +1,53 @@
+block filters
+    | {% load dict %}
+
+extends base
+block titulo
+    | {{title}}
+
+
+block itemsNavbarRight
+    |{% for item in link_navright %}
+    li
+        a(href="{{button_navright|getitem:item}}") {{item}}
+    |{% endfor %}
+
+
+block itemsNavbarBreadcrumb
+    | {% for item in breadcrumb %}
+    li
+        a(href="{{breadcrumbMeta|getitem:item}}") {{item}}
+    | {% endfor %}
+
+    li(class="active") {{breadcrumbActive}}
+
+block body_content
+    div(class="container-fluid")
+        div()
+            |{% for object in object_list %}
+            div(class="col-xs-12 col-sm-6 col-md-4 col-lg-3 resetCol")
+                a(href="{{prelink}}/{{ object.id }}/{{postlink}}")
+                    div(class="block",style='background-color:{{ object.color }}')
+                        i(class="icono fa {{ object.icon }} fa-4x")
+                        p(class="text-center") {{ object.name }}
+            |{% endfor %}
+
+        |{% if is_paginated %}
+        footer
+            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center")
+                div(class="row")
+                    div(class="pagine")
+                        |{% if page_obj.has_previous %}
+                        div
+                            a(href="?page={{ page_obj.previous_page_number }}") Anterior
+                            p --
+                        |{% endif %}
+
+                        p(class="inline") Pagina {{page_obj.number}} de {{paginator.num_pages}}
+
+                        |{% if page_obj.has_next %}
+                        div
+                            p --
+                            a(href="?page={{ page_obj.next_page_number }}")  Siguiente
+                        |{% endif %}
+        |{% endif %}

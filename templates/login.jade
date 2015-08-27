@@ -1,0 +1,35 @@
+extends base
+
+block titulo
+    |Login
+
+block extra_style
+    link(rel="stylesheet",href="{% static 'css/login.css' %}")
+
+block body_content
+    |{% if user.is_authenticated %}
+    script
+        |window.location.href = "/region";
+    |{% else %}
+    div(class="container-fluid")
+        div(class="row")
+            div(class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-col-md-offset-3 col-lg-6 col-lg-offset-3")
+                div(class="nameStartup text-center")
+                    h1 ANDES
+                    span Asociación Nacional para el Desarrollo Social
+                    div
+                        img(id="profile",src="{% static 'imagenes/user-unknown.png' %}")
+                form(class="viewform",method="post",action="{% url 'django.contrib.auth.views.login' %}")|{%csrf_token%}
+                    div(class="form-group")
+                        div(class="col-md-1")
+                        div(class="col-md-10")
+                            div(class="loginForm")
+                                input(type="text",id="idUsername",class="form-control",placeholder="Usuario",name="username")
+                                input(type="password",class="form-control",id="password",placeholder="Contraseña",name = "password")
+                                button(type="submit",id="iniciar",class="btn btn-primary btn-block") Iniciar sesión
+        div(class="row text-center")
+            p &copy 2015
+    |{% endif %}
+
+block extra_script
+    script(src="{% static 'js/login.js' %}")

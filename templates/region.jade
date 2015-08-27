@@ -1,0 +1,39 @@
+extends base
+block titulo
+    | Seleccionar Rol
+
+block filters
+    |{% load guardian_tags %}
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li(class="active") {{REGION}}
+
+block body_content
+    |{% get_obj_perms request.user for object_list as "permisos" %}
+    div(class="container-fluid")
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6")
+            |{% if "region_acceso_cpe" in permisos %}
+            a(href="cpe/",class="text-center")
+                div(class="region")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/cpe.png' %}",class="center-block img-responsive hvr-pop")
+            |{% else %}
+            div(class="region")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/cpe-gris.png' %}",class="center-block img-responsive")
+            |{% endif %}
+
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6")
+            |{% if "region_acceso_andes" in permisos %}
+            a(href="andes/",class="text-center")
+                div(class="region")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/andes.png' %}",class="center-block img-responsive hvr-pop")
+            |{% else %}
+            div(class="region")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/andes-gris.png' %}",class="img-responsive center-block")
+            |{% endif %}
+

@@ -1,0 +1,70 @@
+{% load staticfiles %}{% load guardian_tags %}<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{% static 'css/hover.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  <body>{% if user.is_authenticated %}
+    <nav class="navbar navbar-custom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#idNavbar" aria-expanded="false" class="navbar-toggle collapsed"><span class="fa fa-bars fa-lg"></span></button>
+        </div>
+        <div id="idNavbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <div class="bread">
+              <ol class="breadcrumb">
+                <li class="active">Inicio</li>
+              </ol>
+            </div>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown"><a href="#" id="linkAvatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle capitalize"><img id="profileImage" src="{% static 'imagenes/user-unknown.png' %}" class="profile-image img-circle"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/cerrar">Cerrar sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>{% endif %}
+    <div class="container-fluid">
+      {% for object in object_list %}
+      {% get_obj_perms request.user for object as "permisos" %}
+      {% if "region_acceso" in permisos %}
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><a href="{{object.id}}/" class="text-center">
+          <div class="region">
+            <div class="row mapa"><img src="/media/{{object.imagen}}" id="r{{object.id}}" class="center-block img-responsive hvr-pop"></div>
+            <div class="row text-center">
+              <p>{{object.nombre}}</p>
+            </div>
+          </div></a></div>{% endif %}
+      {% endfor %}
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-img-lightbox-tooltip.js' %}"></script>
+    <script>
+      $(document).ready(function() {
+      $('#r1').img_lightbox_tooltip({tooltip_show:"hover" ,placement: "right", title: "Amazonas, Arauca, Caquetá, Casanare, Guainía, Guaviare, Huila, Meta, Putumayo, Tolima, Vaupés, Vichada"});
+      $('#r2').img_lightbox_tooltip({tooltip_show:"hover" ,placement: "left", title: "Bogotá D.C., Boyacá, Cundinamarca, Norte de Santander, Santander"});
+      });
+    </script>
+    <script>
+      if(localStorage.getItem("user") != null){
+      $("#profileImage").attr('src',localStorage.getItem("user"));}
+    </script>
+  </body>
+</html>

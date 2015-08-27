@@ -1,0 +1,26 @@
+extends base
+block titulo
+    | Proyectos
+
+block itemsNavbarRight
+    li(class="dropdown")
+        a(href="#",class="dropdown-toggle capitalize",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false") {{categoryName}}
+            span(class="caret")
+        ul(class="dropdown-menu")
+            li
+                a(href="../nuevo")
+                    p Nuevo proyecto
+            li
+                a(href="../editar")
+                    p Editar categoria
+            li
+                a(href="./eliminar")
+                    p Eliminar categoria
+
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/") Inicio
+    li
+        a(href="/categoria/") Categorias
+    li(class="active") {{categoryName}}

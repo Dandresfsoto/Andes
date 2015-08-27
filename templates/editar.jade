@@ -1,0 +1,15 @@
+extends base
+block titulo
+    | Categorias
+
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/") Inicio
+    li
+        a(href="/categoria/") Categorias
+    li(class="active") {{categoryName}}
+
+block body_content
+    form(action="",method="POST")|{% csrf_token %}
+        |{{form.as_p}}
