@@ -11,9 +11,3 @@ class Diplomado(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.tag)
-
-    class Meta:
-        permissions = (
-            ('r1', 'Region 1'),
-            ('r4', 'Region 4'),
-        )

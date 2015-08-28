@@ -1,10 +1,10 @@
-from django.shortcuts import render
 from region.models import Region
 from django.views.generic import ListView
 from .models import Diplomado
 from django.views.generic import TemplateView
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from participantes.models import Participante
+from mixins.mixins import CpeMixin
 
 class ParticipantesDatatablesView(BaseDatatableView):
     model = Participante
@@ -15,7 +15,7 @@ class ParticipantesDatatablesView(BaseDatatableView):
 
 
 
-class DiplomadosView(ListView):
+class DiplomadosView(CpeMixin,ListView):
     template_name = 'diplomados.html'
     model = Diplomado
 
