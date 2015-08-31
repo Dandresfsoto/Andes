@@ -1,7 +1,9 @@
 from django.db import models
+from region.models import Region
 from django.utils.encoding import smart_unicode
 
 class Gestor(models.Model):
+    region = models.ForeignKey(Region)
     nombre = models.CharField(max_length=100)
     cedula = models.IntegerField()
     celular = models.IntegerField()

@@ -1,0 +1,35 @@
+extends base
+
+block titulo
+    | Gestores
+
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../") {{REGION}}
+    li
+        a(href="../") Andes
+
+    li(class="active") Financiera
+
+block body_content
+    div(class="container-fluid")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Nombre
+                    th Cedula
+                    th Celular
+                    th Correo
+            tbody
+                tr
+                    th
+                    th Nombre
+                    th Cedula
+                    th Celular
+                    th Correo
+block extra_script
+    script(src="{% static 'js/listado_gestores.js' %}")
