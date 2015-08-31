@@ -1,0 +1,72 @@
+extends base
+block titulo
+    | Seleccionar Rol
+
+block filters
+    | {% load guardian_tags %}
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../") {{REGION}}
+    li(class="active") Andes
+
+block body_content
+    | {% get_obj_perms request.user for object_list as "permisos" %}
+    div(class="container-fluid")
+
+        div(class="col-xs-12 col-sm-12 col-md-4 col-lg-4 margin-top-50")
+            | {% if "acceso" in permisos %}
+            a(href="cpe/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/acceso.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Acceso
+            | {% else %}
+            div(class="box")
+                div(class="row")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12")
+                        img(src="{% static 'imagenes/acceso-gris.png' %}",class="center-block img-responsive")
+                div(class="row text-center")
+                    p Acceso
+
+            | {% endif %}
+
+        div(class="col-xs-12 col-sm-12 col-md-4 col-lg-4 margin-top-50")
+            | {% if "formacion" in permisos %}
+            a(href="andes/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/formacion.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Formación
+            | {% else %}
+            div(class="box")
+                div(class="row")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/formacion-gris.png' %}",class="img-responsive center-block")
+                div(class="row text-center")
+                        p Formación
+            | {% endif %}
+
+        div(class="col-xs-12 col-sm-12 col-md-4 col-lg-4 margin-top-50")
+            | {% if "financiera" in permisos %}
+            a(href="andes/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/financiera.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Financiera
+            | {% else %}
+            div(class="box")
+                div(class="row")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/financiera-gris.png' %}",class="img-responsive center-block")
+                div(class="row text-center")
+                        p Financiera
+            | {% endif %}

@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 from .models import Region
-from mixins.mixins import RegionMixin
+from mixins.mixins import RegionMixin, AndesMixin
 
 class InicioView(ListView):
     template_name = 'inicio.html'
@@ -20,3 +20,15 @@ class RegionView(RegionMixin, ListView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(RegionView,self).get_context_data(**kwargs)
+
+class AndesView(AndesMixin, ListView):
+    template_name = 'andes.html'
+    model = Region
+
+    def queryset(self):
+        queryset = Region.objects.get(pk=self.kwargs['pk'])
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        return super(AndesView,self).get_context_data(**kwargs)
