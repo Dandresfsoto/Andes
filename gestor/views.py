@@ -9,17 +9,6 @@ class GestorTableView(BaseDatatableView):
         'cedula',
         'celular',
         'correo',
-        'hv',
-        'certificacion',
-        'rut',
-        'contrato',
-        'seguro_agosto',
-        'seguro_septiembre',
-        'seguro_octubre',
-        'seguro_noviembre',
-        'seguro_diciembre',
-        'fecha_contratacion',
-        'fecha_terminacion'
     ]
 
     order_columns = [
@@ -27,17 +16,6 @@ class GestorTableView(BaseDatatableView):
         'cedula',
         'celular',
         'correo',
-        'hv',
-        'certificacion',
-        'rut',
-        'contrato',
-        'seguro_agosto',
-        'seguro_septiembre',
-        'seguro_octubre',
-        'seguro_noviembre',
-        'seguro_diciembre',
-        'fecha_contratacion',
-        'fecha_terminacion'
     ]
 
     def filter_queryset(self, qs):
