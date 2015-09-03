@@ -15,8 +15,7 @@ block itemsNavbarBreadcrumb
 block body_content
     | {% get_obj_perms request.user for object_list as "permisos" %}
     div(class="container-fluid")
-
-        div(class="col-xs-12 col-sm-12 col-md-4 col-lg-4 margin-top-50")
+        div(class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50")
             | {% if "acceso" in permisos %}
             a(href="cpe/",class="text-center")
                 div(class="box")
@@ -35,7 +34,7 @@ block body_content
 
             | {% endif %}
 
-        div(class="col-xs-12 col-sm-12 col-md-4 col-lg-4 margin-top-50")
+        div(class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50")
             | {% if "formacion" in permisos %}
             a(href="andes/",class="text-center")
                 div(class="box")
@@ -53,20 +52,39 @@ block body_content
                         p Formación
             | {% endif %}
 
-        div(class="col-xs-12 col-sm-12 col-md-4 col-lg-4 margin-top-50")
-            | {% if "financiera" in permisos %}
-            a(href="financiera/",class="text-center")
+        div(class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50")
+            | {% if "administrativo" in permisos %}
+            a(href="administrativo/",class="text-center")
                 div(class="box")
                     div(class="row")
                         div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
-                            img(src="{% static 'imagenes/financiera.png' %}",class="center-block img-responsive hvr-pop")
+                            img(src="{% static 'imagenes/administrativo.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Administrativo
+            | {% else %}
+            div(class="box")
+                div(class="row")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                        img(src="{% static 'imagenes/administrativo-gris.png' %}",class="img-responsive center-block")
+                div(class="row text-center")
+                        p Administrativo
+            | {% endif %}
+
+        div(class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50")
+            | {% if "financiero" in permisos %}
+            a(href="financiero/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/financiero.png' %}",class="center-block img-responsive hvr-pop")
                     div(class="row text-center")
                         p Financiera
             | {% else %}
             div(class="box")
                 div(class="row")
                     div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
-                        img(src="{% static 'imagenes/financiera-gris.png' %}",class="img-responsive center-block")
+                        img(src="{% static 'imagenes/financiero-gris.png' %}",class="img-responsive center-block")
                 div(class="row text-center")
-                        p Financiera
+                        p Financiero
             | {% endif %}
+    div(class="container-fluid margin-top-50")

@@ -32,6 +32,16 @@ function format ( d ) {
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [1, 2, 3 ,4 ,5 ,6 ,7 ,8 ,9,10]
+                },
+                title: 'Participantes',
+            }
+        ],
         "searching": true,
         "processing": true,
         "serverSide": true,
@@ -49,7 +59,13 @@ $(document).ready(function() {
             { "data": 0 },
             { "data": 1 },
             { "data": 2 },
-            { "data": 3 }
+            { "data": 3 },
+            { "data": 4, "visible": false, "title": "Email"},
+            { "data": 5, "visible": false, "title": "Telefono"},
+            { "data": 6, "visible": false, "title": "Area"},
+            { "data": 7, "visible": false, "title": "Grado"},
+            { "data": 8, "visible": false, "title": "Beneficiario"},
+            { "data": 9, "visible": false, "title": "Genero"}
         ],
         "order": [[1, 'asc']],
     });

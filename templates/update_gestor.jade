@@ -1,0 +1,103 @@
+extends base
+
+block titulo
+    | Actualizar soportes
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+
+    li
+        a(href="../../../../") Administrativo
+
+    li
+        a(href="../../../") Gestores
+
+    li(class="active") Soportes: {{nombre}}
+
+block body_content
+    div(class="container-fluid")
+       form(action="",method="post",enctype="multipart/form-data")
+           table(class="table table-bordered text-center",style="color:black;background:white;")
+               tr
+                    th(class="text-center") Limpiar:
+                    th(class="text-center") Nombre:
+                    th(class="text-center") Archivo:
+                    th(class="text-center") Nuevo Archivo:
+               tr
+                    td
+                        div(class="vertical-center-td")
+                            input(id="hv-clear_id",name="hv-clear",type="checkbox")
+                    td
+                        p(class="vertical-center-td") Hoja de Vida
+                    td
+                        |{% if actual_hv != "" %}
+                        a(href="/media/{{actual_hv}}",target="_blank")
+                            img(src="/static/imagenes/pdf.png",width="64",height="64")
+                        |{% else %}
+                        img(src="/static/imagenes/pdf-gris.png",width="64",height="64")
+                        |{% endif %}
+                    td
+                        input(id="id_hv",name="hv",type="file",accept=".pdf")
+               tr
+                    td
+                        div(class="vertical-center-td")
+                            input(id="certificacion-clear_id",name="certificacion-clear",type="checkbox")
+                    td
+                        p(class="vertical-center-td") Certificación Bancaria
+                    td
+                        |{% if actual_certificacion != "" %}
+                        a(href="/media/{{actual_certificacion}}",target="_blank")
+                            img(src="/static/imagenes/pdf.png",width="64",height="64")
+                        |{% else %}
+                        img(src="/static/imagenes/pdf-gris.png",width="64",height="64")
+                        |{% endif %}
+                    td
+                        input(id="id_certificacion",name="certificacion",type="file",accept=".pdf")
+
+               tr
+                    td
+                        div(class="vertical-center-td")
+                            input(id="rut-clear_id",name="rut-clear",type="checkbox")
+                    td
+                        p(class="vertical-center-td") Rut
+                    td
+                        |{% if actual_rut != "" %}
+                        a(href="/media/{{actual_rut}}",target="_blank")
+                            img(src="/static/imagenes/pdf.png",width="64",height="64")
+                        |{% else %}
+                        img(src="/static/imagenes/pdf-gris.png",width="64",height="64")
+                        |{% endif %}
+                    td
+                        input(id="id_rut",name="rut",type="file",accept=".pdf")
+
+               tr
+                    td
+                        div(class="vertical-center-td")
+                            input(id="contrato-clear_id",name="contrato-clear",type="checkbox")
+                    td
+                        p(class="vertical-center-td") Contrato
+                    td
+                        |{% if actual_contrato != "" %}
+                        a(href="/media/{{actual_contrato}}",target="_blank")
+                            img(src="/static/imagenes/pdf.png",width="64",height="64")
+                        |{% else %}
+                        img(src="/static/imagenes/pdf-gris.png",width="64",height="64")
+                        |{% endif %}
+                    td
+                        input(id="id_contrato",name="contrato",type="file",accept=".pdf")
+           |{% csrf_token %}
+           div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    |{% progress_bar %}
+
+block extra_script
+    script(src="{% static 'js/update_gestor.js' %}")

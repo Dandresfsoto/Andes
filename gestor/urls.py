@@ -4,5 +4,5 @@ from gestor import views
 
 
 urlpatterns = [
-    url(r'^datatable', login_required(views.GestorTableView.as_view()),name='tabla_gestores'),
+    url(r'^datatable/(?P<region>\w+)', login_required(views.GestorTableView.as_view()),name='tabla_gestores'),
 ]

@@ -27,7 +27,9 @@ urlpatterns = [
     url(r'^usuarios/',include('user.urls')),
     url(r'^participantes/',include('participantes.urls')),
     url(r'^gestor/',include('gestor.urls')),
-
+    url(r'^formador/',include('formador.urls')),
+    url(r'^funcionario/',include('funcionario.urls')),
+    url(r'^progressbarupload/', include('progressbarupload.urls')),
 
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT,}),
 ]

@@ -1,0 +1,53 @@
+extends base
+block titulo
+    |Actualizar Seguro
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+    li
+        a(href="../../../../") Administrativo
+    li
+        a(href="../../../") Funcionarios
+    li(class="active") Seguridad: {{nombre}}
+
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                tr
+                    th(class="text-center") Limpiar:
+                    th(class="text-center") Seguridad social:
+                    th(class="text-center") Archivo:
+                    th(class="text-center") Nuevo Archivo:
+                | {% for soporte in soportes %}
+                tr
+                    td
+                        div(class="vertical-center-td")
+                            input(id="seguro_{{soporte.mes}}-clear_id",name="seguro_{{soporte.mes}}-clear",type="checkbox")
+                    td
+                        p(class="vertical-center-td") Soporte de {{soporte.mes}}
+                    td
+                        | {% if soporte.soporte != "" %}
+                        a(href="/media/{{soporte.soporte}}",target="_blank")
+                            img(src="/static/imagenes/pdf.png",width="64",height="64")
+                        | {% else %}
+                        img(src="/static/imagenes/pdf-gris.png",width="64",height="64")
+                        | {% endif %}
+                    td
+                        input(id="id_seguro_{{soporte.mes}}",name="seguro_{{soporte.mes}}",type="file")
+                | {% endfor %}
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")

@@ -18,5 +18,6 @@ class Region(models.Model):
             ('region_acceso_andes','Acceso a region andes'),
             ('acceso', 'Rol asignado al eje de Acceso'),
             ('formacion','Rol asignado al eje de formacion'),
-            ('financiera','Rol asignado al eje financiero'),
+            ('administrativo','Rol asignado al eje Administrativo'),
+            ('financiero','Rol asignado al eje Financiero'),
         )

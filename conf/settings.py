@@ -35,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'progressbarupload',
     'mixins',
     'django_tables2',
     'rest_framework',
@@ -56,6 +57,9 @@ INSTALLED_APPS = (
     'genero',
     'grado',
     'gestor',
+    'financiero',
+    'formador',
+    'funcionario',
 )
 
 REST_FRAMEWORK = {
@@ -143,3 +147,12 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+FILE_UPLOAD_HANDLERS = (
+    "progressbarupload.uploadhandler.ProgressBarUploadHandler",
+    "django.core.files.uploadhandler.MemoryFileUploadHandler",
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+)
+
+PROGRESSBARUPLOAD_INCLUDE_JQUERY = False
