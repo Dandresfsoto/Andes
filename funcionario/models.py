@@ -7,8 +7,8 @@ class Funcionario(models.Model):
 
     nombre = models.CharField(max_length=100)
     cedula = models.CharField(max_length=15)
-    celular = models.CharField(max_length=30)
-    correo = models.EmailField()
+    celular = models.CharField(max_length=30,blank=True)
+    correo = models.EmailField(blank=True)
 
     cargo = models.CharField(max_length=100,blank=True)
     profesion = models.CharField(max_length=30,blank=True)
