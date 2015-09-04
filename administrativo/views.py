@@ -201,7 +201,7 @@ class FuncionarioActualizarSeguroView(UpdateView):
                               {'mes':"abril",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_abril},
                               {'mes':"mayo",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_mayo},
                               {'mes':"junio",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_junio},
-                              {'mes':"junlio",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_julio},
+                              {'mes':"julio",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_julio},
                               {'mes':"agosto",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_agosto},
                               {'mes':"septiembre",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_septiembre},
                               {'mes':"octubre",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).seguro_octubre},

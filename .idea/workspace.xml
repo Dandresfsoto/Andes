@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d437ff-e0c6-4dea-a8b5-6ad6b346880d" name="Default" comment="Documentacion settings">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/funcionario/forms.py" afterPath="$PROJECT_DIR$/funcionario/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_funcionario_informacion.html" afterPath="$PROJECT_DIR$/templates/update_funcionario_informacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_funcionario_informacion.jade" afterPath="$PROJECT_DIR$/templates/update_funcionario_informacion.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrativo/views.py" afterPath="$PROJECT_DIR$/administrativo/views.py" />
     </list>
     <ignored path="Andes.iws" />
@@ -50,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/administrativo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="114" selection-start-line="172" selection-start-column="114" selection-end-line="172" selection-end-column="114" />
+            <state vertical-scroll-proportion="0.7293578">
+              <caret line="203" column="40" selection-start-line="203" selection-start-column="40" selection-end-line="203" selection-end-column="40" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
                 <element signature="e#1113#1387#0" expanded="false" />
@@ -64,17 +61,17 @@
                 <element signature="e#4558#5362#0" expanded="false" />
                 <element signature="e#5416#7317#0" expanded="false" />
                 <element signature="e#7376#9081#0" expanded="false" />
-                <element signature="e#11563#13611#0" expanded="false" />
-                <element signature="e#13666#14226#0" expanded="false" />
+                <element signature="e#9143#11506#0" expanded="false" />
+                <element signature="e#13665#14225#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_funcionario_informacion.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update_funcionario_informacion.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/update_funcionario_informacion.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58352405">
+            <state vertical-scroll-proportion="0.0">
               <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
               <folding />
             </state>
@@ -148,8 +145,8 @@
         <option value="$PROJECT_DIR$/templates/cambio_password.jade" />
         <option value="$PROJECT_DIR$/funcionario/models.py" />
         <option value="$PROJECT_DIR$/funcionario/forms.py" />
-        <option value="$PROJECT_DIR$/administrativo/views.py" />
         <option value="$PROJECT_DIR$/templates/update_funcionario_informacion.jade" />
+        <option value="$PROJECT_DIR$/administrativo/views.py" />
       </list>
     </option>
   </component>
@@ -564,7 +561,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26771653" sideWeight="0.4875549" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26929134" sideWeight="0.4875549" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1177,10 +1174,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/administrativo/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/update_funcionario_informacion.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="114" selection-start-line="172" selection-start-column="114" selection-end-line="172" selection-end-column="114" />
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrativo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7293578">
+          <caret line="203" column="40" selection-start-line="203" selection-start-column="40" selection-end-line="203" selection-end-column="40" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
             <element signature="e#1113#1387#0" expanded="false" />
@@ -1190,17 +1195,9 @@
             <element signature="e#4558#5362#0" expanded="false" />
             <element signature="e#5416#7317#0" expanded="false" />
             <element signature="e#7376#9081#0" expanded="false" />
-            <element signature="e#11563#13611#0" expanded="false" />
-            <element signature="e#13666#14226#0" expanded="false" />
+            <element signature="e#9143#11506#0" expanded="false" />
+            <element signature="e#13665#14225#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/update_funcionario_informacion.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58352405">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
