@@ -222,14 +222,32 @@ $(document).ready(function() {
                 "data":           null,
                 "defaultContent": ''
             },
-            { "data": 0 },
-            { "data": 1 },
-            { "data": 2 },
-            { "data": 3 },
-            { "data": 20 },
-            { "data": 21 }
+            {
+                "data": 0,
+                "orderable":false,
+            },
+            {
+                "data": 1,
+                "orderable":false,
+            },
+            {
+                "data": 2,
+                "orderable":false,
+            },
+            {
+                "data": 3,
+                "orderable":false,
+            },
+            {
+                "data": 20,
+                "orderable":false,
+            },
+            {
+                "data": 21,
+                "orderable":false,
+            },
         ],
-        "order": [[1, 'asc']],
+        "order": [[0, 'asc']],
     });
 
 
