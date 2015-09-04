@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^formador/',include('formador.urls')),
     url(r'^funcionario/',include('funcionario.urls')),
     url(r'^progressbarupload/', include('progressbarupload.urls')),
+    url(r'^password/cambiar/$', login_required(views.CambiarPassword.as_view())),
 
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT,}),
 ]
