@@ -11,14 +11,16 @@ from formador.forms import FormadorSoporteForm, FormadorSeguroForm
 from funcionario.models import Funcionario
 from funcionario.forms import FuncionarioSoporteForm, FuncionarioSeguroForm, FuncionarioInformacionForm, FuncionarioFotoForm
 
-class AdministrativoView(TemplateView):
+from mixins.mixins import AdministrativoMixin
+
+class AdministrativoView(AdministrativoMixin,TemplateView):
     template_name = 'administrativo.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(AdministrativoView,self).get_context_data(**kwargs)
 
-class GestorView(TemplateView):
+class GestorView(AdministrativoMixin,TemplateView):
     template_name = 'listado_gestores.html'
 
     def get_context_data(self, **kwargs):
@@ -26,7 +28,7 @@ class GestorView(TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(GestorView,self).get_context_data(**kwargs)
 
-class FormadorView(TemplateView):
+class FormadorView(AdministrativoMixin,TemplateView):
     template_name = 'listado_formadores.html'
 
     def get_context_data(self, **kwargs):
@@ -34,7 +36,7 @@ class FormadorView(TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(FormadorView,self).get_context_data(**kwargs)
 
-class FuncionarioView(TemplateView):
+class FuncionarioView(AdministrativoMixin,TemplateView):
     template_name = 'listado_funcionarios.html'
 
     def get_context_data(self, **kwargs):
@@ -42,7 +44,7 @@ class FuncionarioView(TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(FuncionarioView,self).get_context_data(**kwargs)
 
-class GestorActualizarSoporteView(UpdateView):
+class GestorActualizarSoporteView(AdministrativoMixin,UpdateView):
     model = Gestor
     form_class = GestorSoporteForm
     template_name = "update_gestor.html"
@@ -61,7 +63,7 @@ class GestorActualizarSoporteView(UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(GestorActualizarSoporteView,self).get_context_data(**kwargs)
 
-class GestorActualizarSeguroView(UpdateView):
+class GestorActualizarSeguroView(AdministrativoMixin,UpdateView):
     model = Gestor
     form_class = GestorSeguroForm
     template_name = "update_seguro_gestor.html"
@@ -88,7 +90,7 @@ class GestorActualizarSeguroView(UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(GestorActualizarSeguroView,self).get_context_data(**kwargs)
 
-class FormadorActualizarSoporteView(UpdateView):
+class FormadorActualizarSoporteView(AdministrativoMixin,UpdateView):
     model = Formador
     form_class = FormadorSoporteForm
     template_name = "update_gestor.html"
@@ -107,7 +109,7 @@ class FormadorActualizarSoporteView(UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FormadorActualizarSoporteView,self).get_context_data(**kwargs)
 
-class FormadorActualizarSeguroView(UpdateView):
+class FormadorActualizarSeguroView(AdministrativoMixin,UpdateView):
     model = Formador
     form_class = FormadorSeguroForm
     template_name = "update_seguro_gestor.html"
@@ -135,7 +137,7 @@ class FormadorActualizarSeguroView(UpdateView):
         return super(FormadorActualizarSeguroView,self).get_context_data(**kwargs)
 
 
-class FuncionarioActualizarSoporteView(UpdateView):
+class FuncionarioActualizarSoporteView(AdministrativoMixin,UpdateView):
     model = Funcionario
     form_class = FuncionarioSoporteForm
     template_name = "update_funcionario_soporte.html"
@@ -158,7 +160,7 @@ class FuncionarioActualizarSoporteView(UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FuncionarioActualizarSoporteView,self).get_context_data(**kwargs)
 
-class FuncionarioActualizarInformacionView(UpdateView):
+class FuncionarioActualizarInformacionView(AdministrativoMixin,UpdateView):
     model = Funcionario
     form_class = FuncionarioInformacionForm
     template_name = "update_funcionario_informacion.html"
@@ -185,7 +187,7 @@ class FuncionarioActualizarInformacionView(UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FuncionarioActualizarInformacionView,self).get_context_data(**kwargs)
 
-class FuncionarioActualizarSeguroView(UpdateView):
+class FuncionarioActualizarSeguroView(AdministrativoMixin,UpdateView):
     model = Funcionario
     form_class = FuncionarioSeguroForm
     template_name = "update_seguro_funcionario.html"
@@ -212,7 +214,7 @@ class FuncionarioActualizarSeguroView(UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FuncionarioActualizarSeguroView,self).get_context_data(**kwargs)
 
-class FuncionarioActualizarFotoView(UpdateView):
+class FuncionarioActualizarFotoView(AdministrativoMixin,UpdateView):
     model = Funcionario
     form_class = FuncionarioFotoForm
     template_name = "update_foto_funcionario.html"
