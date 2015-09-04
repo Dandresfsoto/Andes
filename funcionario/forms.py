@@ -14,7 +14,7 @@ class FuncionarioSoporteForm(forms.ModelForm):
 class FuncionarioInformacionForm(forms.ModelForm):
     class Meta:
         model = Funcionario
-        fields = ['cargo','profesion','banco','tipo_cuenta','numero_cuenta','eps','pension','arl']
+        fields = ['celular','correo','cargo','profesion','banco','tipo_cuenta','numero_cuenta','eps','pension','arl']
 
 class FuncionarioSeguroForm(forms.ModelForm):
     class Meta:

@@ -25,11 +25,19 @@ block body_content
                     th(class="text-center") Modificar:
 
                 | {% for field in informacion %}
+                |{% if field.nombre == "Correo" %}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") {{field.nombre}}
+                    td(class = "text-center") {{field.soporte}}
+                    td(class = "text-center")
+                        input(style="width:100%;",id="id_{{field.id}}",name="{{field.id}}",type="email",maxlength="{{field.longitud}}",value="{{field.soporte}}")
+                |{% else %}
                 tr
                     td(class = "text-center" style="font-weight:bold;") {{field.nombre}}
                     td(class = "text-center") {{field.soporte}}
                     td(class = "text-center")
                         input(style="width:100%;",id="id_{{field.id}}",name="{{field.id}}",type="text",maxlength="{{field.longitud}}",value="{{field.soporte}}")
+                |{% endif %}
                 | {% endfor %}
 
             | {% csrf_token %}

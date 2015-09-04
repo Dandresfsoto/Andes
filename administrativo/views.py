@@ -169,6 +169,8 @@ class FuncionarioActualizarInformacionView(UpdateView):
 
     def get_context_data(self, **kwargs):
         kwargs['informacion'] = [
+        {'nombre':"Celular",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).celular,'id':'celular','longitud': Funcionario._meta.get_field('celular').max_length},
+        {'nombre':"Correo",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).correo,'id':'correo','longitud': Funcionario._meta.get_field('correo').max_length},
         {'nombre':"Cargo",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).cargo,'id':'cargo','longitud': Funcionario._meta.get_field('cargo').max_length},
         {'nombre':"Profesion",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).profesion,'id':'profesion','longitud': Funcionario._meta.get_field('profesion').max_length},
         {'nombre':"Banco",'soporte':Funcionario.objects.get(pk=self.kwargs['funcionario_id']).banco,'id':'banco','longitud': Funcionario._meta.get_field('banco').max_length},

@@ -55,13 +55,22 @@
             <th class="text-center">Actual:</th>
             <th class="text-center">Modificar:</th>
           </tr>{% for field in informacion %}
+          {% if field.nombre == "Correo" %}
+          <tr>
+            <td style="font-weight:bold;" class="text-center">{{field.nombre}}</td>
+            <td class="text-center">{{field.soporte}}</td>
+            <td class="text-center">
+              <input style="width:100%;" id="id_{{field.id}}" name="{{field.id}}" type="email" maxlength="{{field.longitud}}" value="{{field.soporte}}">
+            </td>
+          </tr>{% else %}
           <tr>
             <td style="font-weight:bold;" class="text-center">{{field.nombre}}</td>
             <td class="text-center">{{field.soporte}}</td>
             <td class="text-center">
               <input style="width:100%;" id="id_{{field.id}}" name="{{field.id}}" type="text" maxlength="{{field.longitud}}" value="{{field.soporte}}">
             </td>
-          </tr>{% endfor %}
+          </tr>{% endif %}
+          {% endfor %}
         </table>{% csrf_token %}
         <div class="container-fluid barra">
           <div class="col-lg-2">
