@@ -20,4 +20,5 @@ class Region(models.Model):
             ('formacion','Rol asignado al eje de formacion'),
             ('administrativo','Rol asignado al eje Administrativo'),
             ('financiero','Rol asignado al eje Financiero'),
+            ('administrativo_cpe','Rol asignado al eje Administrativo de CPE'),
         )

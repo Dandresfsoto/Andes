@@ -60,6 +60,7 @@ INSTALLED_APPS = (
     'financiero',
     'formador',
     'funcionario',
+    'eje',
 )
 
 REST_FRAMEWORK = {

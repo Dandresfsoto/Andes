@@ -1,23 +1,25 @@
 from django.db import models
 from region.models import Region
+from eje.models import Eje
 from django.utils.encoding import smart_unicode
 
 class Funcionario(models.Model):
     region = models.ForeignKey(Region)
+    eje = models.ForeignKey(Eje)
 
     nombre = models.CharField(max_length=100)
     cedula = models.CharField(max_length=15)
-    celular = models.CharField(max_length=30,blank=True)
+    celular = models.CharField(max_length=100,blank=True)
     correo = models.EmailField(blank=True)
 
     cargo = models.CharField(max_length=100,blank=True)
-    profesion = models.CharField(max_length=30,blank=True)
+    profesion = models.CharField(max_length=100,blank=True)
     banco = models.CharField(max_length=100,blank=True)
-    tipo_cuenta = models.CharField(max_length=50,blank=True)
-    numero_cuenta = models.CharField(max_length=30,blank=True)
-    eps = models.CharField(max_length=30,blank=True)
-    pension = models.CharField(max_length=30,blank=True)
-    arl = models.CharField(max_length=30,blank=True)
+    tipo_cuenta = models.CharField(max_length=100,blank=True)
+    numero_cuenta = models.CharField(max_length=100,blank=True)
+    eps = models.CharField(max_length=100,blank=True)
+    pension = models.CharField(max_length=100,blank=True)
+    arl = models.CharField(max_length=100,blank=True)
     foto = models.FileField(upload_to="Funcionarios/Foto/",blank=True)
 
     hv = models.FileField(upload_to="Funcionarios/Hojas de Vida/",blank=True)
