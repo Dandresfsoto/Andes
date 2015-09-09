@@ -61,11 +61,15 @@ INSTALLED_APPS = (
     'formador',
     'funcionario',
     'eje',
+    'pqr',
 )
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-    'PAGE_SIZE': 100
+    'PAGE_SIZE': 100,
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_jsonp.renderers.JSONPRenderer',
+    ),
 }
 
 MIDDLEWARE_CLASSES = (
