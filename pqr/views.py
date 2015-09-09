@@ -11,6 +11,7 @@ class PqrView(APIView):
     def get(self, request, format=None):
         x = request._request.GET
         data = {}
+        data['region'] = self.kwargs['region']
         data['eje'] = x['eje']
         data['nombre'] = x['nombre']
         data['email'] = x['email']
