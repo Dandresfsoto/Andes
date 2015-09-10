@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d437ff-e0c6-4dea-a8b5-6ad6b346880d" name="Default" comment="Documentacion settings">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/acceso_cpe.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/formacion_cpe.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe.html" afterPath="$PROJECT_DIR$/templates/cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe.jade" afterPath="$PROJECT_DIR$/templates/cpe.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados.html" afterPath="$PROJECT_DIR$/templates/diplomados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados.jade" afterPath="$PROJECT_DIR$/templates/diplomados.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados_informacion.html" afterPath="$PROJECT_DIR$/templates/diplomados_informacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados_informacion.jade" afterPath="$PROJECT_DIR$/templates/diplomados_informacion.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado.html" afterPath="$PROJECT_DIR$/templates/listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado.jade" afterPath="$PROJECT_DIR$/templates/listado.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.jade" afterPath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_proyectos.html" afterPath="$PROJECT_DIR$/templates/listado_proyectos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_proyectos.jade" afterPath="$PROJECT_DIR$/templates/listado_proyectos.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/region/urls.py" afterPath="$PROJECT_DIR$/region/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/region/views.py" afterPath="$PROJECT_DIR$/region/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/progress_bar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -111,9 +96,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="Jade File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -123,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/formador/models.py" />
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/formador/urls.py" />
         <option value="$PROJECT_DIR$/templates/listado_formadores.jade" />
@@ -174,6 +158,7 @@
         <option value="$PROJECT_DIR$/templates/diplomados_informacion.jade" />
         <option value="$PROJECT_DIR$/templates/listado.jade" />
         <option value="$PROJECT_DIR$/templates/listado_proyectos.jade" />
+        <option value="$PROJECT_DIR$/static/js/progress_bar.js" />
       </list>
     </option>
   </component>
@@ -243,6 +228,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -552,7 +569,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -698,13 +715,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/progressbarupload/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0778032">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1063,6 +1073,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/progress_bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92201835">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
           <folding />
         </state>
       </provider>
