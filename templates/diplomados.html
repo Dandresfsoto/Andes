@@ -1,4 +1,6 @@
-{% load staticfiles %}<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load progress_bar %}<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8">
@@ -8,10 +10,11 @@
     <title>Diplomados</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-colvis-1.0.3,b-flash-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.css">
     <link rel="stylesheet" href="{% static 'css/hover.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.ezdz.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
   <body>{% if user.is_authenticated %}
@@ -25,8 +28,10 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../">{{REGION}}</a></li>
-                <li class="active">Diplomados</li>
+                <li><a href="../../../">{{REGION}}</a></li>
+                <li><a href="../../">CPE</a></li>
+                <li><a href="../">Formación</a></li>
+                <li class="active">Etic@</li>
               </ol>
             </div>
           </ul>
@@ -34,6 +39,7 @@
             <li class="dropdown"><a href="#" id="linkAvatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle capitalize"><img id="profileImage" src="{% static 'imagenes/user-unknown.png' %}" class="profile-image img-circle"><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/cerrar">Cerrar sesión</a></li>
+                <li><a href="/password/cambiar">Cambiar contraseña</a></li>
               </ul>
             </li>
           </ul>
@@ -54,11 +60,13 @@
         </div>
       </div>
     </div>
+    <div style="margin-top:50px;"></div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-colvis-1.0.3,b-flash-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.js"></script>
     <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-img-lightbox-tooltip.js' %}"></script>
+    <script src="{% static 'js/jquery.ezdz.js' %}"></script>{% progress_bar_media %}
     <script>
       if(localStorage.getItem("user") != null){
       $("#profileImage").attr('src',localStorage.getItem("user"));}

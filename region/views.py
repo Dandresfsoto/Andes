@@ -47,6 +47,31 @@ class CpeView(CpeMixin,ListView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(CpeView,self).get_context_data(**kwargs)
 
+
+class CpeFormacionView(CpeMixin,ListView):
+    template_name = 'formacion_cpe.html'
+    model = Region
+
+    def queryset(self):
+        queryset = Region.objects.get(pk=self.kwargs['pk'])
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        return super(CpeFormacionView,self).get_context_data(**kwargs)
+
+class CpeAccesoView(CpeMixin,ListView):
+    template_name = 'acceso_cpe.html'
+    model = Region
+
+    def queryset(self):
+        queryset = Region.objects.get(pk=self.kwargs['pk'])
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        return super(CpeAccesoView,self).get_context_data(**kwargs)
+
 class CpeFuncionarioView(CpeMixin,TemplateView):
     template_name = 'listado_funcionarios_cpe.html'
 

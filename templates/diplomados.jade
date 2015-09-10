@@ -6,14 +6,18 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../") {{REGION}}
-    li(class="active") Diplomados
+        a(href="../../../") {{REGION}}
+    li
+        a(href="../../") CPE
+    li
+        a(href="../") Formación
+    li(class="active") Etic@
 block body_content
     div(class="container-fluid")
         div(class="row margin-top-50")
             |{% for object in object_list %}
             div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6")
-                a(href="diplomado/{{object.id}}",class="text-center")s
+                a(href="diplomado/{{object.id}}",class="text-center")
                     div(class="box")
                         div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 diplomado")
                             img(src="/media/{{object.imagen}}",class="center-block img-responsive hvr-pop")
