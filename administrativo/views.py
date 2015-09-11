@@ -3,7 +3,7 @@ from django.views.generic import UpdateView
 from region.models import Region
 
 from gestor.models import Gestor
-from gestor.forms import GestorSoporteForm, GestorSeguroForm, GestorInformacionForm
+from gestor.forms import GestorSoporteForm, GestorSeguroForm, GestorInformacionForm, GestorFotoForm
 
 from formador.models import Formador
 from formador.forms import FormadorSoporteForm, FormadorSeguroForm
@@ -193,7 +193,7 @@ class GestorActualizarSoporteView(AdministrativoMixin,UpdateView):
 
 class GestorActualizarSeguroView(AdministrativoMixin,UpdateView):
     model = Gestor
-    form_class = GestorSoporteForm
+    form_class = GestorSeguroForm
     template_name = "update_seguro_gestor.html"
 
     pk_url_kwarg = "gestor_id"
@@ -218,35 +218,25 @@ class GestorActualizarSeguroView(AdministrativoMixin,UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(GestorActualizarSeguroView,self).get_context_data(**kwargs)
 
-
-
-
-class GestorActualizarSeguroView(AdministrativoMixin,UpdateView):
+class GestorActualizarFotoView(AdministrativoMixin,UpdateView):
     model = Gestor
-    form_class = GestorSeguroForm
-    template_name = "update_seguro_gestor.html"
+    form_class = GestorFotoForm
+    template_name = "update_foto_gestor.html"
 
     pk_url_kwarg = "gestor_id"
     success_url = "../../../"
 
 
     def get_context_data(self, **kwargs):
-        kwargs['soportes'] = [{'mes':"enero",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_enero},
-                              {'mes':"febrero",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_febrero},
-                              {'mes':"marzo",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_marzo},
-                              {'mes':"abril",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_abril},
-                              {'mes':"mayo",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_mayo},
-                              {'mes':"junio",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_junio},
-                              {'mes':"junlio",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_julio},
-                              {'mes':"agosto",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_agosto},
-                              {'mes':"septiembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_septiembre},
-                              {'mes':"octubre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_octubre},
-                              {'mes':"noviembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_noviembre},
-                              {'mes':"diciembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_diciembre},]
-
+        kwargs['soporte'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).foto
         kwargs['nombre'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
-        return super(GestorActualizarSeguroView,self).get_context_data(**kwargs)
+        return super(GestorActualizarFotoView,self).get_context_data(**kwargs)
+
+
+
+
+
 
 class FormadorActualizarSoporteView(AdministrativoMixin,UpdateView):
     model = Formador

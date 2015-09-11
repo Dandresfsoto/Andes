@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^gestores/actualizar/soportes/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarSoporteView.as_view())),
     url(r'^gestores/actualizar/seguro/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarSeguroView.as_view())),
     url(r'^gestores/actualizar/informacion/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarInformacionView.as_view())),
+    url(r'^gestores/actualizar/foto/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarFotoView.as_view())),
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view()),name='formadores'),
     url(r'^formadores/actualizar/soportes/(?P<formador_id>\w+)/$', login_required(views.GestorActualizarSoporteView.as_view())),
