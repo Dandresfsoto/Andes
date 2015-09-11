@@ -4,14 +4,30 @@ from django.utils.encoding import smart_unicode
 
 class Gestor(models.Model):
     region = models.ForeignKey(Region)
+
     nombre = models.CharField(max_length=100)
     cedula = models.IntegerField()
-    celular = models.BigIntegerField()
+    celular = models.CharField(max_length=100)
     correo = models.EmailField()
+
+    cargo = models.CharField(max_length=100,blank=True)
+    profesion = models.CharField(max_length=100,blank=True)
+    banco = models.CharField(max_length=100,blank=True)
+    tipo_cuenta = models.CharField(max_length=100,blank=True)
+    numero_cuenta = models.CharField(max_length=100,blank=True)
+    eps = models.CharField(max_length=100,blank=True)
+    pension = models.CharField(max_length=100,blank=True)
+    arl = models.CharField(max_length=100,blank=True)
+    foto = models.FileField(upload_to="Gestores/Foto/",blank=True)
+
     hv = models.FileField(upload_to="Gestores/Hojas de Vida/",blank=True)
     certificacion = models.FileField(upload_to="Gestores/Certificacion Bancaria/",blank=True)
     rut = models.FileField(upload_to="Gestores/Rut/",blank=True)
     contrato = models.FileField(upload_to="Gestores/Contratos/",blank=True)
+    fotocopia_cedula = models.FileField(upload_to="Gestores/Fotocopia Cedula/",blank=True)
+    antecedentes_judiciales = models.FileField(upload_to="Gestores/Antecedentes Judiciales/",blank=True)
+    antecedentes_contraloria = models.FileField(upload_to="Gestores/Antecedentes Contraloria/",blank=True)
+
     seguro_enero = models.FileField(upload_to="Gestores/Seguro/Enero",blank=True)
     seguro_febrero = models.FileField(upload_to="Gestores/Seguro/Febrero",blank=True)
     seguro_marzo = models.FileField(upload_to="Gestores/Seguro/Marzo",blank=True)

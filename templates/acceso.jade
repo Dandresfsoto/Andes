@@ -1,0 +1,31 @@
+extends base
+block titulo
+    | Acceso
+
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../") {{REGION}}
+    li
+        a(href="../") Andes
+    li(class="active") Calificación
+block body_content
+    div(class="container-fluid")
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
+            a(href="calificacion/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/calificacion.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Calificación
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
+            a(href="administracion/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/administrativo.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Administración
+    div(class="container-fluid margin-top-50")

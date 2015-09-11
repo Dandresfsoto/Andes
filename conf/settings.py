@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'user',
     'region',
     'departamento',
+    'municipio',
     'diplomado',
     'area',
     'beneficiario',
@@ -62,6 +63,7 @@ INSTALLED_APPS = (
     'funcionario',
     'eje',
     'pqr',
+    'acceso',
 )
 
 REST_FRAMEWORK = {

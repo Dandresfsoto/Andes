@@ -45,7 +45,7 @@
       </div>
     </nav>{% endif %}{% get_obj_perms request.user for object_list as "permisos" %}
     <div class="container-fluid">
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50">{% if "acceso" in permisos %}<a href="cpe/" class="text-center">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50">{% if "acceso" in permisos %}<a href="acceso/" class="text-center">
           <div class="box">
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/acceso.png' %}" class="center-block img-responsive hvr-pop"></div>

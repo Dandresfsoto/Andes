@@ -1,10 +1,20 @@
 from django import forms
 from .models import Gestor
 
+class GestorFotoForm(forms.ModelForm):
+    class Meta:
+        model = Gestor
+        fields = ['foto']
+
 class GestorSoporteForm(forms.ModelForm):
     class Meta:
         model = Gestor
-        fields = ['hv','certificacion','rut','contrato']
+        fields = ['hv','certificacion','rut','contrato','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria']
+
+class GestorInformacionForm(forms.ModelForm):
+    class Meta:
+        model = Gestor
+        fields = ['celular','correo','cargo','profesion','banco','tipo_cuenta','numero_cuenta','eps','pension','arl']
 
 class GestorSeguroForm(forms.ModelForm):
     class Meta:

@@ -73,3 +73,21 @@ class AdministrativoMixin(object):
         if not response:
             return render(request, 'permisos.html')
         return super(AdministrativoMixin, self).dispatch(request, *args,**kwargs)
+
+class AccesoMixin(object):
+
+    def check_permissions(self, request):
+        user = request.user
+        region = Region.objects.get(pk=self.kwargs['pk'])
+        checker = ObjectPermissionChecker(user)
+        response = checker.has_perm('acceso',region)
+        return response
+
+    def dispatch(self, request, *args, **kwargs):
+        self.request = request
+        self.args = args
+        self.kwargs = kwargs
+        response = self.check_permissions(request)
+        if not response:
+            return render(request, 'permisos.html')
+        return super(AccesoMixin, self).dispatch(request, *args,**kwargs)
