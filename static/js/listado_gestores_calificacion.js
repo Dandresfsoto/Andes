@@ -2,7 +2,7 @@ function format ( d ) {
     // `d` is the original data object for the row
 
     if(d[7] != ""){
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[13]+'" height="200"></td>'
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[7]+'" height="200"></td>'
     }
     else{
         imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/static/imagenes/user-unknown.png" height="200"></td>'
