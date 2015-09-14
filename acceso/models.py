@@ -7,7 +7,7 @@ from django.utils.encoding import smart_unicode
 def content_file_name(instance, filename):
     x = filename.split(".")
     filename = '.'.join([str(instance.radicado.numero),x[len(x)-1]])
-    return '/'.join(['Acceso', 'R4', instance.actividad.nombre,str(instance.radicado.numero),filename])
+    return '/'.join(['Acceso', 'R4', smart_unicode(instance.actividad.nombre),str(instance.radicado.numero),filename])
 
 class Ciclo(models.Model):
     nombre = models.CharField(max_length=100)
@@ -21,13 +21,12 @@ class Componente(models.Model):
     def __unicode__(self):
         return smart_unicode(self.nombre)
 
-
 class Modulo(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=200)
 
     def __unicode__(self):
-        return smart_unicode(self.nombre)
+        return smart_unicode('%s - %s' % (self.nombre, self.descripcion))
 
 class Actividad(models.Model):
     nombre = models.CharField(max_length=100)
@@ -35,15 +34,13 @@ class Actividad(models.Model):
     descripcion = models.TextField(max_length=2000)
 
     def __unicode__(self):
-        return smart_unicode(self.nombre)
-
+        return smart_unicode('%s - %s' % (self.nombre, self.titulo))
 
 class Encargado(models.Model):
     encargado = models.CharField(max_length=100)
 
     def __unicode__(self):
         return smart_unicode(self.encargado)
-
 
 class Entregables(models.Model):
     entregables = models.CharField(max_length=1000)
@@ -64,7 +61,6 @@ class Corte(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.valor)
-
 
 class Evidencia(models.Model):
     radicado = models.ForeignKey(Radicado)

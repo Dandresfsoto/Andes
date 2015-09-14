@@ -284,7 +284,3 @@ class FormadorActualizarSeguroView(AdministrativoMixin,UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FormadorActualizarSeguroView,self).get_context_data(**kwargs)
 
-
-
-
-

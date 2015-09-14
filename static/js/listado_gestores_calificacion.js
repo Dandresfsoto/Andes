@@ -1,7 +1,39 @@
 function format ( d ) {
     // `d` is the original data object for the row
 
+    if(d[7] != ""){
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[13]+'" height="200"></td>'
+    }
+    else{
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/static/imagenes/user-unknown.png" height="200"></td>'
+    }
+
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b>INFORMACIÓN</b></h4></th>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Cargo:</b> '+d[5]+'</td>'+
+            '<td colspan="2"><b>Profesion:</b> '+d[6]+'</td>'+
+            imagen+
+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Radicados asignados:</b> '+d[9]+'</td>'+
+            '<td colspan="2"><b>Actividades:</b> '+d[8]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Actividades ejecutadas:</b> '+d[10]+'</td>'+
+            '<td colspan="2"><b>Actividades por ejecutar:</b> '+d[11]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="4"><b>Progreso: </b>'+d[12]+'%<progress value="'+d[10]+'" max="'+d[8]+'" style="width:100%;"></progress></td>'+
+        '</tr>'+
 
     '</table></div>';
 }
@@ -24,14 +56,14 @@ $(document).ready(function() {
                 "defaultContent": ''
             },
             {
-                "data": 0,
+                "data": 1,
                 "render": function ( data, type, row, meta ) {
                           return '<a href="#" style="color:#004c99;">'+data+'</a>';
                 },
             },
-            { "data": 1 },
             { "data": 2 },
             { "data": 3 },
+            { "data": 4 },
         ],
         "order": [[1, 'asc']],
     });
