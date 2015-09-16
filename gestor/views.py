@@ -183,15 +183,14 @@ class GestorCalificacionTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             actividades = Evidencia.objects.all().filter(gestor__id=item.id)
+            radicado = actividades.values_list('radicado',flat=True).distinct().count()
             actividades_ejecutadas = actividades.exclude(soporte = "")
             actividades_sinEjecutar = actividades.filter(soporte = "")
-            if len(actividades) != 0:
-                progreso = format(len(actividades_ejecutadas)*100/len(actividades), '.2f')
+            if actividades.count() != 0:
+                progreso = format(actividades_ejecutadas.count()*100/actividades.count(), '.2f')
             else:
                 progreso = 0
-            radicado = []
-            for actividad in actividades:
-                radicado.append(actividad.radicado.numero)
+
 
             json_data.append([
                 item.id,
@@ -202,10 +201,10 @@ class GestorCalificacionTableView(BaseDatatableView):
                 item.cargo,
                 item.profesion,
                 str(item.foto),
-                len(actividades),
-                len(list(set(radicado))),
-                len(actividades_ejecutadas),
-                len(actividades_sinEjecutar),
+                actividades.count(),
+                radicado,
+                actividades_ejecutadas.count(),
+                actividades_sinEjecutar.count(),
                 progreso,
             ])
         return json_data

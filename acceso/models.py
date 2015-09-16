@@ -31,7 +31,7 @@ class Modulo(models.Model):
 class Actividad(models.Model):
     nombre = models.CharField(max_length=100)
     titulo = models.CharField(max_length=200)
-    descripcion = models.TextField(max_length=2000)
+    descripcion = models.TextField(max_length=2000,blank=True)
 
     def __unicode__(self):
         return smart_unicode('%s - %s' % (self.nombre, self.titulo))

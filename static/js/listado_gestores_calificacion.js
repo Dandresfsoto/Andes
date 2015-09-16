@@ -58,7 +58,7 @@ $(document).ready(function() {
             {
                 "data": 1,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="#" style="color:#004c99;">'+data+'</a>';
+                          return '<a href="'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
             },
             { "data": 2 },

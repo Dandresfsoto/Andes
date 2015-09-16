@@ -4,7 +4,7 @@ from .models import Radicado
 
 class RadicadoAdmin(admin.ModelAdmin):
     list_display = ('numero','municipio')
-    search_fields = ['municipio__nombre']
+    search_fields = ['numero']
     list_filter = ('municipio__departamento',)
 
 admin.site.register(Radicado,RadicadoAdmin)

@@ -2,8 +2,10 @@ from django.db import models
 from django.utils.encoding import smart_unicode
 from departamento.models import Departamento
 from municipio.models import Municipio
+from region.models import Region
 
 class Radicado(models.Model):
+    region = models.ForeignKey(Region)
     numero = models.BigIntegerField()
     dane_sede = models.CharField(max_length=100,blank=True)
     sede_id = models.CharField(max_length=100,blank=True)

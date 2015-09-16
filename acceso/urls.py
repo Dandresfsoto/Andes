@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$', login_required(views.AccesoView.as_view()),name='acceso'),
 
     url(r'^calificacion/$', login_required(views.AccesoCalificacionView.as_view())),
+    url(r'^calificacion/(?P<id_gestor>\w+)/$', login_required(views.AccesoListadoRadicadosView.as_view())),
 
     url(r'^administracion/$', login_required(views.AccesoView.as_view())),
 ]
