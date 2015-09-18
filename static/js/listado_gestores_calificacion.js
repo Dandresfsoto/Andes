@@ -65,7 +65,6 @@ $(document).ready(function() {
             { "data": 3 },
             { "data": 4 },
         ],
-        "order": [[1, 'asc']],
     });
 
 

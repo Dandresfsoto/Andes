@@ -18,7 +18,10 @@ class RadicadoTableView(BaseDatatableView):
     def get_initial_queryset(self):
         if not self.model:
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
-        return self.model.objects.all().filter(gestor__id=self.kwargs['id_gestor']).values('radicado__id','radicado__numero','radicado__municipio__nombre','radicado__municipio__departamento__nombre').distinct()
+        return self.model.objects.all().filter(gestor__id=self.kwargs['id_gestor']).values(
+            'radicado__id','radicado__numero','radicado__municipio__nombre',
+            'radicado__municipio__departamento__nombre','radicado__zona','radicado__matricula',
+            'radicado__nombre_institucion','radicado__dane_institucion','radicado__nombre_sede','radicado__dane_sede').distinct()
 
     def filter_queryset(self, qs):
         search = self.request.GET.get(u'search[value]', None)
@@ -41,10 +44,28 @@ class RadicadoTableView(BaseDatatableView):
     def prepare_results(self, qs):
         json_data = []
         for item in qs:
+            actividades = Evidencia.objects.all().filter(radicado__id=item['radicado__id'])
+            ejecutadas = actividades.exclude(soporte="").count()
+            sin_ejecutar = actividades.filter(soporte="").count()
+
+            if actividades.count() != 0:
+                progreso = format((ejecutadas*100)/actividades.count(), '.2f')
+            else:
+                progreso = 0
+
             json_data.append([
                 item['radicado__id'],
                 item['radicado__numero'],
                 item['radicado__municipio__nombre'],
-                item['radicado__municipio__departamento__nombre']
+                item['radicado__municipio__departamento__nombre'],
+                item['radicado__zona'],
+                item['radicado__matricula'],
+                item['radicado__nombre_institucion'],
+                item['radicado__dane_institucion'],
+                item['radicado__nombre_sede'],
+                item['radicado__dane_sede'],
+                ejecutadas,
+                sin_ejecutar,
+                progreso
             ])
         return json_data

@@ -3,11 +3,12 @@ from radicado.models import Radicado
 from gestor.models import Gestor
 from region.models import Region
 from django.utils.encoding import smart_unicode
+from django.contrib.auth.models import User
 
 def content_file_name(instance, filename):
     x = filename.split(".")
     filename = '.'.join([str(instance.radicado.numero),x[len(x)-1]])
-    return '/'.join(['Acceso', 'R4', smart_unicode(instance.actividad.nombre),str(instance.radicado.numero),filename])
+    return '/'.join(['Acceso', 'R4', smart_unicode(instance.ciclo.nombre),smart_unicode(instance.actividad.nombre),str(instance.radicado.numero),filename])
 
 class Ciclo(models.Model):
     nombre = models.CharField(max_length=100)
@@ -63,7 +64,7 @@ class Corte(models.Model):
         return smart_unicode(self.valor)
 
 class Evidencia(models.Model):
-    radicado = models.ForeignKey(Radicado)
+    radicado = models.ForeignKey(Radicado,related_name='numeroRadicado')
     gestor = models.ForeignKey(Gestor)
     ciclo = models.ForeignKey(Ciclo)
     componente = models.ForeignKey(Componente)
@@ -73,6 +74,8 @@ class Evidencia(models.Model):
     valor = models.ForeignKey(Valor)
     soporte = models.FileField(upload_to=content_file_name,blank=True)
     corte = models.ForeignKey(Corte,blank=True,null=True)
+    usuario = models.ForeignKey(User,blank=True,null=True)
+    modificacion = models.DateTimeField(blank=True,null=True)
 
     def __unicode__(self):
         return smart_unicode(self.radicado)
