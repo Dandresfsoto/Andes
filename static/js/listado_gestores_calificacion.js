@@ -32,6 +32,10 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
+            '<td colspan="2"><b>Actividades quincena:</b> '+d[13]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
             '<td colspan="4"><b>Progreso: </b>'+d[12]+'%<progress value="'+d[10]+'" max="'+d[8]+'" style="width:100%;"></progress></td>'+
         '</tr>'+
 

@@ -45,11 +45,12 @@ class RadicadoTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             actividades = Evidencia.objects.all().filter(radicado__id=item['radicado__id'])
-            ejecutadas = actividades.exclude(soporte="").count()
-            sin_ejecutar = actividades.filter(soporte="").count()
+            ejecutadas = actividades.exclude(corte=None).count()
+            sin_ejecutar = actividades.filter(corte=None).count()
+            sin_reportar = actividades.filter(corte=None).exclude(soporte="").count()
 
             if actividades.count() != 0:
-                progreso = format((ejecutadas*100)/actividades.count(), '.2f')
+                progreso = format((ejecutadas*100.0)/actividades.count(), '.2f')
             else:
                 progreso = 0
 
@@ -66,6 +67,7 @@ class RadicadoTableView(BaseDatatableView):
                 item['radicado__dane_sede'],
                 ejecutadas,
                 sin_ejecutar,
-                progreso
+                progreso,
+                sin_reportar
             ])
         return json_data

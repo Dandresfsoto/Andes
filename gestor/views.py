@@ -168,7 +168,7 @@ class GestorCalificacionTableView(BaseDatatableView):
         search = self.request.GET.get(u'search[value]', None)
         q = Q()
         if search:
-            q |= Q(**{'nombre__icontains' : search})
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
             q |= Q(**{'cedula__icontains' : search})
             qs = qs.filter(q)
         return qs
@@ -182,12 +182,13 @@ class GestorCalificacionTableView(BaseDatatableView):
     def prepare_results(self, qs):
         json_data = []
         for item in qs:
-            actividades = Evidencia.objects.all().filter(gestor__id=item.id)
+            actividades = Evidencia.objects.filter(gestor__id=item.id)
             radicado = actividades.values_list('radicado',flat=True).distinct().count()
-            actividades_ejecutadas = actividades.exclude(soporte = "")
-            actividades_sinEjecutar = actividades.filter(soporte = "")
+            actividades_ejecutadas = actividades.exclude(corte = None)
+            actividades_sinEjecutar = actividades.filter(corte = None)
+            actividades_sinReportar = actividades.filter(corte = None).exclude(soporte="")
             if actividades.count() != 0:
-                progreso = format(actividades_ejecutadas.count()*100/actividades.count(), '.2f')
+                progreso = format((actividades_ejecutadas.count()*100.0)/actividades.count(), '.2f')
             else:
                 progreso = 0
 
@@ -206,5 +207,6 @@ class GestorCalificacionTableView(BaseDatatableView):
                 actividades_ejecutadas.count(),
                 actividades_sinEjecutar.count(),
                 progreso,
+                actividades_sinReportar.count()
             ])
         return json_data
