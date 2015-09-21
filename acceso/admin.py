@@ -6,6 +6,7 @@ class ModuloAdmin(admin.ModelAdmin):
 
 class EvidenciaAdmin(admin.ModelAdmin):
     list_display = ('radicado','ciclo','componente','modulo','actividad','encargado')
+    search_fields = ('radicado__numero',)
 
 admin.site.register(Ciclo)
 admin.site.register(Componente)

@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d437ff-e0c6-4dea-a8b5-6ad6b346880d" name="Default" comment="Documentacion settings">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso.html" afterPath="$PROJECT_DIR$/templates/acceso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_cpe.html" afterPath="$PROJECT_DIR$/templates/acceso_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_gestores.html" afterPath="$PROJECT_DIR$/templates/acceso_gestores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_radicados.html" afterPath="$PROJECT_DIR$/templates/acceso_radicados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/administrativo.html" afterPath="$PROJECT_DIR$/templates/administrativo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/andes.html" afterPath="$PROJECT_DIR$/templates/andes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/block.html" afterPath="$PROJECT_DIR$/templates/block.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cambio_password.html" afterPath="$PROJECT_DIR$/templates/cambio_password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe.html" afterPath="$PROJECT_DIR$/templates/cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados.html" afterPath="$PROJECT_DIR$/templates/diplomados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados_informacion.html" afterPath="$PROJECT_DIR$/templates/diplomados_informacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editar.html" afterPath="$PROJECT_DIR$/templates/editar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/eliminar.html" afterPath="$PROJECT_DIR$/templates/eliminar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/evidencias_radicado.html" afterPath="$PROJECT_DIR$/templates/evidencias_radicado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formacion_cpe.html" afterPath="$PROJECT_DIR$/templates/formacion_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/inicio.html" afterPath="$PROJECT_DIR$/templates/inicio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado.html" afterPath="$PROJECT_DIR$/templates/listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_formadores.html" afterPath="$PROJECT_DIR$/templates/listado_formadores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionarios.html" afterPath="$PROJECT_DIR$/templates/listado_funcionarios.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores.html" afterPath="$PROJECT_DIR$/templates/listado_gestores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/listado_gestores_calificacion.js" afterPath="$PROJECT_DIR$/static/js/listado_gestores_calificacion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_proyectos.html" afterPath="$PROJECT_DIR$/templates/listado_proyectos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/listado_radicados_calificacion.js" afterPath="$PROJECT_DIR$/static/js/listado_radicados_calificacion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_user.html" afterPath="$PROJECT_DIR$/templates/new_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo.html" afterPath="$PROJECT_DIR$/templates/nuevo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/permisos.html" afterPath="$PROJECT_DIR$/templates/permisos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/proyecto.html" afterPath="$PROJECT_DIR$/templates/proyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/region.html" afterPath="$PROJECT_DIR$/templates/region.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_foto_funcionario.html" afterPath="$PROJECT_DIR$/templates/update_foto_funcionario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_foto_gestor.html" afterPath="$PROJECT_DIR$/templates/update_foto_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_funcionario_informacion.html" afterPath="$PROJECT_DIR$/templates/update_funcionario_informacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_funcionario_soporte.html" afterPath="$PROJECT_DIR$/templates/update_funcionario_soporte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_gestor.html" afterPath="$PROJECT_DIR$/templates/update_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_gestor_soporte.html" afterPath="$PROJECT_DIR$/templates/update_gestor_soporte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_informacion_gestor.html" afterPath="$PROJECT_DIR$/templates/update_informacion_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_seguro_funcionario.html" afterPath="$PROJECT_DIR$/templates/update_seguro_funcionario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_seguro_gestor.html" afterPath="$PROJECT_DIR$/templates/update_seguro_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/views.py" afterPath="$PROJECT_DIR$/gestor/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/radicado/views.py" afterPath="$PROJECT_DIR$/radicado/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/admin.py" afterPath="$PROJECT_DIR$/acceso/admin.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,12 +39,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listado_radicados_calificacion.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listado_radicados_calificacion.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/listado_radicados_calificacion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76">
+            <state vertical-scroll-proportion="0.0">
               <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceso/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="80" column="43" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#272#520#0" expanded="false" />
+                <element signature="e#553#664#0" expanded="false" />
+                <element signature="e#702#813#0" expanded="false" />
+                <element signature="e#847#1041#0" expanded="false" />
+                <element signature="e#1078#1325#0" expanded="false" />
+                <element signature="e#1362#1479#0" expanded="false" />
+                <element signature="e#1518#1640#0" expanded="false" />
+                <element signature="e#1673#1774#0" expanded="false" />
+                <element signature="e#1807#2021#0" expanded="false" />
+                <element signature="e#2058#2737#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,7 +136,6 @@
         <option value="$PROJECT_DIR$/administrativo/views.py" />
         <option value="$PROJECT_DIR$/templates/acceso.jade" />
         <option value="$PROJECT_DIR$/templates/acceso_gestores.jade" />
-        <option value="$PROJECT_DIR$/acceso/admin.py" />
         <option value="$PROJECT_DIR$/radicado/models.py" />
         <option value="$PROJECT_DIR$/conf/urls.py" />
         <option value="$PROJECT_DIR$/radicado/urls.py" />
@@ -159,6 +151,7 @@
         <option value="$PROJECT_DIR$/gestor/views.py" />
         <option value="$PROJECT_DIR$/radicado/views.py" />
         <option value="$PROJECT_DIR$/static/js/listado_radicados_calificacion.js" />
+        <option value="$PROJECT_DIR$/acceso/admin.py" />
       </list>
     </option>
   </component>
@@ -229,24 +222,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -870,13 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/region/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.009411764">
@@ -1068,17 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48">
-          <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#702#813#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/evidencias_radicado.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6023529">
@@ -1128,9 +1085,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/listado_radicados_calificacion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="43" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#272#520#0" expanded="false" />
+            <element signature="e#553#664#0" expanded="false" />
+            <element signature="e#702#813#0" expanded="false" />
+            <element signature="e#847#1041#0" expanded="false" />
+            <element signature="e#1078#1325#0" expanded="false" />
+            <element signature="e#1362#1479#0" expanded="false" />
+            <element signature="e#1518#1640#0" expanded="false" />
+            <element signature="e#1673#1774#0" expanded="false" />
+            <element signature="e#1807#2021#0" expanded="false" />
+            <element signature="e#2058#2737#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
