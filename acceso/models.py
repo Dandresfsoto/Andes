@@ -61,7 +61,7 @@ class Corte(models.Model):
     descripcion = models.TextField(max_length=5000)
 
     def __unicode__(self):
-        return smart_unicode(self.valor)
+        return smart_unicode(self.titulo)
 
 class Evidencia(models.Model):
     radicado = models.ForeignKey(Radicado,related_name='numeroRadicado')
