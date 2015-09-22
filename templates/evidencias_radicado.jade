@@ -5,15 +5,17 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../../../../") {{REGION}}
+        a(href="../../../../../../../../") {{REGION}}
     li
-        a(href="../../../../../") Andes
+        a(href="../../../../../../../") Andes
     li
-        a(href="../../../../") Acceso
+        a(href="../../../../../../") Acceso
     li
-        a(href="../../../") Calificación
+        a(href="../../../../../") Calificación
     li
-        a(href="../../") {{gestor}}
+        a(href="../../../../") {{gestor}}
+    li
+        a(href="../../") {{municipio}}
     li(class="active") Radicado: {{radicado}}
 block body_content
     div(class="container-fluid")
@@ -27,6 +29,7 @@ block body_content
                     th(class="text-center") Limpiar:
                     th(class="text-center") Nuevo Soporte:
                 | {% for form in formset.forms %}
+                |{% if form.instance.corte == None %}
                 tr
                     td
                         |{{form.instance.ciclo.nombre}}
@@ -47,6 +50,29 @@ block body_content
                     td
                         input(id="{{form.soporte.id_for_label}}",name="{{form.soporte.html_name}}",type="file")
                         |{{form.id}}
+
+                |{% else %}
+                tr(style="background-color:#F29B00;")
+                    td
+                        |{{form.instance.ciclo.nombre}}
+                    td
+                        |{{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}
+                    td
+                        |{{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}
+                    td
+                        |{% if form.instance.soporte != "" %}
+                        a(href="/media/{{form.instance.soporte}}",target="_blank")
+                            img(src="/static/imagenes/pdf.png",width="64",height="64")
+                        |{% else %}
+                        img(src="/static/imagenes/pdf-gris.png",width="64",height="64")
+                        |{% endif %}
+                    td
+                        input(id="{{form.soporte.html_name}}-clear_id",name="{{form.soporte.html_name}}-clear",type="checkbox")
+                        |{{form.id}}
+                    td
+                        input(id="{{form.soporte.id_for_label}}",name="{{form.soporte.html_name}}",type="file")
+                        |{{form.id}}
+                |{% endif %}
                 | {% endfor %}
                 |{{ formset.management_form }}
                |{% csrf_token %}

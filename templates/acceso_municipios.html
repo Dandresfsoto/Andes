@@ -28,12 +28,11 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../../../../../../">{{REGION}}</a></li>
-                <li><a href="../../../../../">Andes</a></li>
-                <li><a href="../../../../">Acceso</a></li>
-                <li><a href="../../../">Calificación</a></li>
-                <li><a href="../../">{{NOMBRE}}</a></li>
-                <li class="active">{{MUNICIPIO}}</li>
+                <li><a href="../../../../">{{REGION}}</a></li>
+                <li><a href="../../../">Andes</a></li>
+                <li><a href="../../">Acceso</a></li>
+                <li><a href="../">Calificación</a></li>
+                <li class="active">{{NOMBRE}}</li>
               </ol>
             </div>
           </ul>
@@ -51,12 +50,10 @@
     <div class="container-fluid">
       <input type="hidden" name="id_region" value="{{ID_REGION}}" id="id_region">
       <input type="hidden" name="id_gestor" value="{{ID_GESTOR}}" id="id_gestor">
-      <input type="hidden" name="id_municipio" value="{{ID_MUNICIPIO}}" id="id_municipio">
       <table id="table" class="table table-striped table-bordered">
         <thead>
           <tr>
             <th></th>
-            <th>Numero</th>
             <th>Municipio</th>
             <th>Departamento</th>
           </tr>
@@ -64,7 +61,6 @@
         <tbody>
           <tr>
             <th></th>
-            <th>Numero</th>
             <th>Municipio</th>
             <th>Departamento</th>
           </tr>
@@ -78,7 +74,7 @@
     <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-img-lightbox-tooltip.js' %}"></script>
     <script src="{% static 'js/jquery.ezdz.js' %}"></script>{% progress_bar_media %}
-    <script src="{% static 'js/listado_radicados_calificacion.js' %}"></script>
+    <script src="{% static 'js/listado_municipios_calificacion.js' %}"></script>
     <script>
       if(localStorage.getItem("user") != null){
       $("#profileImage").attr('src',localStorage.getItem("user"));}

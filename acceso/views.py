@@ -3,6 +3,7 @@ from mixins.mixins import AccesoMixin
 from region.models import Region
 from gestor.models import Gestor
 from radicado.models import Radicado
+from municipio.models import Municipio
 import datetime
 
 from .models import Evidencia
@@ -43,11 +44,23 @@ class AccesoListadoRadicadosView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['NOMBRE'] = Gestor.objects.get(pk=self.kwargs['id_gestor']).nombre
+        kwargs['MUNICIPIO'] = Municipio.objects.get(pk=self.kwargs['id_municipio']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
+        kwargs['ID_MUNICIPIO'] = self.kwargs['id_municipio']
         return super(AccesoListadoRadicadosView,self).get_context_data(**kwargs)
 
-def evidencia_form(request,id_radicado,pk,id_gestor):
+class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
+    template_name = 'acceso_municipios.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['NOMBRE'] = Gestor.objects.get(pk=self.kwargs['id_gestor']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
+        return super(AccesoListadoMunicipiosView,self).get_context_data(**kwargs)
+
+def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
         formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(corte=None))
@@ -60,7 +73,9 @@ def evidencia_form(request,id_radicado,pk,id_gestor):
                     obj.modificacion = datetime.datetime.now()
                     obj.save()
     else:
-        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(corte=None),)
+        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado),)
     return render_to_response("evidencias_radicado.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre,
-                                                          "gestor":Gestor.objects.get(pk=id_gestor).nombre,"radicado":Radicado.objects.get(pk=id_radicado)},
+                                                          "gestor":Gestor.objects.get(pk=id_gestor).nombre,
+                                                          "radicado":Radicado.objects.get(pk=id_radicado),
+                                                          "municipio":Municipio.objects.get(pk=id_municipio)},
                               context_instance=RequestContext(request))

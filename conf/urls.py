@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^participantes/',include('participantes.urls')),
     url(r'^gestor/',include('gestor.urls')),
     url(r'^radicado/',include('radicado.urls')),
+    url(r'^municipio/',include('municipio.urls')),
     url(r'^formador/',include('formador.urls')),
     url(r'^funcionario/',include('funcionario.urls')),
     url(r'^progressbarupload/', include('progressbarupload.urls')),

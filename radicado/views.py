@@ -18,8 +18,8 @@ class RadicadoTableView(BaseDatatableView):
     def get_initial_queryset(self):
         if not self.model:
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
-        return self.model.objects.all().filter(gestor__id=self.kwargs['id_gestor']).values(
-            'radicado__id','radicado__numero','radicado__municipio__nombre',
+        return self.model.objects.all().filter(gestor__id=self.kwargs['id_gestor']).filter(radicado__municipio__id=self.kwargs['id_municipio']).\
+            values('radicado__id','radicado__numero','radicado__municipio__nombre',
             'radicado__municipio__departamento__nombre','radicado__zona','radicado__matricula',
             'radicado__nombre_institucion','radicado__dane_institucion','radicado__nombre_sede','radicado__dane_sede').distinct()
 

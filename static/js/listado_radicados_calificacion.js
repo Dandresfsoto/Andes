@@ -28,10 +28,6 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Actividades quincena:</b> '+d[13]+'</td>'+
-        '</tr>'+
-
-        '<tr>'+
             '<td colspan="4"><b>Progreso: </b>'+d[12]+'%<progress value="'+d[10]+'" max="90" style="width:100%;"></progress></td>'+
         '</tr>'+
 
@@ -44,7 +40,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/radicado/lista/"+ $('#id_region').val()+"/"+$('#id_gestor').val(),
+        "ajax": "/radicado/lista/"+ $('#id_region').val()+"/"+$('#id_municipio').val()+"/"+$('#id_gestor').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -60,9 +56,10 @@ $(document).ready(function() {
                 "render": function ( data, type, row, meta ) {
                           return '<a href="radicado/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
+                "orderable":      false,
             },
-            { "data": 2 },
-            { "data": 3 }
+            { "data": 2,"orderable":false },
+            { "data": 3,"orderable":false }
         ],
     });
 

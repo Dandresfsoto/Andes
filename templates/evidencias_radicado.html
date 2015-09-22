@@ -28,11 +28,12 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../../../../../../">{{REGION}}</a></li>
-                <li><a href="../../../../../">Andes</a></li>
-                <li><a href="../../../../">Acceso</a></li>
-                <li><a href="../../../">Calificación</a></li>
-                <li><a href="../../">{{gestor}}</a></li>
+                <li><a href="../../../../../../../../">{{REGION}}</a></li>
+                <li><a href="../../../../../../../">Andes</a></li>
+                <li><a href="../../../../../../">Acceso</a></li>
+                <li><a href="../../../../../">Calificación</a></li>
+                <li><a href="../../../../">{{gestor}}</a></li>
+                <li><a href="../../">{{municipio}}</a></li>
                 <li class="active">Radicado: {{radicado}}</li>
               </ol>
             </div>
@@ -59,6 +60,7 @@
             <th class="text-center">Limpiar:</th>
             <th class="text-center">Nuevo Soporte:</th>
           </tr>{% for form in formset.forms %}
+          {% if form.instance.corte == None %}
           <tr>
             <td>{{form.instance.ciclo.nombre}}</td>
             <td>{{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}</td>
@@ -70,7 +72,20 @@
             <td>
               <input id="{{form.soporte.id_for_label}}" name="{{form.soporte.html_name}}" type="file">{{form.id}}
             </td>
-          </tr>{% endfor %}
+          </tr>{% else %}
+          <tr style="background-color:#F29B00;">
+            <td>{{form.instance.ciclo.nombre}}</td>
+            <td>{{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}</td>
+            <td>{{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}</td>
+            <td>{% if form.instance.soporte != "" %}<a href="/media/{{form.instance.soporte}}" target="_blank"><img src="/static/imagenes/pdf.png" width="64" height="64"></a>{% else %}<img src="/static/imagenes/pdf-gris.png" width="64" height="64">{% endif %}</td>
+            <td>
+              <input id="{{form.soporte.html_name}}-clear_id" name="{{form.soporte.html_name}}-clear" type="checkbox">{{form.id}}
+            </td>
+            <td>
+              <input id="{{form.soporte.id_for_label}}" name="{{form.soporte.html_name}}" type="file">{{form.id}}
+            </td>
+          </tr>{% endif %}
+          {% endfor %}
           {{ formset.management_form }}
         </table>{% csrf_token %}
         <div class="container-fluid barra">

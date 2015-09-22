@@ -1,13 +1,5 @@
 function format ( d ) {
     // `d` is the original data object for the row
-
-    if(d[7] != ""){
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[7]+'" height="200"></td>'
-    }
-    else{
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/static/imagenes/user-unknown.png" height="200"></td>'
-    }
-
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
         '<tr>'+
@@ -15,28 +7,23 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Cargo:</b> '+d[5]+'</td>'+
-            '<td colspan="2"><b>Profesion:</b> '+d[6]+'</td>'+
-            imagen+
+            '<td colspan="2"><b>Codigo municipio:</b> '+d[3]+'</td>'+
+            '<td colspan="2"><b>Codigo departamento:</b> '+d[4]+'</td>'+
 
         '</tr>'+
 
-        '<tr>'+
-            '<td colspan="2"><b>Radicados asignados:</b> '+d[9]+'</td>'+
-            '<td colspan="2"><b>Actividades:</b> '+d[8]+'</td>'+
+
+         '<tr>'+
+            '<td colspan="2"><b>Actividades ejecutadas:</b> '+d[5]+'</td>'+
+            '<td colspan="2"><b>Actividades pendientes:</b> '+d[6]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Actividades ejecutadas:</b> '+d[10]+'</td>'+
-            '<td colspan="2"><b>Actividades por ejecutar:</b> '+d[11]+'</td>'+
+            '<td colspan="2"><b>Actividades quincena:</b> '+d[7]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Actividades quincena:</b> '+d[13]+'</td>'+
-        '</tr>'+
-
-        '<tr>'+
-            '<td colspan="4"><b>Progreso: </b>'+d[12]+'%<progress value="'+d[10]+'" max="'+d[8]+'" style="width:100%;"></progress></td>'+
+            '<td colspan="4"><b>Progreso: </b>'+d[8]+'%<progress value="'+d[8]+'" max="100" style="width:100%;"></progress></td>'+
         '</tr>'+
 
     '</table></div>';
@@ -48,7 +35,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/gestor/calificacion/"+ $('#id_region').val(),
+        "ajax": "/municipio/lista/"+ $('#id_region').val()+"/"+$('#id_gestor').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -62,13 +49,11 @@ $(document).ready(function() {
             {
                 "data": 1,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="'+row[0]+'" style="color:#004c99;">'+data+'</a>';
+                          return '<a href="municipio/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
                 "orderable":false
             },
-            { "data": 2,"orderable":false },
-            { "data": 3,"orderable":false },
-            { "data": 4,"orderable":false },
+            { "data": 2,"orderable":false}
         ],
     });
 
@@ -89,6 +74,5 @@ $(document).ready(function() {
             tr.addClass('shown');
         }
     } );
-
 
 });
