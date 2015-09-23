@@ -6,7 +6,7 @@ from gestor.models import Gestor
 from gestor.forms import GestorSoporteForm, GestorSeguroForm, GestorInformacionForm, GestorFotoForm
 
 from formador.models import Formador
-from formador.forms import FormadorSoporteForm, FormadorSeguroForm
+from formador.forms import FormadorSoporteForm, FormadorSeguroForm, FormadorInformacionForm, FormadorFotoForm
 
 from funcionario.models import Funcionario
 from funcionario.forms import FuncionarioSoporteForm, FuncionarioSeguroForm, FuncionarioInformacionForm, FuncionarioFotoForm
@@ -19,15 +19,6 @@ class AdministrativoView(AdministrativoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(AdministrativoView,self).get_context_data(**kwargs)
-
-class FormadorView(AdministrativoMixin,TemplateView):
-    template_name = 'listado_formadores.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
-        kwargs['ID_REGION'] = self.kwargs['pk']
-        return super(FormadorView,self).get_context_data(**kwargs)
-
 
 
 
@@ -235,52 +226,102 @@ class GestorActualizarFotoView(AdministrativoMixin,UpdateView):
 
 
 
+class FormadorView(AdministrativoMixin,TemplateView):
+    template_name = 'listado_formadores.html'
 
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(FormadorView,self).get_context_data(**kwargs)
 
-
-class FormadorActualizarSoporteView(AdministrativoMixin,UpdateView):
+class FormadorActualizarInformacionView(AdministrativoMixin,UpdateView):
     model = Formador
-    form_class = FormadorSoporteForm
-    template_name = "update_gestor.html"
+    form_class = FormadorInformacionForm
+    template_name = "update_informacion_formador.html"
 
     pk_url_kwarg = "formador_id"
     success_url = "../../../"
 
 
     def get_context_data(self, **kwargs):
-        kwargs['actual_hv'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).hv
-        kwargs['actual_certificacion'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).certificacion
-        kwargs['actual_rut'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).rut
-        kwargs['actual_contrato'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).contrato
+        kwargs['informacion'] = [
+        {'nombre':"Celular",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).celular,'id':'celular','longitud': Formador._meta.get_field('celular').max_length},
+        {'nombre':"Correo",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).correo,'id':'correo','longitud': Formador._meta.get_field('correo').max_length},
+        {'nombre':"Cargo",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).cargo,'id':'cargo','longitud': Formador._meta.get_field('cargo').max_length},
+        {'nombre':"Profesion",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).profesion,'id':'profesion','longitud': Formador._meta.get_field('profesion').max_length},
+        {'nombre':"Banco",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).banco,'id':'banco','longitud': Formador._meta.get_field('banco').max_length},
+        {'nombre':"Tipo de Cuenta",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).tipo_cuenta,'id':'tipo_cuenta','longitud': Formador._meta.get_field('tipo_cuenta').max_length},
+        {'nombre':"Numero de Cuenta",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).numero_cuenta,'id':'numero_cuenta','longitud': Formador._meta.get_field('numero_cuenta').max_length},
+        {'nombre':"Eps",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).eps,'id':'eps','longitud':Formador._meta.get_field('eps').max_length},
+        {'nombre':"Pension",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).pension,'id':'pension','longitud':Formador._meta.get_field('pension').max_length},
+        {'nombre':"Arl",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).arl,'id':'arl','longitud':Formador._meta.get_field('arl').max_length}
+        ]
 
-        kwargs['nombre'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre
+        kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        return super(FormadorActualizarInformacionView,self).get_context_data(**kwargs)
+
+class FormadorActualizarSoporteView(AdministrativoMixin,UpdateView):
+    model = Formador
+    form_class = FormadorSoporteForm
+    template_name = "update_formador_soporte.html"
+
+    pk_url_kwarg = "formador_id"
+    success_url = "../../../"
+
+
+    def get_context_data(self, **kwargs):
+        kwargs['soportes'] = [{'nombre':'Hoja de Vida','soporte_id':"hv",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).hv},
+                              {'nombre':'Certificacion Bancaria','soporte_id':"certificacion",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).certificacion},
+                              {'nombre':'Rut','soporte_id':"rut",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).rut},
+                              {'nombre':'Contrato','soporte_id':"contrato",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).contrato},
+                              {'nombre':'Fotocopia Cedula','soporte_id':"fotocopia_cedula",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).fotocopia_cedula},
+                              {'nombre':'Ancedentes Judiciales','soporte_id':"antecedentes_judiciales",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).antecedentes_judiciales},
+                              {'nombre':'Antecedentes Contraloria','soporte_id':"antecedentes_contraloria",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).antecedentes_contraloria},
+                              ]
+
+        kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FormadorActualizarSoporteView,self).get_context_data(**kwargs)
 
 class FormadorActualizarSeguroView(AdministrativoMixin,UpdateView):
     model = Formador
     form_class = FormadorSeguroForm
-    template_name = "update_seguro_gestor.html"
+    template_name = "update_seguro_formador.html"
 
     pk_url_kwarg = "formador_id"
     success_url = "../../../"
 
 
     def get_context_data(self, **kwargs):
-        kwargs['soportes'] = [{'mes':"enero",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_enero},
-                              {'mes':"febrero",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_febrero},
-                              {'mes':"marzo",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_marzo},
-                              {'mes':"abril",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_abril},
-                              {'mes':"mayo",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_mayo},
-                              {'mes':"junio",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_junio},
-                              {'mes':"junlio",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_julio},
-                              {'mes':"agosto",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_agosto},
-                              {'mes':"septiembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_septiembre},
-                              {'mes':"octubre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_octubre},
-                              {'mes':"noviembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_noviembre},
-                              {'mes':"diciembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_diciembre},]
+        kwargs['soportes'] = [{'mes':"enero",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_enero},
+                              {'mes':"febrero",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_febrero},
+                              {'mes':"marzo",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_marzo},
+                              {'mes':"abril",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_abril},
+                              {'mes':"mayo",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_mayo},
+                              {'mes':"junio",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_junio},
+                              {'mes':"julio",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_julio},
+                              {'mes':"agosto",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_agosto},
+                              {'mes':"septiembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_septiembre},
+                              {'mes':"octubre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_octubre},
+                              {'mes':"noviembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_noviembre},
+                              {'mes':"diciembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_diciembre},]
 
-        kwargs['nombre'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre
+        kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FormadorActualizarSeguroView,self).get_context_data(**kwargs)
 
+class FormadorActualizarFotoView(AdministrativoMixin,UpdateView):
+    model = Formador
+    form_class = FormadorFotoForm
+    template_name = "update_foto_formador.html"
+
+    pk_url_kwarg = "formador_id"
+    success_url = "../../../"
+
+
+    def get_context_data(self, **kwargs):
+        kwargs['soporte'] = Formador.objects.get(pk=self.kwargs['formador_id']).foto
+        kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        return super(FormadorActualizarFotoView,self).get_context_data(**kwargs)

@@ -1,76 +1,96 @@
 function actualizar(){
     if(this.column != "") {
-        this.content = '<td><a href="/media/' + this.column + '"><img src="/static/imagenes/pdf.png" height="64" width="64"></a></td>';
+        this.content = '<td><a target="_blank" href="/media/' + this.column + '"><img src="/static/imagenes/pdf.png" height="48" width="48"></a></td>';
     }
 }
 
 function format ( d ) {
     // `d` is the original data object for the row
-    var init = '<td><img src="/static/imagenes/pdf-gris.png" height="64" width="64"></td>';
+    var init = '<td><img src="/static/imagenes/pdf-gris.png" height="48" width="48"></td>';
+    var imagen
+
+    if(d[13] != ""){
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><a href="actualizar/foto/'+d[0]+'/"><img src="/media/'+d[13]+'" height="200"></a></td>'
+    }
+    else{
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><a href="actualizar/foto/'+d[0]+'/"><img src="/static/imagenes/user-unknown.png" height="200"></a></td>'
+    }
 
     var hv = {content: init,
     actualizar: actualizar,
-    column: d[4]};
+    column: d[14]};
 
     var certificacion = {content: init,
     actualizar: actualizar,
-    column: d[5]};
+    column: d[15]};
 
     var rut = {content: init,
     actualizar: actualizar,
-    column: d[6]};
+    column: d[16]};
 
     var contrato = {content: init,
     actualizar: actualizar,
-    column: d[7]};
-
-    var enero = {content: init,
-    actualizar: actualizar,
-    column: d[8]};
-
-    var febrero = {content: init,
-    actualizar: actualizar,
-    column: d[9]};
-
-    var marzo = {content: init,
-    actualizar: actualizar,
-    column: d[10]};
-
-    var abril = {content: init,
-    actualizar: actualizar,
-    column: d[11]};
-
-    var mayo = {content: init,
-    actualizar: actualizar,
-    column: d[12]};
-
-    var junio = {content: init,
-    actualizar: actualizar,
-    column: d[13]};
-
-    var julio = {content: init,
-    actualizar: actualizar,
-    column: d[14]};
-
-    var agosto = {content: init,
-    actualizar: actualizar,
-    column: d[15]};
-
-    var septiembre = {content: init,
-    actualizar: actualizar,
-    column: d[16]};
-
-    var octubre = {content: init,
-    actualizar: actualizar,
     column: d[17]};
 
-    var noviembre = {content: init,
+    var fotocopia_cedula = {content: init,
     actualizar: actualizar,
     column: d[18]};
 
-    var diciembre = {content: init,
+    var antecedentes_judiciales = {content: init,
     actualizar: actualizar,
     column: d[19]};
+
+    var antecedentes_contraloria = {content: init,
+    actualizar: actualizar,
+    column: d[20]};
+
+    var enero = {content: init,
+    actualizar: actualizar,
+    column: d[21]};
+
+    var febrero = {content: init,
+    actualizar: actualizar,
+    column: d[22]};
+
+    var marzo = {content: init,
+    actualizar: actualizar,
+    column: d[23]};
+
+    var abril = {content: init,
+    actualizar: actualizar,
+    column: d[24]};
+
+    var mayo = {content: init,
+    actualizar: actualizar,
+    column: d[25]};
+
+    var junio = {content: init,
+    actualizar: actualizar,
+    column: d[26]};
+
+    var julio = {content: init,
+    actualizar: actualizar,
+    column: d[27]};
+
+    var agosto = {content: init,
+    actualizar: actualizar,
+    column: d[28]};
+
+    var septiembre = {content: init,
+    actualizar: actualizar,
+    column: d[29]};
+
+    var octubre = {content: init,
+    actualizar: actualizar,
+    column: d[30]};
+
+    var noviembre = {content: init,
+    actualizar: actualizar,
+    column: d[31]};
+
+    var diciembre = {content: init,
+    actualizar: actualizar,
+    column: d[32]};
 
 
 
@@ -90,11 +110,41 @@ function format ( d ) {
     octubre.actualizar();
     noviembre.actualizar();
     diciembre.actualizar();
+    fotocopia_cedula.actualizar();
+    antecedentes_judiciales.actualizar();
+    antecedentes_contraloria.actualizar();
 
 
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
+
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b><a href="actualizar/soportes/'+d[22]+'/" style="color:#004c99;">SOPORTES<a></b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b><a href="actualizar/informacion/'+d[0]+'/" style="color:#004c99;">INFORMACIÓN<a></b></h4></th>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Cargo:</b> '+d[5]+'</td>'+
+            '<td colspan="2"><b>Profesion:</b> '+d[6]+'</td>'+
+            imagen+
+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Banco:</b> '+d[7]+'</td>'+
+            '<td colspan="2"><b>Eps:</b> '+d[10]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Tipo de Cuenta:</b> '+d[8]+'</td>'+
+            '<td colspan="2"><b>Pension:</b> '+d[11]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="2"><b>Numero de Cuenta:</b> '+d[9]+'</td>'+
+            '<td colspan="2"><b>Arl:</b> '+d[12]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b><a href="actualizar/soportes/'+d[0]+'/" style="color:#004c99;">SOPORTES<a></b></h4></th>'+
         '</tr>'+
         '<tr>'+
             '<td class="text-center">Hoja de Vida:</td>'+
@@ -108,7 +158,16 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b><a href="actualizar/seguro/'+d[22]+'/" style="color:#004c99;">SEGURIDAD SOCIAL</b></h4></th>'+
+            '<td class="text-center">Fotocopia Cedula:</td>'+
+            fotocopia_cedula.content+
+            '<td class="text-center">Antecedentes Judiciales:</td>'+
+            antecedentes_judiciales.content+
+            '<td class="text-center">Contraloria:</td>'+
+            antecedentes_contraloria.content+
+        '</tr>'+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b><a href="actualizar/seguro/'+d[0]+'/" style="color:#004c99;">SEGURIDAD SOCIAL</b></h4></th>'+
         '</tr>'+
 
         '<tr>'+
@@ -163,12 +222,30 @@ $(document).ready(function() {
                 "data":           null,
                 "defaultContent": ''
             },
-            { "data": 0 },
-            { "data": 1 },
-            { "data": 2 },
-            { "data": 3 },
-            { "data": 20 },
-            { "data": 21 }
+            {
+                "data": 1,
+                "orderable":false,
+            },
+            {
+                "data": 2,
+                "orderable":false,
+            },
+            {
+                "data": 3,
+                "orderable":false,
+            },
+            {
+                "data": 4,
+                "orderable":false,
+            },
+            {
+                "data": 33,
+                "orderable":false,
+            },
+            {
+                "data": 34,
+                "orderable":false,
+            },
         ],
         "order": [[1, 'asc']],
     });

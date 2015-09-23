@@ -13,8 +13,10 @@ urlpatterns = [
     url(r'^gestores/actualizar/foto/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarFotoView.as_view())),
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view()),name='formadores'),
-    url(r'^formadores/actualizar/soportes/(?P<formador_id>\w+)/$', login_required(views.GestorActualizarSoporteView.as_view())),
-    url(r'^formadores/actualizar/seguro/(?P<formador_id>\w+)/$', login_required(views.GestorActualizarSeguroView.as_view())),
+    url(r'^formadores/actualizar/soportes/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarSoporteView.as_view())),
+    url(r'^formadores/actualizar/seguro/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarSeguroView.as_view())),
+    url(r'^formadores/actualizar/informacion/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarInformacionView.as_view())),
+    url(r'^formadores/actualizar/foto/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarFotoView.as_view())),
 
     url(r'^funcionarios/$', login_required(views.FuncionarioView.as_view()),name='formadores'),
     url(r'^funcionarios/actualizar/soportes/(?P<funcionario_id>\w+)/$', login_required(views.FuncionarioActualizarSoporteView.as_view())),

@@ -4,14 +4,30 @@ from django.utils.encoding import smart_unicode
 
 class Formador(models.Model):
     region = models.ForeignKey(Region)
+
     nombre = models.CharField(max_length=100)
     cedula = models.IntegerField()
     celular = models.BigIntegerField()
     correo = models.EmailField()
+
+    cargo = models.CharField(max_length=100,blank=True)
+    profesion = models.CharField(max_length=100,blank=True)
+    banco = models.CharField(max_length=100,blank=True)
+    tipo_cuenta = models.CharField(max_length=100,blank=True)
+    numero_cuenta = models.CharField(max_length=100,blank=True)
+    eps = models.CharField(max_length=100,blank=True)
+    pension = models.CharField(max_length=100,blank=True)
+    arl = models.CharField(max_length=100,blank=True)
+    foto = models.FileField(upload_to="Formadores/Foto/",blank=True)
+
     hv = models.FileField(upload_to="Formadores/Hojas de Vida/",blank=True)
     certificacion = models.FileField(upload_to="Formadores/Certificacion Bancaria/",blank=True)
     rut = models.FileField(upload_to="Formadores/Rut/",blank=True)
     contrato = models.FileField(upload_to="Formadores/Contratos/",blank=True)
+    fotocopia_cedula = models.FileField(upload_to="Formadores/Fotocopia Cedula/",blank=True)
+    antecedentes_judiciales = models.FileField(upload_to="Formadores/Antecedentes Judiciales/",blank=True)
+    antecedentes_contraloria = models.FileField(upload_to="Formadores/Antecedentes Contraloria/",blank=True)
+
     seguro_enero = models.FileField(upload_to="Formadores/Seguro/Enero",blank=True)
     seguro_febrero = models.FileField(upload_to="Formadores/Seguro/Febrero",blank=True)
     seguro_marzo = models.FileField(upload_to="Formadores/Seguro/Marzo",blank=True)

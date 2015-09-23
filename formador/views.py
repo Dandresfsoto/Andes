@@ -5,14 +5,27 @@ from django.db.models import Q
 class FormadorTableView(BaseDatatableView):
     model = Formador
     columns = [
+        'id',
         'nombre',
         'cedula',
         'celular',
         'correo',
+        'cargo',
+        'profesion',
+        'banco',
+        'tipo_cuenta',
+        'numero_cuenta',
+        'eps',
+        'pension',
+        'arl',
+        'foto',
         'hv',
         'certificacion',
         'rut',
         'contrato',
+        'fotocopia_cedula',
+        'antecedentes_judiciales',
+        'antecedentes_contraloria',
         'seguro_enero',
         'seguro_febrero',
         'seguro_marzo',
@@ -27,7 +40,6 @@ class FormadorTableView(BaseDatatableView):
         'seguro_diciembre',
         'fecha_contratacion',
         'fecha_terminacion',
-        'id',
     ]
 
     order_columns = [
@@ -35,6 +47,37 @@ class FormadorTableView(BaseDatatableView):
         'cedula',
         'celular',
         'correo',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
     ]
 
     def get_initial_queryset(self):
@@ -46,7 +89,7 @@ class FormadorTableView(BaseDatatableView):
         search = self.request.GET.get(u'search[value]', None)
         q = Q()
         if search:
-            q |= Q(**{'nombre__icontains' : search})
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
             q |= Q(**{'cedula__icontains' : search})
             qs = qs.filter(q)
         return qs
@@ -84,5 +127,14 @@ class FormadorTableView(BaseDatatableView):
             return str(row.seguro_noviembre)
         if column == 'seguro_diciembre':
             return str(row.seguro_diciembre)
+        if column == 'fotocopia_cedula':
+            return str(row.fotocopia_cedula)
+        if column == 'antecedentes_judiciales':
+            return str(row.antecedentes_judiciales)
+        if column == 'antecedentes_contraloria':
+            return str(row.antecedentes_contraloria)
+        if column == 'foto':
+            return str(row.foto)
         else:
             return super(FormadorTableView,self).render_column(row,column)
+

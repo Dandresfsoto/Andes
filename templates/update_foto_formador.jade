@@ -1,0 +1,46 @@
+extends base
+block titulo
+    | Actualizar Foto
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+    li
+        a(href="../../../../") Administrativo
+    li
+        a(href="../../../") Formadores
+    li(class="active") Foto: {{nombre}}
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                tr
+                    th(class="text-center") Limpiar:
+                    th(class="text-center") Foto:
+                    th(class="text-center") Nueva Foto:
+                tr
+                    td
+                        div(class="vertical-center-td")
+                            input(id="foto-clear_id",name="foto-clear",type="checkbox")
+                    td
+                        | {% if soporte != "" %}
+                        a(href="/media/{{soporte}}",target="_blank")
+                            img(src="/media/{{soporte}}",width="64",height="64")
+                        | {% else %}
+                        img(src="/static/imagenes/user-unknown.png",width="64",height="64")
+                        | {% endif %}
+                    td
+                        input(id="id_foto",name="foto",type="file")
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")
