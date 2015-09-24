@@ -63,7 +63,7 @@ class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
 def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
-        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(corte=None))
+        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
         if formset.is_valid():
             formset.save()
             for form in formset.forms:
