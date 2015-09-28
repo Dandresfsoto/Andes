@@ -54,6 +54,7 @@
             <th class="text-center">Ciclo:</th>
             <th class="text-center">Modulo:</th>
             <th class="text-center">Actividad:</th>
+            <th class="text-center">Entregable:</th>
             <th class="text-center">Soporte:</th>
             <th class="text-center">Limpiar:</th>
             <th class="text-center">Nuevo Soporte:</th>
@@ -63,6 +64,7 @@
             <td>{{form.instance.ciclo.nombre}}</td>
             <td>{{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}</td>
             <td>{{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}</td>
+            <td>{{form.instance.actividad.descripcion}}</td>
             <td>{% if form.instance.soporte != "" %}<a href="/media/{{form.instance.soporte}}" target="_blank"><img src="/static/imagenes/pdf.png" width="64" height="64"></a>{% else %}<img src="/static/imagenes/pdf-gris.png" width="64" height="64">{% endif %}</td>
             <td>
               <input id="{{form.soporte.html_name}}-clear_id" name="{{form.soporte.html_name}}-clear" type="checkbox">{{form.id}}
@@ -75,6 +77,7 @@
             <td>{{form.instance.ciclo.nombre}}</td>
             <td>{{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}</td>
             <td>{{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}</td>
+            <td>{{form.instance.actividad.descripcion}}</td>
             <td>{% if form.instance.soporte != "" %}<a href="/media/{{form.instance.soporte}}" target="_blank"><img src="/static/imagenes/pdf.png" width="64" height="64"></a>{% else %}<img src="/static/imagenes/pdf-gris.png" width="64" height="64">{% endif %}</td>
             <td>
               <input id="{{form.soporte.html_name}}-clear_id" name="{{form.soporte.html_name}}-clear" type="checkbox">{{form.id}}

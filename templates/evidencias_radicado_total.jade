@@ -21,6 +21,7 @@ block body_content
                     th(class="text-center") Ciclo:
                     th(class="text-center") Modulo:
                     th(class="text-center") Actividad:
+                    th(class="text-center") Entregable:
                     th(class="text-center") Soporte:
                     th(class="text-center") Limpiar:
                     th(class="text-center") Nuevo Soporte:
@@ -33,6 +34,8 @@ block body_content
                         | {{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}
                     td
                         | {{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}
+                    td
+                        |{{form.instance.actividad.descripcion}}
                     td
                         | {% if form.instance.soporte != "" %}
                         a(href="/media/{{form.instance.soporte}}",target="_blank")
@@ -54,6 +57,8 @@ block body_content
                         | {{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}
                     td
                         | {{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}
+                    td
+                        |{{form.instance.actividad.descripcion}}
                     td
                         | {% if form.instance.soporte != "" %}
                         a(href="/media/{{form.instance.soporte}}",target="_blank")
