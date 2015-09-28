@@ -22,6 +22,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse
 import time
+import datetime
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
