@@ -4,14 +4,15 @@
 from django.views.generic import TemplateView
 from mixins.mixins import AccesoMixin
 from region.models import Region
-from radicado.models import Radicado
+from django.views.generic import CreateView
 from gestor.models import Gestor
 from radicado.models import Radicado
 from municipio.models import Municipio
-from acceso.models import Actividad
+from acceso.models import Actividad, Reasignados
 from conf import settings
 import openpyxl
 
+from acceso.forms import ReasignacionForm
 from .models import Evidencia
 from rest_framework import mixins
 from rest_framework import generics
@@ -66,6 +67,22 @@ class AccesoCalificacionView(AccesoMixin,TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(AccesoCalificacionView,self).get_context_data(**kwargs)
 
+class AccesoCalificacionTotalView(AccesoMixin,TemplateView):
+    template_name = 'acceso_radicados_total.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(AccesoCalificacionTotalView,self).get_context_data(**kwargs)
+
+class AccesoReasignadosView(AccesoMixin,TemplateView):
+    template_name = 'acceso_reasignados.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(AccesoReasignadosView,self).get_context_data(**kwargs)
+
 class AccesoListadoRadicadosView(AccesoMixin,TemplateView):
     template_name = 'acceso_radicados.html'
 
@@ -107,6 +124,22 @@ def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
                                                           "radicado":Radicado.objects.get(pk=id_radicado),
                                                           "municipio":Municipio.objects.get(pk=id_municipio)},
                               context_instance=RequestContext(request))
+
+def evidencia_total_form(request,id_radicado,pk):
+    EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
+    if request.method == "POST":
+        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
+        if formset.is_valid():
+            formset.save()
+            for form in formset.forms:
+                if form.cleaned_data['soporte'] != None:
+                    obj = Evidencia.objects.get(pk=form.instance.id)
+                    obj.usuario = request.user
+                    obj.modificacion = datetime.datetime.now()
+                    obj.save()
+    else:
+        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado),)
+    return render_to_response("evidencias_radicado_total.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre,"radicado":Radicado.objects.get(pk=id_radicado)},context_instance=RequestContext(request))
 
 def reporte_acceso(request,pk,id_gestor):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -198,3 +231,9 @@ def reporte_acceso(request,pk,id_gestor):
 
     archivo.save(response)
     return response
+
+class ReasignarView(AccesoMixin,CreateView):
+    model = Reasignados
+    form_class = ReasignacionForm
+    template_name = "formulario_reasignados.html"
+    success_url = "../../../"

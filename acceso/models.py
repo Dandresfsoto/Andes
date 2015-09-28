@@ -79,3 +79,14 @@ class Evidencia(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.radicado)
+
+class Reasignados(models.Model):
+    region = models.ForeignKey(Region)
+    fecha_reasignado = models.DateTimeField(auto_now_add=True)
+    radicado = models.ForeignKey(Radicado)
+    gestor_origen = models.ForeignKey(Gestor,related_name="origen")
+    gestor_destino = models.ForeignKey(Gestor,related_name="destino")
+    usuario = models.ForeignKey(User,blank=True,null=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.radicado_origen)
