@@ -1,10 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from django.views.generic import TemplateView
 from mixins.mixins import AccesoMixin
 from region.models import Region
+from radicado.models import Radicado
 from gestor.models import Gestor
 from radicado.models import Radicado
 from municipio.models import Municipio
-import datetime
+from acceso.models import Actividad
+from conf import settings
+import openpyxl
 
 from .models import Evidencia
 from rest_framework import mixins
@@ -13,6 +19,28 @@ from .serializers import EvidenciaSerializer
 from django.forms.models import modelformset_factory
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.http import HttpResponse
+import time
+from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
+
+t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+co = Style(font=Font(name='Calibri',size=11),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+v = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='E4F5E1',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+vc = Style(font=Font(name='Calibri',size=12,bold=False,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='D4F5CE',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
 
 class EvidenciaViewSet(mixins.UpdateModelMixin,generics.GenericAPIView):
     queryset = Evidencia.objects.all()
@@ -79,3 +107,94 @@ def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
                                                           "radicado":Radicado.objects.get(pk=id_radicado),
                                                           "municipio":Municipio.objects.get(pk=id_municipio)},
                               context_instance=RequestContext(request))
+
+def reporte_acceso(request,pk,id_gestor):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Informe Gestores"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'REPORTE GESTORES'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columnas = Actividad.objects.order_by('id').values('nombre','titulo')
+    columns = [tuple(['Radicado',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Gestor',30]),
+               tuple(['Ciclo',30]),
+               tuple(['Componente',30]),
+               tuple(['Modulo',30]),
+               tuple(['Actividad',30]),
+               tuple(['Encargado',30]),
+               tuple(['Valor',30]),
+               tuple(['Soporte',30]),
+               tuple(['Corte',30]),
+               tuple(['Usuario',30]),
+               tuple(['Modificación',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    evidencias = Evidencia.objects.filter(radicado__region__id=pk).filter(gestor__id=id_gestor)
+
+    for evidencia in evidencias:
+        row_num += 1
+        row = [
+            evidencia.radicado.numero,
+            evidencia.radicado.municipio.departamento.nombre,
+            evidencia.radicado.municipio.nombre,
+            evidencia.gestor.nombre,
+            evidencia.ciclo.nombre,
+            evidencia.componente.nombre,
+            evidencia.modulo.nombre,
+            str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
+            evidencia.encargado.encargado,
+            evidencia.valor.valor,
+            str(evidencia.soporte),
+            str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
+            evidencia.usuario.username,
+            evidencia.modificacion
+        ]
+
+        for col_num in xrange(len(row)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            if row[col_num] == True:
+                c.value = "SI"
+            if row[col_num] == False:
+                c.value = "NO"
+            if row[col_num] == None:
+                c.value = ""
+            else:
+                c.value = row[col_num]
+            c.style = co
+
+
+
+    archivo.save(response)
+    return response

@@ -33,6 +33,7 @@ function format ( d ) {
 
         '<tr>'+
             '<td colspan="2"><b>Actividades quincena:</b> '+d[13]+'</td>'+
+            '<td colspan="2"><b>Reporte: </b><a href="reporte/'+d[0]+'/" style="color:#004c99;" target="_blank">Exportar<a></td>'+
         '</tr>'+
 
         '<tr>'+
@@ -45,15 +46,6 @@ function format ( d ) {
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                text: 'Reload',
-                action: function ( e, dt, node, config ) {
-                    dt.ajax.reload();
-                }
-            }
-        ],
         "searching": true,
         "processing": true,
         "serverSide": true,
