@@ -59,6 +59,12 @@ $(document).ready(function() {
                 action: function ( e, dt, node, config ) {
                     location.replace(location.href+"nuevo");
                 }
+            },
+            {
+                text: 'Realizar corte',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"corte");
+                }
             }
         ],
         "searching": true,

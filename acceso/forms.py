@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.models import modelformset_factory
-from .models import Evidencia, Reasignados
+from .models import Evidencia, Reasignados, Corte
 
 EvidenciaFormSetBase = modelformset_factory(Evidencia,extra=0,fields=('soporte',))
 
@@ -14,3 +14,8 @@ class ReasignacionForm(forms.ModelForm):
     class Meta:
         model = Reasignados
         fields = ['gestor_origen','gestor_destino']
+
+class CorteForm(forms.ModelForm):
+    class Meta:
+        model = Corte
+        fields = ['titulo','descripcion']

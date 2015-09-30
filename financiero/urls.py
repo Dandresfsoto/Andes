@@ -7,6 +7,7 @@ urlpatterns = [
 
     url(r'^gestores/$', login_required(views.GestorView.as_view())),
     url(r'^gestores/nuevo/$', login_required(views.NuevoGestorView.as_view())),
+    url(r'^gestores/corte/$', login_required(views.NuevoCorteView.as_view())),
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view())),
     url(r'^formadores/nuevo/$', login_required(views.NuevoFormadorView.as_view())),
