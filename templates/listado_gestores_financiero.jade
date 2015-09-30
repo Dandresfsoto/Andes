@@ -1,0 +1,37 @@
+extends base
+block titulo
+    | Gestores
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../") {{REGION}}
+    li
+        a(href="../../") Andes
+    li
+        a(href="../") Financiero
+    li(class="active") Gestores
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Nombre
+                    th Cedula
+                    th Celular
+                    th Correo
+                    th Inicio de Contrato
+                    th Fin de Contrato
+            tbody
+                tr
+                    th
+                    th Nombre
+                    th Cedula
+                    th Celular
+                    th Correo
+                    th Inicio de Contrato
+                    th Fin de Contrato
+block extra_script
+    script(src="{% static 'js/listado_gestores_financiero.js' %}")

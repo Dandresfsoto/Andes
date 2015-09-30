@@ -1,13 +1,13 @@
 
 {% load staticfiles %}
-{% load progress_bar %}{% load guardian_tags %}<!DOCTYPE html>
+{% load progress_bar %}<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <title>Seleccionar Rol</title>
+    <title>Financiero</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-colvis-1.0.3,b-flash-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.css">
@@ -28,8 +28,9 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../">{{REGION}}</a></li>
-                <li class="active">Andes</li>
+                <li><a href="../../">{{REGION}}</a></li>
+                <li><a href="../">Andes</a></li>
+                <li class="active">Financiero</li>
               </ol>
             </div>
           </ul>
@@ -43,80 +44,35 @@
           </ul>
         </div>
       </div>
-    </nav>{% endif %}{% get_obj_perms request.user for object_list as "permisos" %}
+    </nav>{% endif %}
     <div class="container-fluid">
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50">{% if "acceso" in permisos %}<a href="acceso/" class="text-center">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 margin-top-50"><a href="gestores/" class="text-center">
           <div class="box">
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/acceso.png' %}" class="center-block img-responsive hvr-pop"></div>
             </div>
             <div class="row text-center">
-              <p>Acceso</p>
+              <p>Gestores</p>
             </div>
-          </div></a>{% else %}
-        <div class="box">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><img src="{% static 'imagenes/acceso-gris.png' %}" class="center-block img-responsive"></div>
-          </div>
-          <div class="row text-center">
-            <p>Acceso</p>
-          </div>
-        </div>{% endif %}
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50">{% if "formacion" in permisos %}<a href="andes/" class="text-center">
+          </div></a></div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 margin-top-50"><a href="formadores/" class="text-center">
           <div class="box">
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/formacion.png' %}" class="center-block img-responsive hvr-pop"></div>
             </div>
             <div class="row text-center">
-              <p>Formación</p>
+              <p>Formadores</p>
             </div>
-          </div></a>{% else %}
-        <div class="box">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/formacion-gris.png' %}" class="img-responsive center-block"></div>
-          </div>
-          <div class="row text-center">
-            <p>Formación</p>
-          </div>
-        </div>{% endif %}
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50">{% if "administrativo" in permisos %}<a href="administrativo/" class="text-center">
+          </div></a></div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 margin-top-50"><a href="funcionarios/" class="text-center">
           <div class="box">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/administrativo.png' %}" class="center-block img-responsive hvr-pop"></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/funcionarios.png' %}" class="center-block img-responsive hvr-pop"></div>
             </div>
             <div class="row text-center">
-              <p>Administrativo</p>
+              <p>Funcionarios</p>
             </div>
-          </div></a>{% else %}
-        <div class="box">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/administrativo-gris.png' %}" class="img-responsive center-block"></div>
-          </div>
-          <div class="row text-center">
-            <p>Administrativo</p>
-          </div>
-        </div>{% endif %}
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50">{% if "financiero" in permisos %}<a href="financiero/" class="text-center">
-          <div class="box">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/financiero.png' %}" class="center-block img-responsive hvr-pop"></div>
-            </div>
-            <div class="row text-center">
-              <p>Financiero</p>
-            </div>
-          </div></a>{% else %}
-        <div class="box">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/financiero-gris.png' %}" class="img-responsive center-block"></div>
-          </div>
-          <div class="row text-center">
-            <p>Financiero</p>
-          </div>
-        </div>{% endif %}
-      </div>
+          </div></a></div>
     </div>
     <div class="container-fluid margin-top-50"></div>
     <div style="margin-top:50px;"></div>

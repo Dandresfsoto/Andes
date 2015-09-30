@@ -1,6 +1,11 @@
 from django import forms
 from .models import Funcionario
 
+class NuevoFuncionarioForm(forms.ModelForm):
+    class Meta:
+        model = Funcionario
+        fields = ['region','nombre','cedula','celular','correo','fecha_contratacion','eje']
+
 class FuncionarioFotoForm(forms.ModelForm):
     class Meta:
         model = Funcionario

@@ -7,7 +7,7 @@ class Formador(models.Model):
 
     nombre = models.CharField(max_length=100)
     cedula = models.IntegerField()
-    celular = models.BigIntegerField()
+    celular = models.CharField(max_length=100)
     correo = models.EmailField()
 
     cargo = models.CharField(max_length=100,blank=True)
