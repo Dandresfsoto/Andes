@@ -12,8 +12,6 @@ from acceso.models import Corte
 from acceso.forms import CorteForm
 from acceso.models import Evidencia
 from django.db.models import Sum
-import locale
-locale.setlocale( locale.LC_ALL, '' )
 
 class FinancieroView(FinancieroMixin,TemplateView):
     template_name = 'financiero.html'
@@ -88,7 +86,7 @@ class NuevoCorteView(FinancieroMixin, CreateView):
     def get_context_data(self, **kwargs):
         reporte = Evidencia.objects.filter(radicado__region__id=self.kwargs['pk']).filter(corte=None).exclude(soporte="")
         kwargs['CANTIDAD'] = reporte.count()
-        kwargs['VALOR'] = locale.currency(reporte.aggregate(Sum('valor__valor'))['valor__valor__sum'],grouping=True).replace("+","")
+        kwargs['VALOR'] = "$ "+str(reporte.aggregate(Sum('valor__valor'))['valor__valor__sum'])
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
 

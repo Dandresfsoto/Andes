@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d437ff-e0c6-4dea-a8b5-6ad6b346880d" name="Default" comment="Documentacion settings">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/nuevo_corte.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/forms.py" afterPath="$PROJECT_DIR$/acceso/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/listado_gestores_financiero.js" afterPath="$PROJECT_DIR$/static/js/listado_gestores_financiero.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/urls.py" afterPath="$PROJECT_DIR$/financiero/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/views.py" afterPath="$PROJECT_DIR$/financiero/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -72,16 +68,16 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/financiero/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7834395">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6751592">
+              <caret line="101" column="59" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
-                <element signature="e#962#1243#0" expanded="false" />
-                <element signature="e#1299#1584#0" expanded="false" />
-                <element signature="e#1643#1932#0" expanded="false" />
-                <element signature="e#1990#2331#0" expanded="false" />
-                <element signature="e#2391#2746#0" expanded="false" />
-                <element signature="e#2809#3176#0" expanded="false" />
+                <element signature="e#910#1191#0" expanded="false" />
+                <element signature="e#1247#1532#0" expanded="false" />
+                <element signature="e#1591#1880#0" expanded="false" />
+                <element signature="e#1938#2279#0" expanded="false" />
+                <element signature="e#2339#2694#0" expanded="false" />
+                <element signature="e#2757#3124#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1503,16 +1499,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/financiero/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7834395">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6751592">
+          <caret line="101" column="59" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
-            <element signature="e#962#1243#0" expanded="false" />
-            <element signature="e#1299#1584#0" expanded="false" />
-            <element signature="e#1643#1932#0" expanded="false" />
-            <element signature="e#1990#2331#0" expanded="false" />
-            <element signature="e#2391#2746#0" expanded="false" />
-            <element signature="e#2809#3176#0" expanded="false" />
+            <element signature="e#910#1191#0" expanded="false" />
+            <element signature="e#1247#1532#0" expanded="false" />
+            <element signature="e#1591#1880#0" expanded="false" />
+            <element signature="e#1938#2279#0" expanded="false" />
+            <element signature="e#2339#2694#0" expanded="false" />
+            <element signature="e#2757#3124#0" expanded="false" />
           </folding>
         </state>
       </provider>
