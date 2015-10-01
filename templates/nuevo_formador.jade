@@ -22,6 +22,13 @@ block body_content
                     th(class="text-center") Campo:
                     th(class="text-center") Información:
                 tr
+                    td(class = "text-center" style="font-weight:bold;") Tipo:
+                    td(class = "text-center")
+                        select(style="width:100%;",id="id_tipo",name="tipo",required)
+                            option(value,selected="selected") -----
+                            option(value="1") Tipo 1
+                            option(value="2") Tipo 2
+                tr
                     td(class = "text-center" style="font-weight:bold;") Nombre:
                     td(class = "text-center")
                         input(style="width:100%;",id="id_nombre",name="nombre",type="text",maxlength="100",required)

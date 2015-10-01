@@ -4,7 +4,7 @@ from .models import Formador
 class NuevoForm(forms.ModelForm):
     class Meta:
         model = Formador
-        fields = ['region','nombre','cedula','celular','correo','fecha_contratacion']
+        fields = ['region','tipo','nombre','cedula','celular','correo','fecha_contratacion']
 
 class FormadorFotoForm(forms.ModelForm):
     class Meta:

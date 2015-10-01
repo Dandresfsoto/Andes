@@ -11,6 +11,7 @@ class TipoFormador(models.Model):
 
 class Formador(models.Model):
     region = models.ForeignKey(Region)
+    tipo = models.ForeignKey(TipoFormador)
 
     nombre = models.CharField(max_length=100)
     cedula = models.IntegerField()
