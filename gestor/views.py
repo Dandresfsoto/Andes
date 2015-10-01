@@ -1,7 +1,7 @@
 from .models import Gestor
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from acceso.models import Evidencia
+from acceso.models import Evidencia, Corte
 from django.db.models import Sum
 
 class GestorTableView(BaseDatatableView):
@@ -240,6 +240,8 @@ class GestorFinancieroTableView(BaseDatatableView):
         if column == 'rut':
             cortes = Evidencia.objects.filter(gestor__id=row.id).exclude(corte=None).values_list('corte',flat=True).distinct()
             json = []
+            for corte in cortes:
+                json.append(round(int(Evidencia.objects.filter(gestor__id=row.id).filter(corte__id=corte).aggregate(Sum('valor__valor'))['valor__valor__sum'])))
 
             return json
         if column == 'contrato':

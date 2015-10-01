@@ -8,12 +8,17 @@ function format ( d ) {
     // `d` is the original data object for the row
     var init = '<td><img src="/static/imagenes/pdf-gris.png" height="48" width="48"></td>';
     var imagen
+    var quincenas
 
-    if(d[13] != ""){
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[13]+'" height="200"></td>'
+    if (d[13] != "") {
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/' + d[13] + '" height="200"></td>'
     }
-    else{
+    else {
         imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/static/imagenes/user-unknown.png" height="200"></td>'
+    }
+
+    for (i = 0; i < d[16].length; i++) {
+        quincenas += '<td colspan="2"><b>Pago:</b> $' + d[16][i] + '</td>';
     }
 
 
@@ -51,6 +56,14 @@ function format ( d ) {
 
         '<tr>'+
             '<td colspan="4"><b>Pago Realizado: </b>$'+d[14]+'<progress value="'+d[14]+'" max="'+d[15]+'" style="width:100%;"></progress></td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b>PAGOS REPORTADOS</b></h4></th>'+
+        '</tr>'+
+
+        '<tr>'+
+            quincenas+
         '</tr>'+
 
 
