@@ -4,5 +4,5 @@ from formador import views
 
 
 urlpatterns = [
-    url(r'^datatable/(?P<region>\w+)', login_required(views.FormadorTableView.as_view()),name='tabla_formadores'),
+    url(r'^datatable/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.FormadorTableView.as_view()),name='tabla_formadores'),
 ]

@@ -91,9 +91,18 @@ class CpeGestorView(CpeMixin,TemplateView):
         return super(CpeGestorView,self).get_context_data(**kwargs)
 
 class CpeFormadorView(CpeMixin,TemplateView):
-    template_name = 'listado_formadores_cpe.html'
+    template_name = 'tipo_formador_cpe.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(CpeFormadorView,self).get_context_data(**kwargs)
+
+class CpeFormadorTipoView(CpeMixin,TemplateView):
+    template_name = 'listado_formadores_cpe.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo']
+        return super(CpeFormadorTipoView,self).get_context_data(**kwargs)
