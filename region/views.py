@@ -81,3 +81,19 @@ class CpeFuncionarioView(CpeMixin,TemplateView):
         kwargs['EJE'] = Eje.objects.all().filter(nombre=self.kwargs['eje'])[0].nombre
         kwargs['ID_EJE'] = Eje.objects.all().filter(nombre=self.kwargs['eje'])[0].id
         return super(CpeFuncionarioView,self).get_context_data(**kwargs)
+
+class CpeGestorView(CpeMixin,TemplateView):
+    template_name = 'listado_gestores_cpe.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeGestorView,self).get_context_data(**kwargs)
+
+class CpeFormadorView(CpeMixin,TemplateView):
+    template_name = 'listado_formadores_cpe.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeFormadorView,self).get_context_data(**kwargs)

@@ -9,8 +9,8 @@ function format ( d ) {
     var init = '<td><img src="/static/imagenes/pdf-gris.png" height="48" width="48"></td>';
     var imagen
 
-    if(d[33] != ""){
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[33]+'" height="200"></td>'
+    if(d[13] != ""){
+        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[13]+'" height="200"></td>'
     }
     else{
         imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/static/imagenes/user-unknown.png" height="200"></td>'
@@ -18,79 +18,79 @@ function format ( d ) {
 
     var hv = {content: init,
     actualizar: actualizar,
-    column: d[4]};
+    column: d[14]};
 
     var certificacion = {content: init,
     actualizar: actualizar,
-    column: d[5]};
+    column: d[15]};
 
     var rut = {content: init,
     actualizar: actualizar,
-    column: d[6]};
+    column: d[16]};
 
     var contrato = {content: init,
     actualizar: actualizar,
-    column: d[7]};
+    column: d[17]};
 
     var fotocopia_cedula = {content: init,
     actualizar: actualizar,
-    column: d[23]};
+    column: d[18]};
 
     var antecedentes_judiciales = {content: init,
     actualizar: actualizar,
-    column: d[24]};
+    column: d[19]};
 
     var antecedentes_contraloria = {content: init,
     actualizar: actualizar,
-    column: d[25]};
+    column: d[20]};
 
     var enero = {content: init,
     actualizar: actualizar,
-    column: d[8]};
+    column: d[21]};
 
     var febrero = {content: init,
     actualizar: actualizar,
-    column: d[9]};
+    column: d[22]};
 
     var marzo = {content: init,
     actualizar: actualizar,
-    column: d[10]};
+    column: d[23]};
 
     var abril = {content: init,
     actualizar: actualizar,
-    column: d[11]};
+    column: d[24]};
 
     var mayo = {content: init,
     actualizar: actualizar,
-    column: d[12]};
+    column: d[25]};
 
     var junio = {content: init,
     actualizar: actualizar,
-    column: d[13]};
+    column: d[26]};
 
     var julio = {content: init,
     actualizar: actualizar,
-    column: d[14]};
+    column: d[27]};
 
     var agosto = {content: init,
     actualizar: actualizar,
-    column: d[15]};
+    column: d[28]};
 
     var septiembre = {content: init,
     actualizar: actualizar,
-    column: d[16]};
+    column: d[29]};
 
     var octubre = {content: init,
     actualizar: actualizar,
-    column: d[17]};
+    column: d[30]};
 
     var noviembre = {content: init,
     actualizar: actualizar,
-    column: d[18]};
+    column: d[31]};
 
     var diciembre = {content: init,
     actualizar: actualizar,
-    column: d[19]};
+    column: d[32]};
 
 
 
@@ -122,25 +122,25 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Cargo:</b> '+d[26]+'</td>'+
-            '<td colspan="2"><b>Profesion:</b> '+d[34]+'</td>'+
+            '<td colspan="2"><b>Cargo:</b> '+d[5]+'</td>'+
+            '<td colspan="2"><b>Profesion:</b> '+d[6]+'</td>'+
             imagen+
 
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Banco:</b> '+d[27]+'</td>'+
-            '<td colspan="2"><b>Eps:</b> '+d[30]+'</td>'+
+            '<td colspan="2"><b>Banco:</b> '+d[7]+'</td>'+
+            '<td colspan="2"><b>Eps:</b> '+d[10]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Tipo de Cuenta:</b> '+d[28]+'</td>'+
-            '<td colspan="2"><b>Pension:</b> '+d[31]+'</td>'+
+            '<td colspan="2"><b>Tipo de Cuenta:</b> '+d[8]+'</td>'+
+            '<td colspan="2"><b>Pension:</b> '+d[11]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Numero de Cuenta:</b> '+d[29]+'</td>'+
-            '<td colspan="2"><b>Arl:</b> '+d[32]+'</td>'+
+            '<td colspan="2"><b>Numero de Cuenta:</b> '+d[9]+'</td>'+
+            '<td colspan="2"><b>Arl:</b> '+d[12]+'</td>'+
         '</tr>'+
 
         '<tr>'+
@@ -211,7 +211,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/funcionario/datatable_cpe/"+ $('#id_region').val()+"/"+$('#id_eje').val(),
+        "ajax": "/formador/datatable/"+ $('#id_region').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -221,10 +221,6 @@ $(document).ready(function() {
                 "orderable":      false,
                 "data":           null,
                 "defaultContent": ''
-            },
-            {
-                "data": 0,
-                "orderable":false,
             },
             {
                 "data": 1,
@@ -239,15 +235,19 @@ $(document).ready(function() {
                 "orderable":false,
             },
             {
-                "data": 20,
+                "data": 4,
                 "orderable":false,
             },
             {
-                "data": 21,
+                "data": 33,
+                "orderable":false,
+            },
+            {
+                "data": 34,
                 "orderable":false,
             },
         ],
-        "order": [[0, 'asc']],
+        "order": [[1, 'asc']],
     });
 
 
