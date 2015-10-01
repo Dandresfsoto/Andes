@@ -5,15 +5,18 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../") {{REGION}}
+        a(href="../../../../") {{REGION}}
     li
-        a(href="../../") Andes
+        a(href="../../../") Andes
     li
-        a(href="../") Financiero
-    li(class="active") Formadores
+        a(href="../../") Financiero
+    li
+        a(href="../") Formadores
+    li(class="active") Tipo {{ID_TIPO}}
 block body_content
     div(class="container-fluid")
         input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_tipo",value="{{ID_TIPO}}",id="id_tipo")
         table(id="table",class="table table-striped table-bordered")
             thead
                 tr

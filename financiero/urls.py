@@ -10,7 +10,8 @@ urlpatterns = [
     url(r'^gestores/corte/$', login_required(views.NuevoCorteView.as_view())),
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view())),
-    url(r'^formadores/nuevo/$', login_required(views.NuevoFormadorView.as_view())),
+    url(r'^formadores/(?P<tipo_id>\w+)/$', login_required(views.FormadorTipoView.as_view())),
+    url(r'^formadores/(?P<tipo_id>\w+)/nuevo/$', login_required(views.NuevoFormadorView.as_view())),
 
     url(r'^funcionarios/$', login_required(views.FuncionarioView.as_view())),
     url(r'^funcionarios/nuevo/$', login_required(views.NuevoFuncionarioView.as_view())),

@@ -5,29 +5,25 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../../") {{REGION}}
+        a(href="../../../../../") {{REGION}}
     li
-        a(href="../../../") Andes
+        a(href="../../../../") Andes
     li
-        a(href="../../") Financiero
+        a(href="../../../") Financiero
     li
-        a(href="../") Formadores
+        a(href="../../") Formadores
+    li
+        a(href="../") Tipo {{ID_TIPO}}
     li(class="active") Nuevo
 block body_content
     div(class="container-fluid")
         form(action="",method="post",enctype="multipart/form-data")
             table(class="table table-bordered text-center",style="color:black;background:white;")
                 input(id="id_region",name="region", value="{{ID_REGION}}",hidden)
+                input(id="id_tipo",name="tipo", value="{{ID_TIPO}}",hidden)
                 tr
                     th(class="text-center") Campo:
                     th(class="text-center") Información:
-                tr
-                    td(class = "text-center" style="font-weight:bold;") Tipo:
-                    td(class = "text-center")
-                        select(style="width:100%;",id="id_tipo",name="tipo",required)
-                            option(value,selected="selected") -----
-                            option(value="1") Tipo 1
-                            option(value="2") Tipo 2
                 tr
                     td(class = "text-center" style="font-weight:bold;") Nombre:
                     td(class = "text-center")

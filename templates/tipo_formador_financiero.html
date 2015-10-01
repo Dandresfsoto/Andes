@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <title>Nuevo Formador</title>
+    <title>Tipo de Formador</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-colvis-1.0.3,b-flash-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.css">
@@ -28,12 +28,10 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../../../../../">{{REGION}}</a></li>
-                <li><a href="../../../../">Andes</a></li>
-                <li><a href="../../../">Financiero</a></li>
-                <li><a href="../../">Formadores</a></li>
-                <li><a href="../">Tipo {{ID_TIPO}}</a></li>
-                <li class="active">Nuevo</li>
+                <li><a href="../../../">{{REGION}}</a></li>
+                <li><a href="../../">Andes</a></li>
+                <li><a href="../">Financiero</a></li>
+                <li class="active">Formadores</li>
               </ol>
             </div>
           </ul>
@@ -49,56 +47,26 @@
       </div>
     </nav>{% endif %}
     <div class="container-fluid">
-      <form action="" method="post" enctype="multipart/form-data">
-        <table style="color:black;background:white;" class="table table-bordered text-center">
-          <input id="id_region" name="region" value="{{ID_REGION}}" hidden>
-          <input id="id_tipo" name="tipo" value="{{ID_TIPO}}" hidden>
-          <tr>
-            <th class="text-center">Campo:</th>
-            <th class="text-center">Información:</th>
-          </tr>
-          <tr>
-            <td style="font-weight:bold;" class="text-center">Nombre:</td>
-            <td class="text-center">
-              <input style="width:100%;" id="id_nombre" name="nombre" type="text" maxlength="100" required>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:bold;" class="text-center">Cedula:</td>
-            <td class="text-center">
-              <input style="width:100%;" id="id_cedula" name="cedula" type="number" required>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:bold;" class="text-center">Celular:</td>
-            <td class="text-center">
-              <input style="width:100%;" id="id_celular" name="celular" type="text" maxlength="100" required>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:bold;" class="text-center">Correo:</td>
-            <td class="text-center">
-              <input style="width:100%;" id="id_correo" name="correo" type="email" maxlength="254" required>
-            </td>
-          </tr>
-          <tr>
-            <td style="font-weight:bold;" class="text-center">Fecha contratación:</td>
-            <td class="text-center">
-              <input style="width:100%;" id="id_fecha_contratacion" name="fecha_contratacion" type="text" required>
-            </td>
-          </tr>
-        </table>{% csrf_token %}
-        <div class="container-fluid barra">
-          <div class="col-lg-2">
-            <button type="submit" class="btn btn-default">Grabar</button>
-          </div>
-          <div class="col-lg-2">
-            <p id="porcentaje" class="text-right"></p>
-          </div>
-          <div class="col-lg-8">{% progress_bar %}</div>
-        </div>
-      </form>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50"><a href="1/" class="text-center">
+          <div class="box">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/formacion.png' %}" class="center-block img-responsive hvr-pop"></div>
+            </div>
+            <div class="row text-center">
+              <p>Formadores Tipo 1</p>
+            </div>
+          </div></a></div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50"><a href="2/" class="text-center">
+          <div class="box">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/formacion.png' %}" class="center-block img-responsive hvr-pop"></div>
+            </div>
+            <div class="row text-center">
+              <p>Formadores Tipo 2</p>
+            </div>
+          </div></a></div>
     </div>
+    <div class="container-fluid margin-top-50"></div>
     <div style="margin-top:50px;"></div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -106,7 +74,6 @@
     <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-img-lightbox-tooltip.js' %}"></script>
     <script src="{% static 'js/jquery.ezdz.js' %}"></script>{% progress_bar_media %}
-    <script src="{% static 'js/drop.js' %}"></script>
     <script>
       if(localStorage.getItem("user") != null){
       $("#profileImage").attr('src',localStorage.getItem("user"));}

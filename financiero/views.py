@@ -29,12 +29,21 @@ class GestorView(FinancieroMixin,TemplateView):
         return super(GestorView,self).get_context_data(**kwargs)
 
 class FormadorView(FinancieroMixin,TemplateView):
-    template_name = 'listado_formadores_financiero.html'
+    template_name = 'tipo_formador_financiero.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(FormadorView,self).get_context_data(**kwargs)
+
+class FormadorTipoView(FinancieroMixin,TemplateView):
+    template_name = 'listado_formadores_financiero.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo_id']
+        return super(FormadorTipoView,self).get_context_data(**kwargs)
 
 class FuncionarioView(FinancieroMixin,TemplateView):
     template_name = 'listado_funcionario_financiero.html'
@@ -64,6 +73,7 @@ class NuevoFormadorView(FinancieroMixin, CreateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo_id']
         return super(NuevoFormadorView,self).get_context_data(**kwargs)
 
 class NuevoFuncionarioView(FinancieroMixin, CreateView):
