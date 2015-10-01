@@ -50,10 +50,10 @@ class Entregables(models.Model):
         return smart_unicode(self.entregables)
 
 class Valor(models.Model):
-    valor = models.BigIntegerField()
+    valor = models.FloatField()
 
-    def __unicode__(self):
-        return smart_unicode(self.valor)
+    def __str__(self):
+        return "%i" %self.valor
 
 class Corte(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)

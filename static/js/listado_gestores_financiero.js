@@ -45,6 +45,14 @@ function format ( d ) {
             '<td colspan="2"><b>Arl:</b> '+d[12]+'</td>'+
         '</tr>'+
 
+        '<tr>'+
+            '<td colspan="2"><b>Pago Total:</b> '+d[15]+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td colspan="4"><b>Pago Realizado: </b>$'+d[14]+'<progress value="'+d[14]+'" max="'+d[15]+'" style="width:100%;"></progress></td>'+
+        '</tr>'+
+
 
     '</table></div>';
 }
@@ -70,7 +78,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/gestor/datatable/"+ $('#id_region').val(),
+        "ajax": "/gestor/financiero/"+ $('#id_region').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
