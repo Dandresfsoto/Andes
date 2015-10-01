@@ -2,6 +2,13 @@ from django.db import models
 from region.models import Region
 from django.utils.encoding import smart_unicode
 
+class TipoFormador(models.Model):
+    tipo = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return smart_unicode(self.tipo)
+
+
 class Formador(models.Model):
     region = models.ForeignKey(Region)
 
