@@ -18,7 +18,7 @@ function format ( d ) {
     }
 
     for (i = 0; i < d[16].length; i++) {
-        quincenas += '<td colspan="2"><b>Pago:</b> $' + d[16][i] + '</td>';
+        quincenas += '<tr><td colspan="2"><b>Pago:</b> $' + d[16][i] + '</td></tr>';
     }
 
 
