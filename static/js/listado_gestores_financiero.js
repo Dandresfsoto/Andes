@@ -18,7 +18,9 @@ function format ( d ) {
     }
 
     for (i = 0; i < d[16].length; i++) {
-        quincenas += '<tr><td colspan="2"><b>Pago:</b> $' + d[16][i] + '</td></tr>';
+        quincenas += '<tr><td colspan="2"><b>Fecha:</b> '+ d[16][i][0].replace('T',' ').replace('Z','')+'</td>' +
+            '<td colspan="2"><b>Titulo:</b> '+ d[16][i][1]+'</td>+' +
+            '<td colspan="2"><b>Valor:</b> $'+ d[16][i][3].toLocaleString('es-CO')+'</td></tr>';
     }
 
 
@@ -51,11 +53,11 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Pago Total:</b> '+d[15]+'</td>'+
+            '<td colspan="2"><b>Pago Total:</b> $'+d[15].toLocaleString('es-CO')+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="4"><b>Pago Realizado: </b>$'+d[14]+'<progress value="'+d[14]+'" max="'+d[15]+'" style="width:100%;"></progress></td>'+
+            '<td colspan="4"><b>Pago Realizado: </b>$'+d[14].toLocaleString('es-CO')+'<progress value="'+d[14]+'" max="'+d[15]+'" style="width:100%;"></progress></td>'+
         '</tr>'+
 
         '<tr>'+

@@ -57,6 +57,7 @@ class Valor(models.Model):
 
 class Corte(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
+    region = models.ForeignKey(Region)
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField(max_length=5000)
 

@@ -238,14 +238,18 @@ class GestorFinancieroTableView(BaseDatatableView):
         if column == 'certificacion':
             return Evidencia.objects.filter(gestor__id=row.id).aggregate(Sum('valor__valor'))['valor__valor__sum']
         if column == 'rut':
-            cortes = Evidencia.objects.filter(radicado__region__id=self.kwargs['region']).exclude(corte=None).values_list('corte__id',flat=True).distinct()
+            cortes = Corte.objects.filter(region__id=self.kwargs['region'])
             json = []
             for corte in cortes:
-                evidencias = Evidencia.objects.filter(gestor__id=row.id).filter(corte__id=corte)
+                evidencias = Evidencia.objects.filter(gestor__id=row.id).filter(corte__id=corte.id)
                 if evidencias.count() > 0:
-                    json.append(round(int(evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum'])))
+                    fecha = corte.fecha
+                    titulo = corte.titulo
+                    descripcion = corte.descripcion
+                    valor = round(int(evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum']))
+                    json.append([fecha,titulo,descripcion,valor])
                 else:
-                    json.append(0)
+                    json.append([fecha,titulo,descripcion,0])
             return json
         if column == 'contrato':
             return str(row.contrato)

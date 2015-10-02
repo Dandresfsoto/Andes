@@ -18,4 +18,4 @@ class ReasignacionForm(forms.ModelForm):
 class CorteForm(forms.ModelForm):
     class Meta:
         model = Corte
-        fields = ['titulo','descripcion']
+        fields = ['region','titulo','descripcion']

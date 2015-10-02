@@ -13,6 +13,32 @@ from acceso.forms import CorteForm
 from acceso.models import Evidencia
 from django.db.models import Sum
 
+from django.http import HttpResponse
+import time
+from conf import settings
+import openpyxl
+
+from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
+
+t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+co = Style(font=Font(name='Calibri',size=11),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+v = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='E4F5E1',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+vc = Style(font=Font(name='Calibri',size=12,bold=False,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='D4F5CE',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
 class FinancieroView(FinancieroMixin,TemplateView):
     template_name = 'financiero.html'
 
