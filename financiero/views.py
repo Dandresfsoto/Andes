@@ -136,3 +136,78 @@ class NuevoCorteView(FinancieroMixin, CreateView):
             evidencia.corte = corte
             evidencia.save()
         return super(ModelFormMixin, self).form_valid(form)
+
+def reporte_quincenal_financiero(request,pk):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Reporte de Quincenas.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Informe Quincenas Gestores"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ADMINISTRATIVO Y FINANCIERO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'REPORTE QUINCENAS GESTORES'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    cortes = Corte.objects.filter(region__id=pk)
+
+    columns = [tuple(['Nombre Gestor',60]),
+               tuple(['Banco',30]),
+               tuple(['Tipo de Cuenta',30]),
+               tuple(['Numero de Cuenta',30])
+               ]
+    for corte in cortes:
+        columns.append(tuple([corte.titulo+" - "+str(corte.fecha),90]))
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    gestores = Gestor.objects.filter(region__id=pk)
+
+    for gestor in gestores:
+        row_num += 1
+        row = [
+            gestor.nombre,
+            gestor.banco,
+            gestor.tipo_cuenta,
+            gestor.numero_cuenta,
+        ]
+
+        for corte in cortes:
+            row.append(Evidencia.objects.filter(gestor__id=gestor.id).exclude(corte=None).filter(corte=corte).aggregate(Sum('valor__valor'))['valor__valor__sum'])
+
+        for col_num in xrange(len(row)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            if row[col_num] == True:
+                c.value = "SI"
+            if row[col_num] == False:
+                c.value = "NO"
+            if row[col_num] == None:
+                c.value = ""
+            else:
+                c.value = row[col_num]
+            c.style = co
+
+    archivo.save(response)
+    return response

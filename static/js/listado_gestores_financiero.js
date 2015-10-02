@@ -88,6 +88,12 @@ $(document).ready(function() {
                 action: function ( e, dt, node, config ) {
                     location.replace(location.href+"corte");
                 }
+            },
+            {
+                text: 'Reporte',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"reporte");
+                }
             }
         ],
         "searching": true,

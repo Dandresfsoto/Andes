@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d437ff-e0c6-4dea-a8b5-6ad6b346880d" name="Default" comment="Documentacion settings">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/settings.py" afterPath="$PROJECT_DIR$/conf/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/views.py" afterPath="$PROJECT_DIR$/gestor/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/listado_gestores_financiero.js" afterPath="$PROJECT_DIR$/static/js/listado_gestores_financiero.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/urls.py" afterPath="$PROJECT_DIR$/financiero/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/views.py" afterPath="$PROJECT_DIR$/financiero/views.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,15 +32,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gestor/views.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/financiero/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.487965">
+              <caret line="199" column="40" selection-start-line="199" selection-start-column="40" selection-end-line="199" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#1967#2187#0" expanded="false" />
+                <element signature="e#2241#2522#0" expanded="false" />
+                <element signature="e#2578#2858#0" expanded="false" />
+                <element signature="e#2918#3258#0" expanded="false" />
+                <element signature="e#3317#3606#0" expanded="false" />
+                <element signature="e#3664#4005#0" expanded="false" />
+                <element signature="e#4065#4471#0" expanded="false" />
+                <element signature="e#4534#4901#0" expanded="false" />
+                <element signature="e#4958#5936#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/financiero/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="247" column="51" selection-start-line="247" selection-start-column="51" selection-end-line="247" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#254#3818#0" expanded="false" />
-              </folding>
+              <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,17 +67,7 @@
         <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_financiero.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="83" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/conf/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64252335">
-              <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+              <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -82,7 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/acceso/views.py" />
         <option value="$PROJECT_DIR$/templates/evidencias_radicado.jade" />
         <option value="$PROJECT_DIR$/templates/evidencias_radicado_total.jade" />
         <option value="$PROJECT_DIR$/radicado/views.py" />
@@ -120,19 +128,20 @@
         <option value="$PROJECT_DIR$/static/js/listado_formadores_cpe.js" />
         <option value="$PROJECT_DIR$/templates/listado_formadores_cpe.jade" />
         <option value="$PROJECT_DIR$/templates/tipo_formador_financiero.jade" />
-        <option value="$PROJECT_DIR$/financiero/urls.py" />
         <option value="$PROJECT_DIR$/static/js/listado_formadores_financiero.js" />
         <option value="$PROJECT_DIR$/templates/listado_formadores_financiero.jade" />
         <option value="$PROJECT_DIR$/templates/nuevo_formador.jade" />
         <option value="$PROJECT_DIR$/gestor/urls.py" />
         <option value="$PROJECT_DIR$/acceso/migrations/0011_auto_20151001_1638.py" />
         <option value="$PROJECT_DIR$/acceso/migrations/0008_auto_20151001_1638.py" />
-        <option value="$PROJECT_DIR$/financiero/views.py" />
         <option value="$PROJECT_DIR$/acceso/models.py" />
         <option value="$PROJECT_DIR$/acceso/forms.py" />
-        <option value="$PROJECT_DIR$/static/js/listado_gestores_financiero.js" />
         <option value="$PROJECT_DIR$/gestor/views.py" />
         <option value="$PROJECT_DIR$/conf/settings.py" />
+        <option value="$PROJECT_DIR$/acceso/urls.py" />
+        <option value="$PROJECT_DIR$/financiero/urls.py" />
+        <option value="$PROJECT_DIR$/static/js/listado_gestores_financiero.js" />
+        <option value="$PROJECT_DIR$/financiero/views.py" />
       </list>
     </option>
   </component>
@@ -233,7 +242,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
+              <option name="myItemId" value="financiero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceso" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -970,6 +993,16 @@
           <line>136</line>
           <option name="timeStamp" value="969" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/financiero/views.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="1056" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/financiero/views.py</url>
+          <line>168</line>
+          <option name="timeStamp" value="1057" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -978,7 +1011,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1056" />
+      <option name="time" value="1058" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1011,14 +1044,6 @@
           <folding>
             <element signature="e#0#24#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,14 +1276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/financiero/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/nuevo_formador.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67460316">
@@ -1314,45 +1331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/financiero/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23517382">
-          <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-            <element signature="e#1967#2187#0" expanded="false" />
-            <element signature="e#2241#2522#0" expanded="false" />
-            <element signature="e#2578#2858#0" expanded="false" />
-            <element signature="e#2918#3258#0" expanded="false" />
-            <element signature="e#3317#3606#0" expanded="false" />
-            <element signature="e#3664#4005#0" expanded="false" />
-            <element signature="e#4065#4471#0" expanded="false" />
-            <element signature="e#4534#4901#0" expanded="false" />
-            <element signature="e#4958#5936#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30470347">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#2121#2336#0" expanded="false" />
-            <element signature="e#2386#2598#0" expanded="false" />
-            <element signature="e#2660#2941#0" expanded="false" />
-            <element signature="e#3008#3301#0" expanded="false" />
-            <element signature="e#3362#3645#0" expanded="false" />
-            <element signature="e#3711#4286#0" expanded="false" />
-            <element signature="e#4353#4778#0" expanded="false" />
-            <element signature="e#4851#6096#0" expanded="false" />
-            <element signature="e#6152#7095#0" expanded="false" />
-            <element signature="e#7143#10158#0" expanded="false" />
-            <element signature="e#10209#10342#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/nuevo_gestor.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28425357">
@@ -1393,9 +1371,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64252335">
+          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gestor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5207878">
           <caret line="247" column="51" selection-start-line="247" selection-start-column="51" selection-end-line="247" selection-end-column="51" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1404,19 +1390,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_financiero.js">
+    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="83" selection-start-line="29" selection-start-column="83" selection-end-line="29" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.5207878">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/settings.py">
+    <entry file="file://$PROJECT_DIR$/acceso/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64252335">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.702407">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="233" selection-end-column="19" />
+          <folding>
+            <element signature="e#47#92#0" expanded="true" />
+            <element signature="e#2121#2336#0" expanded="false" />
+            <element signature="e#2386#2598#0" expanded="false" />
+            <element signature="e#2660#2941#0" expanded="false" />
+            <element signature="e#3008#3301#0" expanded="false" />
+            <element signature="e#3362#3645#0" expanded="false" />
+            <element signature="e#3711#4286#0" expanded="false" />
+            <element signature="e#4353#4778#0" expanded="false" />
+            <element signature="e#4851#6096#0" expanded="false" />
+            <element signature="e#6152#7095#0" expanded="false" />
+            <element signature="e#7143#10158#0" expanded="false" />
+            <element signature="e#10209#10342#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_financiero.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/financiero/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/financiero/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.487965">
+          <caret line="199" column="40" selection-start-line="199" selection-start-column="40" selection-end-line="199" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#1967#2187#0" expanded="false" />
+            <element signature="e#2241#2522#0" expanded="false" />
+            <element signature="e#2578#2858#0" expanded="false" />
+            <element signature="e#2918#3258#0" expanded="false" />
+            <element signature="e#3317#3606#0" expanded="false" />
+            <element signature="e#3664#4005#0" expanded="false" />
+            <element signature="e#4065#4471#0" expanded="false" />
+            <element signature="e#4534#4901#0" expanded="false" />
+            <element signature="e#4958#5936#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
