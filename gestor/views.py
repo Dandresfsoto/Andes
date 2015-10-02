@@ -249,6 +249,9 @@ class GestorFinancieroTableView(BaseDatatableView):
                     valor = round(int(evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum']))
                     json.append([fecha,titulo,descripcion,valor])
                 else:
+                    fecha = corte.fecha
+                    titulo = corte.titulo
+                    descripcion = corte.descripcion
                     json.append([fecha,titulo,descripcion,0])
             return json
         if column == 'contrato':
