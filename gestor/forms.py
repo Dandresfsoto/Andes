@@ -19,7 +19,7 @@ class GestorSoporteForm(forms.ModelForm):
 class GestorInformacionForm(forms.ModelForm):
     class Meta:
         model = Gestor
-        fields = ['celular','correo','cargo','profesion','banco','tipo_cuenta','numero_cuenta','eps','pension','arl']
+        fields = ['nombre','cedula','celular','correo','cargo','profesion','banco','tipo_cuenta','numero_cuenta','eps','pension','arl']
 
 class GestorSeguroForm(forms.ModelForm):
     class Meta:

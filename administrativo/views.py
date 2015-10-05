@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
 from django.views.generic import UpdateView
 from region.models import Region
@@ -19,8 +21,6 @@ class AdministrativoView(AdministrativoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(AdministrativoView,self).get_context_data(**kwargs)
-
-
 
 class FuncionarioView(AdministrativoMixin,TemplateView):
     template_name = 'listado_funcionarios.html'
@@ -143,6 +143,8 @@ class GestorActualizarInformacionView(AdministrativoMixin,UpdateView):
 
     def get_context_data(self, **kwargs):
         kwargs['informacion'] = [
+        {'nombre':"Nombre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre,'id':'nombre','longitud': Gestor._meta.get_field('nombre').max_length},
+        {'nombre':"Cedula",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).cedula,'id':'cedula','longitud': Gestor._meta.get_field('cedula').max_length},
         {'nombre':"Celular",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).celular,'id':'celular','longitud': Gestor._meta.get_field('celular').max_length},
         {'nombre':"Correo",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).correo,'id':'correo','longitud': Gestor._meta.get_field('correo').max_length},
         {'nombre':"Cargo",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).cargo,'id':'cargo','longitud': Gestor._meta.get_field('cargo').max_length},
@@ -152,7 +154,7 @@ class GestorActualizarInformacionView(AdministrativoMixin,UpdateView):
         {'nombre':"Numero de Cuenta",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).numero_cuenta,'id':'numero_cuenta','longitud': Gestor._meta.get_field('numero_cuenta').max_length},
         {'nombre':"Eps",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).eps,'id':'eps','longitud':Gestor._meta.get_field('eps').max_length},
         {'nombre':"Pension",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).pension,'id':'pension','longitud':Gestor._meta.get_field('pension').max_length},
-        {'nombre':"Arl",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).arl,'id':'arl','longitud':Gestor._meta.get_field('arl').max_length}
+        {'nombre':"Arl",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).arl,'id':'arl','longitud':Gestor._meta.get_field('arl').max_length},
         ]
 
         kwargs['nombre'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre

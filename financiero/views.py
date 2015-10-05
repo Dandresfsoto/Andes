@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.views.generic import TemplateView, CreateView
 from django.views.generic.edit import ModelFormMixin
 from mixins.mixins import FinancieroMixin
@@ -10,13 +12,16 @@ from funcionario.forms import NuevoFuncionarioForm
 from funcionario.models import Funcionario
 from acceso.models import Corte
 from acceso.forms import CorteForm
-from acceso.models import Evidencia
+from acceso.models import Evidencia,Actividad
 from django.db.models import Sum
+from django.core.mail import EmailMessage
+import StringIO
 
 from django.http import HttpResponse
 import time
 from conf import settings
 import openpyxl
+from django.utils.encoding import smart_unicode
 
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
 
@@ -227,6 +232,184 @@ def reporte_quincenal_financiero(request,pk):
 
         c = hoja1.cell(row=6, column=6)
         c.style = co_money
+
+    archivo.save(response)
+    return response
+
+def reporte_gestor(request,pk,corte_id,gestor_id):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    gestor = Gestor.objects.get(id=gestor_id)
+    corte = Corte.objects.get(id=corte_id)
+    response['Content-Disposition'] = 'attachment; filename='+smart_unicode(gestor.nombre)+'.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = smart_unicode(gestor.nombre)
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'REPORTE QUINCENAL - '+smart_unicode(gestor.nombre)
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columnas = Actividad.objects.order_by('id').values('nombre','titulo')
+    columns = [tuple(['Radicado',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Ciclo',30]),
+               tuple(['Componente',30]),
+               tuple(['Modulo',30]),
+               tuple(['Actividad',30]),
+               tuple(['Valor',30]),
+               tuple(['Corte',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    evidencias = Evidencia.objects.filter(gestor__id=gestor_id).filter(corte_id=corte.id)
+
+    for evidencia in evidencias:
+        row_num += 1
+        row = [
+            evidencia.radicado.numero,
+            evidencia.radicado.municipio.departamento.nombre,
+            evidencia.radicado.municipio.nombre,
+            evidencia.ciclo.nombre,
+            evidencia.componente.nombre,
+            evidencia.modulo.nombre,
+            str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
+            evidencia.valor.valor,
+            str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
+        ]
+
+        for col_num in xrange(len(row)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            if row[col_num] == True:
+                c.value = "SI"
+            if row[col_num] == False:
+                c.value = "NO"
+            if row[col_num] == None:
+                c.value = ""
+            else:
+                c.value = row[col_num]
+            c.style = co
+
+
+
+    archivo.save(response)
+    return response
+
+def reporte_gestor_email(request,pk,corte_id,gestor_id):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    gestor = Gestor.objects.get(id=gestor_id)
+    corte = Corte.objects.get(id=corte_id)
+    response['Content-Disposition'] = 'attachment; filename='+smart_unicode(gestor.nombre)+'.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = smart_unicode(gestor.nombre)
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'REPORTE QUINCENAL - '+smart_unicode(gestor.nombre)
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columnas = Actividad.objects.order_by('id').values('nombre','titulo')
+    columns = [tuple(['Radicado',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Ciclo',30]),
+               tuple(['Componente',30]),
+               tuple(['Modulo',30]),
+               tuple(['Actividad',30]),
+               tuple(['Valor',30]),
+               tuple(['Corte',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    evidencias = Evidencia.objects.filter(gestor__id=gestor_id).filter(corte_id=corte.id)
+    valor = evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum']
+
+    for evidencia in evidencias:
+        row_num += 1
+        row = [
+            evidencia.radicado.numero,
+            evidencia.radicado.municipio.departamento.nombre,
+            evidencia.radicado.municipio.nombre,
+            evidencia.ciclo.nombre,
+            evidencia.componente.nombre,
+            evidencia.modulo.nombre,
+            str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
+            evidencia.valor.valor,
+            str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
+        ]
+
+        for col_num in xrange(len(row)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            if row[col_num] == True:
+                c.value = "SI"
+            if row[col_num] == False:
+                c.value = "NO"
+            if row[col_num] == None:
+                c.value = ""
+            else:
+                c.value = row[col_num]
+            c.style = co
+
+    f = StringIO.StringIO()
+    archivo.save(f)
+
+    contenido = '<b>Apreciado(a) Gestor(a): '+gestor.nombre+'</b><br><br>'+'<p>Cordial saludo,</p>'+'<br>'+\
+                '<p>Para la <b>Asociación Nacional para el Desarrollo Social - ANDES</b> y el programa <b>Computadores para Educar</b> es ' \
+                'un placer contar con Gestores tan comprometidos con su trabajo, te informamos que adjunto puedes encontrar el reporte detallado con las' \
+                ' actividades cargadas en el sistema SICAN con corte: <b>'+str(corte.fecha)+'</b> por un valor total de' \
+                ' <b>$'+str(int(valor))+'</b>.</p>'+'<br>'
+    email = EmailMessage("Reporte Quincena - "+corte.titulo+" - "+str(corte.fecha),contenido,to=[gestor.correo])
+    email.attach('Reporte.xlsx', f.getvalue(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    email.content_subtype = "html"
+    email.send()
 
     archivo.save(response)
     return response
