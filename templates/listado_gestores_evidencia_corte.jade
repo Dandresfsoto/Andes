@@ -1,0 +1,37 @@
+extends base
+block titulo
+    | Gestores
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../../") Andes
+    li
+        a(href="../../../../../") Financiero
+    li
+        a(href="../../../../") Gestores
+    li(class="active") {{GESTOR}} - {{CORTE}}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_gestor",value="{{ID_GESTOR}}",id="id_gestor")
+        input(type="hidden",name="id_corte",value="{{ID_CORTE}}",id="id_corte")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Radicado
+                    th Municipio
+                    th Departamento
+                    th Actividades
+            tbody
+                tr
+                    th
+                    th Radicado
+                    th Municipio
+                    th Departamento
+                    th Actividades
+block extra_script
+    script(src="{% static 'js/listado_gestores_evidencia_corte.js' %}")

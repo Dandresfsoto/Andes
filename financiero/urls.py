@@ -5,6 +5,7 @@ from financiero import views
 urlpatterns = [
     url(r'^$', login_required(views.FinancieroView.as_view())),
 
+    url(r'^gestores/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/$', login_required(views.GestorCorteEvidenciaView.as_view())),
     url(r'^gestores/$', login_required(views.GestorView.as_view())),
     url(r'^gestores/nuevo/$', login_required(views.NuevoGestorView.as_view())),
     url(r'^gestores/corte/$', login_required(views.NuevoCorteView.as_view())),

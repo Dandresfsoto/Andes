@@ -29,6 +29,10 @@ co = Style(font=Font(name='Calibri',size=11),
        alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
      number_format='General')
 
+co_money = Style(font=Font(name='Calibri',size=11),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='Money')
+
 v = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='E4F5E1',end_color='FF000000'),
        alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
@@ -53,6 +57,18 @@ class GestorView(FinancieroMixin,TemplateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(GestorView,self).get_context_data(**kwargs)
+
+class GestorCorteEvidenciaView(FinancieroMixin,TemplateView):
+    template_name = 'listado_gestores_evidencia_corte.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_CORTE'] = self.kwargs['corte_id']
+        kwargs['ID_GESTOR'] = self.kwargs['gestor_id']
+        kwargs['CORTE'] = Corte.objects.get(pk=self.kwargs['corte_id']).titulo
+        kwargs['GESTOR'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre
+        return super(GestorCorteEvidenciaView,self).get_context_data(**kwargs)
 
 class FormadorView(FinancieroMixin,TemplateView):
     template_name = 'tipo_formador_financiero.html'
@@ -208,6 +224,9 @@ def reporte_quincenal_financiero(request,pk):
             else:
                 c.value = row[col_num]
             c.style = co
+
+        c = hoja1.cell(row=6, column=6)
+        c.style = co_money
 
     archivo.save(response)
     return response

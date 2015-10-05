@@ -2,6 +2,7 @@ from .models import Gestor
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from acceso.models import Evidencia, Corte
+from radicado.models import Radicado
 from django.db.models import Sum
 
 class GestorTableView(BaseDatatableView):
@@ -247,12 +248,13 @@ class GestorFinancieroTableView(BaseDatatableView):
                     titulo = corte.titulo
                     descripcion = corte.descripcion
                     valor = round(int(evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum']))
-                    json.append([fecha,titulo,descripcion,valor])
+                    id_corte = corte.id
+                    json.append([fecha,titulo,descripcion,valor,corte.id])
                 else:
                     fecha = corte.fecha
                     titulo = corte.titulo
                     descripcion = corte.descripcion
-                    json.append([fecha,titulo,descripcion,0])
+                    json.append([fecha,titulo,descripcion,0,corte.id])
             return json
         if column == 'contrato':
             return str(row.contrato)
@@ -361,4 +363,98 @@ class GestorCalificacionTableView(BaseDatatableView):
                 progreso,
                 actividades_sinReportar.count()
             ])
+        return json_data
+
+class GestorCorteEvidenciasTableView(BaseDatatableView):
+    model = Evidencia
+    columns = [
+        'id',
+        'radicado',
+        'gestor',
+        'ciclo',
+        'componente',
+        'modulo',
+        'actividad',
+        'encargado',
+        'valor',
+        'soporte',
+        'corte',
+        'usuario',
+        'modificacion',
+    ]
+
+    order_columns = [
+        'radicado',
+        'gestor',
+        'ciclo'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(gestor__id=self.kwargs['gestor']).filter(corte__id=self.kwargs['corte']).values_list('radicado__numero',flat=True).distinct()
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'radicado__numero__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'radicado':
+            return row.radicado.numero
+        if column == 'gestor':
+            return row.gestor.nombre
+        if column == 'ciclo':
+            return row.ciclo.nombre
+        if column == 'componente':
+            return row.componente.nombre
+        if column == 'modulo':
+            return row.modulo.nombre
+        if column == 'actividad':
+            return row.actividad.nombre
+        if column == 'encargado':
+            return row.encargado.encargado
+        if column == 'valor':
+            return row.valor.valor
+        if column == 'soporte':
+            return str(row.soporte)
+        if column == 'corte':
+            return row.corte.titulo
+        if column == 'usuario':
+            return row.usuario.username
+        if column == 'modificacion':
+            return str(row.modificacion)
+        else:
+            return super(GestorCorteEvidenciasTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            radicado = Radicado.objects.get(numero=item)
+            evidencias = Evidencia.objects.filter(radicado__numero=item).filter(corte__id=self.kwargs['corte'])
+            evidencia_radicado = []
+            for evidencia in evidencias:
+                evidencia_radicado.append([
+                    evidencia.ciclo.nombre,
+                    evidencia.componente.nombre,
+                    evidencia.modulo.nombre,
+                    evidencia.actividad.nombre,
+                    evidencia.actividad.descripcion,
+                    evidencia.valor.valor,
+                    str(evidencia.soporte),
+                    evidencia.usuario.username,
+                    evidencia.modificacion
+                ])
+            json_data.append([
+
+                item,
+                radicado.municipio.nombre,
+                radicado.municipio.departamento.nombre,
+                evidencias.count(),
+                evidencia_radicado
+            ])
+
         return json_data

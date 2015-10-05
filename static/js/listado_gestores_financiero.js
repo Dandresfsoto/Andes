@@ -20,7 +20,7 @@ function format ( d ) {
     for (i = 0; i < d[16].length; i++) {
         quincenas += '<tr><td colspan="2"><b>Fecha:</b> '+ d[16][i][0].replace('T',' ').replace('Z','')+'</td>' +
             '<td colspan="2"><b>Titulo:</b> '+ d[16][i][1]+'</td>+' +
-            '<td colspan="2"><b>Valor:</b> $'+ d[16][i][3].toLocaleString('es-CO')+'</td></tr>';
+            '<td colspan="2"><b>Valor:</b><a href="corte/'+d[16][i][4]+'/gestor/'+d[0]+'" style="color:#004c99">$'+ d[16][i][3].toLocaleString('es-CO')+'</a></td></tr>';
     }
 
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
                 }
             },
             {
-                text: 'Reporte',
+                text: 'Reporte de Pago',
                 action: function ( e, dt, node, config ) {
                     location.replace(location.href+"reporte");
                 }
