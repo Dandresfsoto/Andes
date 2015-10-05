@@ -6,7 +6,7 @@ function format ( d ) {
 
     for (i = 0; i < d[4].length; i++) {
         if(d[4][i][6] != ""){
-            soporte = '<td rowspan="1" colspan="1" class="text-center"><a href="/media/'+d[4][i][6]+'/"><img src="/static/imagenes/pdf.png" height="40"></a></td>'
+            soporte = '<td rowspan="1" colspan="1" class="text-center"><a href="/media/'+d[4][i][6]+'"><img src="/static/imagenes/pdf.png" height="40"></a></td>'
         }
         else{
             soporte = '<td rowspan="1" colspan="1" class="text-center"><img src="/static/imagenes/pdf-gris.png" height="40"></td>'
@@ -14,6 +14,7 @@ function format ( d ) {
         actividades += '<tr>' +
             '<td colspan="1"><b>Ciclo:</b> '+ d[4][i][0]+'</td>+' +
             '<td colspan="1"><b>Actividad:</b> '+ d[4][i][3]+' - '+d[4][i][4]+'</td>'+
+            '<td colspan="1"><b>Valor:</b> $'+ d[4][i][5].toLocaleString('es-CO')+'</td>'+
             '<td colspan="1"><b>Usuario:</b> '+ d[4][i][7]+'</td>'+
             '<td colspan="1"><b>Fecha:</b> '+ d[4][i][8]+'</td>'+
              soporte+
