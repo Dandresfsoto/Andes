@@ -406,7 +406,7 @@ def reporte_gestor_email(request,pk,corte_id,gestor_id):
                 'un placer contar con Gestores tan comprometidos con su trabajo, te informamos que adjunto puedes encontrar el reporte detallado con las' \
                 ' actividades cargadas en el sistema SICAN con corte: <b>'+str(corte.fecha)+'</b> por un valor total de' \
                 ' <b>$'+str(int(valor))+'</b>.</p>'+'<br>'
-    email = EmailMessage("Reporte Quincena - "+corte.titulo+" - "+str(corte.fecha),contenido,to=["dandresfsoto@gmail.com"],from_email='sistemas@asoandes.org')
+    email = EmailMessage("Reporte Quincena - "+corte.titulo+" - "+str(corte.fecha),contenido,to=['dandresfsoto@gmail.com'])
     email.attach('Reporte.xlsx', f.getvalue(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
     email.content_subtype = "html"
     email.send()
