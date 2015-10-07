@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^(?P<pk>\w+)/andes/administrativo/', include('administrativo.urls')),
     url(r'^(?P<pk>\w+)/andes/acceso/', include('acceso.urls')),
     url(r'^(?P<pk>\w+)/andes/financiero/', include('financiero.urls')),
+    url(r'^(?P<pk>\w+)/andes/formacion/', include('formacion.urls')),
 ]

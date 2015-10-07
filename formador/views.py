@@ -1,6 +1,7 @@
 from .models import Formador
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
+from formacion.models import Grupo,ParticipanteEscuelaTic
 
 class FormadorTableView(BaseDatatableView):
     model = Formador
@@ -138,3 +139,205 @@ class FormadorTableView(BaseDatatableView):
         else:
             return super(FormadorTableView,self).render_column(row,column)
 
+class FormadorCalificacionTableView(BaseDatatableView):
+    model = Formador
+    columns = [
+        'id',
+        'nombre',
+        'cedula',
+        'celular',
+        'correo',
+        'cargo',
+        'profesion',
+        'foto',
+        'fecha_contratacion',
+        'fecha_terminacion',
+    ]
+
+    order_columns = [
+        'nombre',
+        'cedula',
+        'celular',
+        'correo',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(region__id=self.kwargs['region']).filter(tipo__id=2)
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
+            q |= Q(**{'cedula__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'foto':
+            return str(row.foto)
+        else:
+            return super(FormadorCalificacionTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            grupos = Grupo.objects.filter(formador__id=item.id).count()
+            participantes = ParticipanteEscuelaTic.objects.filter(formador__id=item.id).count()
+            json_data.append([
+                item.id,
+                item.nombre,
+                item.cedula,
+                item.celular,
+                item.correo,
+                item.cargo,
+                item.profesion,
+                str(item.foto),
+                item.fecha_contratacion,
+                item.fecha_terminacion,
+                grupos,
+                participantes
+            ])
+
+        return json_data
+
+class FormadorGrupoTableView(BaseDatatableView):
+    model = Grupo
+    columns = [
+        'id',
+        'formador',
+        'municipio',
+        'nombre',
+        'direccion',
+        'horario'
+    ]
+
+    order_columns = [
+        'id',
+        'formador',
+        'municipio',
+        'nombre',
+        'direccion',
+        'horario'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(formador__id=self.kwargs['id_formador'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return str(row.nombre)
+        if column == 'municipio':
+            return str(row.municipio.nombre)
+        else:
+            return super(FormadorGrupoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=item.id).count()
+            json_data.append([
+                item.id,
+                item.nombre,
+                item.municipio.nombre,
+                item.municipio.departamento.nombre,
+                item.direccion,
+                item.horario,
+                participantes
+            ])
+
+        return json_data
+
+class FormadorListadoGrupoTableView(BaseDatatableView):
+    model = ParticipanteEscuelaTic
+    columns = [
+        'id',
+        'grupo',
+        'formador',
+        'poblacion',
+        'genero',
+        'nombres',
+        'apellidos',
+        'institucion',
+        'correo',
+        'telefono',
+        'cedula'
+    ]
+
+    order_columns = [
+        'id',
+        'grupo',
+        'formador',
+        'poblacion',
+        'genero',
+        'nombres',
+        'apellidos',
+        'institucion',
+        'correo',
+        'telefono',
+        'cedula'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(formador__id=self.kwargs['id_formador']).filter(grupo__id=self.kwargs['id_grupo'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombres__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return str(row.formador.nombre)
+        if column == 'grupo':
+            return str(row.grupo.nombre)
+        else:
+            return super(FormadorListadoGrupoTableView,self).render_column(row,column)

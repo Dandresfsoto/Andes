@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="shortcut icon" href="{% static 'imagenes/logo_andes.ico' %}">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <title>Tipo de Formador</title>
+    <title>Listado Inscritos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-colvis-1.0.3,b-flash-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.css">
@@ -29,10 +29,12 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../../../">{{REGION}}</a></li>
-                <li><a href="../../">Andes</a></li>
-                <li><a href="../">Administrativo</a></li>
-                <li class="active">Formadores</li>
+                <li><a href="../../../../../../">{{REGION}}</a></li>
+                <li><a href="../../../../../">Andes</a></li>
+                <li><a href="../../../../">Formación</a></li>
+                <li><a href="../../../">Formadores Tipo 2</a></li>
+                <li><a href="../../">{{NOMBRE_FORMADOR}}</a></li>
+                <li class="active">Inscritos: {{NOMBRE_GRUPO}}</li>
               </ol>
             </div>
           </ul>
@@ -48,26 +50,28 @@
       </div>
     </nav>{% endif %}
     <div class="container-fluid">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50"><a href="1/" class="text-center">
-          <div class="box">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/docentes.png' %}" class="center-block img-responsive hvr-pop"></div>
-            </div>
-            <div class="row text-center">
-              <p>Formadores Tipo 1</p>
-            </div>
-          </div></a></div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50"><a href="2/" class="text-center">
-          <div class="box">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/padres.png' %}" class="center-block img-responsive hvr-pop"></div>
-            </div>
-            <div class="row text-center">
-              <p>Formadores Tipo 2</p>
-            </div>
-          </div></a></div>
+      <input type="hidden" name="id_region" value="{{ID_REGION}}" id="id_region">
+      <input type="hidden" name="id_formador" value="{{ID_FORMADOR}}" id="id_formador">
+      <input type="hidden" name="id_grupo" value="{{ID_GRUPO}}" id="id_grupo">
+      <table id="table" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Documento de Identidad</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <th>Documento de Identidad</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="container-fluid margin-top-50"></div>
     <div style="margin-top:50px;"></div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -75,6 +79,7 @@
     <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-img-lightbox-tooltip.js' %}"></script>
     <script src="{% static 'js/jquery.ezdz.js' %}"></script>{% progress_bar_media %}
+    <script src="{% static 'js/tipo2_formador_listado.js' %}"></script>
     <script>
       if(localStorage.getItem("user") != null){
       $("#profileImage").attr('src',localStorage.getItem("user"));}

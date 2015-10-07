@@ -1,0 +1,71 @@
+extends base
+block titulo
+    | Nuevo Participante
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../../../") Andes
+    li
+        a(href="../../../../../../") Formación
+    li
+        a(href="../../../../../") Formadores Tipo 2
+    li
+        a(href="../../../../") {{NOMBRE_FORMADOR}}
+    li
+        a(href="../../") Inscritos: {{NOMBRE_GRUPO}}
+    li(class="active") Nuevo Participate
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                input(id="id_formador",name="formador", value="{{ID_FORMADOR}}",hidden)
+                input(id="id_grupo",name="grupo", value="{{ID_GRUPO}}",hidden)
+                tr
+                    th(class="text-center") Campo:
+                    th(class="text-center") Información:
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Nombres:
+                    td(class = "text-center")
+                        | {{form.nombres}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Apellidos:
+                    td(class = "text-center")
+                        | {{form.apellidos}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Documento de Identidad:
+                    td(class = "text-center")
+                        | {{form.cedula}}
+                        | {{form.cedula.errors}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Poblacion:
+                    td(class = "text-center")
+                        | {{form.poblacion}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Genero:
+                    td(class = "text-center")
+                        | {{form.genero}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Institución/Entidad:
+                    td(class = "text-center")
+                        | {{form.institucion}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Correo:
+                    td(class = "text-center")
+                        | {{form.correo}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Telefono:
+                    td(class = "text-center")
+                        | {{form.telefono}}
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")

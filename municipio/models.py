@@ -7,5 +7,8 @@ class Municipio(models.Model):
     departamento = models.ForeignKey(Departamento)
     codigo = models.CharField(max_length=100,blank=True)
 
+    class Meta:
+        ordering = ['nombre']
+
     def __unicode__(self):
         return smart_unicode(self.nombre)

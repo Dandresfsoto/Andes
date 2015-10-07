@@ -66,6 +66,7 @@ INSTALLED_APPS = (
     'eje',
     'pqr',
     'acceso',
+    'formacion',
 )
 
 REST_FRAMEWORK = {

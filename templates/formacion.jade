@@ -1,20 +1,18 @@
 extends base
 block titulo
-    | Tipo de Formador
+    | Formación
 block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../") {{REGION}}
+        a(href="../../") {{REGION}}
     li
-        a(href="../../") Andes
-    li
-        a(href="../") Administrativo
-    li(class="active") Formadores
+        a(href="../") Andes
+    li(class="active") Formación
 block body_content
     div(class="container-fluid")
         div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
-            a(href="1/",class="text-center")
+            a(href="tipo1/",class="text-center")
                 div(class="box")
                     div(class="row")
                         div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
@@ -22,11 +20,12 @@ block body_content
                     div(class="row text-center")
                         p Formadores Tipo 1
         div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
-            a(href="2/",class="text-center")
+            a(href="tipo2/",class="text-center")
                 div(class="box")
                     div(class="row")
                         div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
                             img(src="{% static 'imagenes/padres.png' %}",class="center-block img-responsive hvr-pop")
                     div(class="row text-center")
                         p Formadores Tipo 2
+
     div(class="container-fluid margin-top-50")
