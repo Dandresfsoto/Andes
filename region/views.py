@@ -106,3 +106,19 @@ class CpeFormadorTipoView(CpeMixin,TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_TIPO'] = self.kwargs['tipo']
         return super(CpeFormadorTipoView,self).get_context_data(**kwargs)
+
+class CpeAdministrativoView(CpeMixin,TemplateView):
+    template_name = 'administrativo_cpe.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeAdministrativoView,self).get_context_data(**kwargs)
+
+class CpeAdministrativoInformesView(CpeMixin,TemplateView):
+    template_name = 'administrativo_cpe_listado.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeAdministrativoInformesView,self).get_context_data(**kwargs)

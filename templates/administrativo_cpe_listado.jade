@@ -1,0 +1,29 @@
+extends base
+block titulo
+    | Informes
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../") {{REGION}}
+    li
+        a(href="../../") CPE
+    li
+        a(href="../") Administrativo y Financiero
+    li(class="active") Informes
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Nombre
+                    th Mes
+            tbody
+                tr
+                    th
+                    th Nombre
+                    th Mes
+block extra_script
+    script(src="{% static 'js/administrativo_cpe_listado.js' %}")
