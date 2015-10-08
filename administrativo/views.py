@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, CreateView
 from region.models import Region
 
 from gestor.models import Gestor
@@ -14,6 +14,12 @@ from funcionario.models import Funcionario
 from funcionario.forms import FuncionarioSoporteForm, FuncionarioSeguroForm, FuncionarioInformacionForm, FuncionarioFotoForm
 
 from mixins.mixins import AdministrativoMixin
+
+from .models import Informes
+from django_datatables_view.base_datatable_view import BaseDatatableView
+from django.db.models import Q
+from .forms import NuevoInformeForm
+
 
 class AdministrativoView(AdministrativoMixin,TemplateView):
     template_name = 'administrativo.html'
@@ -335,3 +341,94 @@ class FormadorActualizarFotoView(AdministrativoMixin,UpdateView):
         kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FormadorActualizarFotoView,self).get_context_data(**kwargs)
+
+class CpeView(AdministrativoMixin,TemplateView):
+    template_name = 'cpe_administrativo.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeView,self).get_context_data(**kwargs)
+
+class CpeInformeView(AdministrativoMixin,TemplateView):
+    template_name = 'cpe_administrativo_listado.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeInformeView,self).get_context_data(**kwargs)
+
+class CpeInformeTableView(BaseDatatableView):
+    model = Informes
+    columns = [
+        'id',
+        'fecha',
+        'nombre',
+        'mes',
+        'excel_acceso',
+        'soporte_acceso',
+        'excel_formacion',
+        'soporte_formacion'
+    ]
+
+    order_columns = [
+        'id',
+        'fecha',
+        'nombre',
+        'mes',
+        'excel_acceso',
+        'soporte_acceso',
+        'excel_formacion',
+        'soporte_formacion'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.all().filter(region__id=self.kwargs['pk'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
+            q |= Q(**{'mes__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'excel_acceso':
+            return str(row.excel_acceso)
+        if column == 'soporte_acceso':
+            return str(row.soporte_acceso)
+        if column == 'excel_formacion':
+            return str(row.excel_formacion)
+        if column == 'soporte_formacion':
+            return str(row.soporte_formacion)
+        else:
+            return super(CpeInformeTableView,self).render_column(row,column)
+
+class CpeInformeNuevoView(AdministrativoMixin, CreateView):
+    model = Informes
+    form_class = NuevoInformeForm
+    success_url = "../"
+    template_name = "nuevo_informe.html"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeInformeNuevoView,self).get_context_data(**kwargs)
+
+class CpeInformeUpdateView(AdministrativoMixin,UpdateView):
+    model = Informes
+    form_class = NuevoInformeForm
+    template_name = "nuevo_informe.html"
+
+    pk_url_kwarg = "informe_id"
+    success_url = "../../"
+
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeInformeUpdateView,self).get_context_data(**kwargs)

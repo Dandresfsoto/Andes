@@ -6,7 +6,8 @@ from region.models import Region
 from django.contrib.auth.models import User
 
 def content_file_name(instance, filename):
-    return '/'.join(['Formacion', 'Formadores Tipo 2', 'Archivos Masivos',smart_unicode(instance.ciclo.nombre),smart_unicode(instance.actividad.nombre),str(instance.radicado.numero),filename])
+    x=0
+    return '/'.join(['Formacion', 'Formadores Tipo 2', smart_unicode(instance.grupo.formador.region),'Archivos Masivos',smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.grupo.nombre),filename])
 
 class Grupo(models.Model):
     formador = models.ForeignKey(Formador)
@@ -16,7 +17,7 @@ class Grupo(models.Model):
     horario = models.TextField(blank=True,max_length=2000)
 
     def __unicode__(self):
-        return smart_unicode(self.formador)
+        return smart_unicode("%s - %s" % (self.formador,self.nombre))
 
 class ParticipanteEscuelaTic(models.Model):
     formador = models.ForeignKey(Formador)
@@ -63,6 +64,7 @@ class Corte(models.Model):
 
 class Masivo(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
+    grupo = models.ForeignKey(Grupo)
     archivo = models.FileField(upload_to=content_file_name,blank=True)
     usuario = models.ForeignKey(User,blank=True,null=True)
 

@@ -24,4 +24,10 @@ urlpatterns = [
     url(r'^funcionarios/actualizar/seguro/(?P<funcionario_id>\w+)/$', login_required(views.FuncionarioActualizarSeguroView.as_view())),
     url(r'^funcionarios/actualizar/informacion/(?P<funcionario_id>\w+)/$', login_required(views.FuncionarioActualizarInformacionView.as_view())),
     url(r'^funcionarios/actualizar/foto/(?P<funcionario_id>\w+)/$', login_required(views.FuncionarioActualizarFotoView.as_view())),
+
+    url(r'^cpe/$', login_required(views.CpeView.as_view())),
+    url(r'^cpe/informes/$', login_required(views.CpeInformeView.as_view())),
+    url(r'^cpe/informes/listado/$', login_required(views.CpeInformeTableView.as_view())),
+    url(r'^cpe/informes/nuevo/$', login_required(views.CpeInformeNuevoView.as_view())),
+    url(r'^cpe/informes/actualizar/(?P<informe_id>\w+)/$', login_required(views.CpeInformeUpdateView.as_view())),
 ]

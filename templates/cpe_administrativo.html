@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="shortcut icon" href="{% static 'imagenes/logo_andes.ico' %}">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <title>Administrativo</title>
+    <title>CPE</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/r/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-colvis-1.0.3,b-flash-1.0.3,b-html5-1.0.3,b-print-1.0.3/datatables.min.css">
@@ -29,9 +29,10 @@
             <div class="bread">
               <ol class="breadcrumb">
                 <li><a href="/region/">Inicio</a></li>
-                <li><a href="../../">{{REGION}}</a></li>
-                <li><a href="../">Andes</a></li>
-                <li class="active">Administrativo</li>
+                <li><a href="../../../">{{REGION}}</a></li>
+                <li><a href="../../">Andes</a></li>
+                <li><a href="../">Administrativo</a></li>
+                <li class="active">CPE</li>
               </ol>
             </div>
           </ul>
@@ -47,43 +48,26 @@
       </div>
     </nav>{% endif %}
     <div class="container-fluid">
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50"><a href="gestores/" class="text-center">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50"><a href="#" class="text-center">
           <div class="box">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/acceso.png' %}" class="center-block img-responsive hvr-pop"></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/contrato.png' %}" class="center-block img-responsive hvr-pop"></div>
             </div>
             <div class="row text-center">
-              <p>Gestores</p>
+              <p>Obligaciones Contractuales</p>
             </div>
           </div></a></div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50"><a href="formadores/" class="text-center">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50"><a href="informes/" class="text-center">
           <div class="box">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/formacion.png' %}" class="center-block img-responsive hvr-pop"></div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/administrativo.png' %}" class="center-block img-responsive hvr-pop"></div>
             </div>
             <div class="row text-center">
-              <p>Formadores</p>
-            </div>
-          </div></a></div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50"><a href="funcionarios/" class="text-center">
-          <div class="box">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/funcionarios.png' %}" class="center-block img-responsive hvr-pop"></div>
-            </div>
-            <div class="row text-center">
-              <p>Funcionarios</p>
-            </div>
-          </div></a></div>
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 margin-top-50"><a href="cpe/" class="text-center">
-          <div class="box">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol"><img src="{% static 'imagenes/cpe2.png' %}" class="center-block img-responsive hvr-pop"></div>
-            </div>
-            <div class="row text-center">
-              <p>CPE</p>
+              <p>Informe Administrativo y Financiero</p>
             </div>
           </div></a></div>
     </div>
+    <div class="container-fluid margin-top-50"></div>
     <div style="margin-top:50px;"></div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

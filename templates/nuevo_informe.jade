@@ -1,0 +1,59 @@
+extends base
+block titulo
+    | Nuevo Informe
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../") {{REGION}}
+    li
+        a(href="../../../../") Andes
+    li
+        a(href="../../../") Administrativo
+    li
+        a(href="../../") CPE
+    li
+        a(href="../") Informes Administrativos y Financieros
+    li(class="active") Nuevo
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                input(id="id_region",name="region", value="{{ID_REGION}}",hidden)
+                tr
+                    th(class="text-center") Campo:
+                    th(class="text-center") Información:
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Nombre:
+                    td(class = "text-center")
+                        |{{form.nombre}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Mes:
+                    td(class = "text-center")
+                        |{{form.mes}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Archivo Excel Acceso:
+                    td(class = "text-center")
+                        |{{form.excel_acceso}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Soporte Acceso:
+                    td(class = "text-center")
+                        |{{form.soporte_acceso}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Archivo Excel Formacion:
+                    td(class = "text-center")
+                        |{{form.excel_formacion}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Soporte Formacion:
+                    td(class = "text-center")
+                        |{{form.soporte_formacion}}
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")
