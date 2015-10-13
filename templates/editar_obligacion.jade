@@ -14,7 +14,7 @@ block itemsNavbarBreadcrumb
         a(href="../../") CPE
     li
         a(href="../") Obligaciones Contractuales
-    li(class="active") Editar
+    li(class="active") Editar {{OBLIGACION}}
 block body_content
     div(class="container-fluid")
         form(action="",method="post",enctype="multipart/form-data")
@@ -22,7 +22,7 @@ block body_content
                 input(id="id_region",name="region", value="{{ID_REGION}}",hidden)
                 tr
                     th(class="text-center") Campo:
-                    th(class="text-center") Información:
+                    th(class="text-center") InformaciÃ³n:
                 tr
                     td(class = "text-center" style="font-weight:bold;") Numero:
                     td(class = "text-center")
