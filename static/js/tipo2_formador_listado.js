@@ -8,6 +8,12 @@ $(document).ready(function() {
                 action: function ( e, dt, node, config ) {
                     location.replace(location.href+"nuevo/participante/");
                 }
+            },
+            {
+                text: 'Cargar Archivo',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"nuevo/archivo/");
+                }
             }
         ],
         "searching": true,

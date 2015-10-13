@@ -122,3 +122,11 @@ class CpeAdministrativoInformesView(CpeMixin,TemplateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(CpeAdministrativoInformesView,self).get_context_data(**kwargs)
+
+class CpeAdministrativoObligacionesView(CpeMixin,TemplateView):
+    template_name = 'administrativo_cpe_listado_obligaciones.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeAdministrativoObligacionesView,self).get_context_data(**kwargs)

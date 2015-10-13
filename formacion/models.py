@@ -6,8 +6,10 @@ from region.models import Region
 from django.contrib.auth.models import User
 
 def content_file_name(instance, filename):
-    x=0
     return '/'.join(['Formacion', 'Formadores Tipo 2', smart_unicode(instance.grupo.formador.region),'Archivos Masivos',smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.grupo.nombre),filename])
+
+def upload_soporte_escuela(instance, filename):
+    return '/'.join(['Formacion', 'Formadores Tipo 2', smart_unicode(instance.grupo.formador.region),smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.entregable.actividad.nombre),filename])
 
 class Grupo(models.Model):
     formador = models.ForeignKey(Formador)
@@ -70,3 +72,20 @@ class Masivo(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.fecha)
+
+class EvidenciaEscuelaTic(models.Model):
+    entregable = models.ForeignKey(Entregable)
+    participante = models.ForeignKey(ParticipanteEscuelaTic)
+    valor = models.ForeignKey(Valor)
+    corte = models.ForeignKey(Corte, null=True)
+
+    def __unicode__(self):
+        return smart_unicode("%s - %s" % (self.participante,self.entregable.actividad))
+
+class SoporteEntregableEscuelaTic(models.Model):
+    grupo = models.ForeignKey(Grupo)
+    entregable = models.ForeignKey(Entregable)
+    soporte = models.FileField(upload_to=upload_soporte_escuela,blank=True,null=True)
+
+    def __unicode__(self):
+        return smart_unicode("%s - %s - %s" % (self.grupo.formador.nombre,self.grupo,self.entregable))

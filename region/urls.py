@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/$', login_required(views.CpeGestorView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/$', login_required(views.CpeAdministrativoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/informes/$', login_required(views.CpeAdministrativoInformesView.as_view())),
+    url(r'^(?P<pk>\w+)/cpe/administrativo/obligaciones/$', login_required(views.CpeAdministrativoObligacionesView.as_view())),
 
     url(r'^(?P<pk>\w+)/andes/$', login_required(views.AndesView.as_view()),name="andes_rol"),
     url(r'^(?P<pk>\w+)/andes/administrativo/', include('administrativo.urls')),

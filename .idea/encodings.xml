@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="PROJECT" charset="UTF-8" />
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/static/js/administrativo_cpe_listado_obligaciones.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/cpe_obligaciones_listado.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/eliminar_soporte_obligacion.jade" charset="UTF-8" />
   </component>
 </project>

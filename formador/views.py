@@ -1,7 +1,7 @@
 from .models import Formador
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from formacion.models import Grupo,ParticipanteEscuelaTic
+from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic
 
 class FormadorTableView(BaseDatatableView):
     model = Formador
@@ -279,6 +279,12 @@ class FormadorGrupoTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=item.id).count()
+            soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=item.id).order_by('id')
+            x=[]
+            y=[]
+            for soporte in soportes:
+                x.append(str(soporte.soporte))
+                y.append(soporte.id)
             json_data.append([
                 item.id,
                 item.nombre,
@@ -286,7 +292,9 @@ class FormadorGrupoTableView(BaseDatatableView):
                 item.municipio.departamento.nombre,
                 item.direccion,
                 item.horario,
-                participantes
+                participantes,
+                x,
+                y
             ])
 
         return json_data

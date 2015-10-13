@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
-from django.views.generic import UpdateView, CreateView
+from django.views.generic import UpdateView, CreateView, DeleteView
 from region.models import Region
 
 from gestor.models import Gestor
@@ -15,10 +15,10 @@ from funcionario.forms import FuncionarioSoporteForm, FuncionarioSeguroForm, Fun
 
 from mixins.mixins import AdministrativoMixin
 
-from .models import Informes
+from .models import Informes, Obligacion, SoporteObligacion
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from .forms import NuevoInformeForm
+from .forms import NuevoInformeForm, NuevaObligacionForm, NuevoSoporteObligacionForm
 
 
 class AdministrativoView(AdministrativoMixin,TemplateView):
@@ -432,3 +432,129 @@ class CpeInformeUpdateView(AdministrativoMixin,UpdateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(CpeInformeUpdateView,self).get_context_data(**kwargs)
+
+class CpeObligacionesView(AdministrativoMixin,TemplateView):
+    template_name = 'cpe_obligaciones_listado.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeObligacionesView,self).get_context_data(**kwargs)
+
+class CpeNuevaObligacionView(AdministrativoMixin, CreateView):
+    model = Obligacion
+    form_class = NuevaObligacionForm
+    success_url = "../"
+    template_name = "nueva_obligacion.html"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeNuevaObligacionView,self).get_context_data(**kwargs)
+
+class CpeObligacionTableView(BaseDatatableView):
+    model = Obligacion
+    columns = [
+        'id',
+        'region',
+        'numero',
+        'descripcion'
+    ]
+
+    order_columns = [
+        'id',
+        'region',
+        'numero',
+        'descripcion'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.all().filter(region__id=self.kwargs['pk'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'numero__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'region':
+            return row.region.nombre
+        else:
+            return super(CpeObligacionTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            meses = SoporteObligacion.objects.filter(obligacion__id=item.id).values_list('mes',flat=True).distinct()
+            soportes = SoporteObligacion.objects.filter(obligacion__id=item.id).order_by('id')
+            x=[]
+
+            for mes in meses:
+                x.append(mes)
+
+            y=[]
+
+            for soporte in soportes:
+                y.append([
+                    soporte.mes,
+                    soporte.descripcion,
+                    str(soporte.soporte),
+                    soporte.id
+                ])
+
+
+            json_data.append([
+                item.id,
+                item.region.nombre,
+                item.numero,
+                item.descripcion,
+                x,
+                y
+            ])
+        return json_data
+
+class CpeNuevoSoporteObligacion(AdministrativoMixin, CreateView):
+    model = SoporteObligacion
+    form_class = NuevoSoporteObligacionForm
+    success_url = "../../"
+    template_name = "nuevo_soporte_obligacion.html"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_OBLIGACION'] = self.kwargs['obligacion_id']
+        kwargs['OBLIGACION'] = Obligacion.objects.get(pk=self.kwargs['obligacion_id']).numero
+        return super(CpeNuevoSoporteObligacion,self).get_context_data(**kwargs)
+
+class CpeEditarSoporteObligacion(AdministrativoMixin, UpdateView):
+    model = SoporteObligacion
+    form_class = NuevoSoporteObligacionForm
+    success_url = "../../../"
+    template_name = "nuevo_soporte_obligacion.html"
+    pk_url_kwarg = 'soporte_id'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_OBLIGACION'] = self.kwargs['obligacion_id']
+        kwargs['OBLIGACION'] = Obligacion.objects.get(pk=self.kwargs['obligacion_id']).numero
+        return super(CpeEditarSoporteObligacion,self).get_context_data(**kwargs)
+
+class CpeEliminarSoporteObligacion(AdministrativoMixin, DeleteView):
+    model = SoporteObligacion
+    form_class = NuevoSoporteObligacionForm
+    success_url = "../../../"
+    template_name = "eliminar_soporte_obligacion.html"
+    pk_url_kwarg = 'soporte_id'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_OBLIGACION'] = self.kwargs['obligacion_id']
+        kwargs['OBLIGACION'] = Obligacion.objects.get(pk=self.kwargs['obligacion_id']).numero
+        return super(CpeEliminarSoporteObligacion,self).get_context_data(**kwargs)
