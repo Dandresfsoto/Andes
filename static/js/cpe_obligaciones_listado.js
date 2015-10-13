@@ -20,7 +20,7 @@ function format ( d ) {
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b>OBLIGACIÓN '+d[2]+'</b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b><a href="agregar/'+d[0]+'" style="color:#004c99;">OBLIGACIÓN '+d[2]+'</a></b></h4></th>'+
         '</tr>'+
 
         '<tr>'+
@@ -59,7 +59,7 @@ $(document).ready(function() {
             {
                 "data": 2,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="actualizar/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
+                          return '<a href="editar/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
                 "orderable":false,
             }

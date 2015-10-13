@@ -452,6 +452,18 @@ class CpeNuevaObligacionView(AdministrativoMixin, CreateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(CpeNuevaObligacionView,self).get_context_data(**kwargs)
 
+class CpeEditarObligacion(AdministrativoMixin, UpdateView):
+    model = Obligacion
+    form_class = NuevaObligacionForm
+    success_url = "../"
+    template_name = "editar_obligacion.html"
+    pk_url_kwarg = 'obligacion_id'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(CpeEditarObligacion,self).get_context_data(**kwargs)
+
 class CpeObligacionTableView(BaseDatatableView):
     model = Obligacion
     columns = [
@@ -544,6 +556,7 @@ class CpeEditarSoporteObligacion(AdministrativoMixin, UpdateView):
         kwargs['ID_OBLIGACION'] = self.kwargs['obligacion_id']
         kwargs['OBLIGACION'] = Obligacion.objects.get(pk=self.kwargs['obligacion_id']).numero
         return super(CpeEditarSoporteObligacion,self).get_context_data(**kwargs)
+
 
 class CpeEliminarSoporteObligacion(AdministrativoMixin, DeleteView):
     model = SoporteObligacion

@@ -34,7 +34,9 @@ urlpatterns = [
     url(r'^cpe/obligaciones/$', login_required(views.CpeObligacionesView.as_view())),
     url(r'^cpe/obligaciones/nuevo/$', login_required(views.CpeNuevaObligacionView.as_view())),
     url(r'^cpe/obligaciones/listado/$', login_required(views.CpeObligacionTableView.as_view())),
-    url(r'^cpe/obligaciones/actualizar/(?P<obligacion_id>\w+)/$', login_required(views.CpeNuevoSoporteObligacion.as_view())),
+
+    url(r'^cpe/obligaciones/editar/(?P<obligacion_id>\w+)/$', login_required(views.CpeEditarObligacion.as_view())),
+    url(r'^cpe/obligaciones/agregar/(?P<obligacion_id>\w+)/$', login_required(views.CpeNuevoSoporteObligacion.as_view())),
     url(r'^cpe/obligaciones/editar/(?P<obligacion_id>\w+)/(?P<soporte_id>\w+)/$', login_required(views.CpeEditarSoporteObligacion.as_view())),
     url(r'^cpe/obligaciones/eliminar/(?P<obligacion_id>\w+)/(?P<soporte_id>\w+)/$', login_required(views.CpeEliminarSoporteObligacion.as_view())),
 ]
