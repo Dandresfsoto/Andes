@@ -138,9 +138,9 @@ class CpeAdministrativoObligacionesView(CpeMixin,TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(CpeAdministrativoObligacionesView,self).get_context_data(**kwargs)
 
-def soportes(request,pk,tipo):
+def hv(request,pk,tipo):
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Soportes"
+    zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
     s = StringIO.StringIO()
     zf = zipfile.ZipFile(s, "w")
@@ -151,6 +151,19 @@ def soportes(request,pk,tipo):
             fdir, fname = os.path.split(soporte)
             zf.write(soporte,os.path.join('Hoja de Vida',formador.nombre,fname))
 
+    zf.close()
+    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    return resp
+
+def contratos(request,pk,tipo):
+    formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
+    zip_subdir = "Contratos"
+    zip_filename = "%s.zip" % zip_subdir
+    s = StringIO.StringIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.contrato)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)

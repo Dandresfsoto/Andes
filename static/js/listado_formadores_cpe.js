@@ -211,15 +211,15 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [
             {
-                text: 'Soportes',
+                text: 'Hojas de Vida',
                 action: function ( e, dt, node, config ) {
-                    location.replace(location.href+"soportes");
+                    location.replace(location.href+"hv");
                 }
             },
             {
-                text: 'Seguridad Social',
+                text: 'Contratos',
                 action: function ( e, dt, node, config ) {
-                    location.replace(location.href+"seguridad");
+                    location.replace(location.href+"contratos");
                 }
             }
         ],
