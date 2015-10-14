@@ -2,7 +2,14 @@ from django.views.generic import ListView
 from django.views.generic import TemplateView
 from .models import Region
 from eje.models import Eje
+from formador.models import Formador
 from mixins.mixins import RegionMixin, AndesMixin, CpeMixin
+
+from django.http import HttpResponse
+import os
+import zipfile
+import StringIO
+from django.conf import settings
 
 class InicioView(ListView):
     template_name = 'inicio.html'
@@ -130,3 +137,26 @@ class CpeAdministrativoObligacionesView(CpeMixin,TemplateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(CpeAdministrativoObligacionesView,self).get_context_data(**kwargs)
+
+def soportes(request,pk,tipo):
+    formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
+    zip_subdir = "Soportes"
+    zip_filename = "%s.zip" % zip_subdir
+    s = StringIO.StringIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for formador in formadores:
+        soporte = settings.MEDIA_ROOT+'/'+str(formador.hv)
+        if os.path.exists(soporte):
+            fdir, fname = os.path.split(soporte)
+            zf.write(soporte,os.path.join('Hoja de Vida',formador.nombre,fname))
+
+        soporte = settings.MEDIA_ROOT+'/'+str(formador.contrato)
+        if os.path.exists(soporte):
+            fdir, fname = os.path.split(soporte)
+            zf.write(soporte,os.path.join('Contratos',formador.nombre,fname))
+
+    zf.close()
+    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    return resp

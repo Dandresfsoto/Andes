@@ -20,4 +20,7 @@ urlpatterns = [
 
     url(r'^funcionarios/$', login_required(views.FuncionarioView.as_view())),
     url(r'^funcionarios/nuevo/$', login_required(views.NuevoFuncionarioView.as_view())),
+
+    url(r'^documental/$', login_required(views.DocumentalView.as_view())),
+    url(r'^documental/liquidaciones/$', login_required(views.LiquidacionesView.as_view())),
 ]

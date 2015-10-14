@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^(?P<pk>\w+)/cpe/formacion/formadores/$', login_required(views.CpeFormadorView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/formacion/formadores/(?P<tipo>\w+)/$', login_required(views.CpeFormadorTipoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/formacion/etic@/', include('diplomado.urls')),
+    url(r'^(?P<pk>\w+)/cpe/formacion/formadores/(?P<tipo>\w+)/soportes/$', login_required(views.soportes)),
 
     url(r'^(?P<pk>\w+)/cpe/acceso/$', login_required(views.CpeAccesoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/$', login_required(views.CpeFuncionarioView.as_view())),

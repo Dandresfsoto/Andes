@@ -413,3 +413,19 @@ def reporte_gestor_email(request,pk,corte_id,gestor_id):
 
     archivo.save(response)
     return response
+
+class DocumentalView(FinancieroMixin,TemplateView):
+    template_name = 'documental.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(DocumentalView,self).get_context_data(**kwargs)
+
+class LiquidacionesView(FinancieroMixin,TemplateView):
+    template_name = 'financiero_liquidaciones.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(LiquidacionesView,self).get_context_data(**kwargs)

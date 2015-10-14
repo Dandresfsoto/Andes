@@ -1,0 +1,29 @@
+extends base
+block titulo
+    | Formadores
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Andes
+    li
+        a(href="../../") Financiero
+    li
+        a(href="../") Gestión Documental
+    li(class="active") Liquidaciones
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Nombre
+            tbody
+                tr
+                    th
+                    th Nombre
+block extra_script
+    script(src="{% static 'js/financiero_liquidaciones.js' %}")
