@@ -3,8 +3,16 @@ from .models import Formador
 
 class NuevoForm(forms.ModelForm):
     class Meta:
+        CHOICES = Formador.objects.all().order_by('nombre')
+        opciones = [("","")]
+        for opcion in CHOICES:
+            opciones.append((opcion.nombre,opcion.nombre))
+
         model = Formador
-        fields = ['region','tipo','nombre','cedula','celular','correo','fecha_contratacion']
+        fields = ['region','tipo','nombre','cedula','celular','correo','fecha_contratacion','reemplazo']
+        widgets = {
+            'reemplazo': forms.Select(choices=(opciones),attrs={'style':'width:100%;'}),
+        }
 
 class FormadorFotoForm(forms.ModelForm):
     class Meta:

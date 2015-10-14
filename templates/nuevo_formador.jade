@@ -44,6 +44,10 @@ block body_content
                     td(class = "text-center" style="font-weight:bold;") Fecha contratación:
                     td(class = "text-center")
                         input(style="width:100%;",id="id_fecha_contratacion",name="fecha_contratacion",type="text",required)
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Reemplazo:
+                    td(class = "text-center")
+                        |{{form.reemplazo}}
             | {% csrf_token %}
             div(class="container-fluid barra")
                 div(class="col-lg-2")

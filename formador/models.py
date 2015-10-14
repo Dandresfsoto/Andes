@@ -26,6 +26,7 @@ class Formador(models.Model):
     eps = models.CharField(max_length=100,blank=True)
     pension = models.CharField(max_length=100,blank=True)
     arl = models.CharField(max_length=100,blank=True)
+    reemplazo = models.CharField(max_length=100,blank=True)
     foto = models.FileField(upload_to="Formadores/Foto/",blank=True)
 
     hv = models.FileField(upload_to="Formadores/Hojas de Vida/",blank=True)

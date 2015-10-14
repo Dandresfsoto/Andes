@@ -4,8 +4,8 @@ from eje.models import Eje
 from django.utils.encoding import smart_unicode
 
 class Funcionario(models.Model):
-    region = models.ForeignKey(Region)
-    eje = models.ForeignKey(Eje)
+    region = models.ManyToManyField(Region)
+    eje = models.ManyToManyField(Eje)
 
     nombre = models.CharField(max_length=100)
     cedula = models.CharField(max_length=15)
