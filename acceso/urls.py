@@ -21,4 +21,7 @@ urlpatterns = [
     url(r'^calificacion/(?P<id_gestor>\w+)/municipio/(?P<id_municipio>\w+)/reasignar/(?P<id_radicado>\w+)/$', login_required(views.ReasignarView.as_view())),
 
     url(r'^administracion/$', login_required(views.AccesoView.as_view())),
+
+    url(r'^masivo/$', login_required(views.MasivoView.as_view())),
+    url(r'^masivo/listado/$', login_required(views.MasivoTableView.as_view())),
 ]

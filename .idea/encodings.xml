@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/financiero/forms.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/region/views.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/acceso_masivo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/administrativo_cpe_listado_obligaciones.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/cpe_obligaciones_listado.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/financiero_liquidaciones_acceso.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/financiero_liquidaciones_formacion.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/acceso_masivo.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/documental.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/editar_obligacion.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/eliminar_soporte_obligacion.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/financiero.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/financiero_liquidaciones.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/financiero_liquidaciones_acceso.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/financiero_liquidaciones_formacion.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_acceso.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_formacion.jade" charset="UTF-8" />
   </component>
 </project>

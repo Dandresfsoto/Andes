@@ -23,4 +23,16 @@ urlpatterns = [
 
     url(r'^documental/$', login_required(views.DocumentalView.as_view())),
     url(r'^documental/liquidaciones/$', login_required(views.LiquidacionesView.as_view())),
+
+    url(r'^documental/liquidaciones/gestores/$', login_required(views.LiquidacionAccesoView.as_view())),
+    url(r'^documental/liquidaciones/gestores/nuevo/$', login_required(views.LiquidacionAccesoNuevoView.as_view())),
+    url(r'^documental/liquidaciones/gestores/editar/(?P<id_liquidacion>\w+)/$', login_required(views.LiquidacionAccesoEditarView.as_view())),
+    url(r'^documental/liquidaciones/gestores/listado/$', login_required(views.LiquidacionAccesoTableView.as_view())),
+    url(r'^documental/liquidaciones/gestores/descargar/(?P<id_liquidacion>\w+)/$', login_required(views.liquidacion_acceso)),
+
+    url(r'^documental/liquidaciones/formadores/$', login_required(views.LiquidacionFormacionView.as_view())),
+    url(r'^documental/liquidaciones/formadores/nuevo/$', login_required(views.LiquidacionFormacionNuevoView.as_view())),
+    url(r'^documental/liquidaciones/formadores/editar/(?P<id_liquidacion>\w+)/$', login_required(views.LiquidacionFormacionEditarView.as_view())),
+    url(r'^documental/liquidaciones/formadores/listado/$', login_required(views.LiquidacionFormacionTableView.as_view())),
+    url(r'^documental/liquidaciones/formadores/descargar/(?P<id_liquidacion>\w+)/$', login_required(views.liquidacion_formacion)),
 ]

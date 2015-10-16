@@ -8,7 +8,18 @@ from django.contrib.auth.models import User
 def content_file_name(instance, filename):
     x = filename.split(".")
     filename = '.'.join([str(instance.radicado.numero),x[len(x)-1]])
-    return '/'.join(['Acceso', 'R4', smart_unicode(instance.ciclo.nombre),smart_unicode(instance.actividad.nombre),str(instance.radicado.numero),filename])
+    if instance.radicado.region.id == 1:
+        region = 'R1'
+    if instance.radicado.region.id == 2:
+        region = 'R4'
+    return '/'.join(['Acceso', region, smart_unicode(instance.ciclo.nombre),smart_unicode(instance.actividad.nombre),str(instance.radicado.numero),filename])
+
+def masivo(instance, filename):
+    if instance.region.id == 1:
+        region = 'R1'
+    if instance.region.id == 2:
+        region = 'R4'
+    return '/'.join(['Acceso', region, 'Carga Masiva',smart_unicode(instance.usuario.username),filename])
 
 class Ciclo(models.Model):
     nombre = models.CharField(max_length=100)
@@ -91,3 +102,13 @@ class Reasignados(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.radicado_origen)
+
+class CargaMasiva(models.Model):
+    region = models.ForeignKey(Region)
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    excel = models.FileField(upload_to=masivo)
+    archivo = models.FileField(upload_to=masivo)
+
+    def __unicode__(self):
+        return smart_unicode(self.usuario)

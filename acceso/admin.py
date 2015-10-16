@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ciclo,Componente, Modulo, Actividad, Encargado, Entregables, Valor, Evidencia, Corte
+from .models import Ciclo,Componente, Modulo, Actividad, Encargado, Entregables, Valor, Evidencia, Corte, CargaMasiva
 
 class ModuloAdmin(admin.ModelAdmin):
     list_display = ('nombre','descripcion')
@@ -17,3 +17,4 @@ admin.site.register(Entregables)
 admin.site.register(Valor)
 admin.site.register(Evidencia,EvidenciaAdmin)
 admin.site.register(Corte)
+admin.site.register(CargaMasiva)

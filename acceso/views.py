@@ -8,7 +8,7 @@ from django.views.generic import CreateView
 from gestor.models import Gestor
 from radicado.models import Radicado
 from municipio.models import Municipio
-from acceso.models import Actividad, Reasignados
+from acceso.models import Actividad, Reasignados, CargaMasiva
 from conf import settings
 import openpyxl
 
@@ -24,6 +24,9 @@ from django.http import HttpResponse
 import time
 import datetime
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
+
+from django_datatables_view.base_datatable_view import BaseDatatableView
+from django.db.models import Q
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -238,3 +241,58 @@ class ReasignarView(AccesoMixin,CreateView):
     form_class = ReasignacionForm
     template_name = "formulario_reasignados.html"
     success_url = "../../../"
+
+class MasivoView(AccesoMixin,TemplateView):
+    template_name = 'acceso_masivo.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(MasivoView,self).get_context_data(**kwargs)
+
+class MasivoTableView(BaseDatatableView):
+    model = CargaMasiva
+    columns = [
+        'id',
+        'region',
+        'fecha',
+        'usuario',
+        'excel',
+        'archivo',
+    ]
+
+    order_columns = [
+        'id',
+        'region',
+        'fecha',
+        'usuario',
+        'excel',
+        'archivo',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.all().filter(region__id=self.kwargs['pk'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'usuario__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'region':
+            return row.region.nombre
+        if column == 'fecha':
+            return row.fecha.strftime('%d/%m/%Y --- %I:%M:%S %p')
+        if column == 'usuario':
+            return row.usuario.username
+        if column == 'excel':
+            return str(row.excel)
+        if column == 'archivo':
+            return str(row.archivo)
+        else:
+            return super(MasivoTableView,self).render_column(row,column)
