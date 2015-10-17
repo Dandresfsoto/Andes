@@ -610,7 +610,7 @@ def liquidacion_acceso(request,pk,id_liquidacion):
     liquidacion = LiquidacionGestor.objects.get(id=id_liquidacion)
 
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
-    xl = win32com.client.gencache.EnsureDispatch ("Word.Application")
+    xl = win32com.client.dynamic.Dispatch('Word.Application')
     xl.DisplayAlerts = False
     xl.Visible = 0
 
@@ -733,13 +733,13 @@ def liquidacion_formacion(request,pk,id_liquidacion):
     liquidacion = LiquidacionFormador.objects.get(id=id_liquidacion)
 
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
-    xl = win32com.client.gencache.EnsureDispatch ("Word.Application")
+    xl = win32com.client.dynamic.Dispatch('Word.Application')
     xl.DisplayAlerts = False
     xl.Visible = 0
 
     archivo = xl.Documents.Open(settings.STATICFILES_DIRS[0]+'/formatos/Formato de liquidaciones.docx')
 
-    archivo.Sections(1).Headers(1).Range.InsertAfter(liquidacion.formador.nombre.decode('UTF-8').upper()+"\r\r")
+    #archivo.Sections(1).Headers(1).Range.InsertAfter(liquidacion.formador.nombre.decode('UTF-8').upper()+"\r\r")
 
     tabla = archivo.Tables(1)
     tabla.Cell(Row=1,Column=2).Range.Text = liquidacion.formador.nombre.decode('UTF-8').upper()
