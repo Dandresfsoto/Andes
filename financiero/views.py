@@ -610,7 +610,7 @@ def liquidacion_acceso(request,pk,id_liquidacion):
     liquidacion = LiquidacionGestor.objects.get(id=id_liquidacion)
 
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
-    xl = win32com.client.dynamic.Dispatch('Word.Application')
+    xl = win32com.client.gencache.EnsureDispatch ("Word.Application")
     xl.DisplayAlerts = False
     xl.Visible = 0
 
@@ -733,7 +733,7 @@ def liquidacion_formacion(request,pk,id_liquidacion):
     liquidacion = LiquidacionFormador.objects.get(id=id_liquidacion)
 
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
-    xl = win32com.client.dynamic.Dispatch('Word.Application')
+    xl = win32com.client.gencache.EnsureDispatch ("Word.Application")
     xl.DisplayAlerts = False
     xl.Visible = 0
 
