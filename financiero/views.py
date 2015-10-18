@@ -743,7 +743,7 @@ def liquidacion_formacion(request,pk,id_liquidacion):
 
     archivo.Sections(1).Headers(1).Range.InsertAfter(liquidacion.formador.nombre.decode('UTF-8').upper()+"\r\r")
 
-    tabla = archivo.Tables[1]
+    tabla = archivo.Tables(1)
     tabla.Cell(Row=1,Column=2).Range.Text = liquidacion.formador.nombre.decode('UTF-8').upper()
 
     if liquidacion.formador.region.id == 1:
