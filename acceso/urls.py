@@ -24,4 +24,5 @@ urlpatterns = [
 
     url(r'^masivo/$', login_required(views.MasivoView.as_view())),
     url(r'^masivo/listado/$', login_required(views.MasivoTableView.as_view())),
+    url(r'^masivo/nuevo/$', login_required(views.MasivoNuevoView.as_view())),
 ]

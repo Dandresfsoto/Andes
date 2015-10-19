@@ -12,7 +12,7 @@ from acceso.models import Actividad, Reasignados, CargaMasiva
 from conf import settings
 import openpyxl
 
-from acceso.forms import ReasignacionForm
+from acceso.forms import ReasignacionForm, CargaMasivaForm
 from .models import Evidencia
 from rest_framework import mixins
 from rest_framework import generics
@@ -296,3 +296,14 @@ class MasivoTableView(BaseDatatableView):
             return str(row.archivo)
         else:
             return super(MasivoTableView,self).render_column(row,column)
+
+class MasivoNuevoView(AccesoMixin,CreateView):
+    model = CargaMasiva
+    form_class = CargaMasivaForm
+    template_name = "formulario_carga_masiva.html"
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(MasivoNuevoView,self).get_context_data(**kwargs)
