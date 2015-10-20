@@ -9,7 +9,7 @@ function format ( d ) {
         '<tr>'+
             '<td colspan="2"><b>Excel:</b> <a href="/media/'+d[4]+'" style="color:#004c99;">Link</a></td>'+
             '<td colspan="2"><b>Archivo:</b> <a href="/media/'+d[5]+'" style="color:#004c99;">Link</a></td>'+
-
+            '<td colspan="2"><b>Ejecutar Carga:</b> <a href="ejecutar/'+d[0]+'" style="color:#004c99;">Link</a></td>'+
         '</tr>'+
 
     '</table></div>';

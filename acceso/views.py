@@ -27,6 +27,8 @@ from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protect
 
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
+from zipfile import ZipFile
+from django.core.files.base import ContentFile
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -307,3 +309,93 @@ class MasivoNuevoView(AccesoMixin,CreateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(MasivoNuevoView,self).get_context_data(**kwargs)
+
+def ejecutar_masivo(request,pk,id_masivo):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Reporte Carga Masiva"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'Reporte Carga Masiva'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columns = [tuple(['RADICADO',30]),
+               tuple(['ID ACTIVIDAD',30]),
+               tuple(['PATH RELATIVO',30]),
+               tuple(['CARGADO',30]),
+               tuple(['INFORMACION',60]),
+               ]
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    masivo = CargaMasiva.objects.get(pk=id_masivo)
+    x=settings.MEDIA_ROOT+'/'+str(masivo.archivo)
+    soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(masivo.archivo),'r')
+
+    archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+str(masivo.excel))
+
+    hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+    i = 0
+
+    for fila in hoja1_masivo.rows:
+        i += 1
+        if i > 2:
+            proceso =""
+
+            evidencia = Evidencia.objects.filter(radicado__numero=fila[0].value).filter(actividad__id=fila[1].value)
+
+            if len(evidencia) == 0:
+                proceso = "No existe el Radicado"
+            if len(evidencia) == 1:
+                proceso = "Cargado con Exito"
+            if len(evidencia) >= 2:
+                proceso = "Se encontro mas de un radicado con el mismo numero"
+
+            row_num += 1
+            row = [
+                fila[0].value,
+                fila[1].value,
+                fila[2].value,
+                proceso
+            ]
+
+            for col_num in xrange(len(row)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                if row[col_num] == True:
+                    c.value = "SI"
+                if row[col_num] == False:
+                    c.value = "NO"
+                if row[col_num] == None:
+                    c.value = ""
+                else:
+                    c.value = row[col_num]
+                c.style = co
+
+
+
+    archivo.save(response)
+    return response
