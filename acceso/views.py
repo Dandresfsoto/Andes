@@ -28,7 +28,9 @@ from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protect
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from zipfile import ZipFile
-from django.core.files.base import ContentFile
+from django.core.files import File
+import shutil
+import os
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -371,7 +373,17 @@ def ejecutar_masivo(request,pk,id_masivo):
             if len(evidencia) == 0:
                 proceso = "No existe el Radicado"
             if len(evidencia) == 1:
-                proceso = "Cargado con Exito"
+                try:
+                    info = soportes.getinfo(fila[2].value)
+                except:
+                    proceso = "No existe el archivo en el path"
+                else:
+                    soportes.extract(fila[2].value,"C:\Temp")
+                    e = evidencia[0]
+                    e.soporte = File(open("C://Temp//" + fila[2].value, 'r'))
+                    e.save()
+                    os.remove("C://Temp//" + fila[2].value)
+                    proceso = "Cargado con exito"
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
 
