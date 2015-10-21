@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/models.py" afterPath="$PROJECT_DIR$/gestor/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/views.py" afterPath="$PROJECT_DIR$/acceso/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,97 +28,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/acceso/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/acceso/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5588235">
-              <caret line="387" column="78" selection-start-line="387" selection-start-column="78" selection-end-line="387" selection-end-column="78" />
-              <folding>
-                <element signature="e#47#92#0" expanded="true" />
-                <element signature="e#2343#2558#0" expanded="false" />
-                <element signature="e#2608#2820#0" expanded="false" />
-                <element signature="e#2882#3163#0" expanded="false" />
-                <element signature="e#3230#3523#0" expanded="false" />
-                <element signature="e#3584#3867#0" expanded="false" />
-                <element signature="e#3933#4508#0" expanded="false" />
-                <element signature="e#4575#5000#0" expanded="false" />
-                <element signature="e#5073#6318#0" expanded="false" />
-                <element signature="e#6374#7317#0" expanded="false" />
-                <element signature="e#7365#10380#0" expanded="false" />
-                <element signature="e#10431#10564#0" expanded="false" />
-                <element signature="e#10614#10881#0" expanded="false" />
-                <element signature="e#10929#12181#0" expanded="false" />
-                <element signature="e#12234#12597#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/financiero/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="621" column="70" selection-start-line="621" selection-start-column="70" selection-end-line="621" selection-end-column="85" />
-              <folding>
-                <element signature="e#46#115#0" expanded="true" />
-                <element signature="e#2720#2940#0" expanded="false" />
-                <element signature="e#2994#3275#0" expanded="false" />
-                <element signature="e#3343#3912#0" expanded="false" />
-                <element signature="e#4308#4648#0" expanded="false" />
-                <element signature="e#4707#4996#0" expanded="false" />
-                <element signature="e#5054#5395#0" expanded="false" />
-                <element signature="e#5455#5861#0" expanded="false" />
-                <element signature="e#5924#6291#0" expanded="false" />
-                <element signature="e#6348#7326#0" expanded="false" />
-                <element signature="e#7378#9781#0" expanded="false" />
-                <element signature="e#9838#12604#0" expanded="false" />
-                <element signature="e#12667#16426#0" expanded="false" />
-                <element signature="e#16484#16752#0" expanded="false" />
-                <element signature="e#16813#17098#0" expanded="false" />
-                <element signature="e#17163#17459#0" expanded="false" />
-                <element signature="e#17527#17829#0" expanded="false" />
-                <element signature="e#17888#19074#0" expanded="false" />
-                <element signature="e#19136#20339#0" expanded="false" />
-                <element signature="e#20408#21071#0" expanded="false" />
-                <element signature="e#21143#21826#0" expanded="false" />
-                <element signature="e#21896#22323#0" expanded="false" />
-                <element signature="e#22396#22833#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/acceso/models.py">
+        <entry file="file://$PROJECT_DIR$/formador/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-              <folding>
-                <element signature="e#272#648#0" expanded="false" />
-                <element signature="e#686#895#0" expanded="false" />
-                <element signature="e#928#1039#0" expanded="false" />
-                <element signature="e#1077#1188#0" expanded="false" />
-                <element signature="e#1222#1416#0" expanded="false" />
-                <element signature="e#1453#1700#0" expanded="false" />
-                <element signature="e#1737#1854#0" expanded="false" />
-                <element signature="e#1893#2015#0" expanded="false" />
-                <element signature="e#2048#2131#0" expanded="false" />
-                <element signature="e#2164#2418#0" expanded="false" />
-                <element signature="e#2455#3134#0" expanded="false" />
-                <element signature="e#3173#3589#0" expanded="false" />
-              </folding>
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gestor/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40583554">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,6 +114,7 @@
         <option value="$PROJECT_DIR$/acceso/urls.py" />
         <option value="$PROJECT_DIR$/acceso/admin.py" />
         <option value="$PROJECT_DIR$/acceso/views.py" />
+        <option value="$PROJECT_DIR$/gestor/models.py" />
       </list>
     </option>
   </component>
@@ -256,7 +182,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="financiero" />
+              <option name="myItemId" value="gestor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,11 +465,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32125986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32125986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36377952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36220473" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
@@ -759,16 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gestor/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0174564">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gestor/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -825,14 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="127" selection-start-line="36" selection-start-column="127" selection-end-line="36" selection-end-column="127" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formador/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4733334">
-          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -941,16 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acceso/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -977,7 +875,7 @@
         <state vertical-scroll-proportion="0.662531">
           <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
             <element signature="e#384#540#0" expanded="false" />
             <element signature="e#587#927#0" expanded="false" />
             <element signature="e#972#1310#0" expanded="false" />
@@ -999,10 +897,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/financiero/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.6650124">
           <caret line="621" column="70" selection-start-line="621" selection-start-column="70" selection-end-line="621" selection-end-column="85" />
           <folding>
-            <element signature="e#46#115#0" expanded="true" />
+            <element signature="e#46#115#0" expanded="false" />
             <element signature="e#2720#2940#0" expanded="false" />
             <element signature="e#2994#3275#0" expanded="false" />
             <element signature="e#3343#3912#0" expanded="false" />
@@ -1031,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acceso/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5588235">
-          <caret line="387" column="78" selection-start-line="387" selection-start-column="78" selection-end-line="387" selection-end-column="78" />
+        <state vertical-scroll-proportion="2.1149426">
+          <caret line="355" column="50" selection-start-line="355" selection-start-column="50" selection-end-line="355" selection-end-column="50" />
           <folding>
             <element signature="e#47#92#0" expanded="true" />
             <element signature="e#2343#2558#0" expanded="false" />
@@ -1050,6 +948,32 @@
             <element signature="e#10929#12181#0" expanded="false" />
             <element signature="e#12234#12597#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67639256">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formador/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestor/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40583554">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
