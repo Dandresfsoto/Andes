@@ -380,7 +380,7 @@ def ejecutar_masivo(request,pk,id_masivo):
                 else:
                     soportes.extract(fila[2].value,"C:\Temp")
                     e = evidencia[0]
-                    e.soporte = File(open("C://Temp//" + fila[2].value, 'r'))
+                    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
                     e.save()
                     os.remove("C://Temp//" + fila[2].value)
                     proceso = "Cargado con exito"
