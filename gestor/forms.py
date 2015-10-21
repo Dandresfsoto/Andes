@@ -4,7 +4,7 @@ from .models import Gestor
 class NuevoForm(forms.ModelForm):
     class Meta:
         model = Gestor
-        fields = ['region','nombre','cedula','celular','correo','fecha_contratacion']
+        fields = ['region','tipo','nombre','cedula','celular','correo','fecha_contratacion']
 
 class GestorFotoForm(forms.ModelForm):
     class Meta:

@@ -5,19 +5,27 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../../") {{REGION}}
+        a(href="../../../../../") {{REGION}}
     li
-        a(href="../../../") Andes
+        a(href="../../../../") Andes
     li
-        a(href="../../") Financiero
+        a(href="../../../") Financiero
     li
-        a(href="../") Gestores
+        a(href="../../") Gestores
+    |{% if ID_TIPO == "1" %}
+    li
+        a(href="../") Territoriales
+    |{% else %}
+    li
+        a(href="../") Apoyo
+    |{% endif %}
     li(class="active") Nuevo
 block body_content
     div(class="container-fluid")
         form(action="",method="post",enctype="multipart/form-data")
             table(class="table table-bordered text-center",style="color:black;background:white;")
                 input(id="id_region",name="region", value="{{ID_REGION}}",hidden)
+                input(id="id_tipo",name="tipo", value="{{ID_TIPO}}",hidden)
                 tr
                     th(class="text-center") Campo:
                     th(class="text-center") Información:

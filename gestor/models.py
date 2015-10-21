@@ -10,6 +10,7 @@ class TipoGestor(models.Model):
 
 class Gestor(models.Model):
     region = models.ForeignKey(Region)
+    tipo = models.ForeignKey(TipoGestor)
 
     nombre = models.CharField(max_length=100)
     cedula = models.IntegerField()

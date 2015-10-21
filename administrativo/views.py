@@ -129,14 +129,22 @@ class FuncionarioActualizarFotoView(AdministrativoMixin,UpdateView):
         return super(FuncionarioActualizarFotoView,self).get_context_data(**kwargs)
 
 
-
 class GestorView(AdministrativoMixin,TemplateView):
-    template_name = 'listado_gestores.html'
+    template_name = 'tipo_gestor.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(GestorView,self).get_context_data(**kwargs)
+
+class GestorTipoView(AdministrativoMixin,TemplateView):
+    template_name = 'listado_gestores.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo_id']
+        return super(GestorTipoView,self).get_context_data(**kwargs)
 
 class GestorActualizarInformacionView(AdministrativoMixin,UpdateView):
     model = Gestor
