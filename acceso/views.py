@@ -374,15 +374,15 @@ def ejecutar_masivo(request,pk,id_masivo):
                 proceso = "No existe el Radicado"
             if len(evidencia) == 1:
                 try:
-                    info = soportes.getinfo(fila[2].value)
+                    info = soportes.getinfo(fila[2].value.decode('UTF-8'))
                 except:
                     proceso = "No existe el archivo en el path"
                 else:
-                    soportes.extract(fila[2].value,"C:\Temp")
+                    soportes.extract(fila[2].value.decode('UTF-8'),"C:\Temp")
                     e = evidencia[0]
-                    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
+                    e.soporte = File(open("C://Temp//" + fila[2].value.decode('UTF-8'), 'rb'))
                     e.save()
-                    os.remove("C://Temp//" + fila[2].value)
+                    os.remove("C://Temp//" + fila[2].value.decode('UTF-8'))
                     proceso = "Cargado con exito"
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
