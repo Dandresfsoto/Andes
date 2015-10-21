@@ -5,15 +5,20 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../") {{REGION}}
+        a(href="../../../../") {{REGION}}
     li
-        a(href="../../") CPE
+        a(href="../../../") CPE
     li
-        a(href="../") Acceso
-    li(class="active") Gestores
+        a(href="../../") Acceso
+    |{% if ID_TIPO == "1" %}
+    li(class="active") Gestores Territoriales
+    |{% else %}
+    li(class="active") Gestores de Apoyo
+    |{% endif %}
 block body_content
     div(class="container-fluid")
         input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_tipo",value="{{ID_TIPO}}",id="id_tipo")
         table(id="table",class="table table-striped table-bordered")
             thead
                 tr

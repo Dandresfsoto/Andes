@@ -95,6 +95,7 @@ class CpeGestorView(CpeMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo']
         return super(CpeGestorView,self).get_context_data(**kwargs)
 
 class CpeFormadorView(CpeMixin,TemplateView):

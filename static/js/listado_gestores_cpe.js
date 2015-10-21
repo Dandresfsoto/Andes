@@ -211,7 +211,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/gestor/datatable/"+ $('#id_region').val(),
+        "ajax": "/gestor/datatable/"+ $('#id_region').val()+"/"+$('#id_tipo').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },

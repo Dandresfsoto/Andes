@@ -17,7 +17,7 @@ urlpatterns = [
 
     url(r'^(?P<pk>\w+)/cpe/acceso/$', login_required(views.CpeAccesoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/$', login_required(views.CpeFuncionarioView.as_view())),
-    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/$', login_required(views.CpeGestorView.as_view())),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/$', login_required(views.CpeGestorView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/$', login_required(views.CpeAdministrativoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/informes/$', login_required(views.CpeAdministrativoInformesView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/obligaciones/$', login_required(views.CpeAdministrativoObligacionesView.as_view())),
