@@ -354,8 +354,8 @@ def ejecutar_masivo(request,pk,id_masivo):
 
 
     masivo = CargaMasiva.objects.get(pk=id_masivo)
-    x=settings.MEDIA_ROOT+'/'+str(masivo.archivo)
-    soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(masivo.archivo),'r')
+    #x=settings.MEDIA_ROOT+'/'+str(masivo.archivo)
+    #soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(masivo.archivo),'r')
 
     archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+str(masivo.excel))
 
@@ -373,17 +373,24 @@ def ejecutar_masivo(request,pk,id_masivo):
             if len(evidencia) == 0:
                 proceso = "No existe el Radicado"
             if len(evidencia) == 1:
-                try:
-                    info = soportes.getinfo(fila[2].value)
-                except:
-                    proceso = "No existe el archivo en el path"
-                else:
-                    soportes.extract(fila[2].value,"C:\Temp")
+                if evidencia[0].soporte == "":
                     e = evidencia[0]
-                    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
+                    e.soporte = File(open("C://Temp//pendiente.txt", 'rb'))
                     e.save()
-                    os.remove("C://Temp//" + fila[2].value)
                     proceso = "Cargado con exito"
+                else:
+                    proceso = "Archivo Cargado Anteriormente"
+
+                #try:
+                #    info = soportes.getinfo(fila[2].value)
+                #except:
+                #    proceso = "No existe el archivo en el path"
+                #else:
+                #    soportes.extract(fila[2].value,"C:\Temp")
+                #    e = evidencia[0]
+                #    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
+                #    e.save()
+                #    os.remove("C://Temp//" + fila[2].value)
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
 
@@ -406,8 +413,6 @@ def ejecutar_masivo(request,pk,id_masivo):
                 else:
                     c.value = row[col_num]
                 c.style = co
-
-
 
     archivo.save(response)
     return response
