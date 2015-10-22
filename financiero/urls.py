@@ -13,8 +13,8 @@ urlpatterns = [
     url(r'^gestores/(?P<tipo_id>\w+)/$', login_required(views.GestorTipoView.as_view())),
     url(r'^gestores/(?P<tipo_id>\w+)/nuevo/$', login_required(views.NuevoGestorView.as_view())),
 
-    url(r'^gestores/corte/$', login_required(views.NuevoCorteView.as_view())),
-    url(r'^gestores/reporte/$', login_required(views.reporte_quincenal_financiero)),
+    url(r'^gestores/(?P<tipo_id>\w+)/corte/$', login_required(views.NuevoCorteView.as_view())),
+    url(r'^gestores/(?P<tipo_id>\w+)/reporte/$', login_required(views.reporte_quincenal_financiero)),
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view())),
     url(r'^formadores/(?P<tipo_id>\w+)/$', login_required(views.FormadorTipoView.as_view())),

@@ -182,7 +182,7 @@ class NuevoCorteView(FinancieroMixin, CreateView):
             evidencia.save()
         return super(ModelFormMixin, self).form_valid(form)
 
-def reporte_quincenal_financiero(request,pk):
+def reporte_quincenal_financiero(request,pk,tipo_id):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=Reporte de Quincenas.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
