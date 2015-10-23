@@ -644,7 +644,7 @@ def liquidacion_acceso(request,pk,id_liquidacion):
     objeto = objeto.replace("%REGION%",region)
     tabla.Cell(Row=4,Column=2).Range.Text = objeto
 
-    tabla.Cell(Row=5,Column=2).Range.Text = Money(liquidacion.valor_ejecutado-liquidacion.valor_pagado,'COP').format('es_CO','$#,##0.00')+" Mcte"
+    tabla.Cell(Row=5,Column=2).Range.Text = Money(liquidacion.valor_ejecutado,'COP').format('es_CO','$#,##0.00')+" Mcte"
     tabla.Cell(Row=7,Column=2).Range.Text = str(int((liquidacion.valor_ejecutado*100.0)/liquidacion.valor_inicial))+" %"
     if liquidacion.gestor.fecha_contratacion != None:
         tabla.Cell(Row=8,Column=2).Range.Text = liquidacion.gestor.fecha_contratacion.strftime("%d/%m/%Y")
@@ -769,7 +769,7 @@ def liquidacion_formacion(request,pk,id_liquidacion):
     objeto = objeto.replace("%REGION%",region)
     tabla.Cell(Row=4,Column=2).Range.Text = objeto
 
-    tabla.Cell(Row=5,Column=2).Range.Text = Money(liquidacion.valor_ejecutado-liquidacion.valor_pagado,'COP').format('es_CO','$#,##0.00')+" Mcte"
+    tabla.Cell(Row=5,Column=2).Range.Text = Money(liquidacion.valor_ejecutado,'COP').format('es_CO','$#,##0.00')+" Mcte"
     tabla.Cell(Row=7,Column=2).Range.Text = str(int((liquidacion.valor_ejecutado*100.0)/liquidacion.valor_inicial))+" %"
     if liquidacion.formador.fecha_contratacion != None:
         tabla.Cell(Row=8,Column=2).Range.Text = liquidacion.formador.fecha_contratacion.strftime("%d/%m/%Y")
