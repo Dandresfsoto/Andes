@@ -233,7 +233,7 @@ def hvGestores(request,pk,tipo):
     return resp
 
 def contratosGestores(request,pk,tipo):
-    gestores = Funcionario.objects.filter(region__id=pk).filter(tipo__id=eje)
+    gestores = Funcionario.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
     s = StringIO.StringIO()
