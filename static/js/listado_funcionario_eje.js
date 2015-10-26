@@ -208,6 +208,21 @@ function format ( d ) {
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                text: 'Hojas de Vida',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"hv");
+                }
+            },
+            {
+                text: 'Contratos',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"contratos");
+                }
+            }
+        ],
         "searching": true,
         "processing": true,
         "serverSide": true,

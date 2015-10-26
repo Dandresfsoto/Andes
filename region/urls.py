@@ -12,12 +12,19 @@ urlpatterns = [
     url(r'^(?P<pk>\w+)/cpe/formacion/formadores/$', login_required(views.CpeFormadorView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/formacion/formadores/(?P<tipo>\w+)/$', login_required(views.CpeFormadorTipoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/formacion/etic@/', include('diplomado.urls')),
+    url(r'^(?P<pk>\w+)/cpe/formacion/funcionarios/(?P<eje>\w+)/hv/$', login_required(views.hvFuncionarios)),
+    url(r'^(?P<pk>\w+)/cpe/formacion/funcionarios/(?P<eje>\w+)/contratos/$', login_required(views.contratosFuncionarios)),
+
     url(r'^(?P<pk>\w+)/cpe/formacion/formadores/(?P<tipo>\w+)/hv/$', login_required(views.hv)),
     url(r'^(?P<pk>\w+)/cpe/formacion/formadores/(?P<tipo>\w+)/contratos/$', login_required(views.contratos)),
 
     url(r'^(?P<pk>\w+)/cpe/acceso/$', login_required(views.CpeAccesoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/$', login_required(views.CpeFuncionarioView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/$', login_required(views.CpeGestorView.as_view())),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/hv/$', login_required(views.hvGestores)),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/contratos/$', login_required(views.contratosGestores)),
+
+
     url(r'^(?P<pk>\w+)/cpe/administrativo/$', login_required(views.CpeAdministrativoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/informes/$', login_required(views.CpeAdministrativoInformesView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/administrativo/obligaciones/$', login_required(views.CpeAdministrativoObligacionesView.as_view())),

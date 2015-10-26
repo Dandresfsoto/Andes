@@ -52,5 +52,8 @@ class Formador(models.Model):
     fecha_contratacion = models.DateField()
     fecha_terminacion = models.DateField(blank=True,null=True)
 
+    class Meta:
+        ordering = ['nombre']
+
     def __unicode__(self):
         return smart_unicode(self.nombre)

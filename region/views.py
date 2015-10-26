@@ -11,6 +11,9 @@ import zipfile
 import StringIO
 from django.conf import settings
 
+from funcionario.models import Funcionario
+from gestor.models import Gestor
+
 class InicioView(ListView):
     template_name = 'inicio.html'
     model = Region
@@ -169,6 +172,78 @@ def contratos(request,pk,tipo):
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
             zf.write(soporte,os.path.join('Contratos',formador.nombre,fname))
+
+    zf.close()
+    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    return resp
+
+def hvFuncionarios(request,pk,eje):
+    funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
+    zip_subdir = "Hojas de Vida"
+    zip_filename = "%s.zip" % zip_subdir
+    s = StringIO.StringIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for funcionario in funcionarios:
+        soporte = settings.MEDIA_ROOT+'/'+str(funcionario.hv)
+        if os.path.exists(soporte):
+            fdir, fname = os.path.split(soporte)
+            zf.write(soporte,os.path.join('Hoja de Vida',funcionario.nombre,fname))
+
+    zf.close()
+    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    return resp
+
+def contratosFuncionarios(request,pk,eje):
+    funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
+    zip_subdir = "Contratos"
+    zip_filename = "%s.zip" % zip_subdir
+    s = StringIO.StringIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for funcionario in funcionarios:
+        soporte = settings.MEDIA_ROOT+'/'+str(funcionario.contrato)
+        if os.path.exists(soporte):
+            fdir, fname = os.path.split(soporte)
+            zf.write(soporte,os.path.join('Contratos',funcionario.nombre,fname))
+
+    zf.close()
+    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    return resp
+
+def hvGestores(request,pk,tipo):
+    gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
+    zip_subdir = "Hojas de Vida"
+    zip_filename = "%s.zip" % zip_subdir
+    s = StringIO.StringIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for gestor in gestores:
+        soporte = settings.MEDIA_ROOT+'/'+str(gestor.hv)
+        if os.path.exists(soporte):
+            fdir, fname = os.path.split(soporte)
+            zf.write(soporte,os.path.join('Hoja de Vida',gestor.nombre,fname))
+
+    zf.close()
+    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    return resp
+
+def contratosGestores(request,pk,tipo):
+    gestores = Funcionario.objects.filter(region__id=pk).filter(tipo__id=eje)
+    zip_subdir = "Contratos"
+    zip_filename = "%s.zip" % zip_subdir
+    s = StringIO.StringIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for gestor in gestores:
+        soporte = settings.MEDIA_ROOT+'/'+str(gestor.contrato)
+        if os.path.exists(soporte):
+            fdir, fname = os.path.split(soporte)
+            zf.write(soporte,os.path.join('Contratos',gestor.nombre,fname))
 
     zf.close()
     resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")

@@ -11,4 +11,4 @@ class Municipio(models.Model):
         ordering = ['nombre']
 
     def __unicode__(self):
-        return smart_unicode(self.nombre)
+        return smart_unicode('%s - %s' % (self.nombre, self.departamento))

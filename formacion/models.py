@@ -24,14 +24,24 @@ class Grupo(models.Model):
 class ParticipanteEscuelaTic(models.Model):
     formador = models.ForeignKey(Formador)
     grupo = models.ForeignKey(Grupo)
-    poblacion = models.CharField(max_length=100)
-    genero = models.CharField(max_length=100)
+
+    numero = models.BigIntegerField(blank=True)
+    departamento = models.CharField(max_length=100)
+    municipio = models.CharField(max_length=100)
+
+    institucion = models.CharField(max_length=200,blank=True)
+
     nombres = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
-    institucion = models.CharField(max_length=200)
-    correo = models.EmailField(blank=True,max_length=200)
-    telefono = models.CharField(blank=True,max_length=100)
     cedula = models.BigIntegerField(unique=True,error_messages={'unique':"Este numero de identificacion ya ha sido registrado"})
+    genero = models.CharField(max_length=100)
+    nivel_educativo = models.CharField(max_length=100)
+    telefono = models.CharField(blank=True,max_length=100)
+    correo = models.EmailField(blank=True,max_length=200)
+    poblacion = models.CharField(blank=True,max_length=200)
+    codigo_anspe = models.CharField(blank=True,max_length=200)
+
+
 
     def __unicode__(self):
         return smart_unicode(self.cedula)
