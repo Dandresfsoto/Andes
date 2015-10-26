@@ -20,6 +20,9 @@ urlpatterns = [
 
     url(r'^(?P<pk>\w+)/cpe/acceso/$', login_required(views.CpeAccesoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/$', login_required(views.CpeFuncionarioView.as_view())),
+    url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/hv/$', login_required(views.hvFuncionarios)),
+    url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/contratos/$', login_required(views.contratosFuncionarios)),
+
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/$', login_required(views.CpeGestorView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/hv/$', login_required(views.hvGestores)),
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/contratos/$', login_required(views.contratosGestores)),

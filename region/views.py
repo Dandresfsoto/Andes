@@ -8,11 +8,12 @@ from mixins.mixins import RegionMixin, AndesMixin, CpeMixin
 from django.http import HttpResponse
 import os
 import zipfile
-import StringIO
+from django.utils.encoding import smart_str
 from django.conf import settings
 
 from funcionario.models import Funcionario
 from gestor.models import Gestor
+import datetime
 
 class InicioView(ListView):
     template_name = 'inicio.html'
@@ -143,11 +144,11 @@ class CpeAdministrativoObligacionesView(CpeMixin,TemplateView):
         return super(CpeAdministrativoObligacionesView,self).get_context_data(**kwargs)
 
 def hv(request,pk,tipo):
+    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Hojas de Vida"
+    zip_subdir = "Hojas de Vida "+fecha
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
 
     for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.hv)
@@ -158,14 +159,15 @@ def hv(request,pk,tipo):
     zf.close()
     resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    os.remove("C://Temp//"+zip_filename)
     return resp
 
 def contratos(request,pk,tipo):
+    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Contratos"
+    zip_subdir = "Contratos "+fecha
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
 
     for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.contrato)
@@ -174,16 +176,17 @@ def contratos(request,pk,tipo):
             zf.write(soporte,os.path.join('Contratos',formador.nombre,fname))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    os.remove("C://Temp//"+zip_filename)
     return resp
 
 def hvFuncionarios(request,pk,eje):
+    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
-    zip_subdir = "Hojas de Vida"
+    zip_subdir = "Hojas de Vida "+fecha
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
 
     for funcionario in funcionarios:
         soporte = settings.MEDIA_ROOT+'/'+str(funcionario.hv)
@@ -192,16 +195,17 @@ def hvFuncionarios(request,pk,eje):
             zf.write(soporte,os.path.join('Hoja de Vida',funcionario.nombre,fname))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    os.remove("C://Temp//"+zip_filename)
     return resp
 
 def contratosFuncionarios(request,pk,eje):
+    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
-    zip_subdir = "Contratos"
+    zip_subdir = "Contratos "+fecha
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
 
     for funcionario in funcionarios:
         soporte = settings.MEDIA_ROOT+'/'+str(funcionario.contrato)
@@ -210,16 +214,17 @@ def contratosFuncionarios(request,pk,eje):
             zf.write(soporte,os.path.join('Contratos',funcionario.nombre,fname))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    os.remove("C://Temp//"+zip_filename)
     return resp
 
 def hvGestores(request,pk,tipo):
+    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Hojas de Vida"
+    zip_subdir = "Hojas de Vida "+fecha
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
 
     for gestor in gestores:
         soporte = settings.MEDIA_ROOT+'/'+str(gestor.hv)
@@ -228,16 +233,19 @@ def hvGestores(request,pk,tipo):
             zf.write(soporte,os.path.join('Hoja de Vida',gestor.nombre,fname))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    return resp
+    response = HttpResponse(content_type='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(zip_filename)
+    response['X-Sendfile'] = smart_str("C:/Temp/"+zip_filename)
+    # It's usually a good idea to set the 'Content-Length' header too.
+    # You can also set any other required headers: Cache-Control, etc.
+    return response
 
 def contratosGestores(request,pk,tipo):
+    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Contratos"
+    zip_subdir = "Contratos "+fecha
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
 
     for gestor in gestores:
         soporte = settings.MEDIA_ROOT+'/'+str(gestor.contrato)
@@ -246,6 +254,7 @@ def contratosGestores(request,pk,tipo):
             zf.write(soporte,os.path.join('Contratos',gestor.nombre,fname))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
+    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+    os.remove("C://Temp//"+zip_filename)
     return resp
