@@ -47,9 +47,9 @@ class GestorTableView(BaseDatatableView):
 
     order_columns = [
         'nombre',
-        'cedula',
-        'celular',
-        'correo',
+        'nombre',
+        'nombre',
+        'nombre',
         '',
         '',
         '',
@@ -183,9 +183,9 @@ class GestorFinancieroTableView(BaseDatatableView):
 
     order_columns = [
         'nombre',
-        'cedula',
-        'celular',
-        'correo',
+        'nombre',
+        'nombre',
+        'nombre',
         '',
         '',
         '',
@@ -307,10 +307,7 @@ class GestorCalificacionTableView(BaseDatatableView):
     ]
 
     order_columns = [
-        'nombre',
-        'cedula',
-        'celular',
-        'correo',
+        'nombre'
     ]
 
     def get_initial_queryset(self):
@@ -385,8 +382,6 @@ class GestorCorteEvidenciasTableView(BaseDatatableView):
 
     order_columns = [
         'radicado',
-        'gestor',
-        'ciclo'
     ]
 
     def get_initial_queryset(self):

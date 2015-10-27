@@ -44,9 +44,9 @@ class FuncionarioTableView(BaseDatatableView):
 
     order_columns = [
         'nombre',
-        'cedula',
-        'celular',
-        'correo',
+        'nombre',
+        'nombre',
+        'nombre',
         '',
         '',
         '',

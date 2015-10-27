@@ -45,9 +45,9 @@ class FormadorTableView(BaseDatatableView):
 
     order_columns = [
         'nombre',
-        'cedula',
-        'celular',
-        'correo',
+        'nombre',
+        'nombre',
+        'nombre',
         '',
         '',
         '',
@@ -156,9 +156,9 @@ class FormadorCalificacionTableView(BaseDatatableView):
 
     order_columns = [
         'nombre',
-        'cedula',
-        'celular',
-        'correo',
+        'nombre',
+        'nombre',
+        'nombre',
         '',
         '',
         '',

@@ -484,10 +484,10 @@ class CpeObligacionTableView(BaseDatatableView):
     ]
 
     order_columns = [
-        'id',
-        'region',
         'numero',
-        'descripcion'
+        'numero',
+        'numero',
+        'numero'
     ]
 
     def get_initial_queryset(self):

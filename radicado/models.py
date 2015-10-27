@@ -28,3 +28,6 @@ class Radicado(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.numero)
+
+    class Meta:
+        ordering = ['numero']

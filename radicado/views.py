@@ -14,6 +14,9 @@ class RadicadoTableView(BaseDatatableView):
 
     order_columns = [
         'radicado',
+        'radicado',
+        'radicado',
+        'radicado'
     ]
 
     def get_initial_queryset(self):
@@ -34,7 +37,7 @@ class RadicadoTableView(BaseDatatableView):
 
     def render_column(self, row, column):
         if column == 'radicado':
-            return str(row.radicado.numero)
+            return row.radicado.numero
         if column == 'ciclo':
             return str(row.ciclo.nombre)
         if column == 'componente':
@@ -83,7 +86,7 @@ class RadicadoTotalTableView(BaseDatatableView):
     ]
 
     order_columns = [
-        'id',
+        'numero',
     ]
 
     def get_initial_queryset(self):
