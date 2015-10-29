@@ -303,30 +303,30 @@ class FormadorListadoGrupoTableView(BaseDatatableView):
     model = ParticipanteEscuelaTic
     columns = [
         'id',
-        'grupo',
         'formador',
-        'poblacion',
-        'genero',
+        'grupo',
+        'numero',
+        'departamento',
+        'municipio',
+        'institucion',
         'nombres',
         'apellidos',
-        'institucion',
-        'correo',
+        'cedula',
+        'genero',
+        'nivel_educativo',
         'telefono',
-        'cedula'
+        'correo',
+        'poblacion',
+        'codigo_anspe',
+        'tipo_proyecto',
+        'grupo_conformacion'
     ]
 
     order_columns = [
-        'id',
-        'grupo',
-        'formador',
-        'poblacion',
-        'genero',
         'nombres',
-        'apellidos',
-        'institucion',
-        'correo',
-        'telefono',
-        'cedula'
+        'nombres',
+        'nombres',
+        'nombres',
     ]
 
     def get_initial_queryset(self):
@@ -339,6 +339,7 @@ class FormadorListadoGrupoTableView(BaseDatatableView):
         q = Q()
         if search:
             q |= Q(**{'nombres__icontains' : search.capitalize()})
+            q |= Q(**{'apellidos__icontains' : search.capitalize()})
             qs = qs.filter(q)
         return qs
 

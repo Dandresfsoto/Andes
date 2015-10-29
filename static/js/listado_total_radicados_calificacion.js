@@ -37,6 +37,15 @@ function format ( d ) {
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                text: 'Reporte Total',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"reporte");
+                }
+            }
+        ],
         "searching": true,
         "processing": true,
         "serverSide": true,

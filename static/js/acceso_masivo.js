@@ -30,7 +30,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/region/"+ $('#id_region').val()+"/andes/acceso/masivo/listado/",
+        "ajax": "/region/"+ $('#id_region').val()+"/andes/acceso/"+$('#id_tipo_gestor').val()+"/masivo/listado/",
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },

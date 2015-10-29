@@ -8,7 +8,9 @@
     <file url="file://$PROJECT_DIR$/static/js/cpe_obligaciones_listado.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/financiero_liquidaciones_acceso.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/financiero_liquidaciones_formacion.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/tipo2_formador_listado.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/acceso_masivo.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/acceso_tipo.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/documental.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/editar_obligacion.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/eliminar_soporte_obligacion.jade" charset="UTF-8" />

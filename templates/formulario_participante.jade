@@ -16,7 +16,7 @@ block itemsNavbarBreadcrumb
         a(href="../../../../") {{NOMBRE_FORMADOR}}
     li
         a(href="../../") Inscritos: {{NOMBRE_GRUPO}}
-    li(class="active") Nuevo Participate
+    li(class="active") {{ACCION}}
 block body_content
     div(class="container-fluid")
         form(action="",method="post",enctype="multipart/form-data")
@@ -35,30 +35,56 @@ block body_content
                     td(class = "text-center")
                         | {{form.municipio}}
                 tr
+                    td(class = "text-center") Institución:
+                    td(class = "text-center")
+                        | {{form.institucion}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Nombres:
+                    td(class = "text-center")
+                        | {{form.nombres}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Apellidos:
+                    td(class = "text-center")
+                        | {{form.apellidos}}
+                tr
                     td(class = "text-center" style="font-weight:bold;") Documento de Identidad:
                     td(class = "text-center")
                         | {{form.cedula}}
                         | {{form.cedula.errors}}
                 tr
-                    td(class = "text-center" style="font-weight:bold;") Poblacion:
-                    td(class = "text-center")
-                        | {{form.poblacion}}
-                tr
                     td(class = "text-center" style="font-weight:bold;") Genero:
                     td(class = "text-center")
                         | {{form.genero}}
                 tr
-                    td(class = "text-center" style="font-weight:bold;") Institución/Entidad:
+                    td(class = "text-center") Nivel Educativo:
                     td(class = "text-center")
-                        | {{form.institucion}}
+                        | {{form.nivel_educativo}}
                 tr
-                    td(class = "text-center" style="font-weight:bold;") Correo:
+                    td(class = "text-center") Telefono:
+                    td(class = "text-center")
+                        | {{form.telefono}}
+                tr
+                    td(class = "text-center") Correo:
                     td(class = "text-center")
                         | {{form.correo}}
                 tr
-                    td(class = "text-center" style="font-weight:bold;") Telefono:
+                    td(class = "text-center") Tipo de Población:
                     td(class = "text-center")
-                        | {{form.telefono}}
+                        | {{form.poblacion}}
+                tr
+                    td(class = "text-center") Código ANSPE:
+                    td(class = "text-center")
+                        | {{form.codigo_anspe}}
+                tr
+                    td(class = "text-center") Tipo de Proyecto:
+                    td(class = "text-center")
+                        | {{form.tipo_proyecto}}
+                tr
+                    td(class = "text-center") Grupo de Conformación:
+                    td(class = "text-center")
+                        | {{form.grupo_conformacion}}
+
+
             | {% csrf_token %}
             div(class="container-fluid barra")
                 div(class="col-lg-2")

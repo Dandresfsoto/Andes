@@ -25,7 +25,7 @@ class ParticipanteEscuelaTic(models.Model):
     formador = models.ForeignKey(Formador)
     grupo = models.ForeignKey(Grupo)
 
-    numero = models.BigIntegerField(blank=True)
+    numero = models.BigIntegerField(blank=True,null=True)
     departamento = models.CharField(max_length=100)
     municipio = models.CharField(max_length=100)
 
@@ -35,11 +35,13 @@ class ParticipanteEscuelaTic(models.Model):
     apellidos = models.CharField(max_length=100)
     cedula = models.BigIntegerField(unique=True,error_messages={'unique':"Este numero de identificacion ya ha sido registrado"})
     genero = models.CharField(max_length=100)
-    nivel_educativo = models.CharField(max_length=100)
+    nivel_educativo = models.CharField(max_length=100,blank=True)
     telefono = models.CharField(blank=True,max_length=100)
     correo = models.EmailField(blank=True,max_length=200)
     poblacion = models.CharField(blank=True,max_length=200)
     codigo_anspe = models.CharField(blank=True,max_length=200)
+    tipo_proyecto = models.CharField(blank=True,max_length=200)
+    grupo_conformacion = models.CharField(blank=True,max_length=200)
 
 
 

@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from mixins.mixins import AccesoMixin
 from region.models import Region
 from django.views.generic import CreateView
-from gestor.models import Gestor
+from gestor.models import Gestor, TipoGestor
 from radicado.models import Radicado
 from municipio.models import Municipio
 from acceso.models import Actividad, Reasignados, CargaMasiva
@@ -61,11 +61,19 @@ class EvidenciaViewSet(mixins.UpdateModelMixin,generics.GenericAPIView):
         return self.update(request, *args, **kwargs)
 
 class AccesoView(AccesoMixin,TemplateView):
-    template_name = 'acceso.html'
+    template_name = 'acceso_tipo.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(AccesoView,self).get_context_data(**kwargs)
+
+class AccesoTipoView(AccesoMixin,TemplateView):
+    template_name = 'acceso.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        return super(AccesoTipoView,self).get_context_data(**kwargs)
 
 class AccesoCalificacionView(AccesoMixin,TemplateView):
     template_name = 'acceso_gestores.html'
@@ -73,6 +81,8 @@ class AccesoCalificacionView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
         return super(AccesoCalificacionView,self).get_context_data(**kwargs)
 
 class AccesoCalificacionTotalView(AccesoMixin,TemplateView):
@@ -81,15 +91,10 @@ class AccesoCalificacionTotalView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
         return super(AccesoCalificacionTotalView,self).get_context_data(**kwargs)
 
-class AccesoReasignadosView(AccesoMixin,TemplateView):
-    template_name = 'acceso_reasignados.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
-        kwargs['ID_REGION'] = self.kwargs['pk']
-        return super(AccesoReasignadosView,self).get_context_data(**kwargs)
 
 class AccesoListadoRadicadosView(AccesoMixin,TemplateView):
     template_name = 'acceso_radicados.html'
@@ -101,6 +106,8 @@ class AccesoListadoRadicadosView(AccesoMixin,TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
         kwargs['ID_MUNICIPIO'] = self.kwargs['id_municipio']
+        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
         return super(AccesoListadoRadicadosView,self).get_context_data(**kwargs)
 
 class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
@@ -111,9 +118,11 @@ class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
         kwargs['NOMBRE'] = Gestor.objects.get(pk=self.kwargs['id_gestor']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
+        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
         return super(AccesoListadoMunicipiosView,self).get_context_data(**kwargs)
 
-def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
+def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
         formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
@@ -130,10 +139,11 @@ def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
     return render_to_response("evidencias_radicado.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre,
                                                           "gestor":Gestor.objects.get(pk=id_gestor).nombre,
                                                           "radicado":Radicado.objects.get(pk=id_radicado),
-                                                          "municipio":Municipio.objects.get(pk=id_municipio)},
+                                                          "municipio":Municipio.objects.get(pk=id_municipio),
+                                                          "TIPO":TipoGestor.objects.get(pk=tipo_gestor).tipo},
                               context_instance=RequestContext(request))
 
-def evidencia_total_form(request,id_radicado,pk):
+def evidencia_total_form(request,id_radicado,pk,tipo_gestor):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
         formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
@@ -147,9 +157,12 @@ def evidencia_total_form(request,id_radicado,pk):
                     obj.save()
     else:
         formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado),)
-    return render_to_response("evidencias_radicado_total.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre,"radicado":Radicado.objects.get(pk=id_radicado)},context_instance=RequestContext(request))
+    return render_to_response("evidencias_radicado_total.html",{"formset":formset,"user":request.user,
+                                                                "REGION":Region.objects.get(pk=pk).nombre,
+                                                                "radicado":Radicado.objects.get(pk=id_radicado),
+                                                                "TIPO":TipoGestor.objects.get(pk=tipo_gestor).tipo},context_instance=RequestContext(request))
 
-def reporte_acceso(request,pk,id_gestor):
+def reporte_acceso(request,pk,id_gestor,tipo_gestor):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
@@ -185,12 +198,11 @@ def reporte_acceso(request,pk,id_gestor):
                tuple(['Componente',30]),
                tuple(['Modulo',30]),
                tuple(['Actividad',30]),
+               tuple(['ID',30]),
                tuple(['Encargado',30]),
                tuple(['Valor',30]),
                tuple(['Soporte',30]),
                tuple(['Corte',30]),
-               tuple(['Usuario',30]),
-               tuple(['Modificación',30]),
                ]
 
 
@@ -215,12 +227,100 @@ def reporte_acceso(request,pk,id_gestor):
             evidencia.componente.nombre,
             evidencia.modulo.nombre,
             str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
+            evidencia.actividad.id,
             evidencia.encargado.encargado,
             evidencia.valor.valor,
             str(evidencia.soporte),
             str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
-            evidencia.usuario.username,
-            evidencia.modificacion
+        ]
+
+        for col_num in xrange(len(row)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            if row[col_num] == True:
+                c.value = "SI"
+            if row[col_num] == False:
+                c.value = "NO"
+            if row[col_num] == None:
+                c.value = ""
+            else:
+                c.value = row[col_num]
+            c.style = co
+
+
+
+    archivo.save(response)
+    return response
+
+def reporte_total(request,pk,tipo_gestor):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Informe Gestores"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'REPORTE GESTORES'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columnas = Actividad.objects.order_by('id').values('nombre','titulo')
+    columns = [tuple(['Radicado',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Gestor',30]),
+               tuple(['Ciclo',30]),
+               tuple(['Componente',30]),
+               tuple(['Modulo',30]),
+               tuple(['Actividad',30]),
+               tuple(['ID',30]),
+               tuple(['Encargado',30]),
+               tuple(['Valor',30]),
+               tuple(['Soporte',30]),
+               tuple(['Corte',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    evidencias = Evidencia.objects.filter(radicado__region__id=pk)
+
+    for evidencia in evidencias:
+        row_num += 1
+        row = [
+            evidencia.radicado.numero,
+            evidencia.radicado.municipio.departamento.nombre,
+            evidencia.radicado.municipio.nombre,
+            evidencia.gestor.nombre,
+            evidencia.ciclo.nombre,
+            evidencia.componente.nombre,
+            evidencia.modulo.nombre,
+            str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
+            evidencia.actividad.id,
+            evidencia.encargado.encargado,
+            evidencia.valor.valor,
+            str(evidencia.soporte),
+            str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
         ]
 
         for col_num in xrange(len(row)):
@@ -252,6 +352,8 @@ class MasivoView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
         return super(MasivoView,self).get_context_data(**kwargs)
 
 class MasivoTableView(BaseDatatableView):
@@ -310,9 +412,11 @@ class MasivoNuevoView(AccesoMixin,CreateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
         return super(MasivoNuevoView,self).get_context_data(**kwargs)
 
-def ejecutar_masivo(request,pk,id_masivo):
+def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')

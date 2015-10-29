@@ -49,7 +49,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/gestor/calificacion/"+ $('#id_region').val(),
+        "ajax": "/gestor/calificacion/"+ $('#id_region').val()+"/"+$('#id_tipo_gestor').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },

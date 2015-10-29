@@ -18,12 +18,15 @@ class NuevoGrupoForm(forms.ModelForm):
 
 class NuevoParticipanteForm(forms.ModelForm):
     class Meta:
+        municipio_choice = []
+        for municipio in Municipio.objects.all():
+            municipio_choice.append(tuple([municipio.nombre+" - "+municipio.departamento.nombre,municipio.nombre+" - "+municipio.departamento.nombre]))
         model = ParticipanteEscuelaTic
-        fields = ['formador','grupo','numero','departamento','municipio','institucion','nombres','apellidos','cedula','genero','nivel_educativo','telefono','correo','poblacion','codigo_anspe']
+        fields = ['formador','grupo','numero','departamento','municipio','institucion','nombres','apellidos','cedula','genero','nivel_educativo','telefono','correo','poblacion','codigo_anspe','tipo_proyecto','grupo_conformacion']
         widgets = {
             'numero': forms.NumberInput(attrs={'style':'width:100%;'}),
             'departamento': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(Departamento.objects.all().values_list('nombre','nombre'))),
-            'municipio': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(Municipio.objects.all().values_list('nombre','nombre'))),
+            'municipio': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(municipio_choice)),
             'institucion': forms.TextInput(attrs={'style':'width:100%;'}),
             'nombres': forms.TextInput(attrs={'style':'width:100%;','required':''}),
             'apellidos': forms.TextInput(attrs={'style':'width:100%;','required':''}),
@@ -34,4 +37,6 @@ class NuevoParticipanteForm(forms.ModelForm):
             'correo': forms.EmailInput(attrs={'style':'width:100%;'}),
             'poblacion': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(('ANSPE','ANSPE'),('RED UNIDOS','RED UNIDOS'),('RED PAPAZ','RED PAPAZ'),('COMUNIDAD EDUCATIVA','COMUNIDAD EDUCATIVA'),('OTROS','OTROS'))),
             'codigo_anspe': forms.TextInput(attrs={'style':'width:100%;'}),
+            'tipo_proyecto': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(('P.F. Conocer un lugar en el mundo','P.F. Conocer un lugar en el mundo'),('P. F. Mejorar la productividad de un negocio','P. F. Mejorar la productividad de un negocio'),('P. F. Informarse sobre las redes sociales y compartir con los hijos','P. F. Informarse sobre las redes sociales y compartir con los hijos'))),
+            'grupo_conformacion': forms.TextInput(attrs={'style':'width:100%;'}),
         }

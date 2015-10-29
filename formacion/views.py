@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, UpdateView
 from mixins.mixins import FormacionMixin
 from region.models import Region
 from formador.models import Formador
@@ -85,7 +85,25 @@ class NuevoParticipanteView(FormacionMixin,CreateView):
         kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
         kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
         kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['ACCION'] = "Nuevo"
         return super(NuevoParticipanteView,self).get_context_data(**kwargs)
+
+class EditarParticipanteView(FormacionMixin,UpdateView):
+    model = ParticipanteEscuelaTic
+    form_class = NuevoParticipanteForm
+    template_name = "formulario_participante.html"
+    success_url = "../../"
+    pk_url_kwarg = "participante_id"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['ACCION'] = "Editar: "+ParticipanteEscuelaTic.objects.get(pk=self.kwargs['participante_id']).nombres
+        return super(EditarParticipanteView,self).get_context_data(**kwargs)
 
 def soporte_form(request,pk,grupo_id,formador_id):
     SoporteFormSet = modelformset_factory(SoporteEntregableEscuelaTic, fields=('soporte',),extra=0)
