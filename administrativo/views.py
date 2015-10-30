@@ -5,10 +5,11 @@ from django.views.generic import UpdateView, CreateView, DeleteView
 from region.models import Region
 
 from gestor.models import Gestor
-from gestor.forms import GestorSoporteForm, GestorSeguroForm, GestorInformacionForm, GestorFotoForm
+from gestor.forms import GestorSoporteForm, GestorSeguroForm, GestorInformacionForm, GestorFotoForm, NuevoForm
 
 from formador.models import Formador
 from formador.forms import FormadorSoporteForm, FormadorSeguroForm, FormadorInformacionForm, FormadorFotoForm
+from formador.forms import NuevoForm as NuevoFormFormador
 
 from funcionario.models import Funcionario
 from funcionario.forms import FuncionarioSoporteForm, FuncionarioSeguroForm, FuncionarioInformacionForm, FuncionarioFotoForm
@@ -268,19 +269,6 @@ class FormadorActualizarInformacionView(AdministrativoMixin,UpdateView):
 
 
     def get_context_data(self, **kwargs):
-        kwargs['informacion'] = [
-        {'nombre':"Celular",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).celular,'id':'celular','longitud': Formador._meta.get_field('celular').max_length},
-        {'nombre':"Correo",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).correo,'id':'correo','longitud': Formador._meta.get_field('correo').max_length},
-        {'nombre':"Cargo",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).cargo,'id':'cargo','longitud': Formador._meta.get_field('cargo').max_length},
-        {'nombre':"Profesion",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).profesion,'id':'profesion','longitud': Formador._meta.get_field('profesion').max_length},
-        {'nombre':"Banco",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).banco,'id':'banco','longitud': Formador._meta.get_field('banco').max_length},
-        {'nombre':"Tipo de Cuenta",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).tipo_cuenta,'id':'tipo_cuenta','longitud': Formador._meta.get_field('tipo_cuenta').max_length},
-        {'nombre':"Numero de Cuenta",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).numero_cuenta,'id':'numero_cuenta','longitud': Formador._meta.get_field('numero_cuenta').max_length},
-        {'nombre':"Eps",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).eps,'id':'eps','longitud':Formador._meta.get_field('eps').max_length},
-        {'nombre':"Pension",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).pension,'id':'pension','longitud':Formador._meta.get_field('pension').max_length},
-        {'nombre':"Arl",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).arl,'id':'arl','longitud':Formador._meta.get_field('arl').max_length}
-        ]
-
         kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         return super(FormadorActualizarInformacionView,self).get_context_data(**kwargs)
@@ -581,3 +569,27 @@ class CpeEliminarSoporteObligacion(AdministrativoMixin, DeleteView):
         kwargs['ID_OBLIGACION'] = self.kwargs['obligacion_id']
         kwargs['OBLIGACION'] = Obligacion.objects.get(pk=self.kwargs['obligacion_id']).numero
         return super(CpeEliminarSoporteObligacion,self).get_context_data(**kwargs)
+
+class NuevoGestorView(AdministrativoMixin, CreateView):
+    model = Gestor
+    form_class = NuevoForm
+    success_url = "../"
+    template_name = "nuevo_gestor_administrativo.html"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo_id']
+        return super(NuevoGestorView,self).get_context_data(**kwargs)
+
+class NuevoFormadorView(AdministrativoMixin, CreateView):
+    model = Formador
+    form_class = NuevoFormFormador
+    success_url = "../"
+    template_name = "nuevo_formador_administrativo.html"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = self.kwargs['tipo_id']
+        return super(NuevoFormadorView,self).get_context_data(**kwargs)

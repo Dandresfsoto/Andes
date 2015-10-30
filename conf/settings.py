@@ -171,3 +171,7 @@ EMAIL_HOST_PASSWORD = '%4nd3s2015%'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL='Asociación Nacional para el Desarrollo Social - ANDES <sistemasican@gmail.com>'
+SERVER_EMAIL = 'sistemasican@gmail.com'
+ADMINS = (
+    ('Diego', 'sistemas@asoandes.org'),
+)

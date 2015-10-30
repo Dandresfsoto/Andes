@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^gestores/(?P<tipo_id>\w+)/actualizar/seguro/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarSeguroView.as_view())),
     url(r'^gestores/(?P<tipo_id>\w+)/actualizar/informacion/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarInformacionView.as_view())),
     url(r'^gestores/(?P<tipo_id>\w+)/actualizar/foto/(?P<gestor_id>\w+)/$', login_required(views.GestorActualizarFotoView.as_view())),
+    url(r'^gestores/(?P<tipo_id>\w+)/nuevo/$', login_required(views.NuevoGestorView.as_view())),
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view()),name='formadores'),
     url(r'^formadores/(?P<tipo_id>\w+)/$', login_required(views.FormadorTipoView.as_view())),
@@ -19,6 +20,7 @@ urlpatterns = [
     url(r'^formadores/(?P<tipo_id>\w+)/actualizar/seguro/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarSeguroView.as_view())),
     url(r'^formadores/(?P<tipo_id>\w+)/actualizar/informacion/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarInformacionView.as_view())),
     url(r'^formadores/(?P<tipo_id>\w+)/actualizar/foto/(?P<formador_id>\w+)/$', login_required(views.FormadorActualizarFotoView.as_view())),
+    url(r'^formadores/(?P<tipo_id>\w+)/nuevo/$', login_required(views.NuevoFormadorView.as_view())),
 
     url(r'^funcionarios/$', login_required(views.FuncionarioView.as_view()),name='formadores'),
     url(r'^funcionarios/actualizar/soportes/(?P<funcionario_id>\w+)/$', login_required(views.FuncionarioActualizarSoporteView.as_view())),

@@ -18,24 +18,48 @@ block body_content
         form(action="",method="post",enctype="multipart/form-data")
             table(class="table table-bordered text-center",style="color:black;background:white;")
                 tr
-                    th(class="text-center") Información:
-                    th(class="text-center") Actual:
-                    th(class="text-center") Modificar:
-                | {% for field in informacion %}
-                | {% if field.nombre == "Correo" %}
+                    th(class="text-center") Campo:
+                    th(class="text-center") Informacion:
                 tr
-                    td(class = "text-center" style="font-weight:bold;") {{field.nombre}}
-                    td(class = "text-center") {{field.soporte}}
-                    td(class = "text-center")
-                        input(style="width:100%;",id="id_{{field.id}}",name="{{field.id}}",type="email",maxlength="{{field.longitud}}",value="{{field.soporte}}")
-                | {% else %}
+                    td(class = "text-center" style="font-weight:bold;") Nombre:
+                    td(class = "text-center") {{form.nombre}}
                 tr
-                    td(class = "text-center" style="font-weight:bold;") {{field.nombre}}
-                    td(class = "text-center") {{field.soporte}}
-                    td(class = "text-center")
-                        input(style="width:100%;",id="id_{{field.id}}",name="{{field.id}}",type="text",maxlength="{{field.longitud}}",value="{{field.soporte}}")
-                | {% endif %}
-                | {% endfor %}
+                    td(class = "text-center" style="font-weight:bold;") Cedula:
+                    td(class = "text-center") {{form.cedula}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Celular:
+                    td(class = "text-center") {{form.celular}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Correo:
+                    td(class = "text-center") {{form.correo}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Fecha de Contratación:
+                    td(class = "text-center") {{form.fecha_contratacion}}
+                tr
+                    td(class = "text-center") Cargo:
+                    td(class = "text-center") {{form.cargo}}
+                tr
+                    td(class = "text-center") Profesión:
+                    td(class = "text-center") {{form.profesion}}
+                tr
+                    td(class = "text-center") Banco:
+                    td(class = "text-center") {{form.banco}}
+                tr
+                    td(class = "text-center") Tipo de Cuenta:
+                    td(class = "text-center") {{form.tipo_cuenta}}
+                tr
+                    td(class = "text-center") Numero de Cuenta:
+                    td(class = "text-center") {{form.numero_cuenta}}
+                tr
+                    td(class = "text-center") EPS:
+                    td(class = "text-center") {{form.eps}}
+                tr
+                    td(class = "text-center") Pensión:
+                    td(class = "text-center") {{form.pension}}
+                tr
+                    td(class = "text-center") Arl:
+                    td(class = "text-center") {{form.arl}}
+
             | {% csrf_token %}
             div(class="container-fluid barra")
                 div(class="col-lg-2")

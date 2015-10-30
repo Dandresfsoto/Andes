@@ -208,6 +208,15 @@ function format ( d ) {
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                text: 'Nuevo Gestor',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"nuevo");
+                }
+            }
+        ],
         "searching": true,
         "processing": true,
         "serverSide": true,

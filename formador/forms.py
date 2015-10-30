@@ -27,7 +27,35 @@ class FormadorSoporteForm(forms.ModelForm):
 class FormadorInformacionForm(forms.ModelForm):
     class Meta:
         model = Formador
-        fields = ['celular','correo','cargo','profesion','banco','tipo_cuenta','numero_cuenta','eps','pension','arl']
+        fields = ['nombre',
+                  'cedula',
+                  'celular',
+                  'correo',
+                  'fecha_contratacion',
+                  'reemplazo',
+                  'cargo',
+                  'profesion',
+                  'banco',
+                  'tipo_cuenta',
+                  'numero_cuenta',
+                  'eps',
+                  'pension',
+                  'arl']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'style':'width:100%;','required':''}),
+            'cedula': forms.NumberInput(attrs={'style':'width:100%;','required':''}),
+            'celular': forms.TextInput(attrs={'style':'width:100%;','required':''}),
+            'correo': forms.EmailInput(attrs={'style':'width:100%;','required':''}),
+            'fecha_contratacion': forms.TextInput(attrs={'style':'width:100%;','required':''}),
+            'cargo': forms.TextInput(attrs={'style':'width:100%;'}),
+            'profesion': forms.TextInput(attrs={'style':'width:100%;'}),
+            'banco': forms.TextInput(attrs={'style':'width:100%;'}),
+            'tipo_cuenta': forms.TextInput(attrs={'style':'width:100%;'}),
+            'numero_cuenta': forms.TextInput(attrs={'style':'width:100%;'}),
+            'eps': forms.TextInput(attrs={'style':'width:100%;'}),
+            'pension': forms.TextInput(attrs={'style':'width:100%;'}),
+            'arl': forms.TextInput(attrs={'style':'width:100%;'}),
+        }
 
 class FormadorSeguroForm(forms.ModelForm):
     class Meta:
