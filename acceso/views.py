@@ -11,6 +11,7 @@ from municipio.models import Municipio
 from acceso.models import Actividad, Reasignados, CargaMasiva
 from conf import settings
 import openpyxl
+from string import maketrans
 
 from acceso.forms import ReasignacionForm, CargaMasivaForm
 from .models import Evidencia
@@ -50,6 +51,9 @@ vc = Style(font=Font(name='Calibri',size=12,bold=False,italic=False,vertAlign=No
        fill=PatternFill(fill_type='solid',start_color='D4F5CE',end_color='FF000000'),
        alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
      number_format='General')
+
+def encode_cp437(s, _noqmarks=maketrans('?', '_')):
+    return s.encode('cp437', errors='replace').translate(_noqmarks)
 
 class EvidenciaViewSet(mixins.UpdateModelMixin,generics.GenericAPIView):
     queryset = Evidencia.objects.all()
@@ -458,8 +462,8 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
 
 
     masivo = CargaMasiva.objects.get(pk=id_masivo)
-    #x=settings.MEDIA_ROOT+'/'+str(masivo.archivo)
-    #soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(masivo.archivo),'r')
+    x=settings.MEDIA_ROOT+'/'+str(masivo.archivo)
+    soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(masivo.archivo),'r')
 
     archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+str(masivo.excel))
 
@@ -477,24 +481,25 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
             if len(evidencia) == 0:
                 proceso = "No existe el Radicado"
             if len(evidencia) == 1:
-                if evidencia[0].soporte == "":
-                    e = evidencia[0]
-                    e.soporte = File(open("C://Temp//pendiente.txt", 'rb'))
-                    e.save()
-                    proceso = "Cargado con exito"
-                else:
-                    proceso = "Archivo Cargado Anteriormente"
-
-                #try:
-                #    info = soportes.getinfo(fila[2].value)
-                #except:
-                #    proceso = "No existe el archivo en el path"
-                #else:
-                #    soportes.extract(fila[2].value,"C:\Temp")
+                #if evidencia[0].soporte == "":
                 #    e = evidencia[0]
-                #    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
+                #    e.soporte = File(open("C://Temp//pendiente.txt", 'rb'))
                 #    e.save()
-                #    os.remove("C://Temp//" + fila[2].value)
+                #    proceso = "Cargado con exito"
+                #else:
+                #    proceso = "Archivo Cargado Anteriormente"
+
+                try:
+                    info = soportes.getinfo(encode_cp437(fila[2].value))
+                except:
+                    proceso = "No Existe el archivo en el path"
+                else:
+                    proceso = "Soporte cargado"
+                    soportes.extract(fila[2].value,"C:\Temp")
+                    e = evidencia[0]
+                    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
+                    e.save()
+                    os.remove("C://Temp//" + fila[2].value)
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
 

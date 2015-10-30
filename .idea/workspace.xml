@@ -2,108 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/nuevo_formador_administrativo.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/nuevo_gestor_administrativo.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso.html" afterPath="$PROJECT_DIR$/templates/acceso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_cpe.html" afterPath="$PROJECT_DIR$/templates/acceso_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_gestores.html" afterPath="$PROJECT_DIR$/templates/acceso_gestores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_masivo.html" afterPath="$PROJECT_DIR$/templates/acceso_masivo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_municipios.html" afterPath="$PROJECT_DIR$/templates/acceso_municipios.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_radicados.html" afterPath="$PROJECT_DIR$/templates/acceso_radicados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_radicados_total.html" afterPath="$PROJECT_DIR$/templates/acceso_radicados_total.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_reasignados.html" afterPath="$PROJECT_DIR$/templates/acceso_reasignados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/acceso_tipo.html" afterPath="$PROJECT_DIR$/templates/acceso_tipo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/administrativo.html" afterPath="$PROJECT_DIR$/templates/administrativo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/administrativo_cpe.html" afterPath="$PROJECT_DIR$/templates/administrativo_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/administrativo_cpe_listado.html" afterPath="$PROJECT_DIR$/templates/administrativo_cpe_listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/administrativo_cpe_listado_obligaciones.html" afterPath="$PROJECT_DIR$/templates/administrativo_cpe_listado_obligaciones.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/andes.html" afterPath="$PROJECT_DIR$/templates/andes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.jade" afterPath="$PROJECT_DIR$/templates/base.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/block.html" afterPath="$PROJECT_DIR$/templates/block.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cambio_password.html" afterPath="$PROJECT_DIR$/templates/cambio_password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe.html" afterPath="$PROJECT_DIR$/templates/cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe_administrativo.html" afterPath="$PROJECT_DIR$/templates/cpe_administrativo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe_administrativo_listado.html" afterPath="$PROJECT_DIR$/templates/cpe_administrativo_listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cpe_obligaciones_listado.html" afterPath="$PROJECT_DIR$/templates/cpe_obligaciones_listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados.html" afterPath="$PROJECT_DIR$/templates/diplomados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/diplomados_informacion.html" afterPath="$PROJECT_DIR$/templates/diplomados_informacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/documental.html" afterPath="$PROJECT_DIR$/templates/documental.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editar.html" afterPath="$PROJECT_DIR$/templates/editar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/editar_obligacion.html" afterPath="$PROJECT_DIR$/templates/editar_obligacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/eliminar.html" afterPath="$PROJECT_DIR$/templates/eliminar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/eliminar_soporte_obligacion.html" afterPath="$PROJECT_DIR$/templates/eliminar_soporte_obligacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/evidencias_radicado.html" afterPath="$PROJECT_DIR$/templates/evidencias_radicado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/evidencias_radicado_total.html" afterPath="$PROJECT_DIR$/templates/evidencias_radicado_total.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/financiero.html" afterPath="$PROJECT_DIR$/templates/financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/financiero_liquidaciones.html" afterPath="$PROJECT_DIR$/templates/financiero_liquidaciones.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/financiero_liquidaciones_acceso.html" afterPath="$PROJECT_DIR$/templates/financiero_liquidaciones_acceso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/financiero_liquidaciones_formacion.html" afterPath="$PROJECT_DIR$/templates/financiero_liquidaciones_formacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formacion.html" afterPath="$PROJECT_DIR$/templates/formacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formacion_cpe.html" afterPath="$PROJECT_DIR$/templates/formacion_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formador/forms.py" afterPath="$PROJECT_DIR$/formador/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formulario_carga_masiva.html" afterPath="$PROJECT_DIR$/templates/formulario_carga_masiva.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formulario_grupo.html" afterPath="$PROJECT_DIR$/templates/formulario_grupo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formulario_participante.html" afterPath="$PROJECT_DIR$/templates/formulario_participante.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/formulario_reasignados.html" afterPath="$PROJECT_DIR$/templates/formulario_reasignados.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/inicio.html" afterPath="$PROJECT_DIR$/templates/inicio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado.html" afterPath="$PROJECT_DIR$/templates/listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_formadores.html" afterPath="$PROJECT_DIR$/templates/listado_formadores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/listado_formadores.js" afterPath="$PROJECT_DIR$/static/js/listado_formadores.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_formadores_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_formadores_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_formadores_financiero.html" afterPath="$PROJECT_DIR$/templates/listado_formadores_financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionario_financiero.html" afterPath="$PROJECT_DIR$/templates/listado_funcionario_financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionarios.html" afterPath="$PROJECT_DIR$/templates/listado_funcionarios.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_funcionarios_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores.html" afterPath="$PROJECT_DIR$/templates/listado_gestores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/listado_gestores.js" afterPath="$PROJECT_DIR$/static/js/listado_gestores.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_gestores_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_evidencia_corte.html" afterPath="$PROJECT_DIR$/templates/listado_gestores_evidencia_corte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_financiero.html" afterPath="$PROJECT_DIR$/templates/listado_gestores_financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_proyectos.html" afterPath="$PROJECT_DIR$/templates/listado_proyectos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new_user.html" afterPath="$PROJECT_DIR$/templates/new_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nueva_liquidacion_acceso.html" afterPath="$PROJECT_DIR$/templates/nueva_liquidacion_acceso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nueva_liquidacion_formacion.html" afterPath="$PROJECT_DIR$/templates/nueva_liquidacion_formacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nueva_obligacion.html" afterPath="$PROJECT_DIR$/templates/nueva_obligacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo.html" afterPath="$PROJECT_DIR$/templates/nuevo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo_corte.html" afterPath="$PROJECT_DIR$/templates/nuevo_corte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo_formador.html" afterPath="$PROJECT_DIR$/templates/nuevo_formador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo_funcionario.html" afterPath="$PROJECT_DIR$/templates/nuevo_funcionario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo_gestor.html" afterPath="$PROJECT_DIR$/templates/nuevo_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo_informe.html" afterPath="$PROJECT_DIR$/templates/nuevo_informe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/nuevo_soporte_obligacion.html" afterPath="$PROJECT_DIR$/templates/nuevo_soporte_obligacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/permisos.html" afterPath="$PROJECT_DIR$/templates/permisos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/proyecto.html" afterPath="$PROJECT_DIR$/templates/proyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/region.html" afterPath="$PROJECT_DIR$/templates/region.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/settings.py" afterPath="$PROJECT_DIR$/conf/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/soportes_escuelaTIC.html" afterPath="$PROJECT_DIR$/templates/soportes_escuelaTIC.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_formacion.html" afterPath="$PROJECT_DIR$/templates/tipo2_formador_formacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_grupo.html" afterPath="$PROJECT_DIR$/templates/tipo2_formador_grupo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_listado.html" afterPath="$PROJECT_DIR$/templates/tipo2_formador_listado.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_formador.html" afterPath="$PROJECT_DIR$/templates/tipo_formador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_formador_cpe.html" afterPath="$PROJECT_DIR$/templates/tipo_formador_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_formador_financiero.html" afterPath="$PROJECT_DIR$/templates/tipo_formador_financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_gestor.html" afterPath="$PROJECT_DIR$/templates/tipo_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_gestor_financiero.html" afterPath="$PROJECT_DIR$/templates/tipo_gestor_financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_formador_soporte.html" afterPath="$PROJECT_DIR$/templates/update_formador_soporte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_foto_formador.html" afterPath="$PROJECT_DIR$/templates/update_foto_formador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_foto_funcionario.html" afterPath="$PROJECT_DIR$/templates/update_foto_funcionario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_foto_gestor.html" afterPath="$PROJECT_DIR$/templates/update_foto_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_funcionario_informacion.html" afterPath="$PROJECT_DIR$/templates/update_funcionario_informacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_funcionario_soporte.html" afterPath="$PROJECT_DIR$/templates/update_funcionario_soporte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_gestor.html" afterPath="$PROJECT_DIR$/templates/update_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_gestor_soporte.html" afterPath="$PROJECT_DIR$/templates/update_gestor_soporte.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_informacion_formador.html" afterPath="$PROJECT_DIR$/templates/update_informacion_formador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_informacion_formador.jade" afterPath="$PROJECT_DIR$/templates/update_informacion_formador.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_informacion_gestor.html" afterPath="$PROJECT_DIR$/templates/update_informacion_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_seguro_formador.html" afterPath="$PROJECT_DIR$/templates/update_seguro_formador.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_seguro_funcionario.html" afterPath="$PROJECT_DIR$/templates/update_seguro_funcionario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/update_seguro_gestor.html" afterPath="$PROJECT_DIR$/templates/update_seguro_gestor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrativo/urls.py" afterPath="$PROJECT_DIR$/administrativo/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrativo/views.py" afterPath="$PROJECT_DIR$/administrativo/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/views.py" afterPath="$PROJECT_DIR$/acceso/views.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,83 +27,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/administrativo/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="118" selection-start-line="12" selection-start-column="118" selection-end-line="12" selection-end-column="118" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/administrativo/views.py">
+        <entry file="file://$PROJECT_DIR$/acceso/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7270341">
-              <caret line="354" column="68" selection-start-line="354" selection-start-column="68" selection-end-line="354" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.6707317">
+              <caret line="489" column="62" selection-start-line="489" selection-start-column="62" selection-end-line="489" selection-end-column="62" />
               <folding>
-                <element signature="e#46#91#0" expanded="true" />
-                <element signature="e#4169#5874#0" expanded="false" />
-                <element signature="e#5951#7998#0" expanded="false" />
-                <element signature="e#8073#8633#0" expanded="false" />
-                <element signature="e#8692#8957#0" expanded="false" />
-                <element signature="e#9019#9344#0" expanded="false" />
-                <element signature="e#9421#11928#0" expanded="false" />
-                <element signature="e#12001#13601#0" expanded="false" />
-                <element signature="e#13673#15565#0" expanded="false" />
-                <element signature="e#15635#16150#0" expanded="false" />
-                <element signature="e#16211#16480#0" expanded="false" />
-                <element signature="e#17496#19138#0" expanded="false" />
-                <element signature="e#19212#21166#0" expanded="false" />
-                <element signature="e#21238#21771#0" expanded="false" />
-                <element signature="e#21826#22095#0" expanded="false" />
-                <element signature="e#22157#22441#0" expanded="false" />
-                <element signature="e#22493#23915#0" expanded="false" />
-                <element signature="e#23981#24336#0" expanded="false" />
-                <element signature="e#24402#24795#0" expanded="false" />
-                <element signature="e#24862#25149#0" expanded="false" />
-                <element signature="e#25218#25584#0" expanded="false" />
-                <element signature="e#25650#26209#0" expanded="false" />
-                <element signature="e#26264#28012#0" expanded="false" />
-                <element signature="e#28084#28635#0" expanded="false" />
-                <element signature="e#28708#29295#0" expanded="false" />
-                <element signature="e#29371#29963#0" expanded="false" />
-                <element signature="e#30025#30432#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update_informacion_formador.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/update_informacion_formador.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formador/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formador/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#47#92#0" expanded="true" />
+                <element signature="e#2505#2720#0" expanded="false" />
+                <element signature="e#2770#2987#0" expanded="false" />
+                <element signature="e#3041#3341#0" expanded="false" />
+                <element signature="e#3403#3830#0" expanded="false" />
+                <element signature="e#3897#4336#0" expanded="false" />
+                <element signature="e#4403#5124#0" expanded="false" />
+                <element signature="e#5191#5762#0" expanded="false" />
+                <element signature="e#5847#7202#0" expanded="false" />
+                <element signature="e#7270#8459#0" expanded="false" />
+                <element signature="e#8519#11447#0" expanded="false" />
+                <element signature="e#11496#14395#0" expanded="false" />
+                <element signature="e#14446#14579#0" expanded="false" />
+                <element signature="e#14629#15042#0" expanded="false" />
+                <element signature="e#15090#16342#0" expanded="false" />
+                <element signature="e#16395#16904#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -265,7 +109,6 @@
         <option value="$PROJECT_DIR$/acceso/urls.py" />
         <option value="$PROJECT_DIR$/static/js/listado_gestores_calificacion.js" />
         <option value="$PROJECT_DIR$/static/js/listado_total_radicados_calificacion.js" />
-        <option value="$PROJECT_DIR$/acceso/views.py" />
         <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/base.jade" />
@@ -278,6 +121,7 @@
         <option value="$PROJECT_DIR$/templates/update_informacion_formador.jade" />
         <option value="$PROJECT_DIR$/templates/listado_formadores.jade" />
         <option value="$PROJECT_DIR$/administrativo/views.py" />
+        <option value="$PROJECT_DIR$/acceso/views.py" />
       </list>
     </option>
   </component>
@@ -359,7 +203,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="formador" />
+              <option name="myItemId" value="acceso" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -937,31 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8341463">
-          <caret line="305" column="66" selection-start-line="305" selection-start-column="66" selection-end-line="305" selection-end-column="66" />
-          <folding>
-            <element signature="e#47#92#0" expanded="true" />
-            <element signature="e#2355#2570#0" expanded="false" />
-            <element signature="e#2620#2837#0" expanded="false" />
-            <element signature="e#2891#3191#0" expanded="false" />
-            <element signature="e#3253#3680#0" expanded="false" />
-            <element signature="e#3747#4186#0" expanded="false" />
-            <element signature="e#4253#4974#0" expanded="false" />
-            <element signature="e#5041#5612#0" expanded="false" />
-            <element signature="e#5697#7052#0" expanded="false" />
-            <element signature="e#7120#8309#0" expanded="false" />
-            <element signature="e#8369#11297#0" expanded="false" />
-            <element signature="e#14296#14429#0" expanded="false" />
-            <element signature="e#14479#14892#0" expanded="false" />
-            <element signature="e#14940#16192#0" expanded="false" />
-            <element signature="e#16245#16754#0" expanded="false" />
-            <element signature="e#16815#20353#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.044386424">
@@ -1137,16 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formador/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/administrativo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1155,28 +964,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formador/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/listado_formadores.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66341466">
           <caret line="19" column="82" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/update_informacion_formador.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1213,6 +1004,59 @@
             <element signature="e#28708#29295#0" expanded="false" />
             <element signature="e#29371#29963#0" expanded="false" />
             <element signature="e#30025#30432#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/update_informacion_formador.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37317073">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formador/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5390244">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formador/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6707317">
+          <caret line="489" column="62" selection-start-line="489" selection-start-column="62" selection-end-line="489" selection-end-column="62" />
+          <folding>
+            <element signature="e#47#92#0" expanded="true" />
+            <element signature="e#2505#2720#0" expanded="false" />
+            <element signature="e#2770#2987#0" expanded="false" />
+            <element signature="e#3041#3341#0" expanded="false" />
+            <element signature="e#3403#3830#0" expanded="false" />
+            <element signature="e#3897#4336#0" expanded="false" />
+            <element signature="e#4403#5124#0" expanded="false" />
+            <element signature="e#5191#5762#0" expanded="false" />
+            <element signature="e#5847#7202#0" expanded="false" />
+            <element signature="e#7270#8459#0" expanded="false" />
+            <element signature="e#8519#11447#0" expanded="false" />
+            <element signature="e#11496#14395#0" expanded="false" />
+            <element signature="e#14446#14579#0" expanded="false" />
+            <element signature="e#14629#15042#0" expanded="false" />
+            <element signature="e#15090#16342#0" expanded="false" />
+            <element signature="e#16395#16904#0" expanded="false" />
           </folding>
         </state>
       </provider>
