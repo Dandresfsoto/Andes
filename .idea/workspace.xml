@@ -30,8 +30,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acceso/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2804878">
-              <caret line="496" column="51" selection-start-line="496" selection-start-column="51" selection-end-line="496" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.5390244">
+              <caret line="492" column="72" selection-start-line="492" selection-start-column="72" selection-end-line="492" selection-end-column="72" />
               <folding>
                 <element signature="e#47#92#0" expanded="true" />
                 <element signature="e#2505#2720#0" expanded="false" />
@@ -41,14 +41,13 @@
                 <element signature="e#3897#4336#0" expanded="false" />
                 <element signature="e#4403#5124#0" expanded="false" />
                 <element signature="e#5191#5762#0" expanded="false" />
-                <element signature="e#5847#7260#0" expanded="false" />
-                <element signature="e#7328#8517#0" expanded="false" />
-                <element signature="e#8577#11505#0" expanded="false" />
-                <element signature="e#11554#14453#0" expanded="false" />
-                <element signature="e#14504#14637#0" expanded="false" />
-                <element signature="e#14687#15100#0" expanded="false" />
-                <element signature="e#15148#16400#0" expanded="false" />
-                <element signature="e#16453#16962#0" expanded="false" />
+                <element signature="e#7270#8459#0" expanded="false" />
+                <element signature="e#8519#11447#0" expanded="false" />
+                <element signature="e#11496#14395#0" expanded="false" />
+                <element signature="e#14446#14579#0" expanded="false" />
+                <element signature="e#14629#15042#0" expanded="false" />
+                <element signature="e#15090#16342#0" expanded="false" />
+                <element signature="e#16395#16904#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -903,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acceso/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2804878">
-          <caret line="496" column="51" selection-start-line="496" selection-start-column="51" selection-end-line="496" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.5390244">
+          <caret line="492" column="72" selection-start-line="492" selection-start-column="72" selection-end-line="492" selection-end-column="72" />
           <folding>
             <element signature="e#47#92#0" expanded="true" />
             <element signature="e#2505#2720#0" expanded="false" />
@@ -914,14 +913,13 @@
             <element signature="e#3897#4336#0" expanded="false" />
             <element signature="e#4403#5124#0" expanded="false" />
             <element signature="e#5191#5762#0" expanded="false" />
-            <element signature="e#5847#7260#0" expanded="false" />
-            <element signature="e#7328#8517#0" expanded="false" />
-            <element signature="e#8577#11505#0" expanded="false" />
-            <element signature="e#11554#14453#0" expanded="false" />
-            <element signature="e#14504#14637#0" expanded="false" />
-            <element signature="e#14687#15100#0" expanded="false" />
-            <element signature="e#15148#16400#0" expanded="false" />
-            <element signature="e#16453#16962#0" expanded="false" />
+            <element signature="e#7270#8459#0" expanded="false" />
+            <element signature="e#8519#11447#0" expanded="false" />
+            <element signature="e#11496#14395#0" expanded="false" />
+            <element signature="e#14446#14579#0" expanded="false" />
+            <element signature="e#14629#15042#0" expanded="false" />
+            <element signature="e#15090#16342#0" expanded="false" />
+            <element signature="e#16395#16904#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -129,7 +129,7 @@ class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
 def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
-        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(gestor__id=id_gestor))
+        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
         if formset.is_valid():
             formset.save()
             for form in formset.forms:
@@ -139,7 +139,7 @@ def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
                     obj.modificacion = datetime.datetime.now()
                     obj.save()
     else:
-        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(gestor__id=id_gestor),)
+        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado),)
     return render_to_response("evidencias_radicado.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre,
                                                           "gestor":Gestor.objects.get(pk=id_gestor).nombre,
                                                           "radicado":Radicado.objects.get(pk=id_radicado),
@@ -452,8 +452,6 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                tuple(['PATH RELATIVO',30]),
                tuple(['CARGADO',30]),
                tuple(['INFORMACION',60]),
-               tuple(['GESTOR',60]),
-               tuple(['CEDULA',60]),
                ]
 
     for col_num in xrange(len(columns)):
@@ -477,11 +475,8 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
         i += 1
         if i > 2:
             proceso =""
-            gestor = ""
-            cedula = ""
 
             evidencia = Evidencia.objects.filter(radicado__numero=fila[0].value).filter(actividad__id=fila[1].value)
-
 
             if len(evidencia) == 0:
                 proceso = "No existe el Radicado"
@@ -493,41 +488,27 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                 #    proceso = "Cargado con exito"
                 #else:
                 #    proceso = "Archivo Cargado Anteriormente"
-                gestor = evidencia[0].gestor.nombre
-                cedula = evidencia[0].gestor.cedula
+
                 try:
-                    info = soportes.getinfo(fila[2].value)
+                    info = soportes.getinfo(encode_cp437(fila[2].value))
                 except:
-                    try:
-                        info = soportes.getinfo(encode_cp437(fila[2].value))
-                    except:
-                        proceso = "No Existe el archivo en el path"
-                    else:
-                        proceso = "Soporte cargado"
-                        soportes.extract(encode_cp437(fila[2].value),"C:\Temp")
-                        e = evidencia[0]
-                        e.soporte = File(open("C://Temp//" + encode_cp437(fila[2].value), 'rb'))
-                        e.save()
-                        os.remove("C://Temp//" + encode_cp437(fila[2].value))
+                    proceso = "No Existe el archivo en el path"
                 else:
                     proceso = "Soporte cargado"
-                    soportes.extract(fila[2].value,"C:\Temp")
+                    soportes.extract(encode_cp437(fila[2].value),"C:\Temp")
                     e = evidencia[0]
-                    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
+                    e.soporte = File(open("C://Temp//" + encode_cp437(fila[2].value), 'rb'))
                     e.save()
-                    os.remove("C://Temp//" + fila[2].value)
+                    os.remove("C://Temp//" + encode_cp437(fila[2].value))
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
-
 
             row_num += 1
             row = [
                 fila[0].value,
                 fila[1].value,
                 fila[2].value,
-                proceso,
-                gestor,
-                cedula,
+                proceso
             ]
 
             for col_num in xrange(len(row)):
