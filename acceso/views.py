@@ -452,6 +452,8 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                tuple(['PATH RELATIVO',30]),
                tuple(['CARGADO',30]),
                tuple(['INFORMACION',60]),
+               tuple(['GESTOR',60]),
+               tuple(['CEDULA',60]),
                ]
 
     for col_num in xrange(len(columns)):
@@ -475,8 +477,11 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
         i += 1
         if i > 2:
             proceso =""
+            gestor = ""
+            cedula = ""
 
             evidencia = Evidencia.objects.filter(radicado__numero=fila[0].value).filter(actividad__id=fila[1].value)
+
 
             if len(evidencia) == 0:
                 proceso = "No existe el Radicado"
@@ -488,7 +493,8 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                 #    proceso = "Cargado con exito"
                 #else:
                 #    proceso = "Archivo Cargado Anteriormente"
-
+                gestor = evidencia[0].gestor.nombre
+                cedula = evidencia[0].gestor.cedula
                 try:
                     info = soportes.getinfo(fila[2].value)
                 except:
@@ -519,7 +525,9 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                 fila[0].value,
                 fila[1].value,
                 fila[2].value,
-                proceso
+                proceso,
+                gestor,
+                cedula,
             ]
 
             for col_num in xrange(len(row)):
