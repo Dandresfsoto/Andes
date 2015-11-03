@@ -129,7 +129,7 @@ class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
 def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
-        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
+        formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(gestor__id=id_gestor))
         if formset.is_valid():
             formset.save()
             for form in formset.forms:
@@ -139,7 +139,7 @@ def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
                     obj.modificacion = datetime.datetime.now()
                     obj.save()
     else:
-        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado),)
+        formset = EvidenciaFormSet(queryset=Evidencia.objects.filter(radicado__id=id_radicado).filter(gestor__id=id_gestor),)
     return render_to_response("evidencias_radicado.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre,
                                                           "gestor":Gestor.objects.get(pk=id_gestor).nombre,
                                                           "radicado":Radicado.objects.get(pk=id_radicado),
@@ -490,18 +490,29 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                 #    proceso = "Archivo Cargado Anteriormente"
 
                 try:
-                    info = soportes.getinfo(encode_cp437(fila[2].value))
+                    info = soportes.getinfo(fila[2].value)
                 except:
-                    proceso = "No Existe el archivo en el path"
+                    try:
+                        info = soportes.getinfo(encode_cp437(fila[2].value))
+                    except:
+                        proceso = "No Existe el archivo en el path"
+                    else:
+                        proceso = "Soporte cargado"
+                        soportes.extract(encode_cp437(fila[2].value),"C:\Temp")
+                        e = evidencia[0]
+                        e.soporte = File(open("C://Temp//" + encode_cp437(fila[2].value), 'rb'))
+                        e.save()
+                        os.remove("C://Temp//" + encode_cp437(fila[2].value))
                 else:
                     proceso = "Soporte cargado"
-                    soportes.extract(encode_cp437(fila[2].value),"C:\Temp")
+                    soportes.extract(fila[2].value,"C:\Temp")
                     e = evidencia[0]
-                    e.soporte = File(open("C://Temp//" + encode_cp437(fila[2].value), 'rb'))
+                    e.soporte = File(open("C://Temp//" + fila[2].value, 'rb'))
                     e.save()
-                    os.remove("C://Temp//" + encode_cp437(fila[2].value))
+                    os.remove("C://Temp//" + fila[2].value)
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
+
 
             row_num += 1
             row = [
