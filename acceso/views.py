@@ -495,7 +495,7 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                     proceso = "No Existe el archivo en el path"
                 else:
                     proceso = "Soporte cargado"
-                    soportes.extract(encode_cp437(fila[2].value),"C:\Temp")
+                    soportes.extract(encode_cp437(fila[2].value),"C://Temp")
                     e = evidencia[0]
                     e.soporte = File(open("C://Temp//" + encode_cp437(fila[2].value), 'rb'))
                     e.save()
