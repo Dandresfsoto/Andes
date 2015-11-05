@@ -495,11 +495,15 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                     proceso = "No Existe el archivo en el path"
                 else:
                     proceso = "Soporte cargado"
-                    soportes.extract(encode_cp437(fila[2].value),"C://Temp")
+                    filename = os.path.basename(encode_cp437(fila[2].value))
+                    source = soportes.open(encode_cp437(fila[2].value))
+                    target = file(os.path.join(r"C:\Temp",filename),"wb")
+                    with source, target:
+                        shutil.copyfileobj(source,target)
                     e = evidencia[0]
-                    e.soporte = File(open("C://Temp//" + encode_cp437(fila[2].value), 'rb'))
+                    e.soporte = File(open("C://Temp//" + filename, 'rb'))
                     e.save()
-                    os.remove("C://Temp//" + encode_cp437(fila[2].value))
+                    os.remove("C://Temp//" + filename)
             if len(evidencia) >= 2:
                 proceso = "Se encontro mas de un radicado con el mismo numero"
 
