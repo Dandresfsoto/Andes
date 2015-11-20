@@ -136,3 +136,19 @@ class ProyectoTableView(BaseDatatableView):
             return str(row.archivo)
         else:
             return super(ProyectoTableView,self).render_column(row,column)
+
+from django.contrib.auth.models import User
+from rest_framework import viewsets, permissions, generics, views
+from participantes import serializers
+from formacion.models import ParticipanteEscuelaTic
+from rest_framework_jsonp.renderers import JSONPRenderer
+
+
+class ParticipanteViewSet(generics.ListAPIView):
+    serializer_class = serializers.ParticipanteSerializer
+    permission_classes = [ permissions.AllowAny]
+    renderer_classes = (JSONPRenderer,)
+
+    def get_queryset(self):
+        cedula = self.kwargs['cedula']
+        return ParticipanteEscuelaTic.objects.filter(cedula=cedula)

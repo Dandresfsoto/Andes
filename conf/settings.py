@@ -10,6 +10,10 @@ Django settings for Andes project.
 import os
 from django.core.urlresolvers import reverse_lazy
 
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 LOGIN_URL = reverse_lazy('login')
 LOGIN_REDIRECT_URL = reverse_lazy('region')
 LOGOUT_URL = reverse_lazy('logout')
@@ -37,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'progressbarupload',
     'mixins',
     'django_tables2',
@@ -71,6 +76,7 @@ INSTALLED_APPS = (
 )
 
 REST_FRAMEWORK = {
+
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 100,
 }
@@ -84,6 +90,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -175,3 +183,5 @@ SERVER_EMAIL = 'sistemasican@gmail.com'
 ADMINS = (
     ('Diego', 'sistemas@asoandes.org'),
 )
+
+CORS_ORIGIN_ALLOW_ALL = True

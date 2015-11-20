@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 from django.views.generic import TemplateView
 from mixins.mixins import AccesoMixin
 from region.models import Region
