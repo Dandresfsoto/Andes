@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django import forms
-from formacion.models import Grupo, ParticipanteEscuelaTic
+from formacion.models import Grupo, ParticipanteEscuelaTic, Masivo, SoporteEntregableEscuelaTic, EvidenciaEscuelaTic
 from departamento.models import Departamento
 from municipio.models import Municipio
 
@@ -40,3 +40,26 @@ class NuevoParticipanteForm(forms.ModelForm):
             'tipo_proyecto': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(('P.F. Conocer un lugar en el mundo','P.F. Conocer un lugar en el mundo'),('P. F. Mejorar la productividad de un negocio','P. F. Mejorar la productividad de un negocio'),('P. F. Informarse sobre las redes sociales y compartir con los hijos','P. F. Informarse sobre las redes sociales y compartir con los hijos'))),
             'grupo_conformacion': forms.TextInput(attrs={'style':'width:100%;'}),
         }
+
+class NuevoMasivoForm(forms.ModelForm):
+    class Meta:
+        model = Masivo
+        fields = ['grupo','archivo','usuario']
+        widgets = {
+            'archivo': forms.FileInput(attrs={'accept':'.xlsx'}),
+        }
+
+class NuevoSoporteForm(forms.ModelForm):
+    class Meta:
+        model = SoporteEntregableEscuelaTic
+        fields = ['soporte']
+
+class AsignarForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        self.soporte = kwargs.pop('soporte_id', None)
+        self.grupo = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).grupo.id
+        super(AsignarForm, self).__init__(*args, **kwargs)
+        self.fields['participantes'] = forms.MultipleChoiceField(choices=[(c.pk,c.nombres+" "+c.apellidos+" - "+str(c.cedula)) for c in ParticipanteEscuelaTic.objects.filter(grupo__id=self.grupo)])
+        self.initial['participantes'] = [c.participante.id for c in EvidenciaEscuelaTic.objects.filter(soporte__id=self.soporte)]
+        self.fields['participantes'].widget.attrs['class'] = 'form-control'
+        self.fields['participantes'].widget.attrs['data-placeholder'] = 'Seleccione los participantes'

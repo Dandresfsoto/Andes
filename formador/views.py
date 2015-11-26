@@ -1,7 +1,7 @@
 from .models import Formador
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic
+from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, Actividad, EvidenciaEscuelaTic, Entregable
 
 class FormadorTableView(BaseDatatableView):
     model = Formador
@@ -280,11 +280,17 @@ class FormadorGrupoTableView(BaseDatatableView):
         for item in qs:
             participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=item.id).count()
             soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=item.id).order_by('id')
-            x=[]
+            id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
+            id_actividades = list(set(id_actividades))
             y=[]
-            for soporte in soportes:
-                x.append(str(soporte.soporte))
-                y.append(soporte.id)
+            for id_actividad in id_actividades:
+                x=[]
+                soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
+                nombre_actividad = Actividad.objects.get(id=id_actividad).nombre
+                for soporte_filtro in soportes_filtro:
+                    cantidad = EvidenciaEscuelaTic.objects.filter(soporte_id=soporte_filtro.id).count()
+                    x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad})
+                y.append({"nombre_actividad":nombre_actividad,"informacion":x})
             json_data.append([
                 item.id,
                 item.nombre,
@@ -293,7 +299,6 @@ class FormadorGrupoTableView(BaseDatatableView):
                 item.direccion,
                 item.horario,
                 participantes,
-                x,
                 y
             ])
 
@@ -350,3 +355,288 @@ class FormadorListadoGrupoTableView(BaseDatatableView):
             return str(row.grupo.nombre)
         else:
             return super(FormadorListadoGrupoTableView,self).render_column(row,column)
+
+class FormadorListadoMasivoTableView(BaseDatatableView):
+    model = Masivo
+    columns = [
+        'id',
+        'fecha',
+        'grupo',
+        'archivo',
+        'usuario',
+        'resultado'
+    ]
+
+    order_columns = [
+        'id',
+        'fecha',
+        'grupo',
+        'archivo',
+        'usuario',
+        'resultado'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(grupo__id=self.kwargs['id_grupo'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'grupo':
+            return row.grupo.nombre
+        if column == 'archivo':
+            return str(row.archivo)
+        if column == 'resultado':
+            return str(row.resultado)
+        if column == 'usuario':
+            return row.usuario.username
+        else:
+            return super(FormadorListadoMasivoTableView,self).render_column(row,column)
+
+class ParticipantesListadoTableView(BaseDatatableView):
+    model = ParticipanteEscuelaTic
+    columns = [
+        'id',
+        'formador',
+        'grupo',
+        'numero',
+        'departamento',
+        'municipio',
+        'institucion',
+        'nombres',
+        'apellidos',
+        'cedula',
+        'genero',
+        'nivel_educativo',
+        'telefono',
+        'correo',
+        'poblacion',
+        'codigo_anspe',
+        'tipo_proyecto',
+        'grupo_conformacion'
+    ]
+
+    order_columns = [
+        'nombres',
+        'nombres',
+        'nombres',
+        'nombres',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(formador__region__id=self.kwargs['region'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'cedula__icontains' : search})
+            q |= Q(**{'nombres__icontains' : search.capitalize()})
+            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return str(row.formador.nombre)
+        if column == 'grupo':
+            return str(row.grupo.nombre)
+        else:
+            return super(ParticipantesListadoTableView,self).render_column(row,column)
+
+class EvidenciasListadoTableView(BaseDatatableView):
+    model = EvidenciaEscuelaTic
+    columns = [
+        'id',
+        'soporte',
+        'entregable',
+        'participante'
+    ]
+
+    order_columns = [
+        'id',
+        'id',
+        'id',
+        'id'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        x = self.kwargs
+        y = x['participante__id']
+        return self.model.objects.filter(participante__id=y)
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'soporte':
+            return str(row.soporte.soporte)
+        if column == 'entregable':
+            return row.entregable.nombre
+        if column == 'participante':
+            return str(row.participante.cedula)
+        else:
+            return super(EvidenciasListadoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            if item.soporte == None:
+                soporte = ""
+            else:
+                soporte = unicode(item.soporte.soporte)
+            json_data.append([
+                item.id,
+                item.entregable.actividad.nombre,
+                item.entregable.nombre,
+                soporte,
+                item.entregable.descripcion,
+            ])
+
+        return json_data
+
+class ActividadesListadoTableView(BaseDatatableView):
+    model = Entregable
+    columns = [
+        'id',
+        'actividad',
+        'nombre',
+        'descripcion'
+    ]
+
+    order_columns = [
+        'id',
+        'actividad',
+        'nombre',
+        'descripcion'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.all()
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'actividad':
+            return str(row.actividad.nombre)
+        else:
+            return super(ActividadesListadoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            cantidad = EvidenciaEscuelaTic.objects.filter(soporte__entregable__id=item.id).exclude(soporte__soporte="").values_list("participante__id",flat=True)
+            cantidad = len(set(cantidad))
+            json_data.append([
+                item.id,
+                item.actividad.nombre,
+                item.nombre,
+                item.descripcion,
+                cantidad
+            ])
+
+        return json_data
+
+class ParticipantesActividadListadoTableView(BaseDatatableView):
+    model = ParticipanteEscuelaTic
+    columns = [
+        'id',
+        'formador',
+        'grupo',
+        'numero',
+        'departamento',
+        'municipio',
+        'institucion',
+        'nombres',
+        'apellidos',
+        'cedula',
+        'genero',
+        'nivel_educativo',
+        'telefono',
+        'correo',
+        'poblacion',
+        'codigo_anspe',
+        'tipo_proyecto',
+        'grupo_conformacion'
+    ]
+
+    order_columns = [
+        'nombres',
+        'nombres',
+        'nombres',
+        'nombres',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        x = EvidenciaEscuelaTic.objects.filter(soporte__entregable__id=self.kwargs['id_actividad']).exclude(soporte__soporte="").values_list("participante__id",flat=True)
+        return self.model.objects.filter(formador__region__id=self.kwargs['region']).filter(id__in = x)
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'cedula__icontains' : search})
+            q |= Q(**{'nombres__icontains' : search.capitalize()})
+            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return str(row.formador.nombre)
+        if column == 'grupo':
+            return str(row.grupo.nombre)
+        else:
+            return super(ParticipantesActividadListadoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            soporte = EvidenciaEscuelaTic.objects.filter(participante__id=item.id).get(entregable__id=self.kwargs['id_actividad']).soporte
+            json_data.append([
+                item.id,
+                item.formador.nombre,
+                item.grupo.nombre,
+                item.numero,
+                item.departamento,
+                item.municipio,
+                item.institucion,
+                item.nombres,
+                item.apellidos,
+                item.cedula,
+                item.genero,
+                item.nivel_educativo,
+                item.telefono,
+                item.correo,
+                item.poblacion,
+                item.codigo_anspe,
+                item.tipo_proyecto,
+                item.grupo_conformacion,
+                unicode(soporte.soporte)
+            ])
+
+        return json_data

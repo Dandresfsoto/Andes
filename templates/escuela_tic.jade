@@ -1,0 +1,29 @@
+extends base
+block titulo
+    | {{DIPLOMADO}}
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") CPE
+    li
+        a(href="../../") Formación
+    li
+        a(href="../") Etic@
+    li(class="active") Escuela TIC Familia
+block body_content
+    div(class="container-fluid")
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
+            a(href="participantes/",class="text-center")
+                div(class="box")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 diplomado")
+                        img(src="{% static 'imagenes/participantes.png' %}",class="center-block img-responsive hvr-pop")
+                    p(class="text-center") Participantes
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
+            a(href="actividades/",class="text-center")
+                div(class="box")
+                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 diplomado")
+                        img(src="{% static 'imagenes/actividades.png' %}",class="center-block img-responsive hvr-pop")
+                    p(class="text-center") Actividades

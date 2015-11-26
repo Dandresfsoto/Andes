@@ -1,0 +1,38 @@
+extends base
+block titulo
+    | {{DIPLOMADO}}
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../../") CPE
+    li
+        a(href="../../../../../") Formación
+    li
+        a(href="../../../../") Etic@
+    li
+        a(href="../../../") Escuela TIC Familia
+    li
+        a(href="../../") Participantes
+    li(class="active") {{PARTICIPANTE}}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_participante",value="{{ID_PARTICIPANTE}}",id="id_participante")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Actividad
+                    th Entregable
+                    th Soporte
+            tbody
+                tr
+                    th
+                    th Actividad
+                    th Entregable
+                    th Soporte
+block extra_script
+    script(src="{% static 'js/escuela_tic_participantes_evidencias.js' %}")

@@ -12,17 +12,23 @@ block itemsNavbarBreadcrumb
     li
         a(href="../") Formación
     li(class="active") Etic@
+
 block body_content
     div(class="container-fluid")
-        div(class="row margin-top-50")
-            |{% for object in object_list %}
-            div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6")
-                a(href="diplomado/{{object.id}}",class="text-center")
-                    div(class="box")
-                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 diplomado")
-                            img(src="/media/{{object.imagen}}",class="center-block img-responsive hvr-pop")
-                        p(class="text-center") {{object.tag}}
-            |{% endfor %}
-        div(class="row margin-top-50")
-            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12")
-                p * Docentes exploradores hace referenica al Diplomado para docentes en el uso pedagógico de las TIC con impacto en los aprendizajes de los estudiantes
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
+            a(href="docentes/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/docentes.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Diplomado Docentes
+        div(class="col-xs-12 col-sm-12 col-md-6 col-lg-6 margin-top-50")
+            a(href="escuela_tic/",class="text-center")
+                div(class="box")
+                    div(class="row")
+                        div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rol")
+                            img(src="{% static 'imagenes/padres.png' %}",class="center-block img-responsive hvr-pop")
+                    div(class="row text-center")
+                        p Escuela TIC Familia
+    div(class="container-fluid margin-top-50")

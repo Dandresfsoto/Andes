@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from participantes.models import Participante
 from mixins.mixins import CpeMixin
+from formacion.models import ParticipanteEscuelaTic
 
 class ParticipantesDatatablesView(BaseDatatableView):
     model = Participante
@@ -12,8 +13,6 @@ class ParticipantesDatatablesView(BaseDatatableView):
     order_columns = ['radicado','cedula','nombres','apellidos','email','telefono','area','grado','beneficiario','genero']
 
     max_display_length = 25
-
-
 
 class DiplomadosView(CpeMixin,ListView):
     template_name = 'diplomados.html'
@@ -25,12 +24,49 @@ class DiplomadosView(CpeMixin,ListView):
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
         return super(DiplomadosView,self).get_context_data(**kwargs)
 
-class DiplomadosInfoView(TemplateView):
-    template_name = 'diplomados_informacion.html'
+class EscuelaTicView(TemplateView):
+    template_name = 'escuela_tic.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
-        kwargs['DIPLOMADO'] = Diplomado.objects.get(pk=self.kwargs['diplomado']).tag
-        return super(DiplomadosInfoView,self).get_context_data(**kwargs)
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(EscuelaTicView,self).get_context_data(**kwargs)
+
+class EscuelaTicParticipantesListadoView(TemplateView):
+    template_name = 'escuela_tic_participantes.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(EscuelaTicParticipantesListadoView,self).get_context_data(**kwargs)
+
+class EscuelaTicEvidenciasListadoView(TemplateView):
+    template_name = 'escuela_tic_participantes_evidencias.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        participante = ParticipanteEscuelaTic.objects.get(id=self.kwargs['participante_id'])
+        kwargs['PARTICIPANTE'] = participante.nombres+" "+participante.apellidos+" - "+str(participante.cedula)
+        kwargs['ID_PARTICIPANTE'] = participante.id
+        return super(EscuelaTicEvidenciasListadoView,self).get_context_data(**kwargs)
+
+class EscuelaTicActividadesListadoView(TemplateView):
+    template_name = 'escuela_tic_actividades.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(EscuelaTicActividadesListadoView,self).get_context_data(**kwargs)
+
+class EscuelaTicActividadesListadoFiltroView(TemplateView):
+    template_name = 'escuela_tic_actividades_filtro.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_ACTIVIDAD'] = self.kwargs['actividad_id']
+        return super(EscuelaTicActividadesListadoFiltroView,self).get_context_data(**kwargs)
