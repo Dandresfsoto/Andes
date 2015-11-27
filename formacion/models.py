@@ -95,7 +95,7 @@ class Entregable(models.Model):
     descripcion = models.TextField(max_length=2000)
 
     def __unicode__(self):
-        return smart_unicode(self.nombre)
+        return smart_unicode("%s - %s" % (self.actividad.nombre,self.nombre))
 
 class Valor(models.Model):
     valor = models.FloatField()

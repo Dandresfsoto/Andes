@@ -1,9 +1,33 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django import forms
+from django.forms.widgets import Select,SelectMultiple
+from django.utils.encoding import force_unicode
+from django.utils.html import escape, conditional_escape
 from formacion.models import Grupo, ParticipanteEscuelaTic, Masivo, SoporteEntregableEscuelaTic, EvidenciaEscuelaTic
 from departamento.models import Departamento
 from municipio.models import Municipio
+
+class SelectWithDisabled(SelectMultiple):
+    """
+    Subclass of Django's select widget that allows disabling options.
+    To disable an option, pass a dict instead of a string for its label,
+    of the form: {'label': 'option label', 'disabled': True}
+    """
+    def render_option(self, selected_choices, option_value, option_label):
+        option_value = force_unicode(option_value)
+        if (option_value in selected_choices):
+            selected_html = u' selected="selected"'
+        else:
+            selected_html = ''
+        disabled_html = ''
+        if isinstance(option_label, dict):
+            if dict.get(option_label, 'disabled'):
+                disabled_html = u' disabled="disabled"'
+            option_label = option_label['label']
+        return u'<option value="%s"%s%s>%s</option>' % (
+            escape(option_value), selected_html, disabled_html,
+            conditional_escape(force_unicode(option_label)))
 
 class NuevoGrupoForm(forms.ModelForm):
     class Meta:
@@ -59,7 +83,35 @@ class AsignarForm(forms.Form):
         self.soporte = kwargs.pop('soporte_id', None)
         self.grupo = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).grupo.id
         super(AsignarForm, self).__init__(*args, **kwargs)
-        self.fields['participantes'] = forms.MultipleChoiceField(choices=[(c.pk,c.nombres+" "+c.apellidos+" - "+str(c.cedula)) for c in ParticipanteEscuelaTic.objects.filter(grupo__id=self.grupo)])
+        self.id_entregable = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).entregable.id
+
+        x = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.grupo).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
+
+        x = list(x)
+
+        x.pop(x.index(long(self.soporte)))
+
+        if not isinstance(x,list):
+            x = [x]
+
+        y = EvidenciaEscuelaTic.objects.filter(soporte__in=x).values_list("participante__id",flat=True)
+        participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=self.grupo)
+        choices = []
+        for participante in participantes:
+            if participante.pk in y:
+                choices.append((participante.pk,{'label':participante.nombres+" "+participante.apellidos+" - "+str(participante.cedula),'disabled': True}))
+            else:
+                choices.append((participante.pk,participante.nombres+" "+participante.apellidos+" - "+str(participante.cedula)))
+
+        self.fields['participantes'] = forms.MultipleChoiceField(choices=choices,widget=SelectWithDisabled())
         self.initial['participantes'] = [c.participante.id for c in EvidenciaEscuelaTic.objects.filter(soporte__id=self.soporte)]
         self.fields['participantes'].widget.attrs['class'] = 'form-control'
         self.fields['participantes'].widget.attrs['data-placeholder'] = 'Seleccione los participantes'
+
+class AgregarSoporteForm(forms.ModelForm):
+    class Meta:
+        model = SoporteEntregableEscuelaTic
+        fields = ['grupo','entregable']
+        widgets = {
+            'entregable': forms.Select(attrs={'style':'width:100%;'}),
+        }

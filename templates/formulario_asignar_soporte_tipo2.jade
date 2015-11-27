@@ -5,16 +5,18 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../../../../") {{REGION}}
+        a(href="../../../../../../../../") {{REGION}}
     li
-        a(href="../../../../../") Andes
+        a(href="../../../../../../../") Andes
     li
-        a(href="../../../../") Formación
+        a(href="../../../../../../") Formación
     li
-        a(href="../../../") Formadores Tipo 2
+        a(href="../../../../../") Formadores Tipo 2
     li
-        a(href="../../") {{NOMBRE_FORMADOR}}
-    li(class="active") Actualizar Soporte
+        a(href="../../../../") {{NOMBRE_FORMADOR}}
+    li
+        a(href="../../") {{NOMBRE_GRUPO}}
+    li(class="active") Asignar
 block body_content
     div(class="container-fluid")
         form(action="",method="post",enctype="multipart/form-data")

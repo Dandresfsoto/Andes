@@ -5,8 +5,8 @@ from django.views.generic import TemplateView, CreateView, UpdateView, FormView
 from mixins.mixins import FormacionMixin
 from region.models import Region
 from formador.models import Formador
-from formacion.models import Grupo, ParticipanteEscuelaTic, Entregable, SoporteEntregableEscuelaTic, Masivo, EvidenciaEscuelaTic
-from formacion.forms import NuevoGrupoForm, NuevoParticipanteForm, NuevoMasivoForm, NuevoSoporteForm, AsignarForm
+from formacion.models import Grupo, ParticipanteEscuelaTic, Entregable, SoporteEntregableEscuelaTic, Masivo, EvidenciaEscuelaTic, Actividad
+from formacion.forms import NuevoGrupoForm, NuevoParticipanteForm, NuevoMasivoForm, NuevoSoporteForm, AsignarForm, AgregarSoporteForm
 from django.http import HttpResponseRedirect
 from django.forms.models import modelformset_factory
 from django.shortcuts import render_to_response
@@ -99,6 +99,8 @@ class FormSoporteGrupoView(FormacionMixin,UpdateView):
         kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
         kwargs['NOMBRE_SOPORTE'] = SoporteEntregableEscuelaTic.objects.get(pk=self.kwargs['soporte_id']).entregable.nombre + " - " + SoporteEntregableEscuelaTic.objects.get(pk=self.kwargs['soporte_id']).grupo.nombre
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         return super(FormSoporteGrupoView,self).get_context_data(**kwargs)
 
 class FormAsignarSoporteView(FormacionMixin,FormView):
@@ -112,6 +114,8 @@ class FormAsignarSoporteView(FormacionMixin,FormView):
         kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
         kwargs['NOMBRE_SOPORTE'] = SoporteEntregableEscuelaTic.objects.get(pk=self.kwargs['soporte_id']).entregable.nombre + " - " + SoporteEntregableEscuelaTic.objects.get(pk=self.kwargs['soporte_id']).grupo.nombre
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         return super(FormAsignarSoporteView,self).get_context_data(**kwargs)
 
     def get_form_kwargs(self):
@@ -131,7 +135,20 @@ class FormAsignarSoporteView(FormacionMixin,FormView):
         super(FormAsignarSoporteView, self).form_valid(form)
         participantes = form.cleaned_data['participantes']
         soporte = SoporteEntregableEscuelaTic.objects.get(pk=self.kwargs['soporte_id'])
+
+        self.soporte = self.kwargs['soporte_id']
+        self.grupo = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).grupo.id
+        self.id_entregable = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).entregable.id
+
+        x = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.grupo).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
+        x = list(x)
+        x.pop(x.index(long(self.soporte)))
+        if not isinstance(x,list):
+            x = [x]
+        y = EvidenciaEscuelaTic.objects.filter(soporte__in=x).values_list("participante__id",flat=True)
         participantes_total = ParticipanteEscuelaTic.objects.filter(grupo__id=soporte.grupo.id).values_list("id",flat=True)
+        participantes_total = list(set(participantes_total).difference(y))
+
         for participante in participantes_total:
             evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
             if unicode(participante) in participantes:
@@ -148,6 +165,24 @@ class FormAsignarSoporteView(FormacionMixin,FormView):
             evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
             evidencia.soporte = None
             evidencia.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+class FormAgregarSoporteView(FormacionMixin,FormView):
+    form_class = AgregarSoporteForm
+    template_name = "formulario_agregar_soporte_tipo2.html"
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(FormAgregarSoporteView,self).get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        form.save()
         return HttpResponseRedirect(self.get_success_url())
 
 class ListadoGrupoView(FormacionMixin,TemplateView):
@@ -364,3 +399,36 @@ class NuevoMasivoView(FormacionMixin,CreateView):
             self.object.resultado.save('Resultado.xlsx', ContentFile(r.getvalue()))
             self.object.save()
         return HttpResponseRedirect(self.get_success_url())
+
+class CalificarGrupoView(FormacionMixin,TemplateView):
+    template_name = 'tipo2_formador_grupo_calificar.html'
+
+    def get_context_data(self, **kwargs):
+        participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
+        soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__actividad__id')
+        id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
+        id_actividades = list(set(id_actividades))
+        y=[]
+        i=0
+        for id_actividad in id_actividades:
+            x=[]
+            soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
+            nombre_actividad = Actividad.objects.get(id=id_actividad).nombre
+            for soporte_filtro in soportes_filtro:
+                i += 1
+                if i%2 == 0:
+                    clase = "even"
+                else:
+                    clase = "odd"
+                cantidad = EvidenciaEscuelaTic.objects.filter(soporte_id=soporte_filtro.id).count()
+                x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase})
+            y.append({"nombre_actividad":nombre_actividad,"informacion":x})
+
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['ENTREGABLES'] = y
+        return super(CalificarGrupoView,self).get_context_data(**kwargs)

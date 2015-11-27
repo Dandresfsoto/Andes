@@ -279,18 +279,6 @@ class FormadorGrupoTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=item.id).count()
-            soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=item.id).order_by('id')
-            id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
-            id_actividades = list(set(id_actividades))
-            y=[]
-            for id_actividad in id_actividades:
-                x=[]
-                soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
-                nombre_actividad = Actividad.objects.get(id=id_actividad).nombre
-                for soporte_filtro in soportes_filtro:
-                    cantidad = EvidenciaEscuelaTic.objects.filter(soporte_id=soporte_filtro.id).count()
-                    x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad})
-                y.append({"nombre_actividad":nombre_actividad,"informacion":x})
             json_data.append([
                 item.id,
                 item.nombre,
@@ -298,8 +286,7 @@ class FormadorGrupoTableView(BaseDatatableView):
                 item.municipio.departamento.nombre,
                 item.direccion,
                 item.horario,
-                participantes,
-                y
+                participantes
             ])
 
         return json_data

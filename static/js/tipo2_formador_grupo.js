@@ -1,26 +1,4 @@
 function format ( d ) {
-    var actividad = "";
-
-    for(i=0;i<d[7].length;i++){
-        var entregables = "";
-        for(j=0;j<d[7][i].informacion.length;j++){
-            if(d[7][i].informacion[j].link_soporte != "") {
-                entregables += '<tr>' +
-                    '<td colspan="4">' + d[7][i].informacion[j].entregable + ': <a href="actualizar/'+d[7][i].informacion[j].id_soporte+'" style="color:#004c99;">Actualizar</a> - <a href="asignar/'+d[7][i].informacion[j].id_soporte+'" style="color:#004c99;">Asignar</a></td>' +
-                    '<td colspan="2"><a href="/media/'+d[7][i].informacion[j].link_soporte+'" target="_blank"><img src="/static/imagenes/pdf.png" height="40"><a></td>' +
-                    '<td colspan="2">Participantes: '+d[7][i].informacion[j].cantidad+'</td>' +
-                    '</tr>';
-            }
-            else{
-                entregables += '<tr>' +
-                    '<td colspan="4">' + d[7][i].informacion[j].entregable + ': <a href="actualizar/'+d[7][i].informacion[j].id_soporte+'" style="color:#004c99;">Actualizar</a> - <a href="asignar/'+d[7][i].informacion[j].id_soporte+'" style="color:#004c99;">Asignar</a></td>' +
-                    '<td colspan="2"><img src="/static/imagenes/pdf-gris.png" height="40"></td>' +
-                    '<td colspan="2">Participantes: '+d[7][i].informacion[j].cantidad+'</td>' +
-                    '</tr>';
-            }
-        }
-        actividad += '<tr><th colspan="8" class="text-center"><h4><b>'+d[7][i].nombre_actividad+'</b><h4></th></tr>'+entregables;
-    }
 
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
@@ -32,11 +10,6 @@ function format ( d ) {
             '<td colspan="4"><b>Dirección:</b> '+d[4]+'</td>'+
             '<td colspan="4"><b>Horario:</b> '+d[5]+'</td>'+
         '</tr>'+
-
-        '<tr>'+
-            '<td colspan="8"><b>Cantidad de Participantes:</b> '+d[6]+'</td>'+
-        '</tr>'+
-            actividad+
 
     '</table></div>';
 }
@@ -68,6 +41,13 @@ $(document).ready(function() {
             },
             {
                 "data": 1,
+                "render": function ( data, type, row, meta ) {
+                          return '<a href="calificar/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
+                },
+                "orderable":false
+            },
+            {
+                "data": 6,
                 "render": function ( data, type, row, meta ) {
                           return '<a href="grupo/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },

@@ -8,8 +8,11 @@ urlpatterns = [
     url(r'^tipo2/$', login_required(views.FormadorView.as_view())),
     url(r'^tipo2/(?P<formador_id>\w+)/$', login_required(views.FormadorGrupoView.as_view())),
 
-    url(r'^tipo2/(?P<formador_id>\w+)/actualizar/(?P<soporte_id>\w+)/$', login_required(views.FormSoporteGrupoView.as_view())),
-    url(r'^tipo2/(?P<formador_id>\w+)/asignar/(?P<soporte_id>\w+)/$', login_required(views.FormAsignarSoporteView.as_view())),
+    url(r'^tipo2/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/actualizar/(?P<soporte_id>\w+)/$', login_required(views.FormSoporteGrupoView.as_view())),
+    url(r'^tipo2/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/asignar/(?P<soporte_id>\w+)/$', login_required(views.FormAsignarSoporteView.as_view())),
+    url(r'^tipo2/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/agregar/$', login_required(views.FormAgregarSoporteView.as_view())),
+
+    url(r'^tipo2/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/$', login_required(views.CalificarGrupoView.as_view())),
 
     url(r'^tipo2/(?P<formador_id>\w+)/nuevo/$', login_required(views.NuevoGrupoView.as_view())),
     url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/$', login_required(views.ListadoGrupoView.as_view())),

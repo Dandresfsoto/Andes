@@ -1,0 +1,51 @@
+extends base
+block titulo
+    | Formadores Tipo 2
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+    li
+        a(href="../../../../") Formación
+    li
+        a(href="../../../") Formadores Tipo 2
+    li
+        a(href="../../") {{NOMBRE_FORMADOR}}
+    li(class="active") {{NOMBRE_GRUPO}}
+block body_content
+    div(class="container-fluid")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Actividad
+                    th Entregable
+                    th Actualizar
+                    th Asignar
+                    th Participantes
+                    th Soporte
+            tbody
+                |{% for actividad in ENTREGABLES %}
+                |{% for entregable in actividad.informacion %}
+                tr(role="row",class="{{entregable.clase}}")
+                    td {{actividad.nombre_actividad}}
+                    td {{entregable.entregable}}
+                    td(class="text-center")
+                       a(href="actualizar/{{entregable.id_soporte}}",style="color:#004c99;") Actualizar
+                    td(class="text-center")
+                       a(href="asignar/{{entregable.id_soporte}}",style="color:#004c99;") Asignar
+                    td(class="text-center") {{entregable.cantidad}}
+                    |{% if entregable.link_soporte == '' %}
+                    td(class="text-center")
+                       img(src="/static/imagenes/pdf-gris.png" height="40")
+                    |{% else %}
+                    td(class="text-center")
+                       a(href="/media/{{entregable.link_soporte}}",target="_blank")
+                          img(src="/static/imagenes/pdf.png" height="40")
+                    |{% endif %}
+                |{% endfor %}
+                |{% endfor %}
+        a(href="agregar/")
+            button(type="button",class="btn btn-primary") Añadir Soporte
