@@ -14,6 +14,9 @@
     <file url="file://$PROJECT_DIR$/static/js/escuela_tic_participantes_evidencias.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/financiero_liquidaciones_acceso.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/financiero_liquidaciones_formacion.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/tipo1_formador_formacion.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/tipo1_formador_grupo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/tipo1_formador_listado.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/tipo2_formador_listado.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/tipo2_formador_listado_masivo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/acceso_masivo.jade" charset="UTF-8" />
@@ -30,15 +33,24 @@
     <file url="file://$PROJECT_DIR$/templates/financiero_liquidaciones.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/financiero_liquidaciones_acceso.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/financiero_liquidaciones_formacion.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/formulario_agregar_soporte_tipo1.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/formulario_agregar_soporte_tipo2.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/formulario_asignar_soporte_tipo1.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/formulario_asignar_soporte_tipo2.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/formulario_carga_masiva.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/formulario_docente.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/formulario_grupo_docentes.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/formulario_masivo.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/formulario_soporte_tipo1.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/formulario_soporte_tipo2.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_acceso.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_formacion.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nuevo_formador_administrativo.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nuevo_gestor_administrativo.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/tipo1_formador_formacion.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/tipo1_formador_grupo.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/tipo1_formador_listado.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/tipo2_formador_listado_masivo.jade" charset="UTF-8" />
   </component>

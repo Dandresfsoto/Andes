@@ -2,6 +2,7 @@ from .models import Formador
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, Actividad, EvidenciaEscuelaTic, Entregable
+from formacion.models import GrupoDocentes, ParticipanteDocente
 
 class FormadorTableView(BaseDatatableView):
     model = Formador
@@ -195,7 +196,7 @@ class FormadorCalificacionTableView(BaseDatatableView):
     def get_initial_queryset(self):
         if not self.model:
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
-        return self.model.objects.filter(region__id=self.kwargs['region']).filter(tipo__id=2)
+        return self.model.objects.filter(region__id=self.kwargs['region']).filter(tipo__id=self.kwargs['id_tipo'])
 
     def filter_queryset(self, qs):
         search = self.request.GET.get(u'search[value]', None)
@@ -214,23 +215,43 @@ class FormadorCalificacionTableView(BaseDatatableView):
 
     def prepare_results(self, qs):
         json_data = []
-        for item in qs:
-            grupos = Grupo.objects.filter(formador__id=item.id).count()
-            participantes = ParticipanteEscuelaTic.objects.filter(formador__id=item.id).count()
-            json_data.append([
-                item.id,
-                item.nombre,
-                item.cedula,
-                item.celular,
-                item.correo,
-                item.cargo,
-                item.profesion,
-                str(item.foto),
-                item.fecha_contratacion,
-                item.fecha_terminacion,
-                grupos,
-                participantes
-            ])
+        tipo = int(self.kwargs['id_tipo'])
+        if tipo == 1:
+            for item in qs:
+                grupos = GrupoDocentes.objects.filter(formador__id=item.id).count()
+                participantes = ParticipanteDocente.objects.filter(formador__id=item.id).count()
+                json_data.append([
+                    item.id,
+                    item.nombre,
+                    item.cedula,
+                    item.celular,
+                    item.correo,
+                    item.cargo,
+                    item.profesion,
+                    str(item.foto),
+                    item.fecha_contratacion,
+                    item.fecha_terminacion,
+                    grupos,
+                    participantes
+                ])
+        if tipo == 2:
+            for item in qs:
+                grupos = Grupo.objects.filter(formador__id=item.id).count()
+                participantes = ParticipanteEscuelaTic.objects.filter(formador__id=item.id).count()
+                json_data.append([
+                    item.id,
+                    item.nombre,
+                    item.cedula,
+                    item.celular,
+                    item.correo,
+                    item.cargo,
+                    item.profesion,
+                    str(item.foto),
+                    item.fecha_contratacion,
+                    item.fecha_terminacion,
+                    grupos,
+                    participantes
+                ])
 
         return json_data
 
@@ -279,6 +300,63 @@ class FormadorGrupoTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=item.id).count()
+            json_data.append([
+                item.id,
+                item.nombre,
+                item.municipio.nombre,
+                item.municipio.departamento.nombre,
+                item.direccion,
+                item.horario,
+                participantes
+            ])
+
+        return json_data
+
+class FormadorGrupoTipo1TableView(BaseDatatableView):
+    model = GrupoDocentes
+    columns = [
+        'id',
+        'formador',
+        'municipio',
+        'nombre',
+        'direccion',
+        'horario'
+    ]
+
+    order_columns = [
+        'id',
+        'formador',
+        'municipio',
+        'nombre',
+        'direccion',
+        'horario'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(formador__id=self.kwargs['id_formador'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return str(row.nombre)
+        if column == 'municipio':
+            return str(row.municipio.nombre)
+        else:
+            return super(FormadorGrupoTipo1TableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            participantes = ParticipanteDocente.objects.filter(grupo__id=item.id).count()
             json_data.append([
                 item.id,
                 item.nombre,
@@ -342,6 +420,75 @@ class FormadorListadoGrupoTableView(BaseDatatableView):
             return str(row.grupo.nombre)
         else:
             return super(FormadorListadoGrupoTableView,self).render_column(row,column)
+
+class FormadorListadoGrupoDocentesTableView(BaseDatatableView):
+    model = ParticipanteDocente
+    columns = [
+        'id',
+        'formador',
+        'grupo',
+        'departamento',
+        'secretaria',
+        'radicado',
+        'nombres',
+        'apellidos',
+        'cedula',
+        'correo',
+        'telefono_fijo',
+        'celular',
+        'area',
+        'grado',
+        'tipo_beneficiario',
+        'genero',
+        'nombre_proyecto',
+        'definicion_problema',
+        'area_proyecto',
+        'competencia',
+        'grupo_poblacional'
+    ]
+
+    order_columns = [
+        'nombres',
+        'nombres',
+        'nombres',
+        'nombres',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(formador__id=self.kwargs['id_formador']).filter(grupo__id=self.kwargs['id_grupo'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombres__icontains' : search.capitalize()})
+            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'departamento':
+            return unicode(row.departamento.nombre)
+        if column == 'formador':
+            return unicode(row.formador.nombre)
+        if column == 'grupo':
+            return unicode(row.grupo.nombre)
+        if column == 'radicado':
+            return unicode(row.radicado.numero)
+        if column == 'area':
+            return unicode(row.area)
+        if column == 'grado':
+            return unicode(row.grado)
+        if column == 'genero':
+            return unicode(row.genero)
+        if column == 'competencia':
+            return unicode(row.competencia)
+        if column == 'grupo_poblacional':
+            return unicode(row.grupo_poblacional)
+        else:
+            return super(FormadorListadoGrupoDocentesTableView,self).render_column(row,column)
 
 class FormadorListadoMasivoTableView(BaseDatatableView):
     model = Masivo

@@ -1,0 +1,36 @@
+extends base
+block titulo
+    | Formadores Tipo 1
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Andes
+    li
+        a(href="../../") Formación
+    li
+        a(href="../") Formadores Tipo 1
+    li(class="active") {{NOMBRE_FORMADOR}}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_formador",value="{{ID_FORMADOR}}",id="id_formador")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Nombre
+                    th Participantes
+                    th Municipio
+                    th Departamento
+            tbody
+                tr
+                    th
+                    th Nombre
+                    th Participantes
+                    th Municipio
+                    th Departamento
+block extra_script
+    script(src="{% static 'js/tipo1_formador_grupo.js' %}")

@@ -22,4 +22,17 @@ urlpatterns = [
 
     url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/$', login_required(views.ListadoMasivoView.as_view())),
     url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/nuevo/$', login_required(views.NuevoMasivoView.as_view())),
+
+
+    url(r'^tipo1/$', login_required(views.FormadorTipo1View.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/$', login_required(views.FormadorTipo1GrupoView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/nuevo/$', login_required(views.NuevoGrupoDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/$', login_required(views.ListadoGrupoDocentesView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/editar/(?P<participante_id>\w+)/$', login_required(views.EditarDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/nuevo/docente/$', login_required(views.NuevoDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/$', login_required(views.CalificarGrupoDocentesView.as_view())),
+
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/actualizar/(?P<soporte_id>\w+)/$', login_required(views.FormSoporteGrupoDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/asignar/(?P<soporte_id>\w+)/$', login_required(views.FormAsignarSoporteDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/agregar/$', login_required(views.FormAgregarSoporteDocenteView.as_view())),
 ]

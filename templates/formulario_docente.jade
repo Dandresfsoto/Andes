@@ -1,0 +1,108 @@
+extends base
+block titulo
+    | Nuevo Participante
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../../../") Andes
+    li
+        a(href="../../../../../../") Formación
+    li
+        a(href="../../../../../") Formadores Tipo 1
+    li
+        a(href="../../../../") {{NOMBRE_FORMADOR}}
+    li
+        a(href="../../") Inscritos: {{NOMBRE_GRUPO}}
+    li(class="active") {{ACCION}}
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                input(id="id_formador",name="formador", value="{{ID_FORMADOR}}",hidden)
+                input(id="id_grupo",name="grupo", value="{{ID_GRUPO}}",hidden)
+                input(id="id_departamento",name="departamento", value="{{DEPARTAMENTO_ID}}",hidden)
+                tr
+                    th(class="text-center") Campo:
+                    th(class="text-center") Información:
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Secretaria:
+                    td(class = "text-center")
+                        | {{form.secretaria}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Radicado:
+                    td(class = "text-center")
+                        | {{form.radicado}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Nombres:
+                    td(class = "text-center")
+                        | {{form.nombres}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Apellidos:
+                    td(class = "text-center")
+                        | {{form.apellidos}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Cedula:
+                    td(class = "text-center")
+                        | {{form.cedula}}
+                tr
+                    td(class = "text-center") Correo:
+                    td(class = "text-center")
+                        | {{form.correo}}
+                tr
+                    td(class = "text-center") Telefono Fijo:
+                    td(class = "text-center")
+                        | {{form.telefono_fijo}}
+                tr
+                    td(class = "text-center") Celular:
+                    td(class = "text-center")
+                        | {{form.celular}}
+                tr
+                    td(class = "text-center") Area:
+                    td(class = "text-center")
+                        | {{form.area}}
+                tr
+                    td(class = "text-center") Grado:
+                    td(class = "text-center")
+                        | {{form.grado}}
+                tr
+                    td(class = "text-center") Tipo de Beneficiario:
+                    td(class = "text-center")
+                        | {{form.tipo_beneficiario}}
+                tr
+                    td(class = "text-center") Genero:
+                    td(class = "text-center")
+                        | {{form.genero}}
+                tr
+                    td(class = "text-center") Nombre del Proyecto:
+                    td(class = "text-center")
+                        | {{form.nombre_proyecto}}
+                tr
+                    td(class = "text-center") Definicion del Problema:
+                    td(class = "text-center")
+                        | {{form.definicion_problema}}
+                tr
+                    td(class = "text-center") Area del Proyecto:
+                    td(class = "text-center")
+                        | {{form.area_proyecto}}
+                tr
+                    td(class = "text-center") Competencia:
+                    td(class = "text-center")
+                        | {{form.competencia}}
+                tr
+                    td(class = "text-center") Grupo Poblacional:
+                    td(class = "text-center")
+                        | {{form.grupo_poblacional}}
+
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")

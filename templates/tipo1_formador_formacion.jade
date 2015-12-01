@@ -1,6 +1,6 @@
 extends base
 block titulo
-    | Formadores Tipo 2
+    | Formadores Tipo 1
 block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
@@ -10,7 +10,7 @@ block itemsNavbarBreadcrumb
         a(href="../../") Andes
     li
         a(href="../") Formación
-    li(class="active") Formadores Tipo 2
+    li(class="active") Formadores Tipo 1
 block body_content
     div(class="container-fluid")
         input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
@@ -35,4 +35,4 @@ block body_content
                     th Inicio de Contrato
                     th Fin de Contrato
 block extra_script
-    script(src="{% static 'js/tipo2_formador_formacion.js' %}")
+    script(src="{% static 'js/tipo1_formador_formacion.js' %}")

@@ -19,6 +19,8 @@ from django.core.files.base import ContentFile
 from StringIO import StringIO
 import time
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
+from formacion.models import GrupoDocentes, ParticipanteDocente, SoporteEntregableDocente, ActividadDocentes, EvidenciaDocentes
+from formacion.forms import NuevoGrupoDocenteForm, NuevoDocenteForm, AsignarDocenteForm, NuevoSoporteDocenteForm, AgregarSoporteDocenteForm
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -61,7 +63,17 @@ class FormadorView(FormacionMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = 2
         return super(FormadorView,self).get_context_data(**kwargs)
+
+class FormadorTipo1View(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_formacion.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = 1
+        return super(FormadorTipo1View,self).get_context_data(**kwargs)
 
 class FormadorGrupoView(FormacionMixin,TemplateView):
     template_name = 'tipo2_formador_grupo.html'
@@ -72,6 +84,16 @@ class FormadorGrupoView(FormacionMixin,TemplateView):
         kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
         return super(FormadorGrupoView,self).get_context_data(**kwargs)
+
+class FormadorTipo1GrupoView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_grupo.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        return super(FormadorTipo1GrupoView,self).get_context_data(**kwargs)
 
 class NuevoGrupoView(FormacionMixin,CreateView):
     model = Grupo
@@ -85,6 +107,19 @@ class NuevoGrupoView(FormacionMixin,CreateView):
         kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
         return super(NuevoGrupoView,self).get_context_data(**kwargs)
+
+class NuevoGrupoDocenteView(FormacionMixin,CreateView):
+    model = GrupoDocentes
+    form_class = NuevoGrupoDocenteForm
+    template_name = "formulario_grupo_docentes.html"
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        return super(NuevoGrupoDocenteView,self).get_context_data(**kwargs)
 
 class FormSoporteGrupoView(FormacionMixin,UpdateView):
     pk_url_kwarg = 'soporte_id'
@@ -102,6 +137,23 @@ class FormSoporteGrupoView(FormacionMixin,UpdateView):
         kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
         kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         return super(FormSoporteGrupoView,self).get_context_data(**kwargs)
+
+class FormSoporteGrupoDocenteView(FormacionMixin,UpdateView):
+    pk_url_kwarg = 'soporte_id'
+    model = SoporteEntregableDocente
+    form_class = NuevoSoporteDocenteForm
+    template_name = "formulario_soporte_tipo1.html"
+    success_url = "../../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['NOMBRE_SOPORTE'] = SoporteEntregableDocente.objects.get(pk=self.kwargs['soporte_id']).entregable.nombre + " - " + SoporteEntregableDocente.objects.get(pk=self.kwargs['soporte_id']).grupo.nombre
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(FormSoporteGrupoDocenteView,self).get_context_data(**kwargs)
 
 class FormAsignarSoporteView(FormacionMixin,FormView):
     form_class = AsignarForm
@@ -186,6 +238,89 @@ class FormAsignarSoporteView(FormacionMixin,FormView):
             evidencia.save()
         return HttpResponseRedirect(self.get_success_url())
 
+class FormAsignarSoporteDocenteView(FormacionMixin,FormView):
+    form_class = AsignarDocenteForm
+    template_name = "formulario_asignar_soporte_tipo1.html"
+    success_url = "../../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['NOMBRE_SOPORTE'] = SoporteEntregableDocente.objects.get(pk=self.kwargs['soporte_id']).entregable.nombre + " - " + SoporteEntregableDocente.objects.get(pk=self.kwargs['soporte_id']).grupo.nombre
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(FormAsignarSoporteDocenteView,self).get_context_data(**kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = {
+            'initial': self.get_initial(),
+            'prefix': self.get_prefix(),
+            'soporte_id': self.kwargs['soporte_id'],
+        }
+        if self.request.method in ('POST', 'PUT'):
+            kwargs.update({
+                'data': self.request.POST,
+                'files': self.request.FILES,
+            })
+        return kwargs
+
+    def form_valid(self, form):
+        super(FormAsignarSoporteDocenteView, self).form_valid(form)
+        participantes = form.cleaned_data['participantes']
+        soporte = SoporteEntregableDocente.objects.get(pk=self.kwargs['soporte_id'])
+
+        self.soporte = self.kwargs['soporte_id']
+        self.grupo = SoporteEntregableDocente.objects.get(pk=self.soporte).grupo.id
+        self.id_entregable = SoporteEntregableDocente.objects.get(pk=self.soporte).entregable.id
+
+        #Obtiene los id de los soportes del grupo del entregable especifico y lo convierte en una lista
+        x = SoporteEntregableDocente.objects.filter(grupo__id=self.grupo).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
+        x = list(x)
+
+        x.pop(x.index(long(self.soporte)))
+        if not isinstance(x,list):
+            x = [x]
+
+        # y es una lista con los id de participantes asignados en otro entregable
+        y = EvidenciaDocentes.objects.filter(soporte__in=x).values_list("participante__id",flat=True)
+
+        participantes_total = ParticipanteDocente.objects.filter(grupo__id=soporte.grupo.id).values_list("id",flat=True)
+        participantes_total = list(set(participantes_total).difference(y))
+        participantes_actual = EvidenciaDocentes.objects.filter(soporte__id=self.soporte).values_list("participante__id",flat=True)
+
+        if len(participantes) != 0:
+            for participante in participantes_total:
+                evidencia = EvidenciaDocentes.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
+                if unicode(participante) in participantes:
+                    evidencia.soporte = soporte
+                else:
+                    evidencia.soporte = None
+                evidencia.save()
+        else:
+            for participante in participantes_actual:
+                evidencia = EvidenciaDocentes.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
+                evidencia.soporte = soporte
+                evidencia.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        super(FormAsignarSoporteDocenteView, self).form_invalid(form)
+        soporte = SoporteEntregableDocente.objects.get(pk=self.kwargs['soporte_id'])
+
+        self.soporte = self.kwargs['soporte_id']
+        self.grupo = SoporteEntregableDocente.objects.get(pk=self.soporte).grupo.id
+        self.id_entregable = SoporteEntregableDocente.objects.get(pk=self.soporte).entregable.id
+
+        participantes_actual = EvidenciaDocentes.objects.filter(soporte__id=self.soporte).values_list("participante__id",flat=True)
+
+        for participante in participantes_actual:
+            evidencia = EvidenciaDocentes.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
+            evidencia.soporte = None
+            evidencia.save()
+        return HttpResponseRedirect(self.get_success_url())
+
 class FormAgregarSoporteView(FormacionMixin,FormView):
     form_class = AgregarSoporteForm
     template_name = "formulario_agregar_soporte_tipo2.html"
@@ -204,6 +339,24 @@ class FormAgregarSoporteView(FormacionMixin,FormView):
         form.save()
         return HttpResponseRedirect(self.get_success_url())
 
+class FormAgregarSoporteDocenteView(FormacionMixin,FormView):
+    form_class = AgregarSoporteDocenteForm
+    template_name = "formulario_agregar_soporte_tipo1.html"
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(FormAgregarSoporteDocenteView,self).get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        form.save()
+        return HttpResponseRedirect(self.get_success_url())
+
 class ListadoGrupoView(FormacionMixin,TemplateView):
     template_name = 'tipo2_formador_listado.html'
 
@@ -215,6 +368,18 @@ class ListadoGrupoView(FormacionMixin,TemplateView):
         kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
         kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         return super(ListadoGrupoView,self).get_context_data(**kwargs)
+
+class ListadoGrupoDocentesView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_listado.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(ListadoGrupoDocentesView,self).get_context_data(**kwargs)
 
 class NuevoParticipanteView(FormacionMixin,CreateView):
     model = ParticipanteEscuelaTic
@@ -232,6 +397,23 @@ class NuevoParticipanteView(FormacionMixin,CreateView):
         kwargs['ACCION'] = "Nuevo"
         return super(NuevoParticipanteView,self).get_context_data(**kwargs)
 
+class NuevoDocenteView(FormacionMixin,CreateView):
+    model = ParticipanteDocente
+    form_class = NuevoDocenteForm
+    template_name = "formulario_docente.html"
+    success_url = "../../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['ACCION'] = "Nuevo"
+        kwargs['DEPARTAMENTO_ID'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).municipio.departamento.id
+        return super(NuevoDocenteView,self).get_context_data(**kwargs)
+
 class EditarParticipanteView(FormacionMixin,UpdateView):
     model = ParticipanteEscuelaTic
     form_class = NuevoParticipanteForm
@@ -248,6 +430,24 @@ class EditarParticipanteView(FormacionMixin,UpdateView):
         kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         kwargs['ACCION'] = "Editar: "+ParticipanteEscuelaTic.objects.get(pk=self.kwargs['participante_id']).nombres
         return super(EditarParticipanteView,self).get_context_data(**kwargs)
+
+class EditarDocenteView(FormacionMixin,UpdateView):
+    model = ParticipanteDocente
+    form_class = NuevoDocenteForm
+    template_name = "formulario_docente.html"
+    success_url = "../../"
+    pk_url_kwarg = "participante_id"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['ACCION'] = "Editar: "+ParticipanteDocente.objects.get(pk=self.kwargs['participante_id']).nombres
+        kwargs['DEPARTAMENTO_ID'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).municipio.departamento.id
+        return super(EditarDocenteView,self).get_context_data(**kwargs)
 
 def soporte_form(request,pk,grupo_id,formador_id):
     SoporteFormSet = modelformset_factory(SoporteEntregableEscuelaTic, fields=('soporte',),extra=0)
@@ -451,3 +651,36 @@ class CalificarGrupoView(FormacionMixin,TemplateView):
         kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         kwargs['ENTREGABLES'] = y
         return super(CalificarGrupoView,self).get_context_data(**kwargs)
+
+class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_grupo_calificar.html'
+
+    def get_context_data(self, **kwargs):
+        participantes = ParticipanteDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
+        soportes = SoporteEntregableDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__actividad__id')
+        id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
+        id_actividades = list(set(id_actividades))
+        y=[]
+        i=0
+        for id_actividad in id_actividades:
+            x=[]
+            soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
+            nombre_actividad = ActividadDocentes.objects.get(id=id_actividad).nombre
+            for soporte_filtro in soportes_filtro:
+                i += 1
+                if i%2 == 0:
+                    clase = "even"
+                else:
+                    clase = "odd"
+                cantidad = EvidenciaDocentes.objects.filter(soporte_id=soporte_filtro.id).count()
+                x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase})
+            y.append({"nombre_actividad":nombre_actividad,"informacion":x})
+
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['ENTREGABLES'] = y
+        return super(CalificarGrupoDocentesView,self).get_context_data(**kwargs)

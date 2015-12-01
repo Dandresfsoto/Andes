@@ -11,11 +11,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='evidenciaescuelatic',
-            name='soporte',
-            field=models.ForeignKey(blank=True, to='formacion.SoporteEntregableEscuelaTic', null=True),
-        ),
         migrations.AlterField(
             model_name='evidenciaescuelatic',
             name='corte',

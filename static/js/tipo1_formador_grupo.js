@@ -1,46 +1,34 @@
 function format ( d ) {
-    // `d` is the original data object for the row
-    var init = '<td><img src="/static/imagenes/pdf-gris.png" height="48" width="48"></td>';
-    var imagen
-
-    if(d[7] != ""){
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/media/'+d[7]+'" height="200"></td>'
-    }
-    else{
-        imagen = '<td rowspan="4" colspan="3" class="text-center"><img src="/static/imagenes/user-unknown.png" height="200"></td>'
-    }
-
-
 
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b>INFORMACIÓN<a></b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b>INFORMACIÓN</b></h4></th>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Cargo:</b> '+d[5]+'</td>'+
-            '<td colspan="2"><b>Profesion:</b> '+d[6]+'</td>'+
-            imagen+
-
+            '<td colspan="4"><b>Dirección:</b> '+d[4]+'</td>'+
+            '<td colspan="4"><b>Horario:</b> '+d[5]+'</td>'+
         '</tr>'+
-
-        '<tr>'+
-            '<td colspan="2"><b>Grupos de Formación:</b> '+d[10]+'</td>'+
-            '<td colspan="2"><b>Cantidad de Participantes:</b> '+d[11]+'</td>'+
-        '</tr>'+
-
 
     '</table></div>';
 }
-
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                text: 'Nuevo Grupo',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"nuevo");
+                }
+            }
+        ],
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/formador/calificacion/"+ $('#id_region').val()+ "/" + $('#id_tipo').val(),
+        "ajax": "/formador/grupo_tipo1/"+ $('#id_region').val()+"/"+ $('#id_formador').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -54,7 +42,14 @@ $(document).ready(function() {
             {
                 "data": 1,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="'+row[0]+'" style="color:#004c99;">'+data+'</a>';
+                          return '<a href="calificar/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
+                },
+                "orderable":false
+            },
+            {
+                "data": 6,
+                "render": function ( data, type, row, meta ) {
+                          return '<a href="grupo/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
                 "orderable":false
             },
@@ -65,19 +60,7 @@ $(document).ready(function() {
             {
                 "data": 3,
                 "orderable":false,
-            },
-            {
-                "data": 4,
-                "orderable":false,
-            },
-            {
-                "data": 8,
-                "orderable":false,
-            },
-            {
-                "data": 9,
-                "orderable":false,
-            },
+            }
         ],
         "order": [[1, 'asc']],
     });
