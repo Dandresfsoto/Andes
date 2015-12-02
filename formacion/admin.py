@@ -49,6 +49,15 @@ admin.site.register(Corte)
 admin.site.register(CorteDocente)
 admin.site.register(RadicadoFormacion)
 
+def validateEmail( email ):
+    from django.core.validators import validate_email
+    from django.core.exceptions import ValidationError
+    try:
+        validate_email( email )
+        return True
+    except ValidationError:
+        return False
+
 def carga_grupos(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -160,10 +169,157 @@ def carga_grupos(modeladmin,request,queryset):
 carga_grupos.short_description = "Cargar grupos"
 
 
+def carga_participantes(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Carga Masiva Participantes"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Carga Masiva Participantes'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['CODIGO GRUPO',30]),
+                   tuple(['NOMBRES',30]),
+                   tuple(['APELLIDOS',30]),
+                   tuple(['CEDULA',60]),
+                   tuple(['GENERO',30]),
+                   tuple(['NIVEL EDUCATIVO',60]),
+                   tuple(['CELULAR',30]),
+                   tuple(['CORREO',30]),
+                   tuple(['TIPO POBLACION',30]),
+                   tuple(['CODIGO ANSPE',30]),
+                   tuple(['TIPO PROYECTO',30]),
+                   tuple(['GRUPO DE CONFORMACION',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+                try:
+                    cedula = fila[3].value.replace('.','').replace(',','')
+                except:
+                    cedula = fila[3].value
+                nombres = fila[1].value
+                apellidos = fila[2].value
+
+
+                if cedula == "" or cedula == None:
+                    proceso = "El campo de cedula esta vacio"
+                else:
+                    try:
+                        long(cedula)
+                    except ValueError:
+                        proceso = "El numero de cedula es invalido"
+                    else:
+                        if ParticipanteEscuelaTic.objects.filter(cedula=cedula).count() != 0:
+                            proceso = "La Cedula ya se encuentra registrada"
+                        else:
+                            if nombres == "" or nombres == None:
+                                proceso = "El campo de nombres esta vacio"
+                            else:
+                                if apellidos == "" or apellidos == None:
+                                    proceso = "El campo de apellidos esta vacio"
+                                else:
+                                    if fila[0].value == "" or fila[3].value == None:
+                                        proceso = "El Codigo de grupo no es valido"
+                                    else:
+                                        if Grupo.objects.filter(nombre=fila[0].value).count() != 1:
+                                            proceso = "No hay un solo grupo registrado con el codigo de grupo"
+                                        else:
+                                            grupo = Grupo.objects.get(nombre=fila[0].value)
+                                            proceso = "Registrado Correctamente"
+                                            nuevo = ParticipanteEscuelaTic()
+                                            nuevo.grupo = grupo
+                                            nuevo.formador = grupo.formador
+                                            nuevo.nombres = fila[1].value
+                                            nuevo.apellidos = fila[2].value
+                                            nuevo.cedula = long(cedula)
+                                            if fila[4].value == None or fila[4].value == "":
+                                                nuevo.genero = "Masculino"
+                                                proceso = "Registrado Correctamente - Genero Masculino por defecto"
+                                            else:
+                                                nuevo.genero = fila[4].value
+                                            nuevo.nivel_educativo = fila[5].value
+                                            nuevo.telefono = fila[6].value
+                                            if validateEmail(fila[7].value):
+                                                nuevo.correo = fila[7].value
+                                            nuevo.poblacion = fila[8].value
+                                            nuevo.codigo_anspe = fila[9].value
+                                            nuevo.tipo_proyecto = fila[10].value
+                                            nuevo.grupo_conformacion = fila[11].value
+                                            nuevo.save()
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    fila[2].value,
+                    fila[3].value,
+                    fila[4].value,
+                    fila[5].value,
+                    fila[6].value,
+                    fila[7].value,
+                    fila[8].value,
+                    fila[9].value,
+                    fila[10].value,
+                    fila[11].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+carga_participantes.short_description = "Cargar participantes"
+
+
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos]
+    actions = [carga_grupos,carga_participantes]
 
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 

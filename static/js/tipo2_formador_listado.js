@@ -9,22 +9,22 @@ function format ( d ) {
         '<tr>'+
             '<td colspan="2"><b>Formador:</b> '+d[1]+'</td>'+
             '<td colspan="2"><b>Grupo:</b> '+d[2]+'</td>'+
-            '<td colspan="2"><b>Municipio:</b> '+d[5]+'</td>'+
-            '<td colspan="2"><b>Institución:</b> '+d[6]+'</td>'+
+            '<td colspan="2"><b>Municipio:</b> '+""+'</td>'+
+            '<td colspan="2"><b>Institución:</b> '+d[4]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Genero:</b> '+d[10]+'</td>'+
-            '<td colspan="2"><b>Nivel Educativo:</b> '+d[11]+'</td>'+
-            '<td colspan="2"><b>Telefono:</b> '+d[12]+'</td>'+
-            '<td colspan="2"><b>Correo:</b> '+d[13]+'</td>'+
+            '<td colspan="2"><b>Genero:</b> '+d[8]+'</td>'+
+            '<td colspan="2"><b>Nivel Educativo:</b> '+d[9]+'</td>'+
+            '<td colspan="2"><b>Telefono:</b> '+d[10]+'</td>'+
+            '<td colspan="2"><b>Correo:</b> '+d[11]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Población:</b> '+d[14]+'</td>'+
-            '<td colspan="2"><b>Código ANSPE:</b> '+d[15]+'</td>'+
-            '<td colspan="2"><b>Tipo de Proyecto:</b> '+d[16]+'</td>'+
-            '<td colspan="2"><b>Grupo de Conformación:</b> '+d[17]+'</td>'+
+            '<td colspan="2"><b>Población:</b> '+d[12]+'</td>'+
+            '<td colspan="2"><b>Código ANSPE:</b> '+d[13]+'</td>'+
+            '<td colspan="2"><b>Tipo de Proyecto:</b> '+d[14]+'</td>'+
+            '<td colspan="2"><b>Grupo de Conformación:</b> '+d[15]+'</td>'+
         '</tr>'+
 
     '</table></div>';
@@ -63,18 +63,18 @@ $(document).ready(function() {
                 "defaultContent": ''
             },
             {
-                "data": 9,
+                "data": 7,
                 "render": function ( data, type, row, meta ) {
                           return '<a href="editar/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
                 "orderable":false
             },
             {
-                "data": 7,
+                "data": 5,
                 "orderable":false,
             },
             {
-                "data": 8,
+                "data": 6,
                 "orderable":false,
             }
         ],

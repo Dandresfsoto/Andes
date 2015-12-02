@@ -376,8 +376,6 @@ class FormadorListadoGrupoTableView(BaseDatatableView):
         'formador',
         'grupo',
         'numero',
-        'departamento',
-        'municipio',
         'institucion',
         'nombres',
         'apellidos',

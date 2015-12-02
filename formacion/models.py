@@ -66,8 +66,6 @@ class ParticipanteEscuelaTic(models.Model):
     grupo = models.ForeignKey(Grupo)
 
     numero = models.BigIntegerField(blank=True,null=True)
-    departamento = models.CharField(max_length=100)
-    municipio = models.CharField(max_length=100)
 
     institucion = models.CharField(max_length=200,blank=True,null=True)
 

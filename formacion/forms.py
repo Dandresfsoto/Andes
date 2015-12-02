@@ -58,11 +58,9 @@ class NuevoParticipanteForm(forms.ModelForm):
         for municipio in Municipio.objects.all():
             municipio_choice.append(tuple([municipio.nombre+" - "+municipio.departamento.nombre,municipio.nombre+" - "+municipio.departamento.nombre]))
         model = ParticipanteEscuelaTic
-        fields = ['formador','grupo','numero','departamento','municipio','institucion','nombres','apellidos','cedula','genero','nivel_educativo','telefono','correo','poblacion','codigo_anspe','tipo_proyecto','grupo_conformacion']
+        fields = ['formador','grupo','numero','institucion','nombres','apellidos','cedula','genero','nivel_educativo','telefono','correo','poblacion','codigo_anspe','tipo_proyecto','grupo_conformacion']
         widgets = {
             'numero': forms.NumberInput(attrs={'style':'width:100%;'}),
-            'departamento': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(Departamento.objects.all().values_list('nombre','nombre'))),
-            'municipio': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(municipio_choice)),
             'institucion': forms.TextInput(attrs={'style':'width:100%;'}),
             'nombres': forms.TextInput(attrs={'style':'width:100%;','required':''}),
             'apellidos': forms.TextInput(attrs={'style':'width:100%;','required':''}),
