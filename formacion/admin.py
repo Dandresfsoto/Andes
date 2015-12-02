@@ -168,7 +168,6 @@ def carga_grupos(modeladmin,request,queryset):
         return response
 carga_grupos.short_description = "Cargar grupos"
 
-
 def carga_participantes(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -315,11 +314,112 @@ def carga_participantes(modeladmin,request,queryset):
         return response
 carga_participantes.short_description = "Cargar participantes"
 
+def carga_radicados(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Carga Masiva Radicados"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Carga Masiva Radicados'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['RADICADO',30]),
+                   tuple(['CODIGO DANE INSTITUCION',30]),
+                   tuple(['NOMBRE INSTITUCION',30]),
+                   tuple(['CODIGO DANE SEDE EDUCATIVA',30]),
+                   tuple(['NOMBRE DE LA SEDE EDUCATIVA',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+                if fila[0].value != None:
+                    try:
+                        radicado = int(fila[0].value)
+                    except ValueError:
+                        proceso = "El numero de radicado solo debe contener numeros"
+                    else:
+                        if RadicadoFormacion.objects.filter(numero=radicado).count() == 0:
+                            nuevo = RadicadoFormacion()
+                            nuevo.numero = radicado
+                            if fila[1].value != None:
+                                nuevo.dane_ie = fila[1].value
+                            if fila[2].value != None:
+                                nuevo.nombre_ie = fila[2].value
+                            if fila[3].value != None:
+                                nuevo.dane_sede = fila[3].value
+                            if fila[4].value != None:
+                                nuevo.nombre_sede = fila[4].value
+                            nuevo.save()
+                            proceso = "Radicado creado satisfactoriamente"
+                        else:
+                            proceso = "Ya existe el radicado"
+                else:
+                    proceso = "No hay numero de radicado valido"
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    fila[2].value,
+                    fila[3].value,
+                    fila[4].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+carga_radicados.short_description = "Cargar radicados"
 
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes]
+    actions = [carga_grupos,carga_participantes,carga_radicados]
 
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
