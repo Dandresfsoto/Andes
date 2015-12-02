@@ -539,8 +539,6 @@ class ParticipantesListadoTableView(BaseDatatableView):
         'formador',
         'grupo',
         'numero',
-        'departamento',
-        'municipio',
         'institucion',
         'nombres',
         'apellidos',
