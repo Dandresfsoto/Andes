@@ -112,3 +112,9 @@ class CargaMasiva(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.usuario)
+
+class CargasMasivas(models.Model):
+    archivo = models.FileField(upload_to="Cargas Masivas/Acceso/")
+
+    def __unicode__(self):
+        return smart_unicode(self.id)
