@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/models.py" afterPath="$PROJECT_DIR$/formacion/models.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,44 +27,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66267943">
-              <caret line="529" column="35" selection-start-line="529" selection-start-column="35" selection-end-line="529" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="474" column="32" selection-start-line="474" selection-start-column="32" selection-end-line="474" selection-end-column="32" />
               <folding>
                 <element signature="e#2773#7139#0" expanded="false" />
                 <element signature="e#7248#13719#0" expanded="false" />
                 <element signature="e#13838#17695#0" expanded="false" />
-                <element signature="e#17812#22196#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.37931">
-              <caret line="108" column="71" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.24840765">
+              <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
               <folding>
                 <element signature="e#370#767#0" expanded="false" />
-                <element signature="e#5344#5455#0" expanded="false" />
-                <element signature="e#5488#5597#0" expanded="false" />
-                <element signature="e#5631#5742#0" expanded="false" />
-                <element signature="e#5782#5903#0" expanded="false" />
-                <element signature="e#5947#6074#0" expanded="false" />
-                <element signature="e#8160#8271#0" expanded="false" />
-                <element signature="e#8316#8427#0" expanded="false" />
-                <element signature="e#8473#8725#0" expanded="false" />
-                <element signature="e#8763#9007#0" expanded="false" />
-                <element signature="e#9040#9123#0" expanded="false" />
-                <element signature="e#9163#9381#0" expanded="false" />
-                <element signature="e#9414#9699#0" expanded="false" />
-                <element signature="e#9739#10032#0" expanded="false" />
-                <element signature="e#10066#10443#0" expanded="false" />
-                <element signature="e#10498#10810#0" expanded="false" />
-                <element signature="e#10862#11190#0" expanded="false" />
+                <element signature="e#5364#5475#0" expanded="false" />
+                <element signature="e#5508#5617#0" expanded="false" />
+                <element signature="e#5651#5762#0" expanded="false" />
+                <element signature="e#5802#5923#0" expanded="false" />
+                <element signature="e#5967#6094#0" expanded="false" />
+                <element signature="e#8180#8291#0" expanded="false" />
+                <element signature="e#8336#8447#0" expanded="false" />
+                <element signature="e#8493#8745#0" expanded="false" />
+                <element signature="e#8783#9027#0" expanded="false" />
+                <element signature="e#9060#9143#0" expanded="false" />
+                <element signature="e#9183#9401#0" expanded="false" />
+                <element signature="e#9434#9719#0" expanded="false" />
+                <element signature="e#9759#10052#0" expanded="false" />
+                <element signature="e#10086#10463#0" expanded="false" />
+                <element signature="e#10518#10830#0" expanded="false" />
+                <element signature="e#10882#11210#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -131,13 +130,13 @@
         <option value="$PROJECT_DIR$/formacion/urls.py" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/templates/formulario_agregar_soporte_tipo1.jade" />
-        <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/formacion/forms.py" />
         <option value="$PROJECT_DIR$/templates/formulario_participante.jade" />
         <option value="$PROJECT_DIR$/static/js/tipo2_formador_listado.js" />
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/static/js/escuela_tic_participantes.js" />
         <option value="$PROJECT_DIR$/formacion/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/models.py" />
       </list>
     </option>
   </component>
@@ -488,11 +487,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2976378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2976378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17322835" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41574803" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1066,6 +1065,26 @@
           <line>298</line>
           <option name="timeStamp" value="551" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>474</line>
+          <option name="timeStamp" value="564" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>475</line>
+          <option name="timeStamp" value="565" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>476</line>
+          <option name="timeStamp" value="566" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>477</line>
+          <option name="timeStamp" value="567" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1074,7 +1093,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="564" />
+      <option name="time" value="568" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1468,41 +1487,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.37931">
-          <caret line="108" column="71" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="71" />
-          <folding>
-            <element signature="e#370#767#0" expanded="false" />
-            <element signature="e#5344#5455#0" expanded="false" />
-            <element signature="e#5488#5597#0" expanded="false" />
-            <element signature="e#5631#5742#0" expanded="false" />
-            <element signature="e#5782#5903#0" expanded="false" />
-            <element signature="e#5947#6074#0" expanded="false" />
-            <element signature="e#8160#8271#0" expanded="false" />
-            <element signature="e#8316#8427#0" expanded="false" />
-            <element signature="e#8473#8725#0" expanded="false" />
-            <element signature="e#8763#9007#0" expanded="false" />
-            <element signature="e#9040#9123#0" expanded="false" />
-            <element signature="e#9163#9381#0" expanded="false" />
-            <element signature="e#9414#9699#0" expanded="false" />
-            <element signature="e#9739#10032#0" expanded="false" />
-            <element signature="e#10066#10443#0" expanded="false" />
-            <element signature="e#10498#10810#0" expanded="false" />
-            <element signature="e#10862#11190#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66267943">
-          <caret line="529" column="35" selection-start-line="529" selection-start-column="35" selection-end-line="529" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="474" column="32" selection-start-line="474" selection-start-column="32" selection-end-line="474" selection-end-column="32" />
           <folding>
             <element signature="e#2773#7139#0" expanded="false" />
             <element signature="e#7248#13719#0" expanded="false" />
             <element signature="e#13838#17695#0" expanded="false" />
-            <element signature="e#17812#22196#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24840765">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding>
+            <element signature="e#370#767#0" expanded="false" />
+            <element signature="e#5364#5475#0" expanded="false" />
+            <element signature="e#5508#5617#0" expanded="false" />
+            <element signature="e#5651#5762#0" expanded="false" />
+            <element signature="e#5802#5923#0" expanded="false" />
+            <element signature="e#5967#6094#0" expanded="false" />
+            <element signature="e#8180#8291#0" expanded="false" />
+            <element signature="e#8336#8447#0" expanded="false" />
+            <element signature="e#8493#8745#0" expanded="false" />
+            <element signature="e#8783#9027#0" expanded="false" />
+            <element signature="e#9060#9143#0" expanded="false" />
+            <element signature="e#9183#9401#0" expanded="false" />
+            <element signature="e#9434#9719#0" expanded="false" />
+            <element signature="e#9759#10052#0" expanded="false" />
+            <element signature="e#10086#10463#0" expanded="false" />
+            <element signature="e#10518#10830#0" expanded="false" />
+            <element signature="e#10882#11210#0" expanded="false" />
           </folding>
         </state>
       </provider>

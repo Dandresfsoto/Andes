@@ -46,8 +46,8 @@ class GrupoDocentes(models.Model):
     formador = models.ForeignKey(Formador)
     municipio = models.ForeignKey(Municipio)
     nombre = models.CharField(blank=True,max_length=1000)
-    direccion = models.TextField(blank=True,max_length=1000)
-    horario = models.TextField(blank=True,max_length=2000)
+    direccion = models.TextField(blank=True,max_length=1000,null=True)
+    horario = models.TextField(blank=True,max_length=2000,null=True)
 
     def __unicode__(self):
         return smart_unicode("%s - %s" % (self.formador,self.nombre))
