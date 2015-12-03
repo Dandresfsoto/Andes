@@ -489,13 +489,13 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                 #    proceso = "Archivo Cargado Anteriormente"
 
                 try:
-                    info = soportes.getinfo(fila[2].value)
+                    info = soportes.getinfo(fila[2].value.decode("CP850"))
                 except:
                     proceso = "No Existe el archivo en el path"
                 else:
                     proceso = "Soporte cargado"
-                    filename = os.path.basename(fila[2].value)
-                    source = soportes.open(fila[2].value)
+                    filename = os.path.basename(fila[2].value.decode("CP850"))
+                    source = soportes.open(fila[2].value.decode("CP850"))
                     target = file(os.path.join(r"C:\Temp",filename),"wb")
                     with source, target:
                         shutil.copyfileobj(source,target)
