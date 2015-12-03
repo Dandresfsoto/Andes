@@ -193,7 +193,7 @@ def reasignacion_actividades_corte(modeladmin,request,queryset):
 
                 if fila[0].value != None:
                     if Evidencia.objects.filter(radicado__numero=fila[0].value).filter(actividad__id=fila[1].value).count() == 1:
-                        evidencia = Evidencia.objects.filter(actividad__id=fila[1].value).get(radicado__numero=fila[0].value)
+                        evidencia = Evidencia.objects.filter(radicado__numero=fila[0].value)
                         if fila[1].value != None:
                             if evidencia.filter(actividad__id=fila[1].value).count() == 1:
                                 evidencia = evidencia.filter(actividad__id=fila[1].value)[0]
