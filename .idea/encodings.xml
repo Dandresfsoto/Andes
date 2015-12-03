@@ -20,6 +20,7 @@
     <file url="file://$PROJECT_DIR$/static/js/tipo2_formador_listado.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/tipo2_formador_listado_masivo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/acceso_masivo.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/acceso_municipios_apoyo.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/acceso_tipo.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/documental.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/editar_obligacion.jade" charset="UTF-8" />

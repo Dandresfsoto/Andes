@@ -66,7 +66,23 @@ class Valor(models.Model):
     def __str__(self):
         return "%i" %self.valor
 
+class ValorApoyo(models.Model):
+    valor = models.FloatField()
+    gestor = models.ForeignKey(Gestor)
+
+    def __str__(self):
+        return "%i" % self.valor
+
 class Corte(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    region = models.ForeignKey(Region)
+    titulo = models.CharField(max_length=100)
+    descripcion = models.TextField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.titulo)
+
+class CorteApoyo(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     region = models.ForeignKey(Region)
     titulo = models.CharField(max_length=100)
@@ -84,6 +100,23 @@ class Evidencia(models.Model):
     actividad = models.ForeignKey(Actividad)
     encargado = models.ForeignKey(Encargado)
     valor = models.ForeignKey(Valor)
+    soporte = models.FileField(upload_to=content_file_name,blank=True)
+    corte = models.ForeignKey(Corte,blank=True,null=True)
+    usuario = models.ForeignKey(User,blank=True,null=True)
+    modificacion = models.DateTimeField(blank=True,null=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.radicado)
+
+class EvidenciaApoyo(models.Model):
+    radicado = models.ForeignKey(Radicado,related_name='numeroRadicadoApoyo')
+    gestor = models.ForeignKey(Gestor)
+    ciclo = models.ForeignKey(Ciclo)
+    componente = models.ForeignKey(Componente)
+    modulo = models.ForeignKey(Modulo)
+    actividad = models.ForeignKey(Actividad)
+    encargado = models.ForeignKey(Encargado)
+    valor = models.ForeignKey(ValorApoyo)
     soporte = models.FileField(upload_to=content_file_name,blank=True)
     corte = models.ForeignKey(Corte,blank=True,null=True)
     usuario = models.ForeignKey(User,blank=True,null=True)

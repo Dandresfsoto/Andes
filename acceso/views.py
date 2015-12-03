@@ -75,8 +75,16 @@ class AccesoTipoView(AccesoMixin,TemplateView):
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(AccesoTipoView,self).get_context_data(**kwargs)
+
+class AccesoTipoApoyoView(AccesoMixin,TemplateView):
+    template_name = 'acceso.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=2).tipo
+        return super(AccesoTipoApoyoView,self).get_context_data(**kwargs)
 
 class AccesoCalificacionView(AccesoMixin,TemplateView):
     template_name = 'acceso_gestores.html'
@@ -84,9 +92,19 @@ class AccesoCalificacionView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
-        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['ID_TIPO_GESTOR'] = 1
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(AccesoCalificacionView,self).get_context_data(**kwargs)
+
+class AccesoCalificacionApoyoView(AccesoMixin,TemplateView):
+    template_name = 'acceso_gestores.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO_GESTOR'] = 2
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
+        return super(AccesoCalificacionApoyoView,self).get_context_data(**kwargs)
 
 class AccesoCalificacionTotalView(AccesoMixin,TemplateView):
     template_name = 'acceso_radicados_total.html'
@@ -94,8 +112,8 @@ class AccesoCalificacionTotalView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
-        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['ID_TIPO_GESTOR'] = 1
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(AccesoCalificacionTotalView,self).get_context_data(**kwargs)
 
 
@@ -109,8 +127,8 @@ class AccesoListadoRadicadosView(AccesoMixin,TemplateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
         kwargs['ID_MUNICIPIO'] = self.kwargs['id_municipio']
-        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['ID_TIPO_GESTOR'] = 1
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(AccesoListadoRadicadosView,self).get_context_data(**kwargs)
 
 class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
@@ -121,11 +139,23 @@ class AccesoListadoMunicipiosView(AccesoMixin,TemplateView):
         kwargs['NOMBRE'] = Gestor.objects.get(pk=self.kwargs['id_gestor']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
-        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['ID_TIPO_GESTOR'] = 1
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(AccesoListadoMunicipiosView,self).get_context_data(**kwargs)
 
-def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
+class AccesoListadoMunicipiosApoyoView(AccesoMixin,TemplateView):
+    template_name = 'acceso_municipios_apoyo.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['NOMBRE'] = Gestor.objects.get(pk=self.kwargs['id_gestor']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_GESTOR'] = self.kwargs['id_gestor']
+        kwargs['ID_TIPO_GESTOR'] = 2
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
+        return super(AccesoListadoMunicipiosApoyoView,self).get_context_data(**kwargs)
+
+def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
         formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
@@ -143,10 +173,10 @@ def evidencia_form(request,id_radicado,pk,id_gestor,id_municipio,tipo_gestor):
                                                           "gestor":Gestor.objects.get(pk=id_gestor).nombre,
                                                           "radicado":Radicado.objects.get(pk=id_radicado),
                                                           "municipio":Municipio.objects.get(pk=id_municipio),
-                                                          "TIPO":TipoGestor.objects.get(pk=tipo_gestor).tipo},
+                                                          "TIPO":TipoGestor.objects.get(pk=1).tipo},
                               context_instance=RequestContext(request))
 
-def evidencia_total_form(request,id_radicado,pk,tipo_gestor):
+def evidencia_total_form(request,id_radicado,pk):
     EvidenciaFormSet = modelformset_factory(Evidencia, fields=('soporte',),extra=0)
     if request.method == "POST":
         formset = EvidenciaFormSet(request.POST, request.FILES, queryset=Evidencia.objects.filter(radicado__id=id_radicado))
@@ -163,9 +193,9 @@ def evidencia_total_form(request,id_radicado,pk,tipo_gestor):
     return render_to_response("evidencias_radicado_total.html",{"formset":formset,"user":request.user,
                                                                 "REGION":Region.objects.get(pk=pk).nombre,
                                                                 "radicado":Radicado.objects.get(pk=id_radicado),
-                                                                "TIPO":TipoGestor.objects.get(pk=tipo_gestor).tipo},context_instance=RequestContext(request))
+                                                                "TIPO":TipoGestor.objects.get(pk=1).tipo},context_instance=RequestContext(request))
 
-def reporte_acceso(request,pk,id_gestor,tipo_gestor):
+def reporte_acceso(request,pk,id_gestor):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
@@ -254,7 +284,7 @@ def reporte_acceso(request,pk,id_gestor,tipo_gestor):
     archivo.save(response)
     return response
 
-def reporte_total(request,pk,tipo_gestor):
+def reporte_total(request,pk):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
@@ -355,8 +385,8 @@ class MasivoView(AccesoMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
-        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['ID_TIPO_GESTOR'] = 1
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(MasivoView,self).get_context_data(**kwargs)
 
 class MasivoTableView(BaseDatatableView):
@@ -415,11 +445,11 @@ class MasivoNuevoView(AccesoMixin,CreateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
-        kwargs['ID_TIPO_GESTOR'] = self.kwargs['tipo_gestor']
-        kwargs['TIPO'] = TipoGestor.objects.get(pk=self.kwargs['tipo_gestor']).tipo
+        kwargs['ID_TIPO_GESTOR'] = 1
+        kwargs['TIPO'] = TipoGestor.objects.get(pk=1).tipo
         return super(MasivoNuevoView,self).get_context_data(**kwargs)
 
-def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
+def ejecutar_masivo(request,pk,id_masivo):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
@@ -488,7 +518,7 @@ def ejecutar_masivo(request,pk,id_masivo,tipo_gestor):
                 #else:
                 #    proceso = "Archivo Cargado Anteriormente"
                 path = fila[2].value
-                path = path.decode("CP850")
+                path = path.encode("CP850")
                 try:
                     info = soportes.getinfo(path)
                 except:
