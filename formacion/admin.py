@@ -622,7 +622,7 @@ def carga_docentes(modeladmin,request,queryset):
                                         if GrupoDocentes.objects.filter(nombre=fila[0].value).count() != 1:
                                             proceso = "No hay un solo grupo registrado con el codigo de grupo"
                                         else:
-                                            if RadicadoFormacion.objects.filter(nombre=fila[1].value).count() != 1:
+                                            if RadicadoFormacion.objects.filter(numero=fila[1].value).count() != 1:
                                                 proceso = "No hay un solo radicado con este numero"
                                             else:
                                                 grupo = GrupoDocentes.objects.get(nombre=fila[0].value)
@@ -630,7 +630,7 @@ def carga_docentes(modeladmin,request,queryset):
                                                 nuevo = ParticipanteDocente()
                                                 nuevo.grupo = grupo
                                                 nuevo.formador = grupo.formador
-                                                nuevo.radicado = RadicadoFormacion.objects.get(nombre=fila[1].value)
+                                                nuevo.radicado = RadicadoFormacion.objects.get(numero=fila[1].value)
 
                                                 nuevo.nombres = nombres
                                                 nuevo.apellidos = apellidos
