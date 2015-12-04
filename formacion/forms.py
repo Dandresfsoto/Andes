@@ -81,7 +81,7 @@ class NuevoDocenteForm(forms.ModelForm):
         for secretaria in Municipio.objects.all():
             secretaria_choice.append(tuple([secretaria.nombre+" - "+secretaria.departamento.nombre,secretaria.nombre+" - "+secretaria.departamento.nombre]))
         model = ParticipanteDocente
-        fields = ['formador','grupo','departamento','secretaria','radicado',
+        fields = ['formador','grupo','radicado',
                   'nombres','apellidos','cedula','correo','telefono_fijo','celular',
                   'area','grado','tipo_beneficiario','genero','nombre_proyecto',
                   'definicion_problema','area_proyecto','competencia','grupo_poblacional']
