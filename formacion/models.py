@@ -22,6 +22,20 @@ def upload_soporte_escuela(instance, filename):
         os.makedirs(path)
     return '/'.join([path,filename])
 
+def content_file_name_tipo1(instance, filename):
+    path = os.path.join('Formacion', 'Formadores Tipo 1', smart_unicode(instance.grupo.formador.region),'Archivos Masivos',smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.grupo.nombre),strftime("%d-%m-%Y %H-%M-%S", localtime()))
+    path = path.replace(' \\','\\').replace('\\ ','\\')
+    if not os.path.exists(path):
+        os.makedirs(path)
+    return '/'.join([path,filename])
+
+def upload_soporte_escuela_tipo1(instance, filename):
+    path = os.path.join('Formacion', 'Formadores Tipo 1', smart_unicode(instance.grupo.formador.region),smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.grupo.nombre),smart_unicode(instance.entregable.actividad.nombre),smart_unicode(instance.entregable.id))
+    path = path.replace(' \\','\\').replace('\\ ','\\')
+    if not os.path.exists(path):
+        os.makedirs(path)
+    return '/'.join([path,filename])
+
 class Grupo(models.Model):
     formador = models.ForeignKey(Formador)
     municipio = models.ForeignKey(Municipio)
@@ -144,9 +158,6 @@ class GrupoPoblacional(models.Model):
 class ParticipanteDocente(models.Model):
     formador = models.ForeignKey(Formador)
     grupo = models.ForeignKey(GrupoDocentes)
-
-    departamento = models.ForeignKey(Departamento)
-    secretaria = models.CharField(max_length=100)
     radicado = models.ForeignKey(RadicadoFormacion)
 
     nombres = models.CharField(max_length=100)
@@ -262,7 +273,7 @@ class SoporteEntregableEscuelaTic(models.Model):
 class SoporteEntregableDocente(models.Model):
     grupo = models.ForeignKey(GrupoDocentes)
     entregable = models.ForeignKey(EntregableDocentes)
-    soporte = models.FileField(upload_to=upload_soporte_escuela,blank=True,null=True,max_length=2000)
+    soporte = models.FileField(upload_to=upload_soporte_escuela_tipo1,blank=True,null=True,max_length=2000)
 
     def __unicode__(self):
         return smart_unicode("%s - %s - %s" % (self.grupo.formador.nombre,self.grupo,self.entregable))
