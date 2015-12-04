@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/models.py" afterPath="$PROJECT_DIR$/formacion/models.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,11 +70,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6315789">
-              <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7320574">
+              <caret line="706" column="101" selection-start-line="706" selection-start-column="101" selection-end-line="706" selection-end-column="101" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#2835#7201#0" expanded="false" />
+                <element signature="e#22383#30468#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1599,11 +1599,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6315789">
-          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7320574">
+          <caret line="706" column="101" selection-start-line="706" selection-start-column="101" selection-end-line="706" selection-end-column="101" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#2835#7201#0" expanded="false" />
+            <element signature="e#22383#30468#0" expanded="false" />
           </folding>
         </state>
       </provider>

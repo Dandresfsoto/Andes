@@ -704,7 +704,7 @@ carga_docentes.short_description = "Cargar Docentes"
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes]
+    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes]
 
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
