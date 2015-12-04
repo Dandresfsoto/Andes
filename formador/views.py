@@ -425,8 +425,6 @@ class FormadorListadoGrupoDocentesTableView(BaseDatatableView):
         'id',
         'formador',
         'grupo',
-        'departamento',
-        'secretaria',
         'radicado',
         'nombres',
         'apellidos',
@@ -467,8 +465,6 @@ class FormadorListadoGrupoDocentesTableView(BaseDatatableView):
         return qs
 
     def render_column(self, row, column):
-        if column == 'departamento':
-            return unicode(row.departamento.nombre)
         if column == 'formador':
             return unicode(row.formador.nombre)
         if column == 'grupo':

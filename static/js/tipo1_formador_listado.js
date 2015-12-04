@@ -74,18 +74,18 @@ $(document).ready(function() {
                 "defaultContent": ''
             },
             {
-                "data": 8,
+                "data": 6,
                 "render": function ( data, type, row, meta ) {
                           return '<a href="editar/'+row[0]+'" style="color:#004c99;">'+data+'</a>';
                 },
                 "orderable":false
             },
             {
-                "data": 6,
+                "data": 4,
                 "orderable":false,
             },
             {
-                "data": 7,
+                "data": 5,
                 "orderable":false,
             }
         ],
