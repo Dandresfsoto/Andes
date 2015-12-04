@@ -200,6 +200,7 @@ def reasignacion_actividades_corte(modeladmin,request,queryset):
                                 if fila[1].value != None:
                                     corte = Corte.objects.filter(id=fila[2].value)
                                     if corte.count() == 1:
+                                        proceso = "Cambiado correctamente"
                                         corte = corte[0]
                                         evidencia.corte = corte
                                         evidencia.save()

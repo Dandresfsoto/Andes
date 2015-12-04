@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/admin.py" afterPath="$PROJECT_DIR$/acceso/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,23 +29,16 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+        <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59569377">
-              <caret line="203" column="63" selection-start-line="203" selection-start-column="63" selection-end-line="203" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/municipio/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="24" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.715311">
+              <caret line="526" column="71" selection-start-line="526" selection-start-column="71" selection-end-line="526" selection-end-column="71" />
               <folding>
-                <element signature="e#0#51#0" expanded="true" />
-                <element signature="e#206#3060#0" expanded="false" />
+                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#2773#7139#0" expanded="false" />
+                <element signature="e#7248#13719#0" expanded="false" />
+                <element signature="e#13838#17695#0" expanded="false" />
+                <element signature="e#17812#22196#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -106,7 +100,6 @@
         <option value="$PROJECT_DIR$/templates/formulario_participante.jade" />
         <option value="$PROJECT_DIR$/static/js/tipo2_formador_listado.js" />
         <option value="$PROJECT_DIR$/static/js/escuela_tic_participantes.js" />
-        <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/acceso/models.py" />
         <option value="$PROJECT_DIR$/templates/acceso_tipo.jade" />
@@ -118,6 +111,7 @@
         <option value="$PROJECT_DIR$/templates/acceso_municipios_apoyo.jade" />
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/acceso/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/admin.py" />
       </list>
     </option>
   </component>
@@ -1294,19 +1288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16803955">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="e#2773#7139#0" expanded="false" />
-            <element signature="e#7248#13719#0" expanded="false" />
-            <element signature="e#13838#17695#0" expanded="false" />
-            <element signature="e#17812#22196#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/acceso_gestores.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.66746414">
@@ -1564,9 +1545,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acceso/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59569377">
-          <caret line="203" column="63" selection-start-line="203" selection-start-column="63" selection-end-line="203" selection-end-column="63" />
-          <folding />
+        <state vertical-scroll-proportion="1.8516747">
+          <caret line="141" column="64" selection-start-line="141" selection-start-column="64" selection-end-line="141" selection-end-column="64" />
+          <folding>
+            <element signature="e#6226#10417#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.715311">
+          <caret line="526" column="71" selection-start-line="526" selection-start-column="71" selection-end-line="526" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#2773#7139#0" expanded="false" />
+            <element signature="e#7248#13719#0" expanded="false" />
+            <element signature="e#13838#17695#0" expanded="false" />
+            <element signature="e#17812#22196#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

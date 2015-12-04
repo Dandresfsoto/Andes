@@ -524,7 +524,7 @@ def carga_grupos_docentes(modeladmin,request,queryset):
 
         archivo.save(response)
         return response
-carga_grupos.short_description = "Cargar grupos de Docentes"
+carga_grupos_docentes().short_description = "Cargar grupos de Docentes"
 
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
