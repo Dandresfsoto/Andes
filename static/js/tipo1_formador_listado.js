@@ -9,33 +9,33 @@ function format ( d ) {
         '<tr>'+
             '<td colspan="2"><b>Formador:</b> '+d[1]+'</td>'+
             '<td colspan="2"><b>Grupo:</b> '+d[2]+'</td>'+
-            '<td colspan="2"><b>Departamento:</b> '+d[3]+'</td>'+
-            '<td colspan="2"><b>Secretaria:</b> '+d[4]+'</td>'+
+            '<td colspan="2"><b>Departamento:</b> '+""+'</td>'+
+            '<td colspan="2"><b>Secretaria:</b> '+""+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Radicado:</b> '+d[5]+'</td>'+
-            '<td colspan="2"><b>Correo:</b> '+d[9]+'</td>'+
-            '<td colspan="2"><b>Telefono Fijo:</b> '+d[10]+'</td>'+
-            '<td colspan="2"><b>Celular:</b> '+d[11]+'</td>'+
+            '<td colspan="2"><b>Radicado:</b> '+d[3]+'</td>'+
+            '<td colspan="2"><b>Correo:</b> '+d[7]+'</td>'+
+            '<td colspan="2"><b>Telefono Fijo:</b> '+d[8]+'</td>'+
+            '<td colspan="2"><b>Celular:</b> '+d[9]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Area:</b> '+d[12]+'</td>'+
-            '<td colspan="2"><b>Grado:</b> '+d[13]+'</td>'+
-            '<td colspan="2"><b>Tipo de Beneficiario:</b> '+d[14]+'</td>'+
-            '<td colspan="2"><b>Genero:</b> '+d[15]+'</td>'+
+            '<td colspan="2"><b>Area:</b> '+d[10]+'</td>'+
+            '<td colspan="2"><b>Grado:</b> '+d[11]+'</td>'+
+            '<td colspan="2"><b>Tipo de Beneficiario:</b> '+d[12]+'</td>'+
+            '<td colspan="2"><b>Genero:</b> '+d[13]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2"><b>Nombre Proyecto:</b> '+d[16]+'</td>'+
-            '<td colspan="2"><b>Area Proyecto:</b> '+d[18]+'</td>'+
-            '<td colspan="2"><b>Competencia:</b> '+d[19]+'</td>'+
-            '<td colspan="2"><b>Grupo Poblacional:</b> '+d[17]+'</td>'+
+            '<td colspan="2"><b>Nombre Proyecto:</b> '+d[14]+'</td>'+
+            '<td colspan="2"><b>Area Proyecto:</b> '+d[16]+'</td>'+
+            '<td colspan="2"><b>Competencia:</b> '+d[17]+'</td>'+
+            '<td colspan="2"><b>Grupo Poblacional:</b> '+d[18]+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="8"><b>Definicion Problema:</b> '+d[17]+'</td>'+
+            '<td colspan="8"><b>Definicion Problema:</b> '+d[15]+'</td>'+
         '</tr>'+
 
     '</table></div>';
