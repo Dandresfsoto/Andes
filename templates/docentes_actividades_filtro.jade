@@ -1,0 +1,40 @@
+extends base
+block titulo
+    | {{DIPLOMADO}}
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") CPE
+    li
+        a(href="../../../../") Formación
+    li
+        a(href="../../../") Etic@
+    li
+        a(href="../../") Docentes
+    li
+        a(href="../") Actividades
+    li(class="active") Actividad: {{ID_ACTIVIDAD}}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_actividad",value="{{ID_ACTIVIDAD}}",id="id_actividad")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Documento de Identidad
+                    th Nombres
+                    th Apellidos
+                    th Soporte
+            tbody
+                tr
+                    th
+                    th Documento de Identidad
+                    th Nombres
+                    th Apellidos
+                    th Soporte
+block extra_script
+    script(src="{% static 'js/docentes_actividades_filtro.js' %}")

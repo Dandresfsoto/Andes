@@ -2,7 +2,7 @@ from .models import Formador
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, Actividad, EvidenciaEscuelaTic, Entregable
-from formacion.models import GrupoDocentes, ParticipanteDocente
+from formacion.models import GrupoDocentes, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes
 
 class FormadorTableView(BaseDatatableView):
     model = Formador
@@ -579,6 +579,129 @@ class ParticipantesListadoTableView(BaseDatatableView):
         else:
             return super(ParticipantesListadoTableView,self).render_column(row,column)
 
+class DocentesListadoTableView(BaseDatatableView):
+    model = ParticipanteDocente
+    columns = [
+        'id',
+        'formador',
+        'grupo',
+        'radicado',
+        'nombres',
+        'apellidos',
+        'cedula',
+        'correo',
+        'telefono_fijo',
+        'celular',
+        'area',
+        'grado',
+        'tipo_beneficiario',
+        'genero',
+        'nombre_proyecto',
+        'definicion_problema',
+        'area_proyecto',
+        'competencia',
+        'grupo_poblacional',
+    ]
+
+    order_columns = [
+        'nombres',
+        'nombres',
+        'nombres',
+        'nombres',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(formador__region__id=self.kwargs['region'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'cedula__icontains' : search})
+            q |= Q(**{'nombres__icontains' : search.capitalize()})
+            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return unicode(row.formador.nombre)
+        if column == 'grupo':
+            return unicode(row.grupo.nombre)
+        if column == 'radicado':
+            return unicode(row.radicado)
+        if column == 'area':
+            return unicode(row.area)
+        if column == 'grado':
+            return unicode(row.grado)
+        if column == 'genero':
+            return unicode(row.genero)
+        if column == 'competencia':
+            return unicode(row.competencia)
+        if column == 'grupo_poblacional':
+            return unicode(row.grupo_poblacional)
+        else:
+            return super(DocentesListadoTableView,self).render_column(row,column)
+
+class EvidenciasDocentesListadoTableView(BaseDatatableView):
+    model = EvidenciaDocentes
+    columns = [
+        'id',
+        'soporte',
+        'entregable',
+        'participante'
+    ]
+
+    order_columns = [
+        'id',
+        'id',
+        'id',
+        'id'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        x = self.kwargs
+        y = x['participante__id']
+        return self.model.objects.filter(participante__id=y)
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'soporte':
+            return str(row.soporte.soporte)
+        if column == 'entregable':
+            return row.entregable.nombre
+        if column == 'participante':
+            return str(row.participante.cedula)
+        else:
+            return super(EvidenciasDocentesListadoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            if item.soporte == None:
+                soporte = ""
+            else:
+                soporte = unicode(item.soporte.soporte)
+            json_data.append([
+                item.id,
+                item.entregable.actividad.nombre,
+                item.entregable.nombre,
+                soporte,
+                item.entregable.descripcion,
+            ])
+
+        return json_data
+
 class EvidenciasListadoTableView(BaseDatatableView):
     model = EvidenciaEscuelaTic
     columns = [
@@ -685,6 +808,55 @@ class ActividadesListadoTableView(BaseDatatableView):
 
         return json_data
 
+class ActividadesDocentesListadoTableView(BaseDatatableView):
+    model = EntregableDocentes
+    columns = [
+        'id',
+        'actividad',
+        'nombre',
+        'descripcion'
+    ]
+
+    order_columns = [
+        'id',
+        'actividad',
+        'nombre',
+        'descripcion'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.all()
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'actividad':
+            return str(row.actividad.nombre)
+        else:
+            return super(ActividadesDocentesListadoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            cantidad = EvidenciaDocentes.objects.filter(soporte__entregable__id=item.id).exclude(soporte__soporte="").values_list("participante__id",flat=True)
+            cantidad = len(set(cantidad))
+            json_data.append([
+                item.id,
+                item.actividad.nombre,
+                item.nombre,
+                item.descripcion,
+                cantidad
+            ])
+
+        return json_data
+
 class ParticipantesActividadListadoTableView(BaseDatatableView):
     model = ParticipanteEscuelaTic
     columns = [
@@ -761,6 +933,90 @@ class ParticipantesActividadListadoTableView(BaseDatatableView):
                 item.tipo_proyecto,
                 item.grupo_conformacion,
                 unicode(soporte.soporte)
+            ])
+
+        return json_data
+
+class ParticipantesDocentesActividadListadoTableView(BaseDatatableView):
+    model = ParticipanteDocente
+    columns = [
+        'id',
+        'formador',
+        'grupo',
+        'radicado',
+        'nombres',
+        'apellidos',
+        'cedula',
+        'correo',
+        'telefono_fijo',
+        'celular',
+        'area',
+        'grado',
+        'tipo_beneficiario',
+        'genero',
+        'nombre_proyecto',
+        'definicion_problema',
+        'area_proyecto',
+        'competencia',
+        'grupo_poblacional',
+    ]
+
+    order_columns = [
+        'nombres',
+        'nombres',
+        'nombres',
+        'nombres',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        x = EvidenciaDocentes.objects.filter(soporte__entregable__id=self.kwargs['id_actividad']).exclude(soporte__soporte="").values_list("participante__id",flat=True)
+        return self.model.objects.filter(formador__region__id=self.kwargs['region']).filter(id__in = x)
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'cedula__icontains' : search})
+            q |= Q(**{'nombres__icontains' : search.capitalize()})
+            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'formador':
+            return str(row.formador.nombre)
+        if column == 'grupo':
+            return str(row.grupo.nombre)
+        else:
+            return super(ParticipantesDocentesActividadListadoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            soporte = EvidenciaDocentes.objects.filter(participante__id=item.id).get(entregable__id=self.kwargs['id_actividad']).soporte
+            json_data.append([
+                item.id,
+                unicode(item.formador),
+                unicode(item.grupo),
+                unicode(item.radicado),
+                item.nombres,
+                item.apellidos,
+                item.cedula,
+                item.correo,
+                item.telefono_fijo,
+                item.celular,
+                unicode(item.area),
+                unicode(item.grado),
+                item.tipo_beneficiario,
+                unicode(item.genero),
+                item.nombre_proyecto,
+                item.definicion_problema,
+                unicode(item.area_proyecto),
+                unicode(item.competencia),
+                unicode(item.grupo_poblacional),
+                str(soporte.soporte)
             ])
 
         return json_data
