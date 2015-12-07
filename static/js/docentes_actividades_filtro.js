@@ -52,22 +52,22 @@ $(document).ready(function() {
                 "orderable":false
             },
             {
-                "data": 3,
+                "data": 4,
                 "orderable":false,
             },
             {
-                "data": 4,
+                "data": 5,
                 "orderable":false,
             },
             {
                 "data": 19,
                 "render": function ( data, type, row, meta ) {
                             var soporte = "";
-                            if(row[18] == ""){
+                            if(row[19] == ""){
                                 soporte = "";
                             }
                             else{
-                                soporte = '<a href="/media/'+row[18]+'" target="_blank"><img src="/static/imagenes/pdf.png" height="40" class="center-block"><a>';
+                                soporte = '<a href="/media/'+row[19]+'" target="_blank"><img src="/static/imagenes/pdf.png" height="40" class="center-block"><a>';
                             }
                           return soporte;
                 },
