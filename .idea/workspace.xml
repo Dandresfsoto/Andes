@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/docentes_actividades_filtro.js" afterPath="$PROJECT_DIR$/static/js/docentes_actividades_filtro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formador/views.py" afterPath="$PROJECT_DIR$/formador/views.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,8 +77,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.033419024">
-              <caret line="1003" column="29" selection-start-line="1003" selection-start-column="29" selection-end-line="1003" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.688946">
+              <caret line="1018" column="40" selection-start-line="1018" selection-start-column="40" selection-end-line="1018" selection-end-column="40" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#424#4022#0" expanded="false" />
@@ -164,9 +164,9 @@
         <option value="$PROJECT_DIR$/formador/urls.py" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/static/js/tipo1_formador_listado.js" />
-        <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/static/js/acceso_masivo.js" />
         <option value="$PROJECT_DIR$/static/js/docentes_actividades_filtro.js" />
+        <option value="$PROJECT_DIR$/formador/views.py" />
       </list>
     </option>
   </component>
@@ -1636,8 +1636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033419024">
-          <caret line="1003" column="29" selection-start-line="1003" selection-start-column="29" selection-end-line="1003" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.688946">
+          <caret line="1018" column="40" selection-start-line="1018" selection-start-column="40" selection-end-line="1018" selection-end-column="40" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#424#4022#0" expanded="false" />

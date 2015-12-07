@@ -1016,7 +1016,7 @@ class ParticipantesDocentesActividadListadoTableView(BaseDatatableView):
                 unicode(item.area_proyecto),
                 unicode(item.competencia),
                 unicode(item.grupo_poblacional),
-                str(soporte.soporte)
+                unicode(soporte.soporte)
             ])
 
         return json_data
