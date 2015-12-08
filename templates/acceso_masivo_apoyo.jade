@@ -1,0 +1,32 @@
+extends base
+block titulo
+    | Carga Masiva
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Andes
+    li
+        a(href="../../") Acceso
+    li
+        a(href="../") {{TIPO}}
+    li(class="active") Carga Masiva
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_tipo_gestor",value="{{ID_TIPO_GESTORES}}",id="id_tipo_gestores")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Usuario
+                    th Fecha
+            tbody
+                tr
+                    th
+                    th Usuario
+                    th Fecha
+block extra_script
+    script(src="{% static 'js/acceso_masivo_apoyo.js' %}")

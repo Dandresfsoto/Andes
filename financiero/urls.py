@@ -5,16 +5,29 @@ from financiero import views
 urlpatterns = [
     url(r'^$', login_required(views.FinancieroView.as_view())),
 
-    url(r'^gestores/(?P<tipo_id>\w+)/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/$', login_required(views.GestorCorteEvidenciaView.as_view())),
-    url(r'^gestores/(?P<tipo_id>\w+)/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/reporte/$', login_required(views.reporte_gestor)),
-    url(r'^gestores/(?P<tipo_id>\w+)/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/email/$', login_required(views.reporte_gestor_email)),
-
     url(r'^gestores/$', login_required(views.GestorView.as_view())),
-    url(r'^gestores/(?P<tipo_id>\w+)/$', login_required(views.GestorTipoView.as_view())),
-    url(r'^gestores/(?P<tipo_id>\w+)/nuevo/$', login_required(views.NuevoGestorView.as_view())),
 
-    url(r'^gestores/(?P<tipo_id>\w+)/corte/$', login_required(views.NuevoCorteView.as_view())),
-    url(r'^gestores/(?P<tipo_id>\w+)/reporte/$', login_required(views.reporte_quincenal_financiero)),
+    url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/$', login_required(views.GestorCorteEvidenciaView.as_view())),
+    url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/reporte/$', login_required(views.reporte_gestor)),
+    url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/email/$', login_required(views.reporte_gestor_email)),
+
+    url(r'^gestores/territoriales/$', login_required(views.GestorTipoView.as_view())),
+    url(r'^gestores/territoriales/nuevo/$', login_required(views.NuevoGestorView.as_view())),
+
+    url(r'^gestores/territoriales/corte/$', login_required(views.NuevoCorteView.as_view())),
+    url(r'^gestores/territoriales/reporte/$', login_required(views.reporte_quincenal_financiero)),
+
+
+    #url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/$', login_required(views.GestorCorteEvidenciaView.as_view())),
+    #url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/reporte/$', login_required(views.reporte_gestor)),
+    #url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/email/$', login_required(views.reporte_gestor_email)),
+
+    url(r'^gestores/apoyo/$', login_required(views.GestorTipoApoyoView.as_view())),
+    url(r'^gestores/apoyo/nuevo/$', login_required(views.NuevoGestorApoyoView.as_view())),
+
+    url(r'^gestores/apoyo/corte/$', login_required(views.NuevoCorteView.as_view())),
+    url(r'^gestores/apoyo/reporte/$', login_required(views.reporte_quincenal_financiero_apoyo)),
+
 
     url(r'^formadores/$', login_required(views.FormadorView.as_view())),
     url(r'^formadores/(?P<tipo_id>\w+)/$', login_required(views.FormadorTipoView.as_view())),

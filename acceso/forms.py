@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.models import modelformset_factory
-from .models import Evidencia, Reasignados, Corte, CargaMasiva
+from .models import Evidencia, Reasignados, Corte, CargaMasiva, CargaMasivaApoyo, CorteApoyo
 
 EvidenciaFormSetBase = modelformset_factory(Evidencia,extra=0,fields=('soporte',))
 
@@ -20,7 +20,17 @@ class CorteForm(forms.ModelForm):
         model = Corte
         fields = ['region','titulo','descripcion']
 
+class CorteApoyoForm(forms.ModelForm):
+    class Meta:
+        model = CorteApoyo
+        fields = ['region','titulo','descripcion']
+
 class CargaMasivaForm(forms.ModelForm):
     class Meta:
         model = CargaMasiva
+        fields = ['region','usuario','excel','archivo']
+
+class CargaMasivaApoyoForm(forms.ModelForm):
+    class Meta:
+        model = CargaMasivaApoyo
         fields = ['region','usuario','excel','archivo']

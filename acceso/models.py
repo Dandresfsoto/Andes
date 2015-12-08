@@ -146,6 +146,16 @@ class CargaMasiva(models.Model):
     def __unicode__(self):
         return smart_unicode(self.usuario)
 
+class CargaMasivaApoyo(models.Model):
+    region = models.ForeignKey(Region)
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    excel = models.FileField(upload_to=masivo)
+    archivo = models.FileField(upload_to=masivo)
+
+    def __unicode__(self):
+        return smart_unicode(self.usuario)
+
 class CargasMasivas(models.Model):
     archivo = models.FileField(upload_to="Cargas Masivas/Acceso/")
 

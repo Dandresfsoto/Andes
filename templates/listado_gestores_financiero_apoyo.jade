@@ -1,0 +1,44 @@
+extends base
+block titulo
+    | Gestores
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Andes
+    li
+        a(href="../../") Financiero
+    li
+        a(href="../") Gestores
+    |{% if ID_TIPO == "1" %}
+    li(class="active") Territoriales
+    |{% else %}
+    li(class="active") Apoyo
+    |{% endif %}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_tipo",value="{{ID_TIPO}}",id="id_tipo")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Nombre
+                    th Cedula
+                    th Celular
+                    th Correo
+                    th Inicio de Contrato
+                    th Fin de Contrato
+            tbody
+                tr
+                    th
+                    th Nombre
+                    th Cedula
+                    th Celular
+                    th Correo
+                    th Inicio de Contrato
+                    th Fin de Contrato
+block extra_script
+    script(src="{% static 'js/listado_gestores_financiero_apoyo.js' %}")

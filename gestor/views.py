@@ -1,7 +1,7 @@
 from .models import Gestor
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from acceso.models import Evidencia, Corte, EvidenciaApoyo
+from acceso.models import Evidencia, Corte, EvidenciaApoyo, CorteApoyo
 from radicado.models import Radicado
 from django.db.models import Sum
 
@@ -292,6 +292,158 @@ class GestorFinancieroTableView(BaseDatatableView):
             return str(row.foto)
         else:
             return super(GestorFinancieroTableView,self).render_column(row,column)
+
+class GestorFinancieroApoyoTableView(BaseDatatableView):
+    model = Gestor
+    columns = [
+        'id',
+        'nombre',
+        'cedula',
+        'celular',
+        'correo',
+        'cargo',
+        'profesion',
+        'banco',
+        'tipo_cuenta',
+        'numero_cuenta',
+        'eps',
+        'pension',
+        'arl',
+        'foto',
+        'hv',
+        'certificacion',
+        'rut',
+        'contrato',
+        'fotocopia_cedula',
+        'antecedentes_judiciales',
+        'antecedentes_contraloria',
+        'seguro_enero',
+        'seguro_febrero',
+        'seguro_marzo',
+        'seguro_abril',
+        'seguro_mayo',
+        'seguro_junio',
+        'seguro_julio',
+        'seguro_agosto',
+        'seguro_septiembre',
+        'seguro_octubre',
+        'seguro_noviembre',
+        'seguro_diciembre',
+        'fecha_contratacion',
+        'fecha_terminacion',
+    ]
+
+    order_columns = [
+        'nombre',
+        'nombre',
+        'nombre',
+        'nombre',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(region__id=self.kwargs['region']).filter(tipo__id=self.kwargs['tipo'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
+            q |= Q(**{'cedula__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'hv':
+            return EvidenciaApoyo.objects.filter(gestor__id=row.id).exclude(corte=None).aggregate(Sum('valor__valor'))['valor__valor__sum']
+        if column == 'certificacion':
+            return EvidenciaApoyo.objects.filter(gestor__id=row.id).aggregate(Sum('valor__valor'))['valor__valor__sum']
+        if column == 'rut':
+            cortes = CorteApoyo.objects.filter(region__id=self.kwargs['region'])
+            json = []
+            for corte in cortes:
+                evidencias = EvidenciaApoyo.objects.filter(gestor__id=row.id).filter(corte__id=corte.id)
+                if evidencias.count() > 0:
+                    fecha = corte.fecha
+                    titulo = corte.titulo
+                    descripcion = corte.descripcion
+                    valor = round(int(evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum']))
+                    id_corte = corte.id
+                    json.append([fecha,titulo,descripcion,valor,corte.id])
+                else:
+                    fecha = corte.fecha
+                    titulo = corte.titulo
+                    descripcion = corte.descripcion
+                    json.append([fecha,titulo,descripcion,0,corte.id])
+            return json
+        if column == 'contrato':
+            return str(row.contrato)
+        if column == 'seguro_enero':
+            return str(row.seguro_enero)
+        if column == 'seguro_febrero':
+            return str(row.seguro_febrero)
+        if column == 'seguro_marzo':
+            return str(row.seguro_marzo)
+        if column == 'seguro_abril':
+            return str(row.seguro_abril)
+        if column == 'seguro_mayo':
+            return str(row.seguro_mayo)
+        if column == 'seguro_junio':
+            return str(row.seguro_junio)
+        if column == 'seguro_julio':
+            return str(row.seguro_julio)
+        if column == 'seguro_agosto':
+            return str(row.seguro_agosto)
+        if column == 'seguro_septiembre':
+            return str(row.seguro_septiembre)
+        if column == 'seguro_octubre':
+            return str(row.seguro_octubre)
+        if column == 'seguro_noviembre':
+            return str(row.seguro_noviembre)
+        if column == 'seguro_diciembre':
+            return str(row.seguro_diciembre)
+        if column == 'fotocopia_cedula':
+            return str(row.fotocopia_cedula)
+        if column == 'antecedentes_judiciales':
+            return str(row.antecedentes_judiciales)
+        if column == 'antecedentes_contraloria':
+            return str(row.antecedentes_contraloria)
+        if column == 'foto':
+            return str(row.foto)
+        else:
+            return super(GestorFinancieroApoyoTableView,self).render_column(row,column)
 
 class GestorCalificacionTableView(BaseDatatableView):
     model = Gestor
