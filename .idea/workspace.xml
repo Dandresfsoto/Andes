@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/acceso_masivo_apoyo.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/acceso_masivo_apoyo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/acceso_radicados_apoyo.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/acceso_radicados_total_apoyo.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/listado_gestores_financiero_apoyo.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/listado_gestores_financiero_apoyo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/listado_radicados_calificacion_apoyo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/listado_total_radicados_calificacion_apoyo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/forms.py" afterPath="$PROJECT_DIR$/acceso/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/models.py" afterPath="$PROJECT_DIR$/acceso/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_gestor_financiero.html" afterPath="$PROJECT_DIR$/templates/tipo_gestor_financiero.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo_gestor_financiero.jade" afterPath="$PROJECT_DIR$/templates/tipo_gestor_financiero.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/urls.py" afterPath="$PROJECT_DIR$/acceso/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/urls.py" afterPath="$PROJECT_DIR$/financiero/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/urls.py" afterPath="$PROJECT_DIR$/gestor/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/radicado/urls.py" afterPath="$PROJECT_DIR$/radicado/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/views.py" afterPath="$PROJECT_DIR$/acceso/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/views.py" afterPath="$PROJECT_DIR$/financiero/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/views.py" afterPath="$PROJECT_DIR$/gestor/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/radicado/views.py" afterPath="$PROJECT_DIR$/radicado/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,13 +27,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/financiero/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47228914">
-              <caret line="24" column="83" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceso/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/acceso/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40963855">
+              <caret line="932" column="61" selection-start-line="932" selection-start-column="61" selection-end-line="932" selection-end-column="61" />
+              <folding>
+                <element signature="e#2560#2775#0" expanded="false" />
+                <element signature="e#3096#3371#0" expanded="false" />
+                <element signature="e#3772#4149#0" expanded="false" />
+                <element signature="e#4671#5060#0" expanded="false" />
+                <element signature="e#7089#7610#0" expanded="false" />
+                <element signature="e#8287#9632#0" expanded="false" />
+                <element signature="e#13620#16548#0" expanded="false" />
+                <element signature="e#19572#22471#0" expanded="false" />
+                <element signature="e#25469#25602#0" expanded="false" />
+                <element signature="e#26492#27744#0" expanded="false" />
+                <element signature="e#30152#34008#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -147,7 +158,6 @@
         <option value="$PROJECT_DIR$/static/js/acceso_masivo_apoyo.js" />
         <option value="$PROJECT_DIR$/acceso/models.py" />
         <option value="$PROJECT_DIR$/acceso/urls.py" />
-        <option value="$PROJECT_DIR$/acceso/views.py" />
         <option value="$PROJECT_DIR$/templates/tipo_gestor_financiero.jade" />
         <option value="$PROJECT_DIR$/templates/listado_gestores_financiero.jade" />
         <option value="$PROJECT_DIR$/templates/listado_gestores_financiero_apoyo.jade" />
@@ -157,6 +167,7 @@
         <option value="$PROJECT_DIR$/acceso/forms.py" />
         <option value="$PROJECT_DIR$/financiero/views.py" />
         <option value="$PROJECT_DIR$/financiero/urls.py" />
+        <option value="$PROJECT_DIR$/acceso/views.py" />
       </list>
     </option>
   </component>
@@ -238,7 +249,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="financiero" />
+              <option name="myItemId" value="acceso" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1460,42 +1471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2570694">
-          <caret line="753" column="23" selection-start-line="753" selection-start-column="23" selection-end-line="753" selection-end-column="23" />
-          <folding>
-            <element signature="e#46#91#0" expanded="false" />
-            <element signature="e#2560#2775#0" expanded="false" />
-            <element signature="e#2560#2775#0" expanded="false" />
-            <element signature="e#3096#3371#0" expanded="false" />
-            <element signature="e#3772#4149#0" expanded="false" />
-            <element signature="e#4671#5060#0" expanded="false" />
-            <element signature="e#7089#7610#0" expanded="false" />
-            <element signature="e#8287#9632#0" expanded="false" />
-            <element signature="e#8287#9632#0" expanded="false" />
-            <element signature="e#13620#16548#0" expanded="false" />
-            <element signature="e#13620#16548#0" expanded="false" />
-            <element signature="e#19572#22471#0" expanded="false" />
-            <element signature="e#25469#25602#0" expanded="false" />
-            <element signature="e#25469#25602#0" expanded="false" />
-            <element signature="e#25469#25602#0" expanded="false" />
-            <element signature="e#25469#25602#0" expanded="false" />
-            <element signature="e#26492#27744#0" expanded="false" />
-            <element signature="e#30152#34008#0" expanded="false" />
-            <element signature="e#34063#37929#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acceso/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6076555">
@@ -1656,10 +1631,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/financiero/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47228914">
-          <caret line="24" column="83" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40963855">
+          <caret line="932" column="61" selection-start-line="932" selection-start-column="61" selection-end-line="932" selection-end-column="61" />
+          <folding>
+            <element signature="e#2560#2775#0" expanded="false" />
+            <element signature="e#3096#3371#0" expanded="false" />
+            <element signature="e#3772#4149#0" expanded="false" />
+            <element signature="e#4671#5060#0" expanded="false" />
+            <element signature="e#7089#7610#0" expanded="false" />
+            <element signature="e#8287#9632#0" expanded="false" />
+            <element signature="e#13620#16548#0" expanded="false" />
+            <element signature="e#19572#22471#0" expanded="false" />
+            <element signature="e#25469#25602#0" expanded="false" />
+            <element signature="e#26492#27744#0" expanded="false" />
+            <element signature="e#30152#34008#0" expanded="false" />
           </folding>
         </state>
       </provider>

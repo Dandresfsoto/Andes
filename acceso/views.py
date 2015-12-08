@@ -930,7 +930,7 @@ def ejecutar_masivo_apoyo(request,pk,id_masivo):
             evidencia = EvidenciaApoyo.objects.filter(radicado__numero=fila[0].value).filter(actividad__id=fila[1].value)
 
             if len(evidencia) == 0:
-                proceso = "No existe el Radicado"
+                proceso = "No existe el Radicado o actividad"
             if len(evidencia) == 1:
                 #if evidencia[0].soporte == "":
                 #    e = evidencia[0]
