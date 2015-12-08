@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Ciclo,Componente, Modulo, Actividad, Encargado, Entregables, Valor, Evidencia, Corte, CargaMasiva, CargasMasivas
+from .models import CorteApoyo, EvidenciaApoyo, ValorApoyo
 from django.http import HttpResponse
 from conf import settings
 import openpyxl
@@ -259,3 +260,6 @@ admin.site.register(Evidencia,EvidenciaAdmin)
 admin.site.register(Corte)
 admin.site.register(CargaMasiva)
 admin.site.register(CargasMasivas,CargasMasivasAdmin)
+admin.site.register(CorteApoyo)
+admin.site.register(EvidenciaApoyo)
+admin.site.register(ValorApoyo)

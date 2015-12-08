@@ -118,7 +118,7 @@ class EvidenciaApoyo(models.Model):
     encargado = models.ForeignKey(Encargado)
     valor = models.ForeignKey(ValorApoyo)
     soporte = models.FileField(upload_to=content_file_name,blank=True)
-    corte = models.ForeignKey(Corte,blank=True,null=True)
+    corte = models.ForeignKey(CorteApoyo,blank=True,null=True)
     usuario = models.ForeignKey(User,blank=True,null=True)
     modificacion = models.DateTimeField(blank=True,null=True)
 
