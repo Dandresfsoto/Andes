@@ -1,7 +1,7 @@
 from .models import Gestor
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from acceso.models import Evidencia, Corte
+from acceso.models import Evidencia, Corte, EvidenciaApoyo
 from radicado.models import Radicado
 from django.db.models import Sum
 
@@ -334,6 +334,75 @@ class GestorCalificacionTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             actividades = Evidencia.objects.filter(gestor__id=item.id)
+            radicado = actividades.values_list('radicado',flat=True).distinct().count()
+            actividades_ejecutadas = actividades.exclude(corte = None)
+            actividades_sinEjecutar = actividades.filter(corte = None)
+            actividades_sinReportar = actividades.filter(corte = None).exclude(soporte="")
+            if actividades.count() != 0:
+                progreso = format((actividades_ejecutadas.count()*100.0)/actividades.count(), '.2f')
+            else:
+                progreso = 0
+
+
+            json_data.append([
+                item.id,
+                item.nombre,
+                item.cedula,
+                item.celular,
+                item.correo,
+                item.cargo,
+                item.profesion,
+                str(item.foto),
+                actividades.count(),
+                radicado,
+                actividades_ejecutadas.count(),
+                actividades_sinEjecutar.count(),
+                progreso,
+                actividades_sinReportar.count()
+            ])
+        return json_data
+
+class GestorCalificacionApoyoTableView(BaseDatatableView):
+    model = Gestor
+    columns = [
+        'id',
+        'nombre',
+        'cedula',
+        'celular',
+        'correo',
+        'cargo',
+        'profesion',
+        'foto',
+    ]
+
+    order_columns = [
+        'nombre'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.all().filter(region__id=self.kwargs['region']).filter(tipo__id=self.kwargs['tipo'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search.capitalize()})
+            q |= Q(**{'cedula__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'foto':
+            return str(row.foto)
+        else:
+            return super(GestorCalificacionApoyoTableView,self).render_column(row,column)
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            actividades = EvidenciaApoyo.objects.filter(gestor__id=item.id)
             radicado = actividades.values_list('radicado',flat=True).distinct().count()
             actividades_ejecutadas = actividades.exclude(corte = None)
             actividades_sinEjecutar = actividades.filter(corte = None)

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/admin.py" afterPath="$PROJECT_DIR$/acceso/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/models.py" afterPath="$PROJECT_DIR$/acceso/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/acceso_gestores_apoyo.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/listado_gestores_apoyo_calificacion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/urls.py" afterPath="$PROJECT_DIR$/gestor/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/views.py" afterPath="$PROJECT_DIR$/acceso/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestor/views.py" afterPath="$PROJECT_DIR$/gestor/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -29,43 +32,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/acceso/models.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceso/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+              <caret line="27" column="82" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceso/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.034483">
+              <caret line="99" column="48" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#272#648#0" expanded="false" />
-                <element signature="e#686#895#0" expanded="false" />
-                <element signature="e#928#1039#0" expanded="false" />
-                <element signature="e#1077#1188#0" expanded="false" />
-                <element signature="e#1222#1416#0" expanded="false" />
-                <element signature="e#1453#1700#0" expanded="false" />
-                <element signature="e#1737#1854#0" expanded="false" />
-                <element signature="e#1893#2015#0" expanded="false" />
-                <element signature="e#2048#2131#0" expanded="false" />
-                <element signature="e#2169#2292#0" expanded="false" />
-                <element signature="e#2325#2579#0" expanded="false" />
-                <element signature="e#2617#2871#0" expanded="false" />
-                <element signature="e#2908#3587#0" expanded="false" />
-                <element signature="e#3629#4323#0" expanded="false" />
-                <element signature="e#4362#4778#0" expanded="false" />
-                <element signature="e#4817#5108#0" expanded="false" />
+                <element signature="e#2504#2719#0" expanded="false" />
+                <element signature="e#2769#2986#0" expanded="false" />
+                <element signature="e#3040#3315#0" expanded="false" />
+                <element signature="e#3716#4093#0" expanded="false" />
+                <element signature="e#4615#5004#0" expanded="false" />
+                <element signature="e#5071#5742#0" expanded="false" />
+                <element signature="e#7007#8352#0" expanded="false" />
+                <element signature="e#8408#9587#0" expanded="false" />
+                <element signature="e#9635#12563#0" expanded="false" />
+                <element signature="e#12600#15499#0" expanded="false" />
+                <element signature="e#15550#15683#0" expanded="false" />
+                <element signature="e#17449#17908#0" expanded="false" />
+                <element signature="e#17957#21813#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+      <file leaf-file-name="acceso_gestores_apoyo.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/acceso_gestores_apoyo.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8779904">
-              <caret line="264" column="31" selection-start-line="264" selection-start-column="31" selection-end-line="264" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="74" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listado_gestores_apoyo_calificacion.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_apoyo_calificacion.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32535884">
+              <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <element signature="e#1884#6139#0" expanded="false" />
-                <element signature="e#6285#10476#0" expanded="false" />
+                <element signature="n#!!block;n#format#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gestor/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="128" selection-start-line="9" selection-start-column="128" selection-end-line="9" selection-end-column="128" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gestor/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="399" column="59" selection-start-line="399" selection-start-column="59" selection-end-line="399" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#3965#8591#0" expanded="false" />
+                <element signature="e#8651#10865#0" expanded="false" />
+                <element signature="e#13217#16209#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -88,10 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/formulario_agregar_soporte_tipo2.jade" />
-        <option value="$PROJECT_DIR$/templates/tipo1_formador_formacion.jade" />
-        <option value="$PROJECT_DIR$/templates/tipo2_formador_formacion.jade" />
-        <option value="$PROJECT_DIR$/static/js/tipo2_formador_formacion.js" />
         <option value="$PROJECT_DIR$/static/js/tipo1_formador_formacion.js" />
         <option value="$PROJECT_DIR$/formacion/migrations/0023_auto_20151130_0901.py" />
         <option value="$PROJECT_DIR$/formacion/migrations/0022_auto_20151125_1738.py" />
@@ -112,7 +150,6 @@
         <option value="$PROJECT_DIR$/static/js/escuela_tic_participantes.js" />
         <option value="$PROJECT_DIR$/templates/acceso_tipo.jade" />
         <option value="$PROJECT_DIR$/acceso/urls.py" />
-        <option value="$PROJECT_DIR$/acceso/views.py" />
         <option value="$PROJECT_DIR$/static/js/listado_municipios_calificacion_apoyo.js" />
         <option value="$PROJECT_DIR$/municipio/urls.py" />
         <option value="$PROJECT_DIR$/municipio/views.py" />
@@ -139,6 +176,11 @@
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/acceso/models.py" />
         <option value="$PROJECT_DIR$/acceso/admin.py" />
+        <option value="$PROJECT_DIR$/acceso/views.py" />
+        <option value="$PROJECT_DIR$/gestor/urls.py" />
+        <option value="$PROJECT_DIR$/gestor/views.py" />
+        <option value="$PROJECT_DIR$/templates/acceso_gestores_apoyo.jade" />
+        <option value="$PROJECT_DIR$/static/js/listado_gestores_apoyo_calificacion.js" />
       </list>
     </option>
   </component>
@@ -206,7 +248,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="acceso" />
+              <option name="myItemId" value="gestor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1099,62 +1141,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/formulario_agregar_soporte_tipo1.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55263156">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/formulario_participante.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/tipo2_formador_listado.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/acceso_gestores.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.66746414">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_calificacion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40669855">
-          <caret line="53" column="75" selection-start-line="53" selection-start-column="75" selection-end-line="53" selection-end-column="75" />
-          <folding>
-            <element signature="n#!!block;n#format#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gestor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/acceso.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1492,36 +1478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4832905">
-          <caret line="391" column="21" selection-start-line="391" selection-start-column="6" selection-end-line="391" selection-end-column="21" />
-          <folding>
-            <element signature="e#2504#2719#0" expanded="false" />
-            <element signature="e#2769#2986#0" expanded="false" />
-            <element signature="e#3040#3315#0" expanded="false" />
-            <element signature="e#3716#4093#0" expanded="false" />
-            <element signature="e#4609#4998#0" expanded="false" />
-            <element signature="e#5065#5736#0" expanded="false" />
-            <element signature="e#7001#8346#0" expanded="false" />
-            <element signature="e#8402#9581#0" expanded="false" />
-            <element signature="e#9629#12557#0" expanded="false" />
-            <element signature="e#12594#15493#0" expanded="false" />
-            <element signature="e#15544#15677#0" expanded="false" />
-            <element signature="e#17443#17902#0" expanded="false" />
-            <element signature="e#17951#21807#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38995215">
-          <caret line="21" column="80" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/diplomado/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1584,9 +1540,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8779904">
+          <caret line="264" column="31" selection-start-line="264" selection-start-column="31" selection-end-line="264" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#1884#6139#0" expanded="false" />
+            <element signature="e#6285#10476#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/acceso/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.40669855">
           <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -1610,14 +1578,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8779904">
-          <caret line="264" column="31" selection-start-line="264" selection-start-column="31" selection-end-line="264" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="82" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325359">
+          <caret line="126" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="507" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/acceso_gestores.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38995215">
+          <caret line="22" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.034483">
+          <caret line="99" column="48" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#1884#6139#0" expanded="false" />
-            <element signature="e#6285#10476#0" expanded="false" />
+            <element signature="e#2504#2719#0" expanded="false" />
+            <element signature="e#2769#2986#0" expanded="false" />
+            <element signature="e#3040#3315#0" expanded="false" />
+            <element signature="e#3716#4093#0" expanded="false" />
+            <element signature="e#4615#5004#0" expanded="false" />
+            <element signature="e#5071#5742#0" expanded="false" />
+            <element signature="e#7007#8352#0" expanded="false" />
+            <element signature="e#8408#9587#0" expanded="false" />
+            <element signature="e#9635#12563#0" expanded="false" />
+            <element signature="e#12600#15499#0" expanded="false" />
+            <element signature="e#15550#15683#0" expanded="false" />
+            <element signature="e#17449#17908#0" expanded="false" />
+            <element signature="e#17957#21813#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_calificacion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.569378">
+          <caret line="57" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="94" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!block;n#format#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="128" selection-start-line="9" selection-start-column="128" selection-end-line="9" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="399" column="59" selection-start-line="399" selection-start-column="59" selection-end-line="399" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#3965#8591#0" expanded="false" />
+            <element signature="e#8651#10865#0" expanded="false" />
+            <element signature="e#13217#16209#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/acceso_gestores_apoyo.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="74" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/listado_gestores_apoyo_calificacion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32535884">
+          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!block;n#format#0" expanded="false" />
           </folding>
         </state>
       </provider>

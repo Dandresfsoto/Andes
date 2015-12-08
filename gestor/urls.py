@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^datatable/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.GestorTableView.as_view()),name='tabla_gestores'),
     url(r'^financiero/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.GestorFinancieroTableView.as_view())),
     url(r'^calificacion/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.GestorCalificacionTableView.as_view())),
+    url(r'^calificacion_apoyo/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.GestorCalificacionApoyoTableView.as_view())),
     url(r'^corte/(?P<region>\w+)/(?P<corte>\w+)/(?P<gestor>\w+)', login_required(views.GestorCorteEvidenciasTableView.as_view())),
 ]

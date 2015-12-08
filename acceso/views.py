@@ -97,7 +97,7 @@ class AccesoCalificacionView(AccesoMixin,TemplateView):
         return super(AccesoCalificacionView,self).get_context_data(**kwargs)
 
 class AccesoCalificacionApoyoView(AccesoMixin,TemplateView):
-    template_name = 'acceso_gestores.html'
+    template_name = 'acceso_gestores_apoyo.html'
 
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
