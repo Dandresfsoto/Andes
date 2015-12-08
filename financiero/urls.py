@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^gestores/apoyo/$', login_required(views.GestorTipoApoyoView.as_view())),
     url(r'^gestores/apoyo/nuevo/$', login_required(views.NuevoGestorApoyoView.as_view())),
 
-    url(r'^gestores/apoyo/corte/$', login_required(views.NuevoCorteView.as_view())),
+    url(r'^gestores/apoyo/corte/$', login_required(views.NuevoCorteApoyoView.as_view())),
     url(r'^gestores/apoyo/reporte/$', login_required(views.reporte_quincenal_financiero_apoyo)),
 
 
