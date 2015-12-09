@@ -944,85 +944,78 @@ class ParticipantesActividadListadoTableView(BaseDatatableView):
         return json_data
 
 class ParticipantesDocentesActividadListadoTableView(BaseDatatableView):
-    model = ParticipanteDocente
+    model = EvidenciaDocentes
     columns = [
         'id',
-        'formador',
-        'grupo',
-        'radicado',
-        'nombres',
-        'apellidos',
-        'cedula',
-        'correo',
-        'telefono_fijo',
-        'celular',
-        'area',
-        'grado',
-        'tipo_beneficiario',
-        'genero',
-        'nombre_proyecto',
-        'definicion_problema',
-        'area_proyecto',
-        'competencia',
-        'grupo_poblacional',
+        'soporte',
+        'entregable',
+        'participante',
+        'valor',
+        'corte'
     ]
 
     order_columns = [
-        'nombres',
-        'nombres',
-        'nombres',
-        'nombres',
+        'id',
+        'id',
+        'id',
+        'id'
     ]
 
     def get_initial_queryset(self):
         if not self.model:
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
-        x = EvidenciaDocentes.objects.filter(soporte__entregable__id=self.kwargs['id_actividad']).exclude(soporte__soporte="").values_list("participante__id",flat=True)
-        return self.model.objects.filter(formador__region__id=self.kwargs['region']).filter(id__in = x)
+        return self.model.objects.filter(participante__formador__region__id=self.kwargs['region']).filter(soporte__entregable__id=self.kwargs['id_actividad']).exclude(soporte__soporte="")
 
     def filter_queryset(self, qs):
         search = self.request.GET.get(u'search[value]', None)
         q = Q()
         if search:
-            q |= Q(**{'cedula__icontains' : search})
-            q |= Q(**{'nombres__icontains' : search.capitalize()})
-            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            q |= Q(**{'participante__cedula__icontains' : search})
+            q |= Q(**{'participante__nombres__icontains' : search})
+            q |= Q(**{'participante__apellidos__icontains' : search})
             qs = qs.filter(q)
         return qs
 
     def render_column(self, row, column):
-        if column == 'formador':
-            return str(row.formador.nombre)
-        if column == 'grupo':
-            return str(row.grupo.nombre)
+        if column == 'soporte':
+            return str(row.soporte)
+        if column == 'entregable':
+            return str(row.entregable)
+        if column == 'participante':
+            return str(row.participante)
+        if column == 'valor':
+            return str(row.valor)
+        if column == 'corte':
+            return str(row.corte)
         else:
             return super(ParticipantesDocentesActividadListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
         json_data = []
         for item in qs:
-            soporte = EvidenciaDocentes.objects.filter(participante__id=item.id).get(entregable__id=self.kwargs['id_actividad']).soporte
+            #soporte = EvidenciaDocentes.objects.filter(participante__id=item.id).get(entregable__id=self.kwargs['id_actividad']).soporte
             json_data.append([
-                item.id,
-                unicode(item.formador),
-                unicode(item.grupo),
-                unicode(item.radicado),
-                item.nombres,
-                item.apellidos,
-                item.cedula,
-                item.correo,
-                item.telefono_fijo,
-                item.celular,
-                unicode(item.area),
-                unicode(item.grado),
-                item.tipo_beneficiario,
-                unicode(item.genero),
-                item.nombre_proyecto,
-                item.definicion_problema,
-                unicode(item.area_proyecto),
-                unicode(item.competencia),
-                unicode(item.grupo_poblacional),
-                unicode(soporte.soporte)
+                item.participante.id,
+                unicode(item.participante.formador),
+                unicode(item.participante.grupo),
+                unicode(item.participante.radicado),
+                item.participante.nombres,
+                item.participante.apellidos,
+                item.participante.cedula,
+                item.participante.correo,
+                item.participante.telefono_fijo,
+                item.participante.celular,
+                unicode(item.participante.area),
+                unicode(item.participante.grado),
+                item.participante.tipo_beneficiario,
+                unicode(item.participante.genero),
+                item.participante.nombre_proyecto,
+                item.participante.definicion_problema,
+                unicode(item.participante.area_proyecto),
+                unicode(item.participante.competencia),
+                unicode(item.participante.grupo_poblacional),
+                "c"
+                #unicode(soporte.soporte)
             ])
 
         return json_data
