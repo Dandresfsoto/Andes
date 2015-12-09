@@ -40,10 +40,6 @@ $(document).ready(function() {
             {
                 "data": 2,
                 "orderable":false,
-            },
-            {
-                "data": 4,
-                "orderable":false,
             }
         ],
         "order": [[1, 'asc']],
