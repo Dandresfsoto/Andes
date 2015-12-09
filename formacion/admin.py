@@ -34,7 +34,6 @@ admin.site.register(Masivo)
 admin.site.register(Actividad)
 admin.site.register(ActividadDocentes)
 admin.site.register(Entregable)
-admin.site.register(EntregableDocentes)
 admin.site.register(Grupo)
 admin.site.register(GrupoDocentes)
 admin.site.register(SoporteEntregableEscuelaTic)
@@ -707,6 +706,22 @@ class CargasMasivasAdmin(admin.ModelAdmin):
     actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes]
 
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
+
+def asignacion_total(modeladmin,request,queryset):
+    for entregable in queryset:
+        evidencias = EvidenciaDocentes.objects.all().filter(entregable__id=entregable.id).filter(soporte=None)
+        for evidencia in evidencias:
+            soporte = SoporteEntregableDocente.objects.filter(grupo__id=evidencia.participante.grupo.id).get(entregable__id=entregable.id)
+            evidencia.soporte = soporte
+            evidencia.save()
+
+asignacion_total.short_description = "Asignar todos los participantes del grupo"
+
+class EntregableDocentesAdmin(admin.ModelAdmin):
+    list_display = ['nombre','actividad']
+    ordering = ['id']
+    actions = [asignacion_total]
+admin.site.register(EntregableDocentes,EntregableDocentesAdmin)
 
 
 # Register your models here.
