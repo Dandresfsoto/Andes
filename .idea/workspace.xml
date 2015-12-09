@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/financiero/urls.py" afterPath="$PROJECT_DIR$/financiero/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formador/views.py" afterPath="$PROJECT_DIR$/formador/views.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,42 +27,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/financiero/urls.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diplomado/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59518075">
-              <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="87" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="87" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/financiero/views.py">
+        <entry file="file://$PROJECT_DIR$/diplomado/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.243243">
-              <caret line="207" column="31" selection-start-line="207" selection-start-column="31" selection-end-line="207" selection-end-column="31" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="92" column="41" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="41" />
               <folding>
-                <element signature="e#46#115#0" expanded="true" />
-                <element signature="e#7618#8596#0" expanded="false" />
-                <element signature="e#14690#17456#0" expanded="false" />
+                <element signature="e#437#724#0" expanded="false" />
+                <element signature="e#771#1194#0" expanded="false" />
+                <element signature="e#1236#1505#0" expanded="false" />
+                <element signature="e#1871#2174#0" expanded="false" />
+                <element signature="e#3810#4109#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/acceso/forms.py">
+      <file leaf-file-name="docentes_actividades.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/docentes_actividades.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+              <caret line="21" column="55" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formador/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.448276">
+              <caret line="23" column="115" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="115" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/formador/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5518135">
+              <caret line="848" column="41" selection-start-line="848" selection-start-column="41" selection-end-line="848" selection-end-column="41" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
-                <element signature="e#594#685#0" expanded="false" />
-                <element signature="e#725#809#0" expanded="false" />
-                <element signature="e#989#1084#0" expanded="false" />
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#424#4022#0" expanded="false" />
+                <element signature="e#4084#7106#0" expanded="false" />
+                <element signature="e#7161#8711#0" expanded="false" />
+                <element signature="e#8771#10331#0" expanded="false" />
+                <element signature="e#10393#11779#0" expanded="false" />
+                <element signature="e#13841#14962#0" expanded="false" />
+                <element signature="e#15024#16424#0" expanded="false" />
+                <element signature="e#16481#18405#0" expanded="false" />
+                <element signature="e#18472#20011#0" expanded="false" />
+                <element signature="e#20070#21603#0" expanded="false" />
+                <element signature="e#21168#21603#0" expanded="false" />
+                <element signature="e#21663#22999#0" expanded="false" />
+                <element signature="e#24549#27109#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="293" column="57" selection-start-line="293" selection-start-column="57" selection-end-line="293" selection-end-column="57" />
+              <folding>
+                <element signature="e#3914#5831#0" expanded="false" />
+                <element signature="e#5876#6259#0" expanded="false" />
+                <element signature="e#6445#6554#0" expanded="false" />
+                <element signature="e#6588#6699#0" expanded="false" />
+                <element signature="e#6739#6860#0" expanded="false" />
+                <element signature="e#6904#7031#0" expanded="false" />
+                <element signature="e#9618#9862#0" expanded="false" />
+                <element signature="e#9895#9978#0" expanded="false" />
+                <element signature="e#10018#10236#0" expanded="false" />
+                <element signature="e#10269#10554#0" expanded="false" />
+                <element signature="e#10594#10887#0" expanded="false" />
+                <element signature="e#10921#11298#0" expanded="false" />
+                <element signature="e#11353#11665#0" expanded="false" />
+                <element signature="e#12098#12455#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -113,7 +167,6 @@
         <option value="$PROJECT_DIR$/static/js/tipo1_formador_listado.js" />
         <option value="$PROJECT_DIR$/static/js/acceso_masivo.js" />
         <option value="$PROJECT_DIR$/static/js/docentes_actividades_filtro.js" />
-        <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/acceso/admin.py" />
         <option value="$PROJECT_DIR$/templates/acceso_gestores_apoyo.jade" />
         <option value="$PROJECT_DIR$/static/js/listado_gestores_apoyo_calificacion.js" />
@@ -137,6 +190,7 @@
         <option value="$PROJECT_DIR$/acceso/views.py" />
         <option value="$PROJECT_DIR$/financiero/views.py" />
         <option value="$PROJECT_DIR$/financiero/urls.py" />
+        <option value="$PROJECT_DIR$/formador/views.py" />
       </list>
     </option>
   </component>
@@ -204,21 +258,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="financiero" />
+              <option name="myItemId" value="formacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1117,42 +1157,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/docentes_actividades.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26794258">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/docentes_actividades.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.040669855">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33222038">
-          <caret line="206" column="24" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="24" />
-          <folding>
-            <element signature="e#3914#5831#0" expanded="false" />
-            <element signature="e#5876#6259#0" expanded="false" />
-            <element signature="e#6445#6554#0" expanded="false" />
-            <element signature="e#6588#6699#0" expanded="false" />
-            <element signature="e#6739#6860#0" expanded="false" />
-            <element signature="e#6904#7031#0" expanded="false" />
-            <element signature="e#9171#9282#0" expanded="false" />
-            <element signature="e#9618#9862#0" expanded="false" />
-            <element signature="e#9895#9978#0" expanded="false" />
-            <element signature="e#10018#10236#0" expanded="false" />
-            <element signature="e#10594#10887#0" expanded="false" />
-            <element signature="e#10921#11298#0" expanded="false" />
-            <element signature="e#11353#11665#0" expanded="false" />
-            <element signature="e#12098#12455#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1211,65 +1220,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diplomado/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="115" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/diplomado/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="42" selection-start-line="108" selection-start-column="6" selection-end-line="108" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-            <element signature="e#437#724#0" expanded="false" />
-            <element signature="e#771#1194#0" expanded="false" />
-            <element signature="e#1236#1505#0" expanded="false" />
-            <element signature="e#1871#2174#0" expanded="false" />
-            <element signature="e#3810#4109#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formador/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.068966">
-          <caret line="26" column="160" selection-start-line="26" selection-start-column="114" selection-end-line="26" selection-end-column="160" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/docentes_actividades_filtro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formador/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.688946">
-          <caret line="1018" column="40" selection-start-line="1018" selection-start-column="40" selection-end-line="1018" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#424#4022#0" expanded="false" />
-            <element signature="e#4084#7106#0" expanded="false" />
-            <element signature="e#7161#8711#0" expanded="false" />
-            <element signature="e#8771#10331#0" expanded="false" />
-            <element signature="e#10393#11779#0" expanded="false" />
-            <element signature="e#13841#14962#0" expanded="false" />
-            <element signature="e#15024#16424#0" expanded="false" />
-            <element signature="e#16481#18405#0" expanded="false" />
-            <element signature="e#18472#20011#0" expanded="false" />
-            <element signature="e#20070#21603#0" expanded="false" />
-            <element signature="e#21168#21603#0" expanded="false" />
-            <element signature="e#21663#22999#0" expanded="false" />
-            <element signature="e#24488#27048#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1573,19 +1528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#594#685#0" expanded="false" />
-            <element signature="e#725#809#0" expanded="false" />
-            <element signature="e#989#1084#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acceso/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.862069">
@@ -1614,9 +1556,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/financiero/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18554217">
+          <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/financiero/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.243243">
+        <state vertical-scroll-proportion="0.5132275">
           <caret line="207" column="31" selection-start-line="207" selection-start-column="31" selection-end-line="207" selection-end-column="31" />
           <folding>
             <element signature="e#46#115#0" expanded="true" />
@@ -1626,12 +1578,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/financiero/urls.py">
+    <entry file="file://$PROJECT_DIR$/acceso/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59518075">
-          <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.46746987">
+          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#594#685#0" expanded="false" />
+            <element signature="e#725#809#0" expanded="false" />
+            <element signature="e#989#1084#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diplomado/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="87" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diplomado/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="92" column="41" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="41" />
+          <folding>
+            <element signature="e#437#724#0" expanded="false" />
+            <element signature="e#771#1194#0" expanded="false" />
+            <element signature="e#1236#1505#0" expanded="false" />
+            <element signature="e#1871#2174#0" expanded="false" />
+            <element signature="e#3810#4109#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/docentes_actividades.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formador/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.448276">
+          <caret line="23" column="115" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="293" column="57" selection-start-line="293" selection-start-column="57" selection-end-line="293" selection-end-column="57" />
+          <folding>
+            <element signature="e#3914#5831#0" expanded="false" />
+            <element signature="e#5876#6259#0" expanded="false" />
+            <element signature="e#6445#6554#0" expanded="false" />
+            <element signature="e#6588#6699#0" expanded="false" />
+            <element signature="e#6739#6860#0" expanded="false" />
+            <element signature="e#6904#7031#0" expanded="false" />
+            <element signature="e#9618#9862#0" expanded="false" />
+            <element signature="e#9895#9978#0" expanded="false" />
+            <element signature="e#10018#10236#0" expanded="false" />
+            <element signature="e#10269#10554#0" expanded="false" />
+            <element signature="e#10594#10887#0" expanded="false" />
+            <element signature="e#10921#11298#0" expanded="false" />
+            <element signature="e#11353#11665#0" expanded="false" />
+            <element signature="e#12098#12455#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formador/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5518135">
+          <caret line="848" column="41" selection-start-line="848" selection-start-column="41" selection-end-line="848" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#424#4022#0" expanded="false" />
+            <element signature="e#4084#7106#0" expanded="false" />
+            <element signature="e#7161#8711#0" expanded="false" />
+            <element signature="e#8771#10331#0" expanded="false" />
+            <element signature="e#10393#11779#0" expanded="false" />
+            <element signature="e#13841#14962#0" expanded="false" />
+            <element signature="e#15024#16424#0" expanded="false" />
+            <element signature="e#16481#18405#0" expanded="false" />
+            <element signature="e#18472#20011#0" expanded="false" />
+            <element signature="e#20070#21603#0" expanded="false" />
+            <element signature="e#21168#21603#0" expanded="false" />
+            <element signature="e#21663#22999#0" expanded="false" />
+            <element signature="e#24549#27109#0" expanded="false" />
           </folding>
         </state>
       </provider>
