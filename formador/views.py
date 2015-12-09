@@ -4,6 +4,11 @@ from django.db.models import Q
 from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, Actividad, EvidenciaEscuelaTic, Entregable
 from formacion.models import GrupoDocentes, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes
 
+def unique(seq):
+        seen = set()
+        seen_add = seen.add
+        return [x for x in seq if not (x in seen or seen_add(x))]
+
 class FormadorTableView(BaseDatatableView):
     model = Formador
     columns = [
@@ -842,17 +847,18 @@ class ActividadesDocentesListadoTableView(BaseDatatableView):
         else:
             return super(ActividadesDocentesListadoTableView,self).render_column(row,column)
 
+
+
     def prepare_results(self, qs):
         json_data = []
         for item in qs:
-            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region=self.kwargs['region']).filter(soporte__entregable__id=item.id).exclude(soporte__soporte="").values_list("participante__id",flat=True)
-            cantidad = len(set(cantidad))
+            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region=self.kwargs['region']).filter(soporte__entregable__id=item.id).exclude(soporte__soporte="").values_list("participante__id",flat=True).distinct()
             json_data.append([
                 item.id,
                 item.actividad.nombre,
                 item.nombre,
                 item.descripcion,
-                cantidad
+                cantidad.count()
             ])
 
         return json_data
