@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_gestores_cpe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_cpe.jade" afterPath="$PROJECT_DIR$/templates/listado_gestores_cpe.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/region/urls.py" afterPath="$PROJECT_DIR$/region/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/region/views.py" afterPath="$PROJECT_DIR$/region/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/region/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="111" selection-start-line="33" selection-start-column="111" selection-end-line="33" selection-end-column="111" />
+              <caret line="23" column="119" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -44,12 +45,36 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/region/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.93782383">
-              <caret line="331" column="51" selection-start-line="331" selection-start-column="51" selection-end-line="331" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.7487047">
+              <caret line="243" column="78" selection-start-line="243" selection-start-column="78" selection-end-line="243" selection-end-column="78" />
               <folding>
                 <element signature="e#46#87#0" expanded="true" />
-                <element signature="e#10854#11459#0" expanded="false" />
+                <element signature="e#2280#2620#0" expanded="false" />
+                <element signature="e#2665#3003#0" expanded="false" />
+                <element signature="e#3043#3377#0" expanded="false" />
+                <element signature="e#3427#3780#0" expanded="false" />
+                <element signature="e#3826#4173#0" expanded="false" />
+                <element signature="e#4228#4685#0" expanded="false" />
+                <element signature="e#4735#5042#0" expanded="false" />
+                <element signature="e#5461#5737#0" expanded="false" />
+                <element signature="e#5793#6126#0" expanded="false" />
+                <element signature="e#6184#6467#0" expanded="false" />
+                <element signature="e#6533#6832#0" expanded="false" />
+                <element signature="e#6902#7218#0" expanded="false" />
+                <element signature="e#7249#7899#0" expanded="false" />
+                <element signature="e#10005#10598#0" expanded="false" />
+                <element signature="e#11291#14182#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listado_gestores_cpe.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/listado_gestores_cpe.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/js/listado_municipios_calificacion_apoyo.js" />
         <option value="$PROJECT_DIR$/municipio/urls.py" />
         <option value="$PROJECT_DIR$/municipio/views.py" />
         <option value="$PROJECT_DIR$/templates/acceso_municipios_apoyo.jade" />
@@ -140,6 +164,7 @@
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/templates/acceso_cpe.jade" />
         <option value="$PROJECT_DIR$/static/js/listado_gestores_cpe.js" />
+        <option value="$PROJECT_DIR$/templates/listado_gestores_cpe.jade" />
         <option value="$PROJECT_DIR$/region/urls.py" />
         <option value="$PROJECT_DIR$/region/views.py" />
       </list>
@@ -211,53 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gestor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="acceso" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1283,18 +1262,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="726" />
+      <option name="time" value="727" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/acceso_radicados.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/listado_radicados_calificacion.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.569378">
@@ -1738,16 +1710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/region/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="111" selection-start-line="33" selection-start-column="111" selection-end-line="33" selection-end-column="111" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gestor/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1776,13 +1738,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listado_gestores_cpe.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/region/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="119" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/region/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.93782383">
-          <caret line="331" column="51" selection-start-line="331" selection-start-column="51" selection-end-line="331" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.7487047">
+          <caret line="243" column="78" selection-start-line="243" selection-start-column="78" selection-end-line="243" selection-end-column="78" />
           <folding>
             <element signature="e#46#87#0" expanded="true" />
-            <element signature="e#10854#11459#0" expanded="false" />
+            <element signature="e#2280#2620#0" expanded="false" />
+            <element signature="e#2665#3003#0" expanded="false" />
+            <element signature="e#3043#3377#0" expanded="false" />
+            <element signature="e#3427#3780#0" expanded="false" />
+            <element signature="e#3826#4173#0" expanded="false" />
+            <element signature="e#4228#4685#0" expanded="false" />
+            <element signature="e#4735#5042#0" expanded="false" />
+            <element signature="e#5461#5737#0" expanded="false" />
+            <element signature="e#5793#6126#0" expanded="false" />
+            <element signature="e#6184#6467#0" expanded="false" />
+            <element signature="e#6533#6832#0" expanded="false" />
+            <element signature="e#6902#7218#0" expanded="false" />
+            <element signature="e#7249#7899#0" expanded="false" />
+            <element signature="e#10005#10598#0" expanded="false" />
+            <element signature="e#11291#14182#0" expanded="false" />
           </folding>
         </state>
       </provider>

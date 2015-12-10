@@ -133,6 +133,15 @@ class CpeGestorView(CpeMixin,TemplateView):
         kwargs['ID_TIPO'] = 1
         return super(CpeGestorView,self).get_context_data(**kwargs)
 
+class CpeGestorApoyoView(CpeMixin,TemplateView):
+    template_name = 'listado_gestores_cpe.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ID_TIPO'] = 2
+        return super(CpeGestorApoyoView,self).get_context_data(**kwargs)
+
 class CpeFormadorView(CpeMixin,TemplateView):
     template_name = 'tipo_formador_cpe.html'
 
@@ -175,79 +184,64 @@ class CpeAdministrativoObligacionesView(CpeMixin,TemplateView):
         return super(CpeAdministrativoObligacionesView,self).get_context_data(**kwargs)
 
 def hv(request,pk,tipo):
-    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Hojas de Vida "+fecha
+    zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Formadores\\Hojas de Vida\\'+tipo+'\\'+zip_filename, mode='w')
 
     for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.hv)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
-            zf.write(soporte,os.path.join('Hoja de Vida',formador.nombre,fname))
+            zf.write(soporte,os.path.join('Hoja de Vida',encode_cp437(formador.nombre),encode_cp437(fname)))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    os.remove("C://Temp//"+zip_filename)
-    return resp
+    return HttpResponseRedirect('/media/Formadores/Hojas de Vida/'+tipo+'/'+zip_filename)
 
 def contratos(request,pk,tipo):
-    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
-    zip_subdir = "Contratos "+fecha
+    zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Formadores\\Contratos\\'+tipo+'\\'+zip_filename, mode='w')
 
     for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.contrato)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
-            zf.write(soporte,os.path.join('Contratos',formador.nombre,fname))
+            zf.write(soporte,os.path.join('Contratos',encode_cp437(formador.nombre),encode_cp437(fname)))
 
     zf.close()
-    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    os.remove("C://Temp//"+zip_filename)
-    return resp
+    return HttpResponseRedirect('/media/Formadores/Contratos/'+tipo+'/'+zip_filename)
 
 def hvFuncionarios(request,pk,eje):
-    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
-    zip_subdir = "Hojas de Vida "+fecha
+    zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Funcionarios\\Hojas de Vida\\'+zip_filename, mode='w')
 
     for funcionario in funcionarios:
         soporte = settings.MEDIA_ROOT+'/'+str(funcionario.hv)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
-            zf.write(soporte,os.path.join('Hoja de Vida',funcionario.nombre,fname))
+            zf.write(soporte,os.path.join('Hoja de Vida',encode_cp437(funcionario.nombre),encode_cp437(fname)))
 
     zf.close()
-    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    os.remove("C://Temp//"+zip_filename)
-    return resp
+    return HttpResponseRedirect('/media/Funcionarios/Hojas de Vida/'+zip_filename)
 
 def contratosFuncionarios(request,pk,eje):
-    fecha = datetime.datetime.now().strftime("%d-%m-%Y %I_%M_%S %p")
     funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
-    zip_subdir = "Contratos "+fecha
+    zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile("C:/Temp/"+zip_filename, "w")
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Funcionarios\\Contratos\\'+zip_filename, mode='w')
 
     for funcionario in funcionarios:
         soporte = settings.MEDIA_ROOT+'/'+str(funcionario.contrato)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
-            zf.write(soporte,os.path.join('Contratos',funcionario.nombre,fname))
+            zf.write(soporte,os.path.join('Contratos',encode_cp437(funcionario.nombre),encode_cp437(fname)))
 
     zf.close()
-    resp = HttpResponse(open("C://Temp//"+zip_filename, 'rb').read(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    return resp
+    return HttpResponseRedirect('/media/Funcionarios/Contratos/'+zip_filename)
 
 def hvGestores(request,pk,tipo):
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
@@ -280,7 +274,7 @@ def contratosGestores(request,pk,tipo):
 
 def ruteoGestores(request,pk,tipo):
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
+    response['Content-Disposition'] = 'attachment; filename=Ruteo Gestores.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
 
     logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
