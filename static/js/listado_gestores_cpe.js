@@ -213,13 +213,19 @@ $(document).ready(function() {
             {
                 text: 'Hojas de Vida',
                 action: function ( e, dt, node, config ) {
-                    location.replace(location.href+"hv");
+                    location.replace(location.href+"hv/"+$('#id_tipo').val());
                 }
             },
             {
                 text: 'Contratos',
                 action: function ( e, dt, node, config ) {
-                    location.replace(location.href+"contratos");
+                    location.replace(location.href+"contratos/"+$('#id_tipo').val());
+                }
+            },
+            {
+                text: 'Ruteo',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"ruteo/"+$('#id_tipo').val());
                 }
             }
         ],

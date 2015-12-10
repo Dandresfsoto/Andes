@@ -1,10 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.views.generic import ListView
 from django.views.generic import TemplateView
 from .models import Region
 from eje.models import Eje
 from formador.models import Formador
 from mixins.mixins import RegionMixin, AndesMixin, CpeMixin
-
+from django.shortcuts import HttpResponseRedirect
 from django.http import HttpResponse
 import os
 import zipfile
@@ -14,6 +16,34 @@ from django.conf import settings
 from funcionario.models import Funcionario
 from gestor.models import Gestor
 import datetime
+from string import maketrans
+import time
+import datetime
+from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
+import openpyxl
+
+
+t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+co = Style(font=Font(name='Calibri',size=11),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+v = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='E4F5E1',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+vc = Style(font=Font(name='Calibri',size=12,bold=False,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
+       fill=PatternFill(fill_type='solid',start_color='D4F5CE',end_color='FF000000'),
+       alignment=Alignment(horizontal='center',vertical='center',wrap_text=True),
+     number_format='General')
+
+def encode_cp437(s, _noqmarks=maketrans('?', '_')):
+    return s.encode('cp437', errors='replace').translate(_noqmarks)
 
 class InicioView(ListView):
     template_name = 'inicio.html'
@@ -99,7 +129,7 @@ class CpeGestorView(CpeMixin,TemplateView):
     def get_context_data(self, **kwargs):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
-        kwargs['ID_TIPO'] = self.kwargs['tipo']
+        kwargs['ID_TIPO'] = 1
         return super(CpeGestorView,self).get_context_data(**kwargs)
 
 class CpeFormadorView(CpeMixin,TemplateView):
@@ -222,34 +252,115 @@ def hvGestores(request,pk,tipo):
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\HV\\'+tipo+'\\'+zip_filename, mode='w')
 
     for gestor in gestores:
         soporte = settings.MEDIA_ROOT+'/'+str(gestor.hv)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
-            zf.write(soporte,os.path.join('Hoja de Vida',gestor.nombre,fname))
+            zf.write(soporte,os.path.join('Hoja de Vida',encode_cp437(gestor.nombre),encode_cp437(fname)))
 
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    return resp
+    return HttpResponseRedirect('/media/HV/'+tipo+'/'+zip_filename)
 
 def contratosGestores(request,pk,tipo):
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
-    s = StringIO.StringIO()
-    zf = zipfile.ZipFile(s, "w")
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Contratos\\'+tipo+'\\'+zip_filename, mode='w')
 
     for gestor in gestores:
         soporte = settings.MEDIA_ROOT+'/'+str(gestor.contrato)
         if os.path.exists(soporte):
             fdir, fname = os.path.split(soporte)
-            zf.write(soporte,os.path.join('Contratos',gestor.nombre,fname))
-
+            zf.write(soporte,os.path.join('Contratos',encode_cp437(gestor.nombre),encode_cp437(fname)))
     zf.close()
-    resp = HttpResponse(s.getvalue(), content_type = "application/x-zip-compressed")
-    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-    return resp
+    return HttpResponseRedirect('/media/Contratos/'+tipo+'/'+zip_filename)
+
+def ruteoGestores(request,pk,tipo):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Actividades Gestores.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Ruteo Gestores"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'RUTEO GESTORES TERRITORIALES'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columns = [tuple(['Region',30]),
+               tuple(['Radicado',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Nombre Institución',30]),
+               tuple(['Dane Institución',30]),
+               tuple(['Nombre Sede',30]),
+               tuple(['Dane Sede',30]),
+               tuple(['Ubicación',30]),
+               tuple(['Nombre Gestor',30]),
+               tuple(['Cedula',30]),
+               tuple(['Celular',30]),
+               tuple(['Correo',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    #evidencias = Evidencia.objects.filter(radicado__region__id=pk)
+
+    #for evidencia in evidencias:
+    #    row_num += 1
+    #    row = [
+    #        evidencia.radicado.numero,
+    #        evidencia.radicado.municipio.departamento.nombre,
+    #        evidencia.radicado.municipio.nombre,
+    #        evidencia.gestor.nombre,
+    #        evidencia.ciclo.nombre,
+    #        evidencia.componente.nombre,
+    #        evidencia.modulo.nombre,
+    #        str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
+    #        evidencia.actividad.id,
+    #        evidencia.encargado.encargado,
+    #        evidencia.valor.valor,
+    #        str(evidencia.soporte),
+    #        str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
+    #    ]
+
+    #    for col_num in xrange(len(row)):
+    #        c = hoja1.cell(row=row_num, column=col_num+1)
+    #        if row[col_num] == True:
+    #            c.value = "SI"
+    #        if row[col_num] == False:
+    #            c.value = "NO"
+    #        if row[col_num] == None:
+    #            c.value = ""
+    #        else:
+    #            c.value = row[col_num]
+    #        c.style = co
+
+
+
+    archivo.save(response)
+    return response

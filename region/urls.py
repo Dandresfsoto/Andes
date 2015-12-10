@@ -23,9 +23,14 @@ urlpatterns = [
     url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/hv/$', login_required(views.hvFuncionarios)),
     url(r'^(?P<pk>\w+)/cpe/acceso/funcionarios/(?P<eje>\w+)/contratos/$', login_required(views.contratosFuncionarios)),
 
-    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/$', login_required(views.CpeGestorView.as_view())),
-    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/hv/$', login_required(views.hvGestores)),
-    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/(?P<tipo>\w+)/contratos/$', login_required(views.contratosGestores)),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/territoriales/$', login_required(views.CpeGestorView.as_view())),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/territoriales/hv/(?P<tipo>\w+)/$', login_required(views.hvGestores)),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/territoriales/contratos/(?P<tipo>\w+)/$', login_required(views.contratosGestores)),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/territoriales/ruteo/(?P<tipo>\w+)/$', login_required(views.ruteoGestores)),
+
+    #url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/$', login_required(views.CpeGestorView.as_view())),
+    #url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/hv/$', login_required(views.hvGestores)),
+    #url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/contratos/$', login_required(views.contratosGestores)),
 
 
     url(r'^(?P<pk>\w+)/cpe/administrativo/$', login_required(views.CpeAdministrativoView.as_view())),
