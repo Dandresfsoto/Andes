@@ -21,7 +21,8 @@ import time
 import datetime
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
 import openpyxl
-
+from acceso.models import Evidencia
+from radicado.models import Radicado
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -328,37 +329,40 @@ def ruteoGestores(request,pk,tipo):
         hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
 
 
-    #evidencias = Evidencia.objects.filter(radicado__region__id=pk)
+    gestores = Gestor.objects.filter(region__id=pk)
 
-    #for evidencia in evidencias:
-    #    row_num += 1
-    #    row = [
-    #        evidencia.radicado.numero,
-    #        evidencia.radicado.municipio.departamento.nombre,
-    #        evidencia.radicado.municipio.nombre,
-    #        evidencia.gestor.nombre,
-    #        evidencia.ciclo.nombre,
-    #        evidencia.componente.nombre,
-    #        evidencia.modulo.nombre,
-    #        str(evidencia.actividad.nombre)+" - "+str(evidencia.actividad.titulo),
-    #        evidencia.actividad.id,
-    #        evidencia.encargado.encargado,
-    #        evidencia.valor.valor,
-    #        str(evidencia.soporte),
-    #        str(evidencia.corte.fecha)+" - "+str(evidencia.corte.titulo) if evidencia.corte != None else "",
-    #    ]
+    for gestor in gestores:
+        radicados = Evidencia.objects.filter(gestor__id=gestor.id).values_list('radicado__id',flat=True).distinct()
+        for radicado in radicados:
+            r = Radicado.objects.get(pk=radicado)
+            row_num += 1
+            row = [
+                gestor.region.nombre,
+                r.numero,
+                r.municipio.departamento.nombre,
+                r.municipio.nombre,
+                r.nombre_institucion,
+                r.dane_institucion,
+                r.nombre_sede,
+                r.dane_sede,
+                r.zona,
+                gestor.nombre,
+                gestor.cedula,
+                gestor.celular,
+                gestor.correo
+            ]
 
-    #    for col_num in xrange(len(row)):
-    #        c = hoja1.cell(row=row_num, column=col_num+1)
-    #        if row[col_num] == True:
-    #            c.value = "SI"
-    #        if row[col_num] == False:
-    #            c.value = "NO"
-    #        if row[col_num] == None:
-    #            c.value = ""
-    #        else:
-    #            c.value = row[col_num]
-    #        c.style = co
+            for col_num in xrange(len(row)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                if row[col_num] == True:
+                    c.value = "SI"
+                if row[col_num] == False:
+                    c.value = "NO"
+                if row[col_num] == None:
+                    c.value = ""
+                else:
+                    c.value = row[col_num]
+                c.style = co
 
 
 
