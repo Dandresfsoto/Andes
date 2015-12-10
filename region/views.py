@@ -289,7 +289,7 @@ def ruteoGestores(request,pk,tipo):
     celda.value = 'ACCESO'
 
     celda = hoja1.cell('E3')
-    celda.value = 'RUTEO GESTORES TERRITORIALES'
+    celda.value = 'RUTEO GESTORES'
 
     celda = hoja1.cell('I3')
     celda.value = time.strftime("%d/%m/%y")
@@ -323,7 +323,7 @@ def ruteoGestores(request,pk,tipo):
         hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
 
 
-    gestores = Gestor.objects.filter(region__id=pk)
+    gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
 
     for gestor in gestores:
         radicados = Evidencia.objects.filter(gestor__id=gestor.id).values_list('radicado__id',flat=True).distinct()

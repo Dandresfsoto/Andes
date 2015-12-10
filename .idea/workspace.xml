@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_cpe.html" afterPath="$PROJECT_DIR$/templates/listado_gestores_cpe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/listado_gestores_cpe.jade" afterPath="$PROJECT_DIR$/templates/listado_gestores_cpe.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/region/urls.py" afterPath="$PROJECT_DIR$/region/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/region/views.py" afterPath="$PROJECT_DIR$/region/views.py" />
     </list>
     <ignored path="Andes.iws" />
@@ -34,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/region/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="119" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
+              <caret line="28" column="118" selection-start-line="28" selection-start-column="118" selection-end-line="28" selection-end-column="118" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -45,8 +42,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/region/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7487047">
-              <caret line="243" column="78" selection-start-line="243" selection-start-column="78" selection-end-line="243" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.64248705">
+              <caret line="335" column="48" selection-start-line="335" selection-start-column="48" selection-end-line="335" selection-end-column="48" />
               <folding>
                 <element signature="e#46#87#0" expanded="true" />
                 <element signature="e#2280#2620#0" expanded="false" />
@@ -63,7 +60,18 @@
                 <element signature="e#6902#7218#0" expanded="false" />
                 <element signature="e#7249#7899#0" expanded="false" />
                 <element signature="e#10005#10598#0" expanded="false" />
-                <element signature="e#11291#14182#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gestor/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -237,6 +245,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gestor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1710,16 +1732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gestor/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acceso/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.5172415">
@@ -1749,17 +1761,27 @@
     <entry file="file://$PROJECT_DIR$/region/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="119" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
+          <caret line="28" column="118" selection-start-line="28" selection-start-column="118" selection-end-line="28" selection-end-column="118" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gestor/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/region/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7487047">
-          <caret line="243" column="78" selection-start-line="243" selection-start-column="78" selection-end-line="243" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.64248705">
+          <caret line="335" column="48" selection-start-line="335" selection-start-column="48" selection-end-line="335" selection-end-column="48" />
           <folding>
             <element signature="e#46#87#0" expanded="true" />
             <element signature="e#2280#2620#0" expanded="false" />
@@ -1776,7 +1798,6 @@
             <element signature="e#6902#7218#0" expanded="false" />
             <element signature="e#7249#7899#0" expanded="false" />
             <element signature="e#10005#10598#0" expanded="false" />
-            <element signature="e#11291#14182#0" expanded="false" />
           </folding>
         </state>
       </provider>
