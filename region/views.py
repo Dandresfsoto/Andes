@@ -187,7 +187,7 @@ def hv(request,pk,tipo):
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Formadores\\Hojas de Vida\\'+tipo+'\\'+zip_filename, mode='w')
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Formadores\\Hojas de Vida\\'+tipo+'\\'+zip_filename, mode='w',allowZip64 = True)
 
     for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.hv)
@@ -202,7 +202,7 @@ def contratos(request,pk,tipo):
     formadores = Formador.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Formadores\\Contratos\\'+tipo+'\\'+zip_filename, mode='w')
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Formadores\\Contratos\\'+tipo+'\\'+zip_filename, mode='w',allowZip64 = True)
 
     for formador in formadores:
         soporte = settings.MEDIA_ROOT+'/'+str(formador.contrato)
@@ -217,7 +217,7 @@ def hvFuncionarios(request,pk,eje):
     funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
     zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Funcionarios\\Hojas de Vida\\'+zip_filename, mode='w')
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Funcionarios\\Hojas de Vida\\'+zip_filename, mode='w',allowZip64 = True)
 
     for funcionario in funcionarios:
         soporte = settings.MEDIA_ROOT+'/'+str(funcionario.hv)
@@ -232,7 +232,7 @@ def contratosFuncionarios(request,pk,eje):
     funcionarios = Funcionario.objects.filter(region__id=pk).filter(eje__nombre=eje)
     zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Funcionarios\\Contratos\\'+zip_filename, mode='w')
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Funcionarios\\Contratos\\'+zip_filename, mode='w',allowZip64 = True)
 
     for funcionario in funcionarios:
         soporte = settings.MEDIA_ROOT+'/'+str(funcionario.contrato)
@@ -247,7 +247,7 @@ def hvGestores(request,pk,tipo):
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Hojas de Vida"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\HV\\'+tipo+'\\'+zip_filename, mode='w')
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\HV\\'+tipo+'\\'+zip_filename, mode='w',allowZip64 = True)
 
     for gestor in gestores:
         soporte = settings.MEDIA_ROOT+'/'+str(gestor.hv)
@@ -262,7 +262,7 @@ def contratosGestores(request,pk,tipo):
     gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
     zip_subdir = "Contratos"
     zip_filename = "%s.zip" % zip_subdir
-    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Contratos\\'+tipo+'\\'+zip_filename, mode='w')
+    zf = zipfile.ZipFile(settings.MEDIA_ROOT+'\\Contratos\\'+tipo+'\\'+zip_filename, mode='w',allowZip64 = True)
 
     for gestor in gestores:
         soporte = settings.MEDIA_ROOT+'/'+str(gestor.contrato)
