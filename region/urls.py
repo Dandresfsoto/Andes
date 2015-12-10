@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/$', login_required(views.CpeGestorApoyoView.as_view())),
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/hv/(?P<tipo>\w+)/$', login_required(views.hvGestores)),
     url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/contratos/(?P<tipo>\w+)/$', login_required(views.contratosGestores)),
-    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/ruteo/(?P<tipo>\w+)/$', login_required(views.ruteoGestores)),
+    url(r'^(?P<pk>\w+)/cpe/acceso/gestores/apoyo/ruteo/(?P<tipo>\w+)/$', login_required(views.ruteoGestoresApoyo)),
 
 
     url(r'^(?P<pk>\w+)/cpe/administrativo/$', login_required(views.CpeAdministrativoView.as_view())),

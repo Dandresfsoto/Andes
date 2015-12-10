@@ -21,7 +21,7 @@ import time
 import datetime
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
 import openpyxl
-from acceso.models import Evidencia
+from acceso.models import Evidencia, EvidenciaApoyo
 from radicado.models import Radicado
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
@@ -282,14 +282,14 @@ def ruteoGestores(request,pk,tipo):
     logo.drawing.left = 25
 
     hoja1 = archivo.get_sheet_by_name('hoja1')
-    hoja1.title = "Ruteo Gestores"
+    hoja1.title = "Ruteo Gestores Territoriales"
     hoja1.add_image(logo)
 
     celda = hoja1.cell('E2')
     celda.value = 'ACCESO'
 
     celda = hoja1.cell('E3')
-    celda.value = 'RUTEO GESTORES'
+    celda.value = 'RUTEO GESTORES TERRITORIALES'
 
     celda = hoja1.cell('I3')
     celda.value = time.strftime("%d/%m/%y")
@@ -327,6 +327,97 @@ def ruteoGestores(request,pk,tipo):
 
     for gestor in gestores:
         radicados = Evidencia.objects.filter(gestor__id=gestor.id).values_list('radicado__id',flat=True).distinct()
+        for radicado in radicados:
+            r = Radicado.objects.get(pk=radicado)
+            row_num += 1
+            row = [
+                gestor.region.nombre,
+                r.numero,
+                r.municipio.departamento.nombre,
+                r.municipio.nombre,
+                r.nombre_institucion,
+                r.dane_institucion,
+                r.nombre_sede,
+                r.dane_sede,
+                r.zona,
+                gestor.nombre,
+                gestor.cedula,
+                gestor.celular,
+                gestor.correo
+            ]
+
+            for col_num in xrange(len(row)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                if row[col_num] == True:
+                    c.value = "SI"
+                if row[col_num] == False:
+                    c.value = "NO"
+                if row[col_num] == None:
+                    c.value = ""
+                else:
+                    c.value = row[col_num]
+                c.style = co
+
+
+
+    archivo.save(response)
+    return response
+
+def ruteoGestoresApoyo(request,pk,tipo):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Ruteo Gestores.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Ruteo Gestores Apoyo"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'RUTEO GESTORES APOYO'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columns = [tuple(['Region',30]),
+               tuple(['Radicado',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Nombre Institución',30]),
+               tuple(['Dane Institución',30]),
+               tuple(['Nombre Sede',30]),
+               tuple(['Dane Sede',30]),
+               tuple(['Ubicación',30]),
+               tuple(['Nombre Gestor',30]),
+               tuple(['Cedula',30]),
+               tuple(['Celular',30]),
+               tuple(['Correo',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+    gestores = Gestor.objects.filter(region__id=pk).filter(tipo__id=tipo)
+
+    for gestor in gestores:
+        radicados = EvidenciaApoyo.objects.filter(gestor__id=gestor.id).values_list('radicado__id',flat=True).distinct()
         for radicado in radicados:
             r = Radicado.objects.get(pk=radicado)
             row_num += 1
