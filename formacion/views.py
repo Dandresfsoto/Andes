@@ -624,7 +624,7 @@ class CalificarGrupoView(FormacionMixin,TemplateView):
 
     def get_context_data(self, **kwargs):
         participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
-        soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__actividad__id')
+        soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id')
         id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
         id_actividades = list(set(id_actividades))
         y=[]
