@@ -684,3 +684,11 @@ class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
         kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
         kwargs['ENTREGABLES'] = y
         return super(CalificarGrupoDocentesView,self).get_context_data(**kwargs)
+
+class MapView(FormacionMixin,TemplateView):
+    template_name = 'map.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
+        return super(MapView,self).get_context_data(**kwargs)

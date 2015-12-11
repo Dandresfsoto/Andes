@@ -464,8 +464,9 @@ class FormadorListadoGrupoDocentesTableView(BaseDatatableView):
         search = self.request.GET.get(u'search[value]', None)
         q = Q()
         if search:
-            q |= Q(**{'nombres__icontains' : search.capitalize()})
-            q |= Q(**{'apellidos__icontains' : search.capitalize()})
+            q |= Q(**{'nombres__icontains' : search})
+            q |= Q(**{'apellidos__icontains' : search})
+            q |= Q(**{'cedula__icontains' : search})
             qs = qs.filter(q)
         return qs
 

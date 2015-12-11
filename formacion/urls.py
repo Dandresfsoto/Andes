@@ -35,4 +35,6 @@ urlpatterns = [
     url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/actualizar/(?P<soporte_id>\w+)/$', login_required(views.FormSoporteGrupoDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/asignar/(?P<soporte_id>\w+)/$', login_required(views.FormAsignarSoporteDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/agregar/$', login_required(views.FormAgregarSoporteDocenteView.as_view())),
+
+    url(r'^map/$', login_required(views.MapView.as_view())),
 ]

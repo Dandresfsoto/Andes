@@ -64,6 +64,7 @@
     <file url="file://$PROJECT_DIR$/templates/formulario_soporte_tipo2.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/listado_gestores_financiero.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/listado_gestores_financiero_apoyo.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/map.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_acceso.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_formacion.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nuevo_formador_administrativo.jade" charset="UTF-8" />
