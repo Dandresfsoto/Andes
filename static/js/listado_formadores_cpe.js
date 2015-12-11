@@ -222,6 +222,13 @@ $(document).ready(function() {
                     location.replace(location.href+"contratos");
                 }
             }
+            ,
+            {
+                text: 'Ruteo',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"ruteo");
+                }
+            }
         ],
         "searching": true,
         "processing": true,

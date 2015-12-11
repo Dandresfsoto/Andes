@@ -23,6 +23,7 @@ from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protect
 import openpyxl
 from acceso.models import Evidencia, EvidenciaApoyo
 from radicado.models import Radicado
+from formacion.models import Grupo, GrupoDocentes
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -450,6 +451,84 @@ def ruteoGestoresApoyo(request,pk,tipo):
                 c.style = co
 
 
+
+    archivo.save(response)
+    return response
+
+def ruteo(request,pk,tipo):
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=Ruteo Formadores.xlsx'
+    archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+    logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+    logo.drawing.top = 10
+    logo.drawing.left = 25
+
+    hoja1 = archivo.get_sheet_by_name('hoja1')
+    hoja1.title = "Ruteo Formadores"
+    hoja1.add_image(logo)
+
+    celda = hoja1.cell('E2')
+    celda.value = 'ACCESO'
+
+    celda = hoja1.cell('E3')
+    celda.value = 'RUTEO FORMADORES'
+
+    celda = hoja1.cell('I3')
+    celda.value = time.strftime("%d/%m/%y")
+
+    celda = hoja1.cell('I4')
+    celda.value = time.strftime("%I:%M:%S %p")
+
+    row_num = 5
+
+    columns = [tuple(['Region',30]),
+               tuple(['Departamento',30]),
+               tuple(['Municipio',30]),
+               tuple(['Codigo Grupo',30]),
+               tuple(['Nombre Formador',30]),
+               tuple(['Cedula',30]),
+               tuple(['Celular',30]),
+               tuple(['Correo',30]),
+               ]
+
+
+
+    for col_num in xrange(len(columns)):
+        c = hoja1.cell(row=row_num, column=col_num+1)
+        c.value = columns[col_num][0]
+        c.style = t
+        hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+    if tipo == '2':
+        grupos = Grupo.objects.filter(formador__region__id=pk).filter(formador__tipo__id=tipo)
+    if tipo == '1':
+        grupos = GrupoDocentes.objects.filter(formador__region__id=pk).filter(formador__tipo__id=tipo)
+
+    for grupo in grupos:
+        row_num += 1
+        row = [
+            grupo.formador.region.nombre,
+            grupo.municipio.departamento.nombre,
+            grupo.municipio.nombre,
+            grupo.nombre,
+            grupo.formador.nombre,
+            grupo.formador.cedula,
+            grupo.formador.celular,
+            grupo.formador.correo
+        ]
+
+        for col_num in xrange(len(row)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            if row[col_num] == True:
+                c.value = "SI"
+            if row[col_num] == False:
+                c.value = "NO"
+            if row[col_num] == None:
+                c.value = ""
+            else:
+                c.value = row[col_num]
+            c.style = co
 
     archivo.save(response)
     return response
