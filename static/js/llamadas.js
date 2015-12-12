@@ -3,11 +3,11 @@ function format ( d ) {
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b>ACCIÓN</b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b>MENSAJE</b></h4></th>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2">'+d[5]+'</td>'+
+            '<td colspan="2">'+d[7]+'</td>'+
         '</tr>'+
 
     '</table></div>';
@@ -19,7 +19,7 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [
             {
-                text: 'Nuevo',
+                text: 'Nueva',
                 action: function ( e, dt, node, config ) {
                     location.replace(location.href+"nuevo/");
                 }
@@ -28,7 +28,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/pqr/listado_pqr_respuestas/"+ $('#id_codigo').val(),
+        "ajax": "/pqr/listado_llamadas/"+ $('#id_region').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -42,23 +42,31 @@ $(document).ready(function() {
             {
                 "data": 0,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="editar/'+row[0]+'" style="color:#004c99;">MAP-VIRTUAL-R-'+data+'</a>';
-                },
-                "orderable":false,
-            }
-            ,
-            {
-                "data": 3,
-                "render": function ( data, type, row, meta ) {
-                          return data;
+                          return '<a href="'+row[0]+'" style="color:#004c99;">MAP-'+data+'</a>';
                 },
                 "orderable":false,
             },
             {
-                "data": 4,
+                "data": 1,
                 "render": function ( data, type, row, meta ) {
-                          return data;
+                          return data.replace('T',' ').replace('Z','');
                 },
+                "orderable":false,
+            },
+            {
+                "data": 3,
+                "orderable":false,
+            },
+            {
+                "data": 4,
+                "orderable":false,
+            },
+            {
+                "data": 5,
+                "orderable":false,
+            },
+            {
+                "data": 6,
                 "orderable":false,
             }
         ]

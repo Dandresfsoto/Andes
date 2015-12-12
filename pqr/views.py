@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_jsonp.renderers import JSONPRenderer
 from django_datatables_view.base_datatable_view import BaseDatatableView
-from .models import Pqr, PqrRespuesta
+from .models import Pqr, PqrRespuesta, Llamadas, LlamadasRespuesta
 from django.db.models import Q
 
 class PqrView(APIView):
@@ -106,3 +106,78 @@ class PqrListadoRespuestasView(BaseDatatableView):
             return str(row.funcionario.nombre)
         else:
             return super(PqrListadoRespuestasView,self).render_column(row,column)
+
+class LlamadasListadoView(BaseDatatableView):
+    model = Llamadas
+    columns = [
+        'id',
+        'fecha_recepcion',
+        'eje',
+        'nombre',
+        'email',
+        'telefono',
+        'municipio',
+        'mensaje'
+    ]
+
+    order_columns = [
+        '-id',
+        '-id',
+        '-id',
+        '-id',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(region=self.kwargs['region']).order_by('-id')
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'nombre__icontains' : search})
+            q |= Q(**{'municipio__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+class LlamadasListadoRespuestasView(BaseDatatableView):
+    model = LlamadasRespuesta
+    columns = [
+        'id',
+        'fecha',
+        'llamada',
+        'region',
+        'funcionario',
+        'mensaje'
+    ]
+
+    order_columns = [
+        '-id',
+        '-id',
+        '-id',
+        '-id',
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(llamada__id=self.kwargs['codigo']).order_by('-id')
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            q |= Q(**{'funcionario__icontains' : search})
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'llamada':
+            return str(row.llamada.nombre)
+        if column == 'region':
+            return str(row.region.nombre)
+        if column == 'funcionario':
+            return str(row.funcionario.nombre)
+        else:
+            return super(LlamadasListadoRespuestasView,self).render_column(row,column)

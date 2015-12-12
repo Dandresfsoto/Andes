@@ -21,8 +21,8 @@ import time
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
 from formacion.models import GrupoDocentes, ParticipanteDocente, SoporteEntregableDocente, ActividadDocentes, EvidenciaDocentes
 from formacion.forms import NuevoGrupoDocenteForm, NuevoDocenteForm, AsignarDocenteForm, NuevoSoporteDocenteForm, AgregarSoporteDocenteForm
-from pqr.models import PqrRespuesta, Pqr
-from pqr.forms import PqrRespuestaForm
+from pqr.models import PqrRespuesta, Pqr, Llamadas, LlamadasRespuesta
+from pqr.forms import PqrRespuestaForm, LlamadaForm, LlamadaRespuestaForm
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -728,3 +728,43 @@ class MapEditarRespuestaView(FormacionMixin,UpdateView):
         kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
         kwargs['ID_CODIGO'] = Pqr.objects.get(pk=self.kwargs['codigo']).id
         return super(MapEditarRespuestaView,self).get_context_data(**kwargs)
+
+class LlamadasView(FormacionMixin,TemplateView):
+    template_name = 'llamadas.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
+        return super(LlamadasView,self).get_context_data(**kwargs)
+
+class LlamadasRespuestaView(FormacionMixin,TemplateView):
+    template_name = 'llamadas_respuesta.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
+        kwargs['ID_CODIGO'] = Llamadas.objects.get(pk=self.kwargs['codigo']).id
+        return super(LlamadasRespuestaView,self).get_context_data(**kwargs)
+
+class LlamadasNuevaRespuestaView(FormacionMixin,CreateView):
+    model = LlamadasRespuesta
+    form_class = LlamadaRespuestaForm
+    template_name = 'llamadas_nueva_respuesta.html'
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
+        kwargs['ID_CODIGO'] = Llamadas.objects.get(pk=self.kwargs['codigo']).id
+        return super(LlamadasNuevaRespuestaView,self).get_context_data(**kwargs)
+
+class LlamadasNuevoView(FormacionMixin,CreateView):
+    model = Llamadas
+    form_class = LlamadaForm
+    template_name = 'llamadas_nueva.html'
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
+        return super(LlamadasNuevoView,self).get_context_data(**kwargs)

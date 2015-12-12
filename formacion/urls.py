@@ -40,4 +40,10 @@ urlpatterns = [
     url(r'^map/(?P<codigo>\w+)/$', login_required(views.MapRespuestaView.as_view())),
     url(r'^map/(?P<codigo>\w+)/nuevo/$', login_required(views.MapNuevaRespuestaView.as_view())),
     url(r'^map/(?P<codigo>\w+)/editar/(?P<codigo_respuesta>\w+)/$', login_required(views.MapEditarRespuestaView.as_view())),
+
+    url(r'^llamadas/$', login_required(views.LlamadasView.as_view())),
+    url(r'^llamadas/nuevo/$', login_required(views.LlamadasNuevoView.as_view())),
+    url(r'^llamadas/(?P<codigo>\w+)/$', login_required(views.LlamadasRespuestaView.as_view())),
+    url(r'^llamadas/(?P<codigo>\w+)/nuevo/$', login_required(views.LlamadasNuevaRespuestaView.as_view())),
+    url(r'^llamadas/(?P<codigo>\w+)/editar/(?P<codigo_respuesta>\w+)/$', login_required(views.MapEditarRespuestaView.as_view())),
 ]

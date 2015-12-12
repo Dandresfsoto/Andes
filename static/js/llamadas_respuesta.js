@@ -28,7 +28,7 @@ $(document).ready(function() {
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/pqr/listado_pqr_respuestas/"+ $('#id_codigo').val(),
+        "ajax": "/pqr/listado_llamadas_respuestas/"+ $('#id_codigo').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -42,7 +42,7 @@ $(document).ready(function() {
             {
                 "data": 0,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="editar/'+row[0]+'" style="color:#004c99;">MAP-VIRTUAL-R-'+data+'</a>';
+                          return '<a href="editar/'+row[0]+'" style="color:#004c99;">MAP-R-'+data+'</a>';
                 },
                 "orderable":false,
             }

@@ -25,3 +25,26 @@ class PqrRespuesta(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.pqr)
+
+class Llamadas(models.Model):
+    fecha_recepcion = models.DateTimeField(auto_now_add=True)
+    region = models.ForeignKey(Region)
+    eje = models.CharField(max_length=200)
+    nombre = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
+    telefono = models.CharField(max_length=200)
+    municipio = models.CharField(max_length=200)
+    mensaje = models.TextField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.nombre)
+
+class LlamadasRespuesta(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    llamada = models.ForeignKey(Llamadas)
+    region = models.ForeignKey(Region)
+    funcionario = models.ForeignKey(Funcionario)
+    mensaje = models.TextField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.llamada)

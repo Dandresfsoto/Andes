@@ -1,0 +1,44 @@
+extends base
+block titulo
+    |Nueva Respuesta
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../") {{REGION}}
+    li
+        a(href="../../../../") Andes
+    li
+        a(href="../../../") Formación
+    li
+        a(href="../../") Llamadas
+    li
+        a(href="../") MAP-{{ID_CODIGO}}
+    li(class="active") Nueva Respuesta
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                input(id="id_llamada",name="llamada", value="{{ID_CODIGO}}",hidden)
+                input(id="id_region",name="region", value="{{ID_REGION}}",hidden)
+                tr
+                    th(class="text-center") Campo:
+                    th(class="text-center") Información:
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Funcionario:
+                    td(class = "text-center")
+                        | {{form.funcionario}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Mensaje:
+                    td(class = "text-center")
+                        | {{form.mensaje}}
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")
