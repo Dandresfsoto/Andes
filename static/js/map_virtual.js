@@ -3,11 +3,11 @@ function format ( d ) {
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b>MENSAJE</b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b>ACCIÓN</b></h4></th>'+
         '</tr>'+
 
         '<tr>'+
-            '<td colspan="2">'+d[7]+'</td>'+
+            '<td colspan="2">'+d[5]+'</td>'+
         '</tr>'+
 
     '</table></div>';
@@ -16,10 +16,19 @@ function format ( d ) {
 $(document).ready(function() {
 
     var table = $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                text: 'Nuevo',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"nuevo/");
+                }
+            }
+        ],
         "searching": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "/pqr/listado_pqr/"+ $('#id_region').val(),
+        "ajax": "/pqr/listado_pqr_respuestas/"+ $('#id_codigo').val(),
         "language":{
             "url": "//cdn.datatables.net/plug-ins/1.10.8/i18n/Spanish.json"
         },
@@ -33,31 +42,23 @@ $(document).ready(function() {
             {
                 "data": 0,
                 "render": function ( data, type, row, meta ) {
-                          return '<a href="'+row[0]+'" style="color:#004c99;">MAP-VIRTUAL-'+data+'</a>';
+                          return '<a href="editar/'+row[0]+'" style="color:#004c99;">MAP-VIRTUAL-'+data+'</a>';
                 },
                 "orderable":false,
-            },
-            {
-                "data": 1,
-                "render": function ( data, type, row, meta ) {
-                          return data.replace('T',' ').replace('Z','');
-                },
-                "orderable":false,
-            },
+            }
+            ,
             {
                 "data": 3,
+                "render": function ( data, type, row, meta ) {
+                          return data;
+                },
                 "orderable":false,
             },
             {
                 "data": 4,
-                "orderable":false,
-            },
-            {
-                "data": 5,
-                "orderable":false,
-            },
-            {
-                "data": 6,
+                "render": function ( data, type, row, meta ) {
+                          return data;
+                },
                 "orderable":false,
             }
         ]

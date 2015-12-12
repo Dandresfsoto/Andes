@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.encoding import smart_unicode
+from region.models import Region
+from funcionario.models import Funcionario
 
 class Pqr(models.Model):
     fecha_recepcion = models.DateTimeField(auto_now_add=True)
@@ -13,3 +15,13 @@ class Pqr(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.nombre)
+
+class PqrRespuesta(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    pqr = models.ForeignKey(Pqr)
+    region = models.ForeignKey(Region)
+    funcionario = models.ForeignKey(Funcionario)
+    mensaje = models.TextField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.pqr)

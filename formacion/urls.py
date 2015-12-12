@@ -37,4 +37,7 @@ urlpatterns = [
     url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/agregar/$', login_required(views.FormAgregarSoporteDocenteView.as_view())),
 
     url(r'^map/$', login_required(views.MapView.as_view())),
+    url(r'^map/(?P<codigo>\w+)/$', login_required(views.MapRespuestaView.as_view())),
+    url(r'^map/(?P<codigo>\w+)/nuevo/$', login_required(views.MapNuevaRespuestaView.as_view())),
+    url(r'^map/(?P<codigo>\w+)/editar/(?P<codigo_respuesta>\w+)/$', login_required(views.MapEditarRespuestaView.as_view())),
 ]

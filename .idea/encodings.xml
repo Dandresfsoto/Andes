@@ -23,6 +23,8 @@
     <file url="file://$PROJECT_DIR$/static/js/listado_gestores_financiero_apoyo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/listado_radicados_calificacion_apoyo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/listado_total_radicados_calificacion_apoyo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/map.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/static/js/map_virtual.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/tipo1_formador_formacion.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/tipo1_formador_grupo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js/tipo1_formador_listado.js" charset="UTF-8" />
@@ -65,6 +67,9 @@
     <file url="file://$PROJECT_DIR$/templates/listado_gestores_financiero.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/listado_gestores_financiero_apoyo.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/map.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/map_editar_respuesta.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/map_nueva_respuesta.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/map_respuesta.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_acceso.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nueva_liquidacion_formacion.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/nuevo_formador_administrativo.jade" charset="UTF-8" />

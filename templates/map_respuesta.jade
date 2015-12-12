@@ -1,0 +1,34 @@
+extends base
+block titulo
+    | Map
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Andes
+    li
+        a(href="../../") Formación
+    li
+        a(href="../") MAP
+    li(class="active") MAP-VIRTUAL-{{ID_CODIGO}}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_codigo",value="{{ID_CODIGO}}",id="id_codigo")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th
+                    th Codigo
+                    th Región
+                    th Funcionario
+            tbody
+                tr
+                    th
+                    th Codigo
+                    th Región
+                    th Funcionario
+block extra_script
+    script(src="{% static 'js/map_virtual.js' %}")

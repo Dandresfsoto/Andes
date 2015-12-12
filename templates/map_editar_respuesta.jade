@@ -1,0 +1,48 @@
+extends base
+block titulo
+    |Editar Respuesta
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+    li
+        a(href="../../../../") Formación
+    li
+        a(href="../../../") MAP
+    li
+        a(href="../../") MAP-VIRTUAL-{{ID_CODIGO}}
+    li(class="active") Editar Respuesta
+block body_content
+    div(class="container-fluid")
+        form(action="",method="post",enctype="multipart/form-data")
+            table(class="table table-bordered text-center",style="color:black;background:white;")
+                input(id="id_pqr",name="pqr", value="{{ID_CODIGO}}",hidden)
+                tr
+                    th(class="text-center") Campo:
+                    th(class="text-center") Información:
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Region:
+                    td(class = "text-center")
+                        | {{form.region}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Funcionario:
+                    td(class = "text-center")
+                        | {{form.funcionario}}
+                tr
+                    td(class = "text-center" style="font-weight:bold;") Mensaje:
+                    td(class = "text-center")
+                        | {{form.mensaje}}
+            | {% csrf_token %}
+            div(class="container-fluid barra")
+                div(class="col-lg-2")
+                    button(type="submit",class="btn btn-default") Grabar
+                div(class="col-lg-2")
+                    p(id="porcentaje",class="text-right")
+                div(class="col-lg-8")
+                    | {% progress_bar %}
+block extra_script
+    script(src="{% static 'js/drop.js' %}")
+    script(src="{% static 'js/docentes.js' %}")
