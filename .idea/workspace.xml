@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pqr/admin.py" afterPath="$PROJECT_DIR$/pqr/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pqr/forms.py" afterPath="$PROJECT_DIR$/pqr/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/llamadas_nueva.html" afterPath="$PROJECT_DIR$/templates/llamadas_nueva.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/llamadas_nueva.jade" afterPath="$PROJECT_DIR$/templates/llamadas_nueva.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pqr/models.py" afterPath="$PROJECT_DIR$/pqr/models.py" />
     </list>
     <ignored path="Andes.iws" />
@@ -88,8 +84,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pqr/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22168675">
-              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.5903614">
+              <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -176,10 +172,10 @@
         <option value="$PROJECT_DIR$/pqr/views.py" />
         <option value="$PROJECT_DIR$/static/js/llamadas_respuesta.js" />
         <option value="$PROJECT_DIR$/static/js/map_virtual.js" />
-        <option value="$PROJECT_DIR$/pqr/models.py" />
         <option value="$PROJECT_DIR$/pqr/forms.py" />
         <option value="$PROJECT_DIR$/templates/llamadas_nueva.jade" />
         <option value="$PROJECT_DIR$/pqr/admin.py" />
+        <option value="$PROJECT_DIR$/pqr/models.py" />
       </list>
     </option>
   </component>
@@ -1928,8 +1924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pqr/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22168675">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.5903614">
+          <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
