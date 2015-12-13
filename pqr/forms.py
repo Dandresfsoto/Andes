@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django import forms
-from .models import PqrRespuesta, Llamadas, LlamadasRespuesta
+from .models import PqrRespuesta, Llamadas, LlamadasRespuesta, Frecuentes
 from region.models import Region
 from funcionario.models import Funcionario
 from municipio.models import Municipio
@@ -34,8 +34,13 @@ class LlamadaForm(forms.ModelForm):
             secretaria_choice.append(tuple([secretaria.nombre+" - "+secretaria.departamento.nombre,secretaria.nombre+" - "+secretaria.departamento.nombre]))
 
         eje_choice = [tuple(['Administrativo','Administrativo']),tuple(['Formación','Formación']),tuple(['Acceso','Acceso'])]
+
+        frecuente_choice = []
+        for frecuente in Frecuentes.objects.all():
+            frecuente_choice.append(tuple([frecuente.id,frecuente.pregunta]))
+
         model = Llamadas
-        fields = ['region','eje','nombre','email','telefono','municipio','mensaje']
+        fields = ['region','eje','nombre','email','telefono','municipio','frecuente','mensaje']
         widgets = {
             'region': forms.Select(attrs={'style':'width:100%;','required':''},choices=(region_choice)),
             'eje': forms.Select(attrs={'style':'width:100%;','required':''},choices=(eje_choice)),
@@ -43,6 +48,7 @@ class LlamadaForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'style':'width:100%;','required':''}),
             'telefono': forms.TextInput(attrs={'style':'width:100%;','required':''}),
             'municipio': forms.Select(attrs={'style':'width:100%;','required':''}, choices=(secretaria_choice)),
+            'frecuente': forms.Select(attrs={'style':'width:100%;','required':''},choices=(frecuente_choice)),
             'mensaje': forms.Textarea(attrs={'style':'width:100%;','rows':5}),
         }
 

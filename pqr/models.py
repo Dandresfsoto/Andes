@@ -3,6 +3,12 @@ from django.utils.encoding import smart_unicode
 from region.models import Region
 from funcionario.models import Funcionario
 
+class Frecuentes(models.Model):
+    pregunta = models.CharField(max_length=500)
+
+    def __unicode__(self):
+        return smart_unicode(self.pregunta)
+
 class Pqr(models.Model):
     fecha_recepcion = models.DateTimeField(auto_now_add=True)
     region = models.CharField(max_length=200)
@@ -34,6 +40,7 @@ class Llamadas(models.Model):
     email = models.EmailField(max_length=200)
     telefono = models.CharField(max_length=200)
     municipio = models.CharField(max_length=200)
+    frecuente = models.ForeignKey(Frecuentes)
     mensaje = models.TextField(max_length=5000)
 
     def __unicode__(self):
