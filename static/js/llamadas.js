@@ -49,7 +49,12 @@ $(document).ready(function() {
             {
                 "data": 1,
                 "render": function ( data, type, row, meta ) {
-                          return data.replace('T',' ').replace('Z','');
+                        if(data == null){
+                            return ""
+                        }
+                        else {
+                            return data.replace('T', ' ').replace('Z', '');
+                        }
                 },
                 "orderable":false,
             },
