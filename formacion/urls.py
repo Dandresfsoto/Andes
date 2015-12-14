@@ -46,4 +46,5 @@ urlpatterns = [
     url(r'^llamadas/(?P<codigo>\w+)/$', login_required(views.LlamadasRespuestaView.as_view())),
     url(r'^llamadas/(?P<codigo>\w+)/nuevo/$', login_required(views.LlamadasNuevaRespuestaView.as_view())),
     url(r'^llamadas/(?P<codigo>\w+)/editar/(?P<codigo_respuesta>\w+)/$', login_required(views.MapEditarRespuestaView.as_view())),
+    url(r'^lista_auxiliares/$', login_required(views.ListaAuxiliaresView.as_view())),
 ]

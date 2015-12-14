@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 import os
 from time import localtime, strftime
 from departamento.models import Departamento
+from django.contrib.auth.models import User
 
 def content_file_name(instance, filename):
     path = os.path.join('Formacion', 'Formadores Tipo 2', smart_unicode(instance.grupo.formador.region),'Archivos Masivos',smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.grupo.nombre),strftime("%d-%m-%Y %H-%M-%S", localtime()))
@@ -284,6 +285,8 @@ class EvidenciaEscuelaTic(models.Model):
     participante = models.ForeignKey(ParticipanteEscuelaTic)
     valor = models.ForeignKey(Valor)
     corte = models.ForeignKey(Corte, null=True,blank=True)
+    usuario = models.ForeignKey(User, null=True,blank=True)
+    fecha = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return smart_unicode(self.participante)
@@ -294,9 +297,12 @@ class EvidenciaDocentes(models.Model):
     participante = models.ForeignKey(ParticipanteDocente)
     valor = models.ForeignKey(ValorDocente)
     corte = models.ForeignKey(CorteDocente, null=True,blank=True)
+    usuario = models.ForeignKey(User, null=True,blank=True)
+    fecha = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return smart_unicode(self.participante)
+
 
 class CargasMasivas(models.Model):
     archivo = models.FileField(upload_to="Cargas Masivas/Escuela TIC/")

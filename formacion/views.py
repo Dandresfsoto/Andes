@@ -23,6 +23,11 @@ from formacion.models import GrupoDocentes, ParticipanteDocente, SoporteEntregab
 from formacion.forms import NuevoGrupoDocenteForm, NuevoDocenteForm, AsignarDocenteForm, NuevoSoporteDocenteForm, AgregarSoporteDocenteForm
 from pqr.models import PqrRespuesta, Pqr, Llamadas, LlamadasRespuesta
 from pqr.forms import PqrRespuestaForm, LlamadaForm, LlamadaRespuestaForm
+from django_datatables_view.base_datatable_view import BaseDatatableView
+from django.db.models import Q
+from django.contrib.auth.models import User
+from formacion.models import EvidenciaDocentes, EvidenciaEscuelaTic
+import datetime
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -213,13 +218,21 @@ class FormAsignarSoporteView(FormacionMixin,FormView):
             for participante in participantes_total:
                 evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
                 if unicode(participante) in participantes:
+                    if evidencia.soporte == None:
+                        evidencia.usuario = self.request.user
+                        evidencia.fecha = datetime.datetime.now()
                     evidencia.soporte = soporte
                 else:
                     evidencia.soporte = None
+                    evidencia.usuario = None
+                    evidencia.fecha = datetime.datetime.now()
                 evidencia.save()
         else:
             for participante in participantes_actual:
                 evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
+                if evidencia.soporte == None:
+                    evidencia.usuario = self.request.user
+                    evidencia.fecha = datetime.datetime.now()
                 evidencia.soporte = soporte
                 evidencia.save()
         return HttpResponseRedirect(self.get_success_url())
@@ -296,14 +309,23 @@ class FormAsignarSoporteDocenteView(FormacionMixin,FormView):
             for participante in participantes_total:
                 evidencia = EvidenciaDocentes.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
                 if unicode(participante) in participantes:
+                    if evidencia.soporte == None:
+                        evidencia.usuario = self.request.user
+                        evidencia.fecha = datetime.datetime.now()
                     evidencia.soporte = soporte
                 else:
                     evidencia.soporte = None
+                    evidencia.usuario = None
+                    evidencia.fecha = datetime.datetime.now()
                 evidencia.save()
         else:
             for participante in participantes_actual:
                 evidencia = EvidenciaDocentes.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
+                if evidencia.soporte == None:
+                    evidencia.usuario = self.request.user
+                    evidencia.fecha = datetime.datetime.now()
                 evidencia.soporte = soporte
+                evidencia.usuario = self.request.user
                 evidencia.save()
         return HttpResponseRedirect(self.get_success_url())
 
@@ -768,3 +790,49 @@ class LlamadasNuevoView(FormacionMixin,CreateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = Region.objects.get(pk=self.kwargs['pk']).id
         return super(LlamadasNuevoView,self).get_context_data(**kwargs)
+
+class ListaAuxiliaresView(BaseDatatableView):
+    model = User
+    columns = [
+        'id',
+        'username',
+        'first_name',
+        'last_name'
+    ]
+
+    order_columns = [
+        'id',
+        'id',
+        'id',
+        'id'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        y = EvidenciaDocentes.objects.exclude(usuario=None).values_list('usuario__id',flat=True)
+        z = EvidenciaEscuelaTic.objects.exclude(usuario=None).values_list('usuario__id',flat=True)
+        return self.model.objects.filter(id__in=list(y)+list(z))
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def prepare_results(self, qs):
+        json_data = []
+        for item in qs:
+            cantidad_docentes = EvidenciaDocentes.objects.filter(usuario=item.id).count()
+            cantidad_padres = EvidenciaEscuelaTic.objects.filter(usuario=item.id).count()
+            json_data.append([
+                item.id,
+                item.username,
+                item.first_name,
+                item.last_name,
+                cantidad_docentes,
+                cantidad_padres
+            ])
+
+        return json_data

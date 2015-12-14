@@ -42,4 +42,6 @@ urlpatterns = [
     url(r'^cpe/obligaciones/agregar/(?P<obligacion_id>\w+)/$', login_required(views.CpeNuevoSoporteObligacion.as_view())),
     url(r'^cpe/obligaciones/editar/(?P<obligacion_id>\w+)/(?P<soporte_id>\w+)/$', login_required(views.CpeEditarSoporteObligacion.as_view())),
     url(r'^cpe/obligaciones/eliminar/(?P<obligacion_id>\w+)/(?P<soporte_id>\w+)/$', login_required(views.CpeEliminarSoporteObligacion.as_view())),
+
+    url(r'^cpe/auxiliares/$', login_required(views.AuxiliaresView.as_view())),
 ]

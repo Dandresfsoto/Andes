@@ -593,3 +593,11 @@ class NuevoFormadorView(AdministrativoMixin, CreateView):
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['ID_TIPO'] = self.kwargs['tipo_id']
         return super(NuevoFormadorView,self).get_context_data(**kwargs)
+
+class AuxiliaresView(AdministrativoMixin,TemplateView):
+    template_name = 'auxiliares.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        return super(AuxiliaresView,self).get_context_data(**kwargs)
