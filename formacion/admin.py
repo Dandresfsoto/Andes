@@ -33,7 +33,6 @@ vc = Style(font=Font(name='Calibri',size=12,bold=False,italic=False,vertAlign=No
 admin.site.register(Masivo)
 admin.site.register(Actividad)
 admin.site.register(ActividadDocentes)
-admin.site.register(Entregable)
 admin.site.register(Grupo)
 admin.site.register(GrupoDocentes)
 admin.site.register(SoporteEntregableEscuelaTic)
@@ -714,14 +713,60 @@ def asignacion_total(modeladmin,request,queryset):
             soporte = SoporteEntregableDocente.objects.filter(grupo__id=evidencia.participante.grupo.id).get(entregable__id=entregable.id)
             evidencia.soporte = soporte
             evidencia.save()
-
 asignacion_total.short_description = "Asignar todos los participantes del grupo"
+
+def crear_entregables_padres(modeladmin,request,queryset):
+    participantes = ParticipanteEscuelaTic.objects.all().values_list('id',flat=True)
+    for participante in participantes:
+        if EvidenciaEscuelaTic.objects.filter(participante__id=participante).count() < 14:
+            ids = EvidenciaEscuelaTic.objects.filter(participante__id=participante).values_list('entregable__id',flat=True)
+            total_ids = Entregable.objects.all().values_list('id',flat=True)
+            for id in total_ids:
+                if id not in ids:
+                    entregable = Entregable.objects.get(id=id)
+                    p = ParticipanteEscuelaTic.objects.get(id=participante)
+                    v = Valor.objects.get(id=1)
+
+                    nuevo = EvidenciaEscuelaTic()
+                    nuevo.soporte = None
+                    nuevo.entregable = entregable
+                    nuevo.participante = p
+                    nuevo.valor = v
+                    nuevo.corte = None
+                    nuevo.usuario = None
+                    nuevo.save()
+crear_entregables_padres.short_description = "Verificar entregables padres"
+
+def crear_entregables_docentes(modeladmin,request,queryset):
+    participantes = ParticipanteDocente.objects.all().values_list('id',flat=True)
+    for participante in participantes:
+        if EvidenciaDocentes.objects.filter(participante__id=participante).count() < 60:
+            ids = EvidenciaDocentes.objects.filter(participante__id=participante).values_list('entregable__id',flat=True)
+            total_ids = EntregableDocentes.objects.all().values_list('id',flat=True)
+            for id in total_ids:
+                if id not in ids:
+                    entregable = EntregableDocentes.objects.get(id=id)
+                    p = ParticipanteDocente.objects.get(id=participante)
+                    v = ValorDocente.objects.get(id=1)
+
+                    nuevo = EvidenciaDocentes()
+                    nuevo.soporte = None
+                    nuevo.entregable = entregable
+                    nuevo.participante = p
+                    nuevo.valor = v
+                    nuevo.corte = None
+                    nuevo.usuario = None
+                    nuevo.save()
+crear_entregables_docentes.short_description = "Verificar entregables docentes"
+
+class EntregableEscuelaTicAdmin(admin.ModelAdmin):
+    list_display = ['nombre','actividad']
+    ordering = ['id']
+    actions = [asignacion_total,crear_entregables_padres]
+admin.site.register(Entregable,EntregableEscuelaTicAdmin)
 
 class EntregableDocentesAdmin(admin.ModelAdmin):
     list_display = ['nombre','actividad']
     ordering = ['id']
-    actions = [asignacion_total]
+    actions = [asignacion_total,crear_entregables_docentes]
 admin.site.register(EntregableDocentes,EntregableDocentesAdmin)
-
-
-# Register your models here.
