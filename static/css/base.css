@@ -93,6 +93,10 @@ a:hover {
   color: #000;
   background-color: #fff;
 }
+#table tbody > .max {
+  color: #000;
+  background-color: #ed9015;
+}
 #tabled thead {
   background-color: #004c99;
 }
