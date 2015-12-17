@@ -693,12 +693,15 @@ class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
             x=[]
             soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
             nombre_actividad = ActividadDocentes.objects.get(id=id_actividad).nombre
+            maximo = max(soportes_filtro.values_list('id',flat=True))
             for soporte_filtro in soportes_filtro:
                 i += 1
                 if i%2 == 0:
                     clase = "even"
                 else:
                     clase = "odd"
+                if soporte_filtro.id == maximo:
+                    clase ="max"
                 cantidad = EvidenciaDocentes.objects.filter(soporte_id=soporte_filtro.id).count()
                 x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase})
             y.append({"nombre_actividad":nombre_actividad,"informacion":x})
