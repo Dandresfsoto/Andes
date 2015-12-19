@@ -294,6 +294,11 @@ def generar_listas(modeladmin,request,queryset):
 
     xl.Quit()
     pythoncom.CoUninitialize()
+
+    for codigo_masivo in queryset:
+        codigo_masivo.generado = True
+        codigo_masivo.save()
+
     return HttpResponseRedirect('/media/Listados Escuela Tic/Padres.pdf')
 generar_listas.short_description = "Generar Listas"
 
