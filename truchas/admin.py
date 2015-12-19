@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from .models import ParticipanteEscuelaTicTrucho, CargasMasivas
 from formador.models import Formador
@@ -12,6 +14,11 @@ from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protect
 from .models import CodigoMasivo
 from region.models import Region
 from formador.models import Formador
+import pythoncom
+from win32com import client
+from win32com.client import DispatchEx
+from win32com import *
+from django.shortcuts import HttpResponseRedirect
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -239,8 +246,61 @@ class CargasMasivasAdmin(admin.ModelAdmin):
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
 
+
+def generar_listas(modeladmin,request,queryset):
+    pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
+    xl = win32com.client.dynamic.Dispatch('Excel.Application')
+    xl.DisplayAlerts = True
+    xl.Visible = 0
+
+    lista = xl.Workbooks.Open(settings.STATICFILES_DIRS[0]+'/formatos/Lista Padres.xlsx')
+
+    i = 2
+
+    for codigo_masivo in queryset:
+        participantes = ParticipanteEscuelaTicTrucho.objects.filter(codigo_masivo__id=codigo_masivo.id)
+        for sesion_numero in range(1,3):
+            fila = 0
+            if sesion_numero == 1:
+                lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
+                sesion = lista.Worksheets('Sesion ('+str(i)+')')
+                i += 1
+                sesion.Cells(5,3).Value = "Sesión 1:______X_______".encode("latin1")
+                sesion.Cells(5,5).Value = "Sesión 2:______________".encode("latin1")
+                for participante in participantes:
+                    sesion.Cells(10+fila,2).Value = participante.nombres
+                    sesion.Cells(10+fila,3).Value = participante.apellidos
+                    sesion.Cells(10+fila,4).Value = participante.cedula
+                    sesion.Cells(10+fila,5).Value = participante.correo
+                    sesion.Cells(10+fila,6).Value = participante.telefono
+                    fila += 1
+            if sesion_numero == 2:
+                lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
+                sesion = lista.Worksheets('Sesion ('+str(i)+')')
+                i += 1
+                sesion.Cells(5,3).Value = "Sesión 1:______________".encode("latin1")
+                sesion.Cells(5,5).Value = "Sesión 2:______X_______".encode("latin1")
+                for participante in participantes:
+                    sesion.Cells(10+fila,2).Value = participante.nombres
+                    sesion.Cells(10+fila,3).Value = participante.apellidos
+                    sesion.Cells(10+fila,4).Value = participante.cedula
+                    sesion.Cells(10+fila,5).Value = participante.correo
+                    sesion.Cells(10+fila,6).Value = participante.telefono
+                    fila += 1
+
+    lista.Worksheets('Sesion').Delete()
+    lista.ExportAsFixedFormat(0,settings.MEDIA_ROOT+'/Listados Escuela Tic/Padres.pdf')
+    lista.Close(SaveChanges=False)
+
+    xl.Quit()
+    pythoncom.CoUninitialize()
+    return HttpResponseRedirect('/media/Listados Escuela Tic/Padres.pdf')
+generar_listas.short_description = "Generar Listas"
+
+
 class CodigoMasivoAdmin(admin.ModelAdmin):
     list_display = ['id','generado']
     list_filter = ['generado']
     ordering = ['id']
+    actions = [generar_listas]
 admin.site.register(CodigoMasivo,CodigoMasivoAdmin)
