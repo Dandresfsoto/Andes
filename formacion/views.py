@@ -830,6 +830,12 @@ class ListaAuxiliaresView(BaseDatatableView):
     def prepare_results(self, qs):
         json_data = []
         for item in qs:
+            hoy = datetime.datetime.now().date()
+            manana = hoy + datetime.timedelta(1)
+            hoy_start = datetime.datetime.combine(hoy, datetime.time())
+            hoy_end = datetime.datetime.combine(manana, datetime.time())
+            cantidad_padres_dia = EvidenciaEscuelaTic.objects.filter(usuario=item.id).filter(fecha__lte=hoy_end,fecha__gte=hoy_start).count()
+            cantidad_docentes_dia = EvidenciaDocentes.objects.filter(usuario=item.id).filter(fecha__lte=hoy_end,fecha__gte=hoy_start).count()
             cantidad_docentes = EvidenciaDocentes.objects.filter(usuario=item.id).count()
             cantidad_padres = EvidenciaEscuelaTic.objects.filter(usuario=item.id).count()
             json_data.append([
@@ -838,7 +844,9 @@ class ListaAuxiliaresView(BaseDatatableView):
                 item.first_name,
                 item.last_name,
                 cantidad_docentes,
-                cantidad_padres
+                cantidad_padres,
+                cantidad_docentes_dia,
+                cantidad_padres_dia
             ])
 
         return json_data

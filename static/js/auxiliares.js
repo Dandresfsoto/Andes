@@ -43,7 +43,15 @@ $(document).ready(function() {
                 "orderable":false,
             },
             {
+                "data": 6,
+                "orderable":false,
+            },
+            {
                 "data": 4,
+                "orderable":false,
+            },
+            {
+                "data": 7,
                 "orderable":false,
             },
             {
