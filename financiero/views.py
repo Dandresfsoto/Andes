@@ -483,7 +483,7 @@ def reporte_gestor_apoyo(request,pk,corte_id,gestor_id):
     tipo_id = 2
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     gestor = Gestor.objects.get(id=gestor_id)
-    corte = Corte.objects.get(id=corte_id)
+    corte = CorteApoyo.objects.get(id=corte_id)
     response['Content-Disposition'] = 'attachment; filename='+smart_unicode(gestor.nombre)+'.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
 
@@ -530,7 +530,7 @@ def reporte_gestor_apoyo(request,pk,corte_id,gestor_id):
         hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
 
 
-    evidencias = Evidencia.objects.filter(gestor__id=gestor_id).filter(corte_id=corte.id)
+    evidencias = EvidenciaApoyo.objects.filter(gestor__id=gestor_id).filter(corte_id=corte.id)
 
     for evidencia in evidencias:
         row_num += 1
@@ -663,7 +663,7 @@ def reporte_gestor_email_apoyo(request,pk,corte_id,gestor_id):
     tipo_id=2
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     gestor = Gestor.objects.get(id=gestor_id)
-    corte = Corte.objects.get(id=corte_id)
+    corte = CorteApoyo.objects.get(id=corte_id)
     response['Content-Disposition'] = 'attachment; filename='+smart_unicode(gestor.nombre)+'.xlsx'
     archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
 
@@ -710,7 +710,7 @@ def reporte_gestor_email_apoyo(request,pk,corte_id,gestor_id):
         hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
 
 
-    evidencias = Evidencia.objects.filter(gestor__id=gestor_id).filter(corte_id=corte.id)
+    evidencias = EvidenciaApoyo.objects.filter(gestor__id=gestor_id).filter(corte_id=corte.id)
     valor = evidencias.aggregate(Sum('valor__valor'))['valor__valor__sum']
 
     for evidencia in evidencias:
