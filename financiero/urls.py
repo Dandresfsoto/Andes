@@ -18,9 +18,9 @@ urlpatterns = [
     url(r'^gestores/territoriales/reporte/$', login_required(views.reporte_quincenal_financiero)),
 
 
-    #url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/$', login_required(views.GestorCorteEvidenciaView.as_view())),
-    #url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/reporte/$', login_required(views.reporte_gestor)),
-    #url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/email/$', login_required(views.reporte_gestor_email)),
+    url(r'^gestores/apoyo/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/$', login_required(views.GestorApoyoCorteEvidenciaView.as_view())),
+    url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/reporte/$', login_required(views.reporte_gestor_apoyo)),
+    url(r'^gestores/territoriales/corte/(?P<corte_id>\w+)/gestor/(?P<gestor_id>\w+)/email/$', login_required(views.reporte_gestor_email_apoyo)),
 
     url(r'^gestores/apoyo/$', login_required(views.GestorTipoApoyoView.as_view())),
     url(r'^gestores/apoyo/nuevo/$', login_required(views.NuevoGestorApoyoView.as_view())),

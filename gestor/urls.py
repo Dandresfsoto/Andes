@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^calificacion/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.GestorCalificacionTableView.as_view())),
     url(r'^calificacion_apoyo/(?P<region>\w+)/(?P<tipo>\w+)', login_required(views.GestorCalificacionApoyoTableView.as_view())),
     url(r'^corte/(?P<region>\w+)/(?P<corte>\w+)/(?P<gestor>\w+)', login_required(views.GestorCorteEvidenciasTableView.as_view())),
+    url(r'^corte_apoyo/(?P<region>\w+)/(?P<corte>\w+)/(?P<gestor>\w+)', login_required(views.GestorCorteApoyoEvidenciasTableView.as_view())),
 ]
