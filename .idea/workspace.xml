@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/forms.py" afterPath="$PROJECT_DIR$/formacion/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.068966">
-              <caret line="318" column="61" selection-start-line="318" selection-start-column="61" selection-end-line="318" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.5932642">
+              <caret line="337" column="96" selection-start-line="337" selection-start-column="96" selection-end-line="337" selection-end-column="96" />
               <folding>
                 <element signature="e#46#81#0" expanded="true" />
               </folding>
@@ -39,10 +39,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.6896553">
+              <caret line="293" column="23" selection-start-line="293" selection-start-column="6" selection-end-line="293" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#1345#1742#0" expanded="false" />
+                <element signature="e#1802#2227#0" expanded="false" />
+                <element signature="e#3958#5875#0" expanded="false" />
+                <element signature="e#5920#6303#0" expanded="false" />
+                <element signature="e#6345#6456#0" expanded="false" />
+                <element signature="e#6489#6598#0" expanded="false" />
+                <element signature="e#6632#6743#0" expanded="false" />
+                <element signature="e#6783#6904#0" expanded="false" />
+                <element signature="e#6948#7075#0" expanded="false" />
+                <element signature="e#7122#9022#0" expanded="false" />
+                <element signature="e#9059#9170#0" expanded="false" />
+                <element signature="e#9215#9326#0" expanded="false" />
+                <element signature="e#9372#9624#0" expanded="false" />
+                <element signature="e#9662#9906#0" expanded="false" />
+                <element signature="e#9939#10022#0" expanded="false" />
+                <element signature="e#10062#10280#0" expanded="false" />
+                <element signature="e#10313#10598#0" expanded="false" />
+                <element signature="e#10638#10931#0" expanded="false" />
+                <element signature="e#10965#11342#0" expanded="false" />
+                <element signature="e#11397#11709#0" expanded="false" />
+                <element signature="e#12142#12611#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40963855">
+            <state vertical-scroll-proportion="0.0">
               <caret line="173" column="104" selection-start-line="173" selection-start-column="104" selection-end-line="173" selection-end-column="104" />
               <folding />
             </state>
@@ -125,8 +158,8 @@
         <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
-        <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/formacion/forms.py" />
+        <option value="$PROJECT_DIR$/formacion/views.py" />
       </list>
     </option>
   </component>
@@ -2302,10 +2335,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="148" selection-start-line="35" selection-start-column="119" selection-end-line="35" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="173" column="104" selection-start-line="173" selection-start-column="104" selection-end-line="173" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.325301">
-          <caret line="273" column="30" selection-start-line="273" selection-start-column="6" selection-end-line="273" selection-end-column="30" />
+        <state vertical-scroll-proportion="-5.6896553">
+          <caret line="293" column="23" selection-start-line="293" selection-start-column="6" selection-end-line="293" selection-end-column="23" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#1345#1742#0" expanded="false" />
@@ -2329,34 +2378,17 @@
             <element signature="e#10965#11342#0" expanded="false" />
             <element signature="e#11397#11709#0" expanded="false" />
             <element signature="e#12142#12611#0" expanded="false" />
-            <element signature="e#12656#13141#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="148" selection-start-line="35" selection-start-column="119" selection-end-line="35" selection-end-column="148" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.068966">
-          <caret line="318" column="61" selection-start-line="318" selection-start-column="61" selection-end-line="318" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.5932642">
+          <caret line="337" column="96" selection-start-line="337" selection-start-column="96" selection-end-line="337" selection-end-column="96" />
           <folding>
             <element signature="e#46#81#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40963855">
-          <caret line="173" column="104" selection-start-line="173" selection-start-column="104" selection-end-line="173" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>

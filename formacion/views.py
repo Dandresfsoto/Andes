@@ -337,7 +337,7 @@ class FormAsignarSoporteDocenteView(FormacionMixin,FormView):
         self.grupo = SoporteEntregableDocente.objects.get(pk=self.soporte).grupo.id
         self.id_entregable = SoporteEntregableDocente.objects.get(pk=self.soporte).entregable.id
 
-        participantes_actual = EvidenciaDocentes.objects.filter(grupo__formador__id=soporte.grupo.formador.id).values_list("participante__id",flat=True)
+        participantes_actual = EvidenciaDocentes.objects.filter(soporte__id=self.soporte).values_list("participante__id",flat=True)
 
         for participante in participantes_actual:
             evidencia = EvidenciaDocentes.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
