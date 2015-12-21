@@ -171,7 +171,7 @@ class AsignarDocenteForm(forms.Form):
             x = [x]
 
         y = EvidenciaDocentes.objects.filter(soporte__in=x).values_list("participante__id",flat=True)
-        participantes = ParticipanteDocente.objects.filter(grupo__id=self.grupo)
+        participantes = ParticipanteDocente.objects.filter(grupo__formador__id=soporte.grupo.formador.id)
         choices = []
         for participante in participantes:
             if participante.pk in y:
