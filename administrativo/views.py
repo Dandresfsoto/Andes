@@ -20,6 +20,7 @@ from .models import Informes, Obligacion, SoporteObligacion
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from .forms import NuevoInformeForm, NuevaObligacionForm, NuevoSoporteObligacionForm
+from formacion.models import EvidenciaDocentes, EntregableDocentes, EvidenciaEscuelaTic, Entregable, ParticipanteDocente, ParticipanteEscuelaTic
 
 
 class AdministrativoView(AdministrativoMixin,TemplateView):
@@ -601,3 +602,75 @@ class AuxiliaresView(AdministrativoMixin,TemplateView):
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         return super(AuxiliaresView,self).get_context_data(**kwargs)
+
+class EstadisticasView(AdministrativoMixin,TemplateView):
+    template_name = 'estadisticas.html'
+
+    def get_context_data(self, **kwargs):
+        r1_escuela_tic = []
+        i = 0
+        for entregable_escuela_tic in Entregable.objects.all():
+            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=1).filter(soporte__entregable__id=entregable_escuela_tic.id).exclude(soporte__soporte="").count()
+            meta = 27834
+            progreso = (cantidad*100.0)/meta
+            i += 1
+            if i%2 == 0:
+                clase = "even"
+            else:
+                clase = "odd"
+            r1_escuela_tic.append({'actividad':entregable_escuela_tic.actividad.nombre,'entregable':entregable_escuela_tic.nombre,'cantidad':cantidad,'meta':meta,'progreso':"{0:.2f}".format(progreso),'clase':clase})
+
+
+
+
+        r1_docentes = []
+        i = 0
+        for entregable_docentes in EntregableDocentes.objects.all():
+            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region__id=1).filter(soporte__entregable__id=entregable_docentes.id).exclude(soporte__soporte="").count()
+            meta = 6905
+            progreso = (cantidad*100.0)/meta
+            i += 1
+            if i%2 == 0:
+                clase = "even"
+            else:
+                clase = "odd"
+            r1_docentes.append({'actividad':entregable_docentes.actividad.nombre,'entregable':entregable_docentes.nombre,'cantidad':cantidad,'meta':meta,'progreso':"{0:.2f}".format(progreso),'clase':clase})
+
+
+
+
+        r4_escuela_tic = []
+        i = 0
+        for entregable_escuela_tic in Entregable.objects.all():
+            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=2).filter(soporte__entregable__id=entregable_escuela_tic.id).exclude(soporte__soporte="").count()
+            meta = 67826
+            progreso = (cantidad*100.0)/meta
+            i += 1
+            if i%2 == 0:
+                clase = "even"
+            else:
+                clase = "odd"
+            r4_escuela_tic.append({'actividad':entregable_escuela_tic.actividad.nombre,'entregable':entregable_escuela_tic.nombre,'cantidad':cantidad,'meta':meta,'progreso':"{0:.2f}".format(progreso),'clase':clase})
+
+        r4_docentes = []
+        i = 0
+        for entregable_docentes in EntregableDocentes.objects.all():
+            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region__id=2).filter(soporte__entregable__id=entregable_docentes.id).exclude(soporte__soporte="").count()
+            meta = 10932
+            progreso = (cantidad*100.0)/meta
+            i += 1
+            if i%2 == 0:
+                clase = "even"
+            else:
+                clase = "odd"
+            r4_docentes.append({'actividad':entregable_docentes.actividad.nombre,'entregable':entregable_docentes.nombre,'cantidad':cantidad,'meta':meta,'progreso':"{0:.2f}".format(progreso),'clase':clase})
+
+
+
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['ESCUELA_TIC_R1'] = r1_escuela_tic
+        kwargs['ESCUELA_TIC_R4'] = r4_escuela_tic
+        kwargs['DOCENTES_R1'] = r1_docentes
+        kwargs['DOCENTES_R4'] = r4_docentes
+        return super(EstadisticasView,self).get_context_data(**kwargs)

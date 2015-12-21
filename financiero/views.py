@@ -466,7 +466,8 @@ def reporte_gestor(request,pk,corte_id,gestor_id,tipo_id):
     archivo.save(response)
     return response
 
-def reporte_gestor_email(request,pk,corte_id,gestor_id,tipo_id):
+def reporte_gestor_email(request,pk,corte_id,gestor_id):
+    tipo_id=1
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     gestor = Gestor.objects.get(id=gestor_id)
     corte = Corte.objects.get(id=corte_id)

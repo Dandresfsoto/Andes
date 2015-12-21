@@ -1,0 +1,95 @@
+extends base
+block titulo
+    | CPE
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../") {{REGION}}
+    li
+        a(href="../../../") Andes
+    li
+        a(href="../../") Administrativo
+    li
+        a(href="../") CPE
+    li(class="active") Estadisticas
+block body_content
+    div(class="container-fluid")
+        h1(class="text-center") REGIÓN 1
+        h4 Escuela Tic Familia
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Actividad
+                    th Entregable
+                    th Cantidad
+                    th Meta
+                    th Progreso
+            tbody
+                |{% for entregable in ESCUELA_TIC_R1 %}
+                tr(role="row",class="{{entregable.clase}}")
+                    td {{entregable.actividad}}
+                    td {{entregable.entregable}}
+                    td {{entregable.cantidad}}
+                    td {{entregable.meta}}
+                    td {{entregable.progreso}}%
+                |{% endfor %}
+
+        h4 Docentes
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Actividad
+                    th Entregable
+                    th Cantidad
+                    th Meta
+                    th Progreso
+            tbody
+                |{% for entregable in DOCENTES_R1 %}
+                tr(role="row",class="{{entregable.clase}}")
+                    td {{entregable.actividad}}
+                    td {{entregable.entregable}}
+                    td {{entregable.cantidad}}
+                    td {{entregable.meta}}
+                    td {{entregable.progreso}}%
+                |{% endfor %}
+
+
+        h1(class="text-center") REGIÓN 4
+        h4 Escuela Tic Familia
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Actividad
+                    th Entregable
+                    th Cantidad
+                    th Meta
+                    th Progreso
+            tbody
+                |{% for entregable in ESCUELA_TIC_R4 %}
+                tr(role="row",class="{{entregable.clase}}")
+                    td {{entregable.actividad}}
+                    td {{entregable.entregable}}
+                    td {{entregable.cantidad}}
+                    td {{entregable.meta}}
+                    td {{entregable.progreso}}%
+                |{% endfor %}
+
+        h4 Docentes
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Actividad
+                    th Entregable
+                    th Cantidad
+                    th Meta
+                    th Progreso
+            tbody
+                |{% for entregable in DOCENTES_R4 %}
+                tr(role="row",class="{{entregable.clase}}")
+                    td {{entregable.actividad}}
+                    td {{entregable.entregable}}
+                    td {{entregable.cantidad}}
+                    td {{entregable.meta}}
+                    td {{entregable.progreso}}%
+                |{% endfor %}

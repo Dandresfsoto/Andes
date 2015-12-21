@@ -44,4 +44,5 @@ urlpatterns = [
     url(r'^cpe/obligaciones/eliminar/(?P<obligacion_id>\w+)/(?P<soporte_id>\w+)/$', login_required(views.CpeEliminarSoporteObligacion.as_view())),
 
     url(r'^cpe/auxiliares/$', login_required(views.AuxiliaresView.as_view())),
+    url(r'^cpe/estadisticas/$', login_required(views.EstadisticasView.as_view())),
 ]
