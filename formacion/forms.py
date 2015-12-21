@@ -159,8 +159,9 @@ class AsignarDocenteForm(forms.Form):
         self.grupo = SoporteEntregableDocente.objects.get(pk=self.soporte).grupo.id
         super(AsignarDocenteForm, self).__init__(*args, **kwargs)
         self.id_entregable = SoporteEntregableDocente.objects.get(pk=self.soporte).entregable.id
+        soporte = SoporteEntregableDocente.objects.get(pk=self.soporte)
 
-        x = SoporteEntregableDocente.objects.filter(grupo__id=self.grupo).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
+        x = SoporteEntregableDocente.objects.filter(grupo__formador__id=soporte.grupo.formador.id).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
 
         x = list(x)
 
