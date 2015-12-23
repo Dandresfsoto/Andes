@@ -270,9 +270,9 @@ def generar_listas(modeladmin,request,queryset):
                 for participante in participantes:
                     sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
                     sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
-                    sesion.Cells(10+fila,4).Value = participante.cedula.encode("latin1")
+                    sesion.Cells(10+fila,4).Value = participante.cedula
                     sesion.Cells(10+fila,5).Value = participante.correo.encode("latin1")
-                    sesion.Cells(10+fila,6).Value = participante.telefono.encode("latin1")
+                    sesion.Cells(10+fila,6).Value = participante.telefono
                     fila += 1
             if sesion_numero == 2:
                 lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
@@ -283,9 +283,9 @@ def generar_listas(modeladmin,request,queryset):
                 for participante in participantes:
                     sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
                     sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
-                    sesion.Cells(10+fila,4).Value = participante.cedula.encode("latin1")
+                    sesion.Cells(10+fila,4).Value = participante.cedula
                     sesion.Cells(10+fila,5).Value = participante.correo.encode("latin1")
-                    sesion.Cells(10+fila,6).Value = participante.telefono.encode("latin1")
+                    sesion.Cells(10+fila,6).Value = participante.telefono
                     fila += 1
 
     lista.Worksheets('Sesion').Delete()
