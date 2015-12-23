@@ -267,6 +267,11 @@ def generar_listas(modeladmin,request,queryset):
                 i += 1
                 sesion.Cells(5,3).Value = "Sesión 1:______X_______".encode("latin1")
                 sesion.Cells(5,5).Value = "Sesión 2:______________".encode("latin1")
+                departamento = participantes[0].departamento
+                municipio = participantes[0].municipio
+                formador = participantes[0].formador.nombre
+                sesion.Cells(6,1).Value = "Departamento: "+departamento.encode("latin1")+"                         "+"Municipio: "+municipio.encode("latin1")
+                sesion.Cells(5,7).Value = "Formador: "+formador.encode("latin1")
                 for participante in participantes:
                     sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
                     sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
@@ -280,6 +285,11 @@ def generar_listas(modeladmin,request,queryset):
                 i += 1
                 sesion.Cells(5,3).Value = "Sesión 1:______________".encode("latin1")
                 sesion.Cells(5,5).Value = "Sesión 2:______X_______".encode("latin1")
+                departamento = participantes[0].departamento
+                municipio = participantes[0].municipio
+                formador = participantes[0].formador.nombre
+                sesion.Cells(6,1).Value = "Departamento: "+departamento.encode("latin1")+"                         "+"Municipio: "+municipio.encode("latin1")
+                sesion.Cells(5,7).Value = "Formador: "+formador.encode("latin1")
                 for participante in participantes:
                     sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
                     sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
