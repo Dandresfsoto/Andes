@@ -268,11 +268,11 @@ def generar_listas(modeladmin,request,queryset):
                 sesion.Cells(5,3).Value = "Sesión 1:______X_______".encode("latin1")
                 sesion.Cells(5,5).Value = "Sesión 2:______________".encode("latin1")
                 for participante in participantes:
-                    sesion.Cells(10+fila,2).Value = participante.nombres
-                    sesion.Cells(10+fila,3).Value = participante.apellidos
-                    sesion.Cells(10+fila,4).Value = participante.cedula
-                    sesion.Cells(10+fila,5).Value = participante.correo
-                    sesion.Cells(10+fila,6).Value = participante.telefono
+                    sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
+                    sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
+                    sesion.Cells(10+fila,4).Value = participante.cedula.encode("latin1")
+                    sesion.Cells(10+fila,5).Value = participante.correo.encode("latin1")
+                    sesion.Cells(10+fila,6).Value = participante.telefono.encode("latin1")
                     fila += 1
             if sesion_numero == 2:
                 lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
@@ -281,11 +281,11 @@ def generar_listas(modeladmin,request,queryset):
                 sesion.Cells(5,3).Value = "Sesión 1:______________".encode("latin1")
                 sesion.Cells(5,5).Value = "Sesión 2:______X_______".encode("latin1")
                 for participante in participantes:
-                    sesion.Cells(10+fila,2).Value = participante.nombres
-                    sesion.Cells(10+fila,3).Value = participante.apellidos
-                    sesion.Cells(10+fila,4).Value = participante.cedula
-                    sesion.Cells(10+fila,5).Value = participante.correo
-                    sesion.Cells(10+fila,6).Value = participante.telefono
+                    sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
+                    sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
+                    sesion.Cells(10+fila,4).Value = participante.cedula.encode("latin1")
+                    sesion.Cells(10+fila,5).Value = participante.correo.encode("latin1")
+                    sesion.Cells(10+fila,6).Value = participante.telefono.encode("latin1")
                     fila += 1
 
     lista.Worksheets('Sesion').Delete()
