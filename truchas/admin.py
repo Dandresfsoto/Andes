@@ -271,7 +271,7 @@ def generar_listas(modeladmin,request,queryset):
                     sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
                     sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
                     sesion.Cells(10+fila,4).Value = participante.cedula
-                    sesion.Cells(10+fila,5).Value = participante.correo.encode("latin1")
+                    sesion.Cells(10+fila,5).Value = participante.correo
                     sesion.Cells(10+fila,6).Value = participante.telefono
                     fila += 1
             if sesion_numero == 2:
@@ -284,7 +284,7 @@ def generar_listas(modeladmin,request,queryset):
                     sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
                     sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
                     sesion.Cells(10+fila,4).Value = participante.cedula
-                    sesion.Cells(10+fila,5).Value = participante.correo.encode("latin1")
+                    sesion.Cells(10+fila,5).Value = participante.correo
                     sesion.Cells(10+fila,6).Value = participante.telefono
                     fila += 1
 
