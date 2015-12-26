@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/formatos/Lista Padres.xlsx" afterPath="$PROJECT_DIR$/static/formatos/Lista Padres.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,26 +28,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17847769">
-              <caret line="271" column="40" selection-start-line="271" selection-start-column="40" selection-end-line="271" selection-end-column="40" />
-              <folding>
-                <element signature="e#1916#2130#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="117" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="117" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truchas/models.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.28150135">
+              <caret line="686" column="84" selection-start-line="686" selection-start-column="84" selection-end-line="686" selection-end-column="84" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +103,6 @@
         <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
         <option value="$PROJECT_DIR$/formacion/forms.py" />
-        <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/templates/cpe_administrativo.jade" />
         <option value="$PROJECT_DIR$/administrativo/urls.py" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade" />
@@ -120,6 +115,7 @@
         <option value="$PROJECT_DIR$/financiero/urls.py" />
         <option value="$PROJECT_DIR$/financiero/views.py" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/views.py" />
       </list>
     </option>
   </component>
@@ -159,7 +155,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,13 +184,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="truchas" />
+              <option name="myItemId" value="formacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2042,22 +2038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-            <element signature="e#272#648#0" expanded="false" />
-            <element signature="e#686#895#0" expanded="false" />
-            <element signature="e#928#1039#0" expanded="false" />
-            <element signature="e#1077#1188#0" expanded="false" />
-            <element signature="e#1222#1416#0" expanded="false" />
-            <element signature="e#1453#1700#0" expanded="false" />
-            <element signature="e#1737#1854#0" expanded="false" />
-            <element signature="e#1893#2015#0" expanded="false" />
-            <element signature="e#2048#2131#0" expanded="false" />
-            <element signature="e#2169#2292#0" expanded="false" />
-            <element signature="e#2325#2579#0" expanded="false" />
-            <element signature="e#2617#2871#0" expanded="false" />
-            <element signature="e#2908#3587#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2079,7 +2059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2133,7 +2112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07578254">
           <caret line="173" column="104" selection-start-line="173" selection-start-column="104" selection-end-line="173" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2141,7 +2119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.86024094">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2149,15 +2126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44096386">
-          <caret line="32" column="117" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="117" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2165,7 +2133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34299517">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2173,17 +2140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.103448">
-          <caret line="701" column="33" selection-start-line="697" selection-start-column="16" selection-end-line="701" selection-end-column="33" />
-          <folding>
-            <element signature="e#46#81#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2191,9 +2147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.123188406">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2201,7 +2154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5507246">
           <caret line="22" column="98" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2209,7 +2161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.49275362">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2217,9 +2168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33246753">
           <caret line="83" column="38" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2227,9 +2175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65700483">
           <caret line="16" column="92" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2238,7 +2183,7 @@
         <state vertical-scroll-proportion="0.7769029">
           <caret line="643" column="63" selection-start-line="643" selection-start-column="63" selection-end-line="643" selection-end-column="63" />
           <folding>
-            <element signature="e#46#91#0" expanded="true" />
+            <element signature="e#46#91#0" expanded="false" />
             <element signature="e#19357#21311#0" expanded="false" />
             <element signature="e#21383#21916#0" expanded="false" />
             <element signature="e#21971#22240#0" expanded="false" />
@@ -2264,7 +2209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58536583">
           <caret line="86" column="17" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2294,7 +2238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9170732">
           <caret line="36" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2302,7 +2245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2310,9 +2252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="129" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="129" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2320,22 +2259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4199475">
           <caret line="769" column="74" selection-start-line="769" selection-start-column="74" selection-end-line="769" selection-end-column="74" />
-          <folding>
-            <element signature="e#4786#5371#0" expanded="false" />
-            <element signature="e#5427#5707#0" expanded="false" />
-            <element signature="e#5767#6107#0" expanded="false" />
-            <element signature="e#6166#6455#0" expanded="false" />
-            <element signature="e#6513#6884#0" expanded="false" />
-            <element signature="e#6947#7323#0" expanded="false" />
-            <element signature="e#7383#7789#0" expanded="false" />
-            <element signature="e#7852#8219#0" expanded="false" />
-            <element signature="e#8276#9254#0" expanded="false" />
-            <element signature="e#9316#10319#0" expanded="false" />
-            <element signature="e#15340#18122#0" expanded="false" />
-            <element signature="e#21040#24813#0" expanded="false" />
-            <element signature="e#28723#28991#0" expanded="false" />
-            <element signature="e#29508#29698#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2343,7 +2266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1658536">
           <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2351,7 +2273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70487803">
           <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2359,9 +2280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49756098">
           <caret line="12" column="109" selection-start-line="12" selection-start-column="109" selection-end-line="12" selection-end-column="109" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2369,10 +2287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5170604">
           <caret line="737" column="13" selection-start-line="737" selection-start-column="13" selection-end-line="737" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#17943#20935#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2381,7 +2295,7 @@
         <state vertical-scroll-proportion="0.6439024">
           <caret line="115" column="21" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
             <element signature="e#1345#1742#0" expanded="false" />
             <element signature="e#5920#6303#0" expanded="false" />
             <element signature="e#6345#6456#0" expanded="false" />
@@ -2403,23 +2317,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/models.py">
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.6692913">
+          <caret line="282" column="71" selection-start-line="282" selection-start-column="71" selection-end-line="282" selection-end-column="71" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#1916#2130#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+    <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17847769">
-          <caret line="271" column="40" selection-start-line="271" selection-start-column="40" selection-end-line="271" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.39209226">
+          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
           <folding>
-            <element signature="e#1916#2130#0" expanded="false" />
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#221#400#0" expanded="false" />
+            <element signature="e#456#1688#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="117" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28150135">
+          <caret line="686" column="84" selection-start-line="686" selection-start-column="84" selection-end-line="686" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>
