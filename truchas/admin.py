@@ -327,7 +327,8 @@ def generar_virtual_1(modeladmin,request,queryset):
     evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=11,soporte=None)
     for evidencia_docente in evidencia_docentes:
         nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=11))
-        redas = Nivel1_Sesion1_REDA.objects.order_by('?')[:5]
+        redas = Nivel1_Sesion1_REDA.objects.order_by('?')[:5].values_list('id',flat=True)
+        redas = list(redas)
         fields = [('Campo de texto 202',Nivel1_Sesion1_1.objects.order_by('?').first()),
                     ('Campo de texto 203',Nivel1_Sesion1_2.objects.order_by('?').first()),
                     ('Campo de texto 204',Nivel1_Sesion1_3.objects.order_by('?').first()),
@@ -336,10 +337,10 @@ def generar_virtual_1(modeladmin,request,queryset):
                     ('Campo de texto 207',Nivel1_Sesion1_6.objects.order_by('?').first()),
                     ('Campo de texto 208',Nivel1_Sesion1_7.objects.order_by('?').first()),
                     ('Campo de texto 209',Nivel1_Sesion1_8.objects.order_by('?').first()),
-                    ('Campo de texto 210',Nivel1_Sesion1_9.objects.order_by('?').first()),
-                    ('Campo de texto 211',Nivel1_Sesion1_10.objects.order_by('?').first()),
-                    ('Campo de texto 212',Nivel1_Sesion1_11.objects.order_by('?').first()),
-                    ('Campo de texto 213',Nivel1_Sesion1_12.objects.order_by('?').first()),
+                    ('Campo de texto 2010',Nivel1_Sesion1_9.objects.order_by('?').first()),
+                    ('Campo de texto 2011',Nivel1_Sesion1_10.objects.order_by('?').first()),
+                    ('Campo de texto 2012',Nivel1_Sesion1_11.objects.order_by('?').first()),
+                    ('Campo de texto 2013',Nivel1_Sesion1_12.objects.order_by('?').first()),
 
                   ('a1','Elección'+str(random.randrange(1,5))),
                   ('a2','Elección'+str(random.randrange(1,5))),
@@ -362,29 +363,29 @@ def generar_virtual_1(modeladmin,request,queryset):
                   ('a19','Elección'+str(random.randrange(1,5))),
                   ('a20','Elección'+str(random.randrange(1,5))),
                   ('Campo de texto 2031','1'),
-                  ('Campo de texto 2026',redas[0].recurso),
-                  ('Campo de texto 2016',redas[0].portal),
-                  ('Campo de texto 2021',redas[0].url),
+                  ('Campo de texto 2026',Nivel1_Sesion1_REDA.objects.get(id=redas[0]).recurso),
+                  ('Campo de texto 2016',Nivel1_Sesion1_REDA.objects.get(id=redas[0]).portal),
+                  ('Campo de texto 2021',Nivel1_Sesion1_REDA.objects.get(id=redas[0]).url),
 
                   ('Campo de texto 2032','2'),
-                  ('Campo de texto 2027',redas[1].recurso),
-                  ('Campo de texto 2017',redas[1].portal),
-                  ('Campo de texto 2022',redas[1].url),
+                  ('Campo de texto 2027',Nivel1_Sesion1_REDA.objects.get(id=redas[1]).recurso),
+                  ('Campo de texto 2017',Nivel1_Sesion1_REDA.objects.get(id=redas[1]).portal),
+                  ('Campo de texto 2022',Nivel1_Sesion1_REDA.objects.get(id=redas[1]).url),
 
                   ('Campo de texto 2034','3'),
-                  ('Campo de texto 2029',redas[2].recurso),
-                  ('Campo de texto 2018',redas[2].portal),
-                  ('Campo de texto 2024',redas[2].url),
+                  ('Campo de texto 2029',Nivel1_Sesion1_REDA.objects.get(id=redas[2]).recurso),
+                  ('Campo de texto 2018',Nivel1_Sesion1_REDA.objects.get(id=redas[2]).portal),
+                  ('Campo de texto 2024',Nivel1_Sesion1_REDA.objects.get(id=redas[2]).url),
 
                   ('Campo de texto 2033','4'),
-                  ('Campo de texto 2028',redas[3].recurso),
-                  ('Campo de texto 2019',redas[3].portal),
-                  ('Campo de texto 2023',redas[3].url),
+                  ('Campo de texto 2028',Nivel1_Sesion1_REDA.objects.get(id=redas[3]).recurso),
+                  ('Campo de texto 2019',Nivel1_Sesion1_REDA.objects.get(id=redas[3]).portal),
+                  ('Campo de texto 2023',Nivel1_Sesion1_REDA.objects.get(id=redas[3]).url),
 
                   ('Campo de texto 2035','5'),
-                  ('Campo de texto 2030',redas[4].recurso),
-                  ('Campo de texto 2020',redas[4].portal),
-                  ('Campo de texto 2025',redas[4].url),
+                  ('Campo de texto 2030',Nivel1_Sesion1_REDA.objects.get(id=redas[4]).recurso),
+                  ('Campo de texto 2020',Nivel1_Sesion1_REDA.objects.get(id=redas[4]).portal),
+                  ('Campo de texto 2025',Nivel1_Sesion1_REDA.objects.get(id=redas[4]).url),
                     ]
         fdf = forge_fdf("",fields,[],[],[])
         fdf_file = open("C:\\Temp\\data.fdf","wb")
