@@ -40,3 +40,71 @@ class CargasMasivas(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.id)
+
+class Nivel1_Sesion1_1(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_2(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_3(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_4(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_5(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_6(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_7(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_8(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_9(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_10(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_11(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_12(models.Model):
+    respuesta = models.CharField(max_length=5000)
+
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+class Nivel1_Sesion1_REDA(models.Model):
+    recurso = models.CharField(max_length=200)
+    portal = models.CharField(max_length=200)
+    url = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return smart_unicode(self.recurso)

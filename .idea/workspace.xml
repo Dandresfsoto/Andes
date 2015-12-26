@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/models.py" afterPath="$PROJECT_DIR$/formacion/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/models.py" afterPath="$PROJECT_DIR$/truchas/models.py" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,22 +29,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="117" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="117" />
-              <folding />
+              <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#221#400#0" expanded="false" />
+                <element signature="e#456#1688#0" expanded="false" />
+                <element signature="e#1918#2036#0" expanded="false" />
+                <element signature="e#2079#2197#0" expanded="false" />
+                <element signature="e#2240#2358#0" expanded="false" />
+                <element signature="e#2401#2519#0" expanded="false" />
+                <element signature="e#2562#2680#0" expanded="false" />
+                <element signature="e#2723#2841#0" expanded="false" />
+                <element signature="e#2884#3002#0" expanded="false" />
+                <element signature="e#3045#3163#0" expanded="false" />
+                <element signature="e#3206#3324#0" expanded="false" />
+                <element signature="e#3368#3486#0" expanded="false" />
+                <element signature="e#3530#3648#0" expanded="false" />
+                <element signature="e#3692#3810#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/formacion/views.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28150135">
-              <caret line="686" column="84" selection-start-line="686" selection-start-column="84" selection-end-line="686" selection-end-column="84" />
-              <folding />
+            <state vertical-scroll-proportion="0.49514562">
+              <caret line="395" column="41" selection-start-line="395" selection-start-column="41" selection-end-line="395" selection-end-column="41" />
+              <folding>
+                <element signature="e#46#78#0" expanded="true" />
+                <element signature="e#2379#2593#0" expanded="false" />
+                <element signature="e#2653#11906#0" expanded="false" />
+                <element signature="e#12019#12113#0" expanded="false" />
+                <element signature="e#12273#15689#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formador/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="675" column="0" selection-start-line="675" selection-start-column="0" selection-end-line="675" selection-end-column="0" />
+              <folding>
+                <element signature="e#557#4155#0" expanded="false" />
+                <element signature="e#4217#7239#0" expanded="false" />
+                <element signature="e#7294#8844#0" expanded="false" />
+                <element signature="e#8904#10464#0" expanded="false" />
+                <element signature="e#10526#11939#0" expanded="false" />
+                <element signature="e#12009#13965#0" expanded="false" />
+                <element signature="e#14028#15149#0" expanded="false" />
+                <element signature="e#15211#16611#0" expanded="false" />
+                <element signature="e#16668#18592#0" expanded="false" />
+                <element signature="e#20257#21790#0" expanded="false" />
+                <element signature="e#21355#21790#0" expanded="false" />
+                <element signature="e#24782#27342#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1724138">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#1345#1742#0" expanded="false" />
+                <element signature="e#2301#3086#0" expanded="false" />
+                <element signature="e#3127#3949#0" expanded="false" />
+                <element signature="e#5961#6344#0" expanded="false" />
+                <element signature="e#6386#6497#0" expanded="false" />
+                <element signature="e#6530#6639#0" expanded="false" />
+                <element signature="e#6673#6784#0" expanded="false" />
+                <element signature="e#6824#6945#0" expanded="false" />
+                <element signature="e#6989#7116#0" expanded="false" />
+                <element signature="e#9100#9211#0" expanded="false" />
+                <element signature="e#9256#9367#0" expanded="false" />
+                <element signature="e#9703#9947#0" expanded="false" />
+                <element signature="e#9980#10063#0" expanded="false" />
+                <element signature="e#10103#10321#0" expanded="false" />
+                <element signature="e#10354#10639#0" expanded="false" />
+                <element signature="e#10679#10972#0" expanded="false" />
+                <element signature="e#11006#11383#0" expanded="false" />
+                <element signature="e#11438#11750#0" expanded="false" />
+                <element signature="e#13224#13357#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,13 +171,11 @@
         <option value="$PROJECT_DIR$/pqr/models.py" />
         <option value="$PROJECT_DIR$/static/js/llamadas.js" />
         <option value="$PROJECT_DIR$/formacion/urls.py" />
-        <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/static/css/base.styl" />
         <option value="$PROJECT_DIR$/templates/auxiliares.jade" />
         <option value="$PROJECT_DIR$/static/js/auxiliares.js" />
         <option value="$PROJECT_DIR$/conf/settings.py" />
-        <option value="$PROJECT_DIR$/truchas/models.py" />
         <option value="$PROJECT_DIR$/formacion/forms.py" />
         <option value="$PROJECT_DIR$/templates/cpe_administrativo.jade" />
         <option value="$PROJECT_DIR$/administrativo/urls.py" />
@@ -114,8 +188,10 @@
         <option value="$PROJECT_DIR$/templates/listado_gestores_evidencia_corte_apoyo.jade" />
         <option value="$PROJECT_DIR$/financiero/urls.py" />
         <option value="$PROJECT_DIR$/financiero/views.py" />
-        <option value="$PROJECT_DIR$/truchas/admin.py" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
+        <option value="$PROJECT_DIR$/truchas/models.py" />
+        <option value="$PROJECT_DIR$/formacion/models.py" />
+        <option value="$PROJECT_DIR$/truchas/admin.py" />
       </list>
     </option>
   </component>
@@ -467,7 +543,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31023622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30708662" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -490,36 +566,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formacion/models.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="269" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formacion/models.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="270" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formacion/models.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="271" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formacion/models.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="272" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>671</line>
-          <option name="timeStamp" value="349" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>672</line>
-          <option name="timeStamp" value="350" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
           <line>685</line>
@@ -559,21 +605,6 @@
           <url>file://$PROJECT_DIR$/formador/views.py</url>
           <line>692</line>
           <option name="timeStamp" value="359" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>674</line>
-          <option name="timeStamp" value="364" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>673</line>
-          <option name="timeStamp" value="365" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>675</line>
-          <option name="timeStamp" value="366" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
@@ -1252,392 +1283,392 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>114</line>
+          <line>120</line>
           <option name="timeStamp" value="868" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>112</line>
+          <line>118</line>
           <option name="timeStamp" value="869" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>115</line>
+          <line>121</line>
           <option name="timeStamp" value="870" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>116</line>
+          <line>122</line>
           <option name="timeStamp" value="871" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>117</line>
+          <line>123</line>
           <option name="timeStamp" value="872" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>118</line>
+          <line>124</line>
           <option name="timeStamp" value="873" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>119</line>
+          <line>125</line>
           <option name="timeStamp" value="874" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>120</line>
+          <line>126</line>
           <option name="timeStamp" value="875" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>123</line>
+          <line>129</line>
           <option name="timeStamp" value="877" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>121</line>
+          <line>127</line>
           <option name="timeStamp" value="878" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>124</line>
+          <line>130</line>
           <option name="timeStamp" value="879" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>126</line>
+          <line>132</line>
           <option name="timeStamp" value="880" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>127</line>
+          <line>133</line>
           <option name="timeStamp" value="881" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>128</line>
+          <line>134</line>
           <option name="timeStamp" value="882" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>130</line>
+          <line>136</line>
           <option name="timeStamp" value="883" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>131</line>
+          <line>137</line>
           <option name="timeStamp" value="884" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>133</line>
+          <line>139</line>
           <option name="timeStamp" value="885" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>134</line>
+          <line>140</line>
           <option name="timeStamp" value="886" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>135</line>
+          <line>141</line>
           <option name="timeStamp" value="887" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>136</line>
+          <line>142</line>
           <option name="timeStamp" value="888" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>137</line>
+          <line>143</line>
           <option name="timeStamp" value="889" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>138</line>
+          <line>144</line>
           <option name="timeStamp" value="890" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>139</line>
+          <line>145</line>
           <option name="timeStamp" value="891" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>140</line>
+          <line>146</line>
           <option name="timeStamp" value="892" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>141</line>
+          <line>147</line>
           <option name="timeStamp" value="893" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>142</line>
+          <line>148</line>
           <option name="timeStamp" value="894" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>143</line>
+          <line>149</line>
           <option name="timeStamp" value="895" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>144</line>
+          <line>150</line>
           <option name="timeStamp" value="896" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>148</line>
+          <line>154</line>
           <option name="timeStamp" value="897" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>149</line>
+          <line>155</line>
           <option name="timeStamp" value="898" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>150</line>
+          <line>156</line>
           <option name="timeStamp" value="899" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>151</line>
+          <line>157</line>
           <option name="timeStamp" value="900" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>152</line>
+          <line>158</line>
           <option name="timeStamp" value="901" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>153</line>
+          <line>159</line>
           <option name="timeStamp" value="902" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>154</line>
+          <line>160</line>
           <option name="timeStamp" value="903" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>155</line>
+          <line>161</line>
           <option name="timeStamp" value="904" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>156</line>
+          <line>162</line>
           <option name="timeStamp" value="906" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>157</line>
+          <line>163</line>
           <option name="timeStamp" value="907" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>158</line>
+          <line>164</line>
           <option name="timeStamp" value="908" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>159</line>
+          <line>165</line>
           <option name="timeStamp" value="909" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>160</line>
+          <line>166</line>
           <option name="timeStamp" value="910" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>162</line>
+          <line>168</line>
           <option name="timeStamp" value="912" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>161</line>
+          <line>167</line>
           <option name="timeStamp" value="913" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>163</line>
+          <line>169</line>
           <option name="timeStamp" value="914" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>164</line>
+          <line>170</line>
           <option name="timeStamp" value="915" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>167</line>
+          <line>173</line>
           <option name="timeStamp" value="917" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>166</line>
+          <line>172</line>
           <option name="timeStamp" value="918" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>168</line>
+          <line>174</line>
           <option name="timeStamp" value="919" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>169</line>
+          <line>175</line>
           <option name="timeStamp" value="920" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>171</line>
+          <line>177</line>
           <option name="timeStamp" value="921" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>172</line>
+          <line>178</line>
           <option name="timeStamp" value="922" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>173</line>
+          <line>179</line>
           <option name="timeStamp" value="923" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>174</line>
+          <line>180</line>
           <option name="timeStamp" value="924" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>175</line>
+          <line>181</line>
           <option name="timeStamp" value="925" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>177</line>
+          <line>183</line>
           <option name="timeStamp" value="926" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>195</line>
+          <line>201</line>
           <option name="timeStamp" value="927" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>196</line>
+          <line>202</line>
           <option name="timeStamp" value="928" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>197</line>
+          <line>203</line>
           <option name="timeStamp" value="929" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>198</line>
+          <line>204</line>
           <option name="timeStamp" value="930" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>178</line>
+          <line>184</line>
           <option name="timeStamp" value="931" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>179</line>
+          <line>185</line>
           <option name="timeStamp" value="932" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>180</line>
+          <line>186</line>
           <option name="timeStamp" value="933" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>181</line>
+          <line>187</line>
           <option name="timeStamp" value="934" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>182</line>
+          <line>188</line>
           <option name="timeStamp" value="935" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>184</line>
+          <line>190</line>
           <option name="timeStamp" value="936" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>183</line>
+          <line>189</line>
           <option name="timeStamp" value="937" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>185</line>
+          <line>191</line>
           <option name="timeStamp" value="938" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>186</line>
+          <line>192</line>
           <option name="timeStamp" value="939" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>187</line>
+          <line>193</line>
           <option name="timeStamp" value="940" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>188</line>
+          <line>194</line>
           <option name="timeStamp" value="941" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>189</line>
+          <line>195</line>
           <option name="timeStamp" value="942" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>190</line>
+          <line>196</line>
           <option name="timeStamp" value="943" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>191</line>
+          <line>197</line>
           <option name="timeStamp" value="944" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>192</line>
+          <line>198</line>
           <option name="timeStamp" value="945" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>193</line>
+          <line>199</line>
           <option name="timeStamp" value="946" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>145</line>
+          <line>151</line>
           <option name="timeStamp" value="947" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>146</line>
+          <line>152</line>
           <option name="timeStamp" value="948" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>147</line>
+          <line>153</line>
           <option name="timeStamp" value="949" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1895,6 +1926,21 @@
           <line>636</line>
           <option name="timeStamp" value="1013" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>327</line>
+          <option name="timeStamp" value="1064" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>330</line>
+          <option name="timeStamp" value="1066" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>328</line>
+          <option name="timeStamp" value="1067" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1906,18 +1952,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1014" />
+      <option name="time" value="1068" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/map_nueva_respuesta.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9180723">
-          <caret line="47" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/llamadas_respuesta.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75421685">
@@ -2038,6 +2077,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+            <element signature="e#272#648#0" expanded="false" />
+            <element signature="e#686#895#0" expanded="false" />
+            <element signature="e#928#1039#0" expanded="false" />
+            <element signature="e#1077#1188#0" expanded="false" />
+            <element signature="e#1222#1416#0" expanded="false" />
+            <element signature="e#1453#1700#0" expanded="false" />
+            <element signature="e#1737#1854#0" expanded="false" />
+            <element signature="e#1893#2015#0" expanded="false" />
+            <element signature="e#2048#2131#0" expanded="false" />
+            <element signature="e#2169#2292#0" expanded="false" />
+            <element signature="e#2325#2579#0" expanded="false" />
+            <element signature="e#2617#2871#0" expanded="false" />
+            <element signature="e#2908#3587#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2212,28 +2267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formador/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5804878">
-          <caret line="805" column="184" selection-start-line="805" selection-start-column="116" selection-end-line="805" selection-end-column="184" />
-          <folding>
-            <element signature="e#557#4155#0" expanded="false" />
-            <element signature="e#4217#7239#0" expanded="false" />
-            <element signature="e#7294#8844#0" expanded="false" />
-            <element signature="e#8904#10464#0" expanded="false" />
-            <element signature="e#10526#11939#0" expanded="false" />
-            <element signature="e#12009#13965#0" expanded="false" />
-            <element signature="e#14028#15149#0" expanded="false" />
-            <element signature="e#15211#16611#0" expanded="false" />
-            <element signature="e#16668#18592#0" expanded="false" />
-            <element signature="e#18659#20198#0" expanded="false" />
-            <element signature="e#20257#21790#0" expanded="false" />
-            <element signature="e#21355#21790#0" expanded="false" />
-            <element signature="e#24782#27342#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/listado_gestores_evidencia_corte.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9170732">
@@ -2290,68 +2323,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/models.py">
+    <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6439024">
-          <caret line="115" column="21" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.28150135">
+          <caret line="686" column="84" selection-start-line="686" selection-start-column="84" selection-end-line="686" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6536585">
+          <caret line="32" column="117" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3313253">
+          <caret line="936" column="41" selection-start-line="936" selection-start-column="33" selection-end-line="936" selection-end-column="41" />
           <folding>
-            <element signature="e#0#28#0" expanded="false" />
-            <element signature="e#1345#1742#0" expanded="false" />
-            <element signature="e#5920#6303#0" expanded="false" />
-            <element signature="e#6345#6456#0" expanded="false" />
-            <element signature="e#6489#6598#0" expanded="false" />
-            <element signature="e#6632#6743#0" expanded="false" />
-            <element signature="e#6783#6904#0" expanded="false" />
-            <element signature="e#6948#7075#0" expanded="false" />
-            <element signature="e#9059#9170#0" expanded="false" />
-            <element signature="e#9215#9326#0" expanded="false" />
-            <element signature="e#9662#9906#0" expanded="false" />
-            <element signature="e#9939#10022#0" expanded="false" />
-            <element signature="e#10062#10280#0" expanded="false" />
-            <element signature="e#10313#10598#0" expanded="false" />
-            <element signature="e#10638#10931#0" expanded="false" />
-            <element signature="e#10965#11342#0" expanded="false" />
-            <element signature="e#11397#11709#0" expanded="false" />
-            <element signature="e#13183#13316#0" expanded="false" />
+            <element signature="e#46#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+    <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6692913">
-          <caret line="282" column="71" selection-start-line="282" selection-start-column="71" selection-end-line="282" selection-end-column="71" />
+        <state vertical-scroll-proportion="-1.1724138">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#1916#2130#0" expanded="false" />
+            <element signature="e#1345#1742#0" expanded="false" />
+            <element signature="e#2301#3086#0" expanded="false" />
+            <element signature="e#3127#3949#0" expanded="false" />
+            <element signature="e#5961#6344#0" expanded="false" />
+            <element signature="e#6386#6497#0" expanded="false" />
+            <element signature="e#6530#6639#0" expanded="false" />
+            <element signature="e#6673#6784#0" expanded="false" />
+            <element signature="e#6824#6945#0" expanded="false" />
+            <element signature="e#6989#7116#0" expanded="false" />
+            <element signature="e#9100#9211#0" expanded="false" />
+            <element signature="e#9256#9367#0" expanded="false" />
+            <element signature="e#9703#9947#0" expanded="false" />
+            <element signature="e#9980#10063#0" expanded="false" />
+            <element signature="e#10103#10321#0" expanded="false" />
+            <element signature="e#10354#10639#0" expanded="false" />
+            <element signature="e#10679#10972#0" expanded="false" />
+            <element signature="e#11006#11383#0" expanded="false" />
+            <element signature="e#11438#11750#0" expanded="false" />
+            <element signature="e#13224#13357#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formador/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="675" column="0" selection-start-line="675" selection-start-column="0" selection-end-line="675" selection-end-column="0" />
+          <folding>
+            <element signature="e#557#4155#0" expanded="false" />
+            <element signature="e#4217#7239#0" expanded="false" />
+            <element signature="e#7294#8844#0" expanded="false" />
+            <element signature="e#8904#10464#0" expanded="false" />
+            <element signature="e#10526#11939#0" expanded="false" />
+            <element signature="e#12009#13965#0" expanded="false" />
+            <element signature="e#14028#15149#0" expanded="false" />
+            <element signature="e#15211#16611#0" expanded="false" />
+            <element signature="e#16668#18592#0" expanded="false" />
+            <element signature="e#20257#21790#0" expanded="false" />
+            <element signature="e#21355#21790#0" expanded="false" />
+            <element signature="e#24782#27342#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39209226">
-          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#221#400#0" expanded="false" />
             <element signature="e#456#1688#0" expanded="false" />
+            <element signature="e#1918#2036#0" expanded="false" />
+            <element signature="e#2079#2197#0" expanded="false" />
+            <element signature="e#2240#2358#0" expanded="false" />
+            <element signature="e#2401#2519#0" expanded="false" />
+            <element signature="e#2562#2680#0" expanded="false" />
+            <element signature="e#2723#2841#0" expanded="false" />
+            <element signature="e#2884#3002#0" expanded="false" />
+            <element signature="e#3045#3163#0" expanded="false" />
+            <element signature="e#3206#3324#0" expanded="false" />
+            <element signature="e#3368#3486#0" expanded="false" />
+            <element signature="e#3530#3648#0" expanded="false" />
+            <element signature="e#3692#3810#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="117" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28150135">
-          <caret line="686" column="84" selection-start-line="686" selection-start-column="84" selection-end-line="686" selection-end-column="84" />
-          <folding />
+        <state vertical-scroll-proportion="0.49514562">
+          <caret line="395" column="41" selection-start-line="395" selection-start-column="41" selection-end-line="395" selection-end-column="41" />
+          <folding>
+            <element signature="e#46#78#0" expanded="true" />
+            <element signature="e#2379#2593#0" expanded="false" />
+            <element signature="e#2653#11906#0" expanded="false" />
+            <element signature="e#12019#12113#0" expanded="false" />
+            <element signature="e#12273#15689#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

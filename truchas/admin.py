@@ -19,6 +19,12 @@ from win32com import client
 from win32com.client import DispatchEx
 from win32com import *
 from django.shortcuts import HttpResponseRedirect
+from .models import Nivel1_Sesion1_1,Nivel1_Sesion1_2,Nivel1_Sesion1_3,Nivel1_Sesion1_4,Nivel1_Sesion1_5,Nivel1_Sesion1_6,Nivel1_Sesion1_7,Nivel1_Sesion1_8,Nivel1_Sesion1_9,Nivel1_Sesion1_10,Nivel1_Sesion1_11,Nivel1_Sesion1_12,Nivel1_Sesion1_REDA
+from fdfgen import forge_fdf
+import os
+import random
+from formacion.models import SoporteEntregableDocente, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes, ValorDocente
+from django.core.files import File
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -238,14 +244,12 @@ def carga_participantes(modeladmin,request,queryset):
         return response
 carga_participantes.short_description = "Cargar participantes"
 
-
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
     actions = [carga_participantes]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
-
 
 def generar_listas(modeladmin,request,queryset):
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
@@ -312,10 +316,102 @@ def generar_listas(modeladmin,request,queryset):
     return HttpResponseRedirect('/media/Listados Escuela Tic/Padres.pdf')
 generar_listas.short_description = "Generar Listas"
 
-
 class CodigoMasivoAdmin(admin.ModelAdmin):
     list_display = ['id','generado']
     list_filter = ['generado']
     ordering = ['id']
     actions = [generar_listas]
 admin.site.register(CodigoMasivo,CodigoMasivoAdmin)
+
+def generar_virtual_1(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=11,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=11))
+        redas = Nivel1_Sesion1_REDA.objects.order_by('?')[:5]
+        fields = [('Campo de texto 202',Nivel1_Sesion1_1.objects.order_by('?').first()),
+                    ('Campo de texto 203',Nivel1_Sesion1_2.objects.order_by('?').first()),
+                    ('Campo de texto 204',Nivel1_Sesion1_3.objects.order_by('?').first()),
+                    ('Campo de texto 205',Nivel1_Sesion1_4.objects.order_by('?').first()),
+                    ('Campo de texto 206',Nivel1_Sesion1_5.objects.order_by('?').first()),
+                    ('Campo de texto 207',Nivel1_Sesion1_6.objects.order_by('?').first()),
+                    ('Campo de texto 208',Nivel1_Sesion1_7.objects.order_by('?').first()),
+                    ('Campo de texto 209',Nivel1_Sesion1_8.objects.order_by('?').first()),
+                    ('Campo de texto 210',Nivel1_Sesion1_9.objects.order_by('?').first()),
+                    ('Campo de texto 211',Nivel1_Sesion1_10.objects.order_by('?').first()),
+                    ('Campo de texto 212',Nivel1_Sesion1_11.objects.order_by('?').first()),
+                    ('Campo de texto 213',Nivel1_Sesion1_12.objects.order_by('?').first()),
+
+                  ('a1','Elección'+str(random.randrange(1,5))),
+                  ('a2','Elección'+str(random.randrange(1,5))),
+                  ('a3','Elección'+str(random.randrange(1,5))),
+                  ('a4','Elección'+str(random.randrange(1,5))),
+                  ('a5','Elección'+str(random.randrange(1,5))),
+                  ('a6','Elección'+str(random.randrange(1,5))),
+                  ('a7','Elección'+str(random.randrange(1,5))),
+                  ('a8','Elección'+str(random.randrange(1,5))),
+                  ('a9','Elección'+str(random.randrange(1,5))),
+                  ('a10','Elección'+str(random.randrange(1,5))),
+                  ('a11','Elección'+str(random.randrange(1,5))),
+                  ('a12','Elección'+str(random.randrange(1,5))),
+                  ('a13','Elección'+str(random.randrange(1,5))),
+                  ('a14','Elección'+str(random.randrange(1,5))),
+                  ('a15','Elección'+str(random.randrange(1,5))),
+                  ('a16','Elección'+str(random.randrange(1,5))),
+                  ('a17','Elección'+str(random.randrange(1,5))),
+                  ('a18','Elección'+str(random.randrange(1,5))),
+                  ('a19','Elección'+str(random.randrange(1,5))),
+                  ('a20','Elección'+str(random.randrange(1,5))),
+                  ('Campo de texto 2031','1'),
+                  ('Campo de texto 2026',redas[0].recurso),
+                  ('Campo de texto 2016',redas[0].portal),
+                  ('Campo de texto 2021',redas[0].url),
+
+                  ('Campo de texto 2032','2'),
+                  ('Campo de texto 2027',redas[1].recurso),
+                  ('Campo de texto 2017',redas[1].portal),
+                  ('Campo de texto 2022',redas[1].url),
+
+                  ('Campo de texto 2034','3'),
+                  ('Campo de texto 2029',redas[2].recurso),
+                  ('Campo de texto 2018',redas[2].portal),
+                  ('Campo de texto 2024',redas[2].url),
+
+                  ('Campo de texto 2033','4'),
+                  ('Campo de texto 2028',redas[3].recurso),
+                  ('Campo de texto 2019',redas[3].portal),
+                  ('Campo de texto 2023',redas[3].url),
+
+                  ('Campo de texto 2035','5'),
+                  ('Campo de texto 2030',redas[4].recurso),
+                  ('Campo de texto 2020',redas[4].portal),
+                  ('Campo de texto 2025',redas[4].url),
+                    ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\data.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion1_plantilla.pdf fill_form C:\\Temp\\data.fdf output C:\\Temp\\sesion1.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion1.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+
+generar_virtual_1.short_description = "Generar Actividad Virtual 1"
+
+class Nivel1_Sesion1_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_virtual_1]
+
+admin.site.register(Nivel1_Sesion1_1,Nivel1_Sesion1_1Admin)
+admin.site.register(Nivel1_Sesion1_2)
+admin.site.register(Nivel1_Sesion1_3)
+admin.site.register(Nivel1_Sesion1_4)
+admin.site.register(Nivel1_Sesion1_5)
+admin.site.register(Nivel1_Sesion1_6)
+admin.site.register(Nivel1_Sesion1_7)
+admin.site.register(Nivel1_Sesion1_8)
+admin.site.register(Nivel1_Sesion1_9)
+admin.site.register(Nivel1_Sesion1_10)
+admin.site.register(Nivel1_Sesion1_11)
+admin.site.register(Nivel1_Sesion1_12)
+admin.site.register(Nivel1_Sesion1_REDA)

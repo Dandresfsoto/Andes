@@ -35,7 +35,8 @@ def upload_soporte_escuela_tipo1(instance, filename):
     path = path.replace(' \\','\\').replace('\\ ','\\')
     if not os.path.exists(path):
         os.makedirs(path)
-    return '/'.join([path,filename])
+    file = filename.split("//")
+    return '/'.join([path,file[len(file)-1]])
 
 class Grupo(models.Model):
     formador = models.ForeignKey(Formador)
