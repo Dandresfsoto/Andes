@@ -316,11 +316,32 @@ def generar_listas(modeladmin,request,queryset):
     return HttpResponseRedirect('/media/Listados Escuela Tic/Padres.pdf')
 generar_listas.short_description = "Generar Listas"
 
+def copiar_participantes(modeladmin,request,queryset):
+    for participante_trucho in ParticipanteEscuelaTicTrucho.objects.all():
+        if ParticipanteEscuelaTic.objects.filter(cedula=participante_trucho.cedula).count() == 0:
+            nuevo = ParticipanteEscuelaTic()
+            nuevo.formador = participante_trucho.formador
+            nuevo.grupo = participante_trucho.grupo
+            nuevo.institucion = participante_trucho.institucion
+            nuevo.nombres = participante_trucho.nombres
+            nuevo.apellidos = participante_trucho.apellidos
+            nuevo.cedula = participante_trucho.cedula
+            nuevo.genero = participante_trucho.genero
+            nuevo.nivel_educativo = participante_trucho.nivel_educativo
+            nuevo.telefono = participante_trucho.telefono
+            nuevo.correo = participante_trucho.correo
+            nuevo.poblacion = participante_trucho.poblacion
+            nuevo.codigo_anspe = participante_trucho.codigo_anspe
+            nuevo.tipo_proyecto = participante_trucho.tipo_proyecto
+            nuevo.grupo_conformacion = participante_trucho.grupo_conformacion
+            nuevo.save()
+copiar_participantes.short_description = "Copiar Participantes"
+
 class CodigoMasivoAdmin(admin.ModelAdmin):
     list_display = ['id','generado']
     list_filter = ['generado']
     ordering = ['id']
-    actions = [generar_listas]
+    actions = [generar_listas,copiar_participantes]
 admin.site.register(CodigoMasivo,CodigoMasivoAdmin)
 
 def generar_virtual_1(modeladmin,request,queryset):
