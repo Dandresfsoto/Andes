@@ -21,7 +21,8 @@ def upload_soporte_escuela(instance, filename):
     path = path.replace(' \\','\\').replace('\\ ','\\')
     if not os.path.exists(path):
         os.makedirs(path)
-    return '/'.join([path,filename])
+    file = filename.split("//")
+    return '/'.join([path,file[len(file)-1]])
 
 def content_file_name_tipo1(instance, filename):
     path = os.path.join('Formacion', 'Formadores Tipo 1', smart_unicode(instance.grupo.formador.region),'Archivos Masivos',smart_unicode(instance.grupo.formador.nombre),smart_unicode(instance.grupo.nombre),strftime("%d-%m-%Y %H-%M-%S", localtime()))
@@ -303,7 +304,6 @@ class EvidenciaDocentes(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.participante)
-
 
 class CargasMasivas(models.Model):
     archivo = models.FileField(upload_to="Cargas Masivas/Escuela TIC/")

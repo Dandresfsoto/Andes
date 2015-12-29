@@ -10,6 +10,12 @@ import openpyxl
 import time
 import datetime
 from openpyxl.styles import Style, PatternFill, Border, Side, Alignment, Protection, Font
+from zipfile import ZipFile
+from truchas.models import ParticipanteEscuelaTicTrucho, CodigoMasivo
+from formacion.models import SoporteEntregableEscuelaTic, ParticipanteEscuelaTic, EvidenciaDocentes
+import os
+import shutil
+from django.core.files import File
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -699,11 +705,123 @@ def carga_docentes(modeladmin,request,queryset):
         return response
 carga_docentes.short_description = "Cargar Docentes"
 
+def carga_participantes(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Carga Masiva"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'FORMACION'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Carga Masiva'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['NOMBRE ARCHIVO',30]),
+                   tuple(['INFORMACION',60]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(archivo_queryset.archivo),'r')
+
+        name_list = soportes.namelist()
+
+        for name in name_list:
+            resultado = ""
+            sesion = name.split("_")[0]
+            cedula = name.split("_")[1].split(".")[0]
+
+            try:
+                participante_trucho = ParticipanteEscuelaTicTrucho.objects.get(cedula=cedula)
+            except:
+                resultado = "No existe el numero de cedula"
+            else:
+                cedulas = ParticipanteEscuelaTicTrucho.objects.filter(codigo_masivo__id=participante_trucho.codigo_masivo.id).values_list("cedula",flat=True)
+                if sesion == "1":
+                    resultado = "Participantes Cargados Exitosamente"
+                    nuevo_soporte = SoporteEntregableEscuelaTic()
+                    nuevo_soporte.grupo = participante_trucho.grupo
+                    nuevo_soporte.entregable = Entregable.objects.get(id=5)
+                    source = soportes.open(name)
+                    target = file(os.path.join(r"C:\Temp",name),"wb")
+                    with source, target:
+                        shutil.copyfileobj(source,target)
+                    nuevo_soporte.soporte = File(open("C://Temp//" + name, 'rb'))
+                    nuevo_soporte.save()
+                    os.remove("C://Temp//" + name)
+                    for cedula in cedulas:
+                        evidencia = EvidenciaEscuelaTic.objects.filter(participante__cedula=cedula).get(entregable=nuevo_soporte.entregable.id)
+                        evidencia.soporte = nuevo_soporte
+
+                        evidencia.save()
+                elif sesion == "2":
+                    resultado = "Participantes Cargados Exitosamente"
+                    nuevo_soporte = SoporteEntregableEscuelaTic()
+                    nuevo_soporte.grupo = participante_trucho.grupo
+                    nuevo_soporte.entregable = Entregable.objects.get(id=9)
+                    source = soportes.open(name)
+                    target = file(os.path.join(r"C:\Temp",name),"wb")
+                    with source, target:
+                        shutil.copyfileobj(source,target)
+                    nuevo_soporte.soporte = File(open("C://Temp//" + name, 'rb'))
+                    nuevo_soporte.save()
+                    os.remove("C://Temp//" + name)
+                    for cedula in cedulas:
+                        evidencia = EvidenciaEscuelaTic.objects.filter(participante__cedula=cedula).get(entregable=nuevo_soporte.entregable.id)
+                        evidencia.soporte = nuevo_soporte
+                        evidencia.save()
+                else:
+                    "El numero de sesion es invalido"
+
+
+            row_num += 1
+            row = [
+                name,
+                resultado
+            ]
+
+            for col_num in xrange(len(row)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                if row[col_num] == True:
+                    c.value = "SI"
+                if row[col_num] == False:
+                    c.value = "NO"
+                if row[col_num] == None:
+                    c.value = ""
+                else:
+                    c.value = row[col_num]
+                c.style = co
+
+        archivo.save(response)
+        return response
+carga_participantes.short_description = "Cargar Listados Masivos"
+
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes]
-
+    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes,carga_participantes]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
 def asignacion_total(modeladmin,request,queryset):
