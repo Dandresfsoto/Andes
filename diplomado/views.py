@@ -6,6 +6,15 @@ from django_datatables_view.base_datatable_view import BaseDatatableView
 from participantes.models import Participante
 from mixins.mixins import CpeMixin
 from formacion.models import ParticipanteEscuelaTic, ParticipanteDocente
+from formacion.models import RevisionInterventoriaDocente, RevisionInterventoriaEscuelaTic
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
 
 class ParticipantesDatatablesView(BaseDatatableView):
     model = Participante
@@ -70,6 +79,22 @@ class EscuelaTicEvidenciasListadoView(TemplateView):
         kwargs['ID_PARTICIPANTE'] = participante.id
         return super(EscuelaTicEvidenciasListadoView,self).get_context_data(**kwargs)
 
+    def dispatch(self, request, *args, **kwargs):
+        # Try to dispatch to the right method; if a method doesn't exist,
+        # defer to the error handler. Also defer to the error handler if the
+        # request method isn't on the approved list.
+        if request.method.lower() in self.http_method_names:
+            handler = getattr(self, request.method.lower(), self.http_method_not_allowed)
+        else:
+            handler = self.http_method_not_allowed
+        nuevo = RevisionInterventoriaEscuelaTic()
+        nuevo.usuario=request.user
+        nuevo.ip=get_client_ip(request)
+        nuevo.region=Region.objects.get(id=self.kwargs['pk'])
+        nuevo.participante=ParticipanteEscuelaTic.objects.get(id=self.kwargs['participante_id'])
+        nuevo.save()
+        return handler(request, *args, **kwargs)
+
 class DocentesEvidenciasListadoView(TemplateView):
     template_name = 'docentes_participantes_evidencias.html'
 
@@ -80,6 +105,22 @@ class DocentesEvidenciasListadoView(TemplateView):
         kwargs['PARTICIPANTE'] = participante.nombres+" "+participante.apellidos+" - "+str(participante.cedula)
         kwargs['ID_PARTICIPANTE'] = participante.id
         return super(DocentesEvidenciasListadoView,self).get_context_data(**kwargs)
+
+    def dispatch(self, request, *args, **kwargs):
+        # Try to dispatch to the right method; if a method doesn't exist,
+        # defer to the error handler. Also defer to the error handler if the
+        # request method isn't on the approved list.
+        if request.method.lower() in self.http_method_names:
+            handler = getattr(self, request.method.lower(), self.http_method_not_allowed)
+        else:
+            handler = self.http_method_not_allowed
+        nuevo = RevisionInterventoriaDocente()
+        nuevo.usuario=request.user
+        nuevo.ip=get_client_ip(request)
+        nuevo.region=Region.objects.get(id=self.kwargs['pk'])
+        nuevo.participante=ParticipanteDocente.objects.get(id=self.kwargs['participante_id'])
+        nuevo.save()
+        return handler(request, *args, **kwargs)
 
 class EscuelaTicActividadesListadoView(TemplateView):
     template_name = 'escuela_tic_actividades.html'

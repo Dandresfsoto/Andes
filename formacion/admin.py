@@ -16,6 +16,7 @@ from formacion.models import SoporteEntregableEscuelaTic, ParticipanteEscuelaTic
 import os
 import shutil
 from django.core.files import File
+from .models import RevisionInterventoriaEscuelaTic, RevisionInterventoriaDocente
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -888,3 +889,6 @@ class EntregableDocentesAdmin(admin.ModelAdmin):
     ordering = ['id']
     actions = [asignacion_total,crear_entregables_docentes]
 admin.site.register(EntregableDocentes,EntregableDocentesAdmin)
+
+admin.site.register(RevisionInterventoriaDocente)
+admin.site.register(RevisionInterventoriaEscuelaTic)

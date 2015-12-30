@@ -310,3 +310,23 @@ class CargasMasivas(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.id)
+
+class RevisionInterventoriaDocente(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    ip = models.IPAddressField(null=True,blank=True)
+    region = models.ForeignKey(Region)
+    participante = models.ForeignKey(ParticipanteDocente)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
+
+class RevisionInterventoriaEscuelaTic(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    ip = models.IPAddressField(null=True,blank=True)
+    region = models.ForeignKey(Region)
+    participante = models.ForeignKey(ParticipanteEscuelaTic)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
