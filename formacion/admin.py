@@ -706,7 +706,7 @@ def carga_docentes(modeladmin,request,queryset):
         return response
 carga_docentes.short_description = "Cargar Docentes"
 
-def carga_participantes(modeladmin,request,queryset):
+def carga_participantes_truchos(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
@@ -817,12 +817,12 @@ def carga_participantes(modeladmin,request,queryset):
 
         archivo.save(response)
         return response
-carga_participantes.short_description = "Cargar Listados Masivos"
+carga_participantes_truchos.short_description = "Cargar Listados Masivos"
 
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes,carga_participantes]
+    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes,carga_participantes_truchos]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
 def asignacion_total(modeladmin,request,queryset):
