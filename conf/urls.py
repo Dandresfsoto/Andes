@@ -35,5 +35,5 @@ urlpatterns = [
     url(r'^pqr/', include('pqr.urls')),
     url(r'^password/cambiar/$', login_required(views.CambiarPassword.as_view())),
 
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT,}),
+    url(r'^media/(?P<path>.*)$', 'conf.static.serve',{'document_root': settings.MEDIA_ROOT,}),
 ]

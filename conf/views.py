@@ -14,3 +14,4 @@ class CambiarPassword(UpdateView):
         kwargs['user'] = kwargs.pop('instance')
 
         return kwargs
+

@@ -317,9 +317,30 @@ class RevisionInterventoriaDocente(models.Model):
     ip = models.IPAddressField(null=True,blank=True)
     region = models.ForeignKey(Region)
     participante = models.ForeignKey(ParticipanteDocente)
+    registrado = models.BooleanField(default=False)
 
     def __unicode__(self):
         return smart_unicode(self.fecha)
+
+class RevisionInterventoriaDocenteSoporte(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    ip = models.IPAddressField(null=True,blank=True)
+    evidencia = models.ForeignKey(EvidenciaDocentes,null=True,blank=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
+
+
+class RevisionInterventoriaDocenteSoporteActividades(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    ip = models.IPAddressField(null=True,blank=True)
+    path = models.CharField(max_length=500,blank=True,null=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
+
 
 class RevisionInterventoriaEscuelaTic(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
@@ -327,6 +348,25 @@ class RevisionInterventoriaEscuelaTic(models.Model):
     ip = models.IPAddressField(null=True,blank=True)
     region = models.ForeignKey(Region)
     participante = models.ForeignKey(ParticipanteEscuelaTic)
+    registrado = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
+
+class RevisionInterventoriaEscuelaTicSoporte(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    ip = models.IPAddressField(null=True,blank=True)
+    evidencia = models.ForeignKey(EvidenciaEscuelaTic,blank=True,null=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
+
+class RevisionInterventoriaEscuelaTicSoporteActividades(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    ip = models.IPAddressField(null=True,blank=True)
+    path = models.CharField(max_length=500,blank=True,null=True)
 
     def __unicode__(self):
         return smart_unicode(self.fecha)

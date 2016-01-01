@@ -16,7 +16,8 @@ from formacion.models import SoporteEntregableEscuelaTic, ParticipanteEscuelaTic
 import os
 import shutil
 from django.core.files import File
-from .models import RevisionInterventoriaEscuelaTic, RevisionInterventoriaDocente
+from .models import RevisionInterventoriaEscuelaTic, RevisionInterventoriaDocente, RevisionInterventoriaDocenteSoporte, RevisionInterventoriaEscuelaTicSoporte
+from .models import RevisionInterventoriaDocenteSoporteActividades, RevisionInterventoriaEscuelaTicSoporteActividades
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -892,3 +893,7 @@ admin.site.register(EntregableDocentes,EntregableDocentesAdmin)
 
 admin.site.register(RevisionInterventoriaDocente)
 admin.site.register(RevisionInterventoriaEscuelaTic)
+admin.site.register(RevisionInterventoriaDocenteSoporte)
+admin.site.register(RevisionInterventoriaEscuelaTicSoporte)
+admin.site.register(RevisionInterventoriaEscuelaTicSoporteActividades)
+admin.site.register(RevisionInterventoriaDocenteSoporteActividades)
