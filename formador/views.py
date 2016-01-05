@@ -699,7 +699,7 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
             if item.soporte == None:
                 soporte = EvidenciaDocentes.objects.exclude(soporte = None)
                 random = randrange(0,soporte.count()-1)
-                soporte = unicode(soporte[random].soporte)
+                soporte = unicode(soporte[random].soporte.soporte)
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([
@@ -758,7 +758,7 @@ class EvidenciasListadoTableView(BaseDatatableView):
             if item.soporte == None:
                 soporte = EvidenciaEscuelaTic.objects.exclude(soporte = None)
                 random = randrange(0,soporte.count()-1)
-                soporte = unicode(soporte[random].soporte)
+                soporte = unicode(soporte[random].soporte.soporte)
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([

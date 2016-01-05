@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/static.py" afterPath="$PROJECT_DIR$/conf/static.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formador/views.py" afterPath="$PROJECT_DIR$/formador/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +70,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6658291">
-              <caret line="765" column="49" selection-start-line="765" selection-start-column="49" selection-end-line="765" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.403125">
+              <caret line="703" column="55" selection-start-line="703" selection-start-column="55" selection-end-line="703" selection-end-column="55" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#586#4184#0" expanded="false" />
@@ -85,10 +83,10 @@
                 <element signature="e#14057#15178#0" expanded="false" />
                 <element signature="e#15240#16640#0" expanded="false" />
                 <element signature="e#16697#18621#0" expanded="false" />
-                <element signature="e#22205#23606#0" expanded="false" />
-                <element signature="e#23674#25066#0" expanded="false" />
-                <element signature="e#25137#27697#0" expanded="false" />
-                <element signature="e#27776#30548#0" expanded="false" />
+                <element signature="e#22221#23622#0" expanded="false" />
+                <element signature="e#23690#25082#0" expanded="false" />
+                <element signature="e#25153#27713#0" expanded="false" />
+                <element signature="e#27792#30564#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -545,11 +543,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28346458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28346458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4062992" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4062992" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2163,6 +2161,26 @@
           <line>774</line>
           <option name="timeStamp" value="1130" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>759</line>
+          <option name="timeStamp" value="1197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>760</line>
+          <option name="timeStamp" value="1198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>758</line>
+          <option name="timeStamp" value="1199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>757</line>
+          <option name="timeStamp" value="1200" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -2174,7 +2192,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1197" />
+      <option name="time" value="1201" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2600,8 +2618,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6658291">
-          <caret line="765" column="49" selection-start-line="765" selection-start-column="49" selection-end-line="765" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.403125">
+          <caret line="703" column="55" selection-start-line="703" selection-start-column="55" selection-end-line="703" selection-end-column="55" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#586#4184#0" expanded="false" />
@@ -2613,10 +2631,10 @@
             <element signature="e#14057#15178#0" expanded="false" />
             <element signature="e#15240#16640#0" expanded="false" />
             <element signature="e#16697#18621#0" expanded="false" />
-            <element signature="e#22205#23606#0" expanded="false" />
-            <element signature="e#23674#25066#0" expanded="false" />
-            <element signature="e#25137#27697#0" expanded="false" />
-            <element signature="e#27776#30548#0" expanded="false" />
+            <element signature="e#22221#23622#0" expanded="false" />
+            <element signature="e#23690#25082#0" expanded="false" />
+            <element signature="e#25153#27713#0" expanded="false" />
+            <element signature="e#27792#30564#0" expanded="false" />
           </folding>
         </state>
       </provider>
