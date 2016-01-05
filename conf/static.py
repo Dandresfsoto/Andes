@@ -47,6 +47,9 @@ def serve(request, path, document_root=None, show_indexes=False):
     """
 
     url = request.META['HTTP_REFERER']
+    text = open("C:\\Temp\\salida.txt","w")
+    text.write(url)
+    text.close()
     url = url.split('/')
 
 

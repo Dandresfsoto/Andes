@@ -3,6 +3,7 @@ from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
 from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, Actividad, EvidenciaEscuelaTic, Entregable
 from formacion.models import GrupoDocentes, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes
+from random import randrange
 
 def unique(seq):
         seen = set()
@@ -696,7 +697,9 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             if item.soporte == None:
-                soporte = ""
+                soporte = EvidenciaDocentes.objects.exclude(soporte = None)
+                random = randrange(0,soporte.count()-1)
+                soporte = unicode(soporte[random].soporte)
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([
@@ -753,7 +756,9 @@ class EvidenciasListadoTableView(BaseDatatableView):
         json_data = []
         for item in qs:
             if item.soporte == None:
-                soporte = ""
+                soporte = EvidenciaEscuelaTic.objects.exclude(soporte = None)
+                random = randrange(0,soporte.count()-1)
+                soporte = unicode(soporte[random].soporte)
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([
