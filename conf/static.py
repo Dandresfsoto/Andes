@@ -54,7 +54,10 @@ def serve(request, path, document_root=None, show_indexes=False):
 
 
     if url[8] == 'docentes' and url[9] == 'participantes':
-        evidencia = EvidenciaDocentes.objects.filter(participante__id=url[11]).get(soporte__soporte=path)
+        try:
+            evidencia = EvidenciaDocentes.objects.filter(participante__id=url[11]).get(soporte__soporte=path)
+        except:
+            evidencia = None
         nuevo = RevisionInterventoriaDocenteSoporte()
         nuevo.usuario = request.user
         nuevo.ip = get_client_ip(request)
@@ -69,7 +72,10 @@ def serve(request, path, document_root=None, show_indexes=False):
         nuevo.save()
 
     if url[8] == 'escuela_tic' and url[9] == 'participantes':
-        evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=url[11]).get(soporte__soporte=path)
+        try:
+            evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=url[11]).get(soporte__soporte=path)
+        except:
+            evidencia = None
         nuevo = RevisionInterventoriaEscuelaTicSoporte()
         nuevo.usuario = request.user
         nuevo.ip = get_client_ip(request)
