@@ -417,12 +417,34 @@ def generar_virtual_1(modeladmin,request,queryset):
         nuevo.save()
         evidencia_docente.soporte = nuevo
         evidencia_docente.save()
-
 generar_virtual_1.short_description = "Generar Actividad Virtual 1"
+
+def generar_sesion5_nive1(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=9,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=9))
+        fields = [('N51','Elección'+str(random.randrange(1,3))),
+                  ('N52','Elección'+str(random.randrange(1,3))),
+                  ('N53','Elección'+str(random.randrange(1,3))),
+                  ('N54','Elección'+str(random.randrange(1,6))),
+                  ('N55','Elección'+str(random.randrange(1,3))),
+                  ('N56','Elección'+str(random.randrange(1,3))),
+                  ('N58','Elección'+str(random.randrange(1,3))),
+                 ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas5n1.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion5_n1_plantilla.pdf fill_form C:\\Temp\\datas5n1.fdf output C:\\Temp\\sesion5.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion5.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_sesion5_nive1.short_description = "Generar Sesion 5 - Nivel 1"
 
 class Nivel1_Sesion1_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_virtual_1]
+    actions = [generar_virtual_1,generar_sesion5_nive1]
 
 admin.site.register(Nivel1_Sesion1_1,Nivel1_Sesion1_1Admin)
 admin.site.register(Nivel1_Sesion1_2)
