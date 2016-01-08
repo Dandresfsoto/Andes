@@ -25,6 +25,7 @@ import os
 import random
 from formacion.models import SoporteEntregableDocente, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes, ValorDocente
 from django.core.files import File
+from truchas.models import Nivel1_Sesion2
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -445,6 +446,32 @@ generar_sesion5_nive1.short_description = "Generar Sesion 5 - Nivel 1"
 class Nivel1_Sesion1_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
     actions = [generar_virtual_1,generar_sesion5_nive1]
+
+
+
+def generar_nivel1_sesion2(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=13,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=13))
+        fields = [('Campo de texto 254','http://sican.asoandes.org:8000/index.php/apps/files/?dir=%2FNivel%201%2FSesion%202'),
+                  ('Campo de texto 255',Nivel1_Sesion2.objects.order_by('?').first()),
+
+                 ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas2n1.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion2_n1_plantilla.pdf fill_form C:\\Temp\\datas2n1.fdf output C:\\Temp\\sesion2.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion2.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel1_sesion2.short_description = "Generar Sesion 2 - Nivel 1"
+
+class Nivel1_Sesion2Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel1_sesion2]
+admin.site.register(Nivel1_Sesion2,Nivel1_Sesion2Admin)
 
 admin.site.register(Nivel1_Sesion1_1,Nivel1_Sesion1_1Admin)
 admin.site.register(Nivel1_Sesion1_2)

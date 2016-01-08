@@ -108,3 +108,7 @@ class Nivel1_Sesion1_REDA(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.recurso)
+class Nivel1_Sesion2(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
