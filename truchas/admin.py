@@ -475,19 +475,17 @@ admin.site.register(Nivel1_Sesion2,Nivel1_Sesion2Admin)
 
 
 def generar_nivel1_sesion3(modeladmin,request,queryset):
-    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=13,soporte=None)
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=15,soporte=None)
     for evidencia_docente in evidencia_docentes:
-        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=13))
-        fields = [('Campo de texto 254','http://sican.asoandes.org:8000/index.php/apps/files/?dir=%2FNivel%201%2FSesion%202'),
-                  ('Campo de texto 255',Nivel1_Sesion2.objects.order_by('?').first()),
-
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=15))
+        fields = [('Campo de texto 256',Nivel1_Sesion3.objects.order_by('?').first()),
                  ]
         fdf = forge_fdf("",fields,[],[],[])
-        fdf_file = open("C:\\Temp\\datas2n1.fdf","wb")
+        fdf_file = open("C:\\Temp\\datas3n1.fdf","wb")
         fdf_file.write(fdf)
         fdf_file.close()
-        os.system('pdftk C:\\Temp\\sesion2_n1_plantilla.pdf fill_form C:\\Temp\\datas2n1.fdf output C:\\Temp\\sesion2.pdf flatten')
-        nuevo.soporte = File(open("C://Temp//sesion2.pdf", 'rb'))
+        os.system('pdftk C:\\Temp\\sesion3_n1_plantilla.pdf fill_form C:\\Temp\\datas3n1.fdf output C:\\Temp\\sesion3.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion3.pdf", 'rb'))
         nuevo.save()
         evidencia_docente.soporte = nuevo
         evidencia_docente.save()
