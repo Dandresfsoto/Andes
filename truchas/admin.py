@@ -26,6 +26,7 @@ import random
 from formacion.models import SoporteEntregableDocente, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes, ValorDocente
 from django.core.files import File
 from truchas.models import Nivel1_Sesion2,Nivel1_Sesion3
+from formacion.models import EvidenciaDocentes
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -245,6 +246,100 @@ def carga_participantes(modeladmin,request,queryset):
         return response
 carga_participantes.short_description = "Cargar participantes"
 
+
+def reporte_formadores(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Reporte Formadores.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Formadores"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Formadores'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Formador',30]),
+                   tuple(['Región',30]),
+                   tuple(['Nivel 1 - Sesión 1',30]),
+                   tuple(['Nivel 1 - Sesión 2',30]),
+                   tuple(['Nivel 1 - Sesión 3',30]),
+                   tuple(['Nivel 1 - Sesión 4',30]),
+                   tuple(['Nivel 2 - Sesión 1',30]),
+                   tuple(['Nivel 2 - Sesión 2',30]),
+                   tuple(['Nivel 3 - Sesión 1',30]),
+                   tuple(['Nivel 3 - Sesión 2',30]),
+                   tuple(['Nivel 3 - Sesión 3',30]),
+                   tuple(['Nivel 4 - Sesión 1',30]),
+                   tuple(['Nivel 4 - Sesión 2',30]),
+                   tuple(['Nivel 4 - Sesión 3',30]),
+                   tuple(['Nivel 4 - Sesión 4',30]),
+                   tuple(['Nivel 4 - Sesión 5',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        validos = [1,3,5,7,21,23,29,31,33,41,43,45,47,49]
+
+        for formador in Formador.objects.all():
+                row_num += 1
+                row = [
+                    formador.nombre,
+                    formador.region.nombre,
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=1).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=3).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=5).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=7).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=21).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=23).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=29).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=31).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=33).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=41).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=43).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=45).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=47).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=49).exclude(soporte=None).count(),
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+reporte_formadores.short_description = "Reporte de Formadores"
+
+
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
@@ -445,7 +540,7 @@ generar_sesion5_nive1.short_description = "Generar Sesion 5 - Nivel 1"
 
 class Nivel1_Sesion1_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_virtual_1,generar_sesion5_nive1]
+    actions = [generar_virtual_1,generar_sesion5_nive1,reporte_formadores]
 
 
 
