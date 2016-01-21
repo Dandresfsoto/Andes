@@ -302,7 +302,7 @@ def reporte_formadores(modeladmin,request,queryset):
 
         validos = [1,3,5,7,21,23,29,31,33,41,43,45,47,49]
 
-        for formador in Formador.objects.all():
+        for formador in Formador.objects.filter(tipo=1):
                 row_num += 1
                 row = [
                     formador.nombre,
@@ -337,7 +337,76 @@ def reporte_formadores(modeladmin,request,queryset):
 
         archivo.save(response)
         return response
-reporte_formadores.short_description = "Reporte de Formadores"
+reporte_formadores.short_description = "Reporte de Formadores Tipo 1"
+
+
+def reporte_formadores_tipo2(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Reporte Formadores.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Formadores"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Formadores'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Formador',30]),
+                   tuple(['Región',30]),
+                   tuple(['Padres - Sesión 1',30]),
+                   tuple(['Padres - Sesión 2',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        validos = [5,9]
+
+        for formador in Formador.objects.filter(tipo=2):
+                row_num += 1
+                row = [
+                    formador.nombre,
+                    formador.region.nombre,
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=5).exclude(soporte=None).count(),
+                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=9).exclude(soporte=None).count(),
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+reporte_formadores_tipo2.short_description = "Reporte de Formadores Tipo 2"
 
 
 class CargasMasivasAdmin(admin.ModelAdmin):
@@ -540,7 +609,7 @@ generar_sesion5_nive1.short_description = "Generar Sesion 5 - Nivel 1"
 
 class Nivel1_Sesion1_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_virtual_1,generar_sesion5_nive1,reporte_formadores]
+    actions = [generar_virtual_1,generar_sesion5_nive1,reporte_formadores,reporte_formadores_tipo2]
 
 
 
