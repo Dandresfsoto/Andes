@@ -23,7 +23,7 @@ from .models import Nivel1_Sesion1_1,Nivel1_Sesion1_2,Nivel1_Sesion1_3,Nivel1_Se
 from fdfgen import forge_fdf
 import os
 import random
-from formacion.models import SoporteEntregableDocente, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes, ValorDocente
+from formacion.models import SoporteEntregableDocente, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes, ValorDocente, EvidenciaEscuelaTic
 from django.core.files import File
 from truchas.models import Nivel1_Sesion2,Nivel1_Sesion3
 from formacion.models import EvidenciaDocentes
@@ -388,8 +388,8 @@ def reporte_formadores_tipo2(modeladmin,request,queryset):
                 row = [
                     formador.nombre,
                     formador.region.nombre,
-                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=5).exclude(soporte=None).count(),
-                    EvidenciaDocentes.objects.filter(participante__formador__id=formador.id).filter(entregable__id=9).exclude(soporte=None).count(),
+                    EvidenciaEscuelaTic.objects.filter(participante__formador__id=formador.id).filter(entregable__id=5).exclude(soporte=None).count(),
+                    EvidenciaEscuelaTic.objects.filter(participante__formador__id=formador.id).filter(entregable__id=9).exclude(soporte=None).count(),
                 ]
 
                 for col_num in xrange(len(row)):
