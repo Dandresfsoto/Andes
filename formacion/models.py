@@ -115,7 +115,7 @@ class ParticipanteEscuelaTic(models.Model):
             for entregable in entregables:
                 nuevo = EvidenciaEscuelaTic(entregable=entregable,participante=participante,valor=valor)
                 if entregable.id not in individuales:
-                    nuevo.soporte = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.grupo.id).get(entregable__id=entregable.id)
+                    #nuevo.soporte = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.grupo.id).get(entregable__id=entregable.id)
                 nuevo.save()
 
 class RadicadoFormacion(models.Model):

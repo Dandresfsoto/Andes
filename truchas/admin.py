@@ -246,7 +246,6 @@ def carga_participantes(modeladmin,request,queryset):
         return response
 carga_participantes.short_description = "Cargar participantes"
 
-
 def reporte_formadores(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -339,7 +338,6 @@ def reporte_formadores(modeladmin,request,queryset):
         return response
 reporte_formadores.short_description = "Reporte de Formadores Tipo 1"
 
-
 def reporte_formadores_tipo2(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -407,7 +405,6 @@ def reporte_formadores_tipo2(modeladmin,request,queryset):
         archivo.save(response)
         return response
 reporte_formadores_tipo2.short_description = "Reporte de Formadores Tipo 2"
-
 
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
