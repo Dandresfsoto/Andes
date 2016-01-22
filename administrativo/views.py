@@ -610,7 +610,7 @@ class EstadisticasView(AdministrativoMixin,TemplateView):
         r1_escuela_tic = []
         i = 0
         for entregable_escuela_tic in Entregable.objects.all():
-            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=1).filter(soporte__entregable__id=entregable_escuela_tic.id).exclude(soporte__soporte="").count()
+            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=1).filter(entregable__id=entregable_escuela_tic.id).exclude(soporte__soporte="").count()
             meta = 27834
             progreso = (cantidad*100.0)/meta
             i += 1
@@ -626,7 +626,7 @@ class EstadisticasView(AdministrativoMixin,TemplateView):
         r1_docentes = []
         i = 0
         for entregable_docentes in EntregableDocentes.objects.all():
-            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region__id=1).filter(soporte__entregable__id=entregable_docentes.id).exclude(soporte__soporte="").count()
+            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region__id=1).filter(entregable__id=entregable_docentes.id).exclude(soporte__soporte="").count()
             meta = 6905
             progreso = (cantidad*100.0)/meta
             i += 1
@@ -642,7 +642,7 @@ class EstadisticasView(AdministrativoMixin,TemplateView):
         r4_escuela_tic = []
         i = 0
         for entregable_escuela_tic in Entregable.objects.all():
-            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=2).filter(soporte__entregable__id=entregable_escuela_tic.id).exclude(soporte__soporte="").count()
+            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=2).filter(entregable__id=entregable_escuela_tic.id).exclude(soporte__soporte="").count()
             meta = 67826
             progreso = (cantidad*100.0)/meta
             i += 1
@@ -655,7 +655,7 @@ class EstadisticasView(AdministrativoMixin,TemplateView):
         r4_docentes = []
         i = 0
         for entregable_docentes in EntregableDocentes.objects.all():
-            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region__id=2).filter(soporte__entregable__id=entregable_docentes.id).exclude(soporte__soporte="").count()
+            cantidad = EvidenciaDocentes.objects.filter(participante__formador__region__id=2).filter(entregable__id=entregable_docentes.id).exclude(soporte__soporte="").count()
             meta = 10932
             progreso = (cantidad*100.0)/meta
             i += 1

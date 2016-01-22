@@ -807,7 +807,7 @@ class ActividadesListadoTableView(BaseDatatableView):
     def prepare_results(self, qs):
         json_data = []
         for item in qs:
-            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=self.kwargs['region']).filter(soporte__entregable__id=item.id).exclude(soporte__soporte="").values_list("participante__id",flat=True)
+            cantidad = EvidenciaEscuelaTic.objects.filter(participante__formador__region__id=self.kwargs['region']).filter(entregable__id=item.id).exclude(soporte__soporte="").values_list("participante__id",flat=True)
             cantidad = len(set(cantidad))
             json_data.append([
                 item.id,
