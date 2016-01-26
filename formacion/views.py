@@ -199,42 +199,21 @@ class FormAsignarSoporteView(FormacionMixin,FormView):
         self.grupo = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).grupo.id
         self.id_entregable = SoporteEntregableEscuelaTic.objects.get(pk=self.soporte).entregable.id
 
-        #Obtiene los id de los soportes del grupo del entregable especifico y lo convierte en una lista
-        x = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.grupo).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
-        x = list(x)
+        borrar = EvidenciaEscuelaTic.objects.filter(soporte__id=self.soporte).exclude(participante__id__in=participantes)
+        for evidencia in borrar:
+            evidencia.soporte = None
+            evidencia.usuario = None
+            evidencia.fecha = datetime.datetime.now()
+            evidencia.save()
 
-        x.pop(x.index(long(self.soporte)))
-        if not isinstance(x,list):
-            x = [x]
+        asignar = EvidenciaEscuelaTic.objects.filter(entregable__id=soporte.entregable.id,participante__id__in=participantes)
+        x = asignar.count()
+        for evidencia in asignar:
+            evidencia.usuario = self.request.user
+            evidencia.fecha = datetime.datetime.now()
+            evidencia.soporte = soporte
+            evidencia.save()
 
-        # y es una lista con los id de participantes asignados en otro entregable
-        y = EvidenciaEscuelaTic.objects.filter(soporte__in=x).values_list("participante__id",flat=True)
-
-        participantes_total = ParticipanteEscuelaTic.objects.filter(grupo__id=soporte.grupo.id).values_list("id",flat=True)
-        participantes_total = list(set(participantes_total).difference(y))
-        participantes_actual = EvidenciaEscuelaTic.objects.filter(soporte__id=self.soporte).values_list("participante__id",flat=True)
-
-        if len(participantes) != 0:
-            for participante in participantes_total:
-                evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
-                if unicode(participante) in participantes:
-                    if evidencia.soporte == None:
-                        evidencia.usuario = self.request.user
-                        evidencia.fecha = datetime.datetime.now()
-                    evidencia.soporte = soporte
-                else:
-                    evidencia.soporte = None
-                    evidencia.usuario = None
-                    evidencia.fecha = datetime.datetime.now()
-                evidencia.save()
-        else:
-            for participante in participantes_actual:
-                evidencia = EvidenciaEscuelaTic.objects.filter(participante__id=participante).get(entregable__id=soporte.entregable.id)
-                if evidencia.soporte == None:
-                    evidencia.usuario = self.request.user
-                    evidencia.fecha = datetime.datetime.now()
-                evidencia.soporte = soporte
-                evidencia.save()
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form):

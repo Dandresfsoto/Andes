@@ -278,7 +278,6 @@ class SoporteEntregableDocente(models.Model):
     grupo = models.ForeignKey(GrupoDocentes)
     entregable = models.ForeignKey(EntregableDocentes)
     soporte = models.FileField(upload_to=upload_soporte_escuela_tipo1,blank=True,null=True,max_length=2000)
-
     def __unicode__(self):
         return smart_unicode("%s - %s - %s" % (self.grupo.formador.nombre,self.grupo,self.entregable))
 
