@@ -398,7 +398,7 @@ def reporte_docentes(modeladmin,request,queryset):
                 evidencias = EvidenciaDocentes.objects.filter(participante__id=participante.id)
                 row_num += 1
                 row = [
-                    participante.formador.region,
+                    participante.formador.region.nombre,
                     participante.nombres,
                     participante.apellidos,
                     participante.cedula,
