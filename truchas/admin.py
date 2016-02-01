@@ -338,6 +338,102 @@ def reporte_formadores(modeladmin,request,queryset):
         return response
 reporte_formadores.short_description = "Reporte de Formadores Tipo 1"
 
+def reporte_docentes(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Reporte Docentes.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Docentes"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Docentes'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Region',30]),
+                   tuple(['Nombres',30]),
+                   tuple(['Apellidos',30]),
+                   tuple(['Cedula',30]),
+                   tuple(['Nivel 1 - Sesión 1',30]),
+                   tuple(['Nivel 1 - Sesión 2',30]),
+                   tuple(['Nivel 1 - Sesión 3',30]),
+                   tuple(['Nivel 1 - Sesión 4',30]),
+                   tuple(['Nivel 2 - Sesión 1',30]),
+                   tuple(['Nivel 2 - Sesión 2',30]),
+                   tuple(['Nivel 3 - Sesión 1',30]),
+                   tuple(['Nivel 3 - Sesión 2',30]),
+                   tuple(['Nivel 3 - Sesión 3',30]),
+                   tuple(['Nivel 4 - Sesión 1',30]),
+                   tuple(['Nivel 4 - Sesión 2',30]),
+                   tuple(['Nivel 4 - Sesión 3',30]),
+                   tuple(['Nivel 4 - Sesión 4',30]),
+                   tuple(['Nivel 4 - Sesión 5',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+
+        for participante in ParticipanteDocente.objects.all():
+                evidencias = EvidenciaDocentes.objects.filter(participante__id=participante.id)
+                row_num += 1
+                row = [
+                    participante.formador.region,
+                    participante.nombres,
+                    participante.apellidos,
+                    participante.cedula,
+                    "Si" if evidencias.get(entregable__id=1).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=3).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=5).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=7).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=21).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=23).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=29).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=31).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=33).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=41).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=43).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=45).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=47).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=49).soporte != None else "No",
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+reporte_docentes.short_description = "Reporte de Docentes Vinculados"
+
 def reporte_formadores_tipo2(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -606,7 +702,7 @@ generar_sesion5_nive1.short_description = "Generar Sesion 5 - Nivel 1"
 
 class Nivel1_Sesion1_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_virtual_1,generar_sesion5_nive1,reporte_formadores,reporte_formadores_tipo2]
+    actions = [generar_virtual_1,generar_sesion5_nive1,reporte_formadores,reporte_formadores_tipo2,reporte_docentes]
 
 
 
