@@ -891,7 +891,89 @@ class EntregableDocentesAdmin(admin.ModelAdmin):
     actions = [asignacion_total,crear_entregables_docentes]
 admin.site.register(EntregableDocentes,EntregableDocentesAdmin)
 
-admin.site.register(RevisionInterventoriaDocente)
+
+
+def reporte_docentes_revisados(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Reporte Docentes.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Docentes"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Docentes'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Region',30]),
+                   tuple(['Nombres',30]),
+                   tuple(['Apellidos',30]),
+                   tuple(['Cedula',30]),
+                   tuple(['Fecha',30]),
+                   tuple(['Usuario',30]),
+                   tuple(['Ip',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+
+        for participante in RevisionInterventoriaDocente.objects.all():
+                row_num += 1
+                row = [
+                    participante.region.nombre,
+                    participante.participante.nombres,
+                    participante.participante.apellidos,
+                    participante.participante.cedula,
+                    participante.fecha,
+                    participante.usuario.username,
+                    participante.ip,
+
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+reporte_docentes_revisados.short_description = "Reporte Docentes"
+
+
+class RevisionInterventoriaDocenteAdmin(admin.ModelAdmin):
+    list_display = ['participante']
+    ordering = ['id']
+    actions = [reporte_docentes_revisados]
+
+admin.site.register(RevisionInterventoriaDocente,RevisionInterventoriaDocenteAdmin)
 admin.site.register(RevisionInterventoriaEscuelaTic)
 admin.site.register(RevisionInterventoriaDocenteSoporte)
 admin.site.register(RevisionInterventoriaEscuelaTicSoporte)
