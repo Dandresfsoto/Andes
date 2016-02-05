@@ -774,7 +774,7 @@ def generar_nivel2_sesion2(modeladmin,request,queryset):
         evidencia_docente.save()
 generar_nivel2_sesion2.short_description = "Generar Sesion 2 - Nivel 2"
 
-def generar_nivel3_sesion3(modeladmin,request,queryset):
+def generar_nivel3_1_sesion3(modeladmin,request,queryset):
     evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=39,soporte=None)
     for evidencia_docente in evidencia_docentes:
         nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=39))
@@ -797,11 +797,11 @@ def generar_nivel3_sesion3(modeladmin,request,queryset):
         nuevo.save()
         evidencia_docente.soporte = nuevo
         evidencia_docente.save()
-generar_nivel3_sesion3.short_description = "Generar Sesion 3.1 - Nivel 3"
+generar_nivel3_1_sesion3.short_description = "Generar Sesion 3.1 - Nivel 3"
 
 class Nivel1_Sesion3Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_nivel1_sesion3,generar_nivel2_sesion2]
+    actions = [generar_nivel1_sesion3,generar_nivel2_sesion2,generar_nivel3_1_sesion3]
 admin.site.register(Nivel1_Sesion3,Nivel1_Sesion3Admin)
 
 

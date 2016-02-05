@@ -41,8 +41,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72981876">
-              <caret line="797" column="41" selection-start-line="797" selection-start-column="41" selection-end-line="797" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.38385502">
+              <caret line="803" column="85" selection-start-line="803" selection-start-column="85" selection-end-line="803" selection-end-column="85" />
               <folding>
                 <element signature="e#2778#12031#0" expanded="false" />
                 <element signature="e#21704#24197#0" expanded="false" />
@@ -55,6 +55,7 @@
                 <element signature="e#36094#37042#0" expanded="false" />
                 <element signature="e#37352#38172#0" expanded="false" />
                 <element signature="e#38307#39696#0" expanded="false" />
+                <element signature="e#39833#41243#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -604,7 +605,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454689030231</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Sesion 3.1 Nivel 3">
+      <created>1454690603600</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1454690603600</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -662,7 +669,8 @@
     <MESSAGE value="Virtuales ok" />
     <MESSAGE value="Virtuales ok 2" />
     <MESSAGE value="Sesion 2 Nivel 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sesion 2 Nivel 2" />
+    <MESSAGE value="Sesion 3.1 Nivel 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 3.1 Nivel 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2343,7 +2351,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1253" />
+      <option name="time" value="1254" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2753,8 +2761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72981876">
-          <caret line="797" column="41" selection-start-line="797" selection-start-column="41" selection-end-line="797" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.38385502">
+          <caret line="803" column="85" selection-start-line="803" selection-start-column="85" selection-end-line="803" selection-end-column="85" />
           <folding>
             <element signature="e#2778#12031#0" expanded="false" />
             <element signature="e#21704#24197#0" expanded="false" />
@@ -2767,6 +2775,7 @@
             <element signature="e#36094#37042#0" expanded="false" />
             <element signature="e#37352#38172#0" expanded="false" />
             <element signature="e#38307#39696#0" expanded="false" />
+            <element signature="e#39833#41243#0" expanded="false" />
           </folding>
         </state>
       </provider>
