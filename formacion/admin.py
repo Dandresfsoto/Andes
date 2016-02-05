@@ -1128,8 +1128,8 @@ def matriz_escuela_tic(modeladmin,request,queryset):
                     participante.codigo_anspe,
                     participante.tipo_proyecto,
                     participante.grupo_conformacion,
-                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=5).soporte.soporte),
-                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=9).soporte.soporte)
+                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=5).soporte),
+                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=9).soporte)
                 ]
 
                 for col_num in xrange(len(row)):
