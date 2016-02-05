@@ -1053,7 +1053,7 @@ reporte_escuela_tic_revisados.short_description = "Reporte Escuela Tic"
 def matriz_escuela_tic(modeladmin,request,queryset):
 
     data = ParticipanteEscuelaTic.objects.all()
-    chunks=[data[x:x+100] for x in xrange(0, data.count(), 100)]
+    chunks=[data[x:x+35000] for x in xrange(0, data.count(), 35000)]
     i = 0
     for chunk in chunks:
         i += 1

@@ -32,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.29983526">
-              <caret line="1055" column="64" selection-start-line="1055" selection-start-column="64" selection-end-line="1055" selection-end-column="64" />
+              <caret line="1055" column="68" selection-start-line="1055" selection-start-column="68" selection-end-line="1055" selection-end-column="68" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#3080#3294#0" expanded="false" />
@@ -686,7 +686,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454713163362</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Matriz padres ok prueba(4)">
+      <created>1454713245861</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1454713245861</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -721,7 +727,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Random off DOcentes" />
     <MESSAGE value="Reporte formadores Tipo 1 y Tipo 2" />
     <MESSAGE value="Reporte formadores Tipo 1 y Tipo 2 (Correccion)" />
     <MESSAGE value="Eliminar asignación grupal" />
@@ -746,7 +751,8 @@
     <MESSAGE value="Matriz padres ok (prueba 1)" />
     <MESSAGE value="Matriz padres ok prueba(2)" />
     <MESSAGE value="Matriz padres ok prueba(3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres ok prueba(3)" />
+    <MESSAGE value="Matriz padres ok prueba(4)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres ok prueba(4)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2837,7 +2843,7 @@
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29983526">
-          <caret line="1055" column="64" selection-start-line="1055" selection-start-column="64" selection-end-line="1055" selection-end-column="64" />
+          <caret line="1055" column="68" selection-start-line="1055" selection-start-column="68" selection-end-line="1055" selection-end-column="68" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#3080#3294#0" expanded="false" />
