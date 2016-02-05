@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+    <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="Matriz padres">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,8 +31,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66392094">
-              <caret line="1153" column="63" selection-start-line="1153" selection-start-column="63" selection-end-line="1153" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.43822077">
+              <caret line="1109" column="70" selection-start-line="1109" selection-start-column="70" selection-end-line="1109" selection-end-column="70" />
               <folding>
                 <element signature="e#3030#3244#0" expanded="false" />
                 <element signature="e#3297#7663#0" expanded="false" />
@@ -47,7 +47,6 @@
                 <element signature="e#39414#41951#0" expanded="false" />
                 <element signature="e#42083#42179#0" expanded="false" />
                 <element signature="e#42335#44883#0" expanded="false" />
-                <element signature="e#45014#48981#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -637,7 +636,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454690720798</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Matriz padres">
+      <created>1454706734394</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1454706734394</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -672,7 +677,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sesion 5 full" />
     <MESSAGE value="Padres sin aleatorio" />
     <MESSAGE value="Excluida sesion 5 nivel 1" />
     <MESSAGE value="Sesion 2 nivel 1 virtual" />
@@ -697,7 +701,8 @@
     <MESSAGE value="Sesion 2 Nivel 2" />
     <MESSAGE value="Sesion 3.1 Nivel 3" />
     <MESSAGE value="Sesion 3.1 Nivel 3 (ok)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sesion 3.1 Nivel 3 (ok)" />
+    <MESSAGE value="Matriz padres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2788,8 +2793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66392094">
-          <caret line="1153" column="63" selection-start-line="1153" selection-start-column="63" selection-end-line="1153" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.43822077">
+          <caret line="1109" column="70" selection-start-line="1109" selection-start-column="70" selection-end-line="1109" selection-end-column="70" />
           <folding>
             <element signature="e#3030#3244#0" expanded="false" />
             <element signature="e#3297#7663#0" expanded="false" />
@@ -2804,7 +2809,6 @@
             <element signature="e#39414#41951#0" expanded="false" />
             <element signature="e#42083#42179#0" expanded="false" />
             <element signature="e#42335#44883#0" expanded="false" />
-            <element signature="e#45014#48981#0" expanded="false" />
           </folding>
         </state>
       </provider>

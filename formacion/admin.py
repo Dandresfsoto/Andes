@@ -1107,10 +1107,10 @@ def matriz_escuela_tic(modeladmin,request,queryset):
 
 
 
-        for participante in ParticipanteEscuelaTic.objects.all():
+        for participante in ParticipanteEscuelaTic.objects.all()[:20]:
                 row_num += 1
                 row = [
-                    participante.region.nombre,
+                    participante.formador.region.nombre,
                     participante.grupo.municipio.departamento.nombre,
                     participante.grupo.municipio.nombre,
                     participante.institucion,
