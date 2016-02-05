@@ -663,7 +663,7 @@ class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
 
     def get_context_data(self, **kwargs):
         participantes = ParticipanteDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
-        excluidos = [9,11,12,13,15,17,18,19,20,25,26,27,35,36,37,38,39,40,51,53,55,59]
+        #excluidos = [9,11,12,13,15,17,18,19,20,25,26,27,35,36,37,38,39,40,51,53,55,59]
         soportes = SoporteEntregableDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id').exclude(entregable__id__in=excluidos)
         id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
         id_actividades = list(set(id_actividades))
