@@ -748,9 +748,35 @@ def generar_nivel1_sesion3(modeladmin,request,queryset):
         evidencia_docente.save()
 generar_nivel1_sesion3.short_description = "Generar Sesion 3 - Nivel 1"
 
+def generar_nivel2_sesion2(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=27,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=27))
+        fields = [('R1-1','Elección'+str(random.randrange(1,4))),
+                  ('R1-2','Elección'+str(random.randrange(1,4))),
+                  ('R1-3','Elección'+str(random.randrange(1,4))),
+                  ('R1-4','Elección'+str(random.randrange(1,4))),
+                  ('R1-5','Elección'+str(random.randrange(1,4))),
+                  ('R1-6','Elección'+str(random.randrange(1,4))),
+                  ('R1-7','Elección'+str(random.randrange(1,3))),
+                  ('R1-8','Elección'+str(random.randrange(1,3))),
+                  ('R1-9','Elección'+str(random.randrange(1,3))),
+                  ('R1-10','Elección'+str(random.randrange(1,3))),
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas2n2.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion2_n2_plantilla.pdf fill_form C:\\Temp\\datas2n2.fdf output C:\\Temp\\sesion2_2.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion2_2.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel2_sesion2.short_description = "Generar Sesion 2 - Nivel 2"
+
 class Nivel1_Sesion3Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_nivel1_sesion3]
+    actions = [generar_nivel1_sesion3,generar_nivel2_sesion2]
 admin.site.register(Nivel1_Sesion3,Nivel1_Sesion3Admin)
 
 
