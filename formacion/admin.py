@@ -18,6 +18,7 @@ import shutil
 from django.core.files import File
 from .models import RevisionInterventoriaEscuelaTic, RevisionInterventoriaDocente, RevisionInterventoriaDocenteSoporte, RevisionInterventoriaEscuelaTicSoporte
 from .models import RevisionInterventoriaDocenteSoporteActividades, RevisionInterventoriaEscuelaTicSoporteActividades
+from django.shortcuts import HttpResponseRedirect
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1107,7 +1108,7 @@ def matriz_escuela_tic(modeladmin,request,queryset):
 
 
 
-        for participante in ParticipanteEscuelaTic.objects.all():
+        for participante in ParticipanteEscuelaTic.objects.all()[:20]:
                 row_num += 1
                 row = [
                     participante.formador.region.nombre,
@@ -1144,8 +1145,8 @@ def matriz_escuela_tic(modeladmin,request,queryset):
                         c.value = row[col_num]
                     c.style = co
 
-        archivo.save(response)
-        return response
+        archivo.save(settings.MEDIA_ROOT+'/Matriz Padres/Matriz.xlsx')
+        return HttpResponseRedirect('/media/Matriz Padres/Matriz.xlsx')
 matriz_escuela_tic.short_description = "Matriz Escuela Tic"
 
 class RevisionInterventoriaEscuelaTicAdmin(admin.ModelAdmin):
