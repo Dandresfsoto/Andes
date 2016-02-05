@@ -31,8 +31,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71828663">
-              <caret line="1131" column="127" selection-start-line="1131" selection-start-column="127" selection-end-line="1131" selection-end-column="127" />
+            <state vertical-scroll-proportion="0.354201">
+              <caret line="1109" column="65" selection-start-line="1109" selection-start-column="65" selection-end-line="1109" selection-end-column="65" />
               <folding>
                 <element signature="e#3030#3244#0" expanded="false" />
                 <element signature="e#3297#7663#0" expanded="false" />
@@ -648,7 +648,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454706944643</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Matriz padres (prueba 2)">
+      <created>1454707015156</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1454707015156</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -683,7 +689,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Excluida sesion 5 nivel 1" />
     <MESSAGE value="Sesion 2 nivel 1 virtual" />
     <MESSAGE value="Sesion 3 nivel 1 virtual" />
     <MESSAGE value="Sesion 3 nivel 1 virtual - corregido" />
@@ -708,7 +713,8 @@
     <MESSAGE value="Sesion 3.1 Nivel 3 (ok)" />
     <MESSAGE value="Matriz padres" />
     <MESSAGE value="Matriz padres (prueba 1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres (prueba 1)" />
+    <MESSAGE value="Matriz padres (prueba 2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres (prueba 2)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2799,8 +2805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71828663">
-          <caret line="1131" column="127" selection-start-line="1131" selection-start-column="127" selection-end-line="1131" selection-end-column="127" />
+        <state vertical-scroll-proportion="0.354201">
+          <caret line="1109" column="65" selection-start-line="1109" selection-start-column="65" selection-end-line="1109" selection-end-column="65" />
           <folding>
             <element signature="e#3030#3244#0" expanded="false" />
             <element signature="e#3297#7663#0" expanded="false" />
