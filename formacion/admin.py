@@ -1053,12 +1053,12 @@ reporte_escuela_tic_revisados.short_description = "Reporte Escuela Tic"
 def matriz_escuela_tic(modeladmin,request,queryset):
 
     data = ParticipanteEscuelaTic.objects.all()
-    chunks=[data[x:x+10000] for x in xrange(0, data.count(), 10000)]
+    chunks=[data[x:x+100] for x in xrange(0, data.count(), 100)]
     i = 0
     for chunk in chunks:
         i += 1
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename=Matriz Escuela Tic '+i+'.xlsx'
+        response['Content-Disposition'] = 'attachment; filename=Matriz Escuela Tic '+unicode(i)+'.xlsx'
         archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
 
         logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
@@ -1149,7 +1149,7 @@ def matriz_escuela_tic(modeladmin,request,queryset):
                         c.value = row[col_num]
                     c.style = co
 
-        archivo.save(settings.MEDIA_ROOT+'/Matriz Padres/Matriz'+i+'.xlsx')
+        archivo.save(settings.MEDIA_ROOT+'/Matriz Padres/Matriz'+unicode(i)+'.xlsx')
     return HttpResponseRedirect('/media/Matriz Padres/Matriz.xlsx')
 matriz_escuela_tic.short_description = "Matriz Escuela Tic"
 

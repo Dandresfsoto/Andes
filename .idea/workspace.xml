@@ -31,8 +31,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6079078">
-              <caret line="1153" column="59" selection-start-line="1153" selection-start-column="59" selection-end-line="1153" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.29983526">
+              <caret line="1055" column="64" selection-start-line="1055" selection-start-column="64" selection-end-line="1055" selection-end-column="64" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#3080#3294#0" expanded="false" />
@@ -680,7 +680,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454709863834</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Matriz padres ok prueba(3)">
+      <created>1454713163362</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1454713163362</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -715,7 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reporte Formadores" />
     <MESSAGE value="Random off DOcentes" />
     <MESSAGE value="Reporte formadores Tipo 1 y Tipo 2" />
     <MESSAGE value="Reporte formadores Tipo 1 y Tipo 2 (Correccion)" />
@@ -740,7 +745,8 @@
     <MESSAGE value="Matriz padres ok" />
     <MESSAGE value="Matriz padres ok (prueba 1)" />
     <MESSAGE value="Matriz padres ok prueba(2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres ok prueba(2)" />
+    <MESSAGE value="Matriz padres ok prueba(3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres ok prueba(3)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2830,8 +2836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6079078">
-          <caret line="1153" column="59" selection-start-line="1153" selection-start-column="59" selection-end-line="1153" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.29983526">
+          <caret line="1055" column="64" selection-start-line="1055" selection-start-column="64" selection-end-line="1055" selection-end-column="64" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#3080#3294#0" expanded="false" />
