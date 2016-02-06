@@ -799,9 +799,114 @@ def generar_nivel3_1_sesion3(modeladmin,request,queryset):
         evidencia_docente.save()
 generar_nivel3_1_sesion3.short_description = "Generar Sesion 3.1 - Nivel 3"
 
+
+
+def matriz_escuela_tic(modeladmin,request,queryset):
+
+    data = ParticipanteEscuelaTicTrucho.objects.all()
+    chunks=[data[x:x+35000] for x in xrange(0, data.count(), 35000)]
+    i = 0
+    for chunk in chunks:
+        i += 1
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Matriz Escuela Tic '+unicode(i)+'.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Matriz Escuela Tic"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Matriz Escuela Tic'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Region',30]),
+                   tuple(['Departamento',30]),
+                   tuple(['Municipio',30]),
+                   tuple(['Institucion',30]),
+                   tuple(['Codigo del Grupo',30]),
+                   tuple(['Nombre del Formador',30]),
+                   tuple(['Cedula del Formador',30]),
+                   tuple(['Nombres',30]),
+                   tuple(['Apellidos',30]),
+                   tuple(['Cedula',30]),
+                   tuple(['Genero',30]),
+                   tuple(['Nivel Educativo',30]),
+                   tuple(['Telefono',30]),
+                   tuple(['Correo',30]),
+                   tuple(['Tipo Poblacion',30]),
+                   tuple(['Codigo Proyecto',30]),
+                   tuple(['Tipo Proyecto',30]),
+                   tuple(['Grupo Conformacion',30]),
+                   tuple(['Sesion 1',30]),
+                   tuple(['Sesion 2',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        for participante in chunk:
+                row_num += 1
+                row = [
+                    participante.formador.region.nombre,
+                    participante.grupo.municipio.departamento.nombre,
+                    participante.grupo.municipio.nombre,
+                    participante.institucion,
+                    participante.grupo.nombre,
+                    participante.formador.nombre,
+                    participante.formador.cedula,
+                    participante.nombres,
+                    participante.apellidos,
+                    participante.cedula,
+                    participante.genero,
+                    participante.nivel_educativo,
+                    participante.telefono,
+                    participante.correo,
+                    participante.poblacion,
+                    participante.codigo_anspe,
+                    participante.tipo_proyecto,
+                    participante.grupo_conformacion,
+                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=5).soporte),
+                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=9).soporte)
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(settings.MEDIA_ROOT+'/Matriz Padres/Matriz'+unicode(i)+'.xlsx')
+    return HttpResponseRedirect('/media/Matriz Padres/Matriz.xlsx')
+matriz_escuela_tic.short_description = "Matriz Escuela Tic"
+
 class Nivel1_Sesion3Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_nivel1_sesion3,generar_nivel2_sesion2,generar_nivel3_1_sesion3]
+    actions = [generar_nivel1_sesion3,generar_nivel2_sesion2,generar_nivel3_1_sesion3,matriz_escuela_tic]
 admin.site.register(Nivel1_Sesion3,Nivel1_Sesion3Admin)
 
 
