@@ -694,7 +694,7 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
             return super(EvidenciasDocentesListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qy = qs.order_by('entregable')
+        qy = EvidenciaDocentes.objects.filter(participante__id=self.kwargs['participante__id']).order_by('entregable')
         json_data = []
         for item in qy:
             if item.soporte == None:
@@ -755,7 +755,7 @@ class EvidenciasListadoTableView(BaseDatatableView):
             return super(EvidenciasListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qy = qs.order_by('entregable')
+        qy = EvidenciaEscuelaTic.objects.filter(participante__id=self.kwargs['participante__id']).order_by('entregable')
         json_data = []
         for item in qy:
             if item.soporte == None:
