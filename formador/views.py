@@ -694,9 +694,9 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
             return super(EvidenciasDocentesListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qs = qs.order_by('entregable')
+        qy = qs.order_by('entregable')
         json_data = []
-        for item in qs:
+        for item in qy:
             if item.soporte == None:
                 soporte = ""
                 #soporte = EvidenciaDocentes.objects.exclude(soporte = None)
@@ -735,7 +735,7 @@ class EvidenciasListadoTableView(BaseDatatableView):
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
         x = self.kwargs
         y = x['participante__id']
-        return self.model.objects.filter(participante__id=y).order_by('entregable')
+        return self.model.objects.filter(participante__id=y)
 
     def filter_queryset(self, qs):
         search = self.request.GET.get(u'search[value]', None)
@@ -755,9 +755,9 @@ class EvidenciasListadoTableView(BaseDatatableView):
             return super(EvidenciasListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qs = qs.order_by('entregable')
+        qy = qs.order_by('entregable')
         json_data = []
-        for item in qs:
+        for item in qy:
             if item.soporte == None:
                 soporte = ""
             else:
