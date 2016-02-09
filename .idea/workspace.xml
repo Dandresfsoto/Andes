@@ -71,8 +71,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42214534">
-              <caret line="736" column="87" selection-start-line="736" selection-start-column="87" selection-end-line="736" selection-end-column="87" />
+            <state vertical-scroll-proportion="0.49122807">
+              <caret line="676" column="87" selection-start-line="676" selection-start-column="87" selection-end-line="676" selection-end-column="87" />
               <folding>
                 <element signature="e#586#4184#0" expanded="false" />
                 <element signature="e#4246#7268#0" expanded="false" />
@@ -82,9 +82,11 @@
                 <element signature="e#12038#13994#0" expanded="false" />
                 <element signature="e#14057#15178#0" expanded="false" />
                 <element signature="e#15240#16640#0" expanded="false" />
-                <element signature="e#22108#23484#0" expanded="false" />
-                <element signature="e#23552#24944#0" expanded="false" />
-                <element signature="e#27654#30426#0" expanded="false" />
+                <element signature="e#20515#22075#0" expanded="false" />
+                <element signature="e#22135#23511#0" expanded="false" />
+                <element signature="e#23579#24971#0" expanded="false" />
+                <element signature="e#25042#27602#0" expanded="false" />
+                <element signature="e#27681#30453#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -706,27 +708,33 @@
       <option name="project" value="LOCAL" />
       <updated>1454767681911</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Order by entregable__id">
+      <created>1455027958788</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1455027958788</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22254759" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22254759" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35623002" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -741,7 +749,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Eliminar asignación grupal" />
     <MESSAGE value="Eliminar asignación grupal (ok)" />
     <MESSAGE value="Estadisticas" />
     <MESSAGE value="Estadisticas (ok)" />
@@ -766,7 +773,8 @@
     <MESSAGE value="Matriz padres ok prueba(4)" />
     <MESSAGE value="Matriz padres ok prueba(5)" />
     <MESSAGE value="Matriz padres Truchos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matriz padres Truchos" />
+    <MESSAGE value="Order by entregable__id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Order by entregable__id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2873,8 +2881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42214534">
-          <caret line="736" column="87" selection-start-line="736" selection-start-column="87" selection-end-line="736" selection-end-column="87" />
+        <state vertical-scroll-proportion="0.49122807">
+          <caret line="676" column="87" selection-start-line="676" selection-start-column="87" selection-end-line="676" selection-end-column="87" />
           <folding>
             <element signature="e#586#4184#0" expanded="false" />
             <element signature="e#4246#7268#0" expanded="false" />
@@ -2884,9 +2892,11 @@
             <element signature="e#12038#13994#0" expanded="false" />
             <element signature="e#14057#15178#0" expanded="false" />
             <element signature="e#15240#16640#0" expanded="false" />
-            <element signature="e#22108#23484#0" expanded="false" />
-            <element signature="e#23552#24944#0" expanded="false" />
-            <element signature="e#27654#30426#0" expanded="false" />
+            <element signature="e#20515#22075#0" expanded="false" />
+            <element signature="e#22135#23511#0" expanded="false" />
+            <element signature="e#23579#24971#0" expanded="false" />
+            <element signature="e#25042#27602#0" expanded="false" />
+            <element signature="e#27681#30453#0" expanded="false" />
           </folding>
         </state>
       </provider>
