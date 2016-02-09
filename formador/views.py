@@ -734,7 +734,7 @@ class EvidenciasListadoTableView(BaseDatatableView):
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
         x = self.kwargs
         y = x['participante__id']
-        return self.model.objects.filter(participante__id=y)
+        return self.model.objects.filter(participante__id=y).order_by('entregable__id')
 
     def filter_queryset(self, qs):
         search = self.request.GET.get(u'search[value]', None)
