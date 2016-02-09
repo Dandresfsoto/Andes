@@ -38,19 +38,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.034483">
-              <caret line="210" column="24" selection-start-line="210" selection-start-column="6" selection-end-line="210" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#6028#6411#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="escuela_tic_participantes_evidencias.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/escuela_tic_participantes_evidencias.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,11 +58,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.034483">
+              <caret line="210" column="24" selection-start-line="210" selection-start-column="6" selection-end-line="210" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#6028#6411#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.42897728">
-              <caret line="736" column="83" selection-start-line="736" selection-start-column="83" selection-end-line="736" selection-end-column="83" />
+              <caret line="757" column="38" selection-start-line="757" selection-start-column="38" selection-end-line="757" selection-end-column="38" />
               <folding>
                 <element signature="e#586#4184#0" expanded="false" />
                 <element signature="e#4246#7268#0" expanded="false" />
@@ -85,11 +85,11 @@
                 <element signature="e#12038#13994#0" expanded="false" />
                 <element signature="e#14057#15178#0" expanded="false" />
                 <element signature="e#15240#16640#0" expanded="false" />
-                <element signature="e#18688#20452#0" expanded="false" />
-                <element signature="e#22127#23503#0" expanded="false" />
-                <element signature="e#23571#24963#0" expanded="false" />
-                <element signature="e#25034#27594#0" expanded="false" />
-                <element signature="e#27673#30445#0" expanded="false" />
+                <element signature="e#18688#20468#0" expanded="false" />
+                <element signature="e#22182#23558#0" expanded="false" />
+                <element signature="e#23626#25018#0" expanded="false" />
+                <element signature="e#25089#27649#0" expanded="false" />
+                <element signature="e#27728#30500#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -743,7 +743,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455028496980</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Order by entregable__id Docentes ok">
+      <created>1455029092378</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1455029092378</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -778,7 +784,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Estadisticas" />
     <MESSAGE value="Estadisticas (ok)" />
     <MESSAGE value="Form Valid ok" />
     <MESSAGE value="Reporte Docentes" />
@@ -803,7 +808,8 @@
     <MESSAGE value="Matriz padres Truchos" />
     <MESSAGE value="Order by entregable__id" />
     <MESSAGE value="Order by entregable__id Docentes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order by entregable__id Docentes" />
+    <MESSAGE value="Order by entregable__id Docentes ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Order by entregable__id Docentes ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2315,12 +2321,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>759</line>
+          <line>761</line>
           <option name="timeStamp" value="1198" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>758</line>
+          <line>760</line>
           <option name="timeStamp" value="1200" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2475,17 +2481,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>696</line>
+          <line>697</line>
           <option name="timeStamp" value="1256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>697</line>
+          <line>698</line>
           <option name="timeStamp" value="1257" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>698</line>
+          <line>699</line>
           <option name="timeStamp" value="1258" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2513,6 +2519,11 @@
           <line>676</line>
           <option name="timeStamp" value="1264" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>696</line>
+          <option name="timeStamp" value="1267" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -2524,7 +2535,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1265" />
+      <option name="time" value="1269" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2950,7 +2961,7 @@
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42897728">
-          <caret line="736" column="83" selection-start-line="736" selection-start-column="83" selection-end-line="736" selection-end-column="83" />
+          <caret line="757" column="38" selection-start-line="757" selection-start-column="38" selection-end-line="757" selection-end-column="38" />
           <folding>
             <element signature="e#586#4184#0" expanded="false" />
             <element signature="e#4246#7268#0" expanded="false" />
@@ -2960,11 +2971,11 @@
             <element signature="e#12038#13994#0" expanded="false" />
             <element signature="e#14057#15178#0" expanded="false" />
             <element signature="e#15240#16640#0" expanded="false" />
-            <element signature="e#18688#20452#0" expanded="false" />
-            <element signature="e#22127#23503#0" expanded="false" />
-            <element signature="e#23571#24963#0" expanded="false" />
-            <element signature="e#25034#27594#0" expanded="false" />
-            <element signature="e#27673#30445#0" expanded="false" />
+            <element signature="e#18688#20468#0" expanded="false" />
+            <element signature="e#22182#23558#0" expanded="false" />
+            <element signature="e#23626#25018#0" expanded="false" />
+            <element signature="e#25089#27649#0" expanded="false" />
+            <element signature="e#27728#30500#0" expanded="false" />
           </folding>
         </state>
       </provider>
