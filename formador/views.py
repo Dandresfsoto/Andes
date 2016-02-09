@@ -663,10 +663,10 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
     ]
 
     order_columns = [
-        'id',
-        'id',
-        'id',
-        'id'
+        'entregable',
+        'entregable',
+        'entregable',
+        'entregable'
     ]
 
     def get_initial_queryset(self):
@@ -726,10 +726,10 @@ class EvidenciasListadoTableView(BaseDatatableView):
     ]
 
     order_columns = [
-        'id',
-        'id',
-        'id',
-        'id'
+        'entregable',
+        'entregable',
+        'entregable',
+        'entregable'
     ]
 
     def get_initial_queryset(self):
@@ -757,9 +757,8 @@ class EvidenciasListadoTableView(BaseDatatableView):
             return super(EvidenciasListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qy = EvidenciaEscuelaTic.objects.filter(participante__id=self.kwargs['participante__id'])
         json_data = []
-        for item in qy:
+        for item in qs:
             if item.soporte == None:
                 soporte = ""
             else:
