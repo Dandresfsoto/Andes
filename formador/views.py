@@ -674,7 +674,9 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
         x = self.kwargs
         y = x['participante__id']
-        return self.model.objects.filter(participante__id=y)
+        qs = self.model.objects.filter(participante__id=y).order_by('entregable')
+        c = qs.values_list('entregable__id',flat=True)
+        return qs
 
     def filter_queryset(self, qs):
         search = self.request.GET.get(u'search[value]', None)
@@ -694,9 +696,9 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
             return super(EvidenciasDocentesListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qy = EvidenciaDocentes.objects.filter(participante__id=self.kwargs['participante__id']).order_by('entregable')
         json_data = []
-        for item in qy:
+        d = qs.values_list('entregable__id',flat=True)
+        for item in qs:
             if item.soporte == None:
                 soporte = ""
                 #soporte = EvidenciaDocentes.objects.exclude(soporte = None)
@@ -755,7 +757,7 @@ class EvidenciasListadoTableView(BaseDatatableView):
             return super(EvidenciasListadoTableView,self).render_column(row,column)
 
     def prepare_results(self, qs):
-        qy = EvidenciaEscuelaTic.objects.filter(participante__id=self.kwargs['participante__id']).order_by('entregable')
+        qy = EvidenciaEscuelaTic.objects.filter(participante__id=self.kwargs['participante__id'])
         json_data = []
         for item in qy:
             if item.soporte == None:

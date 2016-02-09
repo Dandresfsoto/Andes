@@ -74,8 +74,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52272725">
-              <caret line="757" column="120" selection-start-line="757" selection-start-column="120" selection-end-line="757" selection-end-column="120" />
+            <state vertical-scroll-proportion="0.71875">
+              <caret line="708" column="30" selection-start-line="708" selection-start-column="30" selection-end-line="708" selection-end-column="30" />
               <folding>
                 <element signature="e#586#4184#0" expanded="false" />
                 <element signature="e#4246#7268#0" expanded="false" />
@@ -85,11 +85,11 @@
                 <element signature="e#12038#13994#0" expanded="false" />
                 <element signature="e#14057#15178#0" expanded="false" />
                 <element signature="e#15240#16640#0" expanded="false" />
-                <element signature="e#18688#20548#0" expanded="false" />
-                <element signature="e#22321#23697#0" expanded="false" />
-                <element signature="e#23765#25157#0" expanded="false" />
-                <element signature="e#25228#27788#0" expanded="false" />
-                <element signature="e#27867#30639#0" expanded="false" />
+                <element signature="e#20637#22268#0" expanded="false" />
+                <element signature="e#22328#23704#0" expanded="false" />
+                <element signature="e#23772#25164#0" expanded="false" />
+                <element signature="e#25235#27795#0" expanded="false" />
+                <element signature="e#27874#30646#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -761,7 +761,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455029883734</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Order by entregable__id Docentes ok 4">
+      <created>1455030254743</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1455030254743</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -796,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reporte Docentes" />
     <MESSAGE value="Reporte Docentes (Region error)" />
     <MESSAGE value="Reporte Docentes Revisados" />
     <MESSAGE value="Reporte Padres Revisados" />
@@ -821,49 +826,50 @@
     <MESSAGE value="Order by entregable__id Docentes ok" />
     <MESSAGE value="Order by entregable__id Docentes ok 2" />
     <MESSAGE value="Order by entregable__id Docentes ok 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order by entregable__id Docentes ok 3" />
+    <MESSAGE value="Order by entregable__id Docentes ok 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Order by entregable__id Docentes ok 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>686</line>
+          <line>688</line>
           <option name="timeStamp" value="352" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>687</line>
+          <line>689</line>
           <option name="timeStamp" value="353" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>688</line>
+          <line>690</line>
           <option name="timeStamp" value="354" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>689</line>
+          <line>691</line>
           <option name="timeStamp" value="355" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>690</line>
+          <line>692</line>
           <option name="timeStamp" value="356" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>691</line>
+          <line>693</line>
           <option name="timeStamp" value="357" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>692</line>
+          <line>694</line>
           <option name="timeStamp" value="358" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>693</line>
+          <line>695</line>
           <option name="timeStamp" value="359" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2333,12 +2339,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>761</line>
+          <line>763</line>
           <option name="timeStamp" value="1198" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>760</line>
+          <line>762</line>
           <option name="timeStamp" value="1200" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2493,17 +2499,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>697</line>
+          <line>698</line>
           <option name="timeStamp" value="1256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>698</line>
+          <line>700</line>
           <option name="timeStamp" value="1257" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>699</line>
+          <line>701</line>
           <option name="timeStamp" value="1258" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2528,13 +2534,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>676</line>
+          <line>678</line>
           <option name="timeStamp" value="1264" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>696</line>
-          <option name="timeStamp" value="1267" />
+          <line>677</line>
+          <option name="timeStamp" value="1269" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>676</line>
+          <option name="timeStamp" value="1270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formador/views.py</url>
+          <line>699</line>
+          <option name="timeStamp" value="1271" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -2547,7 +2563,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1269" />
+      <option name="time" value="1272" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2972,8 +2988,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52272725">
-          <caret line="757" column="120" selection-start-line="757" selection-start-column="120" selection-end-line="757" selection-end-column="120" />
+        <state vertical-scroll-proportion="0.71875">
+          <caret line="708" column="30" selection-start-line="708" selection-start-column="30" selection-end-line="708" selection-end-column="30" />
           <folding>
             <element signature="e#586#4184#0" expanded="false" />
             <element signature="e#4246#7268#0" expanded="false" />
@@ -2983,11 +2999,11 @@
             <element signature="e#12038#13994#0" expanded="false" />
             <element signature="e#14057#15178#0" expanded="false" />
             <element signature="e#15240#16640#0" expanded="false" />
-            <element signature="e#18688#20548#0" expanded="false" />
-            <element signature="e#22321#23697#0" expanded="false" />
-            <element signature="e#23765#25157#0" expanded="false" />
-            <element signature="e#25228#27788#0" expanded="false" />
-            <element signature="e#27867#30639#0" expanded="false" />
+            <element signature="e#20637#22268#0" expanded="false" />
+            <element signature="e#22328#23704#0" expanded="false" />
+            <element signature="e#23772#25164#0" expanded="false" />
+            <element signature="e#25235#27795#0" expanded="false" />
+            <element signature="e#27874#30646#0" expanded="false" />
           </folding>
         </state>
       </provider>
