@@ -19,6 +19,7 @@ from django.core.files import File
 from .models import RevisionInterventoriaEscuelaTic, RevisionInterventoriaDocente, RevisionInterventoriaDocenteSoporte, RevisionInterventoriaEscuelaTicSoporte
 from .models import RevisionInterventoriaDocenteSoporteActividades, RevisionInterventoriaEscuelaTicSoporteActividades
 from django.shortcuts import HttpResponseRedirect
+from formacion.models import AreaCurricular,Grado,Genero,Competencias, GrupoPoblacional
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1163,3 +1164,8 @@ admin.site.register(RevisionInterventoriaDocenteSoporte)
 admin.site.register(RevisionInterventoriaEscuelaTicSoporte)
 admin.site.register(RevisionInterventoriaEscuelaTicSoporteActividades)
 admin.site.register(RevisionInterventoriaDocenteSoporteActividades)
+admin.site.register(AreaCurricular)
+admin.site.register(Grado)
+admin.site.register(Genero)
+admin.site.register(Competencias)
+admin.site.register(GrupoPoblacional)
