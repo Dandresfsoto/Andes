@@ -157,7 +157,7 @@ class GrupoPoblacional(models.Model):
     grupo_poblacional = models.CharField(max_length=100)
 
     def __unicode__(self):
-        return smart_unicode(self.competencia)
+        return smart_unicode(self.grupo_poblacional)
 
 class ParticipanteDocente(models.Model):
     formador = models.ForeignKey(Formador)
