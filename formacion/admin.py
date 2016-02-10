@@ -424,6 +424,107 @@ def carga_radicados(modeladmin,request,queryset):
         return response
 carga_radicados.short_description = "Cargar radicados"
 
+def actualizar_radicados(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Actualizacion Radicados.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Actualizacion Radicados"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Actualizacion Radicados'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['RADICADO',30]),
+                   tuple(['CODIGO DANE INSTITUCION',30]),
+                   tuple(['NOMBRE INSTITUCION',30]),
+                   tuple(['CODIGO DANE SEDE EDUCATIVA',30]),
+                   tuple(['NOMBRE DE LA SEDE EDUCATIVA',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+                if fila[0].value != None:
+                    try:
+                        radicado = int(fila[0].value)
+                    except ValueError:
+                        proceso = "El numero de radicado solo debe contener numeros"
+                    else:
+                        if RadicadoFormacion.objects.filter(numero=radicado).count() == 1:
+                            radicado = RadicadoFormacion.objects.get(numero=radicado)
+                            if fila[1].value != None:
+                                radicado.dane_ie = fila[1].value
+                            if fila[2].value != None:
+                                radicado.nombre_ie = fila[2].value
+                            if fila[3].value != None:
+                                radicado.dane_sede = fila[3].value
+                            if fila[4].value != None:
+                                radicado.nombre_sede = fila[4].value
+                            radicado.save()
+                            proceso = "Radicado actualizado satisfactoriamente"
+                        else:
+                            proceso = "Hay mas de un radicado con este numero"
+                else:
+                    proceso = "No hay numero de radicado valido"
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    fila[2].value,
+                    fila[3].value,
+                    fila[4].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+actualizar_radicados.short_description = "Actualizar radicados"
+
 def carga_grupos_docentes(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -825,7 +926,7 @@ carga_participantes_truchos.short_description = "Cargar Listados Masivos"
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,carga_grupos_docentes,carga_docentes,carga_participantes_truchos]
+    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,carga_docentes,carga_participantes_truchos]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
 def asignacion_total(modeladmin,request,queryset):
