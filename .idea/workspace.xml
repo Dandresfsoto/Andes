@@ -43,8 +43,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66392094">
-              <caret line="1115" column="115" selection-start-line="1115" selection-start-column="115" selection-end-line="1115" selection-end-column="115" />
+            <state vertical-scroll-proportion="0.41186163">
+              <caret line="900" column="90" selection-start-line="900" selection-start-column="90" selection-end-line="900" selection-end-column="90" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#7910#14381#0" expanded="false" />
@@ -52,14 +52,14 @@
                 <element signature="e#18473#22358#0" expanded="false" />
                 <element signature="e#22484#26868#0" expanded="false" />
                 <element signature="e#26993#35078#0" expanded="false" />
-                <element signature="e#43370#48009#0" expanded="false" />
-                <element signature="e#48474#48857#0" expanded="false" />
-                <element signature="e#49003#50002#0" expanded="false" />
-                <element signature="e#50145#51155#0" expanded="false" />
-                <element signature="e#51774#54311#0" expanded="false" />
-                <element signature="e#54443#54539#0" expanded="false" />
-                <element signature="e#54695#57243#0" expanded="false" />
-                <element signature="e#57375#61545#0" expanded="false" />
+                <element signature="e#43367#48006#0" expanded="false" />
+                <element signature="e#48471#48854#0" expanded="false" />
+                <element signature="e#49000#49999#0" expanded="false" />
+                <element signature="e#50142#51152#0" expanded="false" />
+                <element signature="e#51771#54308#0" expanded="false" />
+                <element signature="e#54440#54536#0" expanded="false" />
+                <element signature="e#54692#57240#0" expanded="false" />
+                <element signature="e#57372#61542#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -753,7 +753,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455116986171</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Actualizar Docentes">
+      <created>1455121006342</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1455121006342</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -788,7 +794,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Virtuales ok 2" />
     <MESSAGE value="Sesion 2 Nivel 2" />
     <MESSAGE value="Sesion 3.1 Nivel 3" />
     <MESSAGE value="Sesion 3.1 Nivel 3 (ok)" />
@@ -813,7 +818,8 @@
     <MESSAGE value="Area, Grado, Genero, Competencia, Grupo Poblacional admin" />
     <MESSAGE value="Grupo poblacional error" />
     <MESSAGE value="Actualizar Radicados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizar Radicados" />
+    <MESSAGE value="Actualizar Docentes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizar Docentes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2964,8 +2970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66392094">
-          <caret line="1115" column="115" selection-start-line="1115" selection-start-column="115" selection-end-line="1115" selection-end-column="115" />
+        <state vertical-scroll-proportion="0.41186163">
+          <caret line="900" column="90" selection-start-line="900" selection-start-column="90" selection-end-line="900" selection-end-column="90" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#7910#14381#0" expanded="false" />
@@ -2973,14 +2979,14 @@
             <element signature="e#18473#22358#0" expanded="false" />
             <element signature="e#22484#26868#0" expanded="false" />
             <element signature="e#26993#35078#0" expanded="false" />
-            <element signature="e#43370#48009#0" expanded="false" />
-            <element signature="e#48474#48857#0" expanded="false" />
-            <element signature="e#49003#50002#0" expanded="false" />
-            <element signature="e#50145#51155#0" expanded="false" />
-            <element signature="e#51774#54311#0" expanded="false" />
-            <element signature="e#54443#54539#0" expanded="false" />
-            <element signature="e#54695#57243#0" expanded="false" />
-            <element signature="e#57375#61545#0" expanded="false" />
+            <element signature="e#43367#48006#0" expanded="false" />
+            <element signature="e#48471#48854#0" expanded="false" />
+            <element signature="e#49000#49999#0" expanded="false" />
+            <element signature="e#50142#51152#0" expanded="false" />
+            <element signature="e#51771#54308#0" expanded="false" />
+            <element signature="e#54440#54536#0" expanded="false" />
+            <element signature="e#54692#57240#0" expanded="false" />
+            <element signature="e#57372#61542#0" expanded="false" />
           </folding>
         </state>
       </provider>

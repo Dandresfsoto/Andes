@@ -898,7 +898,7 @@ def actualizar_docentes(modeladmin,request,queryset):
                                 if apellidos == "" or apellidos == None:
                                     proceso = "El campo de apellidos esta vacio"
                                 else:
-                                    nuevo = ParticipanteDocente.objects.filter(cedula=cedula)
+                                    nuevo = ParticipanteDocente.objects.get(cedula=cedula)
 
                                     if RadicadoFormacion.objects.filter(numero=fila[1].value).count() == 1:
                                         nuevo.radicado = RadicadoFormacion.objects.get(numero=fila[1].value)
