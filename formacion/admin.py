@@ -810,6 +810,193 @@ def carga_docentes(modeladmin,request,queryset):
         return response
 carga_docentes.short_description = "Cargar Docentes"
 
+def actualizar_docentes(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Actualizacion Docentes.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Actualizacion Docentes"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Actualizacion Docentes'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['CODIGO GRUPO',30]),
+                   tuple(['RADICADO',30]),
+                   tuple(['NOMBRES',30]),
+                   tuple(['APELLIDOS',30]),
+                   tuple(['CEDULA',60]),
+                   tuple(['CORREO',30]),
+                   tuple(['TELEFONO FIJO',60]),
+                   tuple(['CELULAR',30]),
+                   tuple(['AREA',30]),
+                   tuple(['GRADO',30]),
+                   tuple(['TIPO BENEFICIARIO',30]),
+                   tuple(['GENERO',30]),
+                   tuple(['NOMBRE PROYECTO',30]),
+                   tuple(['DEFINICION DEL PROBLEMA',30]),
+                   tuple(['AREA PROYECTO',30]),
+                   tuple(['COMPETENCIA',30]),
+                   tuple(['GRUPO POBLACIONAL',30]),
+                   tuple(['RESULTADO',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+                try:
+                    cedula = fila[4].value.replace('.','').replace(',','')
+                except:
+                    cedula = fila[4].value
+                nombres = fila[2].value
+                apellidos = fila[3].value
+
+
+                if cedula == "" or cedula == None:
+                    proceso = "El campo de cedula esta vacio"
+                else:
+                    try:
+                        long(cedula)
+                    except ValueError:
+                        proceso = "El numero de cedula es invalido"
+                    else:
+                        if ParticipanteDocente.objects.filter(cedula=cedula).count() == 1:
+                            if nombres == "" or nombres == None:
+                                proceso = "El campo de nombres esta vacio"
+                            else:
+                                if apellidos == "" or apellidos == None:
+                                    proceso = "El campo de apellidos esta vacio"
+                                else:
+                                    nuevo = ParticipanteDocente.objects.filter(cedula=cedula)
+
+                                    if RadicadoFormacion.objects.filter(numero=fila[1].value).count() == 1:
+                                        nuevo.radicado = RadicadoFormacion.objects.get(numero=fila[1].value)
+                                    else:
+                                        nuevo.radicado = RadicadoFormacion.objects.get(numero=0)
+
+                                    nuevo.nombres = nombres
+                                    nuevo.apellidos = apellidos
+
+                                    if validateEmail(fila[5].value):
+                                        nuevo.correo = fila[5].value
+
+                                    if fila[6].value == "" or fila[6].value == None:
+                                        nuevo.telefono_fijo = ""
+                                    else:
+                                        nuevo.telefono_fijo = fila[6].value
+
+                                    if fila[7].value == "" or fila[7].value == None:
+                                        nuevo.celular = ""
+                                    else:
+                                        nuevo.celular = fila[7].value
+
+                                    if AreaCurricular.objects.filter(pk = fila[8].value).count()==1:
+                                        nuevo.area = AreaCurricular.objects.get(pk = fila[8].value)
+
+                                    if Grado.objects.filter(pk = fila[9].value).count()==1:
+                                        nuevo.grado = Grado.objects.get(pk = fila[9].value)
+
+                                    if fila[10].value == "" or fila[10].value == None:
+                                        nuevo.tipo_beneficiario = ""
+                                    else:
+                                        nuevo.tipo_beneficiario = fila[10].value
+
+                                    if Genero.objects.filter(genero = fila[11].value).count()==1:
+                                        nuevo.genero = Genero.objects.get(genero = fila[11].value)
+
+                                    if fila[12].value == "" or fila[12].value == None:
+                                        nuevo.nombre_proyecto = ""
+                                    else:
+                                        nuevo.nombre_proyecto = fila[12].value
+
+                                    if fila[13].value == "" or fila[13].value == None:
+                                        nuevo.definicion_problema = ""
+                                    else:
+                                        nuevo.definicion_problema = fila[13].value
+
+                                    if fila[14].value == "" or fila[14].value == None:
+                                        nuevo.area_proyecto = ""
+                                    else:
+                                        nuevo.area_proyecto = fila[14].value
+
+                                    if Competencias.objects.filter(pk = fila[15].value).count()==1:
+                                        nuevo.competencia = Competencias.objects.get(pk = fila[15].value)
+
+                                    if GrupoPoblacional.objects.filter(pk = fila[16].value).count()==1:
+                                        nuevo.grupo_poblacional = GrupoPoblacional.objects.get(pk = fila[16].value)
+
+                                    nuevo.save()
+
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    fila[2].value,
+                    fila[3].value,
+                    fila[4].value,
+                    fila[5].value,
+                    fila[6].value,
+                    fila[7].value,
+                    fila[8].value,
+                    fila[9].value,
+                    fila[10].value,
+                    fila[11].value,
+                    fila[12].value,
+                    fila[13].value,
+                    fila[14].value,
+                    fila[15].value,
+                    fila[16].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+actualizar_docentes.short_description = "Actualizar Docentes"
+
 def carga_participantes_truchos(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -926,7 +1113,7 @@ carga_participantes_truchos.short_description = "Cargar Listados Masivos"
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,carga_docentes,carga_participantes_truchos]
+    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,carga_docentes,actualizar_docentes,carga_participantes_truchos]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
 def asignacion_total(modeladmin,request,queryset):
