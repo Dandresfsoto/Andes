@@ -989,6 +989,5 @@ generar_nivel1_sesion4.short_description = "Generar Sesion 4 - Nivel 1"
 class Nivel1_Sesion4_preguntas_aleatoriasAdmin(admin.ModelAdmin):
     list_display = ['respuesta']
     actions = [generar_nivel1_sesion4]
-admin.site.register(Nivel1_Sesion3,Nivel1_Sesion3Admin)
 
 admin.site.register(Nivel1_Sesion4_preguntas_aleatorias,Nivel1_Sesion4_preguntas_aleatoriasAdmin)

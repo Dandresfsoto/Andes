@@ -41,8 +41,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2439446">
-              <caret line="986" column="71" selection-start-line="986" selection-start-column="71" selection-end-line="986" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.7647059">
+              <caret line="990" column="38" selection-start-line="990" selection-start-column="38" selection-end-line="990" selection-end-column="38" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#2899#12152#0" expanded="false" />
@@ -58,6 +58,7 @@
                 <element signature="e#38428#39817#0" expanded="false" />
                 <element signature="e#39954#41364#0" expanded="false" />
                 <element signature="e#41502#45678#0" expanded="false" />
+                <element signature="e#46566#50180#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -479,12 +480,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00004" summary="Sesion 2 nivel 1 virtual">
-      <created>1452271561281</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1452271561281</updated>
-    </task>
     <task id="LOCAL-00005" summary="Sesion 3 nivel 1 virtual">
       <created>1452697738179</created>
       <option name="number" value="00005" />
@@ -773,7 +768,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455207253998</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Sesion 4">
+      <created>1455211030203</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1455211030203</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -808,7 +809,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Matriz padres (prueba 1)" />
     <MESSAGE value="Matriz padres (prueba 2)" />
     <MESSAGE value="Matriz padres ok" />
     <MESSAGE value="Matriz padres ok (prueba 1)" />
@@ -833,7 +833,8 @@
     <MESSAGE value="sesion 4" />
     <MESSAGE value="sesion 4 ok" />
     <MESSAGE value="sesion 4 ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="sesion 4 ok ok" />
+    <MESSAGE value="Sesion 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2981,8 +2982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2439446">
-          <caret line="986" column="71" selection-start-line="986" selection-start-column="71" selection-end-line="986" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.7647059">
+          <caret line="990" column="38" selection-start-line="990" selection-start-column="38" selection-end-line="990" selection-end-column="38" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#2899#12152#0" expanded="false" />
@@ -2998,6 +2999,7 @@
             <element signature="e#38428#39817#0" expanded="false" />
             <element signature="e#39954#41364#0" expanded="false" />
             <element signature="e#41502#45678#0" expanded="false" />
+            <element signature="e#46566#50180#0" expanded="false" />
           </folding>
         </state>
       </provider>
