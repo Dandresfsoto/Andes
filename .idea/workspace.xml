@@ -31,8 +31,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41186163">
-              <caret line="123" column="52" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.21581548">
+              <caret line="119" column="56" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -444,12 +444,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00002" summary="Padres sin aleatorio">
-      <created>1452181286800</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1452181286800</updated>
-    </task>
     <task id="LOCAL-00003" summary="Excluida sesion 5 nivel 1">
       <created>1452195996740</created>
       <option name="number" value="00003" />
@@ -738,7 +732,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455206431641</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="sesion 4 ok">
+      <created>1455206783909</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1455206783909</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -773,7 +773,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sesion 3.1 Nivel 3 (ok)" />
     <MESSAGE value="Matriz padres" />
     <MESSAGE value="Matriz padres (prueba 1)" />
     <MESSAGE value="Matriz padres (prueba 2)" />
@@ -798,7 +797,8 @@
     <MESSAGE value="Actualizar Docentes" />
     <MESSAGE value="Actualizar Docentes Ok" />
     <MESSAGE value="sesion 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="sesion 4" />
+    <MESSAGE value="sesion 4 ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="sesion 4 ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2963,8 +2963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41186163">
-          <caret line="123" column="52" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.21581548">
+          <caret line="119" column="56" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
           <folding />
         </state>
       </provider>
