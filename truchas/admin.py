@@ -25,7 +25,7 @@ import os
 import random
 from formacion.models import SoporteEntregableDocente, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes, ValorDocente, EvidenciaEscuelaTic
 from django.core.files import File
-from truchas.models import Nivel1_Sesion2,Nivel1_Sesion3
+from truchas.models import Nivel1_Sesion2,Nivel1_Sesion3,Nivel1_Sesion4_preguntas_aleatorias,Nivel1_Sesion4_1,Nivel1_Sesion4_2,Nivel1_Sesion4_3,Nivel1_Sesion4_4,Nivel1_Sesion4_5
 from formacion.models import EvidenciaDocentes
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
@@ -923,3 +923,72 @@ admin.site.register(Nivel1_Sesion1_10)
 admin.site.register(Nivel1_Sesion1_11)
 admin.site.register(Nivel1_Sesion1_12)
 admin.site.register(Nivel1_Sesion1_REDA)
+
+def generar_nivel1_sesion4(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=17,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=17))
+        pregunta1 = Nivel1_Sesion4_preguntas_aleatorias.objects.order_by('?')[0]
+        pregunta2 = Nivel1_Sesion4_preguntas_aleatorias.objects.order_by('?')[0]
+        pregunta3 = Nivel1_Sesion4_preguntas_aleatorias.objects.order_by('?')[0]
+        pregunta4 = Nivel1_Sesion4_preguntas_aleatorias.objects.order_by('?')[0]
+        pregunta5 = Nivel1_Sesion4_preguntas_aleatorias.objects.order_by('?')[0]
+        pregunta6 = Nivel1_Sesion4_preguntas_aleatorias.objects.order_by('?')[0]
+        fields = [('Campo de texto 165',evidencia_docente.participante.nombres+ " "+evidencia_docente.participante.apellidos),
+                  ('Campo de texto 166',evidencia_docente.participante.radicado.nombre_ie),
+                  ('Campo de texto 167',evidencia_docente.participante.radicado.nombre_sede),
+                  ('Campo de texto 168',evidencia_docente.participante.grupo.municipio.nombre),
+
+                  ('Campo de texto 169',pregunta1.pregunta),
+                  ('Campo de texto 175',pregunta1.respuesta),
+                  ('Campo de texto 176',pregunta1.incorrecta_1),
+                  ('Campo de texto 177',pregunta1.incorrecta_2),
+
+                  ('Campo de texto 170',pregunta2.pregunta),
+                  ('Campo de texto 178',pregunta2.respuesta),
+                  ('Campo de texto 179',pregunta2.incorrecta_1),
+                  ('Campo de texto 180',pregunta2.incorrecta_2),
+
+                  ('Campo de texto 171',pregunta3.pregunta),
+                  ('Campo de texto 181',pregunta3.respuesta),
+                  ('Campo de texto 182',pregunta3.incorrecta_1),
+                  ('Campo de texto 183',pregunta3.incorrecta_2),
+
+                  ('Campo de texto 172',pregunta4.pregunta),
+                  ('Campo de texto 184',pregunta4.respuesta),
+                  ('Campo de texto 185',pregunta4.incorrecta_1),
+                  ('Campo de texto 186',pregunta4.incorrecta_2),
+
+                  ('Campo de texto 173',pregunta5.pregunta),
+                  ('Campo de texto 187',pregunta5.respuesta),
+                  ('Campo de texto 188',pregunta5.incorrecta_1),
+                  ('Campo de texto 189',pregunta5.incorrecta_2),
+
+                  ('Campo de texto 174',pregunta6.pregunta),
+                  ('Campo de texto 190',pregunta6.respuesta),
+                  ('Campo de texto 191',pregunta6.incorrecta_1),
+                  ('Campo de texto 192',pregunta6.incorrecta_2),
+
+                  ('Campo de texto 194',Nivel1_Sesion4_1.objects.order_by('?')[0].respuesta),
+                  ('Campo de texto 197',Nivel1_Sesion4_2.objects.order_by('?')[0].respuesta),
+                  ('Campo de texto 198',Nivel1_Sesion4_3.objects.order_by('?')[0].respuesta),
+                  ('Campo de texto 199',Nivel1_Sesion4_4.objects.order_by('?')[0].respuesta),
+                  ('Campo de texto 200',Nivel1_Sesion4_5.objects.order_by('?')[0].respuesta),
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas4.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion4_n1_plantilla.pdf fill_form C:\\Temp\\datas4.fdf output C:\\Temp\\sesion4_1.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion4_1.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel1_sesion4.short_description = "Generar Sesion 4 - Nivel 1"
+
+class Nivel1_Sesion4_preguntas_aleatoriasAdmin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel1_sesion4]
+admin.site.register(Nivel1_Sesion3,Nivel1_Sesion3Admin)
+
+admin.site.register(Nivel1_Sesion4_preguntas_aleatorias,Nivel1_Sesion4_preguntas_aleatoriasAdmin)
