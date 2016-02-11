@@ -118,10 +118,10 @@ class Nivel1_Sesion3(models.Model):
         return smart_unicode(self.respuesta)
 
 class Nivel1_Sesion4_preguntas(models.Model):
-    pregunta = models.CharField(max_length=10000)
-    respuesta = models.CharField(max_length=10000)
-    incorrecta_1 = models.CharField(max_length=10000)
-    incorrecta_2 = models.CharField(max_length=10000)
+    pregunta = models.CharField(max_length=1000)
+    respuesta = models.CharField(max_length=1000)
+    incorrecta_1 = models.CharField(max_length=1000)
+    incorrecta_2 = models.CharField(max_length=1000)
     def __unicode__(self):
         return smart_unicode(self.pregunta)
 
