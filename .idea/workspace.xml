@@ -31,8 +31,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5568562">
-              <caret line="1172" column="55" selection-start-line="1172" selection-start-column="55" selection-end-line="1172" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.6705686">
+              <caret line="1178" column="55" selection-start-line="1178" selection-start-column="55" selection-end-line="1178" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -453,12 +453,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00008" summary="Random off DOcentes">
-      <created>1453150048902</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1453150048902</updated>
-    </task>
     <task id="LOCAL-00009" summary="Reporte formadores Tipo 1 y Tipo 2">
       <created>1453392441495</created>
       <option name="number" value="00009" />
@@ -747,7 +741,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456351005075</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Actualizacion masiva ok 2">
+      <created>1456353062660</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1456353062660</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,7 +782,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Matriz padres ok prueba(2)" />
     <MESSAGE value="Matriz padres ok prueba(3)" />
     <MESSAGE value="Matriz padres ok prueba(4)" />
     <MESSAGE value="Matriz padres ok prueba(5)" />
@@ -807,7 +806,8 @@
     <MESSAGE value="Sesion 4 ok" />
     <MESSAGE value="Actualizacion masiva" />
     <MESSAGE value="Actualizacion masiva ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion masiva ok" />
+    <MESSAGE value="Actualizacion masiva ok 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion masiva ok 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2429,8 +2429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5568562">
-          <caret line="1172" column="55" selection-start-line="1172" selection-start-column="55" selection-end-line="1172" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.6705686">
+          <caret line="1178" column="55" selection-start-line="1178" selection-start-column="55" selection-end-line="1178" selection-end-column="55" />
           <folding />
         </state>
       </provider>

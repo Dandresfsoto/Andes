@@ -1166,17 +1166,18 @@ def actualizar_participantes(modeladmin,request,queryset):
             else:
                 if sesion == "2":
                     resultado = "Participantes Cargados Exitosamente"
+                    nuevo_soporte = participante_trucho.soporte
+
+                    source = soportes.open(name)
+                    target = file(os.path.join(r"C:\Temp",name),"wb")
+                    with source, target:
+                        shutil.copyfileobj(source,target)
 
                     try:
-                        nuevo_soporte = participante_trucho.soporte
-                    except:
-                        resultado = "sin carga inicial"
-                    else:
-                        source = soportes.open(name)
-                        target = file(os.path.join(r"C:\Temp",name),"wb")
-                        with source, target:
-                            shutil.copyfileobj(source,target)
                         nuevo_soporte.soporte = File(open("C://Temp//" + name, 'rb'))
+                    except:
+                        resultado = "Sin carga inicial"
+                    else:
                         nuevo_soporte.save()
                         os.remove("C://Temp//" + name)
                 else:
