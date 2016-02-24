@@ -1156,8 +1156,8 @@ def actualizar_participantes(modeladmin,request,queryset):
 
         for name in name_list:
             resultado = ""
-            sesion = name.split("_")[0]
-            cedula = name.split("_")[1].split(".")[0]
+            sesion = name.split("_")[1]
+            cedula = name.split("_")[0].split(".")[0]
 
             try:
                 participante_trucho = EvidenciaEscuelaTic.objects.filter(entregable__id=9).get(participante__cedula=cedula)
