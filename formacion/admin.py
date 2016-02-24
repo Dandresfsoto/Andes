@@ -1156,8 +1156,8 @@ def actualizar_participantes(modeladmin,request,queryset):
 
         for name in name_list:
             resultado = ""
-            sesion = name.split("_")[1]
-            cedula = name.split("_")[0].split(".")[0]
+            sesion = name.split("_")[1].split(".")[0]
+            cedula = name.split("_")[0]
 
             try:
                 participante_trucho = EvidenciaEscuelaTic.objects.filter(entregable__id=9).get(participante__cedula=cedula)
@@ -1166,15 +1166,19 @@ def actualizar_participantes(modeladmin,request,queryset):
             else:
                 if sesion == "2":
                     resultado = "Participantes Cargados Exitosamente"
-                    nuevo_soporte = participante_trucho.soporte
 
-                    source = soportes.open(name)
-                    target = file(os.path.join(r"C:\Temp",name),"wb")
-                    with source, target:
-                        shutil.copyfileobj(source,target)
-                    nuevo_soporte.soporte = File(open("C://Temp//" + name, 'rb'))
-                    nuevo_soporte.save()
-                    os.remove("C://Temp//" + name)
+                    try:
+                        nuevo_soporte = participante_trucho.soporte
+                    except:
+                        resultado = "sin carga inicial"
+                    else:
+                        source = soportes.open(name)
+                        target = file(os.path.join(r"C:\Temp",name),"wb")
+                        with source, target:
+                            shutil.copyfileobj(source,target)
+                        nuevo_soporte.soporte = File(open("C://Temp//" + name, 'rb'))
+                        nuevo_soporte.save()
+                        os.remove("C://Temp//" + name)
                 else:
                     "El numero de sesion es invalido"
 
