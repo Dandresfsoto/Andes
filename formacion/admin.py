@@ -1110,10 +1110,101 @@ def carga_participantes_truchos(modeladmin,request,queryset):
         return response
 carga_participantes_truchos.short_description = "Cargar Listados Masivos"
 
+
+def actualizar_participantes(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Actualizacion Masiva.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Actualizacion Masiva"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'FORMACION'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Actualizacion Masiva'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['NOMBRE ARCHIVO',30]),
+                   tuple(['INFORMACION',60]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(archivo_queryset.archivo),'r')
+
+        name_list = soportes.namelist()
+
+        for name in name_list:
+            resultado = ""
+            sesion = name.split("_")[0]
+            cedula = name.split("_")[1].split(".")[0]
+
+            try:
+                participante_trucho = EvidenciaEscuelaTic.objects.filter(entregable__id=9).get(participante__cedula=cedula)
+            except:
+                resultado = "No existe el numero de cedula"
+            else:
+                if sesion == "2":
+                    resultado = "Participantes Cargados Exitosamente"
+                    nuevo_soporte = participante_trucho.soporte
+
+                    source = soportes.open(name)
+                    target = file(os.path.join(r"C:\Temp",name),"wb")
+                    with source, target:
+                        shutil.copyfileobj(source,target)
+                    nuevo_soporte.soporte = File(open("C://Temp//" + name, 'rb'))
+                    nuevo_soporte.save()
+                    os.remove("C://Temp//" + name)
+                else:
+                    "El numero de sesion es invalido"
+
+
+            row_num += 1
+            row = [
+                name,
+                resultado
+            ]
+
+            for col_num in xrange(len(row)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                if row[col_num] == True:
+                    c.value = "SI"
+                if row[col_num] == False:
+                    c.value = "NO"
+                if row[col_num] == None:
+                    c.value = ""
+                else:
+                    c.value = row[col_num]
+                c.style = co
+
+        archivo.save(response)
+        return response
+actualizar_participantes.short_description = "Actualizar Listados Masivos"
+
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,carga_docentes,actualizar_docentes,carga_participantes_truchos]
+    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,carga_docentes,actualizar_docentes,carga_participantes_truchos,actualizar_participantes]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
 def asignacion_total(modeladmin,request,queryset):
