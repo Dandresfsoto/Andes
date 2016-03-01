@@ -628,13 +628,13 @@ class CalificarGrupoView(FormacionMixin,TemplateView):
     def get_context_data(self, **kwargs):
         participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
         soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id')
-        id_actividades = soportes.filter(entregable__id__in=[11,14]).values_list('entregable__id',flat=True)
+        id_actividades = soportes.filter(entregable__id__in=[11,14]).values_list('entregable__actividad__id',flat=True)
         id_actividades = list(set(id_actividades))
         y=[]
         i=0
         for id_actividad in id_actividades:
             x=[]
-            soportes_filtro = soportes.filter(entregable__id=id_actividad)
+            soportes_filtro = soportes.filter(entregable__id__in=[11,14],entregable__actividad__id=id_actividad)
             nombre_actividad = Actividad.objects.get(id=id_actividad).nombre
             maximo = max(soportes_filtro.values_list('id',flat=True))
             for soporte_filtro in soportes_filtro:
