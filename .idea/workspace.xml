@@ -41,8 +41,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12629758">
-              <caret line="629" column="133" selection-start-line="629" selection-start-column="133" selection-end-line="629" selection-end-column="133" />
+            <state vertical-scroll-proportion="0.30276817">
+              <caret line="629" column="123" selection-start-line="629" selection-start-column="123" selection-end-line="629" selection-end-column="123" />
               <folding />
             </state>
           </provider>
@@ -464,12 +464,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00011" summary="Eliminar asignación grupal">
-      <created>1453472234026</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1453472234026</updated>
-    </task>
     <task id="LOCAL-00012" summary="Eliminar asignación grupal (ok)">
       <created>1453472348996</created>
       <option name="number" value="00012" />
@@ -758,7 +752,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456855689974</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Solo Proyectos ok">
+      <created>1456855795329</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1456855795329</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -793,7 +793,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Matriz padres ok prueba(5)" />
     <MESSAGE value="Matriz padres Truchos" />
     <MESSAGE value="Order by entregable__id" />
     <MESSAGE value="Order by entregable__id Docentes" />
@@ -818,7 +817,8 @@
     <MESSAGE value="Actualizacion masiva ok 2" />
     <MESSAGE value="Actualizacion masiva ok 3" />
     <MESSAGE value="Solo Proyectos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solo Proyectos" />
+    <MESSAGE value="Solo Proyectos ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solo Proyectos ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2433,8 +2433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12629758">
-          <caret line="629" column="133" selection-start-line="629" selection-start-column="133" selection-end-line="629" selection-end-column="133" />
+        <state vertical-scroll-proportion="0.30276817">
+          <caret line="629" column="123" selection-start-line="629" selection-start-column="123" selection-end-line="629" selection-end-column="123" />
           <folding />
         </state>
       </provider>
