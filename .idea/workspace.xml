@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -28,11 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6705686">
-              <caret line="1178" column="55" selection-start-line="1178" selection-start-column="55" selection-end-line="1178" selection-end-column="55" />
+            <state vertical-scroll-proportion="-6.62069">
+              <caret line="14" column="109" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/formacion/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12629758">
+              <caret line="629" column="135" selection-start-line="629" selection-start-column="135" selection-end-line="629" selection-end-column="135" />
               <folding />
             </state>
           </provider>
@@ -41,8 +51,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5172415">
-              <caret line="283" column="15" selection-start-line="283" selection-start-column="6" selection-end-line="283" selection-end-column="15" />
+            <state vertical-scroll-proportion="-6.62069">
+              <caret line="284" column="59" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -110,12 +120,12 @@
         <option value="$PROJECT_DIR$/administrativo/views.py" />
         <option value="$PROJECT_DIR$/templates/update_informacion_formador.jade" />
         <option value="$PROJECT_DIR$/formador/forms.py" />
-        <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
         <option value="$PROJECT_DIR$/formacion/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/views.py" />
       </list>
     </option>
   </component>
@@ -127,9 +137,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1378" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -154,6 +165,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,8 +201,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,12 +463,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Reporte formadores Tipo 1 y Tipo 2">
-      <created>1453392441495</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1453392441495</updated>
     </task>
     <task id="LOCAL-00010" summary="Reporte formadores Tipo 1 y Tipo 2 (Correccion)">
       <created>1453392649911</created>
@@ -747,27 +752,33 @@
       <option name="project" value="LOCAL" />
       <updated>1456353062660</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Actualizacion masiva ok 3">
+      <created>1456353247540</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1456353247540</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22246696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3559055" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -782,7 +793,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Matriz padres ok prueba(3)" />
     <MESSAGE value="Matriz padres ok prueba(4)" />
     <MESSAGE value="Matriz padres ok prueba(5)" />
     <MESSAGE value="Matriz padres Truchos" />
@@ -807,7 +817,8 @@
     <MESSAGE value="Actualizacion masiva" />
     <MESSAGE value="Actualizacion masiva ok" />
     <MESSAGE value="Actualizacion masiva ok 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion masiva ok 2" />
+    <MESSAGE value="Actualizacion masiva ok 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion masiva ok 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2013,13 +2024,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34299517">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/region/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.123188406">
@@ -2195,14 +2199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.456942">
-          <caret line="673" column="16" selection-start-line="673" selection-start-column="16" selection-end-line="673" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/region/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2214,13 +2210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33217993">
-          <caret line="30" column="85" selection-start-line="30" selection-start-column="73" selection-end-line="30" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -2300,9 +2289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="94" selection-start-line="37" selection-start-column="94" selection-end-line="37" selection-end-column="94" />
-          <folding>
-            <element signature="e#617#674#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2317,9 +2303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="69" column="23" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="23" />
-          <folding>
-            <element signature="e#46#91#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2348,7 +2331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2356,16 +2338,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="6" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17574692">
+          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
           <folding>
-            <element signature="e#0#28#0" expanded="false" />
+            <element signature="e#46#78#0" expanded="false" />
+            <element signature="e#2899#12152#0" expanded="false" />
+            <element signature="e#12274#17233#0" expanded="false" />
+            <element signature="e#17360#21690#0" expanded="false" />
+            <element signature="e#21825#24318#0" expanded="false" />
+            <element signature="e#24444#24538#0" expanded="false" />
+            <element signature="e#24698#28114#0" expanded="false" />
+            <element signature="e#28227#29319#0" expanded="false" />
+            <element signature="e#29432#29569#0" expanded="false" />
+            <element signature="e#29679#34565#0" expanded="false" />
+            <element signature="e#34695#35881#0" expanded="false" />
+            <element signature="e#36215#37163#0" expanded="false" />
+            <element signature="e#38428#39817#0" expanded="false" />
+            <element signature="e#39954#41364#0" expanded="false" />
+            <element signature="e#45789#45923#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1178" column="55" selection-start-line="1178" selection-start-column="55" selection-end-line="1178" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/administrativo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="613" column="16" selection-start-line="613" selection-start-column="12" selection-end-line="613" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.2800659">
+          <caret line="629" column="23" selection-start-line="629" selection-start-column="23" selection-end-line="629" selection-end-column="23" />
           <folding>
             <element signature="e#19357#21311#0" expanded="false" />
             <element signature="e#21383#21916#0" expanded="false" />
@@ -2387,50 +2405,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/views.py">
+    <entry file="file://$PROJECT_DIR$/acceso/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="93" column="9" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17574692">
-          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
-          <folding>
-            <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#2899#12152#0" expanded="false" />
-            <element signature="e#12274#17233#0" expanded="false" />
-            <element signature="e#17360#21690#0" expanded="false" />
-            <element signature="e#21825#24318#0" expanded="false" />
-            <element signature="e#24444#24538#0" expanded="false" />
-            <element signature="e#24698#28114#0" expanded="false" />
-            <element signature="e#28227#29319#0" expanded="false" />
-            <element signature="e#29432#29569#0" expanded="false" />
-            <element signature="e#29679#34565#0" expanded="false" />
-            <element signature="e#34695#35881#0" expanded="false" />
-            <element signature="e#36215#37163#0" expanded="false" />
-            <element signature="e#38428#39817#0" expanded="false" />
-            <element signature="e#39954#41364#0" expanded="false" />
-            <element signature="e#45789#45923#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-6.62069">
+          <caret line="14" column="109" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="109" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5172415">
-          <caret line="283" column="15" selection-start-line="283" selection-start-column="6" selection-end-line="283" selection-end-column="15" />
+        <state vertical-scroll-proportion="-6.62069">
+          <caret line="284" column="59" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+    <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6705686">
-          <caret line="1178" column="55" selection-start-line="1178" selection-start-column="55" selection-end-line="1178" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.12629758">
+          <caret line="629" column="135" selection-start-line="629" selection-start-column="135" selection-end-line="629" selection-end-column="135" />
           <folding />
         </state>
       </provider>
