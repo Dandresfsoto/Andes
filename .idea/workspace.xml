@@ -41,8 +41,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12629758">
-              <caret line="630" column="59" selection-start-line="630" selection-start-column="59" selection-end-line="630" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.1851211">
+              <caret line="632" column="12" selection-start-line="632" selection-start-column="12" selection-end-line="632" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -464,12 +464,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00014" summary="Estadisticas (ok)">
-      <created>1453485466035</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1453485466035</updated>
-    </task>
     <task id="LOCAL-00015" summary="Form Valid ok">
       <created>1453838013717</created>
       <option name="number" value="00015" />
@@ -758,7 +752,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456856440794</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Solo Proyectos ok 4">
+      <created>1456856516499</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1456856516499</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -793,8 +793,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Order by entregable__id Docentes" />
-    <MESSAGE value="Order by entregable__id Docentes ok" />
     <MESSAGE value="Order by entregable__id Docentes ok 2" />
     <MESSAGE value="Order by entregable__id Docentes ok 3" />
     <MESSAGE value="Order by entregable__id Docentes ok 4" />
@@ -818,7 +816,9 @@
     <MESSAGE value="Solo Proyectos ok" />
     <MESSAGE value="Solo Proyectos ok 2" />
     <MESSAGE value="Solo Proyectos ok 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solo Proyectos ok 3" />
+    <MESSAGE value="Solo Proyectos ok 4" />
+    <MESSAGE value="Solo Proyectos ok 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solo Proyectos ok 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2434,8 +2434,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12629758">
-          <caret line="630" column="59" selection-start-line="630" selection-start-column="59" selection-end-line="630" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.1851211">
+          <caret line="632" column="12" selection-start-line="632" selection-start-column="12" selection-end-line="632" selection-end-column="12" />
           <folding />
         </state>
       </provider>
