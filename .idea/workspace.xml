@@ -32,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/formacion/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.62069">
-              <caret line="14" column="109" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="109" />
+              <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -41,18 +41,18 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30276817">
-              <caret line="629" column="123" selection-start-line="629" selection-start-column="123" selection-end-line="629" selection-end-column="123" />
+            <state vertical-scroll-proportion="0.12629758">
+              <caret line="630" column="68" selection-start-line="630" selection-start-column="68" selection-end-line="630" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+      <file leaf-file-name="tipo2_formador_grupo_calificar.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.62069">
-              <caret line="284" column="59" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -195,7 +195,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="formacion" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -463,12 +463,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Eliminar asignación grupal (ok)">
-      <created>1453472348996</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1453472348996</updated>
     </task>
     <task id="LOCAL-00013" summary="Estadisticas">
       <created>1453484123956</created>
@@ -758,7 +752,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456855795329</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Solo Proyectos ok 2">
+      <created>1456855936909</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1456855936909</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -793,7 +793,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Matriz padres Truchos" />
     <MESSAGE value="Order by entregable__id" />
     <MESSAGE value="Order by entregable__id Docentes" />
     <MESSAGE value="Order by entregable__id Docentes ok" />
@@ -818,7 +817,8 @@
     <MESSAGE value="Actualizacion masiva ok 3" />
     <MESSAGE value="Solo Proyectos" />
     <MESSAGE value="Solo Proyectos ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solo Proyectos ok" />
+    <MESSAGE value="Solo Proyectos ok 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solo Proyectos ok 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2024,13 +2024,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/region/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.123188406">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/listado_gestores_evidencia_corte.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9170732">
@@ -2415,14 +2408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.62069">
-          <caret line="14" column="109" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.62069">
@@ -2431,10 +2416,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.62069">
+          <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30276817">
-          <caret line="629" column="123" selection-start-line="629" selection-start-column="123" selection-end-line="629" selection-end-column="123" />
+        <state vertical-scroll-proportion="0.12629758">
+          <caret line="630" column="68" selection-start-line="630" selection-start-column="68" selection-end-line="630" selection-end-column="68" />
           <folding />
         </state>
       </provider>
