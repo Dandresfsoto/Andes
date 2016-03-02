@@ -197,7 +197,7 @@ def carga_ruteo(modeladmin,request,queryset):
                         if evidencias.count() != 0:
                             if fila[1].value != None:
                                 try:
-                                    gestor = Gestor.objects.get(cedula=fila[1].value)
+                                    gestor = Gestor.objects.filter(tipo__id=1).get(cedula=fila[1].value)
                                 except:
                                     proceso = "No existe un gestor con este numero de cedula"
                                 else:
