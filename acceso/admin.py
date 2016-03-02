@@ -212,6 +212,7 @@ def carga_ruteo(modeladmin,request,queryset):
                                         editar.plan_choque = True
                                         editar.gestor = gestor
                                         editar.save()
+                                        proceso = "Correctamente cambiado"
                                 else:
                                     proceso = "No hay radicados para asignar"
                         else:
