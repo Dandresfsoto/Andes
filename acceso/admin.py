@@ -140,6 +140,110 @@ def reasignacion_actividades(modeladmin,request,queryset):
         return response
 reasignacion_actividades.short_description = "Reasignacion de actividades"
 
+def carga_ruteo(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reasignacion Actividades"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reasignacion Actividades'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['RADICADO',30]),
+                   tuple(['CEDULA',30]),
+                   tuple(['ID',30]),
+                   tuple(['RESULTADO',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+
+                if fila[0].value != None:
+                    try:
+                        evidencias = Evidencia.objects.filter(radicado__numero=fila[0].value)
+                    except:
+                        proceso = "No existe el radicado"
+                    else:
+                        if fila[1].value != None:
+                            try:
+                                gestor = Gestor.objects.get(cedula=fila[1].value)
+                            except:
+                                proceso = "No existe un gestor con este numero de cedula"
+                            else:
+                                if fila[2].value != None:
+                                    ids = fila[2].value.split(";")
+                                    for id in ids:
+                                        editar = evidencias.get(actividad__id=id)
+                                        editar.valor = Valor.objects.get(id=25)
+                                        editar.plan_choque = True
+                                        editar.gestor = gestor
+                                        editar.save()
+                                else:
+                                    proceso = "No hay radicados para asignar"
+                        else:
+                            proceso = "El campo de cedula esta vacio"
+                else:
+                    proceso = "El campo de radicado esta vacio"
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    fila[2].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+carga_ruteo.short_description = "Cargar ruteo"
+
+
 def reasignacion_actividades_corte(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -247,7 +351,7 @@ reasignacion_actividades_corte.short_description = "Reasignacion de actividades 
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [reasignacion_actividades,reasignacion_actividades_corte]
+    actions = [reasignacion_actividades,reasignacion_actividades_corte,carga_ruteo]
 
 admin.site.register(Ciclo)
 admin.site.register(Componente)

@@ -104,6 +104,7 @@ class Evidencia(models.Model):
     corte = models.ForeignKey(Corte,blank=True,null=True)
     usuario = models.ForeignKey(User,blank=True,null=True)
     modificacion = models.DateTimeField(blank=True,null=True)
+    plan_choque = models.BooleanField(default=False)
 
     def __unicode__(self):
         return smart_unicode(self.radicado)
