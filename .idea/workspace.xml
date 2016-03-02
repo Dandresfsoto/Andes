@@ -41,12 +41,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acceso/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9205608">
-              <caret line="217" column="61" selection-start-line="217" selection-start-column="61" selection-end-line="217" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.682243">
+              <caret line="211" column="74" selection-start-line="211" selection-start-column="74" selection-end-line="211" selection-end-column="74" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#1884#6139#0" expanded="false" />
-                <element signature="e#10407#14598#0" expanded="false" />
+                <element signature="e#10403#14594#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -458,12 +458,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00022" summary="Virtuales ok 2">
-      <created>1454680801238</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1454680801238</updated>
-    </task>
     <task id="LOCAL-00023" summary="Sesion 2 Nivel 2">
       <created>1454689030231</created>
       <option name="number" value="00023" />
@@ -752,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456942817938</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Ruteo r4 plan choque acceso ok ok">
+      <created>1456944627808</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1456944627809</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -787,7 +787,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Grupo poblacional error" />
     <MESSAGE value="Actualizar Radicados" />
     <MESSAGE value="Actualizar Docentes" />
     <MESSAGE value="Actualizar Docentes Ok" />
@@ -812,7 +811,8 @@
     <MESSAGE value="Solo Proyectos ok 9" />
     <MESSAGE value="Ruteo r4 plan choque acceso" />
     <MESSAGE value="Ruteo r4 plan choque acceso ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ruteo r4 plan choque acceso ok" />
+    <MESSAGE value="Ruteo r4 plan choque acceso ok ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ruteo r4 plan choque acceso ok ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2430,12 +2430,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acceso/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9205608">
-          <caret line="217" column="61" selection-start-line="217" selection-start-column="61" selection-end-line="217" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.682243">
+          <caret line="211" column="74" selection-start-line="211" selection-start-column="74" selection-end-line="211" selection-end-column="74" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <element signature="e#1884#6139#0" expanded="false" />
-            <element signature="e#10407#14598#0" expanded="false" />
+            <element signature="e#10403#14594#0" expanded="false" />
           </folding>
         </state>
       </provider>
