@@ -193,30 +193,29 @@ def carga_ruteo(modeladmin,request,queryset):
                 proceso =""
 
                 if fila[0].value != None:
-                    try:
                         evidencias = Evidencia.objects.filter(radicado__numero=fila[0].value)
-                    except:
-                        proceso = "No existe el radicado"
-                    else:
-                        if fila[1].value != None:
-                            try:
-                                gestor = Gestor.objects.get(cedula=fila[1].value)
-                            except:
-                                proceso = "No existe un gestor con este numero de cedula"
-                            else:
-                                if fila[2].value != None:
-                                    ids = fila[2].value.split(";")
-                                    for id in ids:
-                                        editar = evidencias.get(actividad__id=id)
-                                        editar.valor = Valor.objects.get(id=25)
-                                        editar.plan_choque = True
-                                        editar.gestor = gestor
-                                        editar.save()
-                                        proceso = "Correctamente cambiado"
+                        if evidencias.count() != 0:
+                            if fila[1].value != None:
+                                try:
+                                    gestor = Gestor.objects.get(cedula=fila[1].value)
+                                except:
+                                    proceso = "No existe un gestor con este numero de cedula"
                                 else:
-                                    proceso = "No hay radicados para asignar"
+                                    if fila[2].value != None:
+                                        ids = fila[2].value.split(";")
+                                        for id in ids:
+                                            editar = evidencias.get(actividad__id=id)
+                                            editar.valor = Valor.objects.get(id=25)
+                                            editar.plan_choque = True
+                                            editar.gestor = gestor
+                                            editar.save()
+                                            proceso = "Correctamente cambiado"
+                                    else:
+                                        proceso = "No hay radicados para asignar"
+                            else:
+                                proceso = "El campo de cedula esta vacio"
                         else:
-                            proceso = "El campo de cedula esta vacio"
+                            proceso = "No existe el radicado"
                 else:
                     proceso = "El campo de radicado esta vacio"
 
