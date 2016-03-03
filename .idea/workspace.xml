@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acceso/admin.py" afterPath="$PROJECT_DIR$/acceso/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/evidencias_radicado_total.html" afterPath="$PROJECT_DIR$/templates/evidencias_radicado_total.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/evidencias_radicado_total.jade" afterPath="$PROJECT_DIR$/templates/evidencias_radicado_total.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -28,26 +29,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceso/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="119" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="119" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/acceso/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-1.0689656">
               <caret line="222" column="24" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+      <file leaf-file-name="evidencias_radicado_total.jade" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/evidencias_radicado_total.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5233645">
-              <caret line="201" column="93" selection-start-line="201" selection-start-column="93" selection-end-line="201" selection-end-column="93" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <element signature="e#1884#6139#0" expanded="false" />
-                <element signature="e#10422#14613#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.635514">
+              <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/map_nueva_respuesta.jade" />
         <option value="$PROJECT_DIR$/templates/map_respuesta.jade" />
         <option value="$PROJECT_DIR$/templates/map_editar_respuesta.jade" />
         <option value="$PROJECT_DIR$/templates/formacion.jade" />
@@ -120,6 +126,7 @@
         <option value="$PROJECT_DIR$/acceso/urls.py" />
         <option value="$PROJECT_DIR$/acceso/models.py" />
         <option value="$PROJECT_DIR$/acceso/admin.py" />
+        <option value="$PROJECT_DIR$/templates/evidencias_radicado_total.jade" />
       </list>
     </option>
   </component>
@@ -187,7 +194,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="acceso" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,12 +464,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Sesion 3.1 Nivel 3">
-      <created>1454690603600</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1454690603600</updated>
     </task>
     <task id="LOCAL-00025" summary="Sesion 3.1 Nivel 3 (ok)">
       <created>1454690720798</created>
@@ -752,7 +753,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456945916869</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Ruteo r4 plan choque acceso ok ok ok true">
+      <created>1456948533454</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1456948533454</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -765,7 +772,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -787,7 +794,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Actualizar Docentes" />
     <MESSAGE value="Actualizar Docentes Ok" />
     <MESSAGE value="sesion 4" />
     <MESSAGE value="sesion 4 ok" />
@@ -812,7 +818,8 @@
     <MESSAGE value="Ruteo r4 plan choque acceso ok" />
     <MESSAGE value="Ruteo r4 plan choque acceso ok ok" />
     <MESSAGE value="Ruteo r4 plan choque acceso ok ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ruteo r4 plan choque acceso ok ok ok" />
+    <MESSAGE value="Ruteo r4 plan choque acceso ok ok ok true" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ruteo r4 plan choque acceso ok ok ok true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2018,13 +2025,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/financiero/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4199475">
-          <caret line="769" column="74" selection-start-line="769" selection-start-column="74" selection-end-line="769" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/listado_gestores_evidencia_corte_apoyo.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1658536">
@@ -2404,6 +2404,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="201" column="93" selection-start-line="201" selection-start-column="93" selection-end-line="201" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#1884#6139#0" expanded="false" />
+            <element signature="e#10422#14613#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/acceso/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67523366">
@@ -2414,7 +2426,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acceso/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55607474">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="119" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="119" />
           <folding />
         </state>
@@ -2422,21 +2434,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acceso/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-1.0689656">
           <caret line="222" column="24" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/admin.py">
+    <entry file="file://$PROJECT_DIR$/templates/evidencias_radicado_total.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5233645">
-          <caret line="201" column="93" selection-start-line="201" selection-start-column="93" selection-end-line="201" selection-end-column="93" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#1884#6139#0" expanded="false" />
-            <element signature="e#10422#14613#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.635514">
+          <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

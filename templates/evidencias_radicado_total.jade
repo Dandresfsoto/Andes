@@ -37,6 +37,8 @@ block body_content
                     td
                         | {{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}
                     td
+                        | {{form.instance.actividad.id}}
+                    td
                         |{{form.instance.actividad.descripcion}}
                     td
                         | {% if form.instance.soporte != "" %}
@@ -59,6 +61,8 @@ block body_content
                         | {{form.instance.modulo.nombre}} - {{form.instance.modulo.descripcion}}
                     td
                         | {{form.instance.actividad.nombre}} - {{form.instance.actividad.titulo}}
+                    td
+                        |{{form.instance.actividad.id}}
                     td
                         |{{form.instance.actividad.descripcion}}
                     td
