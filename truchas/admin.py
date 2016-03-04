@@ -294,16 +294,18 @@ def eliminar_actividades(modeladmin,request,queryset):
 
         for fila in hoja1_masivo.rows:
             i += 1
-            if i > 2:
+            if i > 1:
                 proceso =""
 
                 try:
-                    participante = EvidenciaEscuelaTic.objects.filter(participante__cedula=fila[0].value).get(entregable__id=fila[1].value)
+                    participante = EvidenciaDocentes.objects.filter(participante__cedula=fila[0].value).get(entregable__id=fila[1].value)
                 except:
                     proceso = "Error"
                 else:
                     proceso = "Soporte Eliminado"
-                    participante.soporte.delete()
+                    soporte = SoporteEntregableDocente.objects.get(id=participante.soporte.id)
+                    soporte.soporte = None
+                    soporte.save()
 
                 row_num += 1
                 row = [
