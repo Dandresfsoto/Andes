@@ -803,7 +803,12 @@ class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
                 if soporte_filtro.id == maximo:
                     clase ="max"
                 cantidad = EvidenciaDocentes.objects.filter(soporte_id=soporte_filtro.id).count()
-                x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase})
+                cedulas = EvidenciaDocentes.objects.filter(soporte_id=soporte_filtro.id).values_list('participante__cedula',flat=True)
+                cedulas_total = ''
+                for cedula in cedulas:
+                    cedulas_total += '<p>'+str(cedula)+' - '+ParticipanteDocente.objects.get(cedula=cedula).nombres+' '+ParticipanteDocente.objects.get(cedula=cedula).apellidos+'</p>'
+
+                x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase,"cedula":cedulas_total})
             y.append({"nombre_actividad":nombre_actividad,"informacion":x})
 
         kwargs['TIPO_ACTIVIDAD'] = "Actividades Presenciales" if self.kwargs['tipo_evidencia']== u'1' else "Actividades Virtuales"

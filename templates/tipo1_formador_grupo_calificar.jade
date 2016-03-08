@@ -30,6 +30,7 @@ block body_content
                     th Entregable
                     th Actualizar
                     th Asignar
+                    th Cedulas
                     th Participantes
                     th Soporte
             tbody
@@ -42,6 +43,7 @@ block body_content
                        a(href="actualizar/{{entregable.id_soporte}}",style="color:#004c99;") Actualizar
                     td(class="text-center")
                        a(href="asignar/{{entregable.id_soporte}}",style="color:#004c99;") Asignar
+                    td {{entregable.cedula|safe}}
                     td(class="text-center") {{entregable.cantidad}}
                     |{% if entregable.link_soporte == '' %}
                     td(class="text-center")
