@@ -658,21 +658,140 @@ class CalificarGrupoView(FormacionMixin,TemplateView):
         kwargs['ENTREGABLES'] = y
         return super(CalificarGrupoView,self).get_context_data(**kwargs)
 
+
+class TipoEvidenciaView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_tipo_evidencia.html'
+
+    def get_context_data(self, **kwargs):
+        participantes = EvidenciaDocentes.objects.filter(soporte__grupo__id=self.kwargs['grupo_id']).exclude(soporte__soporte=None)
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['CANTIDAD_PRESENCIAL'] = participantes.filter(entregable__id__in=[1,3,5,7,21,23,29,31,33,41,43,45,47,49]).count()
+        kwargs['CANTIDAD_VIRTUAL'] = participantes.exclude(entregable__id__in=[1,3,5,7,21,23,29,31,33,41,43,45,47,49]).count()
+        return super(TipoEvidenciaView,self).get_context_data(**kwargs)
+
+
+class NivelEvidenciaView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_nivel_evidencia.html'
+
+    def get_context_data(self, **kwargs):
+        participantes = EvidenciaDocentes.objects.filter(soporte__grupo__id=self.kwargs['grupo_id']).exclude(soporte__soporte=None)
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['TIPO_ACTIVIDAD'] = "Actividades Presenciales" if self.kwargs['tipo_evidencia']== u'1' else "Actividades Virtuales"
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+
+        if self.kwargs['tipo_evidencia']== u'1':
+            kwargs['CANTIDAD_NIVEL1'] = participantes.filter(entregable__id__in=[1,3,5,7]).count()
+        else:
+            kwargs['CANTIDAD_NIVEL1'] = participantes.filter(entregable__id__in=[9,11,13,15,17]).count()
+
+        if self.kwargs['tipo_evidencia']== u'1':
+            kwargs['CANTIDAD_NIVEL2'] = participantes.filter(entregable__id__in=[21,23]).count()
+        else:
+            kwargs['CANTIDAD_NIVEL2'] = participantes.filter(entregable__id__in=[25,26,27]).count()
+
+        if self.kwargs['tipo_evidencia']== u'1':
+            kwargs['CANTIDAD_NIVEL3'] = participantes.filter(entregable__id__in=[29,31,33]).count()
+        else:
+            kwargs['CANTIDAD_NIVEL3'] = participantes.filter(entregable__id__in=[35,36,37,38,39,40]).count()
+
+        if self.kwargs['tipo_evidencia']== u'1':
+            kwargs['CANTIDAD_NIVEL4'] = participantes.filter(entregable__id__in=[41,43,45,47,49]).count()
+        else:
+            kwargs['CANTIDAD_NIVEL4'] = participantes.filter(entregable__id__in=[51,53,55,59]).count()
+
+        return super(NivelEvidenciaView,self).get_context_data(**kwargs)
+
+class SesionEvidenciaView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_sesion_evidencia.html'
+
+    def get_context_data(self, **kwargs):
+        soportes = SoporteEntregableDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id')
+
+        virtuales = {'1':{'1':[11],'2':[13],'3':[15],'4':[17],'5':[9]},
+                     '2':{'1':[25,26],'2':[27]},
+                     '3':{'1':[35,36],'2':[37,38],'3':[5],'4':[39,40]},
+                     '4':{'1':[51],'2':[53],'3':[55],'4':[],'5':[59]}}
+
+        presenciales = {'1':{'1':[1],'2':[3],'3':[5],'4':[7]},
+                        '2':{'1':[21],'2':[23]},
+                        '3':{'1':[29],'2':[31],'3':[33]},
+                        '4':{'1':[41],'2':[43],'3':[45],'4':[47],'5':[49]}}
+
+        if self.kwargs['tipo_evidencia'] == u'1':
+            filtro = presenciales[self.kwargs['nivel']]
+        else:
+            filtro = virtuales[self.kwargs['nivel']]
+
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['TIPO_ACTIVIDAD'] = "Actividades Presenciales" if self.kwargs['tipo_evidencia']== u'1' else "Actividades Virtuales"
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        kwargs['NIVEL'] = self.kwargs['nivel']
+
+        if self.kwargs['tipo_evidencia'] == u'1':
+            if self.kwargs['nivel'] == u'1':
+                kwargs['SESIONES'] = range(4)
+            if self.kwargs['nivel'] == u'2':
+                kwargs['SESIONES'] = range(2)
+            if self.kwargs['nivel'] == u'3':
+                kwargs['SESIONES'] = range(3)
+            if self.kwargs['nivel'] == u'4':
+                kwargs['SESIONES'] = range(5)
+        else:
+            if self.kwargs['nivel'] == u'1':
+                kwargs['SESIONES'] = range(5)
+            if self.kwargs['nivel'] == u'2':
+                kwargs['SESIONES'] = range(2)
+            if self.kwargs['nivel'] == u'3':
+                kwargs['SESIONES'] = range(3)
+            if self.kwargs['nivel'] == u'4':
+                kwargs['SESIONES'] = range(5)
+
+
+        return super(SesionEvidenciaView,self).get_context_data(**kwargs)
+
 class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
     template_name = 'tipo1_formador_grupo_calificar.html'
 
     def get_context_data(self, **kwargs):
+        virtuales = {'1':{'1':[11],'2':[13],'3':[15],'4':[17],'5':[9]},
+                     '2':{'1':[25,26],'2':[27]},
+                     '3':{'1':[35,36],'2':[37,38],'3':[5],'4':[39,40]},
+                     '4':{'1':[51],'2':[53],'3':[55],'4':[],'5':[59]}}
+
+        presenciales = {'1':{'1':[1],'2':[3],'3':[5],'4':[7]},
+                        '2':{'1':[21],'2':[23]},
+                        '3':{'1':[29],'2':[31],'3':[33]},
+                        '4':{'1':[41],'2':[43],'3':[45],'4':[47],'5':[49]}}
         participantes = ParticipanteDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
-        #excluidos = [9,11,12,13,15,17,18,19,20,25,26,27,35,36,37,38,39,40,51,53,55,59]
-        excluidos = []
+
+        if self.kwargs['tipo_evidencia'] == u'1':
+            filtro = presenciales[self.kwargs['nivel']].get(self.kwargs['sesion'])
+        else:
+            filtro = virtuales[self.kwargs['nivel']].get(self.kwargs['sesion'])
+
+
         soportes = SoporteEntregableDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id')
-        id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
+        id_actividades = soportes.filter(entregable__id__in=filtro).values_list('entregable__actividad__id',flat=True)
         id_actividades = list(set(id_actividades))
         y=[]
         i=0
+
         for id_actividad in id_actividades:
             x=[]
-            soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
+            soportes_filtro = soportes.filter(entregable__id__in=filtro,entregable__actividad__id=id_actividad)
             nombre_actividad = ActividadDocentes.objects.get(id=id_actividad).nombre
             maximo = max(soportes_filtro.values_list('id',flat=True))
             for soporte_filtro in soportes_filtro:
@@ -687,6 +806,9 @@ class CalificarGrupoDocentesView(FormacionMixin,TemplateView):
                 x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase})
             y.append({"nombre_actividad":nombre_actividad,"informacion":x})
 
+        kwargs['TIPO_ACTIVIDAD'] = "Actividades Presenciales" if self.kwargs['tipo_evidencia']== u'1' else "Actividades Virtuales"
+        kwargs['NIVEL'] = self.kwargs['nivel']
+        kwargs['SESION'] = self.kwargs['sesion']
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
         kwargs['ID_REGION'] = self.kwargs['pk']
         kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre

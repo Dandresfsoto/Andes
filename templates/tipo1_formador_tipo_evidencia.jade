@@ -1,0 +1,35 @@
+extends base
+block titulo
+    |Formadores Tipo 1
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+    li
+        a(href="../../../../") Formación
+    li
+        a(href="../../../") Formadores Tipo 1
+    li
+        a(href="../../") {{NOMBRE_FORMADOR}}
+    li(class="active") Tipo de Actividad
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_formador",value="{{ID_FORMADOR}}",id="id_formador")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Tipo Actividad
+                    th Cantidad de asignaciones
+            tbody
+                tr(role="row",class="odd")
+                    td
+                        a(href="1/",style="color:#004c99;") Actividades Presenciales
+                    td {{CANTIDAD_PRESENCIAL}}
+                tr(role="row",class="even")
+                    td
+                        a(href="2/",style="color:#004c99;") Actividades Virtuales
+                    td {{CANTIDAD_VIRTUAL}}

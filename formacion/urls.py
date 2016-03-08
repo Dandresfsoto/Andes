@@ -30,11 +30,14 @@ urlpatterns = [
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/$', login_required(views.ListadoGrupoDocentesView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/editar/(?P<participante_id>\w+)/$', login_required(views.EditarDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/nuevo/docente/$', login_required(views.NuevoDocenteView.as_view())),
-    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/$', login_required(views.CalificarGrupoDocentesView.as_view())),
 
-    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/actualizar/(?P<soporte_id>\w+)/$', login_required(views.FormSoporteGrupoDocenteView.as_view())),
-    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/asignar/(?P<soporte_id>\w+)/$', login_required(views.FormAsignarSoporteDocenteView.as_view())),
-    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/agregar/$', login_required(views.FormAgregarSoporteDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/$', login_required(views.TipoEvidenciaView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/$', login_required(views.NivelEvidenciaView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/(?P<nivel>\w+)/$', login_required(views.SesionEvidenciaView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/(?P<nivel>\w+)/(?P<sesion>\w+)/$', login_required(views.CalificarGrupoDocentesView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/(?P<nivel>\w+)/(?P<sesion>\w+)/actualizar/(?P<soporte_id>\w+)/$', login_required(views.FormSoporteGrupoDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/(?P<nivel>\w+)/(?P<sesion>\w+)/asignar/(?P<soporte_id>\w+)/$', login_required(views.FormAsignarSoporteDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/(?P<nivel>\w+)/(?P<sesion>\w+)/agregar/$', login_required(views.FormAgregarSoporteDocenteView.as_view())),
 
     url(r'^map/$', login_required(views.MapView.as_view())),
     url(r'^map/(?P<codigo>\w+)/$', login_required(views.MapRespuestaView.as_view())),

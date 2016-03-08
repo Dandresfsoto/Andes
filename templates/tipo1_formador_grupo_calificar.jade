@@ -5,16 +5,22 @@ block itemsNavbarBreadcrumb
     li
         a(href="/region/") Inicio
     li
-        a(href="../../../../../../") {{REGION}}
+        a(href="../../../../../../../../../") {{REGION}}
     li
-        a(href="../../../../../") Andes
+        a(href="../../../../../../../../") Andes
     li
-        a(href="../../../../") Formación
+        a(href="../../../../../../../") Formación
     li
-        a(href="../../../") Formadores Tipo 1
+        a(href="../../../../../../") Formadores Tipo 1
     li
-        a(href="../../") {{NOMBRE_FORMADOR}}
-    li(class="active") {{NOMBRE_GRUPO}}
+        a(href="../../../../../") {{NOMBRE_FORMADOR}}
+    li
+        a(href="../../../") {{TIPO_ACTIVIDAD}}
+    li
+        a(href="../../") Nivel {{NIVEL}}
+    li
+        a(href="../") Sesión {{SESION}}
+    li(class="active") Actividades
 block body_content
     div(class="container-fluid")
         table(id="table",class="table table-striped table-bordered")
