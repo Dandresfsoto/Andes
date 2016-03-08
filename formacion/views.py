@@ -674,7 +674,6 @@ class TipoEvidenciaView(FormacionMixin,TemplateView):
         kwargs['CANTIDAD_VIRTUAL'] = participantes.exclude(entregable__id__in=[1,3,5,7,21,23,29,31,33,41,43,45,47,49]).count()
         return super(TipoEvidenciaView,self).get_context_data(**kwargs)
 
-
 class NivelEvidenciaView(FormacionMixin,TemplateView):
     template_name = 'tipo1_formador_nivel_evidencia.html'
 
@@ -714,7 +713,7 @@ class SesionEvidenciaView(FormacionMixin,TemplateView):
     template_name = 'tipo1_formador_sesion_evidencia.html'
 
     def get_context_data(self, **kwargs):
-        soportes = SoporteEntregableDocente.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id')
+        participantes = EvidenciaDocentes.objects.filter(soporte__grupo__id=self.kwargs['grupo_id']).exclude(soporte__soporte=None)
 
         virtuales = {'1':{'1':[11],'2':[13],'3':[15],'4':[17],'5':[9]},
                      '2':{'1':[25,26],'2':[27]},
@@ -740,24 +739,14 @@ class SesionEvidenciaView(FormacionMixin,TemplateView):
         kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
         kwargs['NIVEL'] = self.kwargs['nivel']
 
-        if self.kwargs['tipo_evidencia'] == u'1':
-            if self.kwargs['nivel'] == u'1':
-                kwargs['SESIONES'] = range(4)
-            if self.kwargs['nivel'] == u'2':
-                kwargs['SESIONES'] = range(2)
-            if self.kwargs['nivel'] == u'3':
-                kwargs['SESIONES'] = range(3)
-            if self.kwargs['nivel'] == u'4':
-                kwargs['SESIONES'] = range(5)
-        else:
-            if self.kwargs['nivel'] == u'1':
-                kwargs['SESIONES'] = range(5)
-            if self.kwargs['nivel'] == u'2':
-                kwargs['SESIONES'] = range(2)
-            if self.kwargs['nivel'] == u'3':
-                kwargs['SESIONES'] = range(3)
-            if self.kwargs['nivel'] == u'4':
-                kwargs['SESIONES'] = range(5)
+        y = []
+        for i in range(len(filtro)):
+            x = {}
+            x['id'] = i+1
+            x['cantidad'] = participantes.filter(entregable__id__in=filtro[str(i+1)]).count()
+            y.append(x)
+        kwargs['SESIONES'] = y
+
 
 
         return super(SesionEvidenciaView,self).get_context_data(**kwargs)

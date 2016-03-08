@@ -32,6 +32,6 @@ block body_content
                 |{% for sesion in SESIONES %}
                 tr(role="row",class="{% cycle 'odd' 'even' %}")
                     td
-                        a(href="{{sesion|add:1}}/",style="color:#004c99;") Sesión {{sesion|add:1}}
-                    td -
+                        a(href="{{sesion.id}}/",style="color:#004c99;") Sesión {{sesion.id}}
+                    td {{sesion.cantidad}}
                 |{% endfor %}
