@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tipo1_formador_nivel_evidencia.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tipo1_formador_tipo_evidencia.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo1_formador_grupo.jade" afterPath="$PROJECT_DIR$/templates/tipo1_formador_grupo.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.html" afterPath="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade" afterPath="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/urls.py" afterPath="$PROJECT_DIR$/formacion/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/acceso_vigencia.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tipo1_formador_nivel_evidencia.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/tipo1_formador_tipo_evidencia.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -531,12 +526,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00029" summary="Matriz padres ok">
-      <created>1454707112752</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1454707112752</updated>
-    </task>
     <task id="LOCAL-00030" summary="Matriz padres ok (prueba 1)">
       <created>1454709726353</created>
       <option name="number" value="00030" />
@@ -825,27 +814,33 @@
       <option name="project" value="LOCAL" />
       <updated>1457126103517</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Reorganizacion actividades">
+      <created>1457456818753</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1457456818757</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@Andes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3559055" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -861,7 +856,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sesion 4" />
     <MESSAGE value="Sesion 4 ok" />
     <MESSAGE value="Actualizacion masiva" />
     <MESSAGE value="Actualizacion masiva ok" />
@@ -886,7 +880,8 @@
     <MESSAGE value="Actividad id ok" />
     <MESSAGE value="Eliminar participantes" />
     <MESSAGE value="Eliminar participantes ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminar participantes ok" />
+    <MESSAGE value="Reorganizacion actividades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganizacion actividades" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
