@@ -303,9 +303,13 @@ def eliminar_actividades(modeladmin,request,queryset):
                     proceso = "Error"
                 else:
                     proceso = "Soporte Eliminado"
-                    soporte = SoporteEntregableDocente.objects.get(id=participante.soporte.id)
-                    soporte.soporte = None
-                    soporte.save()
+                    try:
+                        soporte = SoporteEntregableDocente.objects.get(id=participante.soporte.id)
+                    except:
+                        proceso = "No existe la actividad"
+                    else:
+                        soporte.soporte = None
+                        soporte.save()
 
                 row_num += 1
                 row = [
@@ -400,7 +404,7 @@ def verificar_listados(modeladmin,request,queryset):
                         soporte = participante.get(entregable__id=9).soporte.soporte
                     except:
                         proceso1 = "No"
-                    else:    
+                    else:
                         if unicode(soporte) == '':
                             proceso2 = "No"
                         else:
