@@ -330,6 +330,93 @@ def eliminar_actividades(modeladmin,request,queryset):
         return response
 eliminar_actividades.short_description = "Eliminar Actividades"
 
+def verificar_listados(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Actividades Eliminadas.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Verificar Listados"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Verificar Listados'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['CEDULA',30]),
+                   tuple(['RESULTADO',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso1 =""
+                proceso2 =""
+
+                try:
+                    participante = EvidenciaEscuelaTic.objects.filter(participante__cedula=fila[0].value)
+                except:
+                    proceso1 = "Numero de cedula no encontrado"
+                else:
+                    if unicode(participante.get(entregable__id=5).soporte.soporte) == '':
+                        proceso1 = "No"
+                    else:
+                        proceso1 = "Si"
+                    if unicode(participante.get(entregable__id=9).soporte.soporte) == '':
+                        proceso2 = "No"
+                    else:
+                        proceso2 = "Si"
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    proceso1,
+                    proceso2
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+verificar_listados.short_description = "Verificar Listados Padres"
 
 def reporte_formadores(modeladmin,request,queryset):
     for archivo_queryset in queryset:
@@ -590,7 +677,7 @@ reporte_formadores_tipo2.short_description = "Reporte de Formadores Tipo 2"
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_participantes,eliminar_actividades]
+    actions = [carga_participantes,eliminar_actividades,verificar_listados]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
 

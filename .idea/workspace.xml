@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.html" afterPath="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade" afterPath="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
+    <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="Cedulas participantes full">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -30,68 +28,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion/urls.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="149" selection-start-line="35" selection-start-column="130" selection-end-line="35" selection-end-column="149" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.586207">
-              <caret line="295" column="19" selection-start-line="295" selection-start-column="6" selection-end-line="295" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="745" column="93" selection-start-line="745" selection-start-column="93" selection-end-line="745" selection-end-column="93" />
+            <state vertical-scroll-proportion="0.8037383">
+              <caret line="679" column="74" selection-start-line="679" selection-start-column="74" selection-end-line="679" selection-end-column="74" />
               <folding>
-                <element signature="e#11724#16543#0" expanded="false" />
-                <element signature="e#16604#17368#0" expanded="false" />
-                <element signature="e#17436#18222#0" expanded="false" />
-                <element signature="e#18281#18856#0" expanded="false" />
-                <element signature="e#18923#19514#0" expanded="false" />
-                <element signature="e#19576#20293#0" expanded="false" />
-                <element signature="e#20350#21173#0" expanded="false" />
-                <element signature="e#21236#22072#0" expanded="false" />
-                <element signature="e#22130#23069#0" expanded="false" />
-                <element signature="e#23126#23745#0" expanded="false" />
-                <element signature="e#23805#24388#0" expanded="false" />
-                <element signature="e#24444#31162#0" expanded="false" />
-                <element signature="e#31223#33283#0" expanded="false" />
-                <element signature="e#33344#34323#0" expanded="false" />
-                <element signature="e#38289#41749#0" expanded="false" />
+                <element signature="e#12276#15109#0" expanded="false" />
+                <element signature="e#18339#23298#0" expanded="false" />
+                <element signature="e#23425#27755#0" expanded="false" />
+                <element signature="e#27890#30383#0" expanded="false" />
+                <element signature="e#30803#34219#0" expanded="false" />
+                <element signature="e#34332#35424#0" expanded="false" />
+                <element signature="e#35537#35674#0" expanded="false" />
+                <element signature="e#35784#40670#0" expanded="false" />
+                <element signature="e#40800#41986#0" expanded="false" />
+                <element signature="e#43643#44591#0" expanded="false" />
+                <element signature="e#44901#45721#0" expanded="false" />
+                <element signature="e#45856#47245#0" expanded="false" />
+                <element signature="e#47382#48792#0" expanded="false" />
+                <element signature="e#48930#53106#0" expanded="false" />
+                <element signature="e#53217#53351#0" expanded="false" />
+                <element signature="e#53994#57608#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tipo1_formador_sesion_evidencia.jade" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7616823">
-              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tipo1_formador_grupo_calificar.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -155,7 +114,6 @@
         <option value="$PROJECT_DIR$/acceso/models.py" />
         <option value="$PROJECT_DIR$/acceso/admin.py" />
         <option value="$PROJECT_DIR$/templates/evidencias_radicado_total.jade" />
-        <option value="$PROJECT_DIR$/truchas/admin.py" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_grupo.jade" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_tipo_evidencia.jade" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_nivel_evidencia.jade" />
@@ -164,6 +122,7 @@
         <option value="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade" />
+        <option value="$PROJECT_DIR$/truchas/admin.py" />
       </list>
     </option>
   </component>
@@ -233,21 +192,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="formacion" />
+              <option name="myItemId" value="truchas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -515,12 +460,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Matriz padres ok prueba(3)">
-      <created>1454713163362</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1454713163362</updated>
     </task>
     <task id="LOCAL-00033" summary="Matriz padres ok prueba(4)">
       <created>1454713245861</created>
@@ -810,7 +749,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457459442123</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Cedulas participantes full">
+      <created>1457462275890</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1457462275890</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -823,7 +768,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -846,7 +791,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Actualizacion masiva ok" />
     <MESSAGE value="Actualizacion masiva ok 2" />
     <MESSAGE value="Actualizacion masiva ok 3" />
     <MESSAGE value="Solo Proyectos" />
@@ -871,7 +815,8 @@
     <MESSAGE value="Reorganizacion actividades" />
     <MESSAGE value="Reorganizacion actividades Templates" />
     <MESSAGE value="Cedulas participantes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cedulas participantes" />
+    <MESSAGE value="Cedulas participantes full" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cedulas participantes full" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1468,17 +1413,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>691</line>
+          <line>778</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>695</line>
+          <line>782</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>692</line>
+          <line>779</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1493,82 +1438,82 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>391</line>
+          <line>478</line>
           <option name="timeStamp" value="1201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>392</line>
+          <line>479</line>
           <option name="timeStamp" value="1202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>393</line>
+          <line>480</line>
           <option name="timeStamp" value="1203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>394</line>
+          <line>481</line>
           <option name="timeStamp" value="1204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>395</line>
+          <line>482</line>
           <option name="timeStamp" value="1205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>396</line>
+          <line>483</line>
           <option name="timeStamp" value="1206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>397</line>
+          <line>484</line>
           <option name="timeStamp" value="1207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>398</line>
+          <line>485</line>
           <option name="timeStamp" value="1208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>399</line>
+          <line>486</line>
           <option name="timeStamp" value="1209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>400</line>
+          <line>487</line>
           <option name="timeStamp" value="1210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>401</line>
+          <line>488</line>
           <option name="timeStamp" value="1211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>402</line>
+          <line>489</line>
           <option name="timeStamp" value="1212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>403</line>
+          <line>490</line>
           <option name="timeStamp" value="1213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>404</line>
+          <line>491</line>
           <option name="timeStamp" value="1214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>405</line>
+          <line>492</line>
           <option name="timeStamp" value="1215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>406</line>
+          <line>493</line>
           <option name="timeStamp" value="1216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2034,32 +1979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="307" column="34" selection-start-line="307" selection-start-column="34" selection-end-line="307" selection-end-column="34" />
-          <folding>
-            <element signature="e#46#78#0" expanded="false" />
-            <element signature="e#2899#12152#0" expanded="false" />
-            <element signature="e#15233#20192#0" expanded="false" />
-            <element signature="e#20319#24649#0" expanded="false" />
-            <element signature="e#24784#27277#0" expanded="false" />
-            <element signature="e#27678#31094#0" expanded="false" />
-            <element signature="e#31207#32299#0" expanded="false" />
-            <element signature="e#32412#32549#0" expanded="false" />
-            <element signature="e#32659#37545#0" expanded="false" />
-            <element signature="e#37675#38861#0" expanded="false" />
-            <element signature="e#40518#41466#0" expanded="false" />
-            <element signature="e#41776#42596#0" expanded="false" />
-            <element signature="e#42731#44120#0" expanded="false" />
-            <element signature="e#44257#45667#0" expanded="false" />
-            <element signature="e#45805#49981#0" expanded="false" />
-            <element signature="e#50092#50226#0" expanded="false" />
-            <element signature="e#50869#54483#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_tipo_evidencia.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07943925">
@@ -2100,14 +2019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.586207">
@@ -2142,9 +2053,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7616823">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.27803737">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20560747">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8037383">
+          <caret line="679" column="74" selection-start-line="679" selection-start-column="74" selection-end-line="679" selection-end-column="74" />
+          <folding>
+            <element signature="e#12276#15109#0" expanded="false" />
+            <element signature="e#18339#23298#0" expanded="false" />
+            <element signature="e#23425#27755#0" expanded="false" />
+            <element signature="e#27890#30383#0" expanded="false" />
+            <element signature="e#30803#34219#0" expanded="false" />
+            <element signature="e#34332#35424#0" expanded="false" />
+            <element signature="e#35537#35674#0" expanded="false" />
+            <element signature="e#35784#40670#0" expanded="false" />
+            <element signature="e#40800#41986#0" expanded="false" />
+            <element signature="e#43643#44591#0" expanded="false" />
+            <element signature="e#44901#45721#0" expanded="false" />
+            <element signature="e#45856#47245#0" expanded="false" />
+            <element signature="e#47382#48792#0" expanded="false" />
+            <element signature="e#48930#53106#0" expanded="false" />
+            <element signature="e#53217#53351#0" expanded="false" />
+            <element signature="e#53994#57608#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
