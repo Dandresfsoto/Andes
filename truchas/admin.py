@@ -310,6 +310,8 @@ def eliminar_actividades(modeladmin,request,queryset):
                     else:
                         soporte.soporte = None
                         soporte.save()
+                        participante.soporte = None
+                        participante.save()
 
                 row_num += 1
                 row = [
