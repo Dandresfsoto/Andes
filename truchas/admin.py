@@ -386,14 +386,25 @@ def verificar_listados(modeladmin,request,queryset):
                 except:
                     proceso1 = "Numero de cedula no encontrado"
                 else:
-                    if unicode(participante.get(entregable__id=5).soporte.soporte) == '':
+                    try:
+                        soporte = participante.get(entregable__id=5).soporte.soporte
+                    except:
                         proceso1 = "No"
                     else:
-                        proceso1 = "Si"
-                    if unicode(participante.get(entregable__id=9).soporte.soporte) == '':
-                        proceso2 = "No"
-                    else:
-                        proceso2 = "Si"
+                        if unicode(soporte) == '':
+                            proceso1 = "No"
+                        else:
+                            proceso1 = "Si"
+
+                    try:
+                        soporte = participante.get(entregable__id=9).soporte.soporte
+                    except:
+                        proceso1 = "No"
+                    else:    
+                        if unicode(soporte) == '':
+                            proceso2 = "No"
+                        else:
+                            proceso2 = "Si"
 
                 row_num += 1
                 row = [
