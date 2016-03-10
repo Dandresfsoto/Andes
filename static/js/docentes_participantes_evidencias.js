@@ -42,11 +42,16 @@ $(document).ready(function() {
                 "data": 3,
                 "render": function ( data, type, row, meta ) {
                             var soporte = "";
-                            if(row[3] == ""){
+                            if(row[0] != 500){
+                                if(row[3] == ""){
                                 soporte = "";
+                                }
+                                else{
+                                    soporte = '<a href="/media/'+row[3]+'" target="_blank"><img src="/static/imagenes/pdf.png" height="40" class="center-block"><a>';
+                                }
                             }
                             else{
-                                soporte = '<a href="/media/'+row[3]+'" target="_blank"><img src="/static/imagenes/pdf.png" height="40" class="center-block"><a>';
+                                soporte = '<a href='+row[3]+'><img src="/static/imagenes/pdf.png" height="40" class="center-block"></a>'
                             }
                           return soporte;
                 },
