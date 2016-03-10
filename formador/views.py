@@ -713,7 +713,7 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
                 soporte,
                 item.entregable.descripcion,
             ])
-        json_data.append([500,"ffff","dddd","http://sican.asoandes.org:8000/index.php/apps/files/?dir=%2FProyectos","ddddd"])
+        json_data.append([500,"PROYECTO","PROYECTO TIC","http://sican.asoandes.org:8000/index.php/apps/files/?dir=%2FProyectos","Proyecto educativo aplicando las TIC"])
         return json_data
 
 class EvidenciasListadoTableView(BaseDatatableView):
