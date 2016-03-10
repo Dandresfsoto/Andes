@@ -89,6 +89,7 @@
     <file url="file://$PROJECT_DIR$/templates/tipo1_formador_nivel_evidencia.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/tipo1_formador_tipo_evidencia.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/tipo2_formador_actividad.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/tipo2_formador_listado_masivo.jade" charset="UTF-8" />
   </component>

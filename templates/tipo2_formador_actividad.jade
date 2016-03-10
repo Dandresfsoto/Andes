@@ -1,0 +1,33 @@
+extends base
+block titulo
+    | Formadores Tipo 2
+block itemsNavbarBreadcrumb
+    li
+        a(href="/region/") Inicio
+    li
+        a(href="../../../../../../") {{REGION}}
+    li
+        a(href="../../../../../") Andes
+    li
+        a(href="../../../../") Formación
+    li
+        a(href="../../../") Formadores Tipo 2
+    li
+        a(href="../../") {{NOMBRE_FORMADOR}}
+    li(class="active") {{GRUPO}}
+block body_content
+    div(class="container-fluid")
+        input(type="hidden",name="id_region",value="{{ID_REGION}}",id="id_region")
+        input(type="hidden",name="id_formador",value="{{ID_FORMADOR}}",id="id_formador")
+        table(id="table",class="table table-striped table-bordered")
+            thead
+                tr
+                    th Actividad
+                    th Cantidad
+            tbody
+                |{% for actividad in ACTIVIDADES %}
+                tr(class="{% cycle 'odd' 'even' %}")
+                    td
+                        a(href="{{actividad.id}}/",style="color:#004c99;") {{actividad.nombre}}
+                    td {{actividad.cantidad}}
+                |{% endfor %}

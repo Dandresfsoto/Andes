@@ -92,6 +92,32 @@ class FormadorGrupoView(FormacionMixin,TemplateView):
         kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
         return super(FormadorGrupoView,self).get_context_data(**kwargs)
 
+
+class FormadorActividadView(FormacionMixin,TemplateView):
+    template_name = 'tipo2_formador_actividad.html'
+
+    def get_tabla_actividades(self, **kwargs):
+        y = []
+        for entregable in Entregable.objects.all():
+            x = {}
+            x['id'] = entregable.id
+            x['nombre'] = entregable.nombre
+            x['cantidad'] = EvidenciaEscuelaTic.objects.filter(soporte__grupo__id=self.kwargs['grupo_id'],entregable__id=entregable.id).exclude(soporte__soporte=None).count()
+            y.append(x)
+        return y
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['GRUPO'] = Grupo.objects.get(id=self.kwargs['grupo_id']).nombre
+        kwargs['ACTIVIDADES'] = self.get_tabla_actividades
+        return super(FormadorActividadView,self).get_context_data(**kwargs)
+
+
+
+
 class FormadorTipo1GrupoView(FormacionMixin,TemplateView):
     template_name = 'tipo1_formador_grupo.html'
 
@@ -628,13 +654,13 @@ class CalificarGrupoView(FormacionMixin,TemplateView):
     def get_context_data(self, **kwargs):
         participantes = ParticipanteEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).count()
         soportes = SoporteEntregableEscuelaTic.objects.filter(grupo__id=self.kwargs['grupo_id']).order_by('entregable__id')
-        id_actividades = soportes.values_list('entregable__actividad__id',flat=True)
+        id_actividades = soportes.filter(entregable__id=self.kwargs['actividad']).values_list('entregable__actividad__id',flat=True)
         id_actividades = list(set(id_actividades))
         y=[]
         i=0
         for id_actividad in id_actividades:
             x=[]
-            soportes_filtro = soportes.filter(entregable__actividad__id=id_actividad)
+            soportes_filtro = soportes.filter(entregable__id=self.kwargs['actividad'],entregable__actividad__id=id_actividad)
             nombre_actividad = Actividad.objects.get(id=id_actividad).nombre
             maximo = max(soportes_filtro.values_list('id',flat=True))
             for soporte_filtro in soportes_filtro:
