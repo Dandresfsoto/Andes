@@ -23,11 +23,9 @@ block body_content
             thead
                 tr
                     th Actividad
-                    th Cantidad
             tbody
                 |{% for actividad in ACTIVIDADES %}
                 tr(class="{% cycle 'odd' 'even' %}")
                     td
                         a(href="{{actividad.id}}/",style="color:#004c99;") {{actividad.nombre}}
-                    td {{actividad.cantidad}}
                 |{% endfor %}

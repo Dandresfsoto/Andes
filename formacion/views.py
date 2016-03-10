@@ -102,7 +102,6 @@ class FormadorActividadView(FormacionMixin,TemplateView):
             x = {}
             x['id'] = entregable.id
             x['nombre'] = entregable.nombre
-            x['cantidad'] = EvidenciaEscuelaTic.objects.filter(soporte__grupo__id=self.kwargs['grupo_id'],entregable__id=entregable.id).exclude(soporte__soporte=None).count()
             y.append(x)
         return y
 
