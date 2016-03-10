@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="Padres ok templates">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_actividad.html" afterPath="$PROJECT_DIR$/templates/tipo2_formador_actividad.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_actividad.jade" afterPath="$PROJECT_DIR$/templates/tipo2_formador_actividad.jade" />
+    <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.html" afterPath="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" afterPath="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -34,21 +34,20 @@
         <entry file="file://$PROJECT_DIR$/formacion/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="112" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="112" />
+              <caret line="37" column="172" selection-start-line="37" selection-start-column="146" selection-end-line="37" selection-end-column="172" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67418545">
-              <caret line="103" column="43" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+            <state vertical-scroll-proportion="-9.24138">
+              <caret line="675" column="38" selection-start-line="675" selection-start-column="38" selection-end-line="675" selection-end-column="38" />
               <folding>
                 <element signature="e#17508#18272#0" expanded="false" />
                 <element signature="e#18340#19126#0" expanded="false" />
-                <element signature="e#19185#19760#0" expanded="false" />
                 <element signature="e#19827#20418#0" expanded="false" />
                 <element signature="e#20480#21197#0" expanded="false" />
                 <element signature="e#21254#22077#0" expanded="false" />
@@ -56,12 +55,19 @@
                 <element signature="e#23034#23973#0" expanded="false" />
                 <element signature="e#24030#24649#0" expanded="false" />
                 <element signature="e#24709#25292#0" expanded="false" />
-                <element signature="e#25348#32066#0" expanded="false" />
-                <element signature="e#32127#34213#0" expanded="false" />
-                <element signature="e#35314#37246#0" expanded="false" />
-                <element signature="e#37308#39150#0" expanded="false" />
-                <element signature="e#39219#42679#0" expanded="false" />
+                <element signature="e#35741#37673#0" expanded="false" />
+                <element signature="e#37735#39577#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tipo2_formador_grupo_calificar.jade" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5957944">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,7 +152,6 @@
         <option value="$PROJECT_DIR$/templates/tipo1_formador_grupo.jade" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_tipo_evidencia.jade" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_nivel_evidencia.jade" />
-        <option value="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_grupo_calificar.jade" />
         <option value="$PROJECT_DIR$/templates/tipo1_formador_sesion_evidencia.jade" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
@@ -154,6 +159,7 @@
         <option value="$PROJECT_DIR$/formacion/urls.py" />
         <option value="$PROJECT_DIR$/templates/tipo2_formador_actividad.jade" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
+        <option value="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" />
       </list>
     </option>
   </component>
@@ -524,12 +530,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00040" summary="Order by entregable__id Docentes ok 2">
-      <created>1455029732998</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1455029732998</updated>
-    </task>
     <task id="LOCAL-00041" summary="Order by entregable__id Docentes ok 3">
       <created>1455029883734</created>
       <option name="number" value="00041" />
@@ -818,7 +818,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457650087289</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Padres ok templates ok">
+      <created>1457650264091</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1457650264091</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -831,7 +837,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -854,7 +860,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solo Proyectos ok 5" />
     <MESSAGE value="Solo Proyectos ok 6" />
     <MESSAGE value="Solo Proyectos ok 7&#10;" />
     <MESSAGE value="Solo Proyectos ok 8&#10;" />
@@ -879,7 +884,8 @@
     <MESSAGE value="Padres" />
     <MESSAGE value="Padres ok" />
     <MESSAGE value="Padres ok templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Padres ok templates" />
+    <MESSAGE value="Padres ok templates ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Padres ok templates ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2012,14 +2018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39719626">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/tipo1_formador_grupo.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5957944">
@@ -2118,10 +2116,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.24138">
+          <caret line="675" column="38" selection-start-line="675" selection-start-column="38" selection-end-line="675" selection-end-column="38" />
+          <folding>
+            <element signature="e#17508#18272#0" expanded="false" />
+            <element signature="e#18340#19126#0" expanded="false" />
+            <element signature="e#19827#20418#0" expanded="false" />
+            <element signature="e#20480#21197#0" expanded="false" />
+            <element signature="e#21254#22077#0" expanded="false" />
+            <element signature="e#22140#22976#0" expanded="false" />
+            <element signature="e#23034#23973#0" expanded="false" />
+            <element signature="e#24030#24649#0" expanded="false" />
+            <element signature="e#24709#25292#0" expanded="false" />
+            <element signature="e#35741#37673#0" expanded="false" />
+            <element signature="e#37735#39577#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="112" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="112" />
+          <caret line="37" column="172" selection-start-line="37" selection-start-column="146" selection-end-line="37" selection-end-column="172" />
           <folding />
         </state>
       </provider>
@@ -2134,27 +2152,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67418545">
-          <caret line="103" column="43" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
-          <folding>
-            <element signature="e#17508#18272#0" expanded="false" />
-            <element signature="e#18340#19126#0" expanded="false" />
-            <element signature="e#19185#19760#0" expanded="false" />
-            <element signature="e#19827#20418#0" expanded="false" />
-            <element signature="e#20480#21197#0" expanded="false" />
-            <element signature="e#21254#22077#0" expanded="false" />
-            <element signature="e#22140#22976#0" expanded="false" />
-            <element signature="e#23034#23973#0" expanded="false" />
-            <element signature="e#24030#24649#0" expanded="false" />
-            <element signature="e#24709#25292#0" expanded="false" />
-            <element signature="e#25348#32066#0" expanded="false" />
-            <element signature="e#32127#34213#0" expanded="false" />
-            <element signature="e#35314#37246#0" expanded="false" />
-            <element signature="e#37308#39150#0" expanded="false" />
-            <element signature="e#39219#42679#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.5957944">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

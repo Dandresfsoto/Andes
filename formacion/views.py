@@ -671,7 +671,13 @@ class CalificarGrupoView(FormacionMixin,TemplateView):
                 if soporte_filtro.id == maximo:
                     clase ="max"
                 cantidad = EvidenciaEscuelaTic.objects.filter(soporte_id=soporte_filtro.id).count()
-                x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase})
+                cedulas = EvidenciaEscuelaTic.objects.filter(soporte_id=soporte_filtro.id).values_list('participante__cedula',flat=True)
+                cedulas_total = ''
+                for cedula in cedulas:
+                    cedulas_total += '<p>'+str(cedula)+' - '+ParticipanteEscuelaTic.objects.get(cedula=cedula).nombres+' '+ParticipanteEscuelaTic.objects.get(cedula=cedula).apellidos+'</p>'
+
+
+                x.append({"actividad":soporte_filtro.entregable.actividad.nombre,"entregable":soporte_filtro.entregable.nombre ,"id_soporte" : soporte_filtro.id ,"link_soporte" : str(soporte_filtro.soporte),"cantidad":cantidad,"clase":clase,"cedulas":cedulas_total})
             y.append({"nombre_actividad":nombre_actividad,"informacion":x})
 
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
