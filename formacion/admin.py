@@ -1257,6 +1257,9 @@ def masivo_virtual(modeladmin,request,queryset):
 
         i = 0
 
+        x = {'1':11,'2':11,'3':13,'4':15,'5':17,'6':17,'7':9,'8':9,'9':25,'10':26,'11':27,'12':35,'13':36,'14':37,
+             '15':38,'16':39,'17':40,'18':51,'19':53,'20':55,'21':59}
+
         for fila in hoja1_masivo.rows:
             i += 1
             if i > 1:
@@ -1270,7 +1273,7 @@ def masivo_virtual(modeladmin,request,queryset):
 
                 else:
                     try:
-                        evidencia = evidencia_participante.get(entregable__id=fila[1].value)
+                        evidencia = evidencia_participante.get(entregable__id=x[str(fila[1].value)])
                     except:
                         proceso = "No existe el espacio para la evidencia"
                     else:
