@@ -1206,10 +1206,128 @@ def actualizar_participantes(modeladmin,request,queryset):
         return response
 actualizar_participantes.short_description = "Actualizar Listados Masivos"
 
+
+
+def masivo_virtual(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Carga Masiva"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'FORMACION'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Carga Masiva'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['CEDULA',30]),
+                   tuple(['ID ACTIVIDAD',30]),
+                   tuple(['PATH RELATIVO',30]),
+                   tuple(['INFORMACION',60]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        soportes = ZipFile('C:\\Temp\\Carga.zip','r')
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+
+                try:
+                    evidencia_participante = EvidenciaDocentes.objects.filter(participante__cedula=fila[0].value)
+
+                except:
+                    proceso = "No existe el numero de cedula"
+
+                else:
+                    try:
+                        evidencia = evidencia_participante.get(entregable__id=fila[1].value)
+                    except:
+                        proceso = "No existe el espacio para la evidencia"
+                    else:
+                            path = fila[2].value
+                            path = path.encode("CP850")
+                            try:
+                                info = soportes.getinfo(path)
+                            except:
+                                proceso = "No Existe el archivo en el path"
+                            else:
+                                proceso = "Soporte cargado"
+                                filename = os.path.basename(path)
+                                source = soportes.open(path)
+                                target = file(os.path.join(r"C:\Temp",filename),"wb")
+                                with source, target:
+                                    shutil.copyfileobj(source,target)
+                                nuevo_soporte = SoporteEntregableDocente()
+                                nuevo_soporte.grupo = evidencia.participante.grupo
+                                nuevo_soporte.entregable = evidencia.entregable
+
+                                nuevo_soporte.soporte = File(open("C://Temp//" + filename, 'rb'))
+                                nuevo_soporte.save()
+
+                                evidencia.soporte = nuevo_soporte
+                                evidencia.save()
+
+                                os.remove("C://Temp//" + filename)
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    fila[2].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+masivo_virtual.short_description = "Carga masiva virtual"
+
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,carga_docentes,actualizar_docentes,carga_participantes_truchos,actualizar_participantes]
+    actions = [carga_grupos,carga_participantes,carga_radicados,actualizar_radicados,carga_grupos_docentes,
+               carga_docentes,actualizar_docentes,carga_participantes_truchos,actualizar_participantes,masivo_virtual]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 
 def asignacion_total(modeladmin,request,queryset):

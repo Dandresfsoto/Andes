@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formador/views.py" afterPath="$PROJECT_DIR$/formador/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -29,50 +29,54 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/diplomado/urls.py">
+        <entry file="file://$PROJECT_DIR$/acceso/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="124" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="124" />
+              <caret line="23" column="100" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="100" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.1034484">
+              <caret line="7" column="88" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.275862">
+              <caret line="276" column="30" selection-start-line="276" selection-start-column="6" selection-end-line="276" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49367088">
+              <caret line="1262" column="27" selection-start-line="1262" selection-start-column="27" selection-end-line="1262" selection-end-column="27" />
+              <folding>
+                <element signature="e#35191#43237#0" expanded="false" />
+                <element signature="e#43367#48006#0" expanded="false" />
+                <element signature="e#48146#51403#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/diplomado/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.724138">
-              <caret line="118" column="39" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docentes_participantes_evidencias.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/docentes_participantes_evidencias.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formador/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="139" selection-start-line="20" selection-start-column="105" selection-end-line="20" selection-end-column="139" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4461153">
-              <caret line="716" column="24" selection-start-line="716" selection-start-column="24" selection-end-line="716" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="698" column="0" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
               <folding>
                 <element signature="e#586#4184#0" expanded="false" />
                 <element signature="e#4246#7268#0" expanded="false" />
@@ -88,16 +92,6 @@
                 <element signature="e#25369#27929#0" expanded="false" />
                 <element signature="e#28008#30780#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docentes_participantes_evidencias.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/docentes_participantes_evidencias.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -150,7 +144,6 @@
         <option value="$PROJECT_DIR$/templates/update_informacion_formador.jade" />
         <option value="$PROJECT_DIR$/formador/forms.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
-        <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/templates/acceso_vigencia.jade" />
         <option value="$PROJECT_DIR$/acceso/views.py" />
         <option value="$PROJECT_DIR$/acceso/urls.py" />
@@ -170,6 +163,7 @@
         <option value="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" />
         <option value="$PROJECT_DIR$/static/js/docentes_participantes_evidencias.js" />
         <option value="$PROJECT_DIR$/formador/views.py" />
+        <option value="$PROJECT_DIR$/formacion/admin.py" />
       </list>
     </option>
   </component>
@@ -239,7 +233,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="formacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -507,12 +501,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Order by entregable__id Docentes ok 5">
-      <created>1455030610759</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1455030610759</updated>
     </task>
     <task id="LOCAL-00044" summary="Order by entregable__id Docentes ok 6">
       <created>1455030920178</created>
@@ -802,7 +790,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457652890306</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="proyectos ok 2">
+      <created>1457653016188</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1457653016188</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -815,14 +809,14 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@Andes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3559055" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45826772" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -838,7 +832,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solo Proyectos ok 8&#10;" />
     <MESSAGE value="Solo Proyectos ok 9" />
     <MESSAGE value="Ruteo r4 plan choque acceso" />
     <MESSAGE value="Ruteo r4 plan choque acceso ok" />
@@ -863,7 +856,8 @@
     <MESSAGE value="Padres ok templates ok" />
     <MESSAGE value="Padres ok templates ok ok" />
     <MESSAGE value="proyectos ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="proyectos ok" />
+    <MESSAGE value="proyectos ok 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="proyectos ok 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1634,59 +1628,209 @@
           <option name="timeStamp" value="1247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>698</line>
-          <option name="timeStamp" value="1256" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1212</line>
+          <option name="timeStamp" value="1277" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>700</line>
-          <option name="timeStamp" value="1257" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1213</line>
+          <option name="timeStamp" value="1278" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>701</line>
-          <option name="timeStamp" value="1258" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1214</line>
+          <option name="timeStamp" value="1279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>672</line>
-          <option name="timeStamp" value="1260" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1251</line>
+          <option name="timeStamp" value="1280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>673</line>
-          <option name="timeStamp" value="1261" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1253</line>
+          <option name="timeStamp" value="1281" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>674</line>
-          <option name="timeStamp" value="1262" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1255</line>
+          <option name="timeStamp" value="1282" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>675</line>
-          <option name="timeStamp" value="1263" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1259</line>
+          <option name="timeStamp" value="1283" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>678</line>
-          <option name="timeStamp" value="1264" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1260</line>
+          <option name="timeStamp" value="1284" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>677</line>
-          <option name="timeStamp" value="1269" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1261</line>
+          <option name="timeStamp" value="1285" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>676</line>
-          <option name="timeStamp" value="1270" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1262</line>
+          <option name="timeStamp" value="1286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>699</line>
-          <option name="timeStamp" value="1271" />
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1264</line>
+          <option name="timeStamp" value="1287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1265</line>
+          <option name="timeStamp" value="1288" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1267</line>
+          <option name="timeStamp" value="1289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1268</line>
+          <option name="timeStamp" value="1290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1270</line>
+          <option name="timeStamp" value="1291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1271</line>
+          <option name="timeStamp" value="1292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1272</line>
+          <option name="timeStamp" value="1293" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1274</line>
+          <option name="timeStamp" value="1294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1273</line>
+          <option name="timeStamp" value="1295" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1275</line>
+          <option name="timeStamp" value="1296" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1276</line>
+          <option name="timeStamp" value="1297" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1277</line>
+          <option name="timeStamp" value="1298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1278</line>
+          <option name="timeStamp" value="1299" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1279</line>
+          <option name="timeStamp" value="1300" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1280</line>
+          <option name="timeStamp" value="1301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1281</line>
+          <option name="timeStamp" value="1302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1282</line>
+          <option name="timeStamp" value="1303" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1283</line>
+          <option name="timeStamp" value="1304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1284</line>
+          <option name="timeStamp" value="1305" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1286</line>
+          <option name="timeStamp" value="1306" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1285</line>
+          <option name="timeStamp" value="1307" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1287</line>
+          <option name="timeStamp" value="1308" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1288</line>
+          <option name="timeStamp" value="1309" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1290</line>
+          <option name="timeStamp" value="1311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1289</line>
+          <option name="timeStamp" value="1312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1291</line>
+          <option name="timeStamp" value="1313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1293</line>
+          <option name="timeStamp" value="1314" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1294</line>
+          <option name="timeStamp" value="1315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1296</line>
+          <option name="timeStamp" value="1316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1297</line>
+          <option name="timeStamp" value="1317" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/formacion/admin.py</url>
+          <line>1299</line>
+          <option name="timeStamp" value="1318" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1699,7 +1843,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1277" />
+      <option name="time" value="1319" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1809,13 +1953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="198" column="15" selection-start-line="198" selection-start-column="8" selection-end-line="198" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formador/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23244147">
@@ -1872,31 +2009,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="119" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acceso/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="222" column="24" selection-start-line="222" selection-start-column="4" selection-end-line="222" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/evidencias_radicado_total.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.83196044">
           <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4942338">
-          <caret line="1113" column="58" selection-start-line="1113" selection-start-column="58" selection-end-line="1113" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -2065,14 +2181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46115288">
-          <caret line="286" column="60" selection-start-line="286" selection-start-column="60" selection-end-line="286" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_actividad.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7616823">
@@ -2085,14 +2193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="124" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="124" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/docentes_participantes_evidencias.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2121,10 +2221,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/docentes_participantes_evidencias.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7079439">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5112782">
+          <caret line="762" column="0" selection-start-line="762" selection-start-column="0" selection-end-line="871" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceso/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="100" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1034484">
+          <caret line="7" column="88" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4461153">
-          <caret line="716" column="24" selection-start-line="716" selection-start-column="24" selection-end-line="716" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="698" column="0" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
           <folding>
             <element signature="e#586#4184#0" expanded="false" />
             <element signature="e#4246#7268#0" expanded="false" />
@@ -2139,6 +2271,26 @@
             <element signature="e#23906#25298#0" expanded="false" />
             <element signature="e#25369#27929#0" expanded="false" />
             <element signature="e#28008#30780#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.275862">
+          <caret line="276" column="30" selection-start-line="276" selection-start-column="6" selection-end-line="276" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49367088">
+          <caret line="1262" column="27" selection-start-line="1262" selection-start-column="27" selection-end-line="1262" selection-end-column="27" />
+          <folding>
+            <element signature="e#35191#43237#0" expanded="false" />
+            <element signature="e#43367#48006#0" expanded="false" />
+            <element signature="e#48146#51403#0" expanded="false" />
           </folding>
         </state>
       </provider>
