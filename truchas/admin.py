@@ -300,12 +300,12 @@ def carga_n1_s2(modeladmin,request,queryset):
             if i > 1:
                 proceso =""
 
-                try:
-                    codigo = CodigoMasivo.objects.get(codigo = fila[0].value)
-                except:
+                if CodigoMasivo.objects.filter(codigo = fila[1].value) == 0:
                     codigo = CodigoMasivoN1_S2()
                     codigo.codigo = fila[1].value
                     codigo.save()
+                else:
+                    codigo = CodigoMasivo.objects.get(codigo = fila[1].value)
 
                 try:
                     docente = ParticipanteDocente.objects.get(cedula = fila[0].value)
