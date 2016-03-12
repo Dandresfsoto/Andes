@@ -27,6 +27,8 @@ from formacion.models import SoporteEntregableDocente, ParticipanteDocente, Evid
 from django.core.files import File
 from truchas.models import Nivel1_Sesion2,Nivel1_Sesion3,Nivel1_Sesion4_preguntas_aleatorias,Nivel1_Sesion4_1,Nivel1_Sesion4_2,Nivel1_Sesion4_3,Nivel1_Sesion4_4,Nivel1_Sesion4_5
 from formacion.models import EvidenciaDocentes
+from truchas.models import Nivel4_Sesion1_1, Nivel4_Sesion1_2,Nivel4_Sesion2_1, Nivel4_Sesion2_2 ,Nivel4_Sesion2_3
+from truchas.models import Nivel4_Sesion3_1, Nivel4_Sesion3_2, Nivel4_Sesion3_3, Nivel4_Sesion3_4, Nivel4_Sesion3_5, Nivel4_Sesion3_6
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1124,6 +1126,131 @@ class Nivel1_Sesion3Admin(admin.ModelAdmin):
     list_display = ['respuesta']
     actions = [generar_nivel1_sesion3,generar_nivel2_sesion2,generar_nivel3_1_sesion3,matriz_escuela_tic]
 admin.site.register(Nivel1_Sesion3,Nivel1_Sesion3Admin)
+
+
+def generar_nivel4_1(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=51,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=51))
+        fields = [('Campo de texto 3037',Nivel4_Sesion1_1.objects.all().order_by('?').first()),
+                  ('Campo de texto 3038',Nivel4_Sesion1_2.objects.all().order_by('?').first())
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas1_n4.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion1_n4_plantilla.pdf fill_form C:\\Temp\\datas1_n4.fdf output C:\\Temp\\sesion1_4.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion1_4.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel4_1.short_description = "Generar Sesion 1 - Nivel 4"
+
+class Nivel4_Sesion1_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel4_1]
+admin.site.register(Nivel4_Sesion1_1,Nivel4_Sesion1_1Admin)
+
+class Nivel4_Sesion1_2Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion1_2,Nivel4_Sesion1_2Admin)
+
+
+
+
+
+def generar_nivel4_2(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=53,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=53))
+        fields = [('Campo de texto 3039',Nivel4_Sesion2_1.objects.all().order_by('?').first()),
+                  ('Campo de texto 3040',Nivel4_Sesion2_2.objects.all().order_by('?').first()),
+                  ('Campo de texto 3041',Nivel4_Sesion2_3.objects.all().order_by('?').first())
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas2_n4.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion2_n4_plantilla.pdf fill_form C:\\Temp\\datas2_n4.fdf output C:\\Temp\\sesion2_4.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion2_4.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel4_2.short_description = "Generar Sesion 2 - Nivel 4"
+
+class Nivel4_Sesion2_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel4_2]
+admin.site.register(Nivel4_Sesion2_1,Nivel4_Sesion2_1Admin)
+
+class Nivel4_Sesion2_2Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion2_2,Nivel4_Sesion2_2Admin)
+
+class Nivel4_Sesion2_3Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion2_3,Nivel4_Sesion2_3Admin)
+
+
+
+
+def generar_nivel4_3(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=55,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=55))
+        fields = [('Campo de texto 3042',Nivel4_Sesion3_1.objects.all().order_by('?').first()),
+                  ('Campo de texto 3043',Nivel4_Sesion3_2.objects.all().order_by('?').first()),
+                  ('Campo de texto 3044',Nivel4_Sesion3_3.objects.all().order_by('?').first()),
+                  ('Campo de texto 3045',Nivel4_Sesion3_4.objects.all().order_by('?').first()),
+                  ('Campo de texto 3046',Nivel4_Sesion3_5.objects.all().order_by('?').first()),
+                  ('Campo de texto 3047',Nivel4_Sesion3_6.objects.all().order_by('?').first())
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas3_n4.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion3_n4_plantilla.pdf fill_form C:\\Temp\\datas3_n4.fdf output C:\\Temp\\sesion3_4.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion3_4.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel4_3.short_description = "Generar Sesion 3 - Nivel 4"
+
+class Nivel4_Sesion3_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel4_3]
+admin.site.register(Nivel4_Sesion3_1,Nivel4_Sesion3_1Admin)
+
+class Nivel4_Sesion3_2Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion3_2,Nivel4_Sesion3_2Admin)
+
+class Nivel4_Sesion3_3Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion3_3,Nivel4_Sesion3_3Admin)
+
+class Nivel4_Sesion3_4Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel4_2]
+admin.site.register(Nivel4_Sesion3_4,Nivel4_Sesion3_4Admin)
+
+class Nivel4_Sesion3_5Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion3_5,Nivel4_Sesion3_5Admin)
+
+class Nivel4_Sesion3_6Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = []
+admin.site.register(Nivel4_Sesion3_6,Nivel4_Sesion3_6Admin)
+
+
+
 
 
 admin.site.register(Nivel1_Sesion1_1,Nivel1_Sesion1_1Admin)

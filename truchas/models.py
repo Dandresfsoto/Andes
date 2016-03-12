@@ -149,3 +149,64 @@ class Nivel1_Sesion4_5(models.Model):
     respuesta = models.CharField(max_length=10000)
     def __unicode__(self):
         return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion1_1(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion1_2(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+
+
+class Nivel4_Sesion2_1(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion2_2(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion2_3(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+
+
+
+
+class Nivel4_Sesion3_1(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion3_2(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion3_3(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion3_4(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion3_5(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel4_Sesion3_6(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
