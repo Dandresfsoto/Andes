@@ -21,8 +21,8 @@ urlpatterns = [
     url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/nuevo/participante/$', login_required(views.NuevoParticipanteView.as_view())),
     url(r'^tipo2/(?P<formador_id>\w+)/soportes/(?P<grupo_id>\w+)/(?P<actividad>\w+)/$', login_required(views.soporte_form)),
 
-    url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/(?P<actividad>\w+)/masivo/$', login_required(views.ListadoMasivoView.as_view())),
-    url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/(?P<actividad>\w+)/masivo/nuevo/$', login_required(views.NuevoMasivoView.as_view())),
+    url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/$', login_required(views.ListadoMasivoView.as_view())),
+    url(r'^tipo2/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/nuevo/$', login_required(views.NuevoMasivoView.as_view())),
 
 
     url(r'^tipo1/$', login_required(views.FormadorTipo1View.as_view())),
