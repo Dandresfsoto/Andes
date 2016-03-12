@@ -304,7 +304,7 @@ def carga_n1_s2(modeladmin,request,queryset):
                     codigo = CodigoMasivo.objects.get(codigo = fila[0].value)
                 except:
                     codigo = CodigoMasivoN1_S2()
-                    codigo.codigo = fila[0].value
+                    codigo.codigo = fila[1].value
                     codigo.save()
 
                 try:
