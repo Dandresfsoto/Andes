@@ -1367,7 +1367,7 @@ crear_entregables_padres.short_description = "Verificar entregables padres"
 def crear_entregables_docentes(modeladmin,request,queryset):
     participantes = ParticipanteDocente.objects.all().values_list('id',flat=True)
     for participante in participantes:
-        if EvidenciaDocentes.objects.filter(participante__id=participante).count() < 60:
+        if EvidenciaDocentes.objects.filter(participante__id=participante).count() < 32:
             ids = EvidenciaDocentes.objects.filter(participante__id=participante).values_list('entregable__id',flat=True)
             total_ids = EntregableDocentes.objects.all().values_list('id',flat=True)
             for id in total_ids:
