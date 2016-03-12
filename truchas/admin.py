@@ -300,7 +300,7 @@ def carga_n1_s2(modeladmin,request,queryset):
             if i > 1:
                 proceso =""
 
-                if CodigoMasivoN1_S2.objects.filter(codigo = fila[1].value) == 0:
+                if CodigoMasivoN1_S2.objects.filter(codigo = fila[1].value).count() == 0:
                     codigo = CodigoMasivoN1_S2()
                     codigo.codigo = fila[1].value
                     codigo.save()
