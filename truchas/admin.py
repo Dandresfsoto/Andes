@@ -29,6 +29,7 @@ from truchas.models import Nivel1_Sesion2,Nivel1_Sesion3,Nivel1_Sesion4_pregunta
 from formacion.models import EvidenciaDocentes
 from truchas.models import Nivel4_Sesion1_1, Nivel4_Sesion1_2,Nivel4_Sesion2_1, Nivel4_Sesion2_2 ,Nivel4_Sesion2_3
 from truchas.models import Nivel4_Sesion3_1, Nivel4_Sesion3_2, Nivel4_Sesion3_3, Nivel4_Sesion3_4, Nivel4_Sesion3_5, Nivel4_Sesion3_6
+from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -247,6 +248,97 @@ def carga_participantes(modeladmin,request,queryset):
         archivo.save(response)
         return response
 carga_participantes.short_description = "Cargar participantes"
+
+def carga_n1_s2(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva Grupos N1 S2.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Carga Masiva Grupos"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Carga Masiva Grupos'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['CEDULA',30]),
+                   tuple(['CODIGO',30]),
+                   tuple(['RESULTADO',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+        archivo_masivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+unicode(archivo_queryset.archivo))
+
+        hoja1_masivo = archivo_masivo.get_sheet_by_name('Hoja1')
+
+        i = 0
+
+        for fila in hoja1_masivo.rows:
+            i += 1
+            if i > 1:
+                proceso =""
+
+                try:
+                    codigo = CodigoMasivo.objects.get(codigo = fila[0].value)
+                except:
+                    codigo = CodigoMasivoN1_S2()
+                    codigo.codigo = fila[0].value
+                    codigo.save()
+
+                try:
+                    docente = ParticipanteDocente.objects.get(cedula = fila[0].value)
+                except:
+                    proceso = "No existe el docente con el documento de identidad"
+                else:
+                    nuevo = ParticipanteN1_S2(codigo_masivo=codigo,participante=docente)
+                    nuevo.save()
+                    proceso = "Cargado"
+
+                row_num += 1
+                row = [
+                    fila[0].value,
+                    fila[1].value,
+                    proceso
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+carga_n1_s2.short_description = "Cargar grupos N1 - S2"
+
 
 def eliminar_actividades(modeladmin,request,queryset):
     for archivo_queryset in queryset:
@@ -696,9 +788,11 @@ reporte_formadores_tipo2.short_description = "Reporte de Formadores Tipo 2"
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_participantes,eliminar_actividades,verificar_listados]
+    actions = [carga_participantes,eliminar_actividades,verificar_listados,carga_n1_s2]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
+admin.site.register(ParticipanteN1_S2)
+admin.site.register(CodigoMasivoN1_S2)
 
 def generar_listas(modeladmin,request,queryset):
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)

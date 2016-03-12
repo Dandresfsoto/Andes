@@ -3,6 +3,7 @@ from formacion.models import Grupo
 from formador.models import Formador
 from region.models import Region
 from django.utils.encoding import smart_unicode
+from formacion.models import ParticipanteDocente
 
 class CodigoMasivo(models.Model):
     codigo = models.BigIntegerField(unique=True)
@@ -34,6 +35,21 @@ class ParticipanteEscuelaTicTrucho(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.cedula)
+
+
+class CodigoMasivoN1_S2(models.Model):
+    codigo = models.BigIntegerField(unique=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.codigo)
+
+
+class ParticipanteN1_S2(models.Model):
+    codigo_masivo = models.ForeignKey(CodigoMasivoN1_S2)
+    participante = models.ForeignKey(ParticipanteDocente)
+
+    def __unicode__(self):
+        return smart_unicode(self.participante.cedula)
 
 class CargasMasivas(models.Model):
     archivo = models.FileField(upload_to="Cargas Masivas/Escuela TIC/Adicionales/")
