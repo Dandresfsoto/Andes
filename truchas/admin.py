@@ -815,15 +815,15 @@ def generar_sesion2_n1(modeladmin,request,queryset):
 
         slide_1 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_1.shapes.placeholders[0].text = "Resultados de lo Planeado y Ejecutado"
-        slide_1.shapes.placeholders[1].text = Nivel1_Sesion2_1.objects.all().order_by('?').first()
+        slide_1.shapes.placeholders[1].text = Nivel1_Sesion2_1.objects.all().order_by('?').first().respuesta
 
         slide_2 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_2.shapes.placeholders[0].text = "Lo Planeado y no Ejecutado"
-        slide_2.shapes.placeholders[1].text = Nivel1_Sesion2_2.objects.all().order_by('?').first()
+        slide_2.shapes.placeholders[1].text = Nivel1_Sesion2_2.objects.all().order_by('?').first().respuesta
 
         slide_3 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_3.shapes.placeholders[0].text = "Lo no Planeado y Ejecutado"
-        slide_3.shapes.placeholders[1].text = Nivel1_Sesion2_3.objects.all().order_by('?').first()
+        slide_3.shapes.placeholders[1].text = Nivel1_Sesion2_3.objects.all().order_by('?').first().respuesta
 
         opciones = ['En la actividad participaron ','Participaron ','Se seleccionaron ','La actividad fue conformada por ',
                     'En la secuencia didactica participaron ']
@@ -834,7 +834,7 @@ def generar_sesion2_n1(modeladmin,request,queryset):
 
         slide_5 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_5.shapes.placeholders[0].text = "Resultados Evaluativos"
-        slide_5.shapes.placeholders[1].text = Nivel1_Sesion2_4.objects.all().order_by('?').first()
+        slide_5.shapes.placeholders[1].text = Nivel1_Sesion2_4.objects.all().order_by('?').first().respuesta
 
         presentacion.save('C:\\Temp\\Descarga\\'+str(participantes[0].participante.cedula)+'.pptx')
 generar_sesion2_n1.short_description = "Generar presentaciones"
