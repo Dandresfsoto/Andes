@@ -30,6 +30,8 @@ from formacion.models import EvidenciaDocentes
 from truchas.models import Nivel4_Sesion1_1, Nivel4_Sesion1_2,Nivel4_Sesion2_1, Nivel4_Sesion2_2 ,Nivel4_Sesion2_3
 from truchas.models import Nivel4_Sesion3_1, Nivel4_Sesion3_2, Nivel4_Sesion3_3, Nivel4_Sesion3_4, Nivel4_Sesion3_5, Nivel4_Sesion3_6
 from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
+from pptx import Presentation
+from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -792,7 +794,57 @@ class CargasMasivasAdmin(admin.ModelAdmin):
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
 admin.site.register(ParticipanteN1_S2)
-admin.site.register(CodigoMasivoN1_S2)
+
+
+def generar_sesion2_n1(modeladmin,request,queryset):
+    for codigo in queryset:
+        participantes = ParticipanteN1_S2.objects.filter(codigo_masivo=codigo)
+        presentacion = Presentation('C:\\Temp\PRESENTACIONES\\'+str(random.randint(1,78))+'.pptx')
+        propiedades = presentacion.core_properties
+        propiedades.author = participantes[0].participante.nombres
+        propiedades.created = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
+        propiedades.last_modified_by = participantes[0].participante.nombres
+        propiedades.modified = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
+
+        presentacion.slides[0].shapes.title.text = "Socializando la Secuencia Didactica"
+        nombres = ""
+        for participante in participantes:
+            nombres += participante.participante.nombres+" "+participante.participante.apellidos+" - "
+
+        presentacion.slides[0].shapes.placeholders[1].text = nombres[:len(nombres)-3]
+
+        slide_1 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
+        slide_1.shapes.placeholders[0].text = "Resultados de lo Planeado y Ejecutado"
+        slide_1.shapes.placeholders[1].text = Nivel1_Sesion2_1.objects.all().order_by('?').first()
+
+        slide_2 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
+        slide_2.shapes.placeholders[0].text = "Lo Planeado y no Ejecutado"
+        slide_2.shapes.placeholders[1].text = Nivel1_Sesion2_2.objects.all().order_by('?').first()
+
+        slide_3 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
+        slide_3.shapes.placeholders[0].text = "Lo no Planeado y Ejecutado"
+        slide_3.shapes.placeholders[1].text = Nivel1_Sesion2_3.objects.all().order_by('?').first()
+
+        opciones = ['En la actividad participaron ','Participaron ','Se seleccionaron ','La actividad fue conformada por ',
+                    'En la secuencia didactica participaron ']
+
+        slide_4 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
+        slide_4.shapes.placeholders[0].text = "Numero de estudiantes participantes"
+        slide_4.shapes.placeholders[1].text = opciones[random.randint(0,len(opciones)-1)]+str(random.randint(10,40))+" estudiantes."
+
+        slide_5 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
+        slide_5.shapes.placeholders[0].text = "Resultados Evaluativos"
+        slide_5.shapes.placeholders[1].text = Nivel1_Sesion2_4.objects.all().order_by('?').first()
+
+        presentacion.save('C:\\Temp\\Descarga\\'+str(participantes[0].participante.cedula)+'.pptx')
+generar_sesion2_n1.short_description = "Generar presentaciones"
+
+
+class CodigoMasivoN1_S2Admin(admin.ModelAdmin):
+    list_display = ['codigo']
+    ordering = ['codigo']
+    actions = [generar_sesion2_n1]
+admin.site.register(CodigoMasivoN1_S2,CodigoMasivoN1_S2Admin)
 
 def generar_listas(modeladmin,request,queryset):
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
@@ -1360,6 +1412,10 @@ admin.site.register(Nivel1_Sesion1_10)
 admin.site.register(Nivel1_Sesion1_11)
 admin.site.register(Nivel1_Sesion1_12)
 admin.site.register(Nivel1_Sesion1_REDA)
+admin.site.register(Nivel1_Sesion2_1)
+admin.site.register(Nivel1_Sesion2_2)
+admin.site.register(Nivel1_Sesion2_3)
+admin.site.register(Nivel1_Sesion2_4)
 
 def generar_nivel1_sesion4(modeladmin,request,queryset):
     evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=17,soporte=None)

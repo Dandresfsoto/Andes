@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/models.py" afterPath="$PROJECT_DIR$/truchas/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -28,54 +29,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truchas/models.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.7593985">
+              <caret line="838" column="99" selection-start-line="838" selection-start-column="99" selection-end-line="838" selection-end-column="99" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#270#449#0" expanded="false" />
-                <element signature="e#505#1737#0" expanded="false" />
-                <element signature="e#2177#2322#0" expanded="false" />
+                <element signature="e#46#78#0" expanded="true" />
+                <element signature="e#3337#12590#0" expanded="false" />
+                <element signature="e#12705#15804#0" expanded="false" />
+                <element signature="e#15922#19001#0" expanded="false" />
+                <element signature="e#19124#22460#0" expanded="false" />
+                <element signature="e#22586#27545#0" expanded="false" />
+                <element signature="e#27672#32002#0" expanded="false" />
+                <element signature="e#32137#34630#0" expanded="false" />
+                <element signature="e#38096#41512#0" expanded="false" />
+                <element signature="e#41625#42717#0" expanded="false" />
+                <element signature="e#42830#42967#0" expanded="false" />
+                <element signature="e#43077#47963#0" expanded="false" />
+                <element signature="e#48093#49279#0" expanded="false" />
+                <element signature="e#49414#50600#0" expanded="false" />
+                <element signature="e#50936#51884#0" expanded="false" />
+                <element signature="e#52194#53014#0" expanded="false" />
+                <element signature="e#53149#54538#0" expanded="false" />
+                <element signature="e#54675#56085#0" expanded="false" />
+                <element signature="e#56223#60399#0" expanded="false" />
+                <element signature="e#60758#61679#0" expanded="false" />
+                <element signature="e#62138#63155#0" expanded="false" />
+                <element signature="e#63771#65076#0" expanded="false" />
+                <element signature="e#65195#65256#0" expanded="false" />
+                <element signature="e#65369#65414#0" expanded="false" />
+                <element signature="e#65527#65572#0" expanded="false" />
+                <element signature="e#65685#65746#0" expanded="false" />
+                <element signature="e#65859#65904#0" expanded="false" />
+                <element signature="e#66017#66062#0" expanded="false" />
+                <element signature="e#66864#70478#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44117647">
-              <caret line="302" column="89" selection-start-line="302" selection-start-column="89" selection-end-line="302" selection-end-column="89" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="231" column="22" selection-start-line="231" selection-start-column="6" selection-end-line="231" selection-end-column="22" />
               <folding>
-                <element signature="e#46#78#0" expanded="true" />
-                <element signature="e#3212#12465#0" expanded="false" />
-                <element signature="e#15797#18876#0" expanded="false" />
-                <element signature="e#18999#22335#0" expanded="false" />
-                <element signature="e#22461#27420#0" expanded="false" />
-                <element signature="e#27547#31877#0" expanded="false" />
-                <element signature="e#32012#34505#0" expanded="false" />
-                <element signature="e#35015#38431#0" expanded="false" />
-                <element signature="e#38544#39636#0" expanded="false" />
-                <element signature="e#39749#39886#0" expanded="false" />
-                <element signature="e#39996#44882#0" expanded="false" />
-                <element signature="e#45012#46198#0" expanded="false" />
-                <element signature="e#46333#47519#0" expanded="false" />
-                <element signature="e#47855#48803#0" expanded="false" />
-                <element signature="e#49113#49933#0" expanded="false" />
-                <element signature="e#50068#51457#0" expanded="false" />
-                <element signature="e#51594#53004#0" expanded="false" />
-                <element signature="e#53142#57318#0" expanded="false" />
-                <element signature="e#57677#58598#0" expanded="false" />
-                <element signature="e#59057#60074#0" expanded="false" />
-                <element signature="e#60690#61995#0" expanded="false" />
-                <element signature="e#62114#62175#0" expanded="false" />
-                <element signature="e#62288#62333#0" expanded="false" />
-                <element signature="e#62446#62491#0" expanded="false" />
-                <element signature="e#62604#62665#0" expanded="false" />
-                <element signature="e#62778#62823#0" expanded="false" />
-                <element signature="e#62936#62981#0" expanded="false" />
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#270#449#0" expanded="false" />
+                <element signature="e#505#1737#0" expanded="false" />
+                <element signature="e#1783#1897#0" expanded="false" />
+                <element signature="e#1943#2136#0" expanded="false" />
+                <element signature="e#2177#2322#0" expanded="false" />
+                <element signature="e#2366#2484#0" expanded="false" />
+                <element signature="e#2527#2645#0" expanded="false" />
+                <element signature="e#2688#2806#0" expanded="false" />
+                <element signature="e#2849#2967#0" expanded="false" />
+                <element signature="e#3010#3128#0" expanded="false" />
+                <element signature="e#3171#3289#0" expanded="false" />
+                <element signature="e#3332#3450#0" expanded="false" />
+                <element signature="e#3493#3611#0" expanded="false" />
+                <element signature="e#3654#3772#0" expanded="false" />
+                <element signature="e#3816#3934#0" expanded="false" />
+                <element signature="e#3978#4096#0" expanded="false" />
+                <element signature="e#4140#4258#0" expanded="false" />
+                <element signature="e#4304#4506#0" expanded="false" />
+                <element signature="e#4547#4665#0" expanded="false" />
+                <element signature="e#4706#4824#0" expanded="false" />
+                <element signature="e#4887#5158#0" expanded="false" />
+                <element signature="e#5202#5320#0" expanded="false" />
+                <element signature="e#5364#5482#0" expanded="false" />
+                <element signature="e#5526#5644#0" expanded="false" />
+                <element signature="e#5688#5806#0" expanded="false" />
+                <element signature="e#5850#5968#0" expanded="false" />
+                <element signature="e#6012#6130#0" expanded="false" />
+                <element signature="e#6174#6292#0" expanded="false" />
+                <element signature="e#6338#6456#0" expanded="false" />
+                <element signature="e#6500#6618#0" expanded="false" />
+                <element signature="e#6662#6780#0" expanded="false" />
+                <element signature="e#6828#6946#0" expanded="false" />
+                <element signature="e#6990#7108#0" expanded="false" />
+                <element signature="e#7152#7270#0" expanded="false" />
+                <element signature="e#7314#7432#0" expanded="false" />
+                <element signature="e#7476#7594#0" expanded="false" />
+                <element signature="e#7638#7756#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -219,6 +256,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="truchas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="administrativo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,12 +537,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Sesion 4">
-      <created>1455211030203</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1455211030203</updated>
     </task>
     <task id="LOCAL-00054" summary="Sesion 4 ok">
       <created>1455211237864</created>
@@ -781,7 +826,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457823604234</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Nivel 1 Sesion 2 ok ok ok ok">
+      <created>1457823701425</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1457823701425</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -794,15 +845,15 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@Andes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27401575" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37952757" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@Andes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -817,7 +868,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Eliminar participantes ok" />
     <MESSAGE value="Reorganizacion actividades" />
     <MESSAGE value="Reorganizacion actividades Templates" />
     <MESSAGE value="Cedulas participantes" />
@@ -842,7 +892,8 @@
     <MESSAGE value="Nivel 1 Sesion 2 ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nivel 1 Sesion 2 ok ok ok" />
+    <MESSAGE value="Nivel 1 Sesion 2 ok ok ok ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nivel 1 Sesion 2 ok ok ok ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1159,27 +1210,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>125</line>
+          <line>127</line>
           <option name="timeStamp" value="868" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>123</line>
+          <line>125</line>
           <option name="timeStamp" value="869" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>126</line>
+          <line>128</line>
           <option name="timeStamp" value="870" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>127</line>
+          <line>129</line>
           <option name="timeStamp" value="871" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>128</line>
+          <line>130</line>
           <option name="timeStamp" value="872" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1439,17 +1490,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>891</line>
+          <line>943</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>895</line>
+          <line>947</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>892</line>
+          <line>944</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1464,82 +1515,82 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>589</line>
+          <line>591</line>
           <option name="timeStamp" value="1201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>590</line>
+          <line>592</line>
           <option name="timeStamp" value="1202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>591</line>
+          <line>593</line>
           <option name="timeStamp" value="1203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>592</line>
+          <line>594</line>
           <option name="timeStamp" value="1204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>593</line>
+          <line>595</line>
           <option name="timeStamp" value="1205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>594</line>
+          <line>596</line>
           <option name="timeStamp" value="1206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>595</line>
+          <line>597</line>
           <option name="timeStamp" value="1207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>596</line>
+          <line>598</line>
           <option name="timeStamp" value="1208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>597</line>
+          <line>599</line>
           <option name="timeStamp" value="1209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>598</line>
+          <line>600</line>
           <option name="timeStamp" value="1210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>599</line>
+          <line>601</line>
           <option name="timeStamp" value="1211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>600</line>
+          <line>602</line>
           <option name="timeStamp" value="1212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>601</line>
+          <line>603</line>
           <option name="timeStamp" value="1213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>602</line>
+          <line>604</line>
           <option name="timeStamp" value="1214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>603</line>
+          <line>605</line>
           <option name="timeStamp" value="1215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>604</line>
+          <line>606</line>
           <option name="timeStamp" value="1216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1817,6 +1868,46 @@
           <line>1302</line>
           <option name="timeStamp" value="1318" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>800</line>
+          <option name="timeStamp" value="1319" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>801</line>
+          <option name="timeStamp" value="1320" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>838</line>
+          <option name="timeStamp" value="1321" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>802</line>
+          <option name="timeStamp" value="1322" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>803</line>
+          <option name="timeStamp" value="1323" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>804</line>
+          <option name="timeStamp" value="1324" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>805</line>
+          <option name="timeStamp" value="1325" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/truchas/admin.py</url>
+          <line>806</line>
+          <option name="timeStamp" value="1326" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1828,18 +1919,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1319" />
+      <option name="time" value="1328" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/escuela_tic_actividades.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59699">
-          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/escuela_tic_actividades_filtro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1959,13 +2043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/administrativo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/acceso.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2061,31 +2138,6 @@
         <state vertical-scroll-proportion="0.20560747">
           <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrativo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43691587">
-          <caret line="645" column="24" selection-start-line="645" selection-start-column="24" selection-end-line="645" selection-end-column="24" />
-          <folding>
-            <element signature="e#19357#21311#0" expanded="false" />
-            <element signature="e#21383#21916#0" expanded="false" />
-            <element signature="e#21971#22240#0" expanded="false" />
-            <element signature="e#22302#22586#0" expanded="false" />
-            <element signature="e#24126#24481#0" expanded="false" />
-            <element signature="e#24547#24940#0" expanded="false" />
-            <element signature="e#25007#25294#0" expanded="false" />
-            <element signature="e#25363#25729#0" expanded="false" />
-            <element signature="e#25795#26354#0" expanded="false" />
-            <element signature="e#26409#28157#0" expanded="false" />
-            <element signature="e#28229#28780#0" expanded="false" />
-            <element signature="e#28853#29440#0" expanded="false" />
-            <element signature="e#29516#30108#0" expanded="false" />
-            <element signature="e#30170#30577#0" expanded="false" />
-            <element signature="e#30641#31062#0" expanded="false" />
-            <element signature="e#31124#31392#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2247,51 +2299,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/administrativo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.635514">
+          <caret line="659" column="44" selection-start-line="659" selection-start-column="44" selection-end-line="659" selection-end-column="44" />
+          <folding>
+            <element signature="e#19357#21311#0" expanded="false" />
+            <element signature="e#21383#21916#0" expanded="false" />
+            <element signature="e#21971#22240#0" expanded="false" />
+            <element signature="e#22302#22586#0" expanded="false" />
+            <element signature="e#24126#24481#0" expanded="false" />
+            <element signature="e#24547#24940#0" expanded="false" />
+            <element signature="e#25007#25294#0" expanded="false" />
+            <element signature="e#25363#25729#0" expanded="false" />
+            <element signature="e#25795#26354#0" expanded="false" />
+            <element signature="e#26409#28157#0" expanded="false" />
+            <element signature="e#28229#28780#0" expanded="false" />
+            <element signature="e#28853#29440#0" expanded="false" />
+            <element signature="e#29516#30108#0" expanded="false" />
+            <element signature="e#30170#30577#0" expanded="false" />
+            <element signature="e#30641#31062#0" expanded="false" />
+            <element signature="e#31124#31392#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrativo/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrativo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039719626">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+          <caret line="231" column="22" selection-start-line="231" selection-start-column="6" selection-end-line="231" selection-end-column="22" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#270#449#0" expanded="false" />
             <element signature="e#505#1737#0" expanded="false" />
+            <element signature="e#1783#1897#0" expanded="false" />
+            <element signature="e#1943#2136#0" expanded="false" />
             <element signature="e#2177#2322#0" expanded="false" />
+            <element signature="e#2366#2484#0" expanded="false" />
+            <element signature="e#2527#2645#0" expanded="false" />
+            <element signature="e#2688#2806#0" expanded="false" />
+            <element signature="e#2849#2967#0" expanded="false" />
+            <element signature="e#3010#3128#0" expanded="false" />
+            <element signature="e#3171#3289#0" expanded="false" />
+            <element signature="e#3332#3450#0" expanded="false" />
+            <element signature="e#3493#3611#0" expanded="false" />
+            <element signature="e#3654#3772#0" expanded="false" />
+            <element signature="e#3816#3934#0" expanded="false" />
+            <element signature="e#3978#4096#0" expanded="false" />
+            <element signature="e#4140#4258#0" expanded="false" />
+            <element signature="e#4304#4506#0" expanded="false" />
+            <element signature="e#4547#4665#0" expanded="false" />
+            <element signature="e#4706#4824#0" expanded="false" />
+            <element signature="e#4887#5158#0" expanded="false" />
+            <element signature="e#5202#5320#0" expanded="false" />
+            <element signature="e#5364#5482#0" expanded="false" />
+            <element signature="e#5526#5644#0" expanded="false" />
+            <element signature="e#5688#5806#0" expanded="false" />
+            <element signature="e#5850#5968#0" expanded="false" />
+            <element signature="e#6012#6130#0" expanded="false" />
+            <element signature="e#6174#6292#0" expanded="false" />
+            <element signature="e#6338#6456#0" expanded="false" />
+            <element signature="e#6500#6618#0" expanded="false" />
+            <element signature="e#6662#6780#0" expanded="false" />
+            <element signature="e#6828#6946#0" expanded="false" />
+            <element signature="e#6990#7108#0" expanded="false" />
+            <element signature="e#7152#7270#0" expanded="false" />
+            <element signature="e#7314#7432#0" expanded="false" />
+            <element signature="e#7476#7594#0" expanded="false" />
+            <element signature="e#7638#7756#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44117647">
-          <caret line="302" column="89" selection-start-line="302" selection-start-column="89" selection-end-line="302" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.7593985">
+          <caret line="838" column="99" selection-start-line="838" selection-start-column="99" selection-end-line="838" selection-end-column="99" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#3212#12465#0" expanded="false" />
-            <element signature="e#15797#18876#0" expanded="false" />
-            <element signature="e#18999#22335#0" expanded="false" />
-            <element signature="e#22461#27420#0" expanded="false" />
-            <element signature="e#27547#31877#0" expanded="false" />
-            <element signature="e#32012#34505#0" expanded="false" />
-            <element signature="e#35015#38431#0" expanded="false" />
-            <element signature="e#38544#39636#0" expanded="false" />
-            <element signature="e#39749#39886#0" expanded="false" />
-            <element signature="e#39996#44882#0" expanded="false" />
-            <element signature="e#45012#46198#0" expanded="false" />
-            <element signature="e#46333#47519#0" expanded="false" />
-            <element signature="e#47855#48803#0" expanded="false" />
-            <element signature="e#49113#49933#0" expanded="false" />
-            <element signature="e#50068#51457#0" expanded="false" />
-            <element signature="e#51594#53004#0" expanded="false" />
-            <element signature="e#53142#57318#0" expanded="false" />
-            <element signature="e#57677#58598#0" expanded="false" />
-            <element signature="e#59057#60074#0" expanded="false" />
-            <element signature="e#60690#61995#0" expanded="false" />
-            <element signature="e#62114#62175#0" expanded="false" />
-            <element signature="e#62288#62333#0" expanded="false" />
-            <element signature="e#62446#62491#0" expanded="false" />
-            <element signature="e#62604#62665#0" expanded="false" />
-            <element signature="e#62778#62823#0" expanded="false" />
-            <element signature="e#62936#62981#0" expanded="false" />
+            <element signature="e#3337#12590#0" expanded="false" />
+            <element signature="e#12705#15804#0" expanded="false" />
+            <element signature="e#15922#19001#0" expanded="false" />
+            <element signature="e#19124#22460#0" expanded="false" />
+            <element signature="e#22586#27545#0" expanded="false" />
+            <element signature="e#27672#32002#0" expanded="false" />
+            <element signature="e#32137#34630#0" expanded="false" />
+            <element signature="e#38096#41512#0" expanded="false" />
+            <element signature="e#41625#42717#0" expanded="false" />
+            <element signature="e#42830#42967#0" expanded="false" />
+            <element signature="e#43077#47963#0" expanded="false" />
+            <element signature="e#48093#49279#0" expanded="false" />
+            <element signature="e#49414#50600#0" expanded="false" />
+            <element signature="e#50936#51884#0" expanded="false" />
+            <element signature="e#52194#53014#0" expanded="false" />
+            <element signature="e#53149#54538#0" expanded="false" />
+            <element signature="e#54675#56085#0" expanded="false" />
+            <element signature="e#56223#60399#0" expanded="false" />
+            <element signature="e#60758#61679#0" expanded="false" />
+            <element signature="e#62138#63155#0" expanded="false" />
+            <element signature="e#63771#65076#0" expanded="false" />
+            <element signature="e#65195#65256#0" expanded="false" />
+            <element signature="e#65369#65414#0" expanded="false" />
+            <element signature="e#65527#65572#0" expanded="false" />
+            <element signature="e#65685#65746#0" expanded="false" />
+            <element signature="e#65859#65904#0" expanded="false" />
+            <element signature="e#66017#66062#0" expanded="false" />
+            <element signature="e#66864#70478#0" expanded="false" />
           </folding>
         </state>
       </provider>
