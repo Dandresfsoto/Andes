@@ -799,7 +799,8 @@ admin.site.register(ParticipanteN1_S2)
 def generar_sesion2_n1(modeladmin,request,queryset):
     for codigo in queryset:
         participantes = ParticipanteN1_S2.objects.filter(codigo_masivo=codigo)
-        presentacion = Presentation('C:\\Temp\PRESENTACIONES\\'+str(random.randint(1,78))+'.pptx')
+        aleatorio = str(random.randint(1,78))
+        presentacion = Presentation('C:\\Temp\PRESENTACIONES\\'+aleatorio+'.pptx')
         propiedades = presentacion.core_properties
         propiedades.author = participantes[0].participante.nombres
         propiedades.created = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
