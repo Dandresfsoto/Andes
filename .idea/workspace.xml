@@ -31,38 +31,38 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5112782">
-              <caret line="806" column="101" selection-start-line="806" selection-start-column="101" selection-end-line="806" selection-end-column="101" />
+            <state vertical-scroll-proportion="0.38345864">
+              <caret line="806" column="83" selection-start-line="806" selection-start-column="83" selection-end-line="806" selection-end-column="83" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
-                <element signature="e#3337#12590#0" expanded="false" />
-                <element signature="e#12705#15804#0" expanded="false" />
-                <element signature="e#15922#19001#0" expanded="false" />
-                <element signature="e#19124#22460#0" expanded="false" />
-                <element signature="e#22586#27545#0" expanded="false" />
-                <element signature="e#27672#32002#0" expanded="false" />
-                <element signature="e#32137#34630#0" expanded="false" />
-                <element signature="e#38216#41632#0" expanded="false" />
-                <element signature="e#41745#42837#0" expanded="false" />
-                <element signature="e#42950#43087#0" expanded="false" />
-                <element signature="e#43197#48083#0" expanded="false" />
-                <element signature="e#48213#49399#0" expanded="false" />
-                <element signature="e#49534#50720#0" expanded="false" />
-                <element signature="e#51056#52004#0" expanded="false" />
-                <element signature="e#52314#53134#0" expanded="false" />
-                <element signature="e#53269#54658#0" expanded="false" />
-                <element signature="e#54795#56205#0" expanded="false" />
-                <element signature="e#56343#60519#0" expanded="false" />
-                <element signature="e#60878#61799#0" expanded="false" />
-                <element signature="e#62258#63275#0" expanded="false" />
-                <element signature="e#63891#65196#0" expanded="false" />
-                <element signature="e#65315#65376#0" expanded="false" />
-                <element signature="e#65489#65534#0" expanded="false" />
-                <element signature="e#65647#65692#0" expanded="false" />
-                <element signature="e#65805#65866#0" expanded="false" />
-                <element signature="e#65979#66024#0" expanded="false" />
-                <element signature="e#66137#66182#0" expanded="false" />
-                <element signature="e#66984#70598#0" expanded="false" />
+                <element signature="e#3405#12658#0" expanded="false" />
+                <element signature="e#12773#15872#0" expanded="false" />
+                <element signature="e#15990#19069#0" expanded="false" />
+                <element signature="e#19192#22528#0" expanded="false" />
+                <element signature="e#22654#27613#0" expanded="false" />
+                <element signature="e#27740#32070#0" expanded="false" />
+                <element signature="e#32205#34698#0" expanded="false" />
+                <element signature="e#38268#41684#0" expanded="false" />
+                <element signature="e#41797#42889#0" expanded="false" />
+                <element signature="e#43002#43139#0" expanded="false" />
+                <element signature="e#43249#48135#0" expanded="false" />
+                <element signature="e#48265#49451#0" expanded="false" />
+                <element signature="e#49586#50772#0" expanded="false" />
+                <element signature="e#51108#52056#0" expanded="false" />
+                <element signature="e#52366#53186#0" expanded="false" />
+                <element signature="e#53321#54710#0" expanded="false" />
+                <element signature="e#54847#56257#0" expanded="false" />
+                <element signature="e#56395#60571#0" expanded="false" />
+                <element signature="e#60930#61851#0" expanded="false" />
+                <element signature="e#62310#63327#0" expanded="false" />
+                <element signature="e#63943#65248#0" expanded="false" />
+                <element signature="e#65367#65428#0" expanded="false" />
+                <element signature="e#65541#65586#0" expanded="false" />
+                <element signature="e#65699#65744#0" expanded="false" />
+                <element signature="e#65857#65918#0" expanded="false" />
+                <element signature="e#66031#66076#0" expanded="false" />
+                <element signature="e#66189#66234#0" expanded="false" />
+                <element signature="e#67036#70650#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -561,12 +561,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00058" summary="Actualizacion masiva ok 3">
-      <created>1456353247540</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1456353247540</updated>
-    </task>
     <task id="LOCAL-00059" summary="Solo Proyectos">
       <created>1456855689935</created>
       <option name="number" value="00059" />
@@ -855,7 +849,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458049825828</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Prsentaciones ok ok ok full utf8">
+      <created>1458050521827</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1458050521827</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -891,7 +891,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Verificar padres" />
     <MESSAGE value="Verificar padres ok" />
     <MESSAGE value="Eliminar actividades full" />
     <MESSAGE value="Eliminar actividades full OK" />
@@ -916,7 +915,8 @@
     <MESSAGE value="Prsentaciones ok ok" />
     <MESSAGE value="Prsentaciones ok ok ok" />
     <MESSAGE value="Prsentaciones ok ok ok full" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prsentaciones ok ok ok full" />
+    <MESSAGE value="Prsentaciones ok ok ok full utf8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prsentaciones ok ok ok full utf8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1233,27 +1233,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>127</line>
+          <line>129</line>
           <option name="timeStamp" value="868" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>125</line>
+          <line>127</line>
           <option name="timeStamp" value="869" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>128</line>
+          <line>130</line>
           <option name="timeStamp" value="870" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>129</line>
+          <line>131</line>
           <option name="timeStamp" value="871" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>130</line>
+          <line>132</line>
           <option name="timeStamp" value="872" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1513,17 +1513,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>944</line>
+          <line>946</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>948</line>
+          <line>950</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>945</line>
+          <line>947</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1538,82 +1538,82 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>591</line>
+          <line>593</line>
           <option name="timeStamp" value="1201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>592</line>
+          <line>594</line>
           <option name="timeStamp" value="1202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>593</line>
+          <line>595</line>
           <option name="timeStamp" value="1203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>594</line>
+          <line>596</line>
           <option name="timeStamp" value="1204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>595</line>
+          <line>597</line>
           <option name="timeStamp" value="1205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>596</line>
+          <line>598</line>
           <option name="timeStamp" value="1206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>597</line>
+          <line>599</line>
           <option name="timeStamp" value="1207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>598</line>
+          <line>600</line>
           <option name="timeStamp" value="1208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>599</line>
+          <line>601</line>
           <option name="timeStamp" value="1209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>600</line>
+          <line>602</line>
           <option name="timeStamp" value="1210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>601</line>
+          <line>603</line>
           <option name="timeStamp" value="1211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>602</line>
+          <line>604</line>
           <option name="timeStamp" value="1212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>603</line>
+          <line>605</line>
           <option name="timeStamp" value="1213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>604</line>
+          <line>606</line>
           <option name="timeStamp" value="1214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>605</line>
+          <line>607</line>
           <option name="timeStamp" value="1215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>606</line>
+          <line>608</line>
           <option name="timeStamp" value="1216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1893,42 +1893,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>800</line>
+          <line>802</line>
           <option name="timeStamp" value="1319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>802</line>
+          <line>804</line>
           <option name="timeStamp" value="1320" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>839</line>
+          <line>841</line>
           <option name="timeStamp" value="1321" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>803</line>
+          <line>805</line>
           <option name="timeStamp" value="1322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>804</line>
+          <line>806</line>
           <option name="timeStamp" value="1323" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>805</line>
+          <line>807</line>
           <option name="timeStamp" value="1324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>806</line>
+          <line>808</line>
           <option name="timeStamp" value="1325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>807</line>
+          <line>809</line>
           <option name="timeStamp" value="1326" />
         </line-breakpoint>
       </breakpoints>
@@ -2415,38 +2415,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5112782">
-          <caret line="806" column="101" selection-start-line="806" selection-start-column="101" selection-end-line="806" selection-end-column="101" />
+        <state vertical-scroll-proportion="0.38345864">
+          <caret line="806" column="83" selection-start-line="806" selection-start-column="83" selection-end-line="806" selection-end-column="83" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#3337#12590#0" expanded="false" />
-            <element signature="e#12705#15804#0" expanded="false" />
-            <element signature="e#15922#19001#0" expanded="false" />
-            <element signature="e#19124#22460#0" expanded="false" />
-            <element signature="e#22586#27545#0" expanded="false" />
-            <element signature="e#27672#32002#0" expanded="false" />
-            <element signature="e#32137#34630#0" expanded="false" />
-            <element signature="e#38216#41632#0" expanded="false" />
-            <element signature="e#41745#42837#0" expanded="false" />
-            <element signature="e#42950#43087#0" expanded="false" />
-            <element signature="e#43197#48083#0" expanded="false" />
-            <element signature="e#48213#49399#0" expanded="false" />
-            <element signature="e#49534#50720#0" expanded="false" />
-            <element signature="e#51056#52004#0" expanded="false" />
-            <element signature="e#52314#53134#0" expanded="false" />
-            <element signature="e#53269#54658#0" expanded="false" />
-            <element signature="e#54795#56205#0" expanded="false" />
-            <element signature="e#56343#60519#0" expanded="false" />
-            <element signature="e#60878#61799#0" expanded="false" />
-            <element signature="e#62258#63275#0" expanded="false" />
-            <element signature="e#63891#65196#0" expanded="false" />
-            <element signature="e#65315#65376#0" expanded="false" />
-            <element signature="e#65489#65534#0" expanded="false" />
-            <element signature="e#65647#65692#0" expanded="false" />
-            <element signature="e#65805#65866#0" expanded="false" />
-            <element signature="e#65979#66024#0" expanded="false" />
-            <element signature="e#66137#66182#0" expanded="false" />
-            <element signature="e#66984#70598#0" expanded="false" />
+            <element signature="e#3405#12658#0" expanded="false" />
+            <element signature="e#12773#15872#0" expanded="false" />
+            <element signature="e#15990#19069#0" expanded="false" />
+            <element signature="e#19192#22528#0" expanded="false" />
+            <element signature="e#22654#27613#0" expanded="false" />
+            <element signature="e#27740#32070#0" expanded="false" />
+            <element signature="e#32205#34698#0" expanded="false" />
+            <element signature="e#38268#41684#0" expanded="false" />
+            <element signature="e#41797#42889#0" expanded="false" />
+            <element signature="e#43002#43139#0" expanded="false" />
+            <element signature="e#43249#48135#0" expanded="false" />
+            <element signature="e#48265#49451#0" expanded="false" />
+            <element signature="e#49586#50772#0" expanded="false" />
+            <element signature="e#51108#52056#0" expanded="false" />
+            <element signature="e#52366#53186#0" expanded="false" />
+            <element signature="e#53321#54710#0" expanded="false" />
+            <element signature="e#54847#56257#0" expanded="false" />
+            <element signature="e#56395#60571#0" expanded="false" />
+            <element signature="e#60930#61851#0" expanded="false" />
+            <element signature="e#62310#63327#0" expanded="false" />
+            <element signature="e#63943#65248#0" expanded="false" />
+            <element signature="e#65367#65428#0" expanded="false" />
+            <element signature="e#65541#65586#0" expanded="false" />
+            <element signature="e#65699#65744#0" expanded="false" />
+            <element signature="e#65857#65918#0" expanded="false" />
+            <element signature="e#66031#66076#0" expanded="false" />
+            <element signature="e#66189#66234#0" expanded="false" />
+            <element signature="e#67036#70650#0" expanded="false" />
           </folding>
         </state>
       </provider>

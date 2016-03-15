@@ -61,6 +61,8 @@ def validateEmail( email ):
     except ValidationError:
         return False
 
+def _removeNonAscii(s): return "".join(i for i in s if ord(i)<128)
+
 def carga_participantes(modeladmin,request,queryset):
     for archivo_queryset in queryset:
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -802,9 +804,9 @@ def generar_sesion2_n1(modeladmin,request,queryset):
         aleatorio = str(random.randint(1,78))
         presentacion = Presentation('C:\\Temp\PRESENTACIONES\\'+aleatorio+'.pptx')
         propiedades = presentacion.core_properties
-        propiedades.author = participantes[0].participante.nombres.decode('utf-8','ignore')
+        propiedades.author = _removeNonAscii(participantes[0].participante.nombres)
         propiedades.created = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
-        propiedades.last_modified_by = participantes[0].participante.nombres.decode('utf-8','ignore')
+        propiedades.last_modified_by = _removeNonAscii(participantes[0].participante.nombres)
         propiedades.modified = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
 
         presentacion.slides[0].shapes.title.text = "Socializando la Secuencia Didactica"
