@@ -802,29 +802,29 @@ def generar_sesion2_n1(modeladmin,request,queryset):
         aleatorio = str(random.randint(1,78))
         presentacion = Presentation('C:\\Temp\PRESENTACIONES\\'+aleatorio+'.pptx')
         propiedades = presentacion.core_properties
-        propiedades.author = participantes[0].participante.nombres.decode('cp850')
+        propiedades.author = participantes[0].participante.nombres.decode('utf-8','ignore')
         propiedades.created = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
-        propiedades.last_modified_by = participantes[0].participante.nombres.decode('cp850')
+        propiedades.last_modified_by = participantes[0].participante.nombres.decode('utf-8','ignore')
         propiedades.modified = datetime.datetime(2015,random.randint(9,12),random.randint(1,30),random.randint(0,23),random.randint(0,59),random.randint(0,59))
 
         presentacion.slides[0].shapes.title.text = "Socializando la Secuencia Didactica"
         nombres = ""
         for participante in participantes:
-            nombres += participante.participante.nombres.decode('cp850')+" "+participante.participante.apellidos.decode('cp850')+" - "
+            nombres += participante.participante.nombres+" "+participante.participante.apellidos+" - "
 
         presentacion.slides[0].shapes.placeholders[1].text = nombres[:len(nombres)-3]
 
         slide_1 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_1.shapes.placeholders[0].text = "Resultados de lo Planeado y Ejecutado"
-        slide_1.shapes.placeholders[1].text = Nivel1_Sesion2_1.objects.all().order_by('?').first().respuesta.decode('cp850')
+        slide_1.shapes.placeholders[1].text = Nivel1_Sesion2_1.objects.all().order_by('?').first().respuesta
 
         slide_2 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_2.shapes.placeholders[0].text = "Lo Planeado y no Ejecutado"
-        slide_2.shapes.placeholders[1].text = Nivel1_Sesion2_2.objects.all().order_by('?').first().respuesta.decode('cp850')
+        slide_2.shapes.placeholders[1].text = Nivel1_Sesion2_2.objects.all().order_by('?').first().respuesta
 
         slide_3 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_3.shapes.placeholders[0].text = "Lo no Planeado y Ejecutado"
-        slide_3.shapes.placeholders[1].text = Nivel1_Sesion2_3.objects.all().order_by('?').first().respuesta.decode('cp850')
+        slide_3.shapes.placeholders[1].text = Nivel1_Sesion2_3.objects.all().order_by('?').first().respuesta
 
         opciones = ['En la actividad participaron ','Participaron ','Se seleccionaron ','La actividad fue conformada por ',
                     'En la secuencia didactica participaron ']
@@ -835,7 +835,7 @@ def generar_sesion2_n1(modeladmin,request,queryset):
 
         slide_5 = presentacion.slides.add_slide(presentacion.slide_layouts[1])
         slide_5.shapes.placeholders[0].text = "Resultados Evaluativos"
-        slide_5.shapes.placeholders[1].text = Nivel1_Sesion2_4.objects.all().order_by('?').first().respuesta.decode('cp850')
+        slide_5.shapes.placeholders[1].text = Nivel1_Sesion2_4.objects.all().order_by('?').first().respuesta
 
         presentacion.save('C:\\Temp\\Descarga\\'+str(participantes[0].participante.cedula)+'.pptx')
 generar_sesion2_n1.short_description = "Generar presentaciones"
