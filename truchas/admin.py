@@ -1384,8 +1384,8 @@ def generar_nivel3_3(modeladmin,request,queryset):
     evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=40,soporte=None)
     for evidencia_docente in evidencia_docentes:
         nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=40))
-        fields = [('Campo de texto 3033',Nivel3_Sesion3_1.objects.all().order_by('?').first()),
-                  ('Campo de texto 3034',Nivel3_Sesion3_2.objects.all().order_by('?').first())
+        fields = [('Campo de texto 3033',Nivel3_Sesion3_1.objects.all().order_by('?').first().respuesta.decode('cp850')),
+                  ('Campo de texto 3034',Nivel3_Sesion3_2.objects.all().order_by('?').first().respuesta.decode('cp850'))
         ]
         fdf = forge_fdf("",fields,[],[],[])
         fdf_file = open("C:\\Temp\\datas3_n3.fdf","wb")
