@@ -32,6 +32,7 @@ from truchas.models import Nivel4_Sesion3_1, Nivel4_Sesion3_2, Nivel4_Sesion3_3,
 from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 #from pptx import Presentation
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
+from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1372,6 +1373,44 @@ class Nivel4_Sesion3_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
     actions = [generar_nivel4_3]
 admin.site.register(Nivel4_Sesion3_1,Nivel4_Sesion3_1Admin)
+
+
+
+
+
+
+
+def generar_nivel3_3(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=40,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=40))
+        fields = [('Campo de texto 3033',Nivel3_Sesion3_1.objects.all().order_by('?').first()),
+                  ('Campo de texto 3034',Nivel3_Sesion3_2.objects.all().order_by('?').first())
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas3_n3.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion3_n3_plantilla.pdf fill_form C:\\Temp\\datas3_n3.fdf output C:\\Temp\\sesion3_3.pdf flatten')
+        nuevo.soporte = File(open("C://Temp//sesion3_3.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel3_3.short_description = "Generar Sesion 3 - Nivel 3"
+
+class Nivel3_Sesion3_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel3_3]
+admin.site.register(Nivel3_Sesion3_1,Nivel3_Sesion3_1Admin)
+admin.site.register(Nivel3_Sesion3_2)
+
+
+
+
+
+
+
+
 
 class Nivel4_Sesion3_2Admin(admin.ModelAdmin):
     list_display = ['respuesta']

@@ -248,3 +248,13 @@ class Nivel1_Sesion2_4(models.Model):
     respuesta = models.CharField(max_length=10000)
     def __unicode__(self):
         return smart_unicode(self.respuesta)
+
+class Nivel3_Sesion3_1(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
+
+class Nivel3_Sesion3_2(models.Model):
+    respuesta = models.CharField(max_length=10000)
+    def __unicode__(self):
+        return smart_unicode(self.respuesta)
