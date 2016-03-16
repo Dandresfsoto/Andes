@@ -1362,7 +1362,7 @@ def generar_nivel4_3(modeladmin,request,queryset):
         fdf_file = open("C:\\Temp\\datas3_n4.fdf","wb")
         fdf_file.write(fdf)
         fdf_file.close()
-        os.system('pdftk C:\\Temp\\sesion3_n4_plantilla.pdf fill_form C:\\Temp\\datas3_n4.fdf output C:\\Temp\\sesion3_4.pdf flatten')
+        os.system('pdftk C:\\Temp\\sesion3_n4_plantilla.pdf fill_form C:\\Temp\\datas3_n4.fdf output C:\\Temp\\sesion3_4.pdf')
         nuevo.soporte = File(open("C://Temp//sesion3_4.pdf", 'rb'))
         nuevo.save()
         evidencia_docente.soporte = nuevo
