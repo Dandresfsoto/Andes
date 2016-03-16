@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -80,8 +79,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3604336">
-              <caret line="748" column="17" selection-start-line="748" selection-start-column="8" selection-end-line="748" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.27322406">
+              <caret line="749" column="48" selection-start-line="749" selection-start-column="48" selection-end-line="749" selection-end-column="48" />
               <folding>
                 <element signature="e#17508#18272#0" expanded="false" />
                 <element signature="e#18340#19126#0" expanded="false" />
@@ -537,12 +536,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00063" summary="Solo Proyectos ok 4">
-      <created>1456856516499</created>
-      <option name="number" value="00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1456856516499</updated>
-    </task>
     <task id="LOCAL-00064" summary="Solo Proyectos ok 5">
       <created>1456856613402</created>
       <option name="number" value="00064" />
@@ -831,19 +824,25 @@
       <option name="project" value="LOCAL" />
       <updated>1458153676015</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Sesion 3 nivel 3 unicode ok">
+      <created>1458154071530</created>
+      <option name="number" value="00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1458154071530</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04566929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -867,7 +866,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Padres ok" />
     <MESSAGE value="Padres ok templates" />
     <MESSAGE value="Padres ok templates ok" />
     <MESSAGE value="Padres ok templates ok ok" />
@@ -892,7 +890,8 @@
     <MESSAGE value="Proyectos" />
     <MESSAGE value="Sesion 3 nivel 3" />
     <MESSAGE value="Sesion 3 nivel 3 unicode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sesion 3 nivel 3 unicode" />
+    <MESSAGE value="Sesion 3 nivel 3 unicode ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 3 nivel 3 unicode ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2385,8 +2384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3604336">
-          <caret line="748" column="17" selection-start-line="748" selection-start-column="8" selection-end-line="748" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.27322406">
+          <caret line="749" column="48" selection-start-line="749" selection-start-column="48" selection-end-line="749" selection-end-column="48" />
           <folding>
             <element signature="e#17508#18272#0" expanded="false" />
             <element signature="e#18340#19126#0" expanded="false" />
