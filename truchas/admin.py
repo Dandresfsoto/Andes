@@ -33,6 +33,7 @@ from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 #from pptx import Presentation
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
+from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1574,3 +1575,56 @@ class Nivel1_Sesion4_preguntas_aleatoriasAdmin(admin.ModelAdmin):
     actions = [generar_nivel1_sesion4]
 
 admin.site.register(Nivel1_Sesion4_preguntas_aleatorias,Nivel1_Sesion4_preguntas_aleatoriasAdmin)
+
+
+
+
+
+def generar_nivel3_sesion1(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=35,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=35))
+        fields = [('Campo de texto 3014',Nivel3_Sesion1_1.objects.order_by('?').first().respuesta),
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas1_1_n3.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion1_1_n3_plantilla.pdf fill_form C:\\Temp\\datas1_1_n3.fdf output C:\\Temp\\sesion1_1_3.pdf')
+        nuevo.soporte = File(open("C://Temp//sesion1_1_3.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel3_sesion1.short_description = "Generar Sesion 1.1 - Nivel 3"
+
+class Nivel3_Sesion1_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel3_sesion1]
+
+admin.site.register(Nivel3_Sesion1_1,Nivel3_Sesion1_1Admin)
+
+
+
+
+def generar_nivel3_sesion1_2(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=36,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=36))
+        fields = [('Campo de texto 3015',Nivel3_Sesion1_2.objects.order_by('?').first().respuesta),
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\datas1_2_n3.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\sesion1_2_n3_plantilla.pdf fill_form C:\\Temp\\datas1_2_n3.fdf output C:\\Temp\\sesion1_2_3.pdf')
+        nuevo.soporte = File(open("C://Temp//sesion1_2_3.pdf", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel3_sesion1_2.short_description = "Generar Sesion 1.2 - Nivel 3"
+
+class Nivel3_Sesion1_2Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel3_sesion1_2]
+
+admin.site.register(Nivel3_Sesion1_2,Nivel3_Sesion1_2Admin)
