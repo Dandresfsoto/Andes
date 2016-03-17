@@ -34,7 +34,7 @@ from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
 from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2, Nivel3_Sesion2_1
-from docx import Document
+#from docx import Document
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1633,7 +1633,7 @@ admin.site.register(Nivel3_Sesion1_2,Nivel3_Sesion1_2Admin)
 
 
 
-
+'''
 def generar_nivel3_sesion2_1(modeladmin,request,queryset):
     evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=37,soporte=None)
     for evidencia_docente in evidencia_docentes:
@@ -1653,9 +1653,9 @@ def generar_nivel3_sesion2_1(modeladmin,request,queryset):
         evidencia_docente.soporte = nuevo
         evidencia_docente.save()
 generar_nivel3_sesion2_1.short_description = "Generar Sesion 2.1 - Nivel 3"
-
+'''
 class Nivel3_Sesion2_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_nivel3_sesion2_1]
+    actions = [#generar_nivel3_sesion2_1]
 
 admin.site.register(Nivel3_Sesion2_1,Nivel3_Sesion2_1Admin)
