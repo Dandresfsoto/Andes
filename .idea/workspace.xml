@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -28,26 +28,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3103447">
-              <caret line="1369" column="14" selection-start-line="1369" selection-start-column="12" selection-end-line="1369" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.7668488">
+              <caret line="1302" column="67" selection-start-line="1302" selection-start-column="67" selection-end-line="1302" selection-end-column="67" />
               <folding>
                 <element signature="e#35191#43237#0" expanded="false" />
-                <element signature="e#59849#62386#0" expanded="false" />
-                <element signature="e#62770#65318#0" expanded="false" />
-                <element signature="e#65450#69620#0" expanded="false" />
+                <element signature="e#59850#62387#0" expanded="false" />
+                <element signature="e#62771#65319#0" expanded="false" />
+                <element signature="e#65451#69621#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38069215">
-              <caret line="1642" column="144" selection-start-line="1642" selection-start-column="144" selection-end-line="1642" selection-end-column="144" />
+            <state vertical-scroll-proportion="-11.586206">
+              <caret line="1448" column="64" selection-start-line="1448" selection-start-column="38" selection-end-line="1448" selection-end-column="64" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#3574#12827#0" expanded="false" />
@@ -171,11 +171,11 @@
         <option value="$PROJECT_DIR$/static/js/docentes_participantes_evidencias.js" />
         <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/formacion/urls.py" />
-        <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/admin.py" />
       </list>
     </option>
   </component>
@@ -246,6 +246,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="truchas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -513,12 +527,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Ruteo r4 plan choque acceso ok ok ok true">
-      <created>1456948533454</created>
-      <option name="number" value="00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1456948533454</updated>
     </task>
     <task id="LOCAL-00074" summary="Actividad id">
       <created>1457018887236</created>
@@ -808,7 +816,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458188896041</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Sesion 2.1 nivel 3 ok ok unicode ok">
+      <created>1458189024149</created>
+      <option name="number" value="00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1458189024149</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -844,7 +858,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Participantes" />
     <MESSAGE value="Nivel 1 Sesion 2" />
     <MESSAGE value="Nivel 1 Sesion 2 ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok" />
@@ -869,7 +882,8 @@
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok utf8" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sesion 2.1 nivel 3 ok ok unicode" />
+    <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 2.1 nivel 3 ok ok unicode ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2300,19 +2314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3103447">
-          <caret line="1369" column="14" selection-start-line="1369" selection-start-column="12" selection-end-line="1369" selection-end-column="14" />
-          <folding>
-            <element signature="e#35191#43237#0" expanded="false" />
-            <element signature="e#59849#62386#0" expanded="false" />
-            <element signature="e#62770#65318#0" expanded="false" />
-            <element signature="e#65450#69620#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2362,14 +2363,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38069215">
-          <caret line="1642" column="144" selection-start-line="1642" selection-start-column="144" selection-end-line="1642" selection-end-column="144" />
+        <state vertical-scroll-proportion="-11.586206">
+          <caret line="1448" column="64" selection-start-line="1448" selection-start-column="38" selection-end-line="1448" selection-end-column="64" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#3574#12827#0" expanded="false" />
             <element signature="e#16159#19238#0" expanded="false" />
             <element signature="e#22823#27782#0" expanded="false" />
             <element signature="e#66993#68290#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7668488">
+          <caret line="1302" column="67" selection-start-line="1302" selection-start-column="67" selection-end-line="1302" selection-end-column="67" />
+          <folding>
+            <element signature="e#35191#43237#0" expanded="false" />
+            <element signature="e#59850#62387#0" expanded="false" />
+            <element signature="e#62771#65319#0" expanded="false" />
+            <element signature="e#65451#69621#0" expanded="false" />
           </folding>
         </state>
       </provider>

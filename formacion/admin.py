@@ -1300,7 +1300,7 @@ def masivo_virtual(modeladmin,request,queryset):
                                 evidencia.soporte = nuevo_soporte
                                 evidencia.save()
 
-                                os.remove("C://Temp//" + filename)
+                                #os.remove("C://Temp//" + filename)
 
                 row_num += 1
                 row = [
