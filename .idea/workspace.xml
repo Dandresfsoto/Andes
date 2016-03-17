@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/views.py" afterPath="$PROJECT_DIR$/formacion/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -28,82 +29,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-669.4483">
-              <caret line="1326" column="56" selection-start-line="1326" selection-start-column="49" selection-end-line="1326" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.6764706">
+              <caret line="1260" column="77" selection-start-line="1260" selection-start-column="77" selection-end-line="1260" selection-end-column="77" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <element signature="e#35191#43237#0" expanded="false" />
-                <element signature="e#59850#62387#0" expanded="false" />
-                <element signature="e#62771#65319#0" expanded="false" />
-                <element signature="e#65451#69621#0" expanded="false" />
+                <element signature="e#59858#62395#0" expanded="false" />
+                <element signature="e#62779#65327#0" expanded="false" />
+                <element signature="e#65459#69629#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6165413">
-              <caret line="1657" column="32" selection-start-line="1657" selection-start-column="32" selection-end-line="1657" selection-end-column="32" />
+            <state vertical-scroll-proportion="-8.379311">
+              <caret line="791" column="79" selection-start-line="791" selection-start-column="79" selection-end-line="791" selection-end-column="79" />
               <folding>
-                <element signature="e#46#78#0" expanded="true" />
-                <element signature="e#3575#12828#0" expanded="false" />
-                <element signature="e#16160#19239#0" expanded="false" />
-                <element signature="e#22824#27783#0" expanded="false" />
-                <element signature="e#66994#68291#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/truchas/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="279" column="44" selection-start-line="279" selection-start-column="44" selection-end-line="279" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#270#449#0" expanded="false" />
-                <element signature="e#505#1737#0" expanded="false" />
-                <element signature="e#2366#2484#0" expanded="false" />
-                <element signature="e#2527#2645#0" expanded="false" />
-                <element signature="e#2688#2806#0" expanded="false" />
-                <element signature="e#2849#2967#0" expanded="false" />
-                <element signature="e#3010#3128#0" expanded="false" />
-                <element signature="e#3171#3289#0" expanded="false" />
-                <element signature="e#3332#3450#0" expanded="false" />
-                <element signature="e#3493#3611#0" expanded="false" />
-                <element signature="e#3654#3772#0" expanded="false" />
-                <element signature="e#3816#3934#0" expanded="false" />
-                <element signature="e#3978#4096#0" expanded="false" />
-                <element signature="e#4140#4258#0" expanded="false" />
-                <element signature="e#4304#4506#0" expanded="false" />
-                <element signature="e#4547#4665#0" expanded="false" />
-                <element signature="e#4706#4824#0" expanded="false" />
-                <element signature="e#4887#5158#0" expanded="false" />
-                <element signature="e#5202#5320#0" expanded="false" />
-                <element signature="e#5364#5482#0" expanded="false" />
-                <element signature="e#5526#5644#0" expanded="false" />
-                <element signature="e#5688#5806#0" expanded="false" />
-                <element signature="e#5850#5968#0" expanded="false" />
-                <element signature="e#6012#6130#0" expanded="false" />
-                <element signature="e#6174#6292#0" expanded="false" />
-                <element signature="e#6338#6456#0" expanded="false" />
-                <element signature="e#6500#6618#0" expanded="false" />
-                <element signature="e#6662#6780#0" expanded="false" />
-                <element signature="e#6828#6946#0" expanded="false" />
-                <element signature="e#6990#7108#0" expanded="false" />
-                <element signature="e#7152#7270#0" expanded="false" />
-                <element signature="e#7314#7432#0" expanded="false" />
-                <element signature="e#7476#7594#0" expanded="false" />
-                <element signature="e#7638#7756#0" expanded="false" />
-                <element signature="e#7802#7920#0" expanded="false" />
-                <element signature="e#7964#8082#0" expanded="false" />
-                <element signature="e#8126#8244#0" expanded="false" />
+                <element signature="e#46#81#0" expanded="true" />
+                <element signature="e#17508#18272#0" expanded="false" />
+                <element signature="e#18340#19126#0" expanded="false" />
+                <element signature="e#19827#20418#0" expanded="false" />
+                <element signature="e#20480#21197#0" expanded="false" />
+                <element signature="e#21254#22077#0" expanded="false" />
+                <element signature="e#22140#22976#0" expanded="false" />
+                <element signature="e#23034#23973#0" expanded="false" />
+                <element signature="e#24709#25292#0" expanded="false" />
+                <element signature="e#25348#32066#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -173,10 +130,10 @@
         <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/formacion/urls.py" />
         <option value="$PROJECT_DIR$/formador/views.py" />
-        <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
-        <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/admin.py" />
+        <option value="$PROJECT_DIR$/formacion/views.py" />
       </list>
     </option>
   </component>
@@ -247,6 +204,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="truchas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,12 +485,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Eliminar participantes">
-      <created>1457124131445</created>
-      <option name="number" value="00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1457124131445</updated>
     </task>
     <task id="LOCAL-00077" summary="Eliminar participantes ok">
       <created>1457126103517</created>
@@ -809,7 +774,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458204643236</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Virtual 10 ok">
+      <created>1458204823755</created>
+      <option name="number" value="00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1458204823755</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -822,7 +793,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04566929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -845,7 +816,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nivel 1 Sesion 2 ok ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok ok ok" />
     <MESSAGE value="Prsentaciones ok" />
@@ -870,7 +840,8 @@
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode ok" />
     <MESSAGE value="Virtual 9" />
     <MESSAGE value="Virtual 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Virtual 10" />
+    <MESSAGE value="Virtual 10 ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Virtual 10 ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2275,24 +2246,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0">
-          <caret line="750" column="48" selection-start-line="750" selection-start-column="48" selection-end-line="750" selection-end-column="48" />
-          <folding>
-            <element signature="e#17508#18272#0" expanded="false" />
-            <element signature="e#18340#19126#0" expanded="false" />
-            <element signature="e#19827#20418#0" expanded="false" />
-            <element signature="e#20480#21197#0" expanded="false" />
-            <element signature="e#21254#22077#0" expanded="false" />
-            <element signature="e#22140#22976#0" expanded="false" />
-            <element signature="e#23034#23973#0" expanded="false" />
-            <element signature="e#24709#25292#0" expanded="false" />
-            <element signature="e#25348#32066#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029411765">
@@ -2301,9 +2254,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88721806">
+          <caret line="1135" column="54" selection-start-line="1135" selection-start-column="54" selection-end-line="1135" selection-end-column="54" />
+          <folding>
+            <element signature="e#46#78#0" expanded="true" />
+            <element signature="e#3575#12828#0" expanded="false" />
+            <element signature="e#16160#19239#0" expanded="false" />
+            <element signature="e#22824#27783#0" expanded="false" />
+            <element signature="e#66994#68291#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.1121495">
           <caret line="279" column="44" selection-start-line="279" selection-start-column="44" selection-end-line="279" selection-end-column="44" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -2348,30 +2315,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+    <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-669.4483">
-          <caret line="1326" column="56" selection-start-line="1326" selection-start-column="49" selection-end-line="1326" selection-end-column="56" />
+        <state vertical-scroll-proportion="-8.379311">
+          <caret line="791" column="79" selection-start-line="791" selection-start-column="79" selection-end-line="791" selection-end-column="79" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#35191#43237#0" expanded="false" />
-            <element signature="e#59850#62387#0" expanded="false" />
-            <element signature="e#62771#65319#0" expanded="false" />
-            <element signature="e#65451#69621#0" expanded="false" />
+            <element signature="e#46#81#0" expanded="true" />
+            <element signature="e#17508#18272#0" expanded="false" />
+            <element signature="e#18340#19126#0" expanded="false" />
+            <element signature="e#19827#20418#0" expanded="false" />
+            <element signature="e#20480#21197#0" expanded="false" />
+            <element signature="e#21254#22077#0" expanded="false" />
+            <element signature="e#22140#22976#0" expanded="false" />
+            <element signature="e#23034#23973#0" expanded="false" />
+            <element signature="e#24709#25292#0" expanded="false" />
+            <element signature="e#25348#32066#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6165413">
-          <caret line="1657" column="32" selection-start-line="1657" selection-start-column="32" selection-end-line="1657" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6764706">
+          <caret line="1260" column="77" selection-start-line="1260" selection-start-column="77" selection-end-line="1260" selection-end-column="77" />
           <folding>
-            <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#3575#12828#0" expanded="false" />
-            <element signature="e#16160#19239#0" expanded="false" />
-            <element signature="e#22824#27783#0" expanded="false" />
-            <element signature="e#66994#68291#0" expanded="false" />
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#35191#43237#0" expanded="false" />
+            <element signature="e#59858#62395#0" expanded="false" />
+            <element signature="e#62779#65327#0" expanded="false" />
+            <element signature="e#65459#69629#0" expanded="false" />
           </folding>
         </state>
       </provider>
