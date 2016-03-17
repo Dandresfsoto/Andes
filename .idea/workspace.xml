@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/models.py" afterPath="$PROJECT_DIR$/truchas/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -48,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.50455374">
-              <caret line="1646" column="56" selection-start-line="1646" selection-start-column="56" selection-end-line="1646" selection-end-column="56" />
+              <caret line="1646" column="72" selection-start-line="1646" selection-start-column="72" selection-end-line="1646" selection-end-column="72" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#3574#12827#0" expanded="false" />
@@ -515,12 +514,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00069" summary="Ruteo r4 plan choque acceso">
-      <created>1456941877213</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1456941877217</updated>
-    </task>
     <task id="LOCAL-00070" summary="Ruteo r4 plan choque acceso ok">
       <created>1456942817938</created>
       <option name="number" value="00070" />
@@ -809,7 +802,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458182024811</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Sesion 2.1 nivel 3 ok">
+      <created>1458187440467</created>
+      <option name="number" value="00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1458187440470</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -845,7 +844,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Carga Masiva Virtual" />
     <MESSAGE value="Carga Masiva Virtual ok" />
     <MESSAGE value="asignar ok" />
     <MESSAGE value="Nivel 4 ok" />
@@ -870,7 +868,8 @@
     <MESSAGE value="Sesion 3 Nivel 4" />
     <MESSAGE value="Reporte virtual" />
     <MESSAGE value="Sesion 1 nivel 3 ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sesion 1 nivel 3 ok" />
+    <MESSAGE value="Sesion 2.1 nivel 3 ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 2.1 nivel 3 ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2364,7 +2363,7 @@
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50455374">
-          <caret line="1646" column="56" selection-start-line="1646" selection-start-column="56" selection-end-line="1646" selection-end-column="56" />
+          <caret line="1646" column="72" selection-start-line="1646" selection-start-column="72" selection-end-line="1646" selection-end-column="72" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#3574#12827#0" expanded="false" />
