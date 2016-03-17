@@ -1640,7 +1640,7 @@ def generar_nivel3_sesion2_1(modeladmin,request,queryset):
         nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=37))
 
         document = Document()
-        document.add_paragraph(evidencia_docente.participante.nombres.lower() + " " + evidencia_docente.participante.apellidos.lower())
+        document.add_paragraph(unicode(evidencia_docente.participante.nombres).lower() + " " + unicode(evidencia_docente.participante.apellidos).lower())
         conclusiones = Nivel3_Sesion2_1.objects.order_by('?')[:3]
 
         for conclusion in conclusiones:
