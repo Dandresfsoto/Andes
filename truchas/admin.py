@@ -672,6 +672,31 @@ def reporte_docentes(modeladmin,request,queryset):
                    tuple(['Nivel 4 - Sesión 3',30]),
                    tuple(['Nivel 4 - Sesión 4',30]),
                    tuple(['Nivel 4 - Sesión 5',30]),
+
+                   tuple(['Nivel 1 - v 1',30]),
+                   tuple(['Nivel 1 - v 2',30]),
+                   tuple(['Nivel 1 - v 3',30]),
+                   tuple(['Nivel 1 - v 4',30]),
+                   tuple(['Nivel 1 - v 5',30]),
+                   tuple(['Nivel 1 - v 6',30]),
+                   tuple(['Nivel 1 - v 7',30]),
+                   tuple(['Nivel 1 - v 8',30]),
+
+                   tuple(['Nivel 2 - v 9',30]),
+                   tuple(['Nivel 2 - v 10',30]),
+                   tuple(['Nivel 2 - v 11',30]),
+
+                   tuple(['Nivel 3 - v 12',30]),
+                   tuple(['Nivel 3 - v 13',30]),
+                   tuple(['Nivel 3 - v 14',30]),
+                   tuple(['Nivel 3 - v 15',30]),
+                   tuple(['Nivel 3 - v 16',30]),
+                   tuple(['Nivel 3 - v 17',30]),
+
+                   tuple(['Nivel 4 - v 18',30]),
+                   tuple(['Nivel 4 - v 19',30]),
+                   tuple(['Nivel 4 - v 20',30]),
+                   tuple(['Nivel 4 - v 21',30]),
                    ]
 
         for col_num in xrange(len(columns)):
@@ -704,6 +729,29 @@ def reporte_docentes(modeladmin,request,queryset):
                     "Si" if evidencias.get(entregable__id=45).soporte != None else "No",
                     "Si" if evidencias.get(entregable__id=47).soporte != None else "No",
                     "Si" if evidencias.get(entregable__id=49).soporte != None else "No",
+
+                    "Si" if evidencias.get(entregable__id=11).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=11).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=13).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=15).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=17).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=17).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=9).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=9).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=25).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=26).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=27).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=35).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=36).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=37).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=38).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=39).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=40).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=51).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=53).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=55).soporte != None else "No",
+                    "Si" if evidencias.get(entregable__id=59).soporte != None else "No",
+
                 ]
 
                 for col_num in xrange(len(row)):
