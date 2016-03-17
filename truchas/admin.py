@@ -33,7 +33,8 @@ from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 #from pptx import Presentation
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
-from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2
+from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2, Nivel3_Sesion2_1
+from docx import Document
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1628,3 +1629,33 @@ class Nivel3_Sesion1_2Admin(admin.ModelAdmin):
     actions = [generar_nivel3_sesion1_2]
 
 admin.site.register(Nivel3_Sesion1_2,Nivel3_Sesion1_2Admin)
+
+
+
+
+
+def generar_nivel3_sesion2_1(modeladmin,request,queryset):
+    evidencia_docentes = EvidenciaDocentes.objects.filter(entregable__id=37,soporte=None)
+    for evidencia_docente in evidencia_docentes:
+        nuevo = SoporteEntregableDocente(grupo=evidencia_docente.participante.grupo,entregable=EntregableDocentes.objects.get(id=37))
+
+        document = Document()
+        document.add_paragraph(evidencia_docente.participante.nombres.lower() + " " + evidencia_docente.participante.apellidos.lower())
+        conclusiones = Nivel3_Sesion2_1.objects.order_by('?')[:3]
+
+        for conclusion in conclusiones:
+            document.add_paragraph(conclusion.respuesta)
+
+        document.save("C://Temp//sesion2_1_3.docx")
+
+        nuevo.soporte = File(open("C://Temp//sesion2_1_3.docx", 'rb'))
+        nuevo.save()
+        evidencia_docente.soporte = nuevo
+        evidencia_docente.save()
+generar_nivel3_sesion2_1.short_description = "Generar Sesion 2.1 - Nivel 3"
+
+class Nivel3_Sesion2_1Admin(admin.ModelAdmin):
+    list_display = ['respuesta']
+    actions = [generar_nivel3_sesion2_1]
+
+admin.site.register(Nivel3_Sesion2_1,Nivel3_Sesion2_1Admin)

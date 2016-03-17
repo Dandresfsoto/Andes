@@ -47,14 +47,14 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6284153">
-              <caret line="1623" column="75" selection-start-line="1623" selection-start-column="75" selection-end-line="1623" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.50455374">
+              <caret line="1646" column="56" selection-start-line="1646" selection-start-column="56" selection-end-line="1646" selection-end-column="56" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
-                <element signature="e#3530#12783#0" expanded="false" />
-                <element signature="e#16115#19194#0" expanded="false" />
-                <element signature="e#22779#27738#0" expanded="false" />
-                <element signature="e#66949#68246#0" expanded="false" />
+                <element signature="e#3574#12827#0" expanded="false" />
+                <element signature="e#16159#19238#0" expanded="false" />
+                <element signature="e#22823#27782#0" expanded="false" />
+                <element signature="e#66993#68290#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="269" column="6" selection-start-line="269" selection-start-column="6" selection-end-line="269" selection-end-column="22" />
+              <caret line="279" column="44" selection-start-line="279" selection-start-column="44" selection-end-line="279" selection-end-column="44" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#270#449#0" expanded="false" />
@@ -515,12 +515,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00068" summary="Solo Proyectos ok 9">
-      <created>1456857626840</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1456857626840</updated>
-    </task>
     <task id="LOCAL-00069" summary="Ruteo r4 plan choque acceso">
       <created>1456941877213</created>
       <option name="number" value="00069" />
@@ -809,7 +803,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458177682218</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Sesion 1 nivel 3 ok">
+      <created>1458182024811</created>
+      <option name="number" value="00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1458182024811</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -845,7 +845,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="proyectos ok 2" />
     <MESSAGE value="Carga Masiva Virtual" />
     <MESSAGE value="Carga Masiva Virtual ok" />
     <MESSAGE value="asignar ok" />
@@ -870,7 +869,8 @@
     <MESSAGE value="Sesion 3 nivel 3 unicode ok 2 full" />
     <MESSAGE value="Sesion 3 Nivel 4" />
     <MESSAGE value="Reporte virtual" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reporte virtual" />
+    <MESSAGE value="Sesion 1 nivel 3 ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 1 nivel 3 ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1187,27 +1187,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>131</line>
+          <line>132</line>
           <option name="timeStamp" value="868" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>129</line>
+          <line>130</line>
           <option name="timeStamp" value="869" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>132</line>
+          <line>133</line>
           <option name="timeStamp" value="870" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>133</line>
+          <line>134</line>
           <option name="timeStamp" value="871" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>134</line>
+          <line>135</line>
           <option name="timeStamp" value="872" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1467,17 +1467,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>996</line>
+          <line>997</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1000</line>
+          <line>1001</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>997</line>
+          <line>998</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1492,82 +1492,82 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>595</line>
+          <line>596</line>
           <option name="timeStamp" value="1201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>596</line>
+          <line>597</line>
           <option name="timeStamp" value="1202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>597</line>
+          <line>598</line>
           <option name="timeStamp" value="1203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>598</line>
+          <line>599</line>
           <option name="timeStamp" value="1204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>599</line>
+          <line>600</line>
           <option name="timeStamp" value="1205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>600</line>
+          <line>601</line>
           <option name="timeStamp" value="1206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>601</line>
+          <line>602</line>
           <option name="timeStamp" value="1207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>602</line>
+          <line>603</line>
           <option name="timeStamp" value="1208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>603</line>
+          <line>604</line>
           <option name="timeStamp" value="1209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>604</line>
+          <line>605</line>
           <option name="timeStamp" value="1210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>605</line>
+          <line>606</line>
           <option name="timeStamp" value="1211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>606</line>
+          <line>607</line>
           <option name="timeStamp" value="1212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>607</line>
+          <line>608</line>
           <option name="timeStamp" value="1213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>608</line>
+          <line>609</line>
           <option name="timeStamp" value="1214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>609</line>
+          <line>610</line>
           <option name="timeStamp" value="1215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>610</line>
+          <line>611</line>
           <option name="timeStamp" value="1216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1847,37 +1847,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>852</line>
+          <line>853</line>
           <option name="timeStamp" value="1319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>854</line>
+          <line>855</line>
           <option name="timeStamp" value="1320" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>855</line>
+          <line>856</line>
           <option name="timeStamp" value="1322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>856</line>
+          <line>857</line>
           <option name="timeStamp" value="1323" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>857</line>
+          <line>858</line>
           <option name="timeStamp" value="1324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>858</line>
+          <line>859</line>
           <option name="timeStamp" value="1325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>859</line>
+          <line>860</line>
           <option name="timeStamp" value="1326" />
         </line-breakpoint>
       </breakpoints>
@@ -2317,7 +2317,7 @@
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="269" column="6" selection-start-line="269" selection-start-column="6" selection-end-line="269" selection-end-column="22" />
+          <caret line="279" column="44" selection-start-line="279" selection-start-column="44" selection-end-line="279" selection-end-column="44" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#270#449#0" expanded="false" />
@@ -2363,14 +2363,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6284153">
-          <caret line="1623" column="75" selection-start-line="1623" selection-start-column="75" selection-end-line="1623" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.50455374">
+          <caret line="1646" column="56" selection-start-line="1646" selection-start-column="56" selection-end-line="1646" selection-end-column="56" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#3530#12783#0" expanded="false" />
-            <element signature="e#16115#19194#0" expanded="false" />
-            <element signature="e#22779#27738#0" expanded="false" />
-            <element signature="e#66949#68246#0" expanded="false" />
+            <element signature="e#3574#12827#0" expanded="false" />
+            <element signature="e#16159#19238#0" expanded="false" />
+            <element signature="e#22823#27782#0" expanded="false" />
+            <element signature="e#66993#68290#0" expanded="false" />
           </folding>
         </state>
       </provider>
