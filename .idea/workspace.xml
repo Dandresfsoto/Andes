@@ -47,8 +47,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84517306">
-              <caret line="1658" column="41" selection-start-line="1658" selection-start-column="41" selection-end-line="1658" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.6165413">
+              <caret line="1657" column="32" selection-start-line="1657" selection-start-column="32" selection-end-line="1657" selection-end-column="32" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#3575#12828#0" expanded="false" />
@@ -515,12 +515,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00075" summary="Actividad id ok">
-      <created>1457019329273</created>
-      <option name="number" value="00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1457019329273</updated>
-    </task>
     <task id="LOCAL-00076" summary="Eliminar participantes">
       <created>1457124131445</created>
       <option name="number" value="00076" />
@@ -809,7 +803,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458198328165</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Virtual 10">
+      <created>1458204643236</created>
+      <option name="number" value="00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1458204643236</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -821,8 +821,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04566929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04566929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -845,7 +845,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nivel 1 Sesion 2 ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok ok" />
     <MESSAGE value="Nivel 1 Sesion 2 ok ok ok ok" />
@@ -870,7 +869,8 @@
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode ok" />
     <MESSAGE value="Virtual 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Virtual 9" />
+    <MESSAGE value="Virtual 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Virtual 10" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2364,8 +2364,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84517306">
-          <caret line="1658" column="41" selection-start-line="1658" selection-start-column="41" selection-end-line="1658" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.6165413">
+          <caret line="1657" column="32" selection-start-line="1657" selection-start-column="32" selection-end-line="1657" selection-end-column="32" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#3575#12828#0" expanded="false" />

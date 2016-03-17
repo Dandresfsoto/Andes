@@ -1656,6 +1656,6 @@ generar_nivel3_sesion2_1.short_description = "Generar Sesion 2.1 - Nivel 3"
 '''
 class Nivel3_Sesion2_1Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [#generar_nivel3_sesion2_1]
+    actions = []
 
 admin.site.register(Nivel3_Sesion2_1,Nivel3_Sesion2_1Admin)
