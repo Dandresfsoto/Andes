@@ -1644,7 +1644,7 @@ def generar_nivel3_sesion2_1(modeladmin,request,queryset):
         conclusiones = Nivel3_Sesion2_1.objects.order_by('?')[:3]
 
         for conclusion in conclusiones:
-            document.add_paragraph(conclusion.respuesta.decode('cp850'))
+            document.add_paragraph(conclusion.respuesta.decode('utf-8'))
 
         document.save("C://Temp//sesion2_1_3.docx")
 
