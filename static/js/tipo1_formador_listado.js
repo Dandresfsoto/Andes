@@ -57,6 +57,12 @@ $(document).ready(function() {
                 action: function ( e, dt, node, config ) {
                     location.replace(location.href+"masivo/");
                 }
+            },
+            {
+                text: 'Asignar a Soportes',
+                action: function ( e, dt, node, config ) {
+                    location.replace(location.href+"asignar/");
+                }
             }
         ],
         "searching": true,

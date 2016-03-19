@@ -28,6 +28,8 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from formacion.models import EvidenciaDocentes, EvidenciaEscuelaTic
 import datetime
+from django.shortcuts import redirect
+from models import EntregableDocentes
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -486,6 +488,21 @@ def soporte_form(request,pk,grupo_id,formador_id):
     else:
         formset = SoporteFormSet(queryset=SoporteEntregableEscuelaTic.objects.filter(grupo__id=grupo_id),)
     return render_to_response("soportes_escuelaTIC.html",{"formset":formset,"user":request.user,"REGION":Region.objects.get(pk=pk).nombre},context_instance=RequestContext(request))
+
+def AsignarSoportesView(request,pk,formador_id,grupo_id):
+    grupo = GrupoDocentes.objects.get(id = grupo_id)
+    entregables = EntregableDocentes.objects.exclude(id=60)
+    participantes = ParticipanteDocente.objects.filter(grupo__id=grupo_id)
+    for entregable in entregables:
+        nuevo_soporte = SoporteEntregableDocente(grupo=grupo,entregable=entregable)
+        nuevo_soporte.save()
+        for participante in participantes:
+            evidencia = EvidenciaDocentes.objects.filter(participante__id=participante.id).get(entregable__id=entregable.id)
+            if evidencia.soporte == None or evidencia.soporte.soporte == "":
+                evidencia.soporte = nuevo_soporte
+                evidencia.save()
+
+    return redirect('../')
 
 class ListadoMasivoView(FormacionMixin,TemplateView):
     template_name = 'tipo2_formador_listado_masivo.html'

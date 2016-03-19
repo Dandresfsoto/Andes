@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^tipo1/(?P<formador_id>\w+)/$', login_required(views.FormadorTipo1GrupoView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/nuevo/$', login_required(views.NuevoGrupoDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/$', login_required(views.ListadoGrupoDocentesView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/asignar/$', login_required(views.AsignarSoportesView)),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/editar/(?P<participante_id>\w+)/$', login_required(views.EditarDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/nuevo/docente/$', login_required(views.NuevoDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/$', login_required(views.Tipo1ListadoMasivoView.as_view())),
