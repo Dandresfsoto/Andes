@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^listado_tipo1/(?P<region>\w+)/(?P<id_formador>\w+)/(?P<id_grupo>\w+)', login_required(views.FormadorListadoGrupoDocentesTableView.as_view())),
 
     url(r'^masivo/(?P<region>\w+)/(?P<id_formador>\w+)/(?P<id_grupo>\w+)', login_required(views.FormadorListadoMasivoTableView.as_view())),
+    url(r'^masivo_tipo1/(?P<region>\w+)/(?P<id_formador>\w+)/(?P<id_grupo>\w+)', login_required(views.FormadorTipo1ListadoMasivoTableView.as_view())),
 
     url(r'^listado_total_participantes/(?P<region>\w+)/', login_required(views.ParticipantesListadoTableView.as_view())),
     url(r'^listado_total_docentes/(?P<region>\w+)/', login_required(views.DocentesListadoTableView.as_view())),

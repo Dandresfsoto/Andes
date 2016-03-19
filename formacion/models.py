@@ -266,6 +266,18 @@ class Masivo(models.Model):
     def __unicode__(self):
         return smart_unicode(self.fecha)
 
+
+class MasivoDocente(models.Model):
+    fecha = models.DateTimeField(auto_now_add=True)
+    grupo = models.ForeignKey(GrupoDocentes)
+    archivo = models.FileField(upload_to=content_file_name,max_length=2000)
+    usuario = models.ForeignKey(User,blank=True,null=True)
+    resultado = models.FileField(upload_to=content_file_name,blank=True,max_length=2000)
+
+    def __unicode__(self):
+        return smart_unicode(self.fecha)
+
+
 class SoporteEntregableEscuelaTic(models.Model):
     grupo = models.ForeignKey(Grupo)
     entregable = models.ForeignKey(Entregable)

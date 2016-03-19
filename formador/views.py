@@ -1,7 +1,7 @@
 from .models import Formador
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.db.models import Q
-from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, Actividad, EvidenciaEscuelaTic, Entregable
+from formacion.models import Grupo,ParticipanteEscuelaTic, SoporteEntregableEscuelaTic, Masivo, MasivoDocente, Actividad, EvidenciaEscuelaTic, Entregable
 from formacion.models import GrupoDocentes, ParticipanteDocente, EvidenciaDocentes, EntregableDocentes
 from random import randrange
 
@@ -535,6 +535,50 @@ class FormadorListadoMasivoTableView(BaseDatatableView):
             return row.usuario.username
         else:
             return super(FormadorListadoMasivoTableView,self).render_column(row,column)
+
+class FormadorTipo1ListadoMasivoTableView(BaseDatatableView):
+    model = MasivoDocente
+    columns = [
+        'id',
+        'fecha',
+        'grupo',
+        'archivo',
+        'usuario',
+        'resultado'
+    ]
+
+    order_columns = [
+        'id',
+        'fecha',
+        'grupo',
+        'archivo',
+        'usuario',
+        'resultado'
+    ]
+
+    def get_initial_queryset(self):
+        if not self.model:
+            raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
+        return self.model.objects.filter(grupo__id=self.kwargs['id_grupo'])
+
+    def filter_queryset(self, qs):
+        search = self.request.GET.get(u'search[value]', None)
+        q = Q()
+        if search:
+            qs = qs.filter(q)
+        return qs
+
+    def render_column(self, row, column):
+        if column == 'grupo':
+            return row.grupo.nombre
+        if column == 'archivo':
+            return str(row.archivo)
+        if column == 'resultado':
+            return str(row.resultado)
+        if column == 'usuario':
+            return row.usuario.username
+        else:
+            return super(FormadorTipo1ListadoMasivoTableView,self).render_column(row,column)
 
 class ParticipantesListadoTableView(BaseDatatableView):
     model = ParticipanteEscuelaTic

@@ -5,8 +5,8 @@ from django.views.generic import TemplateView, CreateView, UpdateView, FormView
 from mixins.mixins import FormacionMixin
 from region.models import Region
 from formador.models import Formador
-from formacion.models import Grupo, ParticipanteEscuelaTic, Entregable, SoporteEntregableEscuelaTic, Masivo, EvidenciaEscuelaTic, Actividad
-from formacion.forms import NuevoGrupoForm, NuevoParticipanteForm, NuevoMasivoForm, NuevoSoporteForm, AsignarForm, AgregarSoporteForm
+from formacion.models import RadicadoFormacion, Grupo, ParticipanteEscuelaTic, Entregable, SoporteEntregableEscuelaTic, Masivo, MasivoDocente, EvidenciaEscuelaTic, Actividad
+from formacion.forms import NuevoGrupoForm, NuevoParticipanteForm, NuevoMasivoForm, NuevoSoporteForm, AsignarForm, AgregarSoporteForm, NuevoMasivoDocenteForm
 from django.http import HttpResponseRedirect
 from django.forms.models import modelformset_factory
 from django.shortcuts import render_to_response
@@ -499,6 +499,18 @@ class ListadoMasivoView(FormacionMixin,TemplateView):
         kwargs['NOMBRE_GRUPO'] = Grupo.objects.get(pk=self.kwargs['grupo_id']).nombre
         return super(ListadoMasivoView,self).get_context_data(**kwargs)
 
+class Tipo1ListadoMasivoView(FormacionMixin,TemplateView):
+    template_name = 'tipo1_formador_listado_masivo.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(Tipo1ListadoMasivoView,self).get_context_data(**kwargs)
+
 class NuevoMasivoView(FormacionMixin,CreateView):
     model = Masivo
     form_class = NuevoMasivoForm
@@ -627,6 +639,141 @@ class NuevoMasivoView(FormacionMixin,CreateView):
                         fila[4].value,
                         fila[5].value,
                         fila[6].value,
+                        proceso
+                    ]
+
+                    for col_num in xrange(len(row)):
+                        c = hoja1.cell(row=row_num, column=col_num+1)
+                        if row[col_num] == True:
+                            c.value = "SI"
+                        if row[col_num] == False:
+                            c.value = "NO"
+                        if row[col_num] == None:
+                            c.value = ""
+                        else:
+                            c.value = row[col_num]
+                        c.style = co
+
+            resultado.save(r)
+            self.object.resultado.save('Resultado.xlsx', ContentFile(r.getvalue()))
+            self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class Tipo1NuevoMasivoView(FormacionMixin,CreateView):
+    model = MasivoDocente
+    form_class = NuevoMasivoDocenteForm
+    template_name = "formulario_masivo_tipo1.html"
+    success_url = "../"
+
+    def get_context_data(self, **kwargs):
+        kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre
+        kwargs['ID_REGION'] = self.kwargs['pk']
+        kwargs['NOMBRE_FORMADOR'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
+        kwargs['ID_FORMADOR'] = self.kwargs['formador_id']
+        kwargs['ID_GRUPO'] = self.kwargs['grupo_id']
+        kwargs['NOMBRE_GRUPO'] = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id']).nombre
+        return super(Tipo1NuevoMasivoView,self).get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        self.object = form.save()
+        path = smart_unicode(self.object.archivo)
+        archivo = openpyxl.load_workbook(settings.MEDIA_ROOT+'/'+path)
+        try:
+            hoja1 = archivo.get_sheet_by_name('BaseDocentes')
+        except KeyError:
+            self.object.delete()
+            return self.render_to_response(self.get_context_data(form=form,ERROR="El Archivo no tiene ninguna hoja con el nombre 'BaseDocentes'"))
+        else:
+            r = StringIO()
+            resultado = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+            logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+            logo.drawing.top = 10
+            logo.drawing.left = 25
+
+            hoja1 = resultado.get_sheet_by_name('hoja1')
+            hoja1.title = "DOCENTES"
+            hoja1.add_image(logo)
+
+            celda = hoja1.cell('E2')
+            celda.value = 'FORMACIÓN'
+
+            celda = hoja1.cell('E3')
+            celda.value = 'DOCENTES'
+
+            celda = hoja1.cell('I3')
+            celda.value = time.strftime("%d/%m/%y")
+
+            celda = hoja1.cell('I4')
+            celda.value = time.strftime("%I:%M:%S %p")
+
+            row_num = 5
+
+            columns = [tuple(['APELLIDOS',30]),
+               tuple(['NOMBRES',30]),
+               tuple(['CEDULA',30]),
+               tuple(['RESULTADO',50]),
+               ]
+
+            for col_num in xrange(len(columns)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                c.value = columns[col_num][0]
+                c.style = t
+                hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+            i=0
+
+            grupo = GrupoDocentes.objects.get(pk=self.kwargs['grupo_id'])
+            formador = Formador.objects.get(pk=self.kwargs['formador_id'])
+
+            archivo_hoja = archivo.get_sheet_by_name('BaseDocentes')
+            for fila in archivo_hoja.rows:
+                i += 1
+                if i > 1:
+                    proceso =""
+                    try:
+                        cedula = fila[2].value.replace('.','').replace(',','')
+                    except:
+                        cedula = fila[2].value
+                    nombres = fila[1].value
+                    apellidos = fila[0].value
+
+
+                    if cedula == "" or cedula == None:
+                        proceso = "El campo de cedula esta vacio"
+                    else:
+                        try:
+                            long(cedula)
+                        except ValueError:
+                            proceso = "El numero de cedula es invalido"
+                        else:
+                            if ParticipanteDocente.objects.filter(cedula=cedula).count() != 0:
+                                proceso = "La Cedula ya se encuentra registrada"
+                            else:
+                                if nombres == "" or nombres == None:
+                                    proceso = "El campo de nombres esta vacio"
+                                else:
+                                    if apellidos == "" or apellidos == None:
+                                        proceso = "El campo de apellidos esta vacio"
+                                    else:
+                                        proceso = "Registrado Correctamente"
+                                        nuevo = ParticipanteDocente()
+                                        nuevo.grupo = grupo
+                                        nuevo.formador = formador
+                                        nuevo.radicado = RadicadoFormacion.objects.get(numero=0)
+
+                                        nuevo.nombres = fila[1].value
+                                        nuevo.apellidos = fila[0].value
+                                        nuevo.cedula = long(cedula)
+                                        nuevo.save()
+
+
+                    row_num += 1
+                    row = [
+                        fila[0].value,
+                        fila[1].value,
+                        fila[2].value,
                         proceso
                     ]
 

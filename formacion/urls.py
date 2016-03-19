@@ -31,6 +31,9 @@ urlpatterns = [
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/$', login_required(views.ListadoGrupoDocentesView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/editar/(?P<participante_id>\w+)/$', login_required(views.EditarDocenteView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/nuevo/docente/$', login_required(views.NuevoDocenteView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/$', login_required(views.Tipo1ListadoMasivoView.as_view())),
+    url(r'^tipo1/(?P<formador_id>\w+)/grupo/(?P<grupo_id>\w+)/masivo/nuevo/$', login_required(views.Tipo1NuevoMasivoView.as_view())),
+
 
     url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/$', login_required(views.TipoEvidenciaView.as_view())),
     url(r'^tipo1/(?P<formador_id>\w+)/calificar/(?P<grupo_id>\w+)/(?P<tipo_evidencia>\w+)/$', login_required(views.NivelEvidenciaView.as_view())),

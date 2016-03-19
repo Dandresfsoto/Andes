@@ -5,7 +5,7 @@ from django.forms.widgets import Select,SelectMultiple
 from django.utils.encoding import force_unicode
 from django.utils.html import escape, conditional_escape
 from formacion.models import Grupo, ParticipanteEscuelaTic, Masivo, SoporteEntregableEscuelaTic, EvidenciaEscuelaTic, GrupoDocentes, ParticipanteDocente
-from formacion.models import EntregableDocentes, SoporteEntregableDocente, EvidenciaDocentes, ParticipanteDocente
+from formacion.models import EntregableDocentes, SoporteEntregableDocente, EvidenciaDocentes, ParticipanteDocente, MasivoDocente
 from departamento.models import Departamento
 from municipio.models import Municipio
 
@@ -112,6 +112,16 @@ class NuevoMasivoForm(forms.ModelForm):
         widgets = {
             'archivo': forms.FileInput(attrs={'accept':'.xlsx'}),
         }
+
+
+class NuevoMasivoDocenteForm(forms.ModelForm):
+    class Meta:
+        model = MasivoDocente
+        fields = ['grupo','archivo','usuario']
+        widgets = {
+            'archivo': forms.FileInput(attrs={'accept':'.xlsx'}),
+        }
+
 
 class NuevoSoporteForm(forms.ModelForm):
     class Meta:
