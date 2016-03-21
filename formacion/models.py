@@ -192,7 +192,7 @@ class ParticipanteDocente(models.Model):
         participante = ParticipanteDocente.objects.get(pk=self.pk)
         if EvidenciaDocentes.objects.filter(participante__pk=self.pk).count() == 0:
             for entregable in entregables:
-                valor = ValorDocente.objects.get(id=0)
+                valor = ValorDocente.objects.get(id=1)
                 nuevo = EvidenciaDocentes(entregable=entregable,participante=participante,valor=valor)
                 nuevo.save()
 
