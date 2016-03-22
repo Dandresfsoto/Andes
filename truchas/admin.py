@@ -657,6 +657,12 @@ def reporte_docentes(modeladmin,request,queryset):
         row_num = 5
 
         columns = [tuple(['Region',30]),
+
+                   tuple(['Municipio',30]),
+                   tuple(['Departamento',30]),
+                   tuple(['Formador',30]),
+                   tuple(['Cedula Formador',30]),
+
                    tuple(['Nombres',30]),
                    tuple(['Apellidos',30]),
                    tuple(['Cedula',30]),
@@ -714,6 +720,12 @@ def reporte_docentes(modeladmin,request,queryset):
                 row_num += 1
                 row = [
                     participante.formador.region.nombre,
+
+                    participante.grupo.municipio,
+                    participante.grupo.municipio.departamento,
+                    participante.formador.nombre,
+                    participante.formador.cedula,
+
                     participante.nombres,
                     participante.apellidos,
                     participante.cedula,

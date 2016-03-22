@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Andes.iml" afterPath="$PROJECT_DIR$/.idea/Andes.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/models.py" afterPath="$PROJECT_DIR$/formacion/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -29,12 +28,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3321617">
+            <state vertical-scroll-proportion="0.0">
               <caret line="194" column="54" selection-start-line="194" selection-start-column="54" selection-end-line="194" selection-end-column="54" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6713533">
+              <caret line="726" column="49" selection-start-line="726" selection-start-column="49" selection-end-line="726" selection-end-column="49" />
+              <folding>
+                <element signature="e#3575#12828#0" expanded="false" />
+                <element signature="e#16160#19239#0" expanded="false" />
+                <element signature="e#22824#27783#0" expanded="false" />
+                <element signature="e#67395#68692#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +132,6 @@
         <option value="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" />
         <option value="$PROJECT_DIR$/static/js/docentes_participantes_evidencias.js" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
-        <option value="$PROJECT_DIR$/truchas/admin.py" />
         <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/templates/formulario_masivo_tipo1.jade" />
         <option value="$PROJECT_DIR$/formacion/forms.py" />
@@ -130,6 +143,7 @@
         <option value="$PROJECT_DIR$/formacion/urls.py" />
         <option value="$PROJECT_DIR$/formacion/views.py" />
         <option value="$PROJECT_DIR$/formacion/models.py" />
+        <option value="$PROJECT_DIR$/truchas/admin.py" />
       </list>
     </option>
   </component>
@@ -168,7 +182,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -198,12 +211,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="formacion" />
+              <option name="myItemId" value="truchas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,12 +481,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Reorganizacion actividades Templates">
-      <created>1457456937713</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1457456937713</updated>
     </task>
     <task id="LOCAL-00080" summary="Cedulas participantes">
       <created>1457459442123</created>
@@ -762,7 +770,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458404853207</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="Valor masivo">
+      <created>1458567584306</created>
+      <option name="number" value="00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1458567584309</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -804,7 +818,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nivel 1 Sesion 2 ok ok ok ok" />
     <MESSAGE value="Prsentaciones ok" />
     <MESSAGE value="Prsentaciones ok ok" />
     <MESSAGE value="Prsentaciones ok ok ok" />
@@ -829,7 +842,8 @@
     <MESSAGE value="Virtual 10 ok" />
     <MESSAGE value="Proyectos" />
     <MESSAGE value="Carga Masiva Docentes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Carga Masiva Docentes" />
+    <MESSAGE value="Valor masivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Valor masivo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1426,17 +1440,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>997</line>
+          <line>1009</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1001</line>
+          <line>1013</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>998</line>
+          <line>1010</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1806,37 +1820,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>853</line>
+          <line>865</line>
           <option name="timeStamp" value="1319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>855</line>
+          <line>867</line>
           <option name="timeStamp" value="1320" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>856</line>
+          <line>868</line>
           <option name="timeStamp" value="1322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>857</line>
+          <line>869</line>
           <option name="timeStamp" value="1323" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>858</line>
+          <line>870</line>
           <option name="timeStamp" value="1324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>859</line>
+          <line>871</line>
           <option name="timeStamp" value="1325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>860</line>
+          <line>872</line>
           <option name="timeStamp" value="1326" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2205,20 +2219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88721806">
-          <caret line="1135" column="54" selection-start-line="1135" selection-start-column="54" selection-end-line="1135" selection-end-column="54" />
-          <folding>
-            <element signature="e#46#78#0" expanded="false" />
-            <element signature="e#3575#12828#0" expanded="false" />
-            <element signature="e#16160#19239#0" expanded="false" />
-            <element signature="e#22824#27783#0" expanded="false" />
-            <element signature="e#66994#68291#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1121495">
@@ -2389,9 +2389,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321617">
+        <state vertical-scroll-proportion="0.0">
           <caret line="194" column="54" selection-start-line="194" selection-start-column="54" selection-end-line="194" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6713533">
+          <caret line="726" column="49" selection-start-line="726" selection-start-column="49" selection-end-line="726" selection-end-column="49" />
+          <folding>
+            <element signature="e#3575#12828#0" expanded="false" />
+            <element signature="e#16160#19239#0" expanded="false" />
+            <element signature="e#22824#27783#0" expanded="false" />
+            <element signature="e#67395#68692#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
