@@ -721,8 +721,8 @@ def reporte_docentes(modeladmin,request,queryset):
                 row = [
                     participante.formador.region.nombre,
 
-                    participante.grupo.municipio,
-                    participante.grupo.municipio.departamento,
+                    participante.grupo.municipio.nombre,
+                    participante.grupo.municipio.departamento.nombre,
                     participante.formador.nombre,
                     participante.formador.cedula,
 
