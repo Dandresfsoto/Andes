@@ -171,7 +171,7 @@ class AsignarDocenteForm(forms.Form):
         self.id_entregable = SoporteEntregableDocente.objects.get(pk=self.soporte).entregable.id
         soporte = SoporteEntregableDocente.objects.get(pk=self.soporte)
 
-        x = SoporteEntregableDocente.objects.filter(entregable__id=self.id_entregable).values_list("id",flat=True)
+        x = SoporteEntregableDocente.objects.filter(grupo__formador__id=soporte.grupo.formador.id).filter(entregable__id=self.id_entregable).values_list("id",flat=True)
 
         x = list(x)
 
@@ -181,7 +181,7 @@ class AsignarDocenteForm(forms.Form):
             x = [x]
 
         y = EvidenciaDocentes.objects.filter(soporte__in=x).values_list("participante__id",flat=True)
-        participantes = ParticipanteDocente.objects.all()
+        participantes = ParticipanteDocente.objects.filter(grupo__formador__id=soporte.grupo.formador.id)
         choices = []
         for participante in participantes:
             if participante.pk in y:
