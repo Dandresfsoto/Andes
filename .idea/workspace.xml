@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/models.py" afterPath="$PROJECT_DIR$/formacion/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participantes/views.py" afterPath="$PROJECT_DIR$/participantes/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -32,46 +31,27 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.137931">
-              <caret line="1664" column="64" selection-start-line="1664" selection-start-column="64" selection-end-line="1664" selection-end-column="64" />
+            <state vertical-scroll-proportion="-6.965517">
+              <caret line="1667" column="59" selection-start-line="1667" selection-start-column="59" selection-end-line="1667" selection-end-column="59" />
               <folding>
                 <element signature="e#35191#43237#0" expanded="false" />
                 <element signature="e#62779#65327#0" expanded="false" />
-                <element signature="e#65459#69629#0" expanded="false" />
+                <element signature="e#65459#69883#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/formacion/models.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74394464">
-              <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/participantes/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.413794">
-              <caret line="153" column="81" selection-start-line="153" selection-start-column="81" selection-end-line="153" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.43822843">
+              <caret line="737" column="88" selection-start-line="737" selection-start-column="88" selection-end-line="737" selection-end-column="88" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/participantes/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="59" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#3575#12828#0" expanded="false" />
+                <element signature="e#16160#19239#0" expanded="false" />
+                <element signature="e#22824#27783#0" expanded="false" />
+                <element signature="e#67409#68706#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pqr/models.py" />
         <option value="$PROJECT_DIR$/static/js/llamadas.js" />
         <option value="$PROJECT_DIR$/static/css/base.styl" />
         <option value="$PROJECT_DIR$/templates/auxiliares.jade" />
@@ -131,7 +110,6 @@
         <option value="$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade" />
         <option value="$PROJECT_DIR$/static/js/docentes_participantes_evidencias.js" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
-        <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/templates/formulario_masivo_tipo1.jade" />
         <option value="$PROJECT_DIR$/formador/urls.py" />
         <option value="$PROJECT_DIR$/formador/views.py" />
@@ -145,6 +123,8 @@
         <option value="C:/xampp/phpMyAdmin/config.inc.php" />
         <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/participantes/views.py" />
+        <option value="C:/Python27/Lib/site-packages/progressbarupload/views.py" />
+        <option value="$PROJECT_DIR$/formacion/admin.py" />
       </list>
     </option>
   </component>
@@ -214,7 +194,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="formacion" />
+              <option name="myItemId" value="truchas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -223,7 +203,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/xampp/phpMyAdmin/config.inc.php" />
+    <property name="last_opened_file_path" value="C:/Python27/Lib/site-packages/progressbarupload/views.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
@@ -488,12 +468,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Eliminar actividades full">
-      <created>1457552414701</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1457552414701</updated>
     </task>
     <task id="LOCAL-00085" summary="Eliminar actividades full OK">
       <created>1457556804873</created>
@@ -783,34 +757,40 @@
       <option name="project" value="LOCAL" />
       <updated>1459176305595</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Certificados">
+      <created>1459277480227</created>
+      <option name="number" value="00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1459277480228</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22108346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04566929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28031495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22108346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34185302" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28115016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@Andes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34185302" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -825,7 +805,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prsentaciones ok ok ok full utf8" />
     <MESSAGE value="Prsentaciones ok ok ok full remove non ascii" />
     <MESSAGE value="Sesion 3 nivel 3" />
     <MESSAGE value="Sesion 3 nivel 3 unicode" />
@@ -850,7 +829,8 @@
     <MESSAGE value="Reporte formacion ok" />
     <MESSAGE value="Todos los participantes" />
     <MESSAGE value="Todos los participantes ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Todos los participantes ok" />
+    <MESSAGE value="Certificados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Certificados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1991,13 +1971,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/conf/static.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/acceso_masivo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2299,19 +2272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19899665">
-          <caret line="731" column="87" selection-start-line="731" selection-start-column="87" selection-end-line="731" selection-end-column="87" />
-          <folding>
-            <element signature="e#3575#12828#0" expanded="false" />
-            <element signature="e#16160#19239#0" expanded="false" />
-            <element signature="e#22824#27783#0" expanded="false" />
-            <element signature="e#67409#68706#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2378,31 +2338,17 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+    <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.137931">
-          <caret line="1664" column="64" selection-start-line="1664" selection-start-column="64" selection-end-line="1664" selection-end-column="64" />
-          <folding>
-            <element signature="e#35191#43237#0" expanded="false" />
-            <element signature="e#62779#65327#0" expanded="false" />
-            <element signature="e#65459#69629#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/participantes/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="59" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.74394464">
+          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/participantes/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.413794">
+        <state vertical-scroll-proportion="0.8235294">
           <caret line="153" column="81" selection-start-line="153" selection-start-column="81" selection-end-line="153" selection-end-column="81" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -2410,11 +2356,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/models.py">
+    <entry file="file://$PROJECT_DIR$/participantes/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74394464">
-          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.14003295">
+          <caret line="5" column="59" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/progressbarupload/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.079254076">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.965517">
+          <caret line="1667" column="59" selection-start-line="1667" selection-start-column="59" selection-end-line="1667" selection-end-column="59" />
+          <folding>
+            <element signature="e#35191#43237#0" expanded="false" />
+            <element signature="e#62779#65327#0" expanded="false" />
+            <element signature="e#65459#69883#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43822843">
+          <caret line="737" column="88" selection-start-line="737" selection-start-column="88" selection-end-line="737" selection-end-column="88" />
+          <folding>
+            <element signature="e#3575#12828#0" expanded="false" />
+            <element signature="e#16160#19239#0" expanded="false" />
+            <element signature="e#22824#27783#0" expanded="false" />
+            <element signature="e#67409#68706#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

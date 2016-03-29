@@ -1620,6 +1620,14 @@ def matriz_escuela_tic(modeladmin,request,queryset):
 
         for participante in chunk:
                 row_num += 1
+                try:
+                    sesion_1 = unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=5).soporte.soporte)
+                except:
+                    sesion_1 = ""
+                try:
+                    sesion_2 = unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=9).soporte.soporte)
+                except:
+                    sesion_2 = ""
                 row = [
                     participante.formador.region.nombre,
                     participante.grupo.municipio.departamento.nombre,
@@ -1639,8 +1647,8 @@ def matriz_escuela_tic(modeladmin,request,queryset):
                     participante.codigo_anspe,
                     participante.tipo_proyecto,
                     participante.grupo_conformacion,
-                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=5).soporte),
-                    unicode(EvidenciaEscuelaTic.objects.filter(participante__id=participante.id).get(entregable__id=9).soporte)
+                    sesion_1,
+                    sesion_2
                 ]
 
                 for col_num in xrange(len(row)):
