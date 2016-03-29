@@ -151,4 +151,4 @@ class ParticipanteViewSet(generics.ListAPIView):
 
     def get_queryset(self):
         cedula = self.kwargs['cedula']
-        return ParticipanteEscuelaTic.objects.filter(cedula=cedula)
+        return ParticipanteEscuelaTic.objects.filter(cedula=cedula,aprobado=True)

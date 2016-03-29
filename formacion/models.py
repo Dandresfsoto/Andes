@@ -98,6 +98,8 @@ class ParticipanteEscuelaTic(models.Model):
     tipo_proyecto = models.CharField(blank=True,max_length=200,null=True)
     grupo_conformacion = models.CharField(blank=True,max_length=200,null=True)
 
+    aprobado = models.BooleanField(default=True)
+
     def __unicode__(self):
         return smart_unicode(self.cedula)
 
