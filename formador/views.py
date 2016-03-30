@@ -718,7 +718,7 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
             raise NotImplementedError("Need to provide a model or implement get_initial_queryset!")
         x = self.kwargs
         y = x['participante__id']
-        qs = self.model.objects.filter(participante__id=y).order_by('entregable')
+        qs = self.model.objects.filter(participante__id=y,entregable__id__in=[1,3,5,7,21,23,29,31,33,41,43,45,47,11,13,15,17,9,27,35,37,39,60]).order_by('entregable')
         c = qs.values_list('entregable__id',flat=True)
         return qs
 

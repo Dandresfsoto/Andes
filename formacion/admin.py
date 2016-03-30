@@ -19,7 +19,7 @@ from django.core.files import File
 from .models import RevisionInterventoriaEscuelaTic, RevisionInterventoriaDocente, RevisionInterventoriaDocenteSoporte, RevisionInterventoriaEscuelaTicSoporte
 from .models import RevisionInterventoriaDocenteSoporteActividades, RevisionInterventoriaEscuelaTicSoporteActividades
 from django.shortcuts import HttpResponseRedirect
-from formacion.models import AreaCurricular,Grado,Genero,Competencias, GrupoPoblacional
+from formacion.models import AreaCurricular,Grado,Genero,Competencias, GrupoPoblacional, CargaMasivaListados
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -1682,3 +1682,12 @@ admin.site.register(Grado)
 admin.site.register(Genero)
 admin.site.register(Competencias)
 admin.site.register(GrupoPoblacional)
+
+
+
+
+class RevisionInterventoriaEscuelaTicAdmin(admin.ModelAdmin):
+    list_display = ['participante']
+    ordering = ['id']
+    actions = [reporte_escuela_tic_revisados,matriz_escuela_tic]
+admin.site.register(CargaMasivaListados)

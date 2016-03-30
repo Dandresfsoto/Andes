@@ -268,7 +268,6 @@ class Masivo(models.Model):
     def __unicode__(self):
         return smart_unicode(self.fecha)
 
-
 class MasivoDocente(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     grupo = models.ForeignKey(GrupoDocentes)
@@ -278,7 +277,6 @@ class MasivoDocente(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.fecha)
-
 
 class SoporteEntregableEscuelaTic(models.Model):
     grupo = models.ForeignKey(Grupo)
@@ -345,7 +343,6 @@ class RevisionInterventoriaDocenteSoporte(models.Model):
     def __unicode__(self):
         return smart_unicode(self.fecha)
 
-
 class RevisionInterventoriaDocenteSoporteActividades(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     usuario = models.ForeignKey(User)
@@ -354,7 +351,6 @@ class RevisionInterventoriaDocenteSoporteActividades(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.fecha)
-
 
 class RevisionInterventoriaEscuelaTic(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
@@ -384,3 +380,11 @@ class RevisionInterventoriaEscuelaTicSoporteActividades(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.fecha)
+
+class CargaMasivaListados(models.Model):
+    archivo = models.FileField(upload_to='Carga Masiva Listados')
+    soportes = models.FileField(upload_to='Carga Masiva Listados')
+    resultado = models.FileField(upload_to='Carga Masiva Listados',null=True, blank=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.archivo)
