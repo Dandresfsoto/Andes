@@ -1519,7 +1519,7 @@ def reporte_proyectos(modeladmin,request,queryset):
 
 
 
-        for participante in EvidenciaDocentes.objects.filter(evidencia__id=60).exclude(soporte__soporte=None):
+        for participante in EvidenciaDocentes.objects.filter(entregable__id=60).exclude(soporte__soporte=None):
                 row_num += 1
                 row = [
                     participante.participante.region.nombre,
