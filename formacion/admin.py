@@ -1475,10 +1475,82 @@ def reporte_docentes_revisados(modeladmin,request,queryset):
 reporte_docentes_revisados.short_description = "Reporte Docentes"
 
 
+
+def reporte_proyectos(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Reporte Docentes.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Reporte Proyectos"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Reporte Proyectos'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Region',30]),
+                   tuple(['Formador',30]),
+                   tuple(['Nombres',30]),
+                   tuple(['Apellidos',30]),
+                   tuple(['Cedula',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+
+        for participante in EvidenciaDocentes.objects.filter(evidencia__id=60).exclude(soporte__soporte=None):
+                row_num += 1
+                row = [
+                    participante.participante.region.nombre,
+                    participante.participante.formador.nombre,
+                    participante.participante.nombres,
+                    participante.participante.apellidos,
+                    participante.participante.cedula,
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+reporte_proyectos.short_description = "Reporte Proyectos"
+
+
+
 class RevisionInterventoriaDocenteAdmin(admin.ModelAdmin):
     list_display = ['participante']
     ordering = ['id']
-    actions = [reporte_docentes_revisados]
+    actions = [reporte_docentes_revisados,reporte_proyectos]
 
 admin.site.register(RevisionInterventoriaDocente,RevisionInterventoriaDocenteAdmin)
 
