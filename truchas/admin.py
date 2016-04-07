@@ -681,30 +681,30 @@ def reporte_docentes(modeladmin,request,queryset):
                    tuple(['Nivel 4 - Sesión 4',30]),
                    tuple(['Nivel 4 - Sesión 5',30]),
 
-                   tuple(['Nivel 1 - v 1',30]),
-                   tuple(['Nivel 1 - v 2',30]),
-                   tuple(['Nivel 1 - v 3',30]),
-                   tuple(['Nivel 1 - v 4',30]),
-                   tuple(['Nivel 1 - v 5',30]),
-                   tuple(['Nivel 1 - v 6',30]),
-                   tuple(['Nivel 1 - v 7',30]),
-                   tuple(['Nivel 1 - v 8',30]),
+                   #tuple(['Nivel 1 - v 1',30]),
+                   #tuple(['Nivel 1 - v 2',30]),
+                   #tuple(['Nivel 1 - v 3',30]),
+                   #tuple(['Nivel 1 - v 4',30]),
+                   #tuple(['Nivel 1 - v 5',30]),
+                   #tuple(['Nivel 1 - v 6',30]),
+                   #tuple(['Nivel 1 - v 7',30]),
+                   #tuple(['Nivel 1 - v 8',30]),
 
-                   tuple(['Nivel 2 - v 9',30]),
-                   tuple(['Nivel 2 - v 10',30]),
-                   tuple(['Nivel 2 - v 11',30]),
+                   #tuple(['Nivel 2 - v 9',30]),
+                   #tuple(['Nivel 2 - v 10',30]),
+                   #tuple(['Nivel 2 - v 11',30]),
 
-                   tuple(['Nivel 3 - v 12',30]),
-                   tuple(['Nivel 3 - v 13',30]),
-                   tuple(['Nivel 3 - v 14',30]),
-                   tuple(['Nivel 3 - v 15',30]),
-                   tuple(['Nivel 3 - v 16',30]),
-                   tuple(['Nivel 3 - v 17',30]),
+                   #tuple(['Nivel 3 - v 12',30]),
+                   #tuple(['Nivel 3 - v 13',30]),
+                   #tuple(['Nivel 3 - v 14',30]),
+                   #tuple(['Nivel 3 - v 15',30]),
+                   #tuple(['Nivel 3 - v 16',30]),
+                   #tuple(['Nivel 3 - v 17',30]),
 
-                   tuple(['Nivel 4 - v 18',30]),
-                   tuple(['Nivel 4 - v 19',30]),
-                   tuple(['Nivel 4 - v 20',30]),
-                   tuple(['Nivel 4 - v 21',30]),
+                   #tuple(['Nivel 4 - v 18',30]),
+                   #tuple(['Nivel 4 - v 19',30]),
+                   #tuple(['Nivel 4 - v 20',30]),
+                   #tuple(['Nivel 4 - v 21',30]),
                    ]
 
         for col_num in xrange(len(columns)):
@@ -717,6 +717,79 @@ def reporte_docentes(modeladmin,request,queryset):
 
         for participante in ParticipanteDocente.objects.all():
                 evidencias = EvidenciaDocentes.objects.filter(participante__id=participante.id)
+
+                try:
+                    ac1 = evidencias.get(entregable__id=1).soporte.soporte
+                except:
+                    ac1 = ""
+
+                try:
+                    ac2 = evidencias.get(entregable__id=3).soporte.soporte
+                except:
+                    ac2 = ""
+
+                try:
+                    ac3 = evidencias.get(entregable__id=5).soporte.soporte
+                except:
+                    ac3 = ""
+
+                try:
+                    ac4 = evidencias.get(entregable__id=7).soporte.soporte
+                except:
+                    ac4 = ""
+
+                try:
+                    ac5 = evidencias.get(entregable__id=21).soporte.soporte
+                except:
+                    ac5 = ""
+
+                try:
+                    ac6 = evidencias.get(entregable__id=23).soporte.soporte
+                except:
+                    ac6 = ""
+
+                try:
+                    ac7 = evidencias.get(entregable__id=29).soporte.soporte
+                except:
+                    ac7 = ""
+
+                try:
+                    ac8 = evidencias.get(entregable__id=31).soporte.soporte
+                except:
+                    ac8 = ""
+
+                try:
+                    ac9 = evidencias.get(entregable__id=33).soporte.soporte
+                except:
+                    ac9 = ""
+
+
+                try:
+                    ac10 = evidencias.get(entregable__id=41).soporte.soporte
+                except:
+                    ac10 = ""
+
+                try:
+                    ac11 = evidencias.get(entregable__id=43).soporte.soporte
+                except:
+                    ac11 = ""
+
+                try:
+                    ac12 = evidencias.get(entregable__id=45).soporte.soporte
+                except:
+                    ac12 = ""
+
+                try:
+                    ac13 = evidencias.get(entregable__id=47).soporte.soporte
+                except:
+                    ac13 = ""
+
+                try:
+                    ac14 = evidencias.get(entregable__id=49).soporte.soporte
+                except:
+                    ac14 = ""
+
+
                 row_num += 1
                 row = [
                     participante.formador.region.nombre,
@@ -729,42 +802,46 @@ def reporte_docentes(modeladmin,request,queryset):
                     participante.nombres,
                     participante.apellidos,
                     participante.cedula,
-                    "Si" if evidencias.get(entregable__id=1).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=3).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=5).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=7).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=21).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=23).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=29).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=31).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=33).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=41).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=43).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=45).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=47).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=49).soporte != None else "No",
 
-                    "Si" if evidencias.get(entregable__id=11).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=11).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=13).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=15).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=17).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=17).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=9).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=9).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=25).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=26).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=27).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=35).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=36).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=37).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=38).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=39).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=40).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=51).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=53).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=55).soporte != None else "No",
-                    "Si" if evidencias.get(entregable__id=59).soporte != None else "No",
+
+                    ac1,
+                    ac2,
+                    ac3,
+                    ac4,
+                    ac5,
+                    ac6,
+                    ac7,
+                    ac8,
+                    ac9,
+                    ac10,
+                    ac11,
+                    ac12,
+                    ac13,
+                    ac14,
+
+
+
+                    #evidencias.get(entregable__id=11).soporte,
+                    #evidencias.get(entregable__id=11).soporte,
+                    #evidencias.get(entregable__id=13).soporte,
+                    #evidencias.get(entregable__id=15).soporte,
+                    #evidencias.get(entregable__id=17).soporte,
+                    #evidencias.get(entregable__id=17).soporte,
+                    #evidencias.get(entregable__id=9).soporte,
+                    #evidencias.get(entregable__id=9).soporte,
+                    #evidencias.get(entregable__id=25).soporte,
+                    #evidencias.get(entregable__id=26).soporte,
+                    #evidencias.get(entregable__id=27).soporte,
+                    #evidencias.get(entregable__id=35).soporte,
+                    #evidencias.get(entregable__id=36).soporte,
+                    #evidencias.get(entregable__id=37).soporte,
+                    #evidencias.get(entregable__id=38).soporte,
+                    #evidencias.get(entregable__id=39).soporte,
+                    #evidencias.get(entregable__id=40).soporte,
+                    #evidencias.get(entregable__id=51).soporte,
+                    #evidencias.get(entregable__id=53).soporte,
+                    #evidencias.get(entregable__id=55).soporte,
+                    #evidencias.get(entregable__id=59).soporte,
 
                 ]
 
