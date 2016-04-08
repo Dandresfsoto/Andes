@@ -284,10 +284,7 @@ def carga_n1_s2(modeladmin,request,queryset):
 
         row_num = 5
 
-        columns = [tuple(['CEDULA',30]),
-                   tuple(['CODIGO',30]),
-                   tuple(['RESULTADO',30]),
-                   ]
+        columns = [tuple(['CEDULA',30]),tuple(['CODIGO',30]),tuple(['RESULTADO',30])]
 
         for col_num in xrange(len(columns)):
             c = hoja1.cell(row=row_num, column=col_num+1)
@@ -1022,6 +1019,73 @@ admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
 admin.site.register(ParticipanteN1_S2)
 
+
+def listado(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Reporte Formadores.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        logo.drawing.top = 10
+        logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Listado"
+        hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Listado'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Listado'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['Grupo',30]),
+                   tuple(['Cedulas',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+
+        for codigo in CodigoMasivoN1_S2.objects.all():
+                row_num += 1
+                row = [
+                    codigo.codigo,
+                    unicode(ParticipanteN1_S2.objects.filter(codigo_masivo = codigo).values_list('participante__cedula',flat=True))
+                ]
+
+                for col_num in xrange(len(row)):
+                    c = hoja1.cell(row=row_num, column=col_num+1)
+                    if row[col_num] == True:
+                        c.value = "SI"
+                    if row[col_num] == False:
+                        c.value = "NO"
+                    if row[col_num] == None:
+                        c.value = ""
+                    else:
+                        c.value = row[col_num]
+                    c.style = co
+
+        archivo.save(response)
+        return response
+listado.short_description = "Listado en filas"
+
+
+
+
 '''
 def generar_sesion2_n1(modeladmin,request,queryset):
     for codigo in queryset:
@@ -1071,7 +1135,7 @@ generar_sesion2_n1.short_description = "Generar presentaciones"
 class CodigoMasivoN1_S2Admin(admin.ModelAdmin):
     list_display = ['codigo']
     ordering = ['codigo']
-    actions = []
+    actions = [listado]
 admin.site.register(CodigoMasivoN1_S2,CodigoMasivoN1_S2Admin)
 
 def generar_listas(modeladmin,request,queryset):
