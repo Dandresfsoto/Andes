@@ -31,7 +31,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formacion/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.62069">
+            <state vertical-scroll-proportion="0.0">
               <caret line="288" column="30" selection-start-line="288" selection-start-column="6" selection-end-line="288" selection-end-column="30" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -82,8 +82,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7561779">
-              <caret line="819" column="34" selection-start-line="819" selection-start-column="34" selection-end-line="819" selection-end-column="34" />
+            <state vertical-scroll-proportion="-6.561779">
+              <caret line="694" column="34" selection-start-line="694" selection-start-column="34" selection-end-line="694" selection-end-column="34" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#3575#12828#0" expanded="false" />
@@ -95,7 +95,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.62069">
+            <state vertical-scroll-proportion="0.0">
               <caret line="39" column="23" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="23" />
               <folding />
             </state>
@@ -206,7 +206,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
@@ -234,7 +234,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,6 +282,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -552,12 +552,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Carga Masiva Virtual">
-      <created>1457711103195</created>
-      <option name="number" value="00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1457711103195</updated>
     </task>
     <task id="LOCAL-00094" summary="Carga Masiva Virtual ok">
       <created>1457712700394</created>
@@ -847,16 +841,21 @@
       <option name="project" value="LOCAL" />
       <updated>1460073053155</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="Reporte docentes presencial ok">
+      <created>1460073217663</created>
+      <option name="number" value="00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1460073217663</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22108346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -866,6 +865,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -889,7 +889,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sesion 1 nivel 3 ok" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok utf8" />
@@ -914,7 +913,8 @@
     <MESSAGE value="Reporte proyectos ok" />
     <MESSAGE value="Reporte proyectos ok 2" />
     <MESSAGE value="Reporte docentes presencial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reporte docentes presencial" />
+    <MESSAGE value="Reporte docentes presencial ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reporte docentes presencial ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1511,17 +1511,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1086</line>
+          <line>1171</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1090</line>
+          <line>1175</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1087</line>
+          <line>1172</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -1891,37 +1891,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>942</line>
+          <line>1027</line>
           <option name="timeStamp" value="1319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>944</line>
+          <line>1029</line>
           <option name="timeStamp" value="1320" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>945</line>
+          <line>1030</line>
           <option name="timeStamp" value="1322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>946</line>
+          <line>1031</line>
           <option name="timeStamp" value="1323" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>947</line>
+          <line>1032</line>
           <option name="timeStamp" value="1324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>948</line>
+          <line>1033</line>
           <option name="timeStamp" value="1325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>949</line>
+          <line>1034</line>
           <option name="timeStamp" value="1326" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2302,13 +2302,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/formulario_asignar_soporte_tipo1.jade">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.83196044">
           <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/participantes/views.py">
@@ -2455,7 +2455,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.62069">
+        <state vertical-scroll-proportion="0.0">
           <caret line="39" column="23" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="23" />
           <folding />
         </state>
@@ -2463,7 +2463,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.62069">
+        <state vertical-scroll-proportion="0.0">
           <caret line="288" column="30" selection-start-line="288" selection-start-column="6" selection-end-line="288" selection-end-column="30" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -2502,8 +2502,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7561779">
-          <caret line="819" column="34" selection-start-line="819" selection-start-column="34" selection-end-line="819" selection-end-column="34" />
+        <state vertical-scroll-proportion="-6.561779">
+          <caret line="694" column="34" selection-start-line="694" selection-start-column="34" selection-end-line="694" selection-end-column="34" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#3575#12828#0" expanded="false" />

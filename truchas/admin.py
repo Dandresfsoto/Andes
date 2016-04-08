@@ -681,18 +681,18 @@ def reporte_docentes(modeladmin,request,queryset):
                    tuple(['Nivel 4 - Sesión 4',30]),
                    tuple(['Nivel 4 - Sesión 5',30]),
 
-                   #tuple(['Nivel 1 - v 1',30]),
-                   #tuple(['Nivel 1 - v 2',30]),
-                   #tuple(['Nivel 1 - v 3',30]),
-                   #tuple(['Nivel 1 - v 4',30]),
-                   #tuple(['Nivel 1 - v 5',30]),
-                   #tuple(['Nivel 1 - v 6',30]),
-                   #tuple(['Nivel 1 - v 7',30]),
-                   #tuple(['Nivel 1 - v 8',30]),
+                   tuple(['Nivel 1 - Cuestionario Explorando portales educativos',30]),
+                   tuple(['Nivel 1 - Participación  en el foro socializando la secuencia didáctica con reda (presentación en Power Point)',30]),
+                   tuple(['Nivel 1 - Documento resultado de la aplicación de la prueba',30]),
+                   tuple(['Nivel 1 - Guía 4: diseñando el cuestionario diagnóstico',30]),
+                   tuple(['Nivel 1 - Aprobación al menos con un 60% de la evaluación del Nivel 1',30]),
+                   tuple(['Nivel 2 - Gestor de proyectos',30]),
+                   tuple(['Nivel 2 - Documento refuerzo',30]),
+                   tuple(['Nivel 3 - Presentación en Prezi,  Powtoon, Slideshare o Power Point  con los resultados de la ejecución del Proyecto Educativo TIC.',30]),
 
-                   #tuple(['Nivel 2 - v 9',30]),
-                   #tuple(['Nivel 2 - v 10',30]),
-                   #tuple(['Nivel 2 - v 11',30]),
+                   tuple(['Nivel 3 - 1. Un documento en Word  con las tres conclusiones. 2. Un documento de Excel con los resultados de la prueba estandarizada.',30]),
+                   tuple(['Nivel 3 - Cuestionario: Evaluando competencias adquiridas.',30]),
+                   tuple(['Nivel 4 - Gestor de proyectos',30]),
 
                    #tuple(['Nivel 3 - v 12',30]),
                    #tuple(['Nivel 3 - v 13',30]),
@@ -790,6 +790,79 @@ def reporte_docentes(modeladmin,request,queryset):
                     ac14 = ""
 
 
+
+                try:
+                    av1 = evidencias.get(entregable__id=11).soporte.soporte
+                except:
+                    av1 = ""
+
+
+                try:
+                    av2 = evidencias.get(entregable__id=13).soporte.soporte
+                except:
+                    av2 = ""
+
+                try:
+                    av3 = evidencias.get(entregable__id=15).soporte.soporte
+                except:
+                    av3 = ""
+
+
+                try:
+                    av4 = evidencias.get(entregable__id=17).soporte.soporte
+                except:
+                    av4 = ""
+
+
+                try:
+                    av5 = evidencias.get(entregable__id=9).soporte.soporte
+                except:
+                    av5 = ""
+
+
+                try:
+                    av6 = evidencias.get(entregable__id=60).soporte.soporte
+                except:
+                    av6 = ""
+
+
+                try:
+                    av7 = evidencias.get(entregable__id=27).soporte.soporte
+                except:
+                    av7 = ""
+
+
+                try:
+                    av8 = evidencias.get(entregable__id=35).soporte.soporte
+                except:
+                    av8 = ""
+
+
+
+                try:
+                    av9 = evidencias.get(entregable__id=37).soporte.soporte
+                except:
+                    av9 = ""
+
+
+
+                try:
+                    av10 = evidencias.get(entregable__id=39).soporte.soporte
+                except:
+                    av10 = ""
+
+
+                try:
+                    av11 = evidencias.get(entregable__id=60).soporte.soporte
+                except:
+                    av11 = ""
+
+
+
+
+
+
+
                 row_num += 1
                 row = [
                     participante.formador.region.nombre,
@@ -818,6 +891,18 @@ def reporte_docentes(modeladmin,request,queryset):
                     unicode(ac12),
                     unicode(ac13),
                     unicode(ac14),
+
+                    unicode(av1),
+                    unicode(av2),
+                    unicode(av3),
+                    unicode(av4),
+                    unicode(av5),
+                    unicode(av6),
+                    unicode(av7),
+                    unicode(av8),
+                    unicode(av9),
+                    unicode(av10),
+                    unicode(av11),
 
 
 
