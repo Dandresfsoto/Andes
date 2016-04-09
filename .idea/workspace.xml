@@ -41,9 +41,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47058824">
-              <caret line="752" column="104" selection-start-line="752" selection-start-column="104" selection-end-line="752" selection-end-column="104" />
+            <state vertical-scroll-proportion="0.20588236">
+              <caret line="752" column="134" selection-start-line="752" selection-start-column="134" selection-end-line="752" selection-end-column="134" />
               <folding>
+                <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#4261#7283#0" expanded="false" />
                 <element signature="e#7338#8888#0" expanded="false" />
                 <element signature="e#8948#10508#0" expanded="false" />
@@ -52,11 +53,11 @@
                 <element signature="e#14072#15193#0" expanded="false" />
                 <element signature="e#16456#17856#0" expanded="false" />
                 <element signature="e#17913#19837#0" expanded="false" />
-                <element signature="e#22132#23697#0" expanded="false" />
-                <element signature="e#23757#25133#0" expanded="false" />
-                <element signature="e#25201#26593#0" expanded="false" />
-                <element signature="e#26664#29224#0" expanded="false" />
-                <element signature="e#29303#32075#0" expanded="false" />
+                <element signature="e#22162#23727#0" expanded="false" />
+                <element signature="e#23787#25163#0" expanded="false" />
+                <element signature="e#25231#26623#0" expanded="false" />
+                <element signature="e#26694#29254#0" expanded="false" />
+                <element signature="e#29333#32105#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -504,12 +505,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00099" summary="Nivel 1 Sesion 2 ok">
-      <created>1457822773275</created>
-      <option name="number" value="00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1457822773275</updated>
-    </task>
     <task id="LOCAL-00100" summary="Nivel 1 Sesion 2 ok ok">
       <created>1457823458955</created>
       <option name="number" value="00100" />
@@ -798,7 +793,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460163704068</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="Random ev ok ok ok">
+      <created>1460163801984</created>
+      <option name="number" value="00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1460163801984</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -840,7 +841,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Virtual 9" />
     <MESSAGE value="Virtual 10" />
     <MESSAGE value="Virtual 10 ok" />
     <MESSAGE value="Proyectos" />
@@ -865,7 +865,8 @@
     <MESSAGE value="Random ev" />
     <MESSAGE value="Random ev ok" />
     <MESSAGE value="Random ev ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random ev ok ok" />
+    <MESSAGE value="Random ev ok ok ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random ev ok ok ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2448,9 +2449,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47058824">
-          <caret line="752" column="104" selection-start-line="752" selection-start-column="104" selection-end-line="752" selection-end-column="104" />
+        <state vertical-scroll-proportion="0.20588236">
+          <caret line="752" column="134" selection-start-line="752" selection-start-column="134" selection-end-line="752" selection-end-column="134" />
           <folding>
+            <element signature="e#0#28#0" expanded="true" />
             <element signature="e#4261#7283#0" expanded="false" />
             <element signature="e#7338#8888#0" expanded="false" />
             <element signature="e#8948#10508#0" expanded="false" />
@@ -2459,11 +2461,11 @@
             <element signature="e#14072#15193#0" expanded="false" />
             <element signature="e#16456#17856#0" expanded="false" />
             <element signature="e#17913#19837#0" expanded="false" />
-            <element signature="e#22132#23697#0" expanded="false" />
-            <element signature="e#23757#25133#0" expanded="false" />
-            <element signature="e#25201#26593#0" expanded="false" />
-            <element signature="e#26664#29224#0" expanded="false" />
-            <element signature="e#29303#32075#0" expanded="false" />
+            <element signature="e#22162#23727#0" expanded="false" />
+            <element signature="e#23787#25163#0" expanded="false" />
+            <element signature="e#25231#26623#0" expanded="false" />
+            <element signature="e#26694#29254#0" expanded="false" />
+            <element signature="e#29333#32105#0" expanded="false" />
           </folding>
         </state>
       </provider>

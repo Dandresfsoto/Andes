@@ -750,7 +750,7 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
 
             if s == "":
                 #soporte = ""
-                soporte = unicode(EvidenciaDocentes.objects.exclude(soporte = None)[40].soporte.soporte)
+                soporte = unicode('Formacion/Formadores Tipo 1/Region 4/Lilian Nayibe Villamizar Cote/F1Nort1-01/NIVEL 2/21/1_42.pdf')
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([
