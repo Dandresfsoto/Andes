@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion/admin.py" afterPath="$PROJECT_DIR$/formacion/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formador/views.py" afterPath="$PROJECT_DIR$/formador/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -42,8 +41,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formador/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38235295">
-              <caret line="749" column="66" selection-start-line="749" selection-start-column="66" selection-end-line="749" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.2647059">
+              <caret line="745" column="42" selection-start-line="745" selection-start-column="42" selection-end-line="745" selection-end-column="42" />
               <folding>
                 <element signature="e#4261#7283#0" expanded="false" />
                 <element signature="e#7338#8888#0" expanded="false" />
@@ -53,11 +52,11 @@
                 <element signature="e#14072#15193#0" expanded="false" />
                 <element signature="e#16456#17856#0" expanded="false" />
                 <element signature="e#17913#19837#0" expanded="false" />
-                <element signature="e#22137#23702#0" expanded="false" />
-                <element signature="e#23762#25138#0" expanded="false" />
-                <element signature="e#25206#26598#0" expanded="false" />
-                <element signature="e#26669#29229#0" expanded="false" />
-                <element signature="e#29308#32080#0" expanded="false" />
+                <element signature="e#22033#23598#0" expanded="false" />
+                <element signature="e#23658#25034#0" expanded="false" />
+                <element signature="e#25102#26494#0" expanded="false" />
+                <element signature="e#26565#29125#0" expanded="false" />
+                <element signature="e#29204#31976#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -505,12 +504,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00096" summary="Nivel 4 ok">
-      <created>1457804766059</created>
-      <option name="number" value="00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1457804766061</updated>
-    </task>
     <task id="LOCAL-00097" summary="Participantes">
       <created>1457816698553</created>
       <option name="number" value="00097" />
@@ -799,7 +792,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460149727407</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Random ev">
+      <created>1460162814020</created>
+      <option name="number" value="00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1460162814020</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -841,7 +840,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sesion 2.1 nivel 3 ok ok utf8" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode" />
     <MESSAGE value="Sesion 2.1 nivel 3 ok ok unicode ok" />
     <MESSAGE value="Virtual 9" />
@@ -866,7 +864,8 @@
     <MESSAGE value="Reporte docentes presencial ok" />
     <MESSAGE value="Reporte docentes presencial y virtual ok" />
     <MESSAGE value="Listado filas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listado filas" />
+    <MESSAGE value="Random ev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random ev" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1478,12 +1477,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>806</line>
+          <line>804</line>
           <option name="timeStamp" value="1198" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/formador/views.py</url>
-          <line>805</line>
+          <line>803</line>
           <option name="timeStamp" value="1200" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2449,8 +2448,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formador/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38235295">
-          <caret line="749" column="66" selection-start-line="749" selection-start-column="66" selection-end-line="749" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.2647059">
+          <caret line="745" column="42" selection-start-line="745" selection-start-column="42" selection-end-line="745" selection-end-column="42" />
           <folding>
             <element signature="e#4261#7283#0" expanded="false" />
             <element signature="e#7338#8888#0" expanded="false" />
@@ -2460,11 +2459,11 @@
             <element signature="e#14072#15193#0" expanded="false" />
             <element signature="e#16456#17856#0" expanded="false" />
             <element signature="e#17913#19837#0" expanded="false" />
-            <element signature="e#22137#23702#0" expanded="false" />
-            <element signature="e#23762#25138#0" expanded="false" />
-            <element signature="e#25206#26598#0" expanded="false" />
-            <element signature="e#26669#29229#0" expanded="false" />
-            <element signature="e#29308#32080#0" expanded="false" />
+            <element signature="e#22033#23598#0" expanded="false" />
+            <element signature="e#23658#25034#0" expanded="false" />
+            <element signature="e#25102#26494#0" expanded="false" />
+            <element signature="e#26565#29125#0" expanded="false" />
+            <element signature="e#29204#31976#0" expanded="false" />
           </folding>
         </state>
       </provider>
