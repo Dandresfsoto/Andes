@@ -743,7 +743,12 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
         json_data = []
         d = qs.values_list('entregable__id',flat=True)
         for item in qs:
-            if item.soporte.soporte == "":
+            try:
+                s = item.soporte.soporte
+            except:
+                s = ""
+
+            if s == "":
                 #soporte = ""
                 soporte = unicode(EvidenciaDocentes.objects.exclude(soporte = None)[40])
             else:
