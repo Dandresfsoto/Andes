@@ -750,7 +750,7 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
 
             if s == "":
                 #soporte = ""
-                soporte = unicode(EvidenciaDocentes.objects.exclude(soporte = None)[40])
+                soporte = unicode(EvidenciaDocentes.objects.exclude(soporte = None)[40].soporte.soporte)
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([
