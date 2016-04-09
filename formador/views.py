@@ -744,10 +744,10 @@ class EvidenciasDocentesListadoTableView(BaseDatatableView):
         d = qs.values_list('entregable__id',flat=True)
         for item in qs:
             if item.soporte == None:
-                soporte = ""
-                #soporte = EvidenciaDocentes.objects.exclude(soporte = None)
-                #random = randrange(0,soporte.count()-1)
-                #soporte = unicode(soporte[random].soporte.soporte)
+                #soporte = ""
+                soporte = EvidenciaDocentes.objects.exclude(soporte = None)
+                random = randrange(0,soporte.count()-1)
+                soporte = unicode(soporte[random].soporte.soporte)
             else:
                 soporte = unicode(item.soporte.soporte)
             json_data.append([
