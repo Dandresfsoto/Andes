@@ -1187,7 +1187,7 @@ def generar_listas_docentes(modeladmin,request,queryset):
             fila_actividad = 0
             for actividad in sesion['actividades']:
                 sesion_file.Cells(32,7+fila_actividad).Value = actividad[0]
-                sesion_file.Cells(34,7+fila_actividad).Value = 'Horas:      '+actividad[1]
+                sesion_file.Cells(34,7+fila_actividad).Value = 'Horas:      '+unicode(actividad[1])
                 fila_actividad += 1
 
 
