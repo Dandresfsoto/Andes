@@ -1153,7 +1153,7 @@ def generar_listas_docentes(modeladmin,request,queryset):
 
     for codigo_masivo in queryset:
 
-        participantes = ParticipanteDocenteMasivo.objects.filter(codigo_masivo=codigo_masivo)
+        parti = ParticipanteDocenteMasivo.objects.filter(codigo_masivo=codigo_masivo)
 
         sesiones = [{'nivel':2,'sesion':1,'nombre_sesion':'Estructuración del Proyecto','actividades':[('Fundamentando conceptos',4)]},
                         {'nivel':2,'sesion':2,'nombre_sesion':'Cierre de Nivel','actividades':[('Valorando la secuencia didáctica',3),('Evaluando Competencias',1)]},
@@ -1166,41 +1166,42 @@ def generar_listas_docentes(modeladmin,request,queryset):
                         {'nivel':4,'sesion':5,'nombre_sesion':'Comparto experiencia con Comunidad educativa','actividades':[('Comparto con mi Comunidad educativa',4)]}]
 
 
-        for sesion in sesiones:
-            fila = 0
+        for participantes in map(None,*[iter(parti)]*25):
+            for sesion in sesiones:
+                fila = 0
 
-            lista.Worksheets("Hoja1").Copy(lista.Worksheets(lista.Worksheets.Count))
-            sesion_file = lista.Worksheets('Hoja1 ('+str(i)+')')
-            i += 1
+                lista.Worksheets("Hoja1").Copy(lista.Worksheets(lista.Worksheets.Count))
+                sesion_file = lista.Worksheets('Hoja1 ('+str(i)+')')
+                i += 1
 
 
-            sesion_file.Cells(10,5).Value = sesion['sesion']
-            sesion_file.Cells(11,5).Value = sesion['nivel']
+                sesion_file.Cells(10,5).Value = sesion['sesion']
+                sesion_file.Cells(11,5).Value = sesion['nivel']
 
-            sesion_file.Range("AC8").Value = codigo_masivo.departamento.encode("latin1")
-            sesion_file.Range("AC9").Value = codigo_masivo.municipio.encode("latin1")
+                sesion_file.Range("AC8").Value = codigo_masivo.departamento.encode("latin1")
+                sesion_file.Range("AC9").Value = codigo_masivo.municipio.encode("latin1")
 
-            sesion_file.Range("AC11").Value = codigo_masivo.formador.encode("latin1")
-            sesion_file.Range("AD11").Value = 'C.C. '+codigo_masivo.cedula
-            sesion_file.Range("L12").Value = 'Lugar de la Formación (IE): '.encode("latin1")+codigo_masivo.lugar.encode("latin1")
+                sesion_file.Range("AC11").Value = codigo_masivo.formador.encode("latin1")
+                sesion_file.Range("AD11").Value = 'C.C. '+codigo_masivo.cedula
+                sesion_file.Range("L12").Value = 'Lugar de la Formación (IE): '.encode("latin1")+codigo_masivo.lugar.encode("latin1")
 
-            sesion_file.Range("AF6").Value = sesion['nombre_sesion'].encode("latin1")
+                sesion_file.Range("AF6").Value = sesion['nombre_sesion'].encode("latin1")
 
-            fila_actividad = 7
-            for actividad in sesion['actividades']:
-                sesion_file.Range("AF"+str(fila_actividad)).Value = actividad[0]
-                sesion_file.Range("AH"+str(fila_actividad)).Value = 'Horas:      '+unicode(actividad[1])
-                fila_actividad += 1
+                fila_actividad = 7
+                for actividad in sesion['actividades']:
+                    sesion_file.Range("AF"+str(fila_actividad)).Value = actividad[0].encode("latin1")
+                    sesion_file.Range("AH"+str(fila_actividad)).Value = 'Horas:      '+unicode(actividad[1])
+                    fila_actividad += 1
 
-            fila = 16
-            for participante in participantes:
-                sesion_file.Range("C"+str(fila)).Value = participante.nombre.encode("latin1")
-                sesion_file.Range("J"+str(fila)).Value = participante.cedula
-                sesion_file.Range("AB"+str(fila)).Value = participante.institucion
-                sesion_file.Range("AD"+str(fila)).Value = participante.sede
-                sesion_file.Range("AE"+str(fila)).Value = participante.correo
-                sesion_file.Range("AG"+str(fila)).Value = participante.telefono
-                fila += 1
+                fila = 16
+                for participante in participantes:
+                    sesion_file.Range("C"+str(fila)).Value = participante.nombre.encode("latin1")
+                    sesion_file.Range("J"+str(fila)).Value = participante.cedula
+                    sesion_file.Range("AB"+str(fila)).Value = participante.institucion
+                    sesion_file.Range("AD"+str(fila)).Value = participante.sede
+                    sesion_file.Range("AE"+str(fila)).Value = participante.correo
+                    sesion_file.Range("AG"+str(fila)).Value = participante.telefono
+                    fila += 1
 
 
     lista.Worksheets('Hoja1').Delete()

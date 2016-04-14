@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/formatos/Listado Asistencia 2.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/formatos/Listado Asistencia.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -43,12 +45,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82871974">
-              <caret line="1201" column="79" selection-start-line="1201" selection-start-column="79" selection-end-line="1201" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.14705883">
+              <caret line="1168" column="57" selection-start-line="1168" selection-start-column="57" selection-end-line="1168" selection-end-column="57" />
               <folding>
                 <element signature="e#39243#41736#0" expanded="false" />
-                <element signature="e#51849#55265#0" expanded="false" />
-                <element signature="e#55378#56470#0" expanded="false" />
+                <element signature="e#52024#55440#0" expanded="false" />
+                <element signature="e#55553#56645#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -498,12 +500,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00110" summary="Sesion 3 nivel 3">
-      <created>1458152399102</created>
-      <option name="number" value="00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1458152399102</updated>
-    </task>
     <task id="LOCAL-00111" summary="Sesion 3 nivel 3 unicode">
       <created>1458153676015</created>
       <option name="number" value="00111" />
@@ -792,7 +788,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460656291692</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="Docentes masivos ok encabezado 6">
+      <created>1460656820855</created>
+      <option name="number" value="00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1460656820855</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -834,7 +836,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reporte escuela tic" />
     <MESSAGE value="Productos finales" />
     <MESSAGE value="Presentaciones r1" />
     <MESSAGE value="Presentaciones r1 - off" />
@@ -859,7 +860,8 @@
     <MESSAGE value="Docentes masivos ok encabezado 3" />
     <MESSAGE value="Docentes masivos ok encabezado 4" />
     <MESSAGE value="Docentes masivos ok encabezado 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Docentes masivos ok encabezado 5" />
+    <MESSAGE value="Docentes masivos ok encabezado 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docentes masivos ok encabezado 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1456,17 +1458,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1321</line>
+          <line>1322</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1325</line>
+          <line>1326</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1322</line>
+          <line>1323</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2452,12 +2454,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82871974">
-          <caret line="1201" column="79" selection-start-line="1201" selection-start-column="79" selection-end-line="1201" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.14705883">
+          <caret line="1168" column="57" selection-start-line="1168" selection-start-column="57" selection-end-line="1168" selection-end-column="57" />
           <folding>
             <element signature="e#39243#41736#0" expanded="false" />
-            <element signature="e#51849#55265#0" expanded="false" />
-            <element signature="e#55378#56470#0" expanded="false" />
+            <element signature="e#52024#55440#0" expanded="false" />
+            <element signature="e#55553#56645#0" expanded="false" />
           </folding>
         </state>
       </provider>
