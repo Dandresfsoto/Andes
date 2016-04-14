@@ -43,12 +43,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6626298">
-              <caret line="1179" column="38" selection-start-line="1179" selection-start-column="38" selection-end-line="1179" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.7698962">
+              <caret line="1190" column="35" selection-start-line="1190" selection-start-column="35" selection-end-line="1190" selection-end-column="35" />
               <folding>
                 <element signature="e#39243#41736#0" expanded="false" />
-                <element signature="e#50311#53727#0" expanded="false" />
-                <element signature="e#53840#54932#0" expanded="false" />
+                <element signature="e#51064#54480#0" expanded="false" />
+                <element signature="e#54593#55685#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -498,12 +498,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00103" summary="Prsentaciones ok">
-      <created>1457992864710</created>
-      <option name="number" value="00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1457992864711</updated>
-    </task>
     <task id="LOCAL-00104" summary="Prsentaciones ok ok">
       <created>1457997377325</created>
       <option name="number" value="00104" />
@@ -792,7 +786,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460650917750</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="Docentes masivos ok">
+      <created>1460651369558</created>
+      <option name="number" value="00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1460651369558</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -834,7 +834,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Carga Masiva Docentes" />
     <MESSAGE value="Valor masivo" />
     <MESSAGE value="Reporte formacion" />
     <MESSAGE value="Reporte formacion ok" />
@@ -859,7 +858,8 @@
     <MESSAGE value="Random ev ok ok ok ok" />
     <MESSAGE value="Actividad 46 ok" />
     <MESSAGE value="Docentes masivos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Docentes masivos" />
+    <MESSAGE value="Docentes masivos ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docentes masivos ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1456,17 +1456,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1295</line>
+          <line>1309</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1299</line>
+          <line>1313</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1296</line>
+          <line>1310</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2452,12 +2452,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6626298">
-          <caret line="1179" column="38" selection-start-line="1179" selection-start-column="38" selection-end-line="1179" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.7698962">
+          <caret line="1190" column="35" selection-start-line="1190" selection-start-column="35" selection-end-line="1190" selection-end-column="35" />
           <folding>
             <element signature="e#39243#41736#0" expanded="false" />
-            <element signature="e#50311#53727#0" expanded="false" />
-            <element signature="e#53840#54932#0" expanded="false" />
+            <element signature="e#51064#54480#0" expanded="false" />
+            <element signature="e#54593#55685#0" expanded="false" />
           </folding>
         </state>
       </provider>

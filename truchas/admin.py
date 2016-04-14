@@ -1174,7 +1174,21 @@ def generar_listas_docentes(modeladmin,request,queryset):
 
 
             sesion_file.Cells(10,5).Value = sesion['sesion']
-            sesion_file.Cells(11,5).Value = sesion['sesion']
+            sesion_file.Cells(11,5).Value = sesion['nivel']
+
+            sesion_file.Cells(29,8).Value = codigo_masivo.departamento.encode("latin1")
+            sesion_file.Cells(29,9).Value = codigo_masivo.municipio.encode("latin1")
+
+            sesion_file.Cells(29,11).Value = 'C.C. '+codigo_masivo.formador.encode("latin1")
+            sesion_file.Cells(12,12).Value = 'Lugar de la Formación (IE): '+codigo_masivo.lugar.encode("latin1")
+
+            sesion_file.Cells(32,6).Value = sesion['nombre_sesion'].encode("latin1")
+
+            fila_actividad = 0
+            for actividad in sesion['actividades']:
+                sesion_file.Cells(32,7+fila_actividad).Value = actividad[0]
+                sesion_file.Cells(34,7+fila_actividad).Value = 'Horas:      '+actividad[1]
+                fila_actividad += 1
 
 
     lista.Worksheets('Hoja1').Delete()
