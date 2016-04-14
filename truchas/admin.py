@@ -1219,8 +1219,9 @@ generar_listas_docentes.short_description = "Generar Listas Docentes"
 
 
 class CodigoMasivo_DocentesAdmin(admin.ModelAdmin):
-    list_display = ['codigo']
+    list_display = ['codigo','departamento','municipio','formador']
     ordering = ['codigo']
+    list_filter = ['region','formador']
     actions = [generar_listas_docentes]
 admin.site.register(CodigoMasivo_Docentes,CodigoMasivo_DocentesAdmin)
 admin.site.register(ParticipanteDocenteMasivo)
