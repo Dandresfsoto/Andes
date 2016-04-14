@@ -1179,15 +1179,15 @@ def generar_listas_docentes(modeladmin,request,queryset):
             sesion_file.Range("AC8").Value = codigo_masivo.departamento.encode("latin1")
             sesion_file.Range("AC9").Value = codigo_masivo.municipio.encode("latin1")
 
-            sesion_file.Cells(29,11).Value = 'C.C. '+codigo_masivo.formador.encode("latin1")
-            sesion_file.Cells(12,12).Value = 'Lugar de la Formación (IE): '.encode("latin1")+codigo_masivo.lugar.encode("latin1")
+            sesion_file.Range("AC11").Value = 'C.C. '+codigo_masivo.formador.encode("latin1")
+            sesion_file.Range("AD11").Value = 'Lugar de la Formación (IE): '.encode("latin1")+codigo_masivo.lugar.encode("latin1")
 
-            sesion_file.Cells(32,6).Value = sesion['nombre_sesion'].encode("latin1")
+            sesion_file.Range("AF6").Value = sesion['nombre_sesion'].encode("latin1")
 
-            fila_actividad = 0
+            fila_actividad = 7
             for actividad in sesion['actividades']:
-                sesion_file.Cells(32,7+fila_actividad).Value = actividad[0]
-                sesion_file.Cells(34,7+fila_actividad).Value = 'Horas:      '+unicode(actividad[1])
+                sesion_file.Cells("AF"+str(fila_actividad)).Value = actividad[0]
+                sesion_file.Cells("AH"+str(fila_actividad)).Value = 'Horas:      '+unicode(actividad[1])
                 fila_actividad += 1
 
 

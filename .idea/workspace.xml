@@ -43,12 +43,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4463668">
-              <caret line="1179" column="29" selection-start-line="1179" selection-start-column="29" selection-end-line="1179" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.65224916">
+              <caret line="1189" column="104" selection-start-line="1189" selection-start-column="104" selection-end-line="1189" selection-end-column="104" />
               <folding>
                 <element signature="e#39243#41736#0" expanded="false" />
-                <element signature="e#51092#54508#0" expanded="false" />
-                <element signature="e#54621#55713#0" expanded="false" />
+                <element signature="e#51105#54521#0" expanded="false" />
+                <element signature="e#54634#55726#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -498,12 +498,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00107" summary="Prsentaciones ok ok ok full utf8">
-      <created>1458050521827</created>
-      <option name="number" value="00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1458050521827</updated>
-    </task>
     <task id="LOCAL-00108" summary="Prsentaciones ok ok ok full remove non ascii">
       <created>1458051454500</created>
       <option name="number" value="00108" />
@@ -792,7 +786,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460655685491</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Docentes masivos ok encabezado 3">
+      <created>1460655742551</created>
+      <option name="number" value="00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1460655742551</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -834,7 +834,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Todos los participantes" />
     <MESSAGE value="Todos los participantes ok" />
     <MESSAGE value="Certificados" />
     <MESSAGE value="Reporte escuela tic" />
@@ -859,7 +858,8 @@
     <MESSAGE value="Docentes masivos ok encabezado" />
     <MESSAGE value="Docentes masivos ok encabezado 1" />
     <MESSAGE value="Docentes masivos ok encabezado 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Docentes masivos ok encabezado 2" />
+    <MESSAGE value="Docentes masivos ok encabezado 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docentes masivos ok encabezado 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2452,12 +2452,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4463668">
-          <caret line="1179" column="29" selection-start-line="1179" selection-start-column="29" selection-end-line="1179" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.65224916">
+          <caret line="1189" column="104" selection-start-line="1189" selection-start-column="104" selection-end-line="1189" selection-end-column="104" />
           <folding>
             <element signature="e#39243#41736#0" expanded="false" />
-            <element signature="e#51092#54508#0" expanded="false" />
-            <element signature="e#54621#55713#0" expanded="false" />
+            <element signature="e#51105#54521#0" expanded="false" />
+            <element signature="e#54634#55726#0" expanded="false" />
           </folding>
         </state>
       </provider>
