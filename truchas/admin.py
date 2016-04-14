@@ -1195,13 +1195,14 @@ def generar_listas_docentes(modeladmin,request,queryset):
 
                 fila = 16
                 for participante in participantes:
-                    sesion_file.Range("C"+str(fila)).Value = participante.nombre.encode("latin1")
-                    sesion_file.Range("J"+str(fila)).Value = participante.cedula
-                    sesion_file.Range("AB"+str(fila)).Value = participante.institucion
-                    sesion_file.Range("AD"+str(fila)).Value = participante.sede
-                    sesion_file.Range("AE"+str(fila)).Value = participante.correo
-                    sesion_file.Range("AG"+str(fila)).Value = participante.telefono
-                    fila += 1
+                    if participante != None:
+                        sesion_file.Range("C"+str(fila)).Value = participante.nombre.encode("latin1")
+                        sesion_file.Range("J"+str(fila)).Value = participante.cedula
+                        sesion_file.Range("AB"+str(fila)).Value = participante.institucion
+                        sesion_file.Range("AD"+str(fila)).Value = participante.sede
+                        sesion_file.Range("AE"+str(fila)).Value = participante.correo
+                        sesion_file.Range("AG"+str(fila)).Value = participante.telefono
+                        fila += 1
 
 
     lista.Worksheets('Hoja1').Delete()
