@@ -1177,7 +1177,7 @@ def generar_listas_docentes(modeladmin,request,queryset):
             sesion_file.Cells(11,5).Value = sesion['nivel']
 
             sesion_file.Range("AC8").Value = codigo_masivo.departamento.encode("latin1")
-            sesion_file.Cells("AC9").Value = codigo_masivo.municipio.encode("latin1")
+            sesion_file.Range("AC9").Value = codigo_masivo.municipio.encode("latin1")
 
             sesion_file.Cells(29,11).Value = 'C.C. '+codigo_masivo.formador.encode("latin1")
             sesion_file.Cells(12,12).Value = 'Lugar de la Formación (IE): '.encode("latin1")+codigo_masivo.lugar.encode("latin1")
