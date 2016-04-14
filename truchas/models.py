@@ -20,6 +20,7 @@ class CodigoMasivo_Docentes(models.Model):
     formador = models.CharField(max_length=200,blank=True,null=True)
     cedula = models.CharField(max_length=200,blank=True,null=True)
     lugar = models.CharField(max_length=200,blank=True,null=True)
+    region = models.ForeignKey(Region)
 
 
     def __unicode__(self):
