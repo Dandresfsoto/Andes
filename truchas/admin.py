@@ -1177,7 +1177,7 @@ def generar_listas_docentes(modeladmin,request,queryset):
             sesion_file.Cells(11,5).Value = sesion['sesion']
 
 
-    lista.Worksheets('Sesion').Delete()
+    lista.Worksheets('Hoja1').Delete()
     lista.ExportAsFixedFormat(0,settings.MEDIA_ROOT+'/Listados Docentes/Docentes.pdf')
     lista.Close(SaveChanges=False)
 
