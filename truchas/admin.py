@@ -34,6 +34,8 @@ from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
 from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2, Nivel3_Sesion2_1
+from truchas.models import CodigoMasivo_Docentes
+from truchas.models import ParticipanteDocenteMasivo
 #from docx import Document
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
@@ -1137,6 +1139,64 @@ class CodigoMasivoN1_S2Admin(admin.ModelAdmin):
     ordering = ['codigo']
     actions = [listado]
 admin.site.register(CodigoMasivoN1_S2,CodigoMasivoN1_S2Admin)
+
+
+def generar_listas_docentes(modeladmin,request,queryset):
+    pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)
+    xl = win32com.client.dynamic.Dispatch('Excel.Application')
+    xl.DisplayAlerts = True
+    xl.Visible = 0
+
+    lista = xl.Workbooks.Open(settings.STATICFILES_DIRS[0]+'/formatos/Listado Asistencia.xlsx')
+
+    i = 2
+
+    for codigo_masivo in queryset:
+
+
+        sesiones = [{'nivel':2,'sesion':1,'nombre_sesion':'Estructuración del Proyecto','actividades':[('Fundamentando conceptos',4)]},
+                        {'nivel':2,'sesion':2,'nombre_sesion':'Cierre de Nivel','actividades':[('Valorando la secuencia didáctica',3),('Evaluando Competencias',1)]},
+                        {'nivel':3,'sesion':1,'nombre_sesion':'Preparando la Ejecución','actividades':[('Generando actividades constructivas y participativas',4)]},
+                        {'nivel':3,'sesion':2,'nombre_sesion':'Ejecución del Proyecto','actividades':[('Reflexionando para ajustar y mejorar actividad',4)]},
+                        {'nivel':3,'sesion':3,'nombre_sesion':'Cierre de Nivel','actividades':[('Como realizar Rubricas',1),('Evaluación formativa',1),('Retroalimentación final',2)]},
+                        {'nivel':4,'sesion':1,'nombre_sesion':'Preparando Socialización del proyecto','actividades':[('Preparando presentación del proyecto',4)]},
+                        {'nivel':4,'sesion':2,'nombre_sesion':'Uso responsable de las TIC','actividades':[('Compartiendo el proyecto educativo TIC',4)]},
+                        {'nivel':4,'sesion':3,'nombre_sesion':'Discutiendo sobe TIC y Medio Ambiente','actividades':[('Gestión de Residuos',4)]},
+                        {'nivel':4,'sesion':5,'nombre_sesion':'Comparto experiencia con Comunidad educativa','actividades':[('Comparto con mi Comunidad educativa',4)]}]
+
+
+        for sesion in sesiones:
+            fila = 0
+
+            lista.Worksheets("Hoja1").Copy(lista.Worksheets(lista.Worksheets.Count))
+            sesion_file = lista.Worksheets('Hoja1 ('+str(i)+')')
+            i += 1
+
+
+            sesion_file.Cells(10,5).Value = sesion['sesion']
+            sesion_file.Cells(11,5).Value = sesion['sesion']
+
+
+    lista.Worksheets('Sesion').Delete()
+    lista.ExportAsFixedFormat(0,settings.MEDIA_ROOT+'/Listados Docentes/Docentes.pdf')
+    lista.Close(SaveChanges=False)
+
+    xl.Quit()
+    pythoncom.CoUninitialize()
+
+
+    return HttpResponseRedirect('/media/Listados Docentes/Docentes.pdf')
+generar_listas_docentes.short_description = "Generar Listas Docentes"
+
+
+
+class CodigoMasivo_DocentesAdmin(admin.ModelAdmin):
+    list_display = ['codigo']
+    ordering = ['codigo']
+    actions = [generar_listas_docentes]
+admin.site.register(CodigoMasivo_Docentes,CodigoMasivo_DocentesAdmin)
+admin.site.register(ParticipanteDocenteMasivo)
+
 
 def generar_listas(modeladmin,request,queryset):
     pythoncom.CoInitializeEx(pythoncom.COINIT_MULTITHREADED)

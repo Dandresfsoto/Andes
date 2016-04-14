@@ -12,6 +12,35 @@ class CodigoMasivo(models.Model):
     def __unicode__(self):
         return smart_unicode(self.codigo)
 
+
+class CodigoMasivo_Docentes(models.Model):
+    codigo = models.BigIntegerField(unique=True)
+    departamento = models.CharField(max_length=200,blank=True,null=True)
+    municipio = models.CharField(max_length=200,blank=True,null=True)
+    formador = models.CharField(max_length=200,blank=True,null=True)
+    cedula = models.CharField(max_length=200,blank=True,null=True)
+    lugar = models.CharField(max_length=200,blank=True,null=True)
+
+
+    def __unicode__(self):
+        return smart_unicode(self.codigo)
+
+
+class ParticipanteDocenteMasivo(models.Model):
+    codigo_masivo = models.ForeignKey(CodigoMasivo_Docentes)
+    nombre = models.CharField(max_length=200,blank=True,null=True)
+    cedula = models.CharField(max_length=200,blank=True,null=True)
+    institucion = models.CharField(max_length=200,blank=True,null=True)
+    sede = models.CharField(max_length=200,blank=True,null=True)
+    correo = models.CharField(max_length=200,blank=True,null=True)
+    telefono = models.CharField(max_length=200,blank=True,null=True)
+
+
+    def __unicode__(self):
+        return smart_unicode(self.cedula)
+
+
+
 class ParticipanteEscuelaTicTrucho(models.Model):
     codigo_masivo = models.ForeignKey(CodigoMasivo)
     region = models.ForeignKey(Region)
