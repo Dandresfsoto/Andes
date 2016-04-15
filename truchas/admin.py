@@ -1232,7 +1232,122 @@ admin.site.register(ParticipanteDocenteMasivo)
 
 
 
+def construir_proyecto(modeladmin,request,queryset):
+    codigos = CodigoMasivo_Proyectoss.objects.all()[0]
+    for codigo in codigos:
+        participantes = ParticipanteProyectoMasivos.objects.get(codigo_masivo=codigo)
 
+        if participantes.count() == 5:
+
+            fields = [  ('Campo 1',participantes[0].nombre),
+                        ('Campo de texto 2',participantes[0].celular),
+                        ('Campo de texto 4',participantes[0].correo),
+                        ('Campo de texto 5',participantes[0].departamento),
+                        ('Campo de texto 6',participantes[0].municipio),
+                        ('Campo de texto 7',participantes[0].institucion),
+                        ('Campo de texto 8',participantes[0].sede),
+                        ('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 10',""),
+                        ('Campo de texto 11',""),
+
+                        ('Campo de texto 12',participantes[1].nombre),
+                        ('Campo de texto 13',participantes[1].celular),
+                        ('Campo de texto 14',participantes[1].correo),
+                        ('Campo de texto 15',participantes[1].departamento),
+                        ('Campo de texto 16',participantes[1].municipio),
+                        ('Campo de texto 17',participantes[1].institucion),
+                        ('Campo de texto 18',participantes[1].sede),
+                        ('Campo de texto 19',participantes[1].dane),
+                        ('Campo de texto 20',""),
+                        ('Campo de texto 21',""),
+
+                        ('Campo de texto 22',participantes[2].nombre),
+                        ('Campo de texto 23',participantes[2].celular),
+                        ('Campo de texto 24',participantes[2].correo),
+                        ('Campo de texto 25',participantes[2].departamento),
+                        ('Campo de texto 26',participantes[2].municipio),
+                        ('Campo de texto 27',participantes[2].institucion),
+                        ('Campo de texto 28',participantes[2].sede),
+                        ('Campo de texto 29',participantes[2].dane),
+                        ('Campo de texto 30',""),
+                        ('Campo de texto 31',""),
+
+                        ('Campo de texto 32',participantes[3].nombre),
+                        ('Campo de texto 33',participantes[3].celular),
+                        ('Campo de texto 34',participantes[3].correo),
+                        ('Campo de texto 35',participantes[3].departamento),
+                        ('Campo de texto 36',participantes[3].municipio),
+                        ('Campo de texto 37',participantes[3].institucion),
+                        ('Campo de texto 38',participantes[3].sede),
+                        ('Campo de texto 39',participantes[3].dane),
+                        ('Campo de texto 40',""),
+                        ('Campo de texto 41',""),
+
+                        ('Campo de texto 42',participantes[4].nombre),
+                        ('Campo de texto 43',participantes[4].celular),
+                        ('Campo de texto 44',participantes[4].correo),
+                        ('Campo de texto 45',participantes[4].departamento),
+                        ('Campo de texto 46',participantes[4].municipio),
+                        ('Campo de texto 47',participantes[4].institucion),
+                        ('Campo de texto 48',participantes[4].sede),
+                        ('Campo de texto 49',participantes[4].dane),
+                        ('Campo de texto 50',""),
+                        ('Campo de texto 51',""),
+                        ]
+        if participantes.count() == 4:
+
+            fields = [  ('Campo 1',participantes[0].nombre),
+                        ('Campo de texto 2',participantes[0].celular),
+                        ('Campo de texto 4',participantes[0].correo),
+                        ('Campo de texto 5',participantes[0].departamento),
+                        ('Campo de texto 6',participantes[0].municipio),
+                        ('Campo de texto 7',participantes[0].institucion),
+                        ('Campo de texto 8',participantes[0].sede),
+                        ('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 10',""),
+                        ('Campo de texto 11',""),
+
+                        ('Campo de texto 12',participantes[1].nombre),
+                        ('Campo de texto 13',participantes[1].celular),
+                        ('Campo de texto 14',participantes[1].correo),
+                        ('Campo de texto 15',participantes[1].departamento),
+                        ('Campo de texto 16',participantes[1].municipio),
+                        ('Campo de texto 17',participantes[1].institucion),
+                        ('Campo de texto 18',participantes[1].sede),
+                        ('Campo de texto 19',participantes[1].dane),
+                        ('Campo de texto 20',""),
+                        ('Campo de texto 21',""),
+
+                        ('Campo de texto 22',participantes[2].nombre),
+                        ('Campo de texto 23',participantes[2].celular),
+                        ('Campo de texto 24',participantes[2].correo),
+                        ('Campo de texto 25',participantes[2].departamento),
+                        ('Campo de texto 26',participantes[2].municipio),
+                        ('Campo de texto 27',participantes[2].institucion),
+                        ('Campo de texto 28',participantes[2].sede),
+                        ('Campo de texto 29',participantes[2].dane),
+                        ('Campo de texto 30',""),
+                        ('Campo de texto 31',""),
+
+                        ('Campo de texto 32',participantes[3].nombre),
+                        ('Campo de texto 33',participantes[3].celular),
+                        ('Campo de texto 34',participantes[3].correo),
+                        ('Campo de texto 35',participantes[3].departamento),
+                        ('Campo de texto 36',participantes[3].municipio),
+                        ('Campo de texto 37',participantes[3].institucion),
+                        ('Campo de texto 38',participantes[3].sede),
+                        ('Campo de texto 39',participantes[3].dane),
+                        ('Campo de texto 40',""),
+                        ('Campo de texto 41',""),
+                        ]
+
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\Proyectos\\"+unicode(codigo.codigo)+".fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\Proyectos\\'+unicode(codigo.codigo)+'.pdf fill_form C:\\Temp\\Proyectos\\'+unicode(codigo.codigo)+'.fdf output C:\\Temp\\Proyectos Listos\\'+unicode(codigo.codigo)+'.pdf')
+
+construir_proyecto.short_description = "Construir Proyecto"
 
 
 
@@ -1244,7 +1359,7 @@ class CodigoMasivo_ProyectossAdmin(admin.ModelAdmin):
     list_display = ['codigo']
     ordering = ['codigo']
     list_filter = ['region']
-    actions = []
+    actions = [construir_proyecto]
 admin.site.register(CodigoMasivo_Proyectoss,CodigoMasivo_ProyectossAdmin)
 admin.site.register(ParticipanteProyectoMasivos)
 
