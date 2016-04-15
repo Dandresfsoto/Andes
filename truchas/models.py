@@ -42,6 +42,54 @@ class ParticipanteDocenteMasivo(models.Model):
 
 
 
+
+
+
+
+
+class CodigoMasivo_Proyectos(models.Model):
+    codigo = models.BigIntegerField(unique=True)
+    nombre_proyecto = models.CharField(max_length=200,blank=True,null=True)
+    definicion_problema = models.CharField(max_length=10000,blank=True,null=True)
+    pregunta_proyecto = models.CharField(max_length=200,blank=True,null=True)
+    objetivos = models.CharField(max_length=10000,blank=True,null=True)
+    secuencias = models.CharField(max_length=10000,blank=True,null=True)
+    area = models.CharField(max_length=200,blank=True,null=True)
+    competencia = models.CharField(max_length=200,blank=True,null=True)
+    region = models.ForeignKey(Region)
+
+
+    def __unicode__(self):
+        return smart_unicode(self.codigo)
+
+
+class ParticipanteProyectoMasivo(models.Model):
+    codigo_masivo = models.ForeignKey(CodigoMasivo_Proyectos)
+    nombre = models.CharField(max_length=200,blank=True,null=True)
+    celular = models.CharField(max_length=200,blank=True,null=True)
+    correo = models.CharField(max_length=200,blank=True,null=True)
+    departamento = models.CharField(max_length=200,blank=True,null=True)
+    municipio = models.CharField(max_length=200,blank=True,null=True)
+    institucion = models.CharField(max_length=200,blank=True,null=True)
+    sede = models.CharField(max_length=200,blank=True,null=True)
+    dane = models.CharField(max_length=200,blank=True,null=True)
+    direccion = models.CharField(max_length=200,blank=True,null=True)
+    localidad = models.CharField(max_length=200,blank=True,null=True)
+
+
+    def __unicode__(self):
+        return smart_unicode(self.cedula)
+
+
+
+
+
+
+
+
+
+
+
 class ParticipanteEscuelaTicTrucho(models.Model):
     codigo_masivo = models.ForeignKey(CodigoMasivo)
     region = models.ForeignKey(Region)
