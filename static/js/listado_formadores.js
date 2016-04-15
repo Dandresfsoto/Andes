@@ -32,6 +32,10 @@ function format ( d ) {
     actualizar: actualizar,
     column: d[17]};
 
+    var contrato_plan_choque = {content: init,
+    actualizar: actualizar,
+    column: d[35]};
+
     var fotocopia_cedula = {content: init,
     actualizar: actualizar,
     column: d[18]};
@@ -164,6 +168,8 @@ function format ( d ) {
             antecedentes_judiciales.content+
             '<td class="text-center">Contraloria:</td>'+
             antecedentes_contraloria.content+
+            '<td class="text-center">Contrato Plan Choque:</td>'+
+            contrato_plan_choque.content+
         '</tr>'+
 
         '<tr>'+

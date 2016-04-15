@@ -48,6 +48,7 @@ class FormadorTableView(BaseDatatableView):
         'seguro_diciembre',
         'fecha_contratacion',
         'fecha_terminacion',
+        'contrato_plan_choque',
     ]
 
     order_columns = [
@@ -55,6 +56,7 @@ class FormadorTableView(BaseDatatableView):
         'nombre',
         'nombre',
         'nombre',
+        '',
         '',
         '',
         '',
@@ -111,6 +113,8 @@ class FormadorTableView(BaseDatatableView):
             return str(row.rut)
         if column == 'contrato':
             return str(row.contrato)
+        if column == 'contrato_plan_choque':
+            return str(row.contrato_plan_choque)
         if column == 'seguro_enero':
             return str(row.seguro_enero)
         if column == 'seguro_febrero':

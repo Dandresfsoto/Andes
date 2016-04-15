@@ -288,6 +288,7 @@ class FormadorActualizarSoporteView(AdministrativoMixin,UpdateView):
                               {'nombre':'Certificacion Bancaria','soporte_id':"certificacion",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).certificacion},
                               {'nombre':'Rut','soporte_id':"rut",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).rut},
                               {'nombre':'Contrato','soporte_id':"contrato",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).contrato},
+                              {'nombre':'Contrato Plan Choque','soporte_id':"contrato_plan_choque",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).contrato_plan_choque},
                               {'nombre':'Fotocopia Cedula','soporte_id':"fotocopia_cedula",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).fotocopia_cedula},
                               {'nombre':'Ancedentes Judiciales','soporte_id':"antecedentes_judiciales",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).antecedentes_judiciales},
                               {'nombre':'Antecedentes Contraloria','soporte_id':"antecedentes_contraloria",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).antecedentes_contraloria},
