@@ -1235,7 +1235,7 @@ admin.site.register(ParticipanteDocenteMasivo)
 def construir_proyecto(modeladmin,request,queryset):
     codigos = CodigoMasivo_Proyectoss.objects.all()[0:1]
     for codigo in codigos:
-        participantes = ParticipanteProyectoMasivos.objects.get(codigo_masivo=codigo)
+        participantes = ParticipanteProyectoMasivos.objects.filter(codigo_masivo=codigo)
 
         if participantes.count() == 5:
 
