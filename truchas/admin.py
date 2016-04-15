@@ -1241,7 +1241,7 @@ def construir_proyecto(modeladmin,request,queryset):
         bibliografia = ""
 
         for reda in redas:
-            bibliografia += reda.portal
+            bibliografia += reda.portal+"\n"
 
         x = random.randint(0,2)
 
