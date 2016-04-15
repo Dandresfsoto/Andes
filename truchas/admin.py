@@ -1245,7 +1245,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].departamento.capitalize()),
                         ('Campo de texto 6',participantes[0].municipio.capitalize()),
                         ('Campo de texto 7',participantes[0].institucion.capitalize()),
-                        ('Campo de texto 8',participantes[0].sede),
+                        ('Campo de texto 8',participantes[0].sede.capitalize()),
                         ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
@@ -1256,7 +1256,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 15',participantes[1].departamento.capitalize()),
                         ('Campo de texto 16',participantes[1].municipio.capitalize()),
                         ('Campo de texto 17',participantes[1].institucion.capitalize()),
-                        ('Campo de texto 18',participantes[1].sede),
+                        ('Campo de texto 18',participantes[1].sede.capitalize()),
                         ('Campo de texto 19',participantes[1].dane),
                         ('Campo de texto 20',""),
                         ('Campo de texto 21',""),
@@ -1267,7 +1267,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 25',participantes[2].departamento.capitalize()),
                         ('Campo de texto 26',participantes[2].municipio.capitalize()),
                         ('Campo de texto 27',participantes[2].institucion.capitalize()),
-                        ('Campo de texto 28',participantes[2].sede),
+                        ('Campo de texto 28',participantes[2].sede.capitalize()),
                         ('Campo de texto 29',participantes[2].dane),
                         ('Campo de texto 30',""),
                         ('Campo de texto 31',""),
@@ -1278,7 +1278,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 35',participantes[3].departamento.capitalize()),
                         ('Campo de texto 36',participantes[3].municipio.capitalize()),
                         ('Campo de texto 37',participantes[3].institucion.capitalize()),
-                        ('Campo de texto 38',participantes[3].sede),
+                        ('Campo de texto 38',participantes[3].sede.capitalize()),
                         ('Campo de texto 39',participantes[3].dane),
                         ('Campo de texto 40',""),
                         ('Campo de texto 41',""),
@@ -1289,7 +1289,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 45',participantes[4].departamento.capitalize()),
                         ('Campo de texto 46',participantes[4].municipio.capitalize()),
                         ('Campo de texto 47',participantes[4].institucion.capitalize()),
-                        ('Campo de texto 48',participantes[4].sede),
+                        ('Campo de texto 48',participantes[4].sede.capitalize()),
                         ('Campo de texto 49',participantes[4].dane),
                         ('Campo de texto 50',""),
                         ('Campo de texto 51',""),
@@ -1307,6 +1307,9 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 155',redas[2].url),
 
                         ('Campo de texto 84',codigo.nombre_proyecto),
+                        ('Campo de texto 120',codigo.competencia),
+
+                        ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
                         ]
         if participantes.count() == 4:
 
@@ -1316,7 +1319,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].departamento.capitalize()),
                         ('Campo de texto 6',participantes[0].municipio.capitalize()),
                         ('Campo de texto 7',participantes[0].institucion.capitalize()),
-                        ('Campo de texto 8',participantes[0].sede),
+                        ('Campo de texto 8',participantes[0].sede.capitalize()),
                         ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
@@ -1327,7 +1330,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 15',participantes[1].departamento.capitalize()),
                         ('Campo de texto 16',participantes[1].municipio.capitalize()),
                         ('Campo de texto 17',participantes[1].institucion.capitalize()),
-                        ('Campo de texto 18',participantes[1].sede),
+                        ('Campo de texto 18',participantes[1].sede.capitalize()),
                         ('Campo de texto 19',participantes[1].dane),
                         ('Campo de texto 20',""),
                         ('Campo de texto 21',""),
@@ -1338,7 +1341,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 25',participantes[2].departamento.capitalize()),
                         ('Campo de texto 26',participantes[2].municipio.capitalize()),
                         ('Campo de texto 27',participantes[2].institucion.capitalize()),
-                        ('Campo de texto 28',participantes[2].sede),
+                        ('Campo de texto 28',participantes[2].sede.capitalize()),
                         ('Campo de texto 29',participantes[2].dane),
                         ('Campo de texto 30',""),
                         ('Campo de texto 31',""),
@@ -1349,7 +1352,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 35',participantes[3].departamento.capitalize()),
                         ('Campo de texto 36',participantes[3].municipio.capitalize()),
                         ('Campo de texto 37',participantes[3].institucion.capitalize()),
-                        ('Campo de texto 38',participantes[3].sede),
+                        ('Campo de texto 38',participantes[3].sede.capitalize()),
                         ('Campo de texto 39',participantes[3].dane),
                         ('Campo de texto 40',""),
                         ('Campo de texto 41',""),
@@ -1367,6 +1370,8 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 155',redas[2].url),
 
                         ('Campo de texto 84',codigo.nombre_proyecto),
+                        ('Campo de texto 120',codigo.competencia),
+                        ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
                         ]
 
         fdf = forge_fdf("",fields,[],[],[])
