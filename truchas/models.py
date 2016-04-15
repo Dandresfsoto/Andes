@@ -50,10 +50,10 @@ class ParticipanteDocenteMasivo(models.Model):
 class CodigoMasivo_Proyectos(models.Model):
     codigo = models.BigIntegerField(unique=True)
     nombre_proyecto = models.CharField(max_length=200,blank=True,null=True)
-    definicion_problema = models.CharField(max_length=10000,blank=True,null=True)
+    definicion_problema = models.TextField(max_length=10000,blank=True,null=True)
     pregunta_proyecto = models.CharField(max_length=200,blank=True,null=True)
-    objetivos = models.CharField(max_length=10000,blank=True,null=True)
-    secuencias = models.CharField(max_length=10000,blank=True,null=True)
+    objetivos = models.TextField(max_length=10000,blank=True,null=True)
+    secuencias = models.TextField(max_length=10000,blank=True,null=True)
     area = models.CharField(max_length=200,blank=True,null=True)
     competencia = models.CharField(max_length=200,blank=True,null=True)
     region = models.ForeignKey(Region)
