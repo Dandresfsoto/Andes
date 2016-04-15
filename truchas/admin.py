@@ -1373,7 +1373,7 @@ def construir_proyecto(modeladmin,request,queryset):
         fdf_file = open("C:\\Temp\\Proyectos\\"+str(codigo.codigo)+".fdf","wb")
         fdf_file.write(fdf)
         fdf_file.close()
-        os.system('pdftk C:\\Temp\\Proyectos\\'+str(codigo.codigo)+'.pdf fill_form C:\\Temp\\Proyectos\\'+str(codigo.codigo)+'.fdf output C:\\Temp\\ProyectosListos\\'+str(codigo.codigo)+'.pdf')
+        os.system('pdftk C:/Temp/Proyectos/'+str(codigo.codigo)+'.pdf fill_form C:/Temp/Proyectos/'+str(codigo.codigo)+'.fdf output C:/Temp/ProyectosListos/'+str(codigo.codigo)+'.pdf')
 
 construir_proyecto.short_description = "Construir Proyecto"
 
