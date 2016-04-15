@@ -32,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.62069">
-              <caret line="309" column="22" selection-start-line="309" selection-start-column="6" selection-end-line="309" selection-end-column="22" />
+              <caret line="258" column="22" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="22" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -43,13 +43,13 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4117647">
-              <caret line="1235" column="51" selection-start-line="1235" selection-start-column="51" selection-end-line="1235" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.5882353">
+              <caret line="1346" column="129" selection-start-line="1346" selection-start-column="129" selection-end-line="1346" selection-end-column="129" />
               <folding>
                 <element signature="e#39297#41790#0" expanded="false" />
-                <element signature="e#62325#65741#0" expanded="false" />
-                <element signature="e#65854#66946#0" expanded="false" />
-                <element signature="e#67306#72192#0" expanded="false" />
+                <element signature="e#64920#68336#0" expanded="false" />
+                <element signature="e#68449#69541#0" expanded="false" />
+                <element signature="e#69901#74787#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -467,12 +467,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00128" summary="Valor masivo">
-      <created>1458567584306</created>
-      <option name="number" value="00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1458567584309</updated>
-    </task>
     <task id="LOCAL-00129" summary="Reporte formacion">
       <created>1458609214268</created>
       <option name="number" value="00129" />
@@ -761,7 +755,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460696139579</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="Proyectos ok 13">
+      <created>1460696281888</created>
+      <option name="number" value="00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1460696281888</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -803,7 +803,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Docentes masivos ok" />
     <MESSAGE value="Docentes masivos ok encabezado" />
     <MESSAGE value="Docentes masivos ok encabezado 1" />
     <MESSAGE value="Docentes masivos ok encabezado 2" />
@@ -828,7 +827,8 @@
     <MESSAGE value="Proyectos ok 10" />
     <MESSAGE value="Proyectos ok 11" />
     <MESSAGE value="Proyectos ok 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proyectos ok 12" />
+    <MESSAGE value="Proyectos ok 13" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proyectos ok 13" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1425,17 +1425,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1508</line>
+          <line>1555</line>
           <option name="timeStamp" value="1064" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1512</line>
+          <line>1559</line>
           <option name="timeStamp" value="1066" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/truchas/admin.py</url>
-          <line>1509</line>
+          <line>1556</line>
           <option name="timeStamp" value="1067" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -2412,7 +2412,7 @@
     <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.62069">
-          <caret line="309" column="22" selection-start-line="309" selection-start-column="6" selection-end-line="309" selection-end-column="22" />
+          <caret line="258" column="22" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="22" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -2421,13 +2421,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4117647">
-          <caret line="1235" column="51" selection-start-line="1235" selection-start-column="51" selection-end-line="1235" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.5882353">
+          <caret line="1346" column="129" selection-start-line="1346" selection-start-column="129" selection-end-line="1346" selection-end-column="129" />
           <folding>
             <element signature="e#39297#41790#0" expanded="false" />
-            <element signature="e#62325#65741#0" expanded="false" />
-            <element signature="e#65854#66946#0" expanded="false" />
-            <element signature="e#67306#72192#0" expanded="false" />
+            <element signature="e#64920#68336#0" expanded="false" />
+            <element signature="e#68449#69541#0" expanded="false" />
+            <element signature="e#69901#74787#0" expanded="false" />
           </folding>
         </state>
       </provider>
