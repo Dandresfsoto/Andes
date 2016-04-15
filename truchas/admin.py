@@ -1088,7 +1088,7 @@ listado.short_description = "Listado en filas"
 
 
 
-
+'''
 def generar_sesion2_n1(modeladmin,request,queryset):
     for codigo in queryset:
         participantes = ParticipanteN1_S2.objects.filter(codigo_masivo=codigo)
@@ -1132,12 +1132,12 @@ def generar_sesion2_n1(modeladmin,request,queryset):
 
         presentacion.save('C:\\Temp\\Descarga\\'+str(participantes[0].participante.cedula)+'.pptx')
 generar_sesion2_n1.short_description = "Generar presentaciones"
-
+'''
 
 class CodigoMasivoN1_S2Admin(admin.ModelAdmin):
     list_display = ['codigo']
     ordering = ['codigo']
-    actions = [listado,generar_sesion2_n1]
+    actions = [listado]
 admin.site.register(CodigoMasivoN1_S2,CodigoMasivoN1_S2Admin)
 
 
