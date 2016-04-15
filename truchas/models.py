@@ -64,7 +64,7 @@ class CodigoMasivo_Proyectoss(models.Model):
 
 
 class ParticipanteProyectoMasivos(models.Model):
-    codigo_masivo = models.ForeignKey(CodigoMasivo_Proyectos)
+    codigo_masivo = models.ForeignKey(CodigoMasivo_Proyectoss)
     nombre = models.CharField(max_length=200,blank=True,null=True)
     celular = models.CharField(max_length=200,blank=True,null=True)
     correo = models.CharField(max_length=200,blank=True,null=True)
