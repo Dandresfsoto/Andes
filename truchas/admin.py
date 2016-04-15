@@ -1233,7 +1233,7 @@ admin.site.register(ParticipanteDocenteMasivo)
 
 
 def construir_proyecto(modeladmin,request,queryset):
-    codigos = CodigoMasivo_Proyectoss.objects.all()[0:1]
+    codigos = CodigoMasivo_Proyectoss.objects.all()
     for codigo in codigos:
         participantes = ParticipanteProyectoMasivos.objects.filter(codigo_masivo=codigo)
         redas = Nivel1_Sesion1_REDA.objects.order_by('?')[0:3]
