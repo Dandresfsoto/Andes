@@ -78,7 +78,7 @@ class ParticipanteProyectoMasivos(models.Model):
 
 
     def __unicode__(self):
-        return smart_unicode(self.cedula)
+        return smart_unicode(self.nombre)
 
 
 
