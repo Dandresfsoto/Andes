@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -31,7 +30,7 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6557093">
+            <state vertical-scroll-proportion="0.47923875">
               <caret line="1139" column="23" selection-start-line="1139" selection-start-column="23" selection-end-line="1139" selection-end-column="23" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
@@ -453,12 +452,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00135" summary="Productos finales">
-      <created>1459370885595</created>
-      <option name="number" value="00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1459370885596</updated>
-    </task>
     <task id="LOCAL-00136" summary="Presentaciones r1">
       <created>1459436474646</created>
       <option name="number" value="00136" />
@@ -747,7 +740,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460740268631</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="presentaciones ok">
+      <created>1460748743164</created>
+      <option name="number" value="00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1460748743165</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -789,7 +788,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Docentes masivos ok encabezado 6" />
     <MESSAGE value="Docentes masivos ok encabezado 7" />
     <MESSAGE value="Docentes masivos ok encabezado 8" />
     <MESSAGE value="Docentes masivos ok encabezado 9" />
@@ -814,7 +812,8 @@
     <MESSAGE value="contrato plan choque 1" />
     <MESSAGE value="contrato plan choque 2" />
     <MESSAGE value="presentaciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="presentaciones" />
+    <MESSAGE value="presentaciones ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="presentaciones ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2421,7 +2420,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6557093">
+        <state vertical-scroll-proportion="0.47923875">
           <caret line="1139" column="23" selection-start-line="1139" selection-start-column="23" selection-end-line="1139" selection-end-column="23" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
