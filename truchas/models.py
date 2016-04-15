@@ -47,7 +47,7 @@ class ParticipanteDocenteMasivo(models.Model):
 
 
 
-class CodigoMasivo_Proyectos(models.Model):
+class CodigoMasivo_Proyectoss(models.Model):
     codigo = models.BigIntegerField(unique=True)
     nombre_proyecto = models.CharField(max_length=200,blank=True,null=True)
     definicion_problema = models.TextField(max_length=10000,blank=True,null=True)
@@ -63,7 +63,7 @@ class CodigoMasivo_Proyectos(models.Model):
         return smart_unicode(self.codigo)
 
 
-class ParticipanteProyectoMasivo(models.Model):
+class ParticipanteProyectoMasivos(models.Model):
     codigo_masivo = models.ForeignKey(CodigoMasivo_Proyectos)
     nombre = models.CharField(max_length=200,blank=True,null=True)
     celular = models.CharField(max_length=200,blank=True,null=True)

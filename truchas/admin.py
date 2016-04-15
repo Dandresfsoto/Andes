@@ -34,8 +34,8 @@ from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
 from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2, Nivel3_Sesion2_1
-from truchas.models import CodigoMasivo_Docentes, CodigoMasivo_Proyectos
-from truchas.models import ParticipanteDocenteMasivo, ParticipanteProyectoMasivo
+from truchas.models import CodigoMasivo_Docentes, CodigoMasivo_Proyectoss
+from truchas.models import ParticipanteDocenteMasivo, ParticipanteProyectoMasivos
 #from docx import Document
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
@@ -1240,13 +1240,13 @@ admin.site.register(ParticipanteDocenteMasivo)
 
 
 
-class CodigoMasivo_ProyectosAdmin(admin.ModelAdmin):
+class CodigoMasivo_ProyectossAdmin(admin.ModelAdmin):
     list_display = ['codigo']
     ordering = ['codigo']
     list_filter = ['region']
     actions = []
-admin.site.register(CodigoMasivo_Proyectos,CodigoMasivo_ProyectosAdmin)
-admin.site.register(ParticipanteProyectoMasivo)
+admin.site.register(CodigoMasivo_Proyectoss,CodigoMasivo_ProyectossAdmin)
+admin.site.register(ParticipanteProyectoMasivos)
 
 
 

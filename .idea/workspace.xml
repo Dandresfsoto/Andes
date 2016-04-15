@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/admin.py" afterPath="$PROJECT_DIR$/truchas/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/models.py" afterPath="$PROJECT_DIR$/truchas/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/truchas/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23529412">
-              <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+            <state vertical-scroll-proportion="-13.4827585">
+              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -40,15 +41,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.62069">
-              <caret line="1248" column="47" selection-start-line="1248" selection-start-column="47" selection-end-line="1248" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.5380623">
+              <caret line="1249" column="0" selection-start-line="1249" selection-start-column="0" selection-end-line="1249" selection-end-column="0" />
               <folding>
-                <element signature="e#39295#41788#0" expanded="false" />
-                <element signature="e#52529#55945#0" expanded="false" />
-                <element signature="e#56058#57150#0" expanded="false" />
+                <element signature="e#39297#41790#0" expanded="false" />
+                <element signature="e#52535#55951#0" expanded="false" />
+                <element signature="e#56064#57156#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -120,8 +121,8 @@
         <option value="$PROJECT_DIR$/conf/urls.py" />
         <option value="$PROJECT_DIR$/formacion/admin.py" />
         <option value="$PROJECT_DIR$/formador/views.py" />
-        <option value="$PROJECT_DIR$/truchas/admin.py" />
         <option value="$PROJECT_DIR$/truchas/models.py" />
+        <option value="$PROJECT_DIR$/truchas/admin.py" />
       </list>
     </option>
   </component>
@@ -466,12 +467,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00116" summary="Reporte virtual">
-      <created>1458177682218</created>
-      <option name="number" value="00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1458177682218</updated>
-    </task>
     <task id="LOCAL-00117" summary="Sesion 1 nivel 3 ok">
       <created>1458182024811</created>
       <option name="number" value="00117" />
@@ -760,7 +755,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460681098194</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Proyectos ok">
+      <created>1460681243994</created>
+      <option name="number" value="00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1460681243994</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -802,7 +803,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reporte proyectos ok 2" />
     <MESSAGE value="Reporte docentes presencial" />
     <MESSAGE value="Reporte docentes presencial ok" />
     <MESSAGE value="Reporte docentes presencial y virtual ok" />
@@ -827,7 +827,8 @@
     <MESSAGE value="Docentes masivos ok encabezado 9" />
     <MESSAGE value="Docentes masivos ok encabezado 10" />
     <MESSAGE value="Proyectos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proyectos" />
+    <MESSAGE value="Proyectos ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proyectos ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2408,24 +2409,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
+    <entry file="file://$PROJECT_DIR$/truchas/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.62069">
-          <caret line="1248" column="47" selection-start-line="1248" selection-start-column="47" selection-end-line="1248" selection-end-column="47" />
+        <state vertical-scroll-proportion="-13.4827585">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
           <folding>
-            <element signature="e#39295#41788#0" expanded="false" />
-            <element signature="e#52529#55945#0" expanded="false" />
-            <element signature="e#56058#57150#0" expanded="false" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/models.py">
+    <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23529412">
-          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.5380623">
+          <caret line="1249" column="0" selection-start-line="1249" selection-start-column="0" selection-end-line="1249" selection-end-column="0" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#39297#41790#0" expanded="false" />
+            <element signature="e#52535#55951#0" expanded="false" />
+            <element signature="e#56064#57156#0" expanded="false" />
           </folding>
         </state>
       </provider>
