@@ -30,7 +30,7 @@ from formacion.models import EvidenciaDocentes
 from truchas.models import Nivel4_Sesion1_1, Nivel4_Sesion1_2,Nivel4_Sesion2_1, Nivel4_Sesion2_2 ,Nivel4_Sesion2_3
 from truchas.models import Nivel4_Sesion3_1, Nivel4_Sesion3_2, Nivel4_Sesion3_3, Nivel4_Sesion3_4, Nivel4_Sesion3_5, Nivel4_Sesion3_6
 from truchas.models import ParticipanteN1_S2, CodigoMasivoN1_S2
-from pptx import Presentation
+#from pptx import Presentation
 from truchas.models import Nivel1_Sesion2_1,Nivel1_Sesion2_2,Nivel1_Sesion2_3,Nivel1_Sesion2_4
 from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
 from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2, Nivel3_Sesion2_1
