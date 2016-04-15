@@ -22,7 +22,7 @@ class FormadorFotoForm(forms.ModelForm):
 class FormadorSoporteForm(forms.ModelForm):
     class Meta:
         model = Formador
-        fields = ['hv','certificacion','rut','contrato','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria']
+        fields = ['hv','certificacion','rut','contrato','contrato_plan_choque','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria']
 
 class FormadorInformacionForm(forms.ModelForm):
     class Meta:

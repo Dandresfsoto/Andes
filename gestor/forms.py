@@ -14,7 +14,7 @@ class GestorFotoForm(forms.ModelForm):
 class GestorSoporteForm(forms.ModelForm):
     class Meta:
         model = Gestor
-        fields = ['hv','certificacion','rut','contrato','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria']
+        fields = ['hv','certificacion','rut','contrato','contrato_plan_choque','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria']
 
 class GestorInformacionForm(forms.ModelForm):
     class Meta:

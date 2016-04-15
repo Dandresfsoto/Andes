@@ -33,6 +33,7 @@ class Formador(models.Model):
     certificacion = models.FileField(upload_to="Formadores/Certificacion Bancaria/",blank=True)
     rut = models.FileField(upload_to="Formadores/Rut/",blank=True)
     contrato = models.FileField(upload_to="Formadores/Contratos/",blank=True)
+    contrato_plan_choque = models.FileField(upload_to="Formadores/Contratos Plan Choque/",blank=True)
     fotocopia_cedula = models.FileField(upload_to="Formadores/Fotocopia Cedula/",blank=True)
     antecedentes_judiciales = models.FileField(upload_to="Formadores/Antecedentes Judiciales/",blank=True)
     antecedentes_contraloria = models.FileField(upload_to="Formadores/Antecedentes Contraloria/",blank=True)

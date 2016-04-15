@@ -31,6 +31,7 @@ class Gestor(models.Model):
     certificacion = models.FileField(upload_to="Gestores/Certificacion Bancaria/",blank=True)
     rut = models.FileField(upload_to="Gestores/Rut/",blank=True)
     contrato = models.FileField(upload_to="Gestores/Contratos/",blank=True)
+    contrato_plan_choque = models.FileField(upload_to="Gestores/Contratos Plan Choque/",blank=True)
     fotocopia_cedula = models.FileField(upload_to="Gestores/Fotocopia Cedula/",blank=True)
     antecedentes_judiciales = models.FileField(upload_to="Gestores/Antecedentes Judiciales/",blank=True)
     antecedentes_contraloria = models.FileField(upload_to="Gestores/Antecedentes Contraloria/",blank=True)
