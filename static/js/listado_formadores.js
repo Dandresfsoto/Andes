@@ -102,6 +102,7 @@ function format ( d ) {
     certificacion.actualizar();
     rut.actualizar();
     contrato.actualizar();
+    contrato_plan_choque.actualizar();
     enero.actualizar();
     febrero.actualizar();
     marzo.actualizar();
