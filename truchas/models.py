@@ -358,3 +358,10 @@ class Nivel3_Sesion2_1(models.Model):
     respuesta = models.CharField(max_length=10000)
     def __unicode__(self):
         return smart_unicode(self.respuesta)
+
+
+class CargaMasiva_n3_n4(models.Model):
+    archivo = models.FileField(upload_to='Carga Masiva N3 y N4/')
+
+    def __unicode__(self):
+        return smart_unicode(self.id)

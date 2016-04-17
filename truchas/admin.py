@@ -36,7 +36,12 @@ from truchas.models import Nivel3_Sesion3_1, Nivel3_Sesion3_2
 from truchas.models import Nivel3_Sesion1_1, Nivel3_Sesion1_2, Nivel3_Sesion2_1
 from truchas.models import CodigoMasivo_Docentes, CodigoMasivo_Proyectoss
 from truchas.models import ParticipanteDocenteMasivo, ParticipanteProyectoMasivos
+from truchas.models import CargaMasiva_n3_n4
 #from docx import Document
+from zipfile import ZipFile
+from formacion.models import GrupoDocentes
+from PyPDF2 import PdfFileWriter, PdfFileReader
+import shutil
 
 t = Style(font=Font(name='Calibri',size=12,bold=True,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000'),
        fill=PatternFill(fill_type='solid',start_color='C9C9C9',end_color='FF000000'),
@@ -2226,3 +2231,301 @@ class Nivel3_Sesion2_1Admin(admin.ModelAdmin):
     actions = []
 
 admin.site.register(Nivel3_Sesion2_1,Nivel3_Sesion2_1Admin)
+
+
+def carga_masiva_docentes_n3_n4(modeladmin,request,queryset):
+    for archivo_queryset in queryset:
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=Carga Masiva N3 y N4.xlsx'
+        archivo = openpyxl.load_workbook(settings.STATICFILES_DIRS[0]+'/formatos/base.xlsx')
+
+        #logo = openpyxl.drawing.Image(settings.STATICFILES_DIRS[0]+'/formatos/logo.png')
+        #logo.drawing.top = 10
+        #logo.drawing.left = 25
+
+        hoja1 = archivo.get_sheet_by_name('hoja1')
+        hoja1.title = "Carga Masiva N3 y N4"
+        #hoja1.add_image(logo)
+
+        celda = hoja1.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja1.cell('E3')
+        celda.value = 'Carga Masiva N3 y N4'
+
+        celda = hoja1.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja1.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num = 5
+
+        columns = [tuple(['SOPORTE',30]),
+                   tuple(['RESULTADO',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja1.cell(row=row_num, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja1.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+
+
+
+        hoja2 = archivo.get_sheet_by_name('hoja2')
+        hoja2.title = "RED"
+        #hoja1.add_image(logo)
+
+        celda = hoja2.cell('E2')
+        celda.value = 'Formacion'
+
+        celda = hoja2.cell('E3')
+        celda.value = 'RED'
+
+        celda = hoja2.cell('I3')
+        celda.value = time.strftime("%d/%m/%y")
+
+        celda = hoja2.cell('I4')
+        celda.value = time.strftime("%I:%M:%S %p")
+
+        row_num_2 = 5
+
+        columns = [tuple(['SOPORTE',30]),
+                   tuple(['NOMBRE',30]),
+                   tuple(['CEDULA',30]),
+                   tuple(['GRUPO',30]),
+                   tuple(['RESULTADO',30]),
+                   ]
+
+        for col_num in xrange(len(columns)):
+            c = hoja2.cell(row=row_num_2, column=col_num+1)
+            c.value = columns[col_num][0]
+            c.style = t
+            hoja2.column_dimensions[openpyxl.cell.get_column_letter(col_num+1)].width = columns[col_num][1]
+
+
+
+        soportes = ZipFile(settings.MEDIA_ROOT+'//'+str(archivo_queryset.archivo),'r')
+
+        i = 0
+
+        for soporte in soportes.namelist():
+            resultado_soporte = ""
+            cedula = str(soporte).split('.')[0]
+
+            try:
+                participante = ParticipanteDocenteMasivo.objects.get(cedula=cedula)
+            except:
+                resultado_soporte = "No existe cedula Base generar"
+            else:
+                resultado_soporte = "Grupo identificado"
+                participantes = ParticipanteDocenteMasivo.objects.filter(codigo_masivo=participante.codigo_masivo,subgrupo=participante.subgrupo)
+
+                source = soportes.open(soporte)
+                target = file(os.path.join(r"C:\Temp\masivo",unicode(cedula)+".pdf"),"wb")
+                with source, target:
+                    shutil.copyfileobj(source,target)
+
+                output1 = PdfFileWriter()
+                output2 = PdfFileWriter()
+                output3 = PdfFileWriter()
+                output4 = PdfFileWriter()
+                output5 = PdfFileWriter()
+                output6 = PdfFileWriter()
+                output7 = PdfFileWriter()
+
+                with open("C:\\Temp\\masivo\\"+unicode(cedula)+".pdf", "rb") as f:
+                    input = PdfFileReader(f,'rb')
+                    if participantes.count() <= 11:
+                        output1.addPage(input.getPage(0))
+                        output2.addPage(input.getPage(1))
+                        output3.addPage(input.getPage(2))
+                        output4.addPage(input.getPage(3))
+                        output5.addPage(input.getPage(4))
+                        output6.addPage(input.getPage(5))
+                        output7.addPage(input.getPage(6))
+                    else:
+                        output1.addPage(input.getPage(0))
+                        output1.addPage(input.getPage(1))
+                        output2.addPage(input.getPage(2))
+                        output2.addPage(input.getPage(3))
+                        output3.addPage(input.getPage(4))
+                        output3.addPage(input.getPage(5))
+                        output4.addPage(input.getPage(6))
+                        output4.addPage(input.getPage(7))
+                        output5.addPage(input.getPage(8))
+                        output5.addPage(input.getPage(9))
+                        output6.addPage(input.getPage(10))
+                        output6.addPage(input.getPage(11))
+                        output7.addPage(input.getPage(12))
+                        output7.addPage(input.getPage(13))
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_3_1.pdf", "wb") as outputStream1:
+                        output1.write(outputStream1)
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_3_2.pdf", "wb") as outputStream2:
+                        output2.write(outputStream2)
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_3_3.pdf", "wb") as outputStream3:
+                        output3.write(outputStream3)
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_4_1.pdf", "wb") as outputStream4:
+                        output4.write(outputStream4)
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_4_2.pdf", "wb") as outputStream5:
+                        output5.write(outputStream5)
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_4_3.pdf", "wb") as outputStream6:
+                        output6.write(outputStream6)
+
+                    with open("C:\\Temp\\masivo\\"+unicode(participante.cedula)+"_4_4.pdf", "wb") as outputStream7:
+                        output7.write(outputStream7)
+
+
+
+
+                codigo = CodigoMasivo_Docentes.objects.get(codigo = participante.codigo_masivo.codigo)
+
+                try:
+                    grupo = GrupoDocentes.objects.get(nombre = participante.grupo)
+                except:
+                    grupo = GrupoDocentes.objects.filter(formador = ParticipanteDocente.objects.get(cedula=participante.cedula).formador)[0]
+
+                formador = Formador.objects.get(cedula=codigo.cedula)
+
+                nuevo_soporte_3_1 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=29),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_3_1.pdf", 'rb')))
+                nuevo_soporte_3_1.save()
+
+                nuevo_soporte_3_2 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=31),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_3_2.pdf", 'rb')))
+                nuevo_soporte_3_2.save()
+
+                nuevo_soporte_3_3 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=33),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_3_3.pdf", 'rb')))
+                nuevo_soporte_3_3.save()
+
+
+
+                nuevo_soporte_4_1 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=41),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_4_1.pdf", 'rb')))
+                nuevo_soporte_4_1.save()
+
+                nuevo_soporte_4_2 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=43),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_4_2.pdf", 'rb')))
+                nuevo_soporte_4_2.save()
+
+                nuevo_soporte_4_3 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=45),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_4_3.pdf", 'rb')))
+                nuevo_soporte_4_3.save()
+
+                nuevo_soporte_4_5 = SoporteEntregableDocente(grupo=grupo,
+                                                                 entregable=EntregableDocentes.objects.get(id=49),
+                                                                 soporte=File(open("C://Temp//masivo//" + participante.cedula+"_4_4.pdf", 'rb')))
+                nuevo_soporte_4_5.save()
+
+                for parti in participantes:
+                    row_num_2 += 1
+
+                    try:
+                        participante_principal = ParticipanteDocente.objects.get(cedula=parti.cedula)
+                    except:
+                        resultado = "No existe la cedula en la base principal"
+                    else:
+                        resultado = "Cargado"
+                        participante_principal.formador = formador
+                        participante_principal.grupo = grupo
+                        participante_principal.save()
+
+                        evidencia1 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=29)
+                        evidencia1.soporte = nuevo_soporte_3_1
+                        evidencia1.save()
+
+                        evidencia2 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=31)
+                        evidencia2.soporte = nuevo_soporte_3_2
+                        evidencia2.save()
+
+                        evidencia3 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=33)
+                        evidencia3.soporte = nuevo_soporte_3_3
+                        evidencia3.save()
+
+
+                        evidencia4 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=41)
+                        evidencia4.soporte = nuevo_soporte_4_1
+                        evidencia4.save()
+
+                        evidencia5 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=43)
+                        evidencia5.soporte = nuevo_soporte_4_2
+                        evidencia5.save()
+
+                        evidencia6 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=45)
+                        evidencia6.soporte = nuevo_soporte_4_3
+                        evidencia6.save()
+
+                        evidencia7 = EvidenciaDocentes.objects.filter(participante__cedula = parti.cedula).get(entregable__id=49)
+                        evidencia7.soporte = nuevo_soporte_4_5
+                        evidencia7.save()
+
+
+
+
+                    row = [
+                        soporte,
+                        parti.nombre,
+                        parti.cedula,
+                        grupo.nombre,
+                        resultado
+                    ]
+
+                    for col_num in xrange(len(row)):
+                        c = hoja2.cell(row=row_num_2, column=col_num+1)
+                        if row[col_num] == True:
+                            c.value = "SI"
+                        if row[col_num] == False:
+                            c.value = "NO"
+                        if row[col_num] == None:
+                            c.value = ""
+                        else:
+                            c.value = row[col_num]
+                        c.style = co
+
+
+
+            row_num += 1
+            row = [
+                soporte,
+                resultado_soporte
+            ]
+
+            for col_num in xrange(len(row)):
+                c = hoja1.cell(row=row_num, column=col_num+1)
+                if row[col_num] == True:
+                    c.value = "SI"
+                if row[col_num] == False:
+                    c.value = "NO"
+                if row[col_num] == None:
+                    c.value = ""
+                else:
+                    c.value = row[col_num]
+                c.style = co
+
+
+        archivo.save(response)
+        return response
+carga_masiva_docentes_n3_n4.short_description = "Cargar masiva docentes n3 y n4"
+
+
+class CargaMasiva_n3_n4Admin(admin.ModelAdmin):
+    list_display = ['id','archivo']
+    actions = [carga_masiva_docentes_n3_n4]
+
+admin.site.register(CargaMasiva_n3_n4,CargaMasiva_n3_n4Admin)
