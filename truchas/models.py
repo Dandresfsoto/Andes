@@ -29,6 +29,7 @@ class CodigoMasivo_Docentes(models.Model):
 
 class ParticipanteDocenteMasivo(models.Model):
     codigo_masivo = models.ForeignKey(CodigoMasivo_Docentes)
+    subgrupo = models.IntegerField(blank=True,null=True,default=0)
     nombre = models.CharField(max_length=200,blank=True,null=True)
     cedula = models.CharField(max_length=200,blank=True,null=True)
     institucion = models.CharField(max_length=200,blank=True,null=True)

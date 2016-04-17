@@ -29,7 +29,7 @@ SECRET_KEY = '+_lb+igq1_@@rdk5bfd-_-(*yx^fow4o-7&=h3e-@^30^@p3s+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','181.58.253.18']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -167,9 +167,9 @@ MEDIA_URL = '/media/'
 
 
 FILE_UPLOAD_HANDLERS = (
-    "progressbarupload.uploadhandler.ProgressBarUploadHandler",
     "django.core.files.uploadhandler.MemoryFileUploadHandler",
     "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+    "progressbarupload.uploadhandler.ProgressBarUploadHandler",
 )
 
 PROGRESSBARUPLOAD_INCLUDE_JQUERY = False

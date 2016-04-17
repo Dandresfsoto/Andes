@@ -2,6 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96e9e81f-6725-4984-be43-6b32ba30b127" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\ENTREGABLES\Alistamiento\archivo.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\ENTREGABLES\Alistamient¢\¤o¤o\archivo.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\base.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\changelists.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\dashboard.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\forms.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\ie.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\login.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\css\widgets.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\changelist-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\changelist-bg_rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\default-bg-reverse.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\default-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\deleted-overlay.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\gis\move_vertex_off.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\gis\move_vertex_on.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon-no.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon-unknown.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon-yes.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_addlink.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_alert.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_calendar.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_changelink.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_clock.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_deletelink.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_error.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_searchbox.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\icon_success.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\inline-delete-8bit.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\inline-delete.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\inline-restore-8bit.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\inline-restore.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\inline-splitter-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\nav-bg-grabber.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\nav-bg-reverse.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\nav-bg-selected.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\nav-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\selector-icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\selector-search.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\sorting-icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\tooltag-add.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\img\tooltag-arrowright.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\LICENSE-JQUERY.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\SelectBox.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\SelectFilter2.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\actions.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\actions.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\admin\DateTimeShortcuts.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\admin\RelatedObjectLookups.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\collapse.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\collapse.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\core.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\inlines.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\inlines.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\jquery.init.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\prepopulate.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\prepopulate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\related-widget-wrapper.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\timeparse.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sistemas\PycharmProjects\Andes\static\admin\js\urlify.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/truchas/models.py" afterPath="$PROJECT_DIR$/truchas/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/settings.py" afterPath="$PROJECT_DIR$/conf/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/urls.py" afterPath="$PROJECT_DIR$/conf/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Andes.iws" />
@@ -30,11 +97,23 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.029411765">
-              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state vertical-scroll-proportion="1.1728395">
+              <caret line="1155" column="52" selection-start-line="1155" selection-start-column="8" selection-end-line="1155" selection-end-column="85" />
               <folding>
-                <element signature="e#46#78#0" expanded="true" />
+                <element signature="e#3731#12984#0" expanded="false" />
                 <element signature="e#39297#41790#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/truchas/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.5862069">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,8 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/conf/settings.py" />
-        <option value="$PROJECT_DIR$/templates/cpe_administrativo.jade" />
         <option value="$PROJECT_DIR$/administrativo/urls.py" />
         <option value="$PROJECT_DIR$/templates/estadisticas.jade" />
         <option value="$PROJECT_DIR$/gestor/urls.py" />
@@ -97,9 +174,7 @@
         <option value="C:/Python27/Lib/site-packages/progressbarupload/views.py" />
         <option value="$PROJECT_DIR$/formacion/models.py" />
         <option value="$PROJECT_DIR$/conf/static.py" />
-        <option value="$PROJECT_DIR$/conf/urls.py" />
         <option value="$PROJECT_DIR$/formacion/admin.py" />
-        <option value="$PROJECT_DIR$/truchas/models.py" />
         <option value="$PROJECT_DIR$/formador/models.py" />
         <option value="$PROJECT_DIR$/formador/forms.py" />
         <option value="$PROJECT_DIR$/gestor/models.py" />
@@ -108,6 +183,10 @@
         <option value="$PROJECT_DIR$/formador/views.py" />
         <option value="$PROJECT_DIR$/static/js/listado_formadores.js" />
         <option value="$PROJECT_DIR$/truchas/admin.py" />
+        <option value="$PROJECT_DIR$/conf/urls.py" />
+        <option value="$PROJECT_DIR$/conf/settings.py" />
+        <option value="$PROJECT_DIR$/truchas/models.py" />
+        <option value="$PROJECT_DIR$/truchas/migrations/0010_auto_20160416_1955.py" />
       </list>
     </option>
   </component>
@@ -176,6 +255,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="truchas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truchas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Andes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formacion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,12 +562,6 @@
       <created>1444519453652</created>
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
-    </task>
-    <task id="LOCAL-00138" summary="Reporte proyectos">
-      <created>1459454446885</created>
-      <option name="number" value="00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1459454446885</updated>
     </task>
     <task id="LOCAL-00139" summary="Reporte proyectos ok">
       <created>1459454576282</created>
@@ -746,34 +851,40 @@
       <option name="project" value="LOCAL" />
       <updated>1460748988323</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="presentaciones ok 4">
+      <created>1460749164042</created>
+      <option name="number" value="00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1460749164042</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22108346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7826772" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04566929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46456692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38799414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@Andes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3952756" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34185302" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28031495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@Andes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34185302" sideWeight="0.49707174" order="8" side_tool="false" content_ui="tabs" x="0" y="249" width="1366" height="229" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -788,7 +899,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Docentes masivos ok encabezado 9" />
     <MESSAGE value="Docentes masivos ok encabezado 10" />
     <MESSAGE value="Proyectos" />
     <MESSAGE value="Proyectos ok" />
@@ -813,7 +923,8 @@
     <MESSAGE value="presentaciones ok" />
     <MESSAGE value="presentaciones ok 2" />
     <MESSAGE value="presentaciones ok 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="presentaciones ok 3" />
+    <MESSAGE value="presentaciones ok 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="presentaciones ok 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1958,20 +2069,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_grupo_calificar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5957944">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tipo2_formador_actividad.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7616823">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/docentes_participantes_evidencias.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7079439">
@@ -2143,13 +2240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/migrations/0043_auto_20160330_1125.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.796748">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42713568">
@@ -2178,13 +2268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7941176">
-          <caret line="37" column="102" selection-start-line="37" selection-start-column="102" selection-end-line="37" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9411765">
@@ -2205,53 +2288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23529412">
-          <caret line="164" column="44" selection-start-line="164" selection-start-column="44" selection-end-line="164" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33217993">
-          <caret line="307" column="23" selection-start-line="307" selection-start-column="6" selection-end-line="307" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-            <element signature="e#414#811#0" expanded="false" />
-            <element signature="e#865#1331#0" expanded="false" />
-            <element signature="e#1386#1783#0" expanded="false" />
-            <element signature="e#1843#2309#0" expanded="false" />
-            <element signature="e#2342#3127#0" expanded="false" />
-            <element signature="e#3168#3990#0" expanded="false" />
-            <element signature="e#6078#6461#0" expanded="false" />
-            <element signature="e#6503#6614#0" expanded="false" />
-            <element signature="e#6647#6756#0" expanded="false" />
-            <element signature="e#6790#6901#0" expanded="false" />
-            <element signature="e#6941#7062#0" expanded="false" />
-            <element signature="e#7106#7239#0" expanded="false" />
-            <element signature="e#9148#9259#0" expanded="false" />
-            <element signature="e#9304#9415#0" expanded="false" />
-            <element signature="e#9461#9713#0" expanded="false" />
-            <element signature="e#9751#9995#0" expanded="false" />
-            <element signature="e#10028#10111#0" expanded="false" />
-            <element signature="e#10151#10369#0" expanded="false" />
-            <element signature="e#10402#10687#0" expanded="false" />
-            <element signature="e#10727#11020#0" expanded="false" />
-            <element signature="e#11054#11431#0" expanded="false" />
-            <element signature="e#11472#11857#0" expanded="false" />
-            <element signature="e#11912#12224#0" expanded="false" />
-            <element signature="e#12656#13125#0" expanded="false" />
-            <element signature="e#13696#13829#0" expanded="false" />
-            <element signature="e#13885#14241#0" expanded="false" />
-            <element signature="e#14659#14931#0" expanded="false" />
-            <element signature="e#14990#15349#0" expanded="false" />
-            <element signature="e#15415#15698#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/escuela_tic_participantes_evidencias.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.20428336">
@@ -2263,7 +2299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3360791">
           <caret line="14" column="124" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="124" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2271,7 +2306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="35" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2279,16 +2313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/truchas/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="22" selection-start-line="258" selection-start-column="6" selection-end-line="258" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2304,9 +2328,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2314,7 +2335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.83196044">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2322,7 +2342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33217993">
           <caret line="161" column="20" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2330,7 +2349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.112026356">
           <caret line="6" column="91" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2363,9 +2381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5294118">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2394,9 +2409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3615917">
           <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2404,9 +2416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5380623">
           <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2414,16 +2423,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.575">
+          <caret line="171" column="63" selection-start-line="171" selection-start-column="63" selection-end-line="171" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7226107">
+          <caret line="37" column="101" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
+          <folding>
+            <element signature="e#617#674#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27954546">
+          <caret line="307" column="20" selection-start-line="307" selection-start-column="6" selection-end-line="307" selection-end-column="20" />
+          <folding>
+            <element signature="e#865#1331#0" expanded="false" />
+            <element signature="e#1386#1783#0" expanded="false" />
+            <element signature="e#1843#2309#0" expanded="false" />
+            <element signature="e#2342#3127#0" expanded="false" />
+            <element signature="e#6078#6461#0" expanded="false" />
+            <element signature="e#6503#6614#0" expanded="false" />
+            <element signature="e#6647#6756#0" expanded="false" />
+            <element signature="e#6790#6901#0" expanded="false" />
+            <element signature="e#6941#7062#0" expanded="false" />
+            <element signature="e#7106#7239#0" expanded="false" />
+            <element signature="e#9148#9259#0" expanded="false" />
+            <element signature="e#9304#9415#0" expanded="false" />
+            <element signature="e#9461#9713#0" expanded="false" />
+            <element signature="e#9751#9995#0" expanded="false" />
+            <element signature="e#10028#10111#0" expanded="false" />
+            <element signature="e#10151#10369#0" expanded="false" />
+            <element signature="e#10402#10687#0" expanded="false" />
+            <element signature="e#10727#11020#0" expanded="false" />
+            <element signature="e#11054#11431#0" expanded="false" />
+            <element signature="e#11472#11857#0" expanded="false" />
+            <element signature="e#11912#12224#0" expanded="false" />
+            <element signature="e#12656#13125#0" expanded="false" />
+            <element signature="e#13696#13829#0" expanded="false" />
+            <element signature="e#13885#14241#0" expanded="false" />
+            <element signature="e#14659#14931#0" expanded="false" />
+            <element signature="e#14990#15349#0" expanded="false" />
+            <element signature="e#15415#15698#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/migrations/0010_auto_20160416_1955.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81179774">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion/migrations/0043_auto_20160330_1125.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7977528">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truchas/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5862069">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029411765">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state vertical-scroll-proportion="1.1728395">
+          <caret line="1155" column="52" selection-start-line="1155" selection-start-column="8" selection-end-line="1155" selection-end-column="85" />
           <folding>
-            <element signature="e#46#78#0" expanded="true" />
+            <element signature="e#3731#12984#0" expanded="false" />
             <element signature="e#39297#41790#0" expanded="false" />
           </folding>
         </state>
