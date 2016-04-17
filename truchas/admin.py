@@ -1219,12 +1219,21 @@ generar_listas_docentes.short_description = "Generar Listas Docentes"
 
 
 class CodigoMasivo_DocentesAdmin(admin.ModelAdmin):
-    list_display = ['codigo','departamento','municipio','formador']
+    list_display = ['codigo','departamento','municipio','formador','subgrupos']
     ordering = ['codigo']
     list_filter = ['region','formador']
     actions = [generar_listas_docentes]
+
+    def subgrupos(self,obj):
+        return ParticipanteDocenteMasivo.objects.filter(codigo_masivo=obj.id).values_list('subgrupo').distinct().count()
+
 admin.site.register(CodigoMasivo_Docentes,CodigoMasivo_DocentesAdmin)
-admin.site.register(ParticipanteDocenteMasivo)
+
+class ParticipanteDocenteMasivoAdmin(admin.ModelAdmin):
+    list_display = ['cedula','subgrupo']
+    list_filter = ['codigo_masivo']
+
+admin.site.register(ParticipanteDocenteMasivo, ParticipanteDocenteMasivoAdmin)
 
 
 
