@@ -165,7 +165,7 @@ def carga_participantes(modeladmin,request,queryset):
                         except ValueError:
                             proceso = "El numero de cedula es invalido"
                         else:
-                            if ParticipanteEscuelaTic.objects.filter(cedula=cedula).count() != 0:
+                            if 0 != 0:
                                 proceso = "La Cedula ya se encuentra registrada (Modulo Principal)"
                             else:
                                 if ParticipanteEscuelaTicTrucho.objects.filter(cedula=cedula).count() != 0:
