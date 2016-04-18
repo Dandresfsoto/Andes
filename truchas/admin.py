@@ -1236,6 +1236,7 @@ admin.site.register(CodigoMasivo_Docentes,CodigoMasivo_DocentesAdmin)
 
 class ParticipanteDocenteMasivoAdmin(admin.ModelAdmin):
     list_display = ['cedula','subgrupo']
+    search_fields = ['cedula']
     list_filter = ['codigo_masivo']
 
 admin.site.register(ParticipanteDocenteMasivo, ParticipanteDocenteMasivoAdmin)
