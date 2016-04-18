@@ -2389,13 +2389,13 @@ def carga_masiva_docentes_n3_n4(modeladmin,request,queryset):
 
 
                 codigo = CodigoMasivo_Docentes.objects.get(codigo = participante.codigo_masivo.codigo)
+                formador = Formador.objects.get(cedula=codigo.cedula)
 
                 try:
-                    grupo = GrupoDocentes.objects.get(nombre = participante.grupo)
+                    grupo = GrupoDocentes.objects.filter(formador__cedula = formador.cedula).get(nombre = participante.grupo)
                 except:
-                    grupo = GrupoDocentes.objects.filter(formador = ParticipanteDocente.objects.get(cedula=participante.cedula).formador)[0]
+                    grupo = GrupoDocentes.objects.filter(formador__cedula = formador.cedula)[0]
 
-                formador = Formador.objects.get(cedula=codigo.cedula)
 
                 nuevo_soporte_3_1 = SoporteEntregableDocente(grupo=grupo,
                                                                  entregable=EntregableDocentes.objects.get(id=29),
