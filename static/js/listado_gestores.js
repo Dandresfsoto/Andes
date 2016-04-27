@@ -93,6 +93,33 @@ function format ( d ) {
     column: d[32]};
 
 
+    var contrato_plan_choque = {content: init,
+    actualizar: actualizar,
+    column: d[35]};
+
+
+    var liquidacion = {content: init,
+    actualizar: actualizar,
+    column: d[36]};
+
+
+     var enero_1 = {content: init,
+    actualizar: actualizar,
+    column: d[37]};
+
+    var febrero_1 = {content: init,
+    actualizar: actualizar,
+    column: d[38]};
+
+    var marzo_1 = {content: init,
+    actualizar: actualizar,
+    column: d[39]};
+
+    var abril_1 = {content: init,
+    actualizar: actualizar,
+    column: d[40]};
+
+
 
     hv.actualizar();
     certificacion.actualizar();
@@ -113,6 +140,12 @@ function format ( d ) {
     fotocopia_cedula.actualizar();
     antecedentes_judiciales.actualizar();
     antecedentes_contraloria.actualizar();
+    contrato_plan_choque.actualizar();
+    liquidacion.actualizar();
+    enero_1.actualizar();
+    febrero_1.actualizar();
+    marzo_1.actualizar();
+    abril_1.actualizar();
 
 
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
@@ -164,6 +197,13 @@ function format ( d ) {
             antecedentes_judiciales.content+
             '<td class="text-center">Contraloria:</td>'+
             antecedentes_contraloria.content+
+            '<td class="text-center">Contrato plan Choque:</td>'+
+            contrato_plan_choque.content+
+        '</tr>'+
+
+        '<tr>'+
+            '<td class="text-center">Liquidacion:</td>'+
+            liquidacion.content+
         '</tr>'+
 
         '<tr>'+
@@ -202,6 +242,24 @@ function format ( d ) {
             '<td class="text-center">Diciembre:</td>'+
             diciembre.content+
         '</tr>'+
+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b>SEGURIDAD SOCIAL 2016</b></h4></th>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td class="text-center">Enero:</td>'+
+            enero_1.content+
+            '<td class="text-center">Febrero:</td>'+
+            febrero_1.content+
+            '<td class="text-center">Marzo:</td>'+
+            marzo_1.content+
+            '<td class="text-center">Abril:</td>'+
+            abril_1.content+
+        '</tr>'+
+
+
     '</table></div>';
 }
 

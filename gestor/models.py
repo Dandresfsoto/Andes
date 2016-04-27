@@ -35,6 +35,7 @@ class Gestor(models.Model):
     fotocopia_cedula = models.FileField(upload_to="Gestores/Fotocopia Cedula/",blank=True)
     antecedentes_judiciales = models.FileField(upload_to="Gestores/Antecedentes Judiciales/",blank=True)
     antecedentes_contraloria = models.FileField(upload_to="Gestores/Antecedentes Contraloria/",blank=True)
+    liquidacion = models.FileField(upload_to="Gestores/Liquidacion/",blank=True)
 
     seguro_enero = models.FileField(upload_to="Gestores/Seguro/Enero",blank=True)
     seguro_febrero = models.FileField(upload_to="Gestores/Seguro/Febrero",blank=True)
@@ -48,6 +49,12 @@ class Gestor(models.Model):
     seguro_octubre = models.FileField(upload_to="Gestores/Seguro/Octubre",blank=True)
     seguro_noviembre = models.FileField(upload_to="Gestores/Seguro/Noviembre",blank=True)
     seguro_diciembre = models.FileField(upload_to="Gestores/Seguro/Diciembre",blank=True)
+
+    seguro_enero_1 = models.FileField(upload_to="Gestores/Seguro/Enero 2016",blank=True)
+    seguro_febrero_1 = models.FileField(upload_to="Gestores/Seguro/Febrero 2016",blank=True)
+    seguro_marzo_1 = models.FileField(upload_to="Gestores/Seguro/Marzo 2016",blank=True)
+    seguro_abril_1 = models.FileField(upload_to="Gestores/Seguro/Abril 2016",blank=True)
+
     fecha_contratacion = models.DateField()
     fecha_terminacion = models.DateField(blank=True,null=True)
 

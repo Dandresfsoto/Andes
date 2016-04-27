@@ -191,9 +191,13 @@ class GestorActualizarSoporteView(AdministrativoMixin,UpdateView):
                               {'nombre':'Certificacion Bancaria','soporte_id':"certificacion",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).certificacion},
                               {'nombre':'Rut','soporte_id':"rut",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).rut},
                               {'nombre':'Contrato','soporte_id':"contrato",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).contrato},
+                              {'nombre':'Contrato Plan Choque','soporte_id':"contrato_plan_choque",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).contrato_plan_choque},
                               {'nombre':'Fotocopia Cedula','soporte_id':"fotocopia_cedula",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).fotocopia_cedula},
                               {'nombre':'Ancedentes Judiciales','soporte_id':"antecedentes_judiciales",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).antecedentes_judiciales},
                               {'nombre':'Antecedentes Contraloria','soporte_id':"antecedentes_contraloria",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).antecedentes_contraloria},
+                              {'nombre':'Contrato plan c','soporte_id':"antecedentes_contraloria",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).antecedentes_contraloria},
+                              {'nombre':'Antecedentes Contraloria','soporte_id':"antecedentes_contraloria",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).antecedentes_contraloria},
+                              {'nombre':'Liquidacion','soporte_id':"liquidacion",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).liquidacion},
                               ]
 
         kwargs['nombre'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre
@@ -221,7 +225,12 @@ class GestorActualizarSeguroView(AdministrativoMixin,UpdateView):
                               {'mes':"septiembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_septiembre},
                               {'mes':"octubre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_octubre},
                               {'mes':"noviembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_noviembre},
-                              {'mes':"diciembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_diciembre},]
+                              {'mes':"diciembre",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_diciembre},
+                              {'mes':"enero_1",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_enero_1},
+                              {'mes':"febrero_1",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_febrero_1},
+                              {'mes':"marzo_1",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_marzo_1},
+                              {'mes':"abril_1",'soporte':Gestor.objects.get(pk=self.kwargs['gestor_id']).seguro_abril_1},
+                              ]
 
         kwargs['nombre'] = Gestor.objects.get(pk=self.kwargs['gestor_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre

@@ -14,7 +14,7 @@ class GestorFotoForm(forms.ModelForm):
 class GestorSoporteForm(forms.ModelForm):
     class Meta:
         model = Gestor
-        fields = ['hv','certificacion','rut','contrato','contrato_plan_choque','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria']
+        fields = ['hv','certificacion','rut','contrato','contrato_plan_choque','fotocopia_cedula','antecedentes_judiciales','antecedentes_contraloria','liquidacion']
 
 class GestorInformacionForm(forms.ModelForm):
     class Meta:
@@ -26,4 +26,5 @@ class GestorSeguroForm(forms.ModelForm):
         model = Gestor
         fields = ['seguro_enero','seguro_febrero','seguro_marzo','seguro_abril',
                   'seguro_mayo','seguro_junio','seguro_julio','seguro_agosto',
-                  'seguro_septiembre','seguro_octubre','seguro_noviembre','seguro_diciembre']
+                  'seguro_septiembre','seguro_octubre','seguro_noviembre','seguro_diciembre',
+                  'seguro_enero_1','seguro_febrero_1','seguro_marzo_1','seguro_abril_1',]

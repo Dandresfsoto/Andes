@@ -43,6 +43,12 @@ class GestorTableView(BaseDatatableView):
         'seguro_diciembre',
         'fecha_contratacion',
         'fecha_terminacion',
+        'contrato_plan_choque',
+        'liquidacion',
+        'seguro_enero_1',
+        'seguro_febrero_1',
+        'seguro_marzo_1',
+        'seguro_abril_1',
     ]
 
     order_columns = [
@@ -136,6 +142,18 @@ class GestorTableView(BaseDatatableView):
             return str(row.antecedentes_judiciales)
         if column == 'antecedentes_contraloria':
             return str(row.antecedentes_contraloria)
+        if column == 'contrato_plan_choque':
+            return str(row.contrato_plan_choque)
+        if column == 'liquidacion':
+            return str(row.liquidacion)
+        if column == 'seguro_enero_1':
+            return str(row.seguro_enero_1)
+        if column == 'seguro_febrero_1':
+            return str(row.seguro_febrero_1)
+        if column == 'seguro_marzo_1':
+            return str(row.seguro_marzo_1)
+        if column == 'seguro_abril_1':
+            return str(row.seguro_abril_1)
         if column == 'foto':
             return str(row.foto)
         else:
