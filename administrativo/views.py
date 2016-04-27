@@ -292,6 +292,7 @@ class FormadorActualizarSoporteView(AdministrativoMixin,UpdateView):
                               {'nombre':'Fotocopia Cedula','soporte_id':"fotocopia_cedula",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).fotocopia_cedula},
                               {'nombre':'Ancedentes Judiciales','soporte_id':"antecedentes_judiciales",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).antecedentes_judiciales},
                               {'nombre':'Antecedentes Contraloria','soporte_id':"antecedentes_contraloria",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).antecedentes_contraloria},
+                              {'nombre':'Liquidacion','soporte_id':"liquidacion",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).liquidacion},
                               ]
 
         kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
@@ -319,7 +320,12 @@ class FormadorActualizarSeguroView(AdministrativoMixin,UpdateView):
                               {'mes':"septiembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_septiembre},
                               {'mes':"octubre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_octubre},
                               {'mes':"noviembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_noviembre},
-                              {'mes':"diciembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_diciembre},]
+                              {'mes':"diciembre",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_diciembre},
+                              {'mes':"enero_1",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_enero_1},
+                              {'mes':"febrero_1",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_febrero_1},
+                              {'mes':"marzo_1",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_marzo_1},
+                              {'mes':"abril_1",'soporte':Formador.objects.get(pk=self.kwargs['formador_id']).seguro_abril_1},
+                              ]
 
         kwargs['nombre'] = Formador.objects.get(pk=self.kwargs['formador_id']).nombre
         kwargs['REGION'] = Region.objects.get(pk=self.kwargs['pk']).nombre

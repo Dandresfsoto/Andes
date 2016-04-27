@@ -37,6 +37,7 @@ class Formador(models.Model):
     fotocopia_cedula = models.FileField(upload_to="Formadores/Fotocopia Cedula/",blank=True)
     antecedentes_judiciales = models.FileField(upload_to="Formadores/Antecedentes Judiciales/",blank=True)
     antecedentes_contraloria = models.FileField(upload_to="Formadores/Antecedentes Contraloria/",blank=True)
+    liquidacion = models.FileField(upload_to="Formadores/Liquidacion/",blank=True)
 
     seguro_enero = models.FileField(upload_to="Formadores/Seguro/Enero",blank=True)
     seguro_febrero = models.FileField(upload_to="Formadores/Seguro/Febrero",blank=True)
@@ -50,6 +51,11 @@ class Formador(models.Model):
     seguro_octubre = models.FileField(upload_to="Formadores/Seguro/Octubre",blank=True)
     seguro_noviembre = models.FileField(upload_to="Formadores/Seguro/Noviembre",blank=True)
     seguro_diciembre = models.FileField(upload_to="Formadores/Seguro/Diciembre",blank=True)
+    seguro_enero_1 = models.FileField(upload_to="Formadores/Seguro/Enero",blank=True)
+    seguro_febrero_1 = models.FileField(upload_to="Formadores/Seguro/Febrero",blank=True)
+    seguro_marzo_1 = models.FileField(upload_to="Formadores/Seguro/Marzo",blank=True)
+    seguro_abril_1 = models.FileField(upload_to="Formadores/Seguro/Abril",blank=True)
+
     fecha_contratacion = models.DateField()
     fecha_terminacion = models.DateField(blank=True,null=True)
 

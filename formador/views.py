@@ -49,6 +49,11 @@ class FormadorTableView(BaseDatatableView):
         'fecha_contratacion',
         'fecha_terminacion',
         'contrato_plan_choque',
+        'seguro_enero_1',
+        'seguro_febrero_1',
+        'seguro_marzo_1',
+        'seguro_abril_1',
+        'liquidacion'
     ]
 
     order_columns = [
@@ -139,6 +144,16 @@ class FormadorTableView(BaseDatatableView):
             return str(row.seguro_noviembre)
         if column == 'seguro_diciembre':
             return str(row.seguro_diciembre)
+        if column == 'seguro_enero_1':
+            return str(row.seguro_enero_1)
+        if column == 'seguro_febrero_1':
+            return str(row.seguro_febrero_1)
+        if column == 'seguro_marzo_1':
+            return str(row.seguro_marzo_1)
+        if column == 'seguro_abril_1':
+            return str(row.seguro_abril_1)
+        if column == 'liquidacion':
+            return str(row.liquidacion)
         if column == 'fotocopia_cedula':
             return str(row.fotocopia_cedula)
         if column == 'antecedentes_judiciales':

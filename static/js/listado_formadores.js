@@ -96,6 +96,26 @@ function format ( d ) {
     actualizar: actualizar,
     column: d[32]};
 
+    var enero_1 = {content: init,
+    actualizar: actualizar,
+    column: d[36]};
+
+    var febrero_1 = {content: init,
+    actualizar: actualizar,
+    column: d[37]};
+
+    var marzo_1 = {content: init,
+    actualizar: actualizar,
+    column: d[38]};
+
+    var abril_1 = {content: init,
+    actualizar: actualizar,
+    column: d[39]};
+
+    var liquidacion = {content: init,
+    actualizar: actualizar,
+    column: d[40]};
+
 
 
     hv.actualizar();
@@ -118,6 +138,11 @@ function format ( d ) {
     fotocopia_cedula.actualizar();
     antecedentes_judiciales.actualizar();
     antecedentes_contraloria.actualizar();
+    enero_1.actualizar();
+    febrero_1.actualizar();
+    marzo_1.actualizar();
+    abril_1.actualizar();
+    liquidacion.actualizar();
 
 
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
@@ -174,6 +199,11 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
+            '<td class="text-center">Liquidación:</td>'+
+            liquidacion.content+
+        '</tr>'+
+
+        '<tr>'+
             '<th colspan="8" class="text-center"><h4><b><a href="actualizar/seguro/'+d[0]+'/" style="color:#004c99;">SEGURIDAD SOCIAL</b></h4></th>'+
         '</tr>'+
 
@@ -209,6 +239,23 @@ function format ( d ) {
             '<td class="text-center">Diciembre:</td>'+
             diciembre.content+
         '</tr>'+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b>SEGURIDAD SOCIAL 2016</b></h4></th>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td class="text-center">Enero:</td>'+
+            enero_1.content+
+            '<td class="text-center">Febrero:</td>'+
+            febrero_1.content+
+            '<td class="text-center">Marzo:</td>'+
+            marzo_1.content+
+            '<td class="text-center">Abril:</td>'+
+            abril_1.content+
+        '</tr>'+
+
+
     '</table></div>';
 }
 
