@@ -32,6 +32,10 @@ function format ( d ) {
     actualizar: actualizar,
     column: d[17]};
 
+    var contrato_plan_choque = {content: init,
+    actualizar: actualizar,
+    column: d[35]};
+
     var fotocopia_cedula = {content: init,
     actualizar: actualizar,
     column: d[18]};
@@ -92,12 +96,33 @@ function format ( d ) {
     actualizar: actualizar,
     column: d[32]};
 
+    var enero_1 = {content: init,
+    actualizar: actualizar,
+    column: d[36]};
+
+    var febrero_1 = {content: init,
+    actualizar: actualizar,
+    column: d[37]};
+
+    var marzo_1 = {content: init,
+    actualizar: actualizar,
+    column: d[38]};
+
+    var abril_1 = {content: init,
+    actualizar: actualizar,
+    column: d[39]};
+
+    var liquidacion = {content: init,
+    actualizar: actualizar,
+    column: d[40]};
+
 
 
     hv.actualizar();
     certificacion.actualizar();
     rut.actualizar();
     contrato.actualizar();
+    contrato_plan_choque.actualizar();
     enero.actualizar();
     febrero.actualizar();
     marzo.actualizar();
@@ -113,12 +138,17 @@ function format ( d ) {
     fotocopia_cedula.actualizar();
     antecedentes_judiciales.actualizar();
     antecedentes_contraloria.actualizar();
+    enero_1.actualizar();
+    febrero_1.actualizar();
+    marzo_1.actualizar();
+    abril_1.actualizar();
+    liquidacion.actualizar();
 
 
     return '<div class="table-responsive"><table class="table table-striped" style="padding-left:50px;color:black;">'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b>INFORMACIÓN</b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b>INFORMACIÓN<a></b></h4></th>'+
         '</tr>'+
 
         '<tr>'+
@@ -144,7 +174,7 @@ function format ( d ) {
         '</tr>'+
 
         '<tr>'+
-            '<th colspan="8" class="text-center"><h4><b>SOPORTES</b></h4></th>'+
+            '<th colspan="8" class="text-center"><h4><b>SOPORTES<a></b></h4></th>'+
         '</tr>'+
         '<tr>'+
             '<td class="text-center">Hoja de Vida:</td>'+
@@ -164,6 +194,13 @@ function format ( d ) {
             antecedentes_judiciales.content+
             '<td class="text-center">Contraloria:</td>'+
             antecedentes_contraloria.content+
+            '<td class="text-center">Contrato Plan Choque:</td>'+
+            contrato_plan_choque.content+
+        '</tr>'+
+
+        '<tr>'+
+            '<td class="text-center">Liquidación:</td>'+
+            liquidacion.content+
         '</tr>'+
 
         '<tr>'+
@@ -202,6 +239,23 @@ function format ( d ) {
             '<td class="text-center">Diciembre:</td>'+
             diciembre.content+
         '</tr>'+
+
+        '<tr>'+
+            '<th colspan="8" class="text-center"><h4><b>SEGURIDAD SOCIAL 2016</b></h4></th>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td class="text-center">Enero:</td>'+
+            enero_1.content+
+            '<td class="text-center">Febrero:</td>'+
+            febrero_1.content+
+            '<td class="text-center">Marzo:</td>'+
+            marzo_1.content+
+            '<td class="text-center">Abril:</td>'+
+            abril_1.content+
+        '</tr>'+
+
+
     '</table></div>';
 }
 
