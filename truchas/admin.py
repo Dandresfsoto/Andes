@@ -1347,7 +1347,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 120',codigo.competencia),
                         ('Campo de texto 1012',previo),
                         ('Campo de texto 1038',bibliografia),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
 
                         ('Campo de texto 136',Nivel4_Sesion3_2.objects.order_by('?').first().respuesta),
                         ('Campo de texto 137',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
@@ -1358,8 +1358,8 @@ def construir_proyecto(modeladmin,request,queryset):
 
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
         if participantes.count() == 4:
 
@@ -1433,9 +1433,9 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 141',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
 
         fdf = forge_fdf("",fields,[],[],[])
