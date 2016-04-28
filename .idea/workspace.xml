@@ -83,8 +83,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59753954">
-              <caret line="1611" column="59" selection-start-line="1611" selection-start-column="59" selection-end-line="1611" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.5184534">
+              <caret line="1605" column="43" selection-start-line="1605" selection-start-column="43" selection-end-line="1605" selection-end-column="43" />
               <folding>
                 <element signature="e#39416#41909#0" expanded="false" />
                 <element signature="e#47704#51876#0" expanded="false" />
@@ -505,12 +505,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00152" summary="Docentes masivos ok">
-      <created>1460651369558</created>
-      <option name="number" value="00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1460651369558</updated>
-    </task>
     <task id="LOCAL-00153" summary="Docentes masivos ok encabezado">
       <created>1460655127207</created>
       <option name="number" value="00153" />
@@ -799,7 +793,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461811898395</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="construir r1 ok 3">
+      <created>1461812407372</created>
+      <option name="number" value="00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1461812407372</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -850,7 +850,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Proyectos ok 13" />
     <MESSAGE value="Proyectos ok 14" />
     <MESSAGE value="Proyectos ok 15" />
     <MESSAGE value="contrato plan choque" />
@@ -875,7 +874,8 @@
     <MESSAGE value="construir r1" />
     <MESSAGE value="construir r1 ok" />
     <MESSAGE value="construir r1 ok 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="construir r1 ok 2" />
+    <MESSAGE value="construir r1 ok 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="construir r1 ok 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2444,8 +2444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59753954">
-          <caret line="1611" column="59" selection-start-line="1611" selection-start-column="59" selection-end-line="1611" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.5184534">
+          <caret line="1605" column="43" selection-start-line="1605" selection-start-column="43" selection-end-line="1605" selection-end-column="43" />
           <folding>
             <element signature="e#39416#41909#0" expanded="false" />
             <element signature="e#47704#51876#0" expanded="false" />
