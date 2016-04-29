@@ -1380,7 +1380,7 @@ def descarga_masiva(modeladmin,request,queryset):
                 proceso = ""
 
                 try:
-                    evidencia = EvidenciaDocentes.objects.filter(participante__cedula=fila[0].value).get(entregable__id=fila[0].value)
+                    evidencia = EvidenciaDocentes.objects.filter(participante__cedula=fila[0].value).get(entregable__id=fila[1].value)
                 except:
                     proceso = "No existe el numero de cedula"
                 else:
