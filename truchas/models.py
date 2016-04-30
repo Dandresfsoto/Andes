@@ -59,6 +59,7 @@ class CodigoMasivo_Proyectoss(models.Model):
     area = models.CharField(max_length=200,blank=True,null=True)
     competencia = models.CharField(max_length=200,blank=True,null=True)
     region = models.ForeignKey(Region)
+    generado = models.BooleanField()
 
 
     def __unicode__(self):

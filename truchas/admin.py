@@ -1620,7 +1620,7 @@ construir_proyecto.short_description = "Construir Proyecto"
 class CodigoMasivo_ProyectossAdmin(admin.ModelAdmin):
     list_display = ['codigo']
     ordering = ['codigo']
-    list_filter = ['region']
+    list_filter = ['region','generado']
     actions = [construir_proyecto]
 admin.site.register(CodigoMasivo_Proyectoss,CodigoMasivo_ProyectossAdmin)
 admin.site.register(ParticipanteProyectoMasivos)
