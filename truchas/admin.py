@@ -1018,10 +1018,32 @@ def reporte_formadores_tipo2(modeladmin,request,queryset):
         return response
 reporte_formadores_tipo2.short_description = "Reporte de Formadores Tipo 2"
 
+def estructura_cedulas(modeladmin,request,queryset):
+    participantes = ParticipanteDocente.objects.all()[:2]
+
+    listados = [{'sesion':1,'path':'Nivel 1/Sesion 1'},{'sesion':3,'path':'Nivel 1/Sesion 2'},
+                {'sesion':5,'path':'Nivel 3/Sesion 1'},{'sesion':7,'path':'Nivel 1/Sesion 4'},
+                {'sesion':21,'path':'Nivel 2/Sesion 1'},{'sesion':23,'path':'Nivel 2/Sesion 2'}]
+
+    for participante in participantes:
+        if not os.path.exists('C:/Temp/Estructura/'+unicode(participante.cedula)):
+            os.mkdir('C:/Temp/Estructura/'+unicode(participante.cedula))
+        evidencias = EvidenciaDocentes.objects.filter(participante__cedula=participante.cedula)
+        for listado in listados:
+            try:
+                path = evidencias.get(entregable__id=listado['sesion']).soporte.soporte.path
+            except:
+                pass
+            else:
+                os.makedirs('C:/Temp/Estructura/'+unicode(participante.cedula)+'/'+listado['path'])
+                shutil.copy2(path,'C:/Temp/Estructura/'+unicode(participante.cedula)+'/'+listado['path'])
+estructura_cedulas.short_description = "Exportar Estructura Cedulas"
+
+
 class CargasMasivasAdmin(admin.ModelAdmin):
     list_display = ['id','archivo']
     ordering = ['archivo']
-    actions = [carga_participantes,eliminar_actividades,verificar_listados,carga_n1_s2]
+    actions = [carga_participantes,eliminar_actividades,verificar_listados,carga_n1_s2,estructura_cedulas]
 admin.site.register(CargasMasivas, CargasMasivasAdmin)
 admin.site.register(ParticipanteEscuelaTicTrucho)
 admin.site.register(ParticipanteN1_S2)
