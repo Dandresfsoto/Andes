@@ -1022,7 +1022,7 @@ def estructura_cedulas(modeladmin,request,queryset):
     participantes = ParticipanteDocente.objects.all()
 
     listados = [{'sesion':1,'path':'Nivel 1/Sesion 1'},{'sesion':3,'path':'Nivel 1/Sesion 2'},
-                {'sesion':5,'path':'Nivel 1/Sesion 1'},{'sesion':7,'path':'Nivel 1/Sesion 4'},
+                {'sesion':5,'path':'Nivel 1/Sesion 3'},{'sesion':7,'path':'Nivel 1/Sesion 4'},
                 {'sesion':21,'path':'Nivel 2/Sesion 1'},{'sesion':23,'path':'Nivel 2/Sesion 2'}]
 
     for participante in participantes:
