@@ -1019,7 +1019,7 @@ def reporte_formadores_tipo2(modeladmin,request,queryset):
 reporte_formadores_tipo2.short_description = "Reporte de Formadores Tipo 2"
 
 def estructura_cedulas(modeladmin,request,queryset):
-    participantes = ParticipanteDocente.objects.all()[:2]
+    participantes = ParticipanteDocente.objects.all()
 
     listados = [{'sesion':1,'path':'Nivel 1/Sesion 1'},{'sesion':3,'path':'Nivel 1/Sesion 2'},
                 {'sesion':5,'path':'Nivel 3/Sesion 1'},{'sesion':7,'path':'Nivel 1/Sesion 4'},
