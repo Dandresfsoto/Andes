@@ -1691,6 +1691,9 @@ def generar_listas(modeladmin,request,queryset):
                     sesion.Cells(10+fila,4).Value = participante.cedula
                     sesion.Cells(10+fila,5).Value = participante.correo
                     sesion.Cells(10+fila,6).Value = participante.telefono
+                    sesion.Cells(10+fila,9).Value = "X"
+                    sesion.Cells(10+fila,10).Value = "X"
+                    sesion.Cells(10+fila,11).Value = "X"
                     fila += 1
             if sesion_numero == 2:
                 lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
@@ -1709,6 +1712,10 @@ def generar_listas(modeladmin,request,queryset):
                     sesion.Cells(10+fila,4).Value = participante.cedula
                     sesion.Cells(10+fila,5).Value = participante.correo
                     sesion.Cells(10+fila,6).Value = participante.telefono
+                    sesion.Cells(10+fila,9).Value = "X"
+                    sesion.Cells(10+fila,10).Value = "X"
+                    sesion.Cells(10+fila,11).Value = "X"
+                    sesion.Cells(10+fila,12).Value = "X"
                     fila += 1
 
     lista.Worksheets('Sesion').Delete()
