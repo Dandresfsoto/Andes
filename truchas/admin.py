@@ -1672,51 +1672,52 @@ def generar_listas(modeladmin,request,queryset):
 
     for codigo_masivo in queryset:
         participantes = ParticipanteEscuelaTicTrucho.objects.filter(codigo_masivo__id=codigo_masivo.id)
-        for sesion_numero in range(1,3):
-            fila = 0
-            if sesion_numero == 1:
-                lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
-                sesion = lista.Worksheets('Sesion ('+str(i)+')')
-                i += 1
-                sesion.Cells(5,3).Value = "Sesión 1:______X_______".encode("latin1")
-                sesion.Cells(5,5).Value = "Sesión 2:______________".encode("latin1")
-                departamento = participantes[0].departamento
-                municipio = participantes[0].municipio
-                formador = participantes[0].formador.nombre
-                sesion.Cells(6,1).Value = "Departamento: "+departamento.encode("latin1")+"                         "+"Municipio: "+municipio.encode("latin1")
-                sesion.Cells(5,7).Value = "Formador: "+formador.encode("latin1")
-                for participante in participantes:
-                    sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
-                    sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
-                    sesion.Cells(10+fila,4).Value = participante.cedula
-                    #sesion.Cells(10+fila,5).Value = participante.correo
-                    sesion.Cells(10+fila,6).Value = participante.telefono
-                    sesion.Cells(10+fila,9).Value = "X"
-                    sesion.Cells(10+fila,10).Value = "X"
-                    sesion.Cells(10+fila,11).Value = "X"
-                    fila += 1
-            if sesion_numero == 2:
-                lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
-                sesion = lista.Worksheets('Sesion ('+str(i)+')')
-                i += 1
-                sesion.Cells(5,3).Value = "Sesión 1:______________".encode("latin1")
-                sesion.Cells(5,5).Value = "Sesión 2:______X_______".encode("latin1")
-                departamento = participantes[0].departamento
-                municipio = participantes[0].municipio
-                formador = participantes[0].formador.nombre
-                sesion.Cells(6,1).Value = "Departamento: "+departamento.encode("latin1")+"                         "+"Municipio: "+municipio.encode("latin1")
-                sesion.Cells(5,7).Value = "Formador: "+formador.encode("latin1")
-                for participante in participantes:
-                    sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
-                    sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
-                    sesion.Cells(10+fila,4).Value = participante.cedula
-                    #sesion.Cells(10+fila,5).Value = participante.correo
-                    sesion.Cells(10+fila,6).Value = participante.telefono
-                    sesion.Cells(10+fila,9).Value = "X"
-                    sesion.Cells(10+fila,10).Value = "X"
-                    sesion.Cells(10+fila,11).Value = "X"
-                    sesion.Cells(10+fila,12).Value = "X"
-                    fila += 1
+        if len(participantes > 0):
+            for sesion_numero in range(1,3):
+                fila = 0
+                if sesion_numero == 1:
+                    lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
+                    sesion = lista.Worksheets('Sesion ('+str(i)+')')
+                    i += 1
+                    sesion.Cells(5,3).Value = "Sesión 1:______X_______".encode("latin1")
+                    sesion.Cells(5,5).Value = "Sesión 2:______________".encode("latin1")
+                    departamento = participantes[0].departamento
+                    municipio = participantes[0].municipio
+                    formador = participantes[0].formador.nombre
+                    sesion.Cells(6,1).Value = "Departamento: "+departamento.encode("latin1")+"                         "+"Municipio: "+municipio.encode("latin1")
+                    sesion.Cells(5,7).Value = "Formador: "+formador.encode("latin1")
+                    for participante in participantes:
+                        sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
+                        sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
+                        sesion.Cells(10+fila,4).Value = participante.cedula
+                        #sesion.Cells(10+fila,5).Value = participante.correo
+                        sesion.Cells(10+fila,6).Value = participante.telefono
+                        sesion.Cells(10+fila,9).Value = "X"
+                        sesion.Cells(10+fila,10).Value = "X"
+                        sesion.Cells(10+fila,11).Value = "X"
+                        fila += 1
+                if sesion_numero == 2:
+                    lista.Worksheets("Sesion").Copy(lista.Worksheets(lista.Worksheets.Count))
+                    sesion = lista.Worksheets('Sesion ('+str(i)+')')
+                    i += 1
+                    sesion.Cells(5,3).Value = "Sesión 1:______________".encode("latin1")
+                    sesion.Cells(5,5).Value = "Sesión 2:______X_______".encode("latin1")
+                    departamento = participantes[0].departamento
+                    municipio = participantes[0].municipio
+                    formador = participantes[0].formador.nombre
+                    sesion.Cells(6,1).Value = "Departamento: "+departamento.encode("latin1")+"                         "+"Municipio: "+municipio.encode("latin1")
+                    sesion.Cells(5,7).Value = "Formador: "+formador.encode("latin1")
+                    for participante in participantes:
+                        sesion.Cells(10+fila,2).Value = participante.nombres.encode("latin1")
+                        sesion.Cells(10+fila,3).Value = participante.apellidos.encode("latin1")
+                        sesion.Cells(10+fila,4).Value = participante.cedula
+                        #sesion.Cells(10+fila,5).Value = participante.correo
+                        sesion.Cells(10+fila,6).Value = participante.telefono
+                        sesion.Cells(10+fila,9).Value = "X"
+                        sesion.Cells(10+fila,10).Value = "X"
+                        sesion.Cells(10+fila,11).Value = "X"
+                        sesion.Cells(10+fila,12).Value = "X"
+                        fila += 1
 
     lista.Worksheets('Sesion').Delete()
     lista.ExportAsFixedFormat(0,settings.MEDIA_ROOT+'/Listados Escuela Tic/Padres.pdf')
