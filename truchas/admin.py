@@ -180,7 +180,7 @@ def carga_participantes(modeladmin,request,queryset):
                                             if Formador.objects.filter(cedula=fila[7].value).count() == 0:
                                                 proceso = "No existe el formador"
                                             else:
-                                                formador = Formador.objects.get(cedula=fila[7].value)
+                                                formador = Formador.objects.filter(cedula=fila[7].value)[0]
                                                 if Grupo.objects.filter(formador__id=formador.id).count() == 0:
                                                     proceso = "El formador no tiene grupos asignados"
                                                 else:
