@@ -31,8 +31,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0882353">
-              <caret line="1675" column="44" selection-start-line="1675" selection-start-column="44" selection-end-line="1675" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.32352942">
+              <caret line="1674" column="33" selection-start-line="1674" selection-start-column="33" selection-end-line="1674" selection-end-column="33" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#28130#39287#0" expanded="false" />
@@ -458,12 +458,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00167" summary="Proyectos ok 3">
-      <created>1460683266982</created>
-      <option name="number" value="00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1460683266982</updated>
-    </task>
     <task id="LOCAL-00168" summary="Proyectos ok 4">
       <created>1460691119141</created>
       <option name="number" value="00168" />
@@ -752,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462299764949</updated>
     </task>
-    <option name="localTasksCounter" value="216" />
+    <task id="LOCAL-00216" summary="carga padres ok ok ok">
+      <created>1462318686052</created>
+      <option name="number" value="00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1462318686052</updated>
+    </task>
+    <option name="localTasksCounter" value="217" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -803,7 +803,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="grupos carga masiva docentes ok" />
     <MESSAGE value="grupos carga masiva docentes ok 2" />
     <MESSAGE value="grupos carga masiva docentes ok 3&#10;" />
     <MESSAGE value="carga escuela tic&#10;" />
@@ -828,7 +827,8 @@
     <MESSAGE value="carga padres" />
     <MESSAGE value="carga padres ok" />
     <MESSAGE value="carga padres ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="carga padres ok ok" />
+    <MESSAGE value="carga padres ok ok ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="carga padres ok ok ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2429,8 +2429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0882353">
-          <caret line="1675" column="44" selection-start-line="1675" selection-start-column="44" selection-end-line="1675" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.32352942">
+          <caret line="1674" column="33" selection-start-line="1674" selection-start-column="33" selection-end-line="1674" selection-end-column="33" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#28130#39287#0" expanded="false" />

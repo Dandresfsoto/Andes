@@ -1672,7 +1672,7 @@ def generar_listas(modeladmin,request,queryset):
 
     for codigo_masivo in queryset:
         participantes = ParticipanteEscuelaTicTrucho.objects.filter(codigo_masivo__id=codigo_masivo.id)
-        if len(participantes > 0):
+        if len(participantes) > 0:
             for sesion_numero in range(1,3):
                 fila = 0
                 if sesion_numero == 1:
