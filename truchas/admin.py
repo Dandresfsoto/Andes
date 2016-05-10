@@ -1303,7 +1303,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].municipio.capitalize()),
                         ('Campo de texto 6',participantes[0].institucion.capitalize()),
                         ('Campo de texto 8',participantes[0].sede.capitalize()),
-                        #('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
 
@@ -1314,7 +1314,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 16',participantes[1].municipio.capitalize()),
                         ('Campo de texto 17',participantes[1].institucion.capitalize()),
                         ('Campo de texto 18',participantes[1].sede.capitalize()),
-                        #('Campo de texto 19',participantes[1].dane),
+                        ('Campo de texto 19',participantes[1].dane),
                         ('Campo de texto 20',""),
                         ('Campo de texto 21',""),
 
@@ -1325,7 +1325,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 26',participantes[2].municipio.capitalize()),
                         ('Campo de texto 27',participantes[2].institucion.capitalize()),
                         ('Campo de texto 28',participantes[2].sede.capitalize()),
-                        #('Campo de texto 29',participantes[2].dane),
+                        ('Campo de texto 29',participantes[2].dane),
                         ('Campo de texto 30',""),
                         ('Campo de texto 31',""),
 
@@ -1336,7 +1336,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 36',participantes[3].municipio.capitalize()),
                         ('Campo de texto 37',participantes[3].institucion.capitalize()),
                         ('Campo de texto 38',participantes[3].sede.capitalize()),
-                        #('Campo de texto 39',participantes[3].dane),
+                        ('Campo de texto 39',participantes[3].dane),
                         ('Campo de texto 40',""),
                         ('Campo de texto 41',""),
 
@@ -1347,7 +1347,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 46',participantes[4].municipio.capitalize()),
                         ('Campo de texto 47',participantes[4].institucion.capitalize()),
                         ('Campo de texto 48',participantes[4].sede.capitalize()),
-                        #('Campo de texto 49',participantes[4].dane),
+                        ('Campo de texto 49',participantes[4].dane),
                         ('Campo de texto 50',""),
                         ('Campo de texto 51',""),
 
@@ -1368,7 +1368,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 120',codigo.competencia),
                         ('Campo de texto 1012',previo),
                         ('Campo de texto 1038',bibliografia),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
 
                         ('Campo de texto 136',Nivel4_Sesion3_2.objects.order_by('?').first().respuesta),
                         ('Campo de texto 137',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
@@ -1379,8 +1379,8 @@ def construir_proyecto(modeladmin,request,queryset):
 
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
         if participantes.count() == 4:
 
@@ -1391,7 +1391,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].municipio.capitalize()),
                         ('Campo de texto 6',participantes[0].institucion.capitalize()),
                         ('Campo de texto 8',participantes[0].sede.capitalize()),
-                        #('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
 
@@ -1402,7 +1402,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 16',participantes[1].municipio.capitalize()),
                         ('Campo de texto 17',participantes[1].institucion.capitalize()),
                         ('Campo de texto 18',participantes[1].sede.capitalize()),
-                        #('Campo de texto 19',participantes[1].dane),
+                        ('Campo de texto 19',participantes[1].dane),
                         ('Campo de texto 20',""),
                         ('Campo de texto 21',""),
 
@@ -1413,7 +1413,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 26',participantes[2].municipio.capitalize()),
                         ('Campo de texto 27',participantes[2].institucion.capitalize()),
                         ('Campo de texto 28',participantes[2].sede.capitalize()),
-                        #('Campo de texto 29',participantes[2].dane),
+                        ('Campo de texto 29',participantes[2].dane),
                         ('Campo de texto 30',""),
                         ('Campo de texto 31',""),
 
@@ -1424,7 +1424,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 36',participantes[3].municipio.capitalize()),
                         ('Campo de texto 37',participantes[3].institucion.capitalize()),
                         ('Campo de texto 38',participantes[3].sede.capitalize()),
-                        #('Campo de texto 39',participantes[3].dane),
+                        ('Campo de texto 39',participantes[3].dane),
                         ('Campo de texto 40',""),
                         ('Campo de texto 41',""),
 
@@ -1454,9 +1454,9 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 141',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
 
         if participantes.count() == 3:
@@ -1468,7 +1468,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].municipio.capitalize()),
                         ('Campo de texto 6',participantes[0].institucion.capitalize()),
                         ('Campo de texto 8',participantes[0].sede.capitalize()),
-                        #('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
 
@@ -1479,7 +1479,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 16',participantes[1].municipio.capitalize()),
                         ('Campo de texto 17',participantes[1].institucion.capitalize()),
                         ('Campo de texto 18',participantes[1].sede.capitalize()),
-                        #('Campo de texto 19',participantes[1].dane),
+                        ('Campo de texto 19',participantes[1].dane),
                         ('Campo de texto 20',""),
                         ('Campo de texto 21',""),
 
@@ -1490,7 +1490,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 26',participantes[2].municipio.capitalize()),
                         ('Campo de texto 27',participantes[2].institucion.capitalize()),
                         ('Campo de texto 28',participantes[2].sede.capitalize()),
-                        #('Campo de texto 29',participantes[2].dane),
+                        ('Campo de texto 29',participantes[2].dane),
                         ('Campo de texto 30',""),
                         ('Campo de texto 31',""),
 
@@ -1520,9 +1520,9 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 141',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
 
 
@@ -1535,7 +1535,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].municipio.capitalize()),
                         ('Campo de texto 6',participantes[0].institucion.capitalize()),
                         ('Campo de texto 8',participantes[0].sede.capitalize()),
-                        #('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
 
@@ -1546,7 +1546,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 16',participantes[1].municipio.capitalize()),
                         ('Campo de texto 17',participantes[1].institucion.capitalize()),
                         ('Campo de texto 18',participantes[1].sede.capitalize()),
-                        #('Campo de texto 19',participantes[1].dane),
+                        ('Campo de texto 19',participantes[1].dane),
                         ('Campo de texto 20',""),
                         ('Campo de texto 21',""),
 
@@ -1576,9 +1576,9 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 141',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
 
         if participantes.count() == 1:
@@ -1590,7 +1590,7 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 5',participantes[0].municipio.capitalize()),
                         ('Campo de texto 6',participantes[0].institucion.capitalize()),
                         ('Campo de texto 8',participantes[0].sede.capitalize()),
-                        #('Campo de texto 9',participantes[0].dane),
+                        ('Campo de texto 9',participantes[0].dane),
                         ('Campo de texto 10',""),
                         ('Campo de texto 11',""),
 
@@ -1620,9 +1620,9 @@ def construir_proyecto(modeladmin,request,queryset):
                         ('Campo de texto 141',Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
 
                         ('Campo de texto 1026',Nivel1_Sesion2_1.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_2.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_3.objects.order_by('?').first().respuesta+'\n'+Nivel1_Sesion2_4.objects.order_by('?').first().respuesta),
-                        ('Campo de texto 1047','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1048','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
-                        ('Campo de texto 1015','http://sican.asoandes.org/region/2/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1047','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1048','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
+                        ('Campo de texto 1015','http://sican.asoandes.org/region/1/cpe/formacion/etic@/docentes/participantes/'),
                         ]
 
         fdf = forge_fdf("",fields,[],[],[])
