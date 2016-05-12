@@ -31,12 +31,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4920914">
-              <caret line="1624" column="82" selection-start-line="1624" selection-start-column="82" selection-end-line="1624" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.9381271">
+              <caret line="1305" column="24" selection-start-line="1305" selection-start-column="24" selection-end-line="1305" selection-end-column="24" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
-                <element signature="e#83477#88363#0" expanded="false" />
-                <element signature="e#88493#89679#0" expanded="false" />
+                <element signature="e#83403#88289#0" expanded="false" />
+                <element signature="e#88419#89605#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -454,12 +454,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00170" summary="Proyectos ok 6">
-      <created>1460693579246</created>
-      <option name="number" value="00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1460693579246</updated>
-    </task>
     <task id="LOCAL-00171" summary="Proyectos ok 7">
       <created>1460693630405</created>
       <option name="number" value="00171" />
@@ -748,7 +742,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462913528036</updated>
     </task>
-    <option name="localTasksCounter" value="219" />
+    <task id="LOCAL-00219" summary="construir proyectos r4">
+      <created>1463016865929</created>
+      <option name="number" value="00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1463016865941</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -766,6 +766,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24780059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -775,7 +776,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -799,7 +799,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="carga escuela tic&#10;" />
     <MESSAGE value="formadores nuevos campos" />
     <MESSAGE value="gestores nuevos campos" />
     <MESSAGE value="campos cpe" />
@@ -824,7 +823,8 @@
     <MESSAGE value="carga padres ok ok ok" />
     <MESSAGE value="carga padres ok ok ok ok" />
     <MESSAGE value="construir proyectos" />
-    <option name="LAST_COMMIT_MESSAGE" value="construir proyectos" />
+    <MESSAGE value="construir proyectos r4" />
+    <option name="LAST_COMMIT_MESSAGE" value="construir proyectos r4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2416,12 +2416,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4920914">
-          <caret line="1624" column="82" selection-start-line="1624" selection-start-column="82" selection-end-line="1624" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.9381271">
+          <caret line="1305" column="24" selection-start-line="1305" selection-start-column="24" selection-end-line="1305" selection-end-column="24" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#83477#88363#0" expanded="false" />
-            <element signature="e#88493#89679#0" expanded="false" />
+            <element signature="e#83403#88289#0" expanded="false" />
+            <element signature="e#88419#89605#0" expanded="false" />
           </folding>
         </state>
       </provider>
