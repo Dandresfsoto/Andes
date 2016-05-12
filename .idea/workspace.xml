@@ -31,14 +31,12 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47923875">
-              <caret line="1633" column="59" selection-start-line="1633" selection-start-column="59" selection-end-line="1633" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.4920914">
+              <caret line="1624" column="82" selection-start-line="1624" selection-start-column="82" selection-end-line="1624" selection-end-column="82" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
-                <element signature="e#28130#39287#0" expanded="false" />
-                <element signature="e#39422#41915#0" expanded="false" />
-                <element signature="e#83403#88289#0" expanded="false" />
-                <element signature="e#88419#89605#0" expanded="false" />
+                <element signature="e#83477#88363#0" expanded="false" />
+                <element signature="e#88493#89679#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -123,10 +121,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1380" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -457,12 +454,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00169" summary="Proyectos ok 5">
-      <created>1460693432544</created>
-      <option name="number" value="00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1460693432544</updated>
-    </task>
     <task id="LOCAL-00170" summary="Proyectos ok 6">
       <created>1460693579246</created>
       <option name="number" value="00170" />
@@ -751,7 +742,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462319347678</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="construir proyectos">
+      <created>1462913528036</created>
+      <option name="number" value="00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1462913528036</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -764,10 +761,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="1380" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24780059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43307087" sideWeight="0.50292826" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -802,7 +799,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="grupos carga masiva docentes ok 3&#10;" />
     <MESSAGE value="carga escuela tic&#10;" />
     <MESSAGE value="formadores nuevos campos" />
     <MESSAGE value="gestores nuevos campos" />
@@ -827,7 +823,8 @@
     <MESSAGE value="carga padres ok ok" />
     <MESSAGE value="carga padres ok ok ok" />
     <MESSAGE value="carga padres ok ok ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="carga padres ok ok ok ok" />
+    <MESSAGE value="construir proyectos" />
+    <option name="LAST_COMMIT_MESSAGE" value="construir proyectos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2037,13 +2034,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/formulario_asignar_soporte_tipo1.jade">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.83196044">
           <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/participantes/views.py">
@@ -2407,9 +2404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32784185">
           <caret line="350" column="0" selection-start-line="350" selection-start-column="0" selection-end-line="351" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2417,22 +2411,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47923875">
-          <caret line="1633" column="59" selection-start-line="1633" selection-start-column="59" selection-end-line="1633" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.4920914">
+          <caret line="1624" column="82" selection-start-line="1624" selection-start-column="82" selection-end-line="1624" selection-end-column="82" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
-            <element signature="e#28130#39287#0" expanded="false" />
-            <element signature="e#39422#41915#0" expanded="false" />
-            <element signature="e#83403#88289#0" expanded="false" />
-            <element signature="e#88419#89605#0" expanded="false" />
+            <element signature="e#83477#88363#0" expanded="false" />
+            <element signature="e#88493#89679#0" expanded="false" />
           </folding>
         </state>
       </provider>
