@@ -2403,7 +2403,7 @@ def certificaciones(modeladmin,request,queryset):
         fdf_file = open("C:\\Temp\\diploma.fdf","wb")
         fdf_file.write(fdf)
         fdf_file.close()
-        os.system('pdftk C:\\Temp\\diploma.pdf fill_form C:\\Temp\\diploma.fdf output C:\\Temp\\Diploma\\'+str(participante.cedula)+'.pdf')
+        os.system('pdftk C:\\Temp\\diploma.pdf fill_form C:\\Temp\\diploma.fdf output C:\\Temp\\Diploma\\'+str(participante.cedula)+'.pdf flatten')
 certificaciones.short_description = "Generar certificacion Escuela Tic"
 
 
