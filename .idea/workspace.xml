@@ -31,15 +31,15 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65050167">
-              <caret line="2409" column="28" selection-start-line="2409" selection-start-column="28" selection-end-line="2409" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.5367893">
+              <caret line="2405" column="76" selection-start-line="2405" selection-start-column="76" selection-end-line="2405" selection-end-column="76" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#83403#88289#0" expanded="false" />
                 <element signature="e#88419#89605#0" expanded="false" />
                 <element signature="e#113610#114442#0" expanded="false" />
-                <element signature="e#116483#116528#0" expanded="false" />
-                <element signature="e#116658#129401#0" expanded="false" />
+                <element signature="e#116533#116578#0" expanded="false" />
+                <element signature="e#116708#129451#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -457,12 +457,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00176" summary="Proyectos ok 12">
-      <created>1460696139579</created>
-      <option name="number" value="00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1460696139579</updated>
-    </task>
     <task id="LOCAL-00177" summary="Proyectos ok 13">
       <created>1460696281888</created>
       <option name="number" value="00177" />
@@ -751,7 +745,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463497340649</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="Diplomas ok 3">
+      <created>1463497511450</created>
+      <option name="number" value="00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1463497511450</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -2419,15 +2419,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65050167">
-          <caret line="2409" column="28" selection-start-line="2409" selection-start-column="28" selection-end-line="2409" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.5367893">
+          <caret line="2405" column="76" selection-start-line="2405" selection-start-column="76" selection-end-line="2405" selection-end-column="76" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#83403#88289#0" expanded="false" />
             <element signature="e#88419#89605#0" expanded="false" />
             <element signature="e#113610#114442#0" expanded="false" />
-            <element signature="e#116483#116528#0" expanded="false" />
-            <element signature="e#116658#129401#0" expanded="false" />
+            <element signature="e#116533#116578#0" expanded="false" />
+            <element signature="e#116708#129451#0" expanded="false" />
           </folding>
         </state>
       </provider>
