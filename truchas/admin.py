@@ -2392,9 +2392,25 @@ def generar_nivel3_sesion1_2(modeladmin,request,queryset):
         evidencia_docente.save()
 generar_nivel3_sesion1_2.short_description = "Generar Sesion 1.2 - Nivel 3"
 
+
+def certificaciones(modeladmin,request,queryset):
+    for participante in ParticipanteEscuelaTic.objects.all():
+        fields = [('Texto1',participante.nombres + " " + participante.apellidos),
+                  ('Texto3',"Identificado con C.C. "+participante.cedula),
+                  ('Texto2',"17 de Mayo de 2016"),
+        ]
+        fdf = forge_fdf("",fields,[],[],[])
+        fdf_file = open("C:\\Temp\\diploma.fdf","wb")
+        fdf_file.write(fdf)
+        fdf_file.close()
+        os.system('pdftk C:\\Temp\\diploma.pdf fill_form C:\\Temp\\diploma.fdf output C:\\Temp\\Diploma\\'+participante.cedula+'.pdf')
+certificaciones.short_description = "Generar certificacion Escuela Tic"
+
+
+
 class Nivel3_Sesion1_2Admin(admin.ModelAdmin):
     list_display = ['respuesta']
-    actions = [generar_nivel3_sesion1_2]
+    actions = [generar_nivel3_sesion1_2,certificaciones]
 
 admin.site.register(Nivel3_Sesion1_2,Nivel3_Sesion1_2Admin)
 
