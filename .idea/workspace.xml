@@ -31,16 +31,15 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.451505">
-              <caret line="2405" column="147" selection-start-line="2405" selection-start-column="147" selection-end-line="2405" selection-end-column="147" />
+            <state vertical-scroll-proportion="0.65050167">
+              <caret line="2409" column="65" selection-start-line="2409" selection-start-column="65" selection-end-line="2409" selection-end-column="65" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#83403#88289#0" expanded="false" />
                 <element signature="e#88419#89605#0" expanded="false" />
                 <element signature="e#113610#114442#0" expanded="false" />
-                <element signature="e#115432#116426#1" expanded="false" />
-                <element signature="e#116478#116523#0" expanded="false" />
-                <element signature="e#116653#129396#0" expanded="false" />
+                <element signature="e#116477#116522#0" expanded="false" />
+                <element signature="e#116652#129395#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -458,12 +457,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00174" summary="Proyectos ok 10">
-      <created>1460695162588</created>
-      <option name="number" value="00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1460695162588</updated>
-    </task>
     <task id="LOCAL-00175" summary="Proyectos ok 11">
       <created>1460695786685</created>
       <option name="number" value="00175" />
@@ -752,7 +745,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463494916126</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="Diplomas ok 2">
+      <created>1463495061748</created>
+      <option name="number" value="00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1463495061748</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -803,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="campos cpe" />
     <MESSAGE value="construir r1" />
     <MESSAGE value="construir r1 ok" />
     <MESSAGE value="construir r1 ok 2" />
@@ -828,7 +826,8 @@
     <MESSAGE value="construir proyectos r4" />
     <MESSAGE value="Diplomas" />
     <MESSAGE value="Diplomas ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Diplomas ok" />
+    <MESSAGE value="Diplomas ok 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diplomas ok 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2420,16 +2419,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.451505">
-          <caret line="2405" column="147" selection-start-line="2405" selection-start-column="147" selection-end-line="2405" selection-end-column="147" />
+        <state vertical-scroll-proportion="0.65050167">
+          <caret line="2409" column="65" selection-start-line="2409" selection-start-column="65" selection-end-line="2409" selection-end-column="65" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#83403#88289#0" expanded="false" />
             <element signature="e#88419#89605#0" expanded="false" />
             <element signature="e#113610#114442#0" expanded="false" />
-            <element signature="e#115432#116426#1" expanded="false" />
-            <element signature="e#116478#116523#0" expanded="false" />
-            <element signature="e#116653#129396#0" expanded="false" />
+            <element signature="e#116477#116522#0" expanded="false" />
+            <element signature="e#116652#129395#0" expanded="false" />
           </folding>
         </state>
       </provider>
