@@ -32,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5367893">
-              <caret line="2405" column="76" selection-start-line="2405" selection-start-column="76" selection-end-line="2405" selection-end-column="76" />
+              <caret line="2405" column="22" selection-start-line="2405" selection-start-column="22" selection-end-line="2405" selection-end-column="22" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#83403#88289#0" expanded="false" />
@@ -457,12 +457,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00177" summary="Proyectos ok 13">
-      <created>1460696281888</created>
-      <option name="number" value="00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1460696281888</updated>
-    </task>
     <task id="LOCAL-00178" summary="Proyectos ok 14">
       <created>1460698759377</created>
       <option name="number" value="00178" />
@@ -751,7 +745,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463497511450</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="Diplomas ok 4">
+      <created>1463497851514</created>
+      <option name="number" value="00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1463497851514</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -802,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="construir r1 ok" />
     <MESSAGE value="construir r1 ok 2" />
     <MESSAGE value="construir r1 ok 3" />
     <MESSAGE value="construir r1 ok 4" />
@@ -827,7 +826,8 @@
     <MESSAGE value="Diplomas ok" />
     <MESSAGE value="Diplomas ok 2" />
     <MESSAGE value="Diplomas ok 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Diplomas ok 3" />
+    <MESSAGE value="Diplomas ok 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diplomas ok 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2420,7 +2420,7 @@
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5367893">
-          <caret line="2405" column="76" selection-start-line="2405" selection-start-column="76" selection-end-line="2405" selection-end-column="76" />
+          <caret line="2405" column="22" selection-start-line="2405" selection-start-column="22" selection-end-line="2405" selection-end-column="22" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#83403#88289#0" expanded="false" />

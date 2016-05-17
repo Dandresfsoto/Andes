@@ -2402,11 +2402,11 @@ def certificaciones(modeladmin,request,queryset):
         img = Image.open("C:\\Temp\\Diploma.png")
         draw = ImageDraw.Draw(img)
         font = ImageFont.truetype("arial.ttf", 50)
-        draw.text((410, 210),participante.nombres,(255,255,255),font=font)
-        draw.text((410, 275),participante.apellidos,(255,255,255),font=font)
+        draw.text((500, 210),participante.nombres,(255,255,255),font=font)
+        draw.text((500, 275),participante.apellidos,(255,255,255),font=font)
 
         font = ImageFont.truetype("arial.ttf", 20)
-        draw.text((762, 370),str(participante.cedula),(29,42,64),font=font)
+        draw.text((762, 365),str(participante.cedula),(29,42,64),font=font)
 
         img.save('C:\\Temp\\Diploma\\'+str(participante.cedula)+'.png')
 
