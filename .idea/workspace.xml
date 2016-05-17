@@ -32,14 +32,14 @@
         <entry file="file://$PROJECT_DIR$/truchas/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.65050167">
-              <caret line="2409" column="65" selection-start-line="2409" selection-start-column="65" selection-end-line="2409" selection-end-column="65" />
+              <caret line="2409" column="28" selection-start-line="2409" selection-start-column="28" selection-end-line="2409" selection-end-column="28" />
               <folding>
                 <element signature="e#46#78#0" expanded="true" />
                 <element signature="e#83403#88289#0" expanded="false" />
                 <element signature="e#88419#89605#0" expanded="false" />
                 <element signature="e#113610#114442#0" expanded="false" />
-                <element signature="e#116477#116522#0" expanded="false" />
-                <element signature="e#116652#129395#0" expanded="false" />
+                <element signature="e#116483#116528#0" expanded="false" />
+                <element signature="e#116658#129401#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -457,12 +457,6 @@
       <option name="number" value="Default" />
       <updated>1444519453652</updated>
     </task>
-    <task id="LOCAL-00175" summary="Proyectos ok 11">
-      <created>1460695786685</created>
-      <option name="number" value="00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1460695786685</updated>
-    </task>
     <task id="LOCAL-00176" summary="Proyectos ok 12">
       <created>1460696139579</created>
       <option name="number" value="00176" />
@@ -751,7 +745,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463495061748</updated>
     </task>
-    <option name="localTasksCounter" value="224" />
+    <task id="LOCAL-00224" summary="Diplomas ok 3">
+      <created>1463497340649</created>
+      <option name="number" value="00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1463497340649</updated>
+    </task>
+    <option name="localTasksCounter" value="225" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -802,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="construir r1" />
     <MESSAGE value="construir r1 ok" />
     <MESSAGE value="construir r1 ok 2" />
     <MESSAGE value="construir r1 ok 3" />
@@ -827,7 +826,8 @@
     <MESSAGE value="Diplomas" />
     <MESSAGE value="Diplomas ok" />
     <MESSAGE value="Diplomas ok 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Diplomas ok 2" />
+    <MESSAGE value="Diplomas ok 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diplomas ok 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2420,14 +2420,14 @@
     <entry file="file://$PROJECT_DIR$/truchas/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65050167">
-          <caret line="2409" column="65" selection-start-line="2409" selection-start-column="65" selection-end-line="2409" selection-end-column="65" />
+          <caret line="2409" column="28" selection-start-line="2409" selection-start-column="28" selection-end-line="2409" selection-end-column="28" />
           <folding>
             <element signature="e#46#78#0" expanded="true" />
             <element signature="e#83403#88289#0" expanded="false" />
             <element signature="e#88419#89605#0" expanded="false" />
             <element signature="e#113610#114442#0" expanded="false" />
-            <element signature="e#116477#116522#0" expanded="false" />
-            <element signature="e#116652#129395#0" expanded="false" />
+            <element signature="e#116483#116528#0" expanded="false" />
+            <element signature="e#116658#129401#0" expanded="false" />
           </folding>
         </state>
       </provider>

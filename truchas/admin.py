@@ -2407,7 +2407,7 @@ def certificaciones(modeladmin,request,queryset):
         font = ImageFont.truetype("arial.ttf", 18)
         draw.text((762, 360),str(participante.cedula),(29,42,64),font=font)
 
-        img.save('C:\\Diploma\\'+str(participante.cedula)+'.png')
+        img.save('C:\\Temp\\Diploma\\'+str(participante.cedula)+'.png')
 
 certificaciones.short_description = "Generar certificacion Escuela Tic"
 
