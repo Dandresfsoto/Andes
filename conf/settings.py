@@ -72,8 +72,7 @@ INSTALLED_APPS = (
     'pqr',
     'acceso',
     'formacion',
-    'administrativo',
-    'truchas'
+    'administrativo'
 )
 
 REST_FRAMEWORK = {
